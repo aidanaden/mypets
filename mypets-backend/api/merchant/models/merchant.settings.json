@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchants",
+  "info": {
+    "name": "Merchant",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "display_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "contact_email": {
+      "type": "email"
+    },
+    "contact_number": {
+      "type": "biginteger"
+    },
+    "products": {
+      "via": "merchant",
+      "collection": "product"
+    }
+  }
+}

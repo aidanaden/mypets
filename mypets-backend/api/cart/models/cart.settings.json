@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carts",
+  "info": {
+    "name": "Cart"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total_price": {
+      "type": "decimal"
+    },
+    "products": {
+      "collection": "product"
+    }
+  }
+}

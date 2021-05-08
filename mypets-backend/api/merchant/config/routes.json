@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/merchants",
+      "handler": "merchant.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/merchants/count",
+      "handler": "merchant.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/merchants/:id",
+      "handler": "merchant.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/merchants",
+      "handler": "merchant.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/merchants/:id",
+      "handler": "merchant.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/merchants/:id",
+      "handler": "merchant.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
