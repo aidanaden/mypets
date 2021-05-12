@@ -1,10 +1,13 @@
 import { useContext } from 'react'
+import { useRouter } from 'next/router'
 import AuthContext from '../../context/AuthContext'
 import { Menu, MenuButton, MenuList, MenuDivider, MenuItem, Button, Avatar } from '@chakra-ui/react'
 
 function NavbarUserIcon() {
 
     const { logoutUser } = useContext(AuthContext)
+
+    const router = useRouter()
 
     const handlePastOrders = () => {
         router.push('/orders')

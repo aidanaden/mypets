@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {
     Table,
@@ -8,9 +9,21 @@ import {
     Th,
     Td,
     TableCaption
-  } from "@chakra-ui/react"
+} from "@chakra-ui/react"
 
-function OrderPriceBreakdownList() {
+function OrderPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
+
+    let prices = {}
+
+    productNames.map((productName,i) => {
+        prices[productName] = 0
+        groupedProducts[productName].map((product,i) => {
+            prices[productName] += product.price
+        })
+    })
+
+    console.log('total prices for each product type: ', prices)
+
     return (
         <Table variant="unstyled" size='md'>
             <Thead>
@@ -21,25 +34,17 @@ function OrderPriceBreakdownList() {
                 </Tr>
             </Thead>
             <Tbody>
-                <Tr>
-                    <Td fontWeight='bold'>Roasted Lamb & Grain-Free</Td>
-                    <Td textAlign='right' fontWeight='bold'>14</Td>
-                    <Td textAlign='right' fontWeight='bold'>SG$37.40</Td>
-                </Tr>
-                <Tr>
-                    <Td fontWeight='bold'>Roasted Lamb & Grain-Free</Td>
-                    <Td textAlign='right'fontWeight='bold'>14</Td>
-                    <Td textAlign='right' fontWeight='bold'>SG$37.40</Td>
-                </Tr>
-                <Tr>
-                    <Td fontWeight='bold'>Roasted Lamb & Grain-Free</Td>
-                    <Td textAlign='right' fontWeight='bold'>14</Td>
-                    <Td textAlign='right' fontWeight='bold'>SG$37.40</Td>
-                </Tr>
+                {productNames.map((productName, i) => (
+                    <Tr key={i}>
+                        <Td fontWeight='bold'>{productName}</Td>
+                        <Td textAlign='right' fontWeight='bold'>{groupedProducts[productName].length}</Td>
+                        <Td textAlign='right' fontWeight='bold'>{prices[productName].toFixed(2)}</Td>
+                    </Tr>
+                ))}
                 <Tr>
                     <Td fontWeight='bold'></Td>
                     <Td textAlign='right' fontWeight='bold'></Td>
-                    <Td textAlign='right' fontWeight='bold'>SG$124.39</Td>
+                    <Td textAlign='right' fontWeight='bold'>SG${totalPrice}</Td>
                 </Tr>
             </Tbody>
         </Table>

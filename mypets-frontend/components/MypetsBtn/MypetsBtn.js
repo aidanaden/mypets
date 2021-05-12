@@ -21,6 +21,7 @@ function MypetsBtn({ w, btnText, mt, onClick, isLoading, type, variant='solid' }
             isLoading={isLoading}
             type={type}
             w={w}
+            minHeight={10}
             {...props}
         >
             {btnText}

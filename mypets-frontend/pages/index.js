@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import { Container, Box, Img, Stack, HStack, VStack, Text, Flex, SimpleGrid, Heading, Button, } from "@chakra-ui/react"
+
 import Navbar from "../components/Navbar/Navbar"
 import SortMenu from '../components/SortMenu/SortMenu'
 import MerchantSectionList from '../components/MerchantSectionList/MerchantSectionList'
@@ -9,10 +11,7 @@ import { API_PRODUCTS_URL, API_CATEGORIES_URL, API_MERCHANTS_URL } from '../util
 
 export default function Home({ products, categories, merchants }) {
 
-  // console.log('downloading new products...')
-  // console.log(products)
-  // console.log(categories)
-  // console.log(merchants)
+  const [sortMethod, setSortMethod] = useState('pop')
 
   return (
     <>
@@ -24,10 +23,10 @@ export default function Home({ products, categories, merchants }) {
         <Flex justifyContent='space-between' direction="row">
           <Flex direction="column" w="100%" mr={12}>
             <MerchantSectionList merchants={merchants}/>
-            <ProductSectionList products={products}/>
+            <ProductSectionList products={products} sortMethod={sortMethod}/>
           </Flex>
           <Flex direction="column" w='210px'>
-            <SortMenu />
+            <SortMenu setSortMethod={setSortMethod}/>
             <CategoryList categories={categories}/>
           </Flex>
         </Flex>

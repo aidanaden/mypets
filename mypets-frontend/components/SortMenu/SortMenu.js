@@ -3,7 +3,7 @@ import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 import { useState } from "react"
 
-function SortMenu() {
+function SortMenu({ setSortMethod }) {
 
     const [sortBtnText, setSortBtnText] = useState("Sort by Price")
 
@@ -13,6 +13,17 @@ function SortMenu() {
         'Most popular'
     ]
 
+    const sortMap = {
+        'Highest price': 'desc',
+        'Lowest price': 'asc',
+        'Most popular': 'pop'
+    }
+
+    const updateSort = (sortType) => {
+        setSortBtnText(sortType)
+        setSortMethod(sortMap[sortType])
+    }
+
     return (
         <Menu>
             <MenuButton px={4} py={6} as={Button} rightIcon={<ChevronDownIcon />} borderWidth={4} borderColor="mypets.100" bgColor="white">
@@ -21,7 +32,7 @@ function SortMenu() {
             <MenuList boxShadow="md">
                 {sortTypes.map((sortType, i) => (
                     <MenuItem key={i} onClick={() => (
-                        setSortBtnText(sortType)
+                        updateSort(sortType)
                     )}>{sortType}</MenuItem>
                 ))}
             </MenuList>

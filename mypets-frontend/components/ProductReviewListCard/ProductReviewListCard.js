@@ -3,6 +3,11 @@ import { Box, HStack, Text } from '@chakra-ui/react'
 import Rating from '../Rating/Rating'
 import { formatDistance } from 'date-fns'
 
+function distanceFromToday(str_date) {
+    const review_date = new Date(str_date)
+    return formatDistance(review_date, new Date(), { addSuffix: true })
+}   
+
 function ProductReviewListCard({ review }) {
 
     const review_date = new Date(review.date_created)

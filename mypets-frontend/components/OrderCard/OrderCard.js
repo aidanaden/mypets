@@ -1,15 +1,14 @@
-import React from 'react'
+import lodash from 'lodash'
 import { Box, Flex, VStack, HStack, Badge, Text } from '@chakra-ui/react'
 import OrderProductCard from '../OrderProductCard/OrderProductCard'
 import OrderDeliveryStatusBar from '../OrderDeliveryStatusBar/OrderDeliveryStatusBar'
 import OrderPriceBreakdownList from '../OrderPriceBreakdownList/OrderPriceBreakdownList'
 
-function OrderCard() {
+function OrderCard({ order, loading }) {
 
-    const products = [
-        'object1',
-        'object2'
-    ]
+    const groupedProducts = lodash.groupBy(order.products, 'name')
+    const productNames = Object.keys(lodash.groupBy(order.products, 'name'))
+    const totalPrice = order.total_price
 
     return (
         <Flex 
@@ -22,14 +21,14 @@ function OrderCard() {
             boxShadow='sm' 
             borderWidth='1px' 
         >
-            <VStack py={8} px={8} spacing={8}>
-                <OrderProductCard />
-                <OrderProductCard />
-                <OrderProductCard />
-            </VStack>
+            <Flex direction='column' py={8} px={8}>
+                {order.products.map((product, i) => (
+                    <OrderProductCard key={i} product={product} quantity={2} />
+                ))}
+            </Flex>
             <Box p={12} flex='1'>
-                <OrderDeliveryStatusBar />
-                <OrderPriceBreakdownList />
+                <OrderDeliveryStatusBar orderDate={order.order_date} status={order.status}/>
+                <OrderPriceBreakdownList groupedProducts={groupedProducts} productNames={productNames} totalPrice={totalPrice}/>
             </Box>
         </Flex>
     )

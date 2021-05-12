@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { 
     Box, 
     HStack, 
@@ -13,16 +13,23 @@ import {
     Tbody 
 } from '@chakra-ui/react'
 import NextImage from 'next/image'
+import useSWR from 'swr'
 import OrderProductReviewBtn from '../OrderProductReviewBtn/OrderProductReviewBtn'
+import { API_MERCHANTS_URL, imageToUrl } from '../../utils/urls'
 
-function OrderProductCard({ orderProduct }) {
+function OrderProductCard({ product, quantity }) {
+
+    const fetcher = url => fetch(url).then(res => res.json())
+    const { data, err } = useSWR(`${API_MERCHANTS_URL}${product.merchant}`, fetcher)
+
     return (
-        <Box>
+        <Box w='450px' mb={8}>
             <HStack mb={4}>
-                <NextImage src='/sierra-mountain-dry-canine-recipe.png' height='150' width='150'/>
+                <NextImage src={`${imageToUrl(product.image)}`} height='150' width='150'/>
                 <Box>
-                    <Text fontWeight='semibold'>ROASTED LAMB & GRAIN-FREE</Text>
-                    <Badge colorScheme='blackAlpha'>Macho Pawz</Badge>
+                    <Text fontWeight='semibold'>{product.name}</Text>
+                    { (data) ? (<Badge colorScheme='blackAlpha'>{data.name}</Badge>) : 
+                    (<Badge colorScheme='blackAlpha' w={24}/>)}
                 </Box>
             </HStack>
             <Table variant='unstyled' size='sm'>
@@ -35,19 +42,9 @@ function OrderProductCard({ orderProduct }) {
                 </Thead>
                 <Tbody>
                     <Tr fontWeight='semibold' textColor='gray.500'>
-                        <Th textAlign='left' fontSize='sm'>0.80KG</Th>
-                        <Th textAlign='right' fontSize='sm'>SG$4.99</Th>
-                        <Th textAlign='right' fontSize='sm'>14</Th>
-                    </Tr>
-                    <Tr fontWeight='semibold' textColor='gray.500'>
-                        <Th textAlign='left' fontSize='sm'>1.20KG</Th>
-                        <Th textAlign='right' fontSize='sm'>SG$6.99</Th>
-                        <Th textAlign='right' fontSize='sm'>6</Th>
-                    </Tr>
-                    <Tr fontWeight='semibold' textColor='gray.500'>
-                        <Th textAlign='left' fontSize='sm'>1.50KG</Th>
-                        <Th textAlign='right' fontSize='sm'>SG$9.99</Th>
-                        <Th textAlign='right' fontSize='sm'>17</Th>
+                        <Th textAlign='left' fontSize='sm'>{product.weight.toFixed(2)}KG</Th>
+                        <Th textAlign='right' fontSize='sm'>{product.price.toFixed(2)}</Th>
+                        <Th textAlign='right' fontSize='sm'>{quantity}</Th>
                     </Tr>
                 </Tbody>
             </Table>

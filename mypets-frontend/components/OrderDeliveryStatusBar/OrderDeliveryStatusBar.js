@@ -1,10 +1,12 @@
 import React from 'react'
 import { Box, Text } from '@chakra-ui/react'
+import { stringToDate } from '../../utils/urls'
 
-function OrderDeliveryStatusBar({ orderDate, deliveryDate }) {
+function OrderDeliveryStatusBar({ orderDate, status }) {
+
     return (
         <Box>
-            <Text textAlign='center' mb={4} fontSize='sm'>Order date: <b>24 FEB 2021</b></Text>
+            <Text textAlign='center' mb={4} fontSize='sm'>Order date: <b>{stringToDate(orderDate)}</b></Text>
             <Box 
                 p={6} 
                 mb={6} 
@@ -17,10 +19,9 @@ function OrderDeliveryStatusBar({ orderDate, deliveryDate }) {
                 fontWeight='semibold'
                 fontSize='xl'
             >   
-                Order is on track to be delivered by the end of today!
+                Order status: {status}!
             </Box>
         </Box>
-        
     )
 }
 

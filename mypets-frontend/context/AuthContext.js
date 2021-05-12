@@ -1,29 +1,84 @@
 import { createContext, useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
-import { magic } from './magic'
-import { MAGIC_PUBLIC_KEY } from '../utils/urls'
+
+import { API_URL } from '../utils/urls'
 
 const AuthContext = createContext()
+
+export const callAPI = async (path, method, body) => {
+        
+    console.log('fetching...')
+
+    const response = await fetch(`${API_URL}${path}`, {
+        method,
+        headers: {
+            "content-type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(body)
+    })
+
+    const data = await response.json()
+    return data
+}
 
 export const AuthProvider = (props) => {
 
     const [user, setUser] = useState('')
     const router = useRouter()
-
-    console.log(MAGIC_PUBLIC_KEY)
     
     /**
-     * Adds email to user
-     * @param  {string} email
+     * Login with email & password
+     * @param {string} email
+     * @param {string} password 
      */
-    const loginUser = async (email) => {
+    const loginUser = async ({ email, password }) => {
 
         try {
-            await magic.auth.loginWithMagicLink({ email })
-            setUser({ email })
-            router.push('/')
+            const response = await callAPI('/auth/local', 'POST', {
+                identifier: email,
+                password: password
+            })
+
+            if (!response.user) {
+                console.error("Login failed. Please try again.")
+            } else {
+                console.log('successfully logged in ', response.user)
+                setUser(response.user)
+            }
+
+        } catch (error) {
+            console.error(error)
+        }  
+    }
+
+    /**
+     * Login user via 3rd party provider
+     * @param {any} access_token obtained by provider to make authorized requests to get user info from provider (username, email, etc)
+     * @param {any} provider name of provider (facebook, google, etc)
+     */
+    const loginUserProvider = async (access_token, provider) => {
+
+        console.log(access_token)
+        console.log(provider)
+
+        try {
+            const response = await fetch(`${API_URL}/auth/${provider}/callback?access_token=${access_token}`, {
+                headers: {
+                    "content-type": "application/json",
+                },
+                credentials: "include"
+            })
+            const data = await response.json()
+
+            if(!data.user) {
+                console.error('Login failed. Please try again.')
+            } else {
+                console.log('Successfully logged in ', data.user)
+                setUser(data.user)
+            }
         } catch (err) {
-            setUser(null)
+            console.error(err)
         }
     }
 
@@ -32,32 +87,14 @@ export const AuthProvider = (props) => {
      */
     const logoutUser = async () => {
 
-        try {
-            await magic.user.logout()
-            setUser(null)
-            router.push('/')
-        } catch (err) {
-            console.error(err)
-        }
     }
 
     const checkUserLoggedIn = async () => {
-        try {
-
-            console.log('checking if user is logged in')
-
-            const isLoggedIn = await magic.user.isLoggedIn()
-
-            console.log(isLoggedIn)
-
-            if (isLoggedIn) {
-                const { email } = await magic.user.getMetadata()
-                console.log(`user is logged in with ${email}`)
-                setUser({ email })
-            }
-        } catch (err) {
-            console.log('error')
-            console.error(err)
+        const user = await callAPI('/users/me', 'GET')
+        if (user.id) {
+            setUser(user)
+        } else {
+            setUser(null)
         }
     }
 
@@ -66,7 +103,7 @@ export const AuthProvider = (props) => {
     }, [])
 
     return (
-        <AuthContext.Provider value={{ user, loginUser, logoutUser }}>
+        <AuthContext.Provider value={{ user, loginUser, logoutUser, loginUserProvider }}>
             {props.children}
         </AuthContext.Provider>
     )

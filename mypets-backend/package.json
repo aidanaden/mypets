@@ -9,20 +9,32 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
+    "@buffetjs/core": "^3.3.5",
+    "@buffetjs/hooks": "^3.3.5",
+    "@buffetjs/styles": "^3.3.5",
+    "install": "^0.13.0",
     "knex": "0.21.18",
+    "lodash": "^4.17.21",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-router-dom": "^5.2.0",
     "sqlite3": "5.0.0",
     "strapi": "3.6.1",
     "strapi-admin": "3.6.1",
     "strapi-connector-bookshelf": "3.6.1",
+    "strapi-helper-plugin": "^3.6.1",
     "strapi-plugin-content-manager": "3.6.1",
     "strapi-plugin-content-type-builder": "3.6.1",
     "strapi-plugin-email": "3.6.1",
     "strapi-plugin-i18n": "3.6.1",
     "strapi-plugin-upload": "3.6.1",
     "strapi-plugin-users-permissions": "3.6.1",
-    "strapi-utils": "3.6.1"
+    "strapi-utils": "3.6.1",
+    "stripe": "^8.148.0",
+    "styled-components": "^5.3.0",
+    "yup": "^0.27.0"
   },
   "author": {
     "name": "A Strapi developer"

@@ -57,7 +57,7 @@ export default function Navbar() {
 
     return (
         <>
-            <Flex bg={useColorModeValue('white.100', 'gray.900')} px={4} py={4} justifyContent={'center'} borderBottomWidth="1px">
+            <Flex bg={useColorModeValue('white.100', 'white.100')} px={4} py={4} justifyContent={'center'} borderBottomWidth="1px">
                 <Flex h={20} alignItems={'center'} justifyContent={'space-between'} w="1200px" px={4}>
                     <IconButton
                         size={'md'}

@@ -19,8 +19,8 @@
       "type": "decimal"
     },
     "product": {
-      "model": "product",
-      "via": "reviews"
+      "via": "reviews",
+      "model": "product"
     },
     "user": {
       "type": "string"

@@ -14,16 +14,6 @@ import NextLink from 'next/link'
 import Rating from '../Rating/Rating'
 import { imageToUrl } from '../../utils/urls'
 
-const data = {
-  imageURL:
-    'https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=4600&q=80',
-  name: 'Wayfarer Classic',
-  price: 4.5,
-  rating: 4.2,
-  numReviews: 34,
-  merchant: 'Merchant1'
-};
-
 function ProductListCard({ product }) {
   return (
     
@@ -38,7 +28,7 @@ function ProductListCard({ product }) {
           >
             <Flex p={0} w="full" alignItems="center" justifyContent="center">
               <Box
-                bg={useColorModeValue('white', 'gray.800')}
+                bg={useColorModeValue('white', 'white')}
                 maxW="sm"
                 borderWidth="1px"
                 rounded="lg"
@@ -75,7 +65,7 @@ function ProductListCard({ product }) {
 
                   <Flex justifyContent="space-between" alignContent="center">
                     <Rating rating={product.rating} numReviews={0} />
-                    <Box fontSize="md" color={useColorModeValue('gray.800', 'white')}>
+                    <Box fontSize="md" color={useColorModeValue('gray.800', 'gray.800')}>
                       <Box as="span" color={'gray.600'} fontSize="sm">
                         $
                       </Box>

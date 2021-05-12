@@ -23,14 +23,14 @@ function ProductDetailSection({ product }) {
     }
 
     const minusQuantity = () => {
-        setQuantity(quantity <= 0 ? 0 : quantity - 1)
+        setQuantity(quantity <= 1 ? 1 : quantity - 1)
     }
 
     const price = (product.price * quantity).toFixed(2)
 
     return (
         <>
-            <HStack justifyContent="space-evenly">
+            <HStack justifyContent="space-evenly" p={4}>
                 <NextImage src={`${imageToUrl(product.image)}`} width='500' height='500'/>
                 <Flex direction="column" w="360px" h="400px">
                     <Heading as="h2" fontSize="4xl">
@@ -47,7 +47,7 @@ function ProductDetailSection({ product }) {
                         </Text>
                         <ProductQuantityPicker addQuantity={addQuantity} minusQuantity={minusQuantity} quantity={quantity} />
                     </HStack>
-                    <MypetsBtn btnText='Add to cart' leftIcon={<FaCartPlus />} w='100%' mx={0} mt={6}/>
+                    <MypetsBtn btnText='Add to cart' leftIcon={<FaCartPlus />} w='100%' mx={0} mt="auto"/>
                 </Flex>
             </HStack>
         </>

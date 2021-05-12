@@ -16,9 +16,12 @@ import {
     Box
 } from '@chakra-ui/react'
 import { Formik, Form, Field } from 'formik'
-import * as Yup from 'yup'
+const Yup = require('yup')
+require('yup-password')(Yup)
+
 import AuthContext from '../../context/AuthContext'
 import EmailInputGroup from '../EmailInputGroup/EmailInputGroup'
+import PasswordInputGroup from '../PasswordInputGroup/PasswordInputGroup'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import NameInputGroup from '../NameInputGroup/NameInputGroup'
 import TelInputGroup from '../TelInputGroup/TelInputGroup'
@@ -34,20 +37,11 @@ function SignupModalBtn() {
     // location in SG (Bedok, Tampines, Pasir ris, Kembangan, Chai Chee, Marine Parade)
 
     const locations = ['Bedok', 'Tampines', 'Pasir ris', 'Kembangan', 'Chai Chee', 'Marine Parade']
-
-    const [email, setEmail] = useState('')
-    const [name, setName] = useState('')
-    const [tel, setTel] = useState('')
-    const [dob, setDob] = useState(null)
-    const [location, setLocation] = useState('')
+    const inLocations = loc => locations.includes(loc)
+    const locationHelperText = "We're only delivering to select areas of SG for now 😢"
 
     const { isOpen, onOpen, onClose } = useDisclosure()
-
     const { loginUser } = useContext(AuthContext)
-
-    function inLocations(loc) {
-        return locations.includes(loc)
-    }
 
     const handleSubmit = (values, actions) => {
         setTimeout(() => {
@@ -55,9 +49,6 @@ function SignupModalBtn() {
             actions.setSubmitting(false)
         }, 1000)
     }
-
-    
-    const checkIfEmpty = value => nonEmptyRegex.test(value)
 
     const telRegex = /^[0-9]\d{7}$/
     const dobRegex = /(^(((0[1-9]|1[0-9]|2[0-8])[\/](0[1-9]|1[012]))|((29|30|31)[\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])\d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)$/
@@ -68,7 +59,13 @@ function SignupModalBtn() {
         email: Yup.string().email('Invalid email').required('Your email is required'),
         tel: Yup.string().matches(telRegex, 'Phone number is not valid'),
         dob: Yup.string().matches(dobRegex, 'Birthday is not valid'),
-        location: Yup.string().test('locationSG', 'We currently only deliver to customers living in select areas of SG', inLocations)
+        location: Yup.string().test('locationSG', 'We currently only deliver to customers living in select areas of SG', inLocations),
+        password: Yup.string()
+                    .password()
+                    .required('Your password is required')
+                    .min(8, 'Password must contain at least 8 characters')
+                    .minNumbers(1, 'Password must contain at least 1 digit')
+                    .minSymbols(1, 'Password must contain at least 1 symbol')
     })
 
     return (
@@ -85,7 +82,7 @@ function SignupModalBtn() {
                     <ModalCloseButton />
                     <ModalBody mb={2}> 
                         <Formik
-                            initialValues={{ name: '', email: '', tel: '', dob: null, location: '' }}
+                            initialValues={{ name: '', email: '', password: '', tel: '', dob: null, location: '' }}
                             onSubmit={handleSubmit}
                             validationSchema={signupSchema}
                         >
@@ -114,6 +111,17 @@ function SignupModalBtn() {
                                         </Field>
                                     </Box>
                                     <Box mb={4}>
+                                        <Field name='password' >
+                                            {({ field, form }) => (
+                                                <FormControl isInvalid={form.errors.password && form.touched.password}>
+                                                    <FormLabel>Password</FormLabel>
+                                                    <PasswordInputGroup field={field} valid={!form.errors.password && form.touched.password}/>
+                                                    <FormErrorMessage>{form.errors.password}</FormErrorMessage>
+                                                </FormControl>
+                                            )}
+                                        </Field>
+                                    </Box>
+                                    <Box mb={4}>
                                         <Field name='tel' >
                                             {({ field, form }) => (
                                                 <FormControl isInvalid={form.errors.tel && form.touched.tel}>
@@ -131,7 +139,7 @@ function SignupModalBtn() {
                                                     <FormLabel>Location</FormLabel>
                                                     <LocationSelect field={field} values={locations} />
                                                     <FormErrorMessage>{form.errors.location}</FormErrorMessage>
-                                                    <FormHelperText fontSize='sm'>We're only delivering to select areas of SG for now!</FormHelperText>
+                                                <FormHelperText fontSize='sm'>{locationHelperText}</FormHelperText>
                                                 </FormControl>
                                             )}
                                         </Field>
