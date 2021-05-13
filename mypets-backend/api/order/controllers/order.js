@@ -17,17 +17,26 @@ const fromDecimalToInt = (number) => parseInt(number * 100)
 module.exports = {
 
     /**
-     * Only returns orders that belongs to the logged in magic user
+     * Only returns orders that belongs to the logged in user
      * @param {any} ctx 
      */
     async find(ctx) {
-        const { user } = ctx.state // get magic user
+        const { user } = ctx.state // get user
 
         let entities
         if (ctx.query._q) {
             entities = await strapi.services.order.search({...ctx.query, user: user.id})
         } else {
             entities = await strapi.services.order.find({...ctx.query, user: user.id})
+        }
+
+        for (let i=0; i < entities.length; i++) {
+
+            let entity = entities[i]
+            for (let j=0; j < entity.order_products.length; j++) {
+                entity.order_products[j].product = await strapi.services.product.findOne({ id: entity.order_products[j].product })
+                console.log('order object product value updated to: ', entity.order_products[j].product)
+            }
         }
 
         return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.order }))
@@ -42,6 +51,11 @@ module.exports = {
         const { user } = ctx.state 
 
         const entity = await strapi.services.order.findOne({ id, user: user.id })
+
+        for (let i=0; i < entity.order_products.length; i++) {
+            entity.order_products[i].product = await strapi.services.product.findOne({ id: entity.order_products[i].product })
+        }
+
         return sanitizeEntity(entity, { model: strapi.models.order })
     },
 
@@ -51,10 +65,10 @@ module.exports = {
      */
 
     async create(ctx) {
-        const { product } = ctx.request.body
+        const { order_products } = ctx.request.body
 
-        if (!product) {
-            return ctx.throw(400, 'Please specify a product.')
+        if (!order_products) {
+            return ctx.throw(400, 'Please specify order products.')
         }
 
         const realProduct = await strapi.services.product.findOne({ id: product.id })

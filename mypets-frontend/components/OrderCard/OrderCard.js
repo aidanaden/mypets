@@ -1,14 +1,26 @@
 import lodash from 'lodash'
+import { useSWR } from 'swr'
 import { Box, Flex, VStack, HStack, Badge, Text } from '@chakra-ui/react'
+
+import { API_PRODUCTS_URL } from '../../utils/urls'
 import OrderProductCard from '../OrderProductCard/OrderProductCard'
 import OrderDeliveryStatusBar from '../OrderDeliveryStatusBar/OrderDeliveryStatusBar'
 import OrderPriceBreakdownList from '../OrderPriceBreakdownList/OrderPriceBreakdownList'
 
 function OrderCard({ order, loading }) {
 
-    const groupedProducts = lodash.groupBy(order.products, 'name')
-    const productNames = Object.keys(lodash.groupBy(order.products, 'name'))
+    const products = order.order_products.map(orderProduct => orderProduct.product)
+
+    const groupedOrderProducts = lodash.groupBy(order.order_products, 'product.name')
+    const productNames = Object.keys(groupedOrderProducts)
     const totalPrice = order.total_price
+
+
+    console.log('List of order products: ', order.order_products)
+    console.log('List of product ID + name map: ', productNames)
+    console.log('List of grouped order products: ', groupedOrderProducts)
+    console.log('List of products in order: ', products)
+
 
     return (
         <Flex 
@@ -22,13 +34,13 @@ function OrderCard({ order, loading }) {
             borderWidth='1px' 
         >
             <Flex direction='column' py={8} px={8}>
-                {order.products.map((product, i) => (
-                    <OrderProductCard key={i} product={product} quantity={2} />
+                {order.order_products.map((orderProduct, i) => (
+                    <OrderProductCard key={i} product={orderProduct.product} quantity={orderProduct.quantity} />
                 ))}
             </Flex>
             <Box p={12} flex='1'>
                 <OrderDeliveryStatusBar orderDate={order.order_date} status={order.status}/>
-                <OrderPriceBreakdownList groupedProducts={groupedProducts} productNames={productNames} totalPrice={totalPrice}/>
+                <OrderPriceBreakdownList groupedOrderProducts={groupedOrderProducts} productNames={productNames} totalPrice={totalPrice}/>
             </Box>
         </Flex>
     )

@@ -13,6 +13,7 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
     "@magic-ext/oauth": "^0.7.0",
+    "@stripe/stripe-js": "^1.14.0",
     "date-fns": "^2.21.2",
     "formik": "^2.2.6",
     "framer-motion": "^4.1.11",

@@ -40,17 +40,6 @@ function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
                         <Td textAlign='right' fontWeight='bold'>{prices[productName].toFixed(2)}</Td>
                     </Tr>
                 ))}
-                
-                {/* <Tr>
-                    <Td fontWeight='bold'>Roasted Lamb & Grain-Free</Td>
-                    <Td textAlign='right'fontWeight='bold'>14</Td>
-                    <Td textAlign='right' fontWeight='bold'>SG$37.40</Td>
-                </Tr>
-                <Tr>
-                    <Td fontWeight='bold'>Roasted Lamb & Grain-Free</Td>
-                    <Td textAlign='right' fontWeight='bold'>14</Td>
-                    <Td textAlign='right' fontWeight='bold'>SG$37.40</Td>
-                </Tr> */}
                 <Tr>
                     <Td fontWeight='bold'></Td>
                     <Td textAlign='right' fontWeight='bold'></Td>

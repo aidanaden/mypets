@@ -1,6 +1,7 @@
 import { formatDistance, format } from 'date-fns'
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'
 export const NEXTAUTH_URL = 'http://localhost:3000'
+export const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PK || 'pk_test_51IoDymJNGU0rJw40a155i0tWv8wysc7pgzvDCXYlJ7ykwtE3gZF4OKlHfBJPMwINLfqnfAqxqYzZNWCYn0gWassg00ZDcY5wzo'
 // export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://strange-impala-53.loca.lt'
 // export const API_URL = process.env.NEXTP_PUBLIC_API_URL || 'https://ad1672877683.ngrok.io'
 // export const MAGIC_PUBLIC_KEY = process.env.NEXT_PUBLIC_MAGIC_PUBLIC_KEY || 'pk_test_A7D3E6B2B6FEE248'

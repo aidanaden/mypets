@@ -27,9 +27,6 @@
     "checkout_session": {
       "type": "string"
     },
-    "products": {
-      "collection": "product"
-    },
     "user": {
       "via": "orders",
       "plugin": "users-permissions",
@@ -40,6 +37,10 @@
     },
     "delivery_date": {
       "type": "date"
+    },
+    "order_products": {
+      "collection": "order-product",
+      "via": "order"
     }
   }
 }

@@ -16,7 +16,7 @@ const getOrders = (user) => {
             if (user) {
                 setLoading(true)
                 const data = await callAPI('/orders', 'GET')
-                console.log(data)
+                console.log('Order data: ', data)
                 setOrders(data)
                 setLoading(false)
             }

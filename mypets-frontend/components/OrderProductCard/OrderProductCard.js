@@ -20,7 +20,7 @@ import { API_MERCHANTS_URL, imageToUrl } from '../../utils/urls'
 function OrderProductCard({ product, quantity }) {
 
     const fetcher = url => fetch(url).then(res => res.json())
-    const { data, err } = useSWR(`${API_MERCHANTS_URL}${product.merchant}`, fetcher)
+    const { data, err } = useSWR(`${API_MERCHANTS_URL}${product.merchant.id}`, fetcher)
 
     return (
         <Box w='450px' mb={8}>

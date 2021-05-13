@@ -67,9 +67,6 @@
     "reviews": {
       "via": "product",
       "collection": "review"
-    },
-    "quantity": {
-      "type": "integer"
     }
   }
 }
