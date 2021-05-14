@@ -6,7 +6,7 @@ function ProductReviewSection({ reviews }) {
 
     return (
         <Box px={6} py={8}>
-            <Heading as="h3" fontSize="2xl" textAlign="center" mb={6}>Ratings + Reviews</Heading>
+            <Heading as="h3" fontSize="2xl" textAlign="center" mb={6}>Ratings & Reviews</Heading>
             <VStack spacing={4}>
                 {reviews.map((review, i) => (
                     <ProductReviewListCard review={review} key={i}/>    

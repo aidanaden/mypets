@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Navbar from "../../../components/Navbar/Navbar"
 import { Container, Box, Flex, Grid, GridItem, HStack } from "@chakra-ui/react"
 import ProductDetailSection from "../../../components/ProductDetailSection/ProductDetailSection"
@@ -10,40 +11,40 @@ function Product({ product }) {
 
     return (
         <>
-        <Navbar />
-        <Container maxW="1200px" mb={6}>
-            <Grid 
-                templateRows="min-content" 
-                templateColumns="repeat(3, 1fr)" 
-                gap={4}
-                mt={6}
-            >
-                <GridItem
-                    colSpan={3} 
-                    shadow="sm" 
-                    borderWidth="1px" 
-                    rounded="lg"
+            <Navbar />
+            <Container maxW="1200px" mb={6}>
+                <Grid 
+                    templateRows="min-content" 
+                    templateColumns="repeat(3, 1fr)" 
+                    gap={4}
+                    mt={6}
                 >
-                    <ProductDetailSection product={product}/>
-                </GridItem>
-                <GridItem
-                    colSpan={2} 
-                    shadow="sm" 
-                    borderWidth="1px" 
-                    rounded="lg" 
-                >
-                    <ProductDescriptionSection product={product} />
-                </GridItem>
-                <GridItem
-                    colSpan={1} 
-                    shadow="sm" 
-                    borderWidth="1px" 
-                    rounded="lg"
-                >
-                    <ProductReviewSection reviews={product.reviews}/>
-                </GridItem>
-            </Grid>
-        </Container>
+                    <GridItem
+                        colSpan={3} 
+                        shadow="sm" 
+                        borderWidth="1px" 
+                        rounded="lg"
+                    >
+                        <ProductDetailSection product={product}/>
+                    </GridItem>
+                    <GridItem
+                        colSpan={2} 
+                        shadow="sm" 
+                        borderWidth="1px" 
+                        rounded="lg" 
+                    >
+                        <ProductDescriptionSection product={product} />
+                    </GridItem>
+                    <GridItem
+                        colSpan={1} 
+                        shadow="sm" 
+                        borderWidth="1px" 
+                        rounded="lg"
+                    >
+                        <ProductReviewSection reviews={product.reviews}/>
+                    </GridItem>
+                </Grid>
+            </Container>
         </>
     )
 }

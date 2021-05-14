@@ -34,12 +34,12 @@ function Orders() {
 
     return (
         <>
-        <Navbar />
-        <Container maxW='1200px' mb={6}>
-            {orders.map((order, i) => (
-                <OrderCard key={i} order={order} loading={loading}/>
-            ))}
-        </Container>
+            <Navbar />
+            <Container maxW='1200px' mb={6}>
+                {orders.map((order, i) => (
+                    <OrderCard key={i} order={order} loading={loading}/>
+                ))}
+            </Container>
         </>
     )
 }

@@ -4,7 +4,7 @@ import { Heading, HStack, Flex, Stack, Badge, Select, Box, Text, Button, Image }
 import NextImage from 'next/image'
 import ProductQuantityPicker from "../ProductQuantityPicker/ProductQuantityPicker"
 import { FaCartPlus } from 'react-icons/fa'
-import Rating from '../Rating/Rating'
+import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import ProductDetailVariantSelect from '../ProductDetailVariantSelect/ProductDetailVariantSelect'
 import ProductDetailMerchantBadge from '../ProductDetailMerchantBage/ProductDetailMerchantBadge'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
@@ -32,13 +32,13 @@ function ProductDetailSection({ product }) {
         <>
             <HStack justifyContent="space-evenly" p={4}>
                 <NextImage src={`${imageToUrl(product.image)}`} width='500' height='500'/>
-                <Flex direction="column" w="360px" h="400px">
+                <Flex direction="column" w="400px" h="400px">
                     <Heading as="h2" fontSize="4xl">
                         {product.name}
-                    </Heading>
+                    </Heading>  
                     <HStack spacing={3} mt={2}>
                         <ProductDetailMerchantBadge merchant={product.merchant.name}/>
-                        <Rating rating={product.rating} numReviews={product.reviews.length}/>
+                        <RatingDisplay rating={product.rating} numReviews={product.reviews.length}/>
                     </HStack>
                     <ProductDetailVariantSelect options={variants}/>
                     <HStack mt={8} justifyContent="space-between">

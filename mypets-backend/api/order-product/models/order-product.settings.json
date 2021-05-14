@@ -21,6 +21,9 @@
     "order": {
       "via": "order_products",
       "model": "order"
+    },
+    "total_price": {
+      "type": "decimal"
     }
   }
 }

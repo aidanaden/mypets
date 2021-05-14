@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import NextImage from 'next/image'
 import useSWR from 'swr'
-import OrderProductReviewBtn from '../OrderProductReviewBtn/OrderProductReviewBtn'
+import OrderProductReviewModalBtn from '../OrderProductReviewModalBtn/OrderProductReviewModalBtn'
 import { API_MERCHANTS_URL, imageToUrl } from '../../utils/urls'
 
 function OrderProductCard({ product, quantity }) {
@@ -33,7 +33,7 @@ function OrderProductCard({ product, quantity }) {
                 </Box>
             </HStack>
             <Table variant='unstyled' size='sm'>
-                <Thead>
+                <Thead textColor='gray.400'>
                     <Tr fontStyle='italic'>
                         <Th textAlign='left'>Variant</Th>
                         <Th textAlign='right'>Price</Th>
@@ -41,14 +41,14 @@ function OrderProductCard({ product, quantity }) {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    <Tr fontWeight='semibold' textColor='gray.500'>
+                    <Tr fontWeight='semibold' textColor='black'>
                         <Th textAlign='left' fontSize='sm'>{product.weight.toFixed(2)}KG</Th>
                         <Th textAlign='right' fontSize='sm'>{product.price.toFixed(2)}</Th>
                         <Th textAlign='right' fontSize='sm'>{quantity}</Th>
                     </Tr>
                 </Tbody>
             </Table>
-            <OrderProductReviewBtn />
+            <OrderProductReviewModalBtn product={product} productName={product.name} />
         </Box>
     )
 }

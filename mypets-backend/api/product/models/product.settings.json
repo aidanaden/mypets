@@ -50,8 +50,8 @@
       "type": "richtext"
     },
     "merchant": {
-      "model": "merchant",
-      "via": "products"
+      "via": "products",
+      "model": "merchant"
     },
     "animal": {
       "model": "animal",

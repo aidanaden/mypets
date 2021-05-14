@@ -11,7 +11,7 @@ import {
   Link
 } from '@chakra-ui/react';
 import NextLink from 'next/link'
-import Rating from '../Rating/Rating'
+import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import { imageToUrl } from '../../utils/urls'
 
 function ProductListCard({ product }) {
@@ -64,7 +64,7 @@ function ProductListCard({ product }) {
                   </Flex>
 
                   <Flex justifyContent="space-between" alignContent="center">
-                    <Rating rating={product.rating} numReviews={0} />
+                    <RatingDisplay rating={product.rating} numReviews={0} />
                     <Box fontSize="md" color={useColorModeValue('gray.800', 'gray.800')}>
                       <Box as="span" color={'gray.600'} fontSize="sm">
                         $

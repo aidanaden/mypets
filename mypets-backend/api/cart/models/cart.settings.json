@@ -15,13 +15,13 @@
     "total_price": {
       "type": "decimal"
     },
-    "products": {
-      "collection": "product"
-    },
     "user": {
       "plugin": "users-permissions",
       "model": "user",
       "via": "cart"
+    },
+    "order_products": {
+      "collection": "order-product"
     }
   }
 }

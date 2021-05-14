@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, HStack, Text } from '@chakra-ui/react'
-import Rating from '../Rating/Rating'
+import { Box, Flex, Text } from '@chakra-ui/react'
+import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import { formatDistance } from 'date-fns'
 
 function distanceFromToday(str_date) {
@@ -14,16 +14,19 @@ function ProductReviewListCard({ review }) {
     const date_fns_review_date = formatDistance(review_date, new Date(), { addSuffix: true })
 
     return (
-        <Box rounded='lg' bgColor="gray.100" p={6}>
-            <Text>
+        <Box rounded='lg' bgColor="gray.100" p={5}>
+            <Text fontStyle="italic" fontSize="sm">
+                {review.user}
+            </Text>
+            <Text mt={4}>
                 {review.text}
             </Text>
-            <HStack mt={6} justifyContent="space-between">
-                <Rating rating={review.rating} numReviews={0}/>
+            <Flex direction='row' mt={6} justifyContent="space-between">
+                <RatingDisplay rating={review.rating} numReviews={0}/> 
                 <Text fontStyle="italic" fontSize="sm">
-                    {review.user}, {date_fns_review_date}
+                    {date_fns_review_date}
                 </Text>
-            </HStack>
+            </Flex>
         </Box>
     )
 }

@@ -39,6 +39,9 @@
     "products": {
       "via": "merchant",
       "collection": "product"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

@@ -1,7 +1,8 @@
-import React from 'react'
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 import { useState } from "react"
+import MypetsBtn from '../MypetsBtn/MypetsBtn'
+import MypetsMenuBtn from '../MypetsMenuBtn/MypetsMenuBtn'
 
 function SortMenu({ setSortMethod }) {
 
@@ -26,9 +27,7 @@ function SortMenu({ setSortMethod }) {
 
     return (
         <Menu>
-            <MenuButton px={4} py={6} as={Button} rightIcon={<ChevronDownIcon />} borderWidth={4} borderColor="mypets.100" bgColor="white">
-                {sortBtnText}
-            </MenuButton>
+            <MypetsMenuBtn menuBtnText={sortBtnText} />
             <MenuList boxShadow="md">
                 {sortTypes.map((sortType, i) => (
                     <MenuItem key={i} onClick={() => (
