@@ -10,28 +10,46 @@ import {
     Thead,
     Tr,
     Th,
-    Tbody 
+    Tbody,
+    Tooltip 
 } from '@chakra-ui/react'
 import NextImage from 'next/image'
+import NextLink from 'next/link'
 import useSWR from 'swr'
+
 import OrderProductReviewModalBtn from '../OrderProductReviewModalBtn/OrderProductReviewModalBtn'
 import { API_MERCHANTS_URL, imageToUrl } from '../../utils/urls'
 
-function OrderProductCard({ product, quantity }) {
+function OrderProductCard({ product, quantity, reviewed }) {
 
     const fetcher = url => fetch(url).then(res => res.json())
     const { data, err } = useSWR(`${API_MERCHANTS_URL}${product.merchant.id}`, fetcher)
 
     return (
         <Box w='450px' mb={8}>
-            <HStack mb={4}>
-                <NextImage src={`${imageToUrl(product.image)}`} height='150' width='150'/>
-                <Box>
-                    <Text fontWeight='semibold'>{product.name}</Text>
-                    { (data) ? (<Badge colorScheme='blackAlpha'>{data.name}</Badge>) : 
-                    (<Badge colorScheme='blackAlpha' w={24}/>)}
-                </Box>
-            </HStack>
+            <NextLink
+                href={`/products/${product.slug}`}
+                as={`/products/${product.slug}`}
+            >
+                <a>
+                    <Tooltip
+                        label={product.name}
+                        bg="white"
+                        placement={'top-start'}
+                        color={'gray.800'}
+                        fontSize="xs"
+                    >
+                        <HStack mb={4}>
+                            <NextImage src={`${imageToUrl(product.image)}`} height='150' width='150' />
+                            <Box>
+                                <Text fontWeight='semibold'>{product.name}</Text>
+                                {(data) ? (<Badge colorScheme='gray'>{data.name}</Badge>) :
+                                    (<Badge colorScheme='gray' w={24} />)}
+                            </Box>
+                        </HStack>
+                    </Tooltip>
+                </a>
+            </NextLink>
             <Table variant='unstyled' size='sm'>
                 <Thead textColor='gray.400'>
                     <Tr fontStyle='italic'>
@@ -48,7 +66,7 @@ function OrderProductCard({ product, quantity }) {
                     </Tr>
                 </Tbody>
             </Table>
-            <OrderProductReviewModalBtn product={product} productName={product.name} />
+            <OrderProductReviewModalBtn product={product} productName={product.name} reviewed={reviewed}/>
         </Box>
     )
 }

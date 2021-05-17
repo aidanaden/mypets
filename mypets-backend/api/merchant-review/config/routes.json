@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/merchant-reviews",
+      "handler": "merchant-review.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/merchant-reviews/count",
+      "handler": "merchant-review.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/merchant-reviews/:id",
+      "handler": "merchant-review.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/merchant-reviews",
+      "handler": "merchant-review.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/merchant-reviews/:id",
+      "handler": "merchant-review.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/merchant-reviews/:id",
+      "handler": "merchant-review.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

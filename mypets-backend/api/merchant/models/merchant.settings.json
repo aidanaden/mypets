@@ -42,6 +42,10 @@
     },
     "slug": {
       "type": "string"
+    },
+    "merchant_reviews": {
+      "via": "merchant",
+      "collection": "merchant-review"
     }
   }
 }

@@ -29,7 +29,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPric
 
     
 
-    console.log('total prices for each product type: ', prices)
+    // console.log('total prices for each product type: ', prices)
 
     return (
         <Table variant="unstyled" size='md'>

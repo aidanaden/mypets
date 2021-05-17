@@ -6,8 +6,6 @@ import NextLink from 'next/link'
 
 function MerchantCard({ merchant }) {
 
-    console.log(imageToUrl(merchant.display_image))
-
     return (
         <NextLink href='/'>
             <a>

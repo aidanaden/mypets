@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@chakra-ui/react'
 
-function MypetsBtn({ w, btnText, mt, onClick, isLoading, type, variant='solid' }, props) {
+function MypetsBtn({ w, btnText, mt, onClick, isLoading, type, variant='solid', isDisabled }, props) {
     return (
         <Button
             mt={mt}
@@ -22,6 +22,7 @@ function MypetsBtn({ w, btnText, mt, onClick, isLoading, type, variant='solid' }
             type={type}
             w={w}
             minHeight={10}
+            isDisabled={isDisabled}
             {...props}
         >
             {btnText}

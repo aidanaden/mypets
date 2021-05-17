@@ -16,10 +16,10 @@ function OrderCard({ order, loading }) {
     const totalPrice = order.total_price
 
 
-    console.log('List of order products: ', order.order_products)
-    console.log('List of product ID + name map: ', productNames)
-    console.log('List of grouped order products: ', groupedOrderProducts)
-    console.log('List of products in order: ', products)
+    // console.log('List of order products: ', order.order_products)
+    // console.log('List of product ID + name map: ', productNames)
+    // console.log('List of grouped order products: ', groupedOrderProducts)
+    // console.log('List of products in order: ', products)
 
 
     return (
@@ -35,7 +35,7 @@ function OrderCard({ order, loading }) {
         >
             <Flex direction='column' py={8} px={8}>
                 {order.order_products.map((orderProduct, i) => (
-                    <OrderProductCard key={i} product={orderProduct.product} quantity={orderProduct.quantity} />
+                    <OrderProductCard key={i} product={orderProduct.product} quantity={orderProduct.quantity} reviewed={orderProduct.reviewed}/>
                 ))}
             </Flex>
             <Box p={12} flex='1'>

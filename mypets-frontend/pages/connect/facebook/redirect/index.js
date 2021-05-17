@@ -7,8 +7,6 @@ function index() {
     const { loginUserProvider } = useContext(AuthContext)
     const router = useRouter()
 
-    console.log('router access token: ', router.query.access_token)
-
     useEffect(() => {
         loginUserProvider(router.query.access_token, 'facebook')
         router.push('/')

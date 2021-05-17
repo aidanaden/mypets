@@ -45,7 +45,7 @@ function SignupModalBtn() {
 
     const handleSubmit = (values, actions) => {
         setTimeout(() => {
-            console.log(values)
+            // console.log(values)
             actions.setSubmitting(false)
         }, 1000)
     }

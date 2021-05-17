@@ -24,6 +24,9 @@
     },
     "total_price": {
       "type": "decimal"
+    },
+    "reviewed": {
+      "type": "boolean"
     }
   }
 }

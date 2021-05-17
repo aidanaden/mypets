@@ -20,7 +20,7 @@ import { API_URL } from '../../utils/urls'
 import { callAPI }  from '../../context/AuthContext'
 import AuthContext from '../../context/AuthContext'
 
-function OrderProductReviewModalBtn({ product, productName }) {
+function OrderProductReviewModalBtn({ product, productName, reviewed }) {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [rating, setRating] = useState(0)
@@ -41,18 +41,26 @@ function OrderProductReviewModalBtn({ product, productName }) {
             user: user.username,
             product: product
         }
-        console.log('user submitting: ', user.username)
-        console.log('product being submitted: ', product)
-        console.log('body submitted in POST request: ', body)
+        // console.log('user submitting: ', user.username)
+        // console.log('product being submitted: ', product)
+        // console.log('body submitted in POST request: ', body)
         const response = await callAPI('/reviews', 'POST', body)
+
+        // update order product with reviewed set to true
+
         onClose()
-        console.log('submitted review, response: ', response)
+        // console.log('submitted review, response: ', response)
     }
+
+    console.log('reviewed status of order product ', productName, ' is ', reviewed)
 
     return (
         <>
             <Box textAlign='center' mt={6}>
-                <MypetsBtn onClick={onOpen} btnText='Write a review' variant='outline'/>
+                { reviewed ? 
+                    <MypetsBtn btnText='Review submitted' variant='outline' isDisabled={true}/>:   
+                    <MypetsBtn onClick={onOpen} btnText='Write a review' variant='outline'/>
+                }
             </Box>
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
