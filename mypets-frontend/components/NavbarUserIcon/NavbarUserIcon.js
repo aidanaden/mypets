@@ -1,13 +1,26 @@
 import { useContext } from 'react'
 import { useRouter } from 'next/router'
+import { 
+    Menu, 
+    MenuButton, 
+    MenuList, 
+    MenuDivider, 
+    MenuItem, 
+    Button, 
+    Avatar, 
+    useDisclosure 
+} from '@chakra-ui/react'
+
 import AuthContext from '../../context/AuthContext'
-import { Menu, MenuButton, MenuList, MenuDivider, MenuItem, Button, Avatar } from '@chakra-ui/react'
+import NavbarUserModalBtn from '../NavbarUserModalBtn/NavbarUserModalBtn'
+
 
 function NavbarUserIcon() {
 
     const { logoutUser } = useContext(AuthContext)
 
     const router = useRouter()
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     const handlePastOrders = () => {
         router.push('/orders')
@@ -29,6 +42,7 @@ function NavbarUserIcon() {
                 />
             </MenuButton>
             <MenuList>
+                <NavbarUserModalBtn />
                 <MenuItem onClick={handlePastOrders}>Past orders</MenuItem>
                 <MenuDivider />
                 <MenuItem onClick={logoutUser}>Log out</MenuItem>

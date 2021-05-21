@@ -8,36 +8,39 @@ import {
   Icon,
   chakra,
   Tooltip,
-  Link
+  LinkBox,
+  LinkOverlay
 } from '@chakra-ui/react';
 import NextLink from 'next/link'
+
+import MerchantBadge from '../MerchantBadge/MerchantBadge'
 import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import { imageToUrl } from '../../utils/urls'
 
 function ProductListCard({ product }) {
   return (
-    
-      <NextLink href={`/products/${product.slug}`} as={`/products/${product.slug}`}>
-        <a>
-          <Tooltip
+    <Tooltip
             label={product.name}
             bg="white"
             placement={'bottom-end'}
             color={'gray.800'}
             fontSize="md"
-          >
+    >
+      <LinkBox 
+        bg={useColorModeValue('white', 'white')}
+        maxW="sm"
+        borderWidth="1px"
+        rounded="lg"
+        shadow="sm"
+        transitionDuration="300ms"
+        _hover={{
+          shadow: "lg"
+        }}
+      >
+        <NextLink href={`/products/${product.slug}`} as={`/products/${product.slug}`} passHref>
+          <LinkOverlay>
             <Flex p={0} w="full" alignItems="center" justifyContent="center">
-              <Box
-                bg={useColorModeValue('white', 'white')}
-                maxW="sm"
-                borderWidth="1px"
-                rounded="lg"
-                shadow="sm"
-                transitionDuration="300ms"
-                _hover={{
-                  shadow: "lg"
-                }}
-              >
+              <Box>
 
                 <Image
                   src={imageToUrl(product.image)}
@@ -48,9 +51,7 @@ function ProductListCard({ product }) {
 
                 <Box p="3">
                   <Box d="flex" alignItems="baseline">
-                    <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="blackAlpha">
-                      {product.merchant.name}
-                    </Badge>
+                    <MerchantBadge merchantName={product.merchant.name} />
                   </Box>
                   <Flex mt="1" justifyContent="space-between" alignContent="center">
                     <Box
@@ -68,16 +69,19 @@ function ProductListCard({ product }) {
                     <Box fontSize="md" color={useColorModeValue('gray.800', 'gray.800')}>
                       <Box as="span" color={'gray.600'} fontSize="sm">
                         $
-                      </Box>
+                        </Box>
                       {product.price.toFixed(2)}
                     </Box>
                   </Flex>
                 </Box>
               </Box>
             </Flex>
-          </Tooltip>
-        </a>
-      </NextLink>
+          </LinkOverlay>
+        </NextLink>
+      </LinkBox>
+    </Tooltip>
+      
+
   );
 }
 

@@ -30,42 +30,32 @@ import LoginSocialBtnGroup from '../LoginSocialBtnGroup/LoginSocialBtnGroup'
 
 function SignupModalBtn() {
 
-    // name
-    // email
-    // phone number
-    // dob
-    // location in SG (Bedok, Tampines, Pasir ris, Kembangan, Chai Chee, Marine Parade)
-
-    const locations = ['Bedok', 'Tampines', 'Pasir ris', 'Kembangan', 'Chai Chee', 'Marine Parade']
-    const inLocations = loc => locations.includes(loc)
-    const locationHelperText = "We're only delivering to select areas of SG for now 😢"
-
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { loginUser } = useContext(AuthContext)
+    const { registerUser } = useContext(AuthContext)
 
     const handleSubmit = (values, actions) => {
-        setTimeout(() => {
-            // console.log(values)
-            actions.setSubmitting(false)
-        }, 1000)
+        try {
+            actions.setSubmitting(true)
+            const user = registerUser(values.email, values.password, profileDetails)
+            console.log('registered new user: ', user)
+        } catch (err) {
+            console.error(err)
+        }
+        onClose()
     }
 
-    const telRegex = /^[0-9]\d{7}$/
-    const dobRegex = /(^(((0[1-9]|1[0-9]|2[0-8])[\/](0[1-9]|1[012]))|((29|30|31)[\/](0[13578]|1[02]))|((29|30)[\/](0[4,6,9]|11)))[\/](19|[2-9][0-9])\d\d$)|(^29[\/]02[\/](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)$/
     const nonEmptyRegex = /(.|\s)*\S(.|\s)*/
 
     const signupSchema = Yup.object().shape({
-        name: Yup.string().required('Your name is required'),
         email: Yup.string().email('Invalid email').required('Your email is required'),
-        tel: Yup.string().matches(telRegex, 'Phone number is not valid'),
-        dob: Yup.string().matches(dobRegex, 'Birthday is not valid'),
-        location: Yup.string().test('locationSG', 'We currently only deliver to customers living in select areas of SG', inLocations),
         password: Yup.string()
                     .password()
                     .required('Your password is required')
                     .min(8, 'Password must contain at least 8 characters')
                     .minNumbers(1, 'Password must contain at least 1 digit')
-                    .minSymbols(1, 'Password must contain at least 1 symbol')
+                    .minSymbols(1, 'Password must contain at least 1 symbol'),
+        password2: Yup.string()
+                    .oneOf([Yup.ref('password'), null], 'Passwords must match'),
     })
 
     return (
@@ -82,23 +72,12 @@ function SignupModalBtn() {
                     <ModalCloseButton />
                     <ModalBody mb={2}> 
                         <Formik
-                            initialValues={{ name: '', email: '', password: '', tel: '', dob: null, location: '' }}
+                            initialValues={{ email: '', password: '', password2: '' }}
                             onSubmit={handleSubmit}
                             validationSchema={signupSchema}
                         >
                             {(props) => (
                                 <Form>
-                                    <Box mb={4}>
-                                        <Field name='name'>
-                                            {({ field, form }) => (
-                                                <FormControl isInvalid={form.errors.name && form.touched.name}>
-                                                    <FormLabel>Name</FormLabel>
-                                                    <NameInputGroup field={field} valid={!form.errors.name && form.touched.name}/>
-                                                    <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                                                </FormControl>
-                                            )}
-                                        </Field>
-                                    </Box>
                                     <Box mb={4}>
                                         <Field name='email' >
                                             {({ field, form }) => (
@@ -122,25 +101,17 @@ function SignupModalBtn() {
                                         </Field>
                                     </Box>
                                     <Box mb={4}>
-                                        <Field name='tel' >
+                                        <Field name='password2' >
                                             {({ field, form }) => (
-                                                <FormControl isInvalid={form.errors.tel && form.touched.tel}>
-                                                    <FormLabel>Phone number</FormLabel>
-                                                    <TelInputGroup field={field} valid={!form.errors.tel && form.touched.tel && nonEmptyRegex.test(field.value)}/>
-                                                    <FormErrorMessage>{form.errors.tel}</FormErrorMessage>
-                                                </FormControl>
-                                            )}
-                                        </Field>
-                                    </Box>
-                                    <Box mb={4}>
-                                        <Field name='location' >
-                                            {({ field, form }) => (
-                                                <FormControl isInvalid={form.errors.tel && form.touched.tel}>
-                                                    <FormLabel>Location</FormLabel>
-                                                    <LocationSelect field={field} values={locations} />
-                                                    <FormErrorMessage>{form.errors.location}</FormErrorMessage>
-                                                <FormHelperText fontSize='sm'>{locationHelperText}</FormHelperText>
-                                                </FormControl>
+                                            <FormControl isInvalid={form.errors.password2 && form.touched.password2}>
+                                                <FormLabel>Confirm password</FormLabel>
+                                                <PasswordInputGroup 
+                                                    field={field} 
+                                                    valid={!form.errors.password2 && form.touched.password2} 
+                                                    id='password2' 
+                                                />
+                                                <FormErrorMessage>{form.errors.password2}</FormErrorMessage>
+                                            </FormControl>
                                             )}
                                         </Field>
                                     </Box>

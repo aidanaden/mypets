@@ -1,5 +1,11 @@
 import { useState, useContext } from 'react'
-import { Heading, HStack, Flex, Stack, Badge, Select, Box, Text, Button, Image } from "@chakra-ui/react"
+import { 
+    Heading, 
+    HStack, 
+    Flex,
+    Text,
+    useToast
+} from "@chakra-ui/react"
 import NextImage from 'next/image'
 
 import ProductQuantityPicker from "../ProductQuantityPicker/ProductQuantityPicker"
@@ -18,6 +24,8 @@ function ProductDetailSection({ product }) {
     ]
 
     const [quantity, setQuantity] = useState(1)
+    const price = (product.price * quantity).toFixed(2)
+    const { user, updateCart } = useContext(AuthContext)
 
     const addQuantity = () => {
         setQuantity(quantity + 1)
@@ -27,9 +35,12 @@ function ProductDetailSection({ product }) {
         setQuantity(quantity <= 1 ? 1 : quantity - 1)
     }
 
-    const price = (product.price * quantity).toFixed(2)
-
-    const { user, updateCart } = useContext(AuthContext)
+    const succesToast = (text) => toast({
+        title: text,
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+    })
 
     const handleAddToCart = async () => {
 
@@ -43,6 +54,7 @@ function ProductDetailSection({ product }) {
         console.log('updating cart with: ', order_product)
         // update cart with new order product
         updateCart(order_product)
+        succesToast('Product added to cart')
     }
 
     return (

@@ -31,7 +31,7 @@ import AuthContext from '../../context/AuthContext'
 import LoginModalBtn from '../LoginModalBtn/LoginModalBtn';
 import SignupModalBtn from '../SignupModalBtn/SignupModalBtn';
 
-const Links = ['Past Orders'];
+const Links = ['Past Orders', 'User Profile'];
 
 const NavLink = ({ children }) => (
     <NextLink href='#' as='#' passHref>
@@ -52,7 +52,6 @@ const NavLink = ({ children }) => (
 export default function Navbar() {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
-
     const { user } = useContext(AuthContext)
 
     return (
@@ -80,13 +79,6 @@ export default function Navbar() {
                         {/* if logged in, show past orders, cart + user icon */}
                         { user ? ( 
                             <ButtonGroup alignItems='center' spacing={6}>
-                                {/* <NextChakraLink 
-                                    href={API_ORDERS_URL} 
-                                    as={API_ORDERS_URL} 
-                                    variant='link' 
-                                    textColor='yellow.400' 
-                                    children="Past orders" 
-                                /> */}
                                 <NavbarCartModalBtn />
                                 <NavbarUserIcon />
                             </ButtonGroup>     
@@ -103,8 +95,8 @@ export default function Navbar() {
                 {isOpen ? (
                     <Box pb={4}>
                         <Stack as={'nav'} spacing={4}>
-                            {Links.map((link) => (
-                                <NavLink key={link}>Log out</NavLink>
+                            {Links.map((link,i) => (
+                                <NavLink key={i}>{link}</NavLink>
                             ))}
                         </Stack>
                     </Box>

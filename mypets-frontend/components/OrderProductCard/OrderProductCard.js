@@ -17,6 +17,7 @@ import NextImage from 'next/image'
 import NextLink from 'next/link'
 import useSWR from 'swr'
 
+import MerchantBadge from '../MerchantBadge/MerchantBadge'
 import OrderProductReviewModalBtn from '../OrderProductReviewModalBtn/OrderProductReviewModalBtn'
 import { API_MERCHANTS_URL, imageToUrl } from '../../utils/urls'
 
@@ -43,15 +44,15 @@ function OrderProductCard({ product, quantity, reviewed }) {
                             <NextImage src={`${imageToUrl(product.image)}`} height='150' width='150' />
                             <Box>
                                 <Text fontWeight='semibold'>{product.name}</Text>
-                                {(data) ? (<Badge colorScheme='gray'>{data.name}</Badge>) :
-                                    (<Badge colorScheme='gray' w={24} />)}
+                                {(data) ? (<MerchantBadge merchantName={data.name} />) :
+                                    (<MerchantBadge w={24} />)}
                             </Box>
                         </HStack>
                     </Tooltip>
                 </a>
             </NextLink>
             <Table variant='unstyled' size='sm'>
-                <Thead textColor='gray.400'>
+                <Thead textColor='gray.600'>
                     <Tr fontStyle='italic'>
                         <Th textAlign='left'>Variant</Th>
                         <Th textAlign='right'>Price</Th>

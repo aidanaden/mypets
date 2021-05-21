@@ -7,7 +7,7 @@ import NextLink from 'next/link'
 function MerchantCard({ merchant }) {
 
     return (
-        <NextLink href='/'>
+        <NextLink href={`/merchants/${merchant.slug}`}>
             <a>
                 <Tooltip
                     label={merchant.name}

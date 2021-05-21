@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react'
 import { LockIcon, CheckIcon } from '@chakra-ui/icons'
 
-function PasswordInputGroup({ field, valid }) {
+function PasswordInputGroup({ field, valid, id }) {
     return (
         <>
             <InputGroup>
@@ -14,7 +14,7 @@ function PasswordInputGroup({ field, valid }) {
                     pointerEvents='none'
                     children={<LockIcon />}
                 />
-                <Input {...field} id='password' type='password' placeholder='Password' focusBorderColor='mypets.100' />
+                <Input {...field} id={id} type='password' placeholder='Password' focusBorderColor='mypets.100' />
                 <InputRightElement children={<CheckIcon color={valid ? 'green.400' : 'white' }/>} />
             </InputGroup>
         </>

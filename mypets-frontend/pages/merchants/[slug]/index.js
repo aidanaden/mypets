@@ -1,8 +1,10 @@
 import React from 'react'
-import { Container, Box, Flex, Grid, GridItem, HStack } from "@chakra-ui/react"
+import { Container, Box, Flex, Grid, GridItem, HStack, Img } from "@chakra-ui/react"
 
 import { API_CATEGORIES_URL, API_MERCHANTS_URL, API_PRODUCTS_URL } from '../../../utils/urls'
 import Navbar from "../../../components/Navbar/Navbar"
+import MerchantTitle from '../../../components/MerchantTitle/MerchantTitle'
+import MerchantProductReviewTab from '../../../components/MerchantProductReviewTab/MerchantProductReviewTab'
 
 
 function index({ merchant, categories }) {
@@ -17,6 +19,8 @@ function index({ merchant, categories }) {
                     merchantName={merchant.name} 
                     merchantRating={merchant.rating} 
                     merchantNumReviews={merchant.reviews}
+                    merchantEmail={merchant.contact_email}
+                    merchantContact={merchant.contact_number}
                 />
                 <MerchantProductReviewTab 
                     merchantProducts={merchant.products} 
@@ -43,7 +47,7 @@ export async function getStaticProps({ params: { slug } }) {
     // Return as props
     return {
         props: {
-            merchants: merchant[0],
+            merchant: merchant[0],
             categories: categories
         }
     }

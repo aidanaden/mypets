@@ -11,7 +11,7 @@ function TelInputGroup({ field, valid }) {
         <>
             <InputGroup>
                 <InputLeftAddon children='+65' />
-                <Input {...field} id='tel' type='tel' placeholder='Phone number' focusBorderColor='mypets.100' />
+                <Input {...field} id='phone_num' type='tel' placeholder='Phone number' focusBorderColor='mypets.100' />
                 <InputRightElement children={<CheckIcon color={valid ? 'green.400' : 'white' }/>} />
             </InputGroup>
         </>

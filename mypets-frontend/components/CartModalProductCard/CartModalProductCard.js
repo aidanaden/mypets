@@ -16,10 +16,11 @@ import {
     Tbody,
     Tooltip
 } from '@chakra-ui/react'
-import lodash from 'lodash'
+import lodash, { update } from 'lodash'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 
+import MerchantBadge from '../MerchantBadge/MerchantBadge'
 import CartProductQuantityPicker from '../CartProductQuantityPicker/CartProductQuantityPicker'
 import { imageToUrl } from '../../utils/urls'
 import AuthContext from '../../context/AuthContext'
@@ -43,16 +44,26 @@ function CartModalProductCard({ order_products, onClose }) {
         setQuantities(tempQuantities)
         
         // create order product and add to cart
-        const existing_order_products = productsWeighted[weight][0]
+        const existing_order_product = productsWeighted[weight][0]
     
+        // const order_product = {
+        //     product: existing_order_products.product,
+        //     quantity: parseInt(existing_order_products.quantity) + 1,
+        //     total_price: parseFloat(existing_order_product.total_price) + parseFloat(existing_order_products.product.price),
+        //     reviewed: existing_order_product.reviewed,
+        //     order: existing_order_product.order,
+        // }
+
         const order_product = {
-            product: existing_order_products.product,
+            product: existing_order_product.product,
             quantity: 1,
-            total_price: existing_order_products.product.price
+            total_price: parseFloat(existing_order_product.product.price),
         }
 
-        console.log('updating cart order_products via PLUS button with: ', order_product)
+        productsWeighted[weight][0] = order_product
+        console.log('updating cart order_products via PLUS button with: ', productsWeighted[weight][0])
         // // update cart with new order product
+        // console.log('updating cart order_products via ADD button with: ', order_product)
         updateCart(order_product)
     }
 
@@ -66,14 +77,26 @@ function CartModalProductCard({ order_products, onClose }) {
             tempQuantities[weight] -= 1
             setQuantities(tempQuantities)
             
+            // const order_product = {
+            //     product: existing_order_product.product,
+            //     quantity: existing_order_product.quantity - 1,
+            //     total_price: parseFloat(existing_order_product.total_price) - parseFloat(existing_order_product.product.price) * -1.0,
+            //     reviewed: existing_order_product.reviewed,
+            //     order: existing_order_product.order,
+            // }
+
             const order_product = {
                 product: existing_order_product.product,
                 quantity: -1,
-                total_price: parseFloat(existing_order_product.product.price) * -1.0
+                total_price: parseFloat(existing_order_product.product.price) * -1.0,
             }
-            console.log('updating cart order_products via MINUS button with: ', order_product)
+
+            productsWeighted[weight][0] = order_product
+            console.log('updating cart order_products via MINUS button with: ', productsWeighted[weight][0])
             // // update cart with new order product
             updateCart(order_product)
+            // console.log('updating cart order_products via MINUS button with: ', order_product)
+
         } else {
 
             // if quantity of order_product is set to 0, delete it 
@@ -124,7 +147,7 @@ function CartModalProductCard({ order_products, onClose }) {
                                     <NextImage src={imageToUrl(order_products[0].product.image)} width='100' height='100'/>
                                     <Box>
                                         <Text fontWeight='semibold'>{order_products[0].product.name}</Text>
-                                        <Badge colorScheme='blackAlpha'>{order_products[0].product.merchant.name}</Badge>
+                                        <MerchantBadge merchantName={order_products[0].product.merchant.name} />
                                     </Box>
                                 </HStack>
                             </Tooltip>
@@ -142,7 +165,7 @@ function CartModalProductCard({ order_products, onClose }) {
                             {weights.map((weight, i) => (
                                 <Tr key={i}>
                                     <Th textAlign='center' fontSize='sm'>{weight}KG</Th>
-                                    <Th textAlign='center' fontSize='sm'>SG${productsWeighted[weight][0].product.price}</Th>
+                                    <Th textAlign='center' fontSize='sm'>SG${productsWeighted[weight][0].product.price.toFixed(2)}</Th>
                                     <Th>
                                         <CartProductQuantityPicker 
                                             addQuantity={() => addQuantities(weight)} 

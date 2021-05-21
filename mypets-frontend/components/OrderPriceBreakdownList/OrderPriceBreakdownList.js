@@ -33,7 +33,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPric
 
     return (
         <Table variant="unstyled" size='md'>
-            <Thead>
+            <Thead textColor='gray.600'>
                 <Tr>
                     <Th>Product</Th>
                     <Th textAlign='right'>Quantity</Th>

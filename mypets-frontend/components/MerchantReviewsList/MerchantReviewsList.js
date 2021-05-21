@@ -1,10 +1,16 @@
-import React from 'react'
+import {
+    SimpleGrid
+} from '@chakra-ui/react'
 
-function MerchantReviewsList() {
+import ReviewListCard from '../MerchantReviewListCard/MerchantReviewListCard'
+
+function MerchantReviewsList({ reviews, spacing=4 }) {
     return (
-        <div>
-            
-        </div>
+        <SimpleGrid columns={5} spacing={spacing}>
+            {reviews.map((review, index) => (
+                <ReviewListCard review={review} key={index} />
+            ))}
+        </SimpleGrid>
     )
 }
 

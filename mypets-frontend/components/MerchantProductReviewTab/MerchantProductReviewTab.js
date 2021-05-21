@@ -5,19 +5,44 @@ import MerchantReviewsList from '../MerchantReviewsList/MerchantReviewsList'
 import ProductSectionList from '../ProductSectionList/ProductSectionList'
 import SortMenu from '../SortMenu/SortMenu'
 import CategoryList from '../CategoryList/CategoryList'
-import MerchantReviewsList from '../MerchantReviewsList/MerchantReviewsList'
+import MypetsMerchantTab from '../MypetsMerchantTab/MypetsMerchantTab'
 
-function MerchantProductReviewTab({ merchantProducts, merchantReviews}) {
+function MerchantProductReviewTab({ merchantProducts, categories, merchantReviews}) {
 
     const [sortMethod, setSortMethod] = useState('pop')
 
     return (
-        <Tabs align='center' variant='solid-rounded' size='md'>
+        <Tabs align='center' variant='unstyled' size='md' defaultIndex={0} mt={12}>
             <TabList>
-                <Tab mr={4}>Products</Tab>
-                <Tab>Reviews</Tab>
+                <Tab 
+                    rounded='full' 
+                    _active={{ 
+                        color: 'white', 
+                        bgGradient: "linear(to-t, mypets.900, mypets.100)" 
+                    }} 
+                    _selected={{ 
+                        color: 'white', 
+                        bgGradient: "linear(to-t, mypets.900, mypets.100)" 
+                    }}
+                    mr={4}
+                >
+                    Products
+                </Tab>
+                <Tab 
+                    rounded='full' 
+                    _active={{ 
+                        color: 'white', 
+                        bgGradient: "linear(to-t, mypets.900, mypets.100)" 
+                    }} 
+                    _selected={{ 
+                        color: 'white', 
+                        bgGradient: "linear(to-t, mypets.900, mypets.100)" 
+                    }}
+                >
+                    Reviews
+                </Tab>
             </TabList>
-            <TabPanels>
+            <TabPanels mt={4}>
                 <TabPanel>
                     <Flex justifyContent='space-between' direction="row">
                         <Box w="100%" mr={12}>

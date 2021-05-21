@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "name": "profile"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "username": {
+      "type": "string"
+    },
+    "user": {
+      "via": "profile",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "dob": {
+      "type": "date"
+    },
+    "sex": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "phone_num": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "postal": {
+      "type": "string"
+    },
+    "location": {
+      "type": "enumeration",
+      "enum": [
+        "Bedok",
+        "Tampines",
+        "Eunos",
+        "Pasir_ris",
+        "Kembangan",
+        "Chai_chee",
+        "Marine_parade"
+      ]
+    }
+  }
+}

@@ -15,7 +15,7 @@
       "minLength": 3,
       "unique": true,
       "configurable": false,
-      "required": true
+      "required": false
     },
     "email": {
       "type": "email",
@@ -63,20 +63,13 @@
       "via": "user",
       "collection": "order"
     },
-    "location": {
-      "type": "enumeration",
-      "enum": [
-        "Bedok",
-        "Tampines",
-        "Pasir_ris",
-        "Kembangan",
-        "Chai_chee",
-        "Marine_parade"
-      ]
-    },
     "cart": {
       "via": "user",
       "model": "cart"
+    },
+    "profile": {
+      "via": "user",
+      "model": "profile"
     }
   }
 }

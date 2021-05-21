@@ -16,9 +16,9 @@
       "type": "decimal"
     },
     "user": {
+      "via": "cart",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "cart"
+      "model": "user"
     },
     "order_products": {
       "collection": "order-product"

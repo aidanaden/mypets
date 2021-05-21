@@ -1,4 +1,9 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
+import { 
+    Menu, 
+    MenuItem, 
+    MenuList, 
+    useToast
+} from "@chakra-ui/react"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 import { useState } from "react"
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
@@ -6,6 +11,7 @@ import MypetsMenuBtn from '../MypetsMenuBtn/MypetsMenuBtn'
 
 function SortMenu({ setSortMethod }) {
 
+    const toast = useToast()
     const [sortBtnText, setSortBtnText] = useState("Sort by Price")
 
     const sortTypes = [
@@ -20,9 +26,18 @@ function SortMenu({ setSortMethod }) {
         'Most popular': 'pop'
     }
 
+    const displaySortMethod = (sortType) => toast({
+        title: `Sorting products by ${sortType}`,
+        status: 'info',
+        variant: 'solid',
+        isClosable: true,
+        duration: 3000,
+    })
+
     const updateSort = (sortType) => {
         setSortBtnText(sortType)
         setSortMethod(sortMap[sortType])
+        displaySortMethod(sortType)
     }
 
     return (
@@ -32,7 +47,8 @@ function SortMenu({ setSortMethod }) {
                 {sortTypes.map((sortType, i) => (
                     <MenuItem key={i} onClick={() => (
                         updateSort(sortType)
-                    )}>{sortType}</MenuItem>
+                    )}>{sortType}
+                    </MenuItem>
                 ))}
             </MenuList>
         </Menu>

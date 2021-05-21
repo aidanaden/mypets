@@ -13,6 +13,7 @@ export const API_MERCHANTS_URL = `${API_URL}/merchants/`
 export const GOOGLE_CLIENT_ID = '376425642987-nl2dd8gud2c3jn409veqd508njjqenud.apps.googleusercontent.com'
 export const GOOGLE_CLIENT_SK = 'MK7U2vz73yH4AnJUZ3iM35pW'
 
+export const REVIEW_TEXT_LEN = 128
 
 /**
  * Given an image (from strapi api) return the URL

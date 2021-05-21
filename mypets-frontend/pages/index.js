@@ -21,13 +21,15 @@ export default function Home({ products, categories, merchants }) {
           <Img boxSize="100%" objectFit="cover" src="/MachoPawz_banner@2x@2x.png" alt="merchant banner"></Img>
         </Box>
         <Flex justifyContent='space-between' direction="row">
-          <Flex direction="column" w="100%" mr={12}>
+          <Flex direction="column" w="100%">
             <MerchantSectionList merchants={merchants}/>
-            <ProductSectionList products={products} sortMethod={sortMethod}/>
-          </Flex>
-          <Flex direction="column" w='210px'>
-            <SortMenu setSortMethod={setSortMethod}/>
-            <CategoryList categories={categories}/>
+            <Flex direction='row' w='100%'>
+              <ProductSectionList products={products} sortMethod={sortMethod} heading='Recommended Products' />
+              <Flex direction="column" w='210px' ml={12} mt={12}>
+                <SortMenu setSortMethod={setSortMethod}/>
+                <CategoryList categories={categories}/>
+              </Flex>
+            </Flex>
           </Flex>
         </Flex>
       </Container>

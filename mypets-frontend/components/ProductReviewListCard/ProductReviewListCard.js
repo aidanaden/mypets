@@ -1,33 +1,42 @@
-import React from 'react'
 import { Box, Flex, Text } from '@chakra-ui/react'
+import { formatDistanceToNowStrict } from 'date-fns'
+
 import RatingDisplay from '../RatingDisplay/RatingDisplay'
-import { formatDistance } from 'date-fns'
+import { REVIEW_TEXT_LEN } from '../../utils/urls'
+
+
 
 function distanceFromToday(str_date) {
     const review_date = new Date(str_date)
-    return formatDistance(review_date, new Date(), { addSuffix: true })
-}   
+    return formatDistanceToNowStrict(review_date, { addSuffix: true, unit: 'day', roundingMethod: 'ceil' })
+}
+
+function textEnded(str) {
+    return str.length > REVIEW_TEXT_LEN
+}
 
 function ProductReviewListCard({ review }) {
 
-    const review_date = new Date(review.date_created)
-    const date_fns_review_date = formatDistance(review_date, new Date(), { addSuffix: true })
+    const date_fns_review_date = distanceFromToday(review.date_created)
 
     return (
-        <Box rounded='lg' bgColor="gray.100" p={5}>
-            <Text fontStyle="italic" fontSize="sm">
-                {review.user}
-            </Text>
-            <Text mt={4}>
-                {review.text}
-            </Text>
-            <Flex direction='row' mt={6} justifyContent="space-between">
-                <RatingDisplay rating={review.rating} numReviews={0}/> 
+
+        <Flex direction='column' rounded='lg' bgColor="gray.100" p={5} textAlign='left' justifyContent='space-between'>
+            <Box>
                 <Text fontStyle="italic" fontSize="sm">
+                    {review.user}
+                </Text>
+                <Text mt={4} fontSize='md'>
+                    { textEnded(review.text) ? review.text.substring(0, REVIEW_TEXT_LEN) + '...' : review.text}
+                </Text>
+            </Box>
+            <Flex direction='row' justifyContent="space-between" alignContent='center' mt={4} >
+                <RatingDisplay rating={review.rating} numReviews={0}/> 
+                <Text fontStyle="italic" fontSize="sm" textAlign='right'>
                     {date_fns_review_date}
                 </Text>
             </Flex>
-        </Box>
+        </Flex>
     )
 }
 

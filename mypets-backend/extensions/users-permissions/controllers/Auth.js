@@ -535,12 +535,31 @@ module.exports = {
                 return ctx.send({ user: sanitizedUser });
             }
 
-            const jwt = strapi.plugins['users-permissions'].services.jwt.issue(_.pick(user, ['id']));
+            const token = strapi.plugins['users-permissions'].services.jwt.issue({
+                id: user.id,
+            })
 
-            return ctx.send({
-                jwt,
-                user: sanitizedUser,
-            });
+            ctx.cookies.set("token", token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === "production" ? true : false,
+                maxAge: 1000 * 60 * 60 * 24 * 1, // 1 Day Age
+                domain: process.env.NODE_ENV === "development" ? "localhost" : process.env.PRODUCTION_URL,
+                // sameSite: "None",
+            })
+
+            ctx.send({
+                status: 'Authenticated',
+                user: sanitizeEntity(user.toJSON ? user.toJSON() : user, {
+                    model: strapi.query('user', 'users-permissions').model,
+                }),
+            })
+
+            // const jwt = strapi.plugins['users-permissions'].services.jwt.issue(_.pick(user, ['id']));
+
+            // return ctx.send({
+            //     jwt,
+            //     user: sanitizedUser,
+            // });
         } catch (err) {
             const adminError = _.includes(err.message, 'username')
                 ? {

@@ -26,9 +26,113 @@ export const callAPI = async (path, method, body) => {
 export const AuthProvider = (props) => {
 
     const [user, setUser] = useState('')
+    const [profile, setProfile] = useState(null)
     const [cart, setCart] = useState(null)
     const router = useRouter()
     
+    /**
+     * Create profile for new user
+     * @param {any} body 
+     */
+    const createProfile = async (body) => {
+
+        console.log('creating a profile with body: ', body)
+        try {
+            let bodyChecked = body
+
+            if (!body) {
+                bodyChecked = {
+                    username: '',
+                    dob: new Date(),
+                    sex: 'Male',
+                    phone_num: '',
+                    address: '',
+                    unit: '',
+                    postal: '',
+                    location: 'Tampines',
+                    user: user.id,
+                }
+            }
+
+            const response = await callAPI('/profiles/me', 'POST', {...bodyChecked, user: user.id})
+
+            if (!response.username) {
+                console.error('Failed to create profile: ', response)
+            } else {
+                setProfile(response)
+                console.log('Successfully created new user profile: ', response)
+            }
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    /**
+     * Get profile of current user
+     */
+    const getProfile = async (body) => {
+        console.log('fetching profile')
+        try {
+            const data = await callAPI('/profiles/me', 'GET')
+            console.log('data received from getProfile: ', data)
+            if (!data[0]) {
+                console.log('profile doesn not exist, creating one now...')
+                createProfile(body)
+            }
+            console.log('profile found: ', data[0])
+            setProfile(data[0])
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    /**
+     * Update profile of current user with body data
+     * @param {any} body 
+     */
+    const updateProfile = async (body) => {
+        console.log('updating profile')
+        try {
+            const data = await callAPI('/profiles/me', 'PUT', body)
+            if (!data.username) {
+                console.log('profile does not exist, creating one now')
+                createProfile(body)
+            } else {
+                console.log('profile updated to: ', data)
+                setProfile(data)
+            }
+        } catch (err) {
+            console.error(err)
+        }
+    }
+    
+    /**
+     * Register with email & password
+     * @param {string} email
+     * @param {string} password 
+     */
+    const registerUser = async (email, password, profileBody) => {
+
+        try {
+            const response = await callAPI('/auth/local/register', 'POST', {
+                email: email,
+                password: password
+            })
+
+            if (!response.user) {
+                console.error('Registration failed. Please try again.')
+            } else {
+                console.log('successfully registered account', response.user)
+                setUser(response.user)
+                getCart()
+                return response
+            }
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+
     /**
      * Login with email & password
      * @param {string} email
@@ -45,8 +149,9 @@ export const AuthProvider = (props) => {
             if (!response.user) {
                 console.error("Login failed. Please try again.")
             } else {
-                console.log('successfully logged in ', response.user)
+                console.log('Successfully logged in ', response.user)
                 setUser(response.user)
+                getProfile()
                 getCart()
             }
 
@@ -98,7 +203,7 @@ export const AuthProvider = (props) => {
         if (user.id) {
             setUser(user)
             getCart()
-
+            getProfile()
         } else {
             setUser(null)
         }
@@ -244,7 +349,18 @@ export const AuthProvider = (props) => {
     }, [])
 
     return (
-        <AuthContext.Provider value={{ user, cart, updateCart, deleteOrderProductFromCart, loginUser, logoutUser, loginUserProvider }}>
+        <AuthContext.Provider value={{ 
+            user, 
+            cart, 
+            profile,
+            updateProfile,
+            updateCart, 
+            deleteOrderProductFromCart, 
+            loginUser, 
+            registerUser, 
+            logoutUser, 
+            loginUserProvider 
+        }}>
             {props.children}
         </AuthContext.Provider>
     )
