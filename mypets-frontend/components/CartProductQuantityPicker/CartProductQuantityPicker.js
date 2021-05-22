@@ -1,10 +1,15 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Flex, IconButton, Text, HStack } from '@chakra-ui/react'
-import { AddIcon, MinusIcon } from '@chakra-ui/icons'
+import { AddIcon, MinusIcon, SpinnerIcon } from '@chakra-ui/icons'
+
+import MypetsSpinner from '../MypetsSpinner/MypetsSpinner'
+import AuthContext from '../../context/AuthContext'
 
 function CartProductQuantityPicker({ addQuantity, minusQuantity, quantity }) {
 
     const [qty, setQty] = useState(quantity)
+    const [loading, setLoading] = useState(false)
+    const { cartLoading } = useContext(AuthContext)
 
     const combinedAddQuantity = () => {
         addQuantity()
@@ -25,14 +30,18 @@ function CartProductQuantityPicker({ addQuantity, minusQuantity, quantity }) {
             <IconButton 
                 icon={<MinusIcon />} 
                 size="sm" 
-                onClick={combinedMinusQuantity}/>
+                onClick={combinedMinusQuantity}
+                isLoading={cartLoading}
+            />
             <Text w="32px" align="center" alignSelf='center' fontSize="lg">
                 {qty}
             </Text>
             <IconButton 
                 icon={<AddIcon />} 
                 size="sm"
-                onClick={combinedAddQuantity}/>
+                onClick={combinedAddQuantity}
+                isLoading={cartLoading}
+            />
         </HStack>
     )
 }

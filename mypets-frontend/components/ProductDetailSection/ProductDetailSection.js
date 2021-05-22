@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { 
     Heading, 
     HStack, 
@@ -19,20 +19,32 @@ import AuthContext from '../../context/AuthContext'
 
 function ProductDetailSection({ product }) {
 
-    const variants = [
-        product.weight
-    ]
+    const toast = useToast()
 
+    const [variant, setVariant] = useState({})
+    // const [variantWeight, setVariantWeight] = useState(product.variants[0].weight)
     const [quantity, setQuantity] = useState(1)
-    const price = (product.price * quantity).toFixed(2)
-    const { user, updateCart } = useContext(AuthContext)
+    const [price, setPrice] = useState(product.variants[0].price)
+    // const price = (product.price * quantity).toFixed(2)
+    const { updateCart } = useContext(AuthContext)
+
+    const getVariantFromWeight = (weight) => {
+        return product.variants.filter((variant) => parseFloat(variant.weight) == parseFloat(weight))[0]
+    }
 
     const addQuantity = () => {
         setQuantity(quantity + 1)
+        setPrice(price + variant.price)
     }
 
     const minusQuantity = () => {
-        setQuantity(quantity <= 1 ? 1 : quantity - 1)
+        if (quantity <= 1) {
+            setQuantity(1)
+            setPrice(variant.price)
+        } else {
+            setQuantity(quantity - 1)
+            setPrice(price - variant.price)
+        }
     }
 
     const succesToast = (text) => toast({
@@ -46,7 +58,7 @@ function ProductDetailSection({ product }) {
 
         // create order product
         const order_product = {
-            product: product,
+            variant: variant,
             quantity: quantity,
             total_price: price
         }
@@ -56,6 +68,24 @@ function ProductDetailSection({ product }) {
         updateCart(order_product)
         succesToast('Product added to cart')
     }
+
+    const variantSelectOnChange = (e) => {
+
+        const variant = getVariantFromWeight(e.target.value)
+        setVariant(variant)
+        const updatedPrice = (parseFloat(variant.price) * parseFloat(quantity)).toFixed(2)
+        setPrice(variant.price)
+        console.log('updated price: ', updatedPrice)
+    }
+
+
+    useEffect(() => {
+
+        setVariant(product.variants[0])
+        console.log('useEffect variants are: ', product.variants)
+        console.log('useEffect initial variant is: ', variant)
+
+    }, [product])
 
     return (
         <>
@@ -69,10 +99,10 @@ function ProductDetailSection({ product }) {
                         <ProductDetailMerchantBadge merchant={product.merchant.name}/>
                         <RatingDisplay rating={product.rating} numReviews={product.reviews.length}/>
                     </HStack>
-                    <ProductDetailVariantSelect options={variants}/>
+                    <ProductDetailVariantSelect variantWeight={variant.weight} options={product.variants} onChange={variantSelectOnChange}/>
                     <HStack mt={8} justifyContent="space-between">
                         <Text fontSize="4xl" mr={4}>
-                            SG${price}
+                            SG${price.toFixed(2)}
                         </Text>
                         <ProductQuantityPicker addQuantity={addQuantity} minusQuantity={minusQuantity} quantity={quantity} />
                     </HStack>

@@ -36,7 +36,7 @@ function SignupModalBtn() {
     const handleSubmit = (values, actions) => {
         try {
             actions.setSubmitting(true)
-            const user = registerUser(values.email, values.password, profileDetails)
+            const user = registerUser(values.email, values.password)
             console.log('registered new user: ', user)
         } catch (err) {
             console.error(err)

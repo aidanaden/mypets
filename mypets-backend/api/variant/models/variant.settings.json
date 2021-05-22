@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "variants",
+  "info": {
+    "name": "Variant"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "weight": {
+      "type": "decimal"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "product": {
+      "via": "variants",
+      "model": "product"
+    }
+  }
+}

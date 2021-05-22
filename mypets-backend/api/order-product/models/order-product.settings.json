@@ -15,9 +15,6 @@
     "quantity": {
       "type": "integer"
     },
-    "product": {
-      "model": "product"
-    },
     "order": {
       "via": "order_products",
       "model": "order"
@@ -27,6 +24,9 @@
     },
     "reviewed": {
       "type": "boolean"
+    },
+    "variant": {
+      "model": "variant"
     }
   }
 }

@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/profiles",
-      "handler": "profile.find",
+      "path": "/variants",
+      "handler": "variant.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/profiles/count",
-      "handler": "profile.count",
+      "path": "/variants/count",
+      "handler": "variant.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/profiles/:id",
-      "handler": "profile.findOne",
+      "path": "/variants/:id",
+      "handler": "variant.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/profiles",
-      "handler": "profile.create",
+      "path": "/variants",
+      "handler": "variant.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/profiles/:id",
-      "handler": "profile.update",
+      "path": "/variants/:id",
+      "handler": "variant.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/profiles/:id",
-      "handler": "profile.delete",
+      "path": "/variants/:id",
+      "handler": "variant.delete",
       "config": {
         "policies": []
       }

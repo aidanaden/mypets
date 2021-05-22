@@ -36,15 +36,9 @@
     "meta_title": {
       "type": "text"
     },
-    "price": {
-      "type": "decimal"
-    },
     "slug": {
       "type": "uid",
       "targetField": "name"
-    },
-    "weight": {
-      "type": "decimal"
     },
     "ingredients": {
       "type": "richtext"
@@ -67,6 +61,10 @@
     "reviews": {
       "via": "product",
       "collection": "review"
+    },
+    "variants": {
+      "via": "product",
+      "collection": "variant"
     }
   }
 }

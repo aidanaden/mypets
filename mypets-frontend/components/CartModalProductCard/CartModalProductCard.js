@@ -45,19 +45,11 @@ function CartModalProductCard({ order_products, onClose }) {
         
         // create order product and add to cart
         const existing_order_product = productsWeighted[weight][0]
-    
-        // const order_product = {
-        //     product: existing_order_products.product,
-        //     quantity: parseInt(existing_order_products.quantity) + 1,
-        //     total_price: parseFloat(existing_order_product.total_price) + parseFloat(existing_order_products.product.price),
-        //     reviewed: existing_order_product.reviewed,
-        //     order: existing_order_product.order,
-        // }
 
         const order_product = {
-            product: existing_order_product.product,
+            variant: existing_order_product.variant,
             quantity: 1,
-            total_price: parseFloat(existing_order_product.product.price),
+            total_price: parseFloat(existing_order_product.variant.price),
         }
 
         productsWeighted[weight][0] = order_product
@@ -76,19 +68,11 @@ function CartModalProductCard({ order_products, onClose }) {
 
             tempQuantities[weight] -= 1
             setQuantities(tempQuantities)
-            
-            // const order_product = {
-            //     product: existing_order_product.product,
-            //     quantity: existing_order_product.quantity - 1,
-            //     total_price: parseFloat(existing_order_product.total_price) - parseFloat(existing_order_product.product.price) * -1.0,
-            //     reviewed: existing_order_product.reviewed,
-            //     order: existing_order_product.order,
-            // }
 
             const order_product = {
-                product: existing_order_product.product,
+                variant: existing_order_product.variant,
                 quantity: -1,
-                total_price: parseFloat(existing_order_product.product.price) * -1.0,
+                total_price: parseFloat(existing_order_product.variant.price) * -1.0,
             }
 
             productsWeighted[weight][0] = order_product
@@ -109,7 +93,7 @@ function CartModalProductCard({ order_products, onClose }) {
 
         if (order_products) {
             const sample_quantities = {}
-            const weighted_products = lodash.groupBy(order_products, 'product.weight')
+            const weighted_products = lodash.groupBy(order_products, 'variant.weight')
             const temp_weights = Object.keys(weighted_products)
 
             temp_weights.map(weight => {
@@ -132,22 +116,22 @@ function CartModalProductCard({ order_products, onClose }) {
             {order_products ? (
                 <>
                     <NextLink 
-                        href={`/products/${order_products[0].product.slug}`} 
-                        as={`/products/${order_products[0].product.slug}`}    
+                        href={`/products/${order_products[0].variant.product.slug}`} 
+                        as={`/products/${order_products[0].variant.product.slug}`}    
                     > 
                         <a onClick={onClose}>
                             <Tooltip
-                                label={order_products[0].product.name}
+                                label={order_products[0].variant.product.name}
                                 bg="white"
                                 placement={'top-start'}
                                 color={'gray.800'}
                                 fontSize="xs"
                             >
                                 <HStack mb={6}>
-                                    <NextImage src={imageToUrl(order_products[0].product.image)} width='100' height='100'/>
+                                    <NextImage src={imageToUrl(order_products[0].variant.product.image)} width='100' height='100'/>
                                     <Box>
-                                        <Text fontWeight='semibold'>{order_products[0].product.name}</Text>
-                                        <MerchantBadge merchantName={order_products[0].product.merchant.name} />
+                                        <Text fontWeight='semibold'>{order_products[0].variant.product.name}</Text>
+                                        <MerchantBadge merchantName={order_products[0].variant.product.merchant.name} />
                                     </Box>
                                 </HStack>
                             </Tooltip>
@@ -165,7 +149,7 @@ function CartModalProductCard({ order_products, onClose }) {
                             {weights.map((weight, i) => (
                                 <Tr key={i}>
                                     <Th textAlign='center' fontSize='sm'>{weight}KG</Th>
-                                    <Th textAlign='center' fontSize='sm'>SG${productsWeighted[weight][0].product.price.toFixed(2)}</Th>
+                                    <Th textAlign='center' fontSize='sm'>SG${productsWeighted[weight][0].variant.price.toFixed(2)}</Th>
                                     <Th>
                                         <CartProductQuantityPicker 
                                             addQuantity={() => addQuantities(weight)} 

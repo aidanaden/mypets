@@ -1,61 +1,62 @@
 'use strict';
-
+const { sanitizeEntity } = require('strapi-utils')
 /**
  * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
  * to customize this controller
  */
-const { parseMultipartData, sanitizeEntity } = require('strapi-utils')
+// const { parseMultipartData, sanitizeEntity } = require('strapi-utils')
 
 module.exports = {
-    async createMe(ctx) {
-        let entity;
 
-        const user = ctx.state.user
+    /**
+     * Only returns cart that belongs to the logged in user
+     * @param {any} ctx 
+     */
+    async find(ctx) {
+        const { user } = ctx.state // get user
 
-        if (!user) {
-            return ctx.badRequest(null, [{messages: [{ id: 'No authorization found'}]}])
-        }
-
-        if (ctx.is('multipart')) {
-            const { data, files } = parseMultipartData(ctx)
-            entity = await strapi.services.profile.create(data, { files })
-        } else {
-            const data = ctx.request.body
-            entity = await strapi.services.profile.create(data)
-        }
-        return sanitizeEntity(entity, { model: strapi.models.profile })
-    },
-
-    async findMe(ctx) {
         let entities
-
-        const user = ctx.state.user
-
-        if (!user) {
-            return ctx.badRequest(null, [{messages: [{ id: 'No authorization found'}]}])
+        if (ctx.query._q) {
+            entities = await strapi.services.profile.search({...ctx.query, user: user.id})
+        } else {
+            entities = await strapi.services.profile.find({...ctx.query, user: user.id})
         }
-        
-        entities = await strapi.query('profile').find({ user: user.id })
 
         return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.profile }))
     },
+    
+    /**
+     * Returns one cart, as long as it belongs to the logged in user
+     * @param {any} ctx 
+     */
+    async findOne(ctx) {
+        const { id } = ctx.params
+        const { user } = ctx.state 
 
-    async updateMe(ctx) {
-        let entity
-        
-        const user = ctx.state.user
+        const entity = await strapi.services.profile.findOne({ id, user: user.id })
 
-        if (!user) {
-            return ctx.badRequest(null, [{messages: [{ id: 'No authorization found'}]}])
-        }
+        return sanitizeEntity(entity, { model: strapi.models.profile })
+    },
 
-        if (ctx.is('multipart')) {
-            const { data, files } = parseMultipartData(ctx)
-            entity = await strapi.services.profile.update({ user: user.id }, data, { files })   
-        } else {
-            const data = ctx.request.body
-            entity = await strapi.services.profile.update({ user: user.id }, data)
-        }
+    /**
+     * Create cart with product object
+     * @param {any} ctx 
+     */
+    async create(ctx) {
+
+        const entity = await strapi.services.profile.create(ctx.request.body)
+
+        return sanitizeEntity(entity, { model: strapi.models.profile })
+    },
+
+    /**
+     * Update cart with product object
+     * @param {any} ctx 
+     */
+    async update(ctx) {
+
+        const { id } = ctx.params
+        const entity = await strapi.services.profile.update({ id }, ctx.request.body)
 
         return sanitizeEntity(entity, { model: strapi.models.profile })
     }

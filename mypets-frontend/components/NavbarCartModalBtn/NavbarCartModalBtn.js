@@ -38,8 +38,8 @@ function NavbarCartModalBtn() {
         if (cart) {
             console.log('useEffect cart: ', cart)
             setTotalPrice(cart.total_price)
-            setGroupedProducts(lodash.groupBy(cart.order_products, 'product.name'))
-            setProductNames(Object.keys(lodash.groupBy(cart.order_products, 'product.name')))
+            setGroupedProducts(lodash.groupBy(cart.order_products, 'variant.product.name'))
+            setProductNames(Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
         }
     }, [cart])
 

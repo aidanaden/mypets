@@ -1,11 +1,12 @@
 import React from 'react'
 import { Select } from '@chakra-ui/react'
 
-function ProductDetailVariantSelect({ options }) {
+function ProductDetailVariantSelect({ variantWeight, options, onChange }) {
     return (
-        <Select mt={8} placeholder="Select weight" w="160px" focusBorderColor="mypets.100">
+        <Select mt={8} value={variantWeight} w="160px" focusBorderColor="mypets.100" onChange={onChange}>
             {options.map((option, i) => (
-                <option key={i} value={option}>{option}KG</option>
+                // i > 0 ? 
+                <option key={i} value={option.weight}>{option.weight}KG</option>
             ))}
         </Select>
     )

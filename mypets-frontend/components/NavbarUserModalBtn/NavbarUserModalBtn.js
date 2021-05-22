@@ -80,7 +80,7 @@ function NavbarUserModalBtn() {
         if (profile) {
 
             setUserInitialValues({ 
-                name: profile.username ? profile.username : '', 
+                username: profile.username ? profile.username : '', 
                 email: user.email, 
                 phone_num: profile.phone_num ? profile.phone_num : '', 
                 dob: profile.dob ? profile.dob : '', 
