@@ -26,7 +26,7 @@ module.exports = {
 
             let entity = entities[i]
             for (let j=0; j < entity.order_products.length; j++) {
-                entity.order_products[j].variant = await strapi.services.variant.findOne({ id: entity.order_products[j].variant.id })
+                entity.order_products[j].variant = await strapi.services.variant.findOne({ id: entity.order_products[j].variant })
                 entity.order_products[j].variant.product = await strapi.services.product.findOne({ id: entity.order_products[j].variant.product.id })
                 console.log('order object product value updated to: ', entity.order_products[j].variant.product)
             }
@@ -46,7 +46,7 @@ module.exports = {
         const entity = await strapi.services.cart.findOne({ id, user: user.id })
 
         for (let i=0; i < entity.order_products.length; i++) {
-            entity.order_products[i].variant = await strapi.services.variant.findOne({ id: entity.order_products[i].variant.id })
+            entity.order_products[i].variant = await strapi.services.variant.findOne({ id: entity.order_products[i].variant })
             entity.order_products[i].variant.product = await strapi.services.product.findOne({ id: entity.order_products[i].variant.product.id })
         }
 
@@ -62,7 +62,7 @@ module.exports = {
         const entity = await strapi.services.cart.create(ctx.request.body)
         
         for (let i=0; i < entity.order_products.length; i++) {
-            entity.order_products[i].variant = await strapi.services.variant.findOne({ id: entity.order_products[i].variant.id })
+            entity.order_products[i].variant = await strapi.services.variant.findOne({ id: entity.order_products[i].variant })
             entity.order_products[i].variant.product = await strapi.services.product.findOne({ id: entity.order_products[i].variant.product.id })
         }
 
@@ -79,7 +79,7 @@ module.exports = {
         const entity = await strapi.services.cart.update({ id }, ctx.request.body)
 
         for (let i=0; i < entity.order_products.length; i++) {
-            entity.order_products[i].variant = await strapi.services.variant.findOne({ id: entity.order_products[i].variant.id })
+            entity.order_products[i].variant = await strapi.services.variant.findOne({ id: entity.order_products[i].variant })
             entity.order_products[i].variant.product = await strapi.services.product.findOne({ id: entity.order_products[i].variant.product.id })
         }
 

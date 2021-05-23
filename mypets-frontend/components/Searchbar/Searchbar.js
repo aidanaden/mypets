@@ -4,7 +4,7 @@ import { Search2Icon } from "@chakra-ui/icons"
 
 function Searchbar() {
     return (
-        <Flex>
+        <Flex w='2xl'>
             <InputGroup>
                 <InputLeftElement 
                     pointerEvents="none"

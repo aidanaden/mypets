@@ -256,12 +256,13 @@ export const AuthProvider = (props) => {
             let order_products = cart.order_products
             console.log('current order_products in cart: ', order_products)
 
-            const op = order_products.find(op => (op.variant.product.id == order_product.variant.product.id))
+            const op = order_products.find(op => (op.variant.id == order_product.variant.id))
             let total_price = parseFloat(cart.total_price)
 
             if (op) {
-                // check if order product exists, if it does,   
-                // increase quantity of existing order product
+                // if existing order product with same product variant 
+                // exists, update existing order product with new qty, price 
+
                 console.log('found existing order product in cart: ', op)
                 const op_index = order_products.indexOf(op)
                 op.quantity += order_product.quantity
@@ -271,6 +272,7 @@ export const AuthProvider = (props) => {
                 total_price += parseFloat(order_product.total_price)
 
             } else {
+                // else, create new order product 
                 const created_order_product = await createOrderProduct(order_product)
                 console.log('new order product does not exist, created: ', created_order_product)
                 order_products.push(created_order_product)

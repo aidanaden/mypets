@@ -43,15 +43,8 @@ function NavbarCartModalBtn() {
         }
     }, [cart])
 
-    console.log('useEffect total price: ', totalPrice)
     console.log('useEffect grouped products: ', groupedProducts)
-    console.log('useEffect product names: ', productNames)
 
-    // const update_order_product = (updated_order_product) => {
-    //     let newGroupProduct = groupedProducts
-    //     newGroupProduct[updated_order_product.name] = updated_order_product
-    // }
-    
     return (
         <>
             <MypetsBtn btnText='Your cart' onClick={onOpen} leftIcon={<FaShoppingCart />} mx={0} />
@@ -61,7 +54,7 @@ function NavbarCartModalBtn() {
                     <ModalHeader>Your Cart</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody w='100%'> 
-                            { groupedProducts ? 
+                            { groupedProducts && (totalPrice > 0.1) ? 
                             <Flex direction='row' w='100%'>
                                 <Box mr={12}>
                                     {productNames.map((productName, i) => (

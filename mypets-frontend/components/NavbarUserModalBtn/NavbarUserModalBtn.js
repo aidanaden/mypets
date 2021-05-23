@@ -35,7 +35,14 @@ function NavbarUserModalBtn() {
         'Change password'
     ]
 
-    const succesToast = (text) => toast({
+    const profileSuccesToast = (text) => toast({
+        title: text,
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+    })
+
+    const addressSuccessToast = (text) => toast({
         title: text,
         status: 'success',
         duration: 3000,
@@ -54,11 +61,14 @@ function NavbarUserModalBtn() {
         }
         actions.setSubmitting(false)
         // display toast showing successfully updated changes
-        succesToast('User profile successfully updated')
+        profileSuccesToast('User profile successfully updated')
     }
 
     const handleUserAddressChange = (values, actions) => {
         console.log('user address changed!')
+
+        values.location = values.location.split(" ").join("_")
+
         console.log(values)
         try {
             actions.setSubmitting(true)
@@ -67,7 +77,7 @@ function NavbarUserModalBtn() {
             console.error(err)
         }
         actions.setSubmitting(false)
-        SuccessToast('Address successfully updated')
+        addressSuccessToast('Address successfully updated')
     }
 
     const handleUserPasswordChange = (values, actions) => {
@@ -91,7 +101,7 @@ function NavbarUserModalBtn() {
                 address: profile.address ? profile.address : '', 
                 unit: profile.unit ? profile.unit : '', 
                 postal: profile.postal ? profile.postal : '', 
-                location: profile.location ? profile.location: '',
+                location: profile.location ? profile.location.split("_").join(" ") : '',
             })
         }
 

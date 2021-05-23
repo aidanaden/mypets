@@ -15,7 +15,7 @@ import AddressInput from '../AddressInput/AddressInput'
 import UnitInput from '../UnitInput/UnitInput'
 import PostalInputGroup from '../PostalInputGroup/PostalInputGroup'
 
-const locations = ['Bedok', 'Tampines', 'Pasir ris', 'Kembangan', 'Chai Chee', 'Marine Parade']
+const locations = ['Bedok', 'Tampines', 'Pasir ris', 'Kembangan', 'Chai chee', 'Marine parade', 'Eunos']
 const inLocations = loc => locations.includes(loc)
 const locationHelperText = "We're only delivering to select areas of SG for now 😢"
 
@@ -31,6 +31,7 @@ const addressSchema = Yup.object().shape({
 function UserAddressForm({ handleSubmit, initialValues }) {
     return (
         <Formik
+            enableReinitialize
             initialValues={initialValues}
             onSubmit={handleSubmit}
             validationSchema={addressSchema}

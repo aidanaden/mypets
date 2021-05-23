@@ -16,12 +16,6 @@ import NameInputGroup from '../NameInputGroup/NameInputGroup'
 import DatePicker from '../DatePicker/DatePicker'
 import SexRadioGroup from '../SexRadioGroup/SexRadioGroup'
 import TelInputGroup from '../TelInputGroup/TelInputGroup'
-import LocationSelect from '../LocationSelect/LocationSelect'
-
-
-const locations = ['Bedok', 'Tampines', 'Pasir ris', 'Kembangan', 'Chai Chee', 'Marine Parade']
-const inLocations = loc => locations.includes(loc)
-const locationHelperText = "We're only delivering to select areas of SG for now 😢"
 
 const telRegex = /^[0-9]\d{7}$/
 const nonEmptyRegex = /(.|\s)*\S(.|\s)*/
@@ -38,6 +32,7 @@ function UserProfileForm({ handleSubmit, initialValues }) {
 
     return (
         <Formik
+            enableReinitialize  
             initialValues={initialValues}
             onSubmit={handleSubmit}
             validationSchema={userProfileSchema}

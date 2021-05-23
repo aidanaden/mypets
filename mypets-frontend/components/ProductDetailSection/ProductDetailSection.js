@@ -22,10 +22,8 @@ function ProductDetailSection({ product }) {
     const toast = useToast()
 
     const [variant, setVariant] = useState({})
-    // const [variantWeight, setVariantWeight] = useState(product.variants[0].weight)
     const [quantity, setQuantity] = useState(1)
-    const [price, setPrice] = useState(product.variants[0].price)
-    // const price = (product.price * quantity).toFixed(2)
+    const [price, setPrice] = useState(0)
     const { updateCart } = useContext(AuthContext)
 
     const getVariantFromWeight = (weight) => {
@@ -71,21 +69,30 @@ function ProductDetailSection({ product }) {
 
     const variantSelectOnChange = (e) => {
 
-        const variant = getVariantFromWeight(e.target.value)
-        setVariant(variant)
-        const updatedPrice = (parseFloat(variant.price) * parseFloat(quantity)).toFixed(2)
-        setPrice(variant.price)
+        const foundVariant = getVariantFromWeight(e.target.value)
+        setVariant(foundVariant)
+        console.log('selected variant: ', foundVariant)
+        const updatedPrice = (parseFloat(foundVariant.price) * parseFloat(quantity))
+        setPrice(updatedPrice)
         console.log('updated price: ', updatedPrice)
     }
-
 
     useEffect(() => {
 
         setVariant(product.variants[0])
+        setPrice(product.variants[0].price)
         console.log('useEffect variants are: ', product.variants)
         console.log('useEffect initial variant is: ', variant)
 
-    }, [product])
+    }, [])
+
+    useEffect(() => {
+        console.log('variant value has been updated to: ', variant)
+    }, [variant])
+
+    useEffect(() => {
+        console.log('price value has been updated to: ', price)
+    }, [price])
 
     return (
         <>
