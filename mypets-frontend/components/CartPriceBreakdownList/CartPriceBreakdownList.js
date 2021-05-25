@@ -7,8 +7,10 @@ import {
     Tr,
     Th,
     Td,
-    TableCaption
+    TableCaption,
+    IconButton
 } from "@chakra-ui/react"
+import { DeleteIcon } from '@chakra-ui/icons'
 
 function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
 

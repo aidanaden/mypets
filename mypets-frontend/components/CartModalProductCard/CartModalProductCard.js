@@ -14,11 +14,13 @@ import {
     Th,
     Td,
     Tbody,
-    Tooltip
+    Tooltip,
+    IconButton
 } from '@chakra-ui/react'
-import lodash, { update } from 'lodash'
+import lodash from 'lodash'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
+import { DeleteIcon } from '@chakra-ui/icons'
 
 import MerchantBadge from '../MerchantBadge/MerchantBadge'
 import CartProductQuantityPicker from '../CartProductQuantityPicker/CartProductQuantityPicker'
@@ -53,17 +55,14 @@ function CartModalProductCard({ order_products, onClose }) {
         }
 
         productsWeighted[weight][0] = order_product
-        console.log('updating cart order_products via PLUS button with: ', productsWeighted[weight][0])
-        // // update cart with new order product
-        // console.log('updating cart order_products via ADD button with: ', order_product)
         updateCart(order_product)
     }
 
     const minusQuantities = (weight) => {
 
         const existing_order_product = productsWeighted[weight][0]
-
         let tempQuantities = quantities
+
         if (tempQuantities[weight] > 1) {
 
             tempQuantities[weight] -= 1
@@ -76,17 +75,19 @@ function CartModalProductCard({ order_products, onClose }) {
             }
 
             productsWeighted[weight][0] = order_product
-            console.log('updating cart order_products via MINUS button with: ', productsWeighted[weight][0])
-            // // update cart with new order product
             updateCart(order_product)
-            // console.log('updating cart order_products via MINUS button with: ', order_product)
 
         } else {
 
-            // if quantity of order_product is set to 0, delete it 
             const data = deleteOrderProductFromCart(existing_order_product.id)
-            console.log('deted order product: ', data)
+            console.log('deleted order product: ', data)
         }
+    }
+
+    const deleteProductCard = () => {
+        order_products.map((order_product) => {
+            deleteOrderProductFromCart(order_product.id)
+        })
     }
 
     useEffect(() => {
@@ -143,6 +144,7 @@ function CartModalProductCard({ order_products, onClose }) {
                                 <Th textAlign='center'>Variant</Th>
                                 <Th textAlign='center'>Price</Th>
                                 <Th textAlign='center'>Quantity</Th>
+                                <IconButton icon={<DeleteIcon />} size='sm' bgColor='white' onClick={deleteProductCard}/>
                             </Tr>
                         </Thead>
                         <Tbody>

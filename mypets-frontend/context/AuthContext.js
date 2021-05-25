@@ -174,6 +174,7 @@ export const AuthProvider = (props) => {
                 console.log('Successfully logged in ', data.user)
                 setUser(data.user)
                 getCart()
+                getProfile()
             }
         } catch (err) {
             console.error(err)

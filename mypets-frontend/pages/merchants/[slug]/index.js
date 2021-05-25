@@ -1,4 +1,5 @@
 import React from 'react'
+import lodash from 'lodash'
 import { Container, Box, Flex, Grid, GridItem, HStack, Img } from "@chakra-ui/react"
 
 import { API_CATEGORIES_URL, API_MERCHANTS_URL, API_PRODUCTS_URL } from '../../../utils/urls'
@@ -7,7 +8,12 @@ import MerchantTitle from '../../../components/MerchantTitle/MerchantTitle'
 import MerchantProductReviewTab from '../../../components/MerchantProductReviewTab/MerchantProductReviewTab'
 
 
-function index({ merchant, categories }) {
+function index({ merchant }) {
+
+    const merchantCategories = Object.keys(lodash.groupBy(merchant.products, 'category.name'))
+    console.log('merchant products: ', merchant.products)
+    console.log('categories of merchant products: ', merchantCategories)
+
     return (
         <>
             <Navbar />
@@ -24,7 +30,7 @@ function index({ merchant, categories }) {
                 />
                 <MerchantProductReviewTab 
                     merchantProducts={merchant.products} 
-                    categories={categories} 
+                    categories={merchantCategories} 
                     merchantReviews={merchant.merchant_reviews}
                 />
             </Container>
@@ -41,14 +47,10 @@ export async function getStaticProps({ params: { slug } }) {
     const merchant_res = await fetch(`${API_MERCHANTS_URL}?slug=${slug}`)
     const merchant = await merchant_res.json()
 
-    const categories_res = await fetch(`${API_CATEGORIES_URL}`)
-    const categories = await categories_res.json()
-
     // Return as props
     return {
         props: {
-            merchant: merchant[0],
-            categories: categories
+            merchant: merchant[0]
         }
     }
 }

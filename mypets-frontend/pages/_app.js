@@ -2,6 +2,8 @@ import { ChakraProvider, ColorModeProvider, useColorMode } from "@chakra-ui/reac
 import customTheme from '../styles/theme'
 import { AuthProvider } from '../context/AuthContext'
 
+import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
+
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
@@ -12,6 +14,7 @@ function MyApp({ Component, pageProps }) {
           useSystemColorMode: true,
         }}
         >
+          <AnnouncementBanner />
           <Component {...pageProps} /> 
         </ColorModeProvider>
       </ChakraProvider>

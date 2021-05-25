@@ -1,7 +1,7 @@
 import { Box, Heading } from "@chakra-ui/react"
 import ProductList from '../ProductList/ProductList'
 
-function ProductSectionList({ products, sortMethod, heading }) {
+function ProductSectionList({ products, sortMethod, selectedCategory, heading }) {
 
     const sortProductsAscending = (products) => {
         products.sort((a, b) => (a.price < b.price) ? -1: 1)
@@ -23,9 +23,20 @@ function ProductSectionList({ products, sortMethod, heading }) {
         sortProductsPopularity(products)
     }
 
+    const filterProductsByCategory = (products) => {
+
+        console.log('filtering products by: ', selectedCategory)
+
+        if (selectedCategory === 'All products') {
+            return products
+        } else {
+            return products.filter(product => product.category.name == selectedCategory)
+        }
+    }
+
     return (
-        <Box>
-            <ProductList products={products} heading={heading}/>
+        <Box w='1000px'>
+            <ProductList products={filterProductsByCategory(products)} heading={heading}/>
         </Box>
     )
 }

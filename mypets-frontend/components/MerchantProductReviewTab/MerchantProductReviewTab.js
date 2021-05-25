@@ -10,6 +10,10 @@ import MypetsMerchantTab from '../MypetsMerchantTab/MypetsMerchantTab'
 function MerchantProductReviewTab({ merchantProducts, categories, merchantReviews}) {
 
     const [sortMethod, setSortMethod] = useState('pop')
+    const [selectedCategory, setSelectedCategory] = useState('All products')
+    const fullCategories = ['All products'].concat(categories)
+
+    console.log('FULL CATEGORIES FOR MERCHANT PAGE: ', fullCategories)
 
     return (
         <Tabs align='center' variant='unstyled' size='md' defaultIndex={0} mt={12}>
@@ -46,11 +50,11 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                 <TabPanel>
                     <Flex justifyContent='space-between' direction="row">
                         <Box w="100%" mr={12}>
-                            <ProductSectionList products={merchantProducts} sortMethod={sortMethod}/>
+                            <ProductSectionList products={merchantProducts} selectedCategory={selectedCategory} sortMethod={sortMethod}/>
                         </Box>
                         <Flex direction="column" w='210px'>
                             <SortMenu setSortMethod={setSortMethod}/>
-                            <CategoryList categories={categories}/>
+                            <CategoryList categories={fullCategories} setSelectedCategory={setSelectedCategory}/>
                         </Flex>
                     </Flex>
                 </TabPanel>

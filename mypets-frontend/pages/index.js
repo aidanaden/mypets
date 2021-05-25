@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import { Container, Box, Img, Stack, HStack, VStack, Text, Flex, SimpleGrid, Heading, Button, } from "@chakra-ui/react"
 
+import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
 import Navbar from "../components/Navbar/Navbar"
 import SortMenu from '../components/SortMenu/SortMenu'
 import MerchantSectionList from '../components/MerchantSectionList/MerchantSectionList'
@@ -12,6 +13,11 @@ import { API_PRODUCTS_URL, API_CATEGORIES_URL, API_MERCHANTS_URL } from '../util
 export default function Home({ products, categories, merchants }) {
 
   const [sortMethod, setSortMethod] = useState('pop')
+  const [selectedCategory, setSelectedCategory] = useState('All products')
+  let fullCategories = categories.map(category => category.name)
+  fullCategories = ['All products'].concat(fullCategories)
+
+  console.log('all categories found: ', fullCategories)
 
   return (
     <>
@@ -24,10 +30,10 @@ export default function Home({ products, categories, merchants }) {
           <Flex direction="column" w="100%">
             <MerchantSectionList merchants={merchants}/>
             <Flex direction='row' w='100%'>
-              <ProductSectionList products={products} sortMethod={sortMethod} heading='Recommended Products' />
+              <ProductSectionList products={products} sortMethod={sortMethod} selectedCategory={selectedCategory} heading='Recommended Products' />
               <Flex direction="column" w='210px' ml={12} mt={12}>
                 <SortMenu setSortMethod={setSortMethod}/>
-                <CategoryList categories={categories}/>
+                <CategoryList categories={fullCategories} setSelectedCategory={setSelectedCategory}/>
               </Flex>
             </Flex>
           </Flex>

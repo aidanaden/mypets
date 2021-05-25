@@ -69,8 +69,12 @@ function ProductListCard({ product }) {
                     <Box fontSize="md" color={useColorModeValue('gray.800', 'gray.800')}>
                       <Box as="span" color={'gray.600'} fontSize="sm">
                         $
-                        </Box>
-                      {product.price.toFixed(2)}
+                      </Box>
+                      {
+                        product.variant ?
+                        product.variant.price.toFixed(2) :
+                        0.00
+                      }
                     </Box>
                   </Flex>
                 </Box>

@@ -20,7 +20,7 @@ function LoginSocialBtnGroup() {
     const handleProviderSubmit = (provider) => {
         
         console.log('submit pressed by ', provider)
-        // setLoading(true)
+        setLoading(true)
         // router.push(`${API_URL}/connect/${provider}`)
     }
 
@@ -33,7 +33,7 @@ function LoginSocialBtnGroup() {
             </HStack>
             <ButtonGroup w='100%' mt={6}>
                 <NextLink href={`${API_URL}/connect/facebook`}>
-                    <Button w='100%' colorScheme='facebook' leftIcon={<FaFacebook />}>
+                    <Button w='100%' colorScheme='facebook' leftIcon={<FaFacebook />} onClick={handleProviderSubmit}>
                         Facebook
                     </Button>
                 </NextLink>
