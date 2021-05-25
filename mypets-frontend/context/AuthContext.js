@@ -39,7 +39,7 @@ export const AuthProvider = (props) => {
 
         console.log('creating a profile with body: ', body)
         try {
-            const response = await callAPI('/profiles', 'POST', {...body, user: user.id})
+            const response = await callAPI('/profiles', 'POST', body)
 
             if (!response.username) {
                 console.error('Failed to create profile: ', response)
@@ -171,10 +171,12 @@ export const AuthProvider = (props) => {
             if(!data.user) {
                 console.log("Login failed. Please try again. ", data)
             } else {
-                console.log('Successfully logged in ', data.user)
+                const username = data.user.username
+                const id = data.user.id
+                console.log('Successfully logged in ', data.user, ' with id of ', id)
                 setUser(data.user)
                 getCart()
-                getProfile({ username: data.user.username, user: data.user})
+                getProfile({ username: username, user: id })
             }
         } catch (err) {
             console.error(err)
