@@ -3,6 +3,7 @@ import customTheme from '../styles/theme'
 import { AuthProvider } from '../context/AuthContext'
 
 import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
+import Navbar from '../components/Navbar/Navbar'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }) {
         }}
         >
           <AnnouncementBanner />
+          <Navbar />
           <Component {...pageProps} /> 
         </ColorModeProvider>
       </ChakraProvider>

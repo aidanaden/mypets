@@ -2,21 +2,21 @@ import React from 'react'
 import { Flex, Input, Button, InputGroup, InputLeftElement } from "@chakra-ui/react"
 import { Search2Icon } from "@chakra-ui/icons"
 
-function Searchbar() {
+function Searchbar({ onChange, mr }) {
     return (
-        <Flex w='2xl'>
-            <InputGroup>
-                <InputLeftElement 
-                    pointerEvents="none"
-                    children={<Search2Icon color="gray.300"/>}
-                />
-                <Input
-                    size="md"
-                    focusBorderColor="mypets.100" 
-                    placeholder="Search for products here" 
-                />
-            </InputGroup>
-        </Flex>
+        <InputGroup w='xl' mr={mr}>
+            <InputLeftElement
+                pointerEvents="none"
+                children={<Search2Icon color="gray.600" />}
+            />
+            <Input
+                size="md"
+                focusBorderColor="mypets.100"
+                placeholder="Search for products here"
+                borderWidth={2}
+                onChange={onChange}
+            />
+        </InputGroup>
     )
 }
 

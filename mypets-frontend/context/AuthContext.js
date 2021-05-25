@@ -60,7 +60,7 @@ export const AuthProvider = (props) => {
         try {
             const data = await callAPI('/profiles', 'GET')
             console.log('data received from getProfile: ', data)
-            if (!data[0]) {
+            if (data.length == 0) {
                 console.log('profile doesn not exist: ', data)
                 createProfile(body)
             }
@@ -136,7 +136,7 @@ export const AuthProvider = (props) => {
             })
 
             if (!response.user) {
-                console.error("Login failed. Please try again.")
+                console.log("Login failed. Please try again. ", response)
             } else {
                 console.log('Successfully logged in ', response.user)
                 setUser(response.user)
@@ -169,12 +169,12 @@ export const AuthProvider = (props) => {
             const data = await response.json()
 
             if(!data.user) {
-                console.error('Login failed. Please try again.')
+                console.log("Login failed. Please try again. ", data)
             } else {
                 console.log('Successfully logged in ', data.user)
                 setUser(data.user)
                 getCart()
-                getProfile()
+                getProfile({ username: data.user.username, user: data.user})
             }
         } catch (err) {
             console.error(err)

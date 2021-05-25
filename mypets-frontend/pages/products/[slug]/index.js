@@ -11,7 +11,6 @@ function Product({ product }) {
 
     return (
         <>
-            <Navbar />
             <Container maxW="1200px" mb={6}>
                 <Grid 
                     templateRows="min-content" 

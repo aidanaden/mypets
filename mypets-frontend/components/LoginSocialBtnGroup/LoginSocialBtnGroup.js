@@ -3,7 +3,8 @@ import {
     Button,
     HStack,
     Divider,
-    Text
+    Text,
+    useToast
 } from '@chakra-ui/react'
 import { FaFacebook, FaGoogle } from 'react-icons/fa'
 import NextLink from 'next/link'
@@ -14,14 +15,26 @@ import { API_URL } from '../../utils/urls'
 
 function LoginSocialBtnGroup() {
 
-    const router = useRouter()
-    // const [loading, setLoading] = useState(false)
+    const toast = useToast()
 
-    const handleProviderSubmit = (provider) => {
-        
-        console.log('submit pressed by ', provider)
-        setLoading(true)
-        // router.push(`${API_URL}/connect/${provider}`)
+    const [fbLoading, setfbLoading] = useState(false)
+    const [googleLoading, setGoogleLoading] = useState(false)
+
+    const loginProviderToast = (text) => toast({
+        title: text,
+        status: 'info',
+        duration: 3000,
+        isClosable: true,
+    })
+
+    const handleFbSubmit = () => {
+        setfbLoading(true)
+        loginProviderToast('Logging in via Facebook...')
+    }
+
+    const handleGoogleSubmit = () => {
+        setGoogleLoading(true)
+        loginProviderToast('Logging in via Google...')
     }
 
     return (
@@ -33,12 +46,12 @@ function LoginSocialBtnGroup() {
             </HStack>
             <ButtonGroup w='100%' mt={6}>
                 <NextLink href={`${API_URL}/connect/facebook`}>
-                    <Button w='100%' colorScheme='facebook' leftIcon={<FaFacebook />} onClick={handleProviderSubmit}>
+                    <Button w='100%' colorScheme='facebook' leftIcon={<FaFacebook />} onClick={handleFbSubmit} isLoading={fbLoading}>
                         Facebook
                     </Button>
                 </NextLink>
                 <NextLink href={`${API_URL}/connect/google`}>
-                    <Button w='100%' colorScheme='blackAlpha' leftIcon={<FaGoogle />}>
+                    <Button w='100%' colorScheme='blackAlpha' leftIcon={<FaGoogle />} onClick={handleGoogleSubmit} isLoading={googleLoading} >
                         Google
                     </Button>
                 </NextLink>

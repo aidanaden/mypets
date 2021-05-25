@@ -22,7 +22,7 @@ import {
 import NextLink from 'next/link';
 import NextImage from 'next/image'
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
-import Searchbar from "../Searchbar/Searchbar"
+import SearchbarGroup from '../SearchbarGroup/SearchbarGroup'
 import NavbarCartModalBtn from '../NavbarCartModalBtn/NavbarCartModalBtn';
 import NavbarUserIcon from '../NavbarUserIcon/NavbarUserIcon';
 import NextChakraLink from '../NextChakraLink/NextChakraLink';
@@ -74,7 +74,7 @@ export default function Navbar() {
                             <NextImage src='/mypets-2.svg' width='150' height='35' />
                         </a>
                     </NextLink>
-                    <Searchbar />
+                    <SearchbarGroup />
                     <Flex alignItems={'center'}>
                         {/* if logged in, show past orders, cart + user icon */}
                         { user ? ( 
