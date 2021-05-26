@@ -130,22 +130,24 @@ export const AuthProvider = (props) => {
     const loginUser = async ({ email, password }) => {
 
         try {
-            const response = await callAPI('/auth/local', 'POST', {
+            callAPI('/auth/local', 'POST', {
                 identifier: email,
                 password: password
+            }).then(response => {
+                if (!response.user) {
+                    console.log("Login failed. Please try again. ", response)
+                    return 'fail'
+                } else {
+                    console.log('Successfully logged in ', response.user)
+                    setUser(response.user)
+                    getProfile()
+                    getCart()
+                    return 'success'
+                }
             })
 
-            if (!response.user) {
-                console.log("Login failed. Please try again. ", response)
-            } else {
-                console.log('Successfully logged in ', response.user)
-                setUser(response.user)
-                getProfile()
-                getCart()
-            }
-
         } catch (error) {
-            console.error(error)
+            console.error(err)
         }  
     }
 
@@ -193,12 +195,33 @@ export const AuthProvider = (props) => {
     const checkUserLoggedIn = async () => {
         const user = await callAPI('/users/me', 'GET')
         if (user.id) {
+            console.log('user logged in: ',)
             setUser(user)
             getCart()
             getProfile()
         } else {
             setUser(null)
         }
+    }
+
+    /**
+     * Update user password with new password 
+     * @param {{password: string, newPassword: string, newPassword2: string}} body 
+     */
+    const updateUserPassword = async (body) => {
+        try {
+            const response = await callAPI('/password', 'POST', { ...body, id: user.id })
+
+            if (!response.user) {
+                console.log("Password reset failed. Please try again. ", response)
+            } else {
+                console.log('Successfully reset password ', response.user)
+                setUser(response.user)
+            }
+
+        } catch (error) {
+            console.error(error)
+        }  
     }
 
     const createOrderProduct = async (order_product) => {
@@ -360,7 +383,8 @@ export const AuthProvider = (props) => {
             loginUser, 
             registerUser, 
             logoutUser, 
-            loginUserProvider 
+            loginUserProvider,
+            updateUserPassword
         }}>
             {props.children}
         </AuthContext.Provider>

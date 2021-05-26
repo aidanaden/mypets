@@ -28,7 +28,7 @@ const passwordSchema = Yup.object().shape({
                 .minSymbols(1, 'Password must contain at least 1 symbol'),
     confirm_password2: Yup
                 .string()
-                .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+                .oneOf([Yup.ref('password2'), null], 'Passwords must match'),
 })
 
 function UserPasswordForm({ handleSubmit }) {

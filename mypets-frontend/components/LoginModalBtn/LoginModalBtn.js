@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { 
     Button, 
     useDisclosure, 
@@ -14,7 +14,8 @@ import {
     FormControl,
     FormLabel,
     FormErrorMessage,
-    FormHelperText
+    FormHelperText,
+    useToast
 } from '@chakra-ui/react'
 import { Formik, Form, Field } from 'formik'
 const Yup = require('yup')
@@ -30,17 +31,33 @@ import LoginSocialBtnGroup from '../LoginSocialBtnGroup/LoginSocialBtnGroup'
 function LoginModalBtn() {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { loginUser } = useContext(AuthContext)
+    const { user, loginUser } = useContext(AuthContext)
+    const toast = useToast()
+
+    const loginSuccesToast = (text) => toast({
+        title: text,
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+    })
+
+    const loginFailToast = (text) => toast({
+        title: text,
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+    })
 
     const handleSubmit = (values, actions) => {
         console.log(values)
         try {
             actions.setSubmitting(true)
             loginUser(values)
+            actions.setSubmitting(false)
         } catch (err) {
             console.error(err)
+            loginFailToast('Failed to log in')
         }
-        onClose()
     }
 
     const loginSchema = Yup.object().shape({

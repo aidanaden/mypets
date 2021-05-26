@@ -26,7 +26,7 @@ function NavbarUserModalBtn() {
 
     const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { user, profile, updateProfile } = useContext(AuthContext)
+    const { user, profile, updateProfile, updateUserPassword } = useContext(AuthContext)
     const [userInitialValues, setUserInitialValues] = useState({})
     const [addressInitialValues, setAddressInitialValues] = useState({})
     const tabs = [
@@ -43,6 +43,13 @@ function NavbarUserModalBtn() {
     })
 
     const addressSuccessToast = (text) => toast({
+        title: text,
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+    })
+
+    const passwordSuccessToast = (text) => toast({
         title: text,
         status: 'success',
         duration: 3000,
@@ -83,26 +90,39 @@ function NavbarUserModalBtn() {
     const handleUserPasswordChange = (values, actions) => {
         console.log('user password changed!')
         console.log(values)
+
+        try {
+            actions.setSubmitting(true)
+            updateUserPassword(values)
+        } catch (err) {
+            console.error(err)
+        }
+        actions.setSubmitting(false)
+        passwordSuccessToast('Password successfully updated')
     }
 
     useEffect(() => {
 
-        if (profile) {
+        const values = { email: user.email }
 
+        if (profile) {
+            
             setUserInitialValues({ 
+                ...values,
                 username: profile.username ? profile.username : '', 
-                email: user.email, 
                 phone_num: profile.phone_num ? profile.phone_num : '', 
                 dob: profile.dob ? profile.dob : '', 
                 sex: profile.sex ? profile.sex : '',
             })
-    
             setAddressInitialValues({ 
                 address: profile.address ? profile.address : '', 
                 unit: profile.unit ? profile.unit : '', 
                 postal: profile.postal ? profile.postal : '', 
                 location: profile.location ? profile.location.split("_").join(" ") : '',
             })
+
+        } else {
+            setUserInitialValues(values)
         }
 
         console.log('profile value changed to: ', profile)
