@@ -4,11 +4,11 @@ import ProductList from '../ProductList/ProductList'
 function ProductSectionList({ products, sortMethod, selectedCategory, heading }) {
 
     const sortProductsAscending = (products) => {
-        products.sort((a, b) => (a.price < b.price) ? -1: 1)
+        products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
     }
 
     const sortProductsDescending = (products) => {
-        products.sort((a, b) => (a.price < b.price) ? 1: -1)
+        products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? 1: -1)
     }
 
     const sortProductsPopularity = (products) => {

@@ -13,23 +13,21 @@ import {
 
 function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPrice }) {
 
-    let prices = {}
-    let productQty = {}
-    let calculatedTotalPrice = 0
-
-    productNames.map((productName,i) => {
-        prices[productName] = 0
-        productQty[productName] = 0
-        groupedOrderProducts[productName].map((orderProduct,i) => {
-            prices[productName] += orderProduct.product.price * orderProduct.quantity 
-            productQty[productName] += orderProduct.quantity
-            calculatedTotalPrice += orderProduct.product.price
+    const productTotalQuantity = (order_products) => {
+        let totalQuantity = 0
+        order_products.map((order_product) => {
+            totalQuantity += order_product.quantity
         })
-    })
+        return totalQuantity
+    }
 
-    
-
-    // console.log('total prices for each product type: ', prices)
+    const productTotalPrice = (order_products) => {
+        let totalPrice = 0
+        order_products.map((order_product) => {
+            totalPrice += order_product.total_price
+        })
+        return totalPrice
+    }
 
     return (
         <Table variant="unstyled" size='md'>
@@ -44,14 +42,14 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPric
                 {productNames.map((productName, i) => (
                     <Tr key={i}>
                         <Td fontWeight='bold'>{productName}</Td>
-                        <Td textAlign='right' fontWeight='bold'>{productQty[productName]}</Td>
-                        <Td textAlign='right' fontWeight='bold'>{prices[productName].toFixed(2)}</Td>
+                        <Td textAlign='right' fontWeight='bold'>{productTotalQuantity(groupedOrderProducts[productName])}</Td>
+                        <Td textAlign='right' fontWeight='bold'>{productTotalPrice(groupedOrderProducts[productName]).toFixed(2)}</Td>
                     </Tr>
                 ))}
                 <Tr>
                     <Td fontWeight='bold'></Td>
                     <Td textAlign='right' fontWeight='bold'></Td>
-                    <Td textAlign='right' fontWeight='bold'>SG${calculatedTotalPrice.toFixed(2)}</Td>
+                    <Td textAlign='right' fontWeight='bold'>SG${totalPrice.toFixed(2)}</Td>
                 </Tr>
             </Tbody>
         </Table>

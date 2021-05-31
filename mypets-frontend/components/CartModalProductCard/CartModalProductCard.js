@@ -37,14 +37,14 @@ function CartModalProductCard({ order_products, onClose }) {
     const [quantities, setQuantities] = useState(null)
     const [productsWeighted, setProductsWeighted] = useState([])
     const [weights, setWeights] = useState([])
-
     const { updateCart, deleteOrderProductFromCart } = useContext(AuthContext)
 
     const addQuantities = (weight) => {
+
         let tempQuantities = quantities
         tempQuantities[weight] += 1
         setQuantities(tempQuantities)
-        
+
         // create order product and add to cart
         const existing_order_product = productsWeighted[weight][0]
 
@@ -53,7 +53,6 @@ function CartModalProductCard({ order_products, onClose }) {
             quantity: 1,
             total_price: parseFloat(existing_order_product.variant.price),
         }
-
         productsWeighted[weight][0] = order_product
         updateCart(order_product)
     }
@@ -64,7 +63,6 @@ function CartModalProductCard({ order_products, onClose }) {
         let tempQuantities = quantities
 
         if (tempQuantities[weight] > 1) {
-
             tempQuantities[weight] -= 1
             setQuantities(tempQuantities)
 
@@ -76,9 +74,7 @@ function CartModalProductCard({ order_products, onClose }) {
 
             productsWeighted[weight][0] = order_product
             updateCart(order_product)
-
         } else {
-
             const data = deleteOrderProductFromCart(existing_order_product.id)
             console.log('deleted order product: ', data)
         }

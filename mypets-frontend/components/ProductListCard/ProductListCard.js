@@ -18,6 +18,7 @@ import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import { imageToUrl } from '../../utils/urls'
 
 function ProductListCard({ product }) {
+  console.log('product in product list: ', product)
   return (
     <Tooltip
             label={product.name}
@@ -71,8 +72,8 @@ function ProductListCard({ product }) {
                         $
                       </Box>
                       {
-                        product.variant ?
-                        product.variant.price.toFixed(2) :
+                        product.variants ?
+                        product.variants[0].price.toFixed(2) :
                         0.00
                       }
                     </Box>

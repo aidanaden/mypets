@@ -6,21 +6,50 @@ import { API_URL } from '../utils/urls'
 
 const AuthContext = createContext()
 
-export const callAPI = async (path, method, body) => {
+const getOrder = (session_id) => {
         
+    const [order, setOrder] = useState(null)
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        const fetchOrder = async () => {
+            setLoading(true)
+            const body = {
+                checkout_session: session_id
+            }
+            const data = await fetchAPI('/orders/confirm', 'POST', body)
+            setOrder(data)
+            setLoading(false)
+        }
+
+        fetchOrder()
+    }, [session_id])
+
+    return { order, loading }
+}
+
+/**
+ * 
+ * @param {string} path 
+ * @param {string} method 
+ * @param {object} body 
+ */
+export const callAPI = async (path, method, body) => {
     console.log('fetching...')
-
-    const response = await fetch(`${API_URL}${path}`, {
-        method,
-        headers: {
-            "content-type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify(body)
-    })
-
-    const data = await response.json()
-    return data
+    try {
+        const response = await fetch(`${API_URL}${path}`, {
+            method,
+            headers: {
+                "content-type": "application/json",
+            },
+            credentials: "include",
+            body: JSON.stringify(body)
+        })
+        const data = await response.json()
+        return data
+    } catch (err) {
+        console.error(err)
+    }
 }
 
 export const AuthProvider = (props) => {

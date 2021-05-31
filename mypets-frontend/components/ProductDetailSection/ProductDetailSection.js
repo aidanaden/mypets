@@ -81,6 +81,7 @@ function ProductDetailSection({ product }) {
 
         setVariant(product.variants[0])
         setPrice(product.variants[0].price)
+        console.log('useEffect product: ', product)
         console.log('useEffect variants are: ', product.variants)
         console.log('useEffect initial variant is: ', variant)
 

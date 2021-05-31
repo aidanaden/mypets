@@ -16,7 +16,6 @@ const getOrders = (user) => {
             if (user) {
                 setLoading(true)
                 const data = await callAPI('/orders', 'GET')
-                // console.log('Order data: ', data)
                 setOrders(data)
                 setLoading(false)
             }
@@ -28,7 +27,6 @@ const getOrders = (user) => {
 }
 
 function Orders() {
-
     const { user } = useContext(AuthContext)
     const { orders, loading } = getOrders(user)
 

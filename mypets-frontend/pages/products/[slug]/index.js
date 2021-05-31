@@ -9,6 +9,8 @@ import { API_PRODUCTS_URL } from '../../../utils/urls'
 
 function Product({ product }) {
 
+    console.log('loaded product page: ', product)
+
     return (
         <>
             <Container maxW="1200px" mb={6}>
@@ -55,6 +57,8 @@ export async function getStaticProps({ params: { slug } }) {
     // Fetch merchants, products 
     const product_res = await fetch(`${API_PRODUCTS_URL}?slug=${slug}`)
     const product = await product_res.json()
+
+    console.log(product[0])
 
     // Return as props
     return {

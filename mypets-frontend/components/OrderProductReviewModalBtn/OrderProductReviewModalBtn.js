@@ -20,10 +20,11 @@ import { API_URL } from '../../utils/urls'
 import { callAPI }  from '../../context/AuthContext'
 import AuthContext from '../../context/AuthContext'
 
-function OrderProductReviewModalBtn({ product, productName, reviewed }) {
+function OrderProductReviewModalBtn({ order_product }) {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [rating, setRating] = useState(0)
+    const [reviewed, setReviewed] = useState(order_product.reviewed)
     const [reviewText, setReviewText] = useState('')
 
     const { user } = useContext(AuthContext)
@@ -32,31 +33,41 @@ function OrderProductReviewModalBtn({ product, productName, reviewed }) {
         setReviewText(e.target.value)
     }
 
-    const onSubmit = async () => {
-
+    const postReview = async () => {
         const body = {
             date_created: new Date(),
             rating: rating + 1,
             text: reviewText,
             user: user.username,
-            product: product
+            product: order_product.variant.product
         }
-        // console.log('user submitting: ', user.username)
-        // console.log('product being submitted: ', product)
-        // console.log('body submitted in POST request: ', body)
         const response = await callAPI('/reviews', 'POST', body)
+        console.log('posted review for product: ', response)
+    } 
 
-        // update order product with reviewed set to true
-
-        onClose()
-        // console.log('submitted review, response: ', response)
+    const updateOrderProduct = async () => {
+        try {
+            const data = await callAPI(`/order-products/${order_product.id}`, 'PUT', {
+                reviewed: true,
+            })
+            console.log('successfully updated order product to: ', data)
+            setReviewed(true)
+        } catch (err) {
+            console.error(err)
+        }
     }
 
-    console.log('reviewed status of order product ', productName, ' is ', reviewed)
+    const onSubmit = async () => {
+        
+        postReview()
+        updateOrderProduct()
+        // update order product to REVIEWED
+        onClose()
+    }
 
     return (
         <>
-            <Box textAlign='center' mt={6}>
+            <Box textAlign='center' mt={8}>
                 { reviewed ? 
                     <MypetsBtn btnText='Review submitted' variant='outline' isDisabled={true}/>:   
                     <MypetsBtn onClick={onOpen} btnText='Write a review' variant='outline'/>
@@ -65,7 +76,7 @@ function OrderProductReviewModalBtn({ product, productName, reviewed }) {
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader mr={0}>{productName}</ModalHeader>
+                    <ModalHeader mr={0}>{order_product.variant.product.name}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         <Rating scale={5} size={36} mt={0} rating={rating} setRating={setRating} />

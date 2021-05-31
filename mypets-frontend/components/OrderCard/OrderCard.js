@@ -9,18 +9,9 @@ import OrderPriceBreakdownList from '../OrderPriceBreakdownList/OrderPriceBreakd
 
 function OrderCard({ order, loading }) {
 
-    const products = order.order_products.map(orderProduct => orderProduct.product)
-
-    const groupedOrderProducts = lodash.groupBy(order.order_products, 'product.name')
+    const groupedOrderProducts = lodash.groupBy(order.order_products, 'variant.product.name')
     const productNames = Object.keys(groupedOrderProducts)
     const totalPrice = order.total_price
-
-
-    // console.log('List of order products: ', order.order_products)
-    // console.log('List of product ID + name map: ', productNames)
-    // console.log('List of grouped order products: ', groupedOrderProducts)
-    // console.log('List of products in order: ', products)
-
 
     return (
         <Flex 
@@ -34,8 +25,8 @@ function OrderCard({ order, loading }) {
             borderWidth='1px' 
         >
             <Flex direction='column' py={8} px={8}>
-                {order.order_products.map((orderProduct, i) => (
-                    <OrderProductCard key={i} product={orderProduct.product} quantity={orderProduct.quantity} reviewed={orderProduct.reviewed}/>
+                {productNames.map((productName, i) => (
+                    <OrderProductCard key={i} order_products={groupedOrderProducts[productName]}/>
                 ))}
             </Flex>
             <Box p={12} flex='1'>

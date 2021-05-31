@@ -13,12 +13,18 @@ import {
     Box
 } from '@chakra-ui/react'
 import lodash from 'lodash'
+import { loadStripe } from '@stripe/stripe-js'
 import { FaShoppingCart } from 'react-icons/fa'
 
-import AuthContext, { callAPI } from '../../context/AuthContext'
+import AuthContext from '../../context/AuthContext'
+import { callAPI } from '../../context/AuthContext'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import CartModalProductCard from '../CartModalProductCard/CartModalProductCard'
 import CartPriceBreakdownList from '../CartPriceBreakdownList/CartPriceBreakdownList'
+import { STRIPE_PK } from '../../utils/urls'
+
+const stripePromise = loadStripe(STRIPE_PK)
+
 /**
  * Cart containing array of different products 
  * e.g. products = [product1, product2, ...]
@@ -34,6 +40,18 @@ function NavbarCartModalBtn() {
     const [groupedProducts, setGroupedProducts] = useState(null)
     const [productNames, setProductNames] = useState(null)
 
+    const handleCheckout = async () => {
+
+        const stripe = await stripePromise
+        const session = await callAPI('/orders', 'POST', cart)
+        if (!session.id) {
+            console.error('Session does not contain id, failed to create order.')
+        }
+        const result = await stripe.redirectToCheckout({
+            sessionId: session.id
+        })
+    }   
+
     useEffect(() => {
         if (cart) {
             console.log('useEffect cart: ', cart)
@@ -42,8 +60,6 @@ function NavbarCartModalBtn() {
             setProductNames(Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
         }
     }, [cart])
-
-    console.log('useEffect grouped products: ', groupedProducts)
 
     return (
         <>
@@ -71,7 +87,7 @@ function NavbarCartModalBtn() {
                                         productNames={productNames} 
                                         totalPrice={totalPrice}
                                     />
-                                    <MypetsBtn btnText='Checkout' onClick={onClose} w="stretch" mt={6}/>
+                                    <MypetsBtn btnText='Checkout' onClick={handleCheckout} w="stretch" mt={6}/>
                                 </Box>
                             </Flex> :
                             <>
