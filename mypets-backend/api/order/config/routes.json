@@ -33,6 +33,14 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/orders/confirm",
+      "handler": "order.confirm",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "PUT",
       "path": "/orders/:id",
       "handler": "order.update",

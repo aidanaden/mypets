@@ -5,7 +5,7 @@ module.exports = {
 
         const params = ctx.request.body
         const id = params.id 
-        console.log('updating password of user: ', id)
+        // console.log('updating password of user: ', id)
         const user = await strapi.query('user', 'users-permissions').findOne({ id });
         const validPassword = await strapi.plugins['users-permissions'].services.user.validatePassword(params.password, user.password)
 

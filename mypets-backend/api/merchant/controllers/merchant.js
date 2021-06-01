@@ -24,8 +24,8 @@ module.exports = {
         for (let i=0; i < entities.length; i++) {
             let entity = entities[i]
             for (let j=0; j < entity.products.length; j++) {
-                entity.products[j].variant = await strapi.services.variant.findOne({ id: entity.products[j].variant })
-                entity.products[j].category = await strapi.services.category.findOne({ id: entity.products[j].category })
+                entity.products[j] = await strapi.services.product.findOne({ id: entity.products[j].id })
+                // entity.products[j].category = await strapi.services.category.findOne({ id: entity.products[j].category })
             }
         }
 
@@ -42,8 +42,8 @@ module.exports = {
         let entity = await strapi.services.merchant.findOne({ id: id })
 
         for (let i=0; i < entity.products.length; i++) {
-            entity.products[i].variant = await strapi.services.variant.findOne({ id: entity.products[i].variant })
-            entity.products[i].category = await strapi.services.category.findOne({ id: entity.products[i].category })
+            entity.products[i] = await strapi.services.product.findOne({ id: entity.products[i].id })
+            // entity.products[i].category = await strapi.services.category.findOne({ id: entity.products[i].category })
         }
 
         return sanitizeEntity(entity, { model: strapi.models.merchant })

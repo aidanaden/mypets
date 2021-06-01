@@ -15,7 +15,7 @@ module.exports = {
     async find(ctx) {
         const { user } = ctx.state // get user
         const result = await strapi.services.profile.find({ user: user.id })
-        console.log('getting profile ', result)
+        // console.log('getting profile ', result)
 
         let entities
         if (ctx.query._q) {
@@ -47,7 +47,7 @@ module.exports = {
     async create(ctx) {
 
         const { user } = ctx.state
-        console.log('creating profile with user id: ', user.id)
+        // console.log('creating profile with user id: ', user.id)
         const entity = await strapi.services.profile.create({...ctx.request.body, user: user.id })
 
         return sanitizeEntity(entity, { model: strapi.models.profile })
@@ -61,7 +61,7 @@ module.exports = {
 
         const { id } = ctx.params
         const { user } = ctx.state
-        console.log('updating profile with user id: ', user.id)
+        // console.log('updating profile with user id: ', user.id)
         const entity = await strapi.services.profile.update({ id }, {...ctx.request.body, user: user.id })
 
         return sanitizeEntity(entity, { model: strapi.models.profile })

@@ -6,28 +6,6 @@ import { API_URL } from '../utils/urls'
 
 const AuthContext = createContext()
 
-const getOrder = (session_id) => {
-        
-    const [order, setOrder] = useState(null)
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        const fetchOrder = async () => {
-            setLoading(true)
-            const body = {
-                checkout_session: session_id
-            }
-            const data = await fetchAPI('/orders/confirm', 'POST', body)
-            setOrder(data)
-            setLoading(false)
-        }
-
-        fetchOrder()
-    }, [session_id])
-
-    return { order, loading }
-}
-
 /**
  * 
  * @param {string} path 

@@ -34,8 +34,8 @@ module.exports = {
 
             let entity = entities[i]
             for (let j=0; j < entity.order_products.length; j++) {
-                entity.order_products[j].product = await strapi.services.product.findOne({ id: entity.order_products[j].product })
-                console.log('order object product value updated to: ', entity.order_products[j].product)
+                entity.order_products[j].variant = await strapi.services.variant.findOne({ id: entity.order_products[j].variant })
+                // console.log('order object product value updated to: ', entity.order_products[j].variant)
             }
         }
 
@@ -53,7 +53,7 @@ module.exports = {
         const entity = await strapi.services.order.findOne({ id, user: user.id })
 
         for (let i=0; i < entity.order_products.length; i++) {
-            entity.order_products[i].product = await strapi.services.product.findOne({ id: entity.order_products[i].product })
+            entity.order_products[i].variant = await strapi.services.variant.findOne({ id: entity.order_products[i].variant })
         }
 
         return sanitizeEntity(entity, { model: strapi.models.order })
@@ -65,21 +65,29 @@ module.exports = {
      */
 
     async create(ctx) {
-        const { order_products } = ctx.request.body
-
-        if (!order_products) {
-            return ctx.throw(400, 'Please specify order products.')
-        }
-
-        const realProduct = await strapi.services.product.findOne({ id: product.id })
-
-        if (!realProduct) {
-            return ctx.throw(400, 'No product with such id exists.')
-        }
-
+        const cart = ctx.request.body
         const { user } = ctx.state
-
         const BASE_URL = ctx.request.headers.origin || process.env.FRONT_END_URL
+
+        if (!cart) {
+            return ctx.throw(400, 'Please specify a cart.')
+        }        
+
+        const order_items = cart.order_products.map((orderProduct,i) => {
+            const data = {
+                price_data: {
+                    currency: 'sgd',
+                    product_data: {
+                        name: orderProduct.variant.product.name,
+                        images: [`${process.env.URL}${orderProduct.variant.product.image.url}`],
+                    },
+                    unit_amount: fromDecimalToInt(orderProduct.variant.price)
+                },
+                quantity: orderProduct.quantity
+            }
+
+            return data
+        })
 
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
@@ -87,29 +95,41 @@ module.exports = {
             mode: 'payment',
             success_url: `${BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: BASE_URL,
-            line_items: [
-                {
-                    price_data: {
-                        currency: 'sgd',
-                        product_data: {
-                            name: realProduct.name
-                        },
-                        unit_amount: fromDecimalToInt(realProduct.price)
-                    },
-                    quantity: 1
-                }
-            ]
+            line_items: order_items
         })
+
+        var orderDate = new Date()
+        const deliveryDays = 6
+        orderDate.setDate(orderDate.getDate() + deliveryDays)
 
         // create order
         const newOrder = await strapi.services.order.create({
             user: user.id,
-            product: realProduct.id,
-            total: realProduct.price,
+            order_products: cart.order_products,
+            total_price: cart.total_price,
             status: 'unpaid',
-            checkout_session: session.id
+            checkout_session: session.id,
+            order_date: new Date(),
+            delivery_date: orderDate
         })
 
         return { id: session.id }
+    },
+
+    /**
+     * Given a checkout session, verifies payment and updates the order
+     * @param {any} ctx 
+     */
+    async confirm(ctx) {
+        const { checkout_session } = ctx.request.body
+        const session = await stripe.checkout.sessions.retrieve(checkout_session)
+
+        if (session.payment_status === 'paid') {
+            const updateOrder = await strapi.services.order.update({ checkout_session }, { status: 'processing' })
+            console.log('UPDATING ORDER with PROCESSING STATUS: ', updateOrder)
+            return sanitizeEntity(updateOrder, { model: strapi.models.order })
+        } else {
+            ctx.throw(400, "Payment failed. Please contact support.")
+        }
     }
 };

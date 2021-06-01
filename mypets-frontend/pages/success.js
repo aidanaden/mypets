@@ -1,34 +1,25 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { fetchAPI } from '../context/AuthContext'
-
-const getOrder = (session_id) => {
-        
-    const [order, setOrder] = useState(null)
-    const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        const fetchOrder = async () => {
-            setLoading(true)
-            const body = {
-                checkout_session: session_id
-            }
-            const data = await fetchAPI('/orders/confirm', 'POST', body)
-            setOrder(data)
-            setLoading(false)
-        }
-
-        fetchOrder()
-    }, [session_id])
-
-    return { order, loading }
-}
+import { callAPI } from '../context/AuthContext'
 
 function success() {
 
     const router = useRouter()
-    const { session_id } = router.query
-    const { order, loading } = getOrder(session_id)
+
+    const confirmOrder = async (session_id) => {
+        const body = {
+            checkout_session: session_id
+        }
+        const data = await callAPI('/orders/confirm', 'POST', body)
+        return data
+    }
+
+    useEffect(() => {
+        confirmOrder(router.query.session_id).then((data) => {
+            console.log("updated order to : ", data)
+            router.push('/orders')
+        })
+    }, [router.query.session_id])
 
     return (
         <div>
