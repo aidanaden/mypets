@@ -34,19 +34,20 @@ const stripePromise = loadStripe(STRIPE_PK)
 function NavbarCartModalBtn() {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { user, cart } = useContext(AuthContext)
+    const { user, cart, clearCart } = useContext(AuthContext)
 
     const [totalPrice, setTotalPrice] = useState(0)
     const [groupedProducts, setGroupedProducts] = useState(null)
     const [productNames, setProductNames] = useState(null)
 
     const handleCheckout = async () => {
-
         const stripe = await stripePromise
         const session = await callAPI('/orders', 'POST', cart)
         if (!session.id) {
-            console.error('Session does not contain id, failed to create order.')
+            console.error('Session does not contain id, failed to create order')
         }
+
+        clearCart()
         const result = await stripe.redirectToCheckout({
             sessionId: session.id
         })

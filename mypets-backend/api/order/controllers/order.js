@@ -121,12 +121,22 @@ module.exports = {
      * @param {any} ctx 
      */
     async confirm(ctx) {
+        const { user } = ctx.state
         const { checkout_session } = ctx.request.body
         const session = await stripe.checkout.sessions.retrieve(checkout_session)
 
         if (session.payment_status === 'paid') {
             const updateOrder = await strapi.services.order.update({ checkout_session }, { status: 'processing' })
             console.log('UPDATING ORDER with PROCESSING STATUS: ', updateOrder)
+
+            // delete current cart
+            const cart = await strapi.services.cart.findOne({ user: user.id })
+            console.log('FOUND CART: ', cart)
+            const cartId = cart.id
+            console.log('CART ID: ', cartId)
+            const entity = await strapi.services.cart.delete({ id: cartId });
+            console.log('DELETED CART: ', entity)
+
             return sanitizeEntity(updateOrder, { model: strapi.models.order })
         } else {
             ctx.throw(400, "Payment failed. Please contact support.")

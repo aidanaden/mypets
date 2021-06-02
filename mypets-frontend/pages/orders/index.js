@@ -1,13 +1,10 @@
 import { useContext, useState, useEffect } from 'react'
 import { Container } from '@chakra-ui/react'
 
-import Navbar from '../../components/Navbar/Navbar'
 import OrderCard from '../../components/OrderCard/OrderCard'
 import AuthContext, { callAPI } from '../../context/AuthContext'
-import { API_ORDERS_URL } from '../../utils/urls'
 
 const getOrders = (user) => {
-
     const [orders, setOrders] = useState([])
     const [loading, setLoading] = useState(false)
 

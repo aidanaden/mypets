@@ -17,7 +17,7 @@ function success() {
     useEffect(() => {
         confirmOrder(router.query.session_id).then((data) => {
             console.log("updated order to : ", data)
-            router.push('/orders')
+            window.location.replace('/orders')
         })
     }, [router.query.session_id])
 

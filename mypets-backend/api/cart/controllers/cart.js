@@ -84,5 +84,16 @@ module.exports = {
         }
 
         return sanitizeEntity(entity, { model: strapi.models.cart })
+    },
+
+    /**
+     * Delete cart after purchase
+     * @param {any} ctx 
+     */
+    async delete(ctx) {
+        const { id } = ctx.params;
+    
+        const entity = await strapi.services.cart.delete({ id });
+        return sanitizeEntity(entity, { model: strapi.models.cart });
     }
 };

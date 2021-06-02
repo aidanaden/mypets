@@ -374,6 +374,10 @@ export const AuthProvider = (props) => {
         }
     }
 
+    const clearCart = () => {
+        setCart(null)
+    }
+
     useEffect(() => {
         checkUserLoggedIn()
     }, [])
@@ -382,6 +386,7 @@ export const AuthProvider = (props) => {
         <AuthContext.Provider value={{ 
             user, 
             cart, 
+            clearCart,
             cartLoading,
             profile,
             updateProfile,
