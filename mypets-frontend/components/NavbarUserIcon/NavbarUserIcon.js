@@ -41,7 +41,7 @@ function NavbarUserIcon() {
                     }
                 />
             </MenuButton>
-            <MenuList>
+            <MenuList zIndex='popover'>
                 <NavbarUserModalBtn />
                 <MenuItem onClick={handlePastOrders}>Past orders</MenuItem>
                 <MenuDivider />
