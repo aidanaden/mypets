@@ -1,40 +1,18 @@
-import { useState, useRef } from 'react'
 import {
     Box,
-    HStack,
-    Portal
+    HStack
 } from '@chakra-ui/react'
 
-import SearchPopover from '../SearchPopover/SearchPopover'
+import Searchbar from '../Searchbar/Searchbar'
 import PriceFilterPopover from '../PriceFilterPopover/PriceFilterPopover'
+import { callAPI } from '../../context/AuthContext'
 
-function SearchbarGroup() {
-
-    const [searchText, setSearchText] = useState('')
-
-    const searchTextChange = (e) => {
-        console.log('search text changed to: ', e.target.value, ' !')
-        setSearchText(e.target.value)
-    }
-
-    const ref = useRef()
-
+function SearchbarGroup({ products }) {    
     return (
-        <>
-            <Box>
-                <HStack>
-                    <SearchPopover onChange={searchTextChange} mr={4} />
-                    <PriceFilterPopover />
-                </HStack>
-                {/* <Box zIndex='popover' bgColor='blue.100'>
-                    <Portal w={25} h={25} containerRef={ref}>
-                        <Box bgColor='red.100'>
-                            Random box results
-                        </Box>
-                    </Portal>
-                </Box> */}
-            </Box>
-        </>
+        <HStack>
+            <Searchbar mr={4} products={products}/>
+            <PriceFilterPopover />
+        </HStack>
     )
 }
 

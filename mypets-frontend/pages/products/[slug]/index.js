@@ -7,13 +7,13 @@ import ProductDescriptionSection from "../../../components/ProductDescriptionSec
 import ProductReviewSection from "../../../components/ProductReviewSection/ProductReviewSection"
 import { API_PRODUCTS_URL } from '../../../utils/urls'
 
-function Product({ product }) {
+function Product({ product, products }) {
 
     console.log('loaded product page: ', product)
 
     return (
         <>
-            <Container maxW="1200px" mb={6}>
+            <Container maxW="1200px">
                 <Grid 
                     templateRows="min-content" 
                     templateColumns="repeat(3, 1fr)" 
@@ -55,6 +55,10 @@ export default Product
 export async function getStaticProps({ params: { slug } }) {
 
     // Fetch merchants, products 
+
+    const products_res = await fetch(`${API_PRODUCTS_URL}`)
+    const products = await products_res.json()
+
     const product_res = await fetch(`${API_PRODUCTS_URL}?slug=${slug}`)
     const product = await product_res.json()
 
@@ -63,7 +67,8 @@ export async function getStaticProps({ params: { slug } }) {
     // Return as props
     return {
         props: {
-            product: product[0]
+            product: product[0],
+            products: products
         }
     }
 }

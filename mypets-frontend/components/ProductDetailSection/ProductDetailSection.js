@@ -24,7 +24,7 @@ function ProductDetailSection({ product }) {
     const [variant, setVariant] = useState({})
     const [quantity, setQuantity] = useState(1)
     const [price, setPrice] = useState(0)
-    const { updateCart } = useContext(AuthContext)
+    const { user, updateCart } = useContext(AuthContext)
 
     const getVariantFromWeight = (weight) => {
         return product.variants.filter((variant) => parseFloat(variant.weight) == parseFloat(weight))[0]
@@ -52,19 +52,31 @@ function ProductDetailSection({ product }) {
         isClosable: true,
     })
 
+    const errorToast = (text) => toast({
+        title: text,
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+    })
+
     const handleAddToCart = async () => {
 
-        // create order product
-        const order_product = {
-            variant: variant,
-            quantity: quantity,
-            total_price: price
-        }
+        if (user) {
+            // create order product
+            const order_product = {
+                variant: variant,
+                quantity: quantity,
+                total_price: price
+            }
 
-        console.log('updating cart with: ', order_product)
-        // update cart with new order product
-        updateCart(order_product)
-        succesToast('Product added to cart')
+            console.log('updating cart with: ', order_product)
+            // update cart with new order product
+            updateCart(order_product)
+            succesToast('Product added to cart')
+        } else {
+            errorToast('Please login/register before purchasing :)')
+        }
+        
     }
 
     const variantSelectOnChange = (e) => {

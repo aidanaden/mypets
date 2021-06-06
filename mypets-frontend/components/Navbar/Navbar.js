@@ -49,7 +49,7 @@ const NavLink = ({ children }) => (
     
 );
 
-export default function Navbar() {
+export default function Navbar({ products }) {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { user } = useContext(AuthContext)
@@ -74,7 +74,7 @@ export default function Navbar() {
                             <NextImage src='/mypets-2.svg' width='150' height='35' />
                         </a>
                     </NextLink>
-                    <SearchbarGroup />
+                    <SearchbarGroup products={products} />
                     <Flex alignItems={'center'}>
                         {/* if logged in, show past orders, cart + user icon */}
                         { user ? ( 

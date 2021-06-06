@@ -20,7 +20,7 @@ export default function Home({ products, categories, merchants }) {
 
   return (
     <>
-      <Container maxW="1200px" mb={6}>
+      <Container maxW="1200px">
         <Box mt={16} mb={16} maxW='1200px' boxShadow='2xl' rounded={40}>
           <HomeBannerSwiper />
         </Box>

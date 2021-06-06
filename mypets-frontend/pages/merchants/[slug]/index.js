@@ -8,7 +8,7 @@ import MerchantTitle from '../../../components/MerchantTitle/MerchantTitle'
 import MerchantProductReviewTab from '../../../components/MerchantProductReviewTab/MerchantProductReviewTab'
 
 
-function index({ merchant }) {
+function index({ merchant, products }) {
 
     const merchantCategories = Object.keys(lodash.groupBy(merchant.products, 'category.name'))
     console.log('merchant products: ', merchant.products)
@@ -16,7 +16,7 @@ function index({ merchant }) {
 
     return (
         <>
-            <Container maxW='1200px' mb={6}>
+            <Container maxW='1200px'>
                 <Box mt={4}>
                     <Img boxSize="100%" objectFit="cover" src="/macho_pawz_banner.jpg" alt="merchant banner"></Img>
                 </Box>
@@ -46,10 +46,14 @@ export async function getStaticProps({ params: { slug } }) {
     const merchant_res = await fetch(`${API_MERCHANTS_URL}?slug=${slug}`)
     const merchant = await merchant_res.json()
 
+    const product_res = await fetch(`${API_PRODUCTS_URL}`)
+    const products = await product_res.json()
+
     // Return as props
     return {
         props: {
-            merchant: merchant[0]
+            merchant: merchant[0],
+            products: products
         }
     }
 }
