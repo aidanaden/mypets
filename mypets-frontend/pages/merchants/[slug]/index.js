@@ -16,6 +16,7 @@ function index({ merchant, products }) {
 
     return (
         <>
+            <Navbar products={products}/>
             <Container maxW='1200px'>
                 <Box mt={4}>
                     <Img boxSize="100%" objectFit="cover" src="/macho_pawz_banner.jpg" alt="merchant banner"></Img>

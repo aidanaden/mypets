@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import {
     AutoComplete,
     AutoCompleteInput,
@@ -11,9 +11,15 @@ import { useRouter } from 'next/router'
 import { FRONTEND_URL } from '../../utils/urls';
 
 
-function Searchbar({ mr, products }) {
+function Searchbar({ mr, products, price }) {
 
     const router = useRouter()
+
+    const newProductNames = products.map((product) => {
+        return product.name.toLowerCase()
+    })
+
+    const [productNames, setProductNames] = useState(newProductNames)
 
     const handleSelectOption = ({ optionValue }) => {
         products.map((product) => {
@@ -22,10 +28,6 @@ function Searchbar({ mr, products }) {
             }
         })
     }
-
-    const productNames = products.map((product) => {
-        return product.name.toLowerCase()
-    })
 
     return (
         <AutoComplete 

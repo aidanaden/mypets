@@ -8,6 +8,7 @@ import {
     Center
 } from '@chakra-ui/react'
 import { Formik, Form, Field } from 'formik'
+import { parse, isDate } from 'date-fns'
 const Yup = require('yup')
 
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
@@ -16,14 +17,30 @@ import NameInputGroup from '../NameInputGroup/NameInputGroup'
 import DatePicker from '../DatePicker/DatePicker'
 import SexRadioGroup from '../SexRadioGroup/SexRadioGroup'
 import TelInputGroup from '../TelInputGroup/TelInputGroup'
+import BirthdayInputGroup from '../BirthdayInputGroup/BirthdayInputGroup'
 
+const today = new Date()
 const telRegex = /^[0-9]\d{7}$/
 const nonEmptyRegex = /(.|\s)*\S(.|\s)*/
+const dobRegex = /^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}$/
 
 const userProfileSchema = Yup.object().shape({
     username: Yup.string().required('Your name is required'),
     email: Yup.string().email('Invalid email').required('Your email is required'),
-    dob: Yup.date().required(),
+    dob: Yup
+        .string()
+        .matches(dobRegex, 'Date format is not valid')
+        .required()
+        .test('is-greater', 'Birthday should not be greater than current date', function(value) {
+            const parsedDate = parse(value, 'dd/mm/yyyy', today)
+            if (parsedDate) {
+                console.log('parsed date: ', parsedDate)
+                const check = (parsedDate < today)
+                console.log('parsed date < today: ', check)
+                return check 
+            }
+            return false
+        }),
     sex: Yup.string(),
     phone_num: Yup.string().matches(telRegex, 'Phone number is not valid'),
 })
@@ -66,9 +83,8 @@ function UserProfileForm({ handleSubmit, initialValues }) {
                             {({ field, form }) => (
                                 <FormControl>
                                     <FormLabel>Birthday</FormLabel>
-                                    <Center>
-                                        <DatePicker field={field} onChange={(val) => { form.setFieldValue('dob', val)}}/>
-                                    </Center>
+                                    <BirthdayInputGroup field={field} valid={!form.errors.dob && form.touched.dob} />
+                                    <FormErrorMessage>{form.errors.dob}</FormErrorMessage>
                                 </FormControl>
                             )}
                         </Field>

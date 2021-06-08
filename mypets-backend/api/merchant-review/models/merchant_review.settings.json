@@ -22,12 +22,11 @@
     "text": {
       "type": "text"
     },
-    "user": {
-      "plugin": "users-permissions",
-      "model": "user"
-    },
     "date_created": {
       "type": "date"
+    },
+    "profile": {
+      "model": "profile"
     }
   }
 }

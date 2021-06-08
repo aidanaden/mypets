@@ -13,6 +13,7 @@ function Product({ product, products }) {
 
     return (
         <>
+            <Navbar products={products}/>
             <Container maxW="1200px">
                 <Grid 
                     templateRows="min-content" 

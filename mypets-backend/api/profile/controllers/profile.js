@@ -13,15 +13,12 @@ module.exports = {
      * @param {any} ctx 
      */
     async find(ctx) {
-        const { user } = ctx.state // get user
-        const result = await strapi.services.profile.find({ user: user.id })
-        // console.log('getting profile ', result)
 
         let entities
         if (ctx.query._q) {
-            entities = await strapi.services.profile.search({...ctx.query, user: user.id })
+            entities = await strapi.services.profile.search({...ctx.query})
         } else {
-            entities = await strapi.services.profile.find({...ctx.query, user: user.id })
+            entities = await strapi.services.profile.find({...ctx.query})
         }
 
         return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.profile }))
@@ -33,15 +30,14 @@ module.exports = {
      */
     async findOne(ctx) {
         const { id } = ctx.params
-        const { user } = ctx.state 
 
-        const entity = await strapi.services.profile.findOne({ id, user: user.id })
+        const entity = await strapi.services.profile.findOne({ id })
 
         return sanitizeEntity(entity, { model: strapi.models.profile })
     },
 
     /**
-     * Create cart with product object
+     * Create profile
      * @param {any} ctx 
      */
     async create(ctx) {
@@ -54,7 +50,7 @@ module.exports = {
     },
 
     /**
-     * Update cart with product object
+     * Update profile
      * @param {any} ctx 
      */
     async update(ctx) {

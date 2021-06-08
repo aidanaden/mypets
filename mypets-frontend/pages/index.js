@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import { Container, Box, Img, Stack, HStack, VStack, Text, Flex, SimpleGrid, Heading, Button, } from "@chakra-ui/react"
 
+import Navbar from '../components/Navbar/Navbar'
 import SortMenu from '../components/SortMenu/SortMenu'
 import MerchantSectionList from '../components/MerchantSectionList/MerchantSectionList'
 import ProductSectionList from '../components/ProductSectionList/ProductSectionList'
@@ -20,6 +21,7 @@ export default function Home({ products, categories, merchants }) {
 
   return (
     <>
+      <Navbar products={products}/>
       <Container maxW="1200px">
         <Box mt={16} mb={16} maxW='1200px' boxShadow='2xl' rounded={40}>
           <HomeBannerSwiper />

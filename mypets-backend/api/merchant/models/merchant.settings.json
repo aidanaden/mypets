@@ -45,7 +45,7 @@
     },
     "merchant_reviews": {
       "via": "merchant",
-      "collection": "merchant-review"
+      "collection": "merchant_review"
     }
   }
 }

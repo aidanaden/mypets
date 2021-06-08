@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react'
 import { Container } from '@chakra-ui/react'
 
+import Navbar from '../../components/Navbar/Navbar'
 import OrderCard from '../../components/OrderCard/OrderCard'
 import AuthContext, { callAPI } from '../../context/AuthContext'
 import { API_PRODUCTS_URL } from '../../utils/urls'
@@ -30,6 +31,7 @@ function Orders({ products }) {
 
     return (
         <>
+            <Navbar products={products}/>
             <Container maxW='1200px'>
                 {orders.map((order, i) => (
                     <OrderCard key={i} order={order} loading={loading}/>

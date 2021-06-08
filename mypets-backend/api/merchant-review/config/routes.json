@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/merchant-reviews",
-      "handler": "merchant-review.find",
+      "handler": "merchant_review.find",
       "config": {
         "policies": []
       }
@@ -11,7 +11,7 @@
     {
       "method": "GET",
       "path": "/merchant-reviews/count",
-      "handler": "merchant-review.count",
+      "handler": "merchant_review.count",
       "config": {
         "policies": []
       }
@@ -19,7 +19,7 @@
     {
       "method": "GET",
       "path": "/merchant-reviews/:id",
-      "handler": "merchant-review.findOne",
+      "handler": "merchant_review.findOne",
       "config": {
         "policies": []
       }
@@ -27,7 +27,7 @@
     {
       "method": "POST",
       "path": "/merchant-reviews",
-      "handler": "merchant-review.create",
+      "handler": "merchant_review.create",
       "config": {
         "policies": []
       }
@@ -35,7 +35,7 @@
     {
       "method": "PUT",
       "path": "/merchant-reviews/:id",
-      "handler": "merchant-review.update",
+      "handler": "merchant_review.update",
       "config": {
         "policies": []
       }
@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/merchant-reviews/:id",
-      "handler": "merchant-review.delete",
+      "handler": "merchant_review.delete",
       "config": {
         "policies": []
       }

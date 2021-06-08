@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
     Box,
     HStack
@@ -5,13 +6,17 @@ import {
 
 import Searchbar from '../Searchbar/Searchbar'
 import PriceFilterPopover from '../PriceFilterPopover/PriceFilterPopover'
-import { callAPI } from '../../context/AuthContext'
 
 function SearchbarGroup({ products }) {    
+    const [price, setPrice] = useState(50)
+
+    const updatePriceOnChange = (val) => {
+        setPrice(val)
+    }
     return (
         <HStack>
-            <Searchbar mr={4} products={products}/>
-            <PriceFilterPopover />
+            <Searchbar mr={4} products={products} price={price}/>
+            <PriceFilterPopover price={price} onChange={updatePriceOnChange}/>
         </HStack>
     )
 }

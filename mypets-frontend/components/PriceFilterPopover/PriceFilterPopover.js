@@ -16,13 +16,7 @@ import { FaFilter } from 'react-icons/fa'
 
 import PriceSlider from '../PriceSlider/PriceSlider.js'
 
-function PriceFilterPopover() {
-
-    const [price, setPrice] = useState(50)
-
-    const updatePriceOnChange = (val) => {
-        setPrice(val)
-    }
+function PriceFilterPopover({ price, onChange }) {
 
     return (
         <Popover>
@@ -36,7 +30,7 @@ function PriceFilterPopover() {
                     <PopoverCloseButton />
                     <PopoverBody>
                         <Text>Minimum price: {price}</Text>
-                        <PriceSlider onChange={updatePriceOnChange}/>
+                        <PriceSlider onChange={onChange}/>
                     </PopoverBody>
                 </PopoverContent>
             </Portal>

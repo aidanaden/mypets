@@ -16,6 +16,7 @@ import {
     TabPanel,
     useToast
 } from '@chakra-ui/react'
+import { parse, format } from 'date-fns'
 
 import UserProfileForm from '../UserProfileForm/UserProfileForm'
 import UserAddressForm from '../UserAddressForm/UserAddressForm'
@@ -34,6 +35,11 @@ function NavbarUserModalBtn() {
         'Address',
         'Change password'
     ]
+
+    const formatDateString = (dateString) => {
+        const parsedDate = parse(dateString, 'yyyy-mm-dd', new Date())
+        return format(parsedDate, 'dd/mm/yyyy')
+    } 
 
     const profileSuccesToast = (text) => toast({
         title: text,
@@ -58,11 +64,16 @@ function NavbarUserModalBtn() {
 
     const handleUserProfileChange = (values, actions) => {
         console.log('user profile changed!')
-        console.log(values)
         delete values.email
+        const profileValues = {
+            ...values,
+            dob: parse(values.dob, 'dd/mm/yyyy', new Date())
+        }
+        console.log(profileValues)
+
         try {
             actions.setSubmitting(true)
-            updateProfile(values)
+            updateProfile(profileValues)
         } catch (err) {
             console.error(err)
         }
@@ -102,7 +113,6 @@ function NavbarUserModalBtn() {
     }
 
     useEffect(() => {
-
         const values = { email: user.email }
 
         if (profile) {
@@ -111,7 +121,7 @@ function NavbarUserModalBtn() {
                 ...values,
                 username: profile.username ? profile.username : '', 
                 phone_num: profile.phone_num ? profile.phone_num : '', 
-                dob: profile.dob ? profile.dob : '', 
+                dob: profile.dob ? formatDateString(profile.dob) : '', 
                 sex: profile.sex ? profile.sex : '',
             })
             setAddressInitialValues({ 

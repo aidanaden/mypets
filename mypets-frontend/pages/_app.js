@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }) {
         }}
         >
           <AnnouncementBanner />
-          <Navbar products={pageProps.products}/>
           <Component {...pageProps} /> 
         </ColorModeProvider>
       </ChakraProvider>
