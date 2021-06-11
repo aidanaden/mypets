@@ -71,7 +71,8 @@ export default function Navbar({ products }) {
                         passHref
                     >
                         <a>
-                            <NextImage src='/mypets-2.svg' width='150' height='35' />
+                            {/* <NextImage src='/cropped-logo.svg' width='150' height='35' /> */}
+                            <img src='/cropped-logo.svg' width='125' height='52' />
                         </a>
                     </NextLink>
                     <SearchbarGroup products={products} />

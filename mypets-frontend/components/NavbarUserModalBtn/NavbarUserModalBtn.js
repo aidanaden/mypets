@@ -63,13 +63,13 @@ function NavbarUserModalBtn() {
     })
 
     const handleUserProfileChange = (values, actions) => {
-        console.log('user profile changed!')
         delete values.email
+        console.log('user profile changed to raw: ', values)
         const profileValues = {
             ...values,
-            dob: parse(values.dob, 'dd/mm/yyyy', new Date())
+            dob: parse(values.dob, 'dd/MM/yyyy', new Date())
         }
-        console.log(profileValues)
+        console.log('user profile changed to parsed: ', profileValues)
 
         try {
             actions.setSubmitting(true)

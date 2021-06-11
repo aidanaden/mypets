@@ -154,7 +154,7 @@ export const AuthProvider = (props) => {
             })
 
         } catch (error) {
-            console.error(err)
+            return error
         }  
     }
 

@@ -29,7 +29,7 @@ function PriceFilterPopover({ price, onChange }) {
                     <PopoverHeader>Filter by price</PopoverHeader>
                     <PopoverCloseButton />
                     <PopoverBody>
-                        <Text>Minimum price: {price}</Text>
+                        <Text>Maximum price: {price}</Text>
                         <PriceSlider onChange={onChange}/>
                     </PopoverBody>
                 </PopoverContent>

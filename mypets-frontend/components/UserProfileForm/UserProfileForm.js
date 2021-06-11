@@ -30,7 +30,7 @@ const userProfileSchema = Yup.object().shape({
     dob: Yup
         .string()
         .matches(dobRegex, 'Date format is not valid')
-        .required()
+        .required('Your date of birth is required')
         .test('is-greater', 'Birthday should not be greater than current date', function(value) {
             const parsedDate = parse(value, 'dd/mm/yyyy', today)
             if (parsedDate) {
@@ -81,9 +81,9 @@ function UserProfileForm({ handleSubmit, initialValues }) {
                     <Box mb={4}>
                         <Field name='dob' >
                             {({ field, form }) => (
-                                <FormControl>
+                                <FormControl isInvalid={form.errors.dob && form.touched.dob}>
                                     <FormLabel>Birthday</FormLabel>
-                                    <BirthdayInputGroup field={field} valid={!form.errors.dob && form.touched.dob} />
+                                    <BirthdayInputGroup field={field} valid={!form.errors.dob && form.touched.dob} error={form.errors.dob}/>
                                     <FormErrorMessage>{form.errors.dob}</FormErrorMessage>
                                 </FormControl>
                             )}

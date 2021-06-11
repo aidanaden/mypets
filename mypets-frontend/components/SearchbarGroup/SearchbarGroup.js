@@ -15,7 +15,7 @@ function SearchbarGroup({ products }) {
     }
     return (
         <HStack>
-            <Searchbar mr={4} products={products} price={price}/>
+            <Searchbar mr={4} price={price}/>
             <PriceFilterPopover price={price} onChange={updatePriceOnChange}/>
         </HStack>
     )

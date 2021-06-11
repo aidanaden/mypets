@@ -25,14 +25,14 @@ const getOrders = (user) => {
     return { orders, loading }
 }
 
-function Orders({ products }) {
+function Orders() {
     const { user } = useContext(AuthContext)
     const { orders, loading } = getOrders(user)
 
     return (
         <>
-            <Navbar products={products}/>
-            <Container maxW='1200px'>
+            <Navbar />
+            <Container maxW='1200px' mb={6}>
                 {orders.map((order, i) => (
                     <OrderCard key={i} order={order} loading={loading}/>
                 ))}
@@ -42,17 +42,3 @@ function Orders({ products }) {
 }
 
 export default Orders
-
-export async function getStaticProps() {
-
-    // Fetch merchants, products 
-    const products_res = await fetch(`${API_PRODUCTS_URL}`)
-    const products = await products_res.json()
-
-    // Return as props
-    return {
-        props: {
-            products: products
-        }
-    }
-}

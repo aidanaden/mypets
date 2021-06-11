@@ -29,10 +29,10 @@ import LoginSocialBtnGroup from '../LoginSocialBtnGroup/LoginSocialBtnGroup'
 
 
 function LoginModalBtn() {
-
+    
+    const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { user, loginUser } = useContext(AuthContext)
-    const toast = useToast()
 
     const loginSuccesToast = (text) => toast({
         title: text,
@@ -41,23 +41,25 @@ function LoginModalBtn() {
         isClosable: true,
     })
 
-    const loginFailToast = (text) => toast({
-        title: text,
+    const loginFailToast = () => toast({
+        title: 'Login failed. Please try again.',
         status: 'error',
         duration: 3000,
         isClosable: true,
     })
 
-    const handleSubmit = (values, actions) => {
+    const handleSubmit = async (values, actions) => {
         console.log(values)
-        try {
-            actions.setSubmitting(true)
-            loginUser(values)
-            actions.setSubmitting(false)
-        } catch (err) {
-            console.error(err)
-            loginFailToast('Failed to log in')
-        }
+        actions.setSubmitting(true)
+        const status = await loginUser(values)
+        console.log('status value: ', status)
+        // if (status) {
+        //     console.log('status value: ', status)
+        //     if (status == 'fail') {
+        //         loginFailToast()
+        //     }
+        // }
+        actions.setSubmitting(false)
     }
 
     const loginSchema = Yup.object().shape({
@@ -80,7 +82,6 @@ function LoginModalBtn() {
             />
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay/>
-                {/* <ModalContent maxW={1000} w={1000}> */}
                 <ModalContent>
                     <ModalHeader>Log in</ModalHeader>
                     <ModalCloseButton />
@@ -119,7 +120,6 @@ function LoginModalBtn() {
                             )}
                         </Formik>
                         <LoginSocialBtnGroup />
-                        
                     </ModalBody>
                 </ModalContent>
             </Modal>

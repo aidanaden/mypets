@@ -6,7 +6,8 @@ import {
 } from '@chakra-ui/react'
 import { CalendarIcon, CheckIcon } from '@chakra-ui/icons'
 
-function BirthdayInputGroup({ field, valid }) {
+function BirthdayInputGroup({ field, valid, error }) {
+    console.log('BirthdayInputGroup error: ', error)
     return (
         <>
             <InputGroup>

@@ -27,7 +27,7 @@ export const REVIEW_TEXT_LEN = 128
 export function imageToUrl(image) {
 
     if (!image) {
-        return '/mypets-2.svg'
+        return '/cropped-logo.svg'
     }
     
     if (image.url.indexOf('/') === 0) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@chakra-ui/react'
 
-function MypetsBtn({ w, btnText, mt, onClick, isLoading, type, variant='solid', isDisabled }, props) {
+function MypetsBtn({ w, btnText, mt, onClick, isLoading, type, variant='solid', isDisabled, noAnimate=false, ...props }) {
     return (
         <Button
             mt={mt}
@@ -9,13 +9,17 @@ function MypetsBtn({ w, btnText, mt, onClick, isLoading, type, variant='solid', 
             bgGradient={ (variant === 'solid') && "linear(to-t, mypets.900, mypets.100)"}
             borderColor={(variant !== 'solid') && 'mypets.100'}
             boxShadow="sm"
-            _hover={(variant === 'solid') ? { boxShadow: "lg", textColor: "white"} : { boxShadow: "lg", textColor: "mypets.100"}}
-            _active={(variant === 'solid') ? {
+            _hover={(variant === 'solid') ? 
+                    { boxShadow: !noAnimate ? "lg" : "none" , textColor: "white"} 
+                    : { boxShadow:!noAnimate ? "lg" : "none" , textColor: "mypets.100"}}
+            _active={(variant === 'solid') 
+            ? {
                 textColor: "white",
-                transform: "scale(0.95)"
-            } : {
+                transform: !noAnimate ? "scale(0.95)" : "none"
+            } 
+            : {
                 textColor: "mypets.100",
-                transform: "scale(0.95)"
+                transform: !noAnimate ? "scale(0.95)" : "none"
             }}
             onClick={onClick}
             isLoading={isLoading}

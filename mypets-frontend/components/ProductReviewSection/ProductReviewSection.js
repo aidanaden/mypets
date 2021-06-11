@@ -1,5 +1,10 @@
 import React from 'react'
-import { VStack, Heading, Box } from '@chakra-ui/react'
+import { 
+    VStack, 
+    Heading, 
+    Box, 
+    Text 
+} from '@chakra-ui/react'
 import ProductReviewListCard from "../ProductReviewListCard/ProductReviewListCard"
 
 function ProductReviewSection({ reviews }) {
@@ -8,9 +13,11 @@ function ProductReviewSection({ reviews }) {
         <Box px={6} py={8}>
             <Heading as="h3" fontSize="2xl" textAlign="center" mb={6}>Ratings & Reviews</Heading>
             <VStack spacing={4}>
-                {reviews.map((review, i) => (
+                {reviews.length > 0 
+                ? reviews.map((review, i) => (
                     <ProductReviewListCard review={review} key={i}/>    
-                ))}
+                ))
+                : (<Text>No reviews available for this product :(</Text>)}
             </VStack>
         </Box>
     )
