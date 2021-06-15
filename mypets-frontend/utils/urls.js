@@ -27,7 +27,11 @@ export function imageToUrl(image) {
     }
     
     if (image.url.indexOf('/') === 0) {
-        return `${API_URL}${image.url}`
+        if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+            return `${API_URL}${image.url}`
+        } else {
+            return `${image.url}`
+        }
     }
 
     return image.url
