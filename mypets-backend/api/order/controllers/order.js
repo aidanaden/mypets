@@ -95,7 +95,8 @@ module.exports = {
             mode: 'payment',
             success_url: `${BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: BASE_URL,
-            line_items: order_items
+            line_items: order_items,
+            allow_promotion_codes: true,
         })
 
         var orderDate = new Date()

@@ -8,8 +8,8 @@ module.exports = {
       // origin: ["http://localhost:3000", "http://localhost:1337", "https://mypets.com"],
       // headers: ["*"],
       origin: [
-        "http://localhost:1337", 
-        "http://localhost:3000"
+        env('BACKEND_URL', 'http://localhost:1337'), 
+        env('FRONTEND_URL', "http://localhost:3000")
       ],
     },
   },
