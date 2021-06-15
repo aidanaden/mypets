@@ -8,9 +8,6 @@ import ProductReviewSection from "../../../components/ProductReviewSection/Produ
 import { API_PRODUCTS_URL } from '../../../utils/urls'
 
 function Product({ product }) {
-
-    console.log('loaded product page: ', product)
-
     return (
         <>
             <Navbar/>
@@ -55,13 +52,8 @@ export default Product
 
 export async function getStaticProps({ params: { slug } }) {
 
-    // const products_res = await fetch(`${API_PRODUCTS_URL}`)
-    // const products = await products_res.json()
-
     const product_res = await fetch(`${API_PRODUCTS_URL}?slug=${slug}`)
     const product = await product_res.json()
-
-    console.log(product[0])
 
     // Return as props
     return {
