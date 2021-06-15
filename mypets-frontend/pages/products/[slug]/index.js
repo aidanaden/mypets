@@ -55,6 +55,8 @@ export async function getStaticProps({ params: { slug } }) {
     const product_res = await fetch(`${API_PRODUCTS_URL}?slug=${slug}`)
     const product = await product_res.json()
 
+    console.log('product name: ', product[0].name)
+
     // Return as props
     return {
         props: {
