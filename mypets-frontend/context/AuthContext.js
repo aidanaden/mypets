@@ -147,7 +147,7 @@ export const AuthProvider = (props) => {
                 } else {
                     console.log('Successfully logged in ', response.user)
                     setUser(response.user)
-                    getProfile()
+                    getProfile({ username: response.user.username, user: response.user.id})
                     getCart()
                     return 'success'
                 }
@@ -205,7 +205,7 @@ export const AuthProvider = (props) => {
             console.log('user logged in: ',)
             setUser(user)
             getCart()
-            getProfile()
+            getProfile({ username: user.username, id: user.id })
         } else {
             setUser(null)
         }
