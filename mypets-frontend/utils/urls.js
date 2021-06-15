@@ -26,15 +26,11 @@ export function imageToUrl(image) {
         return '/cropped-logo.svg'
     }
     
-    if (image.url.indexOf('/') === 0) {
-        if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-            return `${API_URL}${image.url}`
-        } else {
-            return `${image.url}`
-        }
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+        return `${API_URL}${image.url}`
+    } else {
+        return image.url
     }
-
-    return image.url
 }
 
 export function distanceFromToday(str_date) {
