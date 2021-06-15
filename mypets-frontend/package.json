@@ -16,6 +16,7 @@
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@stripe/stripe-js": "^1.14.0",
+    "browserslist": "^4.16.5",
     "date-fns": "^2.21.2",
     "formik": "^2.2.6",
     "framer-motion": "^4.1.17",
