@@ -1,6 +1,4 @@
-import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers'
 import DateFnsUtils from '@date-io/date-fns'
-
 import { chakra } from '@chakra-ui/react'
 import React, {useReducer} from 'react'
 import {DateSingleInput} from '@datepicker-react/styled'
