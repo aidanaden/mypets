@@ -198,6 +198,7 @@ export const AuthProvider = (props) => {
     const logoutUser = async () => {
         const response = await callAPI('/logout', 'POST')
         if (response.authorized) {
+            console.log('log out response: ', response)
             setUser(null)
         }
     }
