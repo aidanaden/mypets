@@ -100,10 +100,8 @@ function CartModalProductCard({ order_products, onClose }) {
             setQuantities(sample_quantities)
             setProductsWeighted(weighted_products)
             setWeights(temp_weights)
-
-            console.log('useEffect products passed to cart: ', order_products)
-            console.log('useEffect products split by weight: ', weighted_products)
-            console.log('useEffect quantities split by weight: ', sample_quantities)
+            
+            // console.log('useEffect products split by weight: ', weighted_products)
         }
         
     }, [order_products])

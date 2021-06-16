@@ -43,16 +43,12 @@ export const AuthProvider = (props) => {
      * @param {any} body 
      */
     const createProfile = async (body) => {
-
-        console.log('creating a profile with body: ', body)
         try {
             const response = await callAPI('/profiles', 'POST', body)
-
             if (!response.username) {
                 console.error('Failed to create profile: ', response)
             } else {
                 setProfile(response)
-                console.log('Successfully created new user profile: ', response)
             }
         } catch (err) {
             console.error(err)
@@ -66,12 +62,10 @@ export const AuthProvider = (props) => {
         console.log('fetching profile')
         try {
             const data = await callAPI('/profiles', 'GET')
-            console.log('data received from getProfile: ', data)
             if (data.length == 0) {
                 console.log('profile doesn not exist: ', data)
                 createProfile(body)
             }
-            console.log('profile found: ', data[0])
             setProfile(data[0])
         } catch (err) {
             console.error(err)
@@ -83,15 +77,12 @@ export const AuthProvider = (props) => {
      * @param {any} body 
      */
     const updateProfile = async (body) => {
-        console.log('updating profile')
-
         if (profile) {
             try {
                 const data = await callAPI(`/profiles/${profile.id}`, 'PUT', body)
                 if (!data.username) {
                     console.log('tried updating, profile does not exist: ', data)
                 } else {
-                    console.log('profile updated to: ', data)
                     setProfile(data)
                 }
             } catch (err) {
@@ -118,7 +109,6 @@ export const AuthProvider = (props) => {
             if (!response.user) {
                 console.error('Registration failed. Please try again.')
             } else {
-                console.log('successfully registered account', response.user)
                 setUser(response.user)
                 getCart()
                 return response
@@ -145,7 +135,6 @@ export const AuthProvider = (props) => {
                     console.log("Login failed. Please try again. ", response)
                     return 'fail'
                 } else {
-                    console.log('Successfully logged in ', response.user)
                     setUser(response.user)
                     getProfile({ username: response.user.username, user: response.user.id})
                     getCart()
@@ -164,10 +153,6 @@ export const AuthProvider = (props) => {
      * @param {any} provider name of provider (facebook, google, etc)
      */
     const loginUserProvider = async (access_token, provider) => {
-
-        console.log(access_token)
-        console.log(provider)
-
         try {
             const response = await fetch(`${API_URL}/auth/${provider}/callback?access_token=${access_token}`, {
                 headers: {
@@ -182,7 +167,6 @@ export const AuthProvider = (props) => {
             } else {
                 const username = data.user.username
                 const id = data.user.id
-                console.log('Successfully logged in ', data.user, ' with id of ', id)
                 setUser(data.user)
                 getCart()
                 getProfile({ username: username, user: id })
@@ -222,14 +206,11 @@ export const AuthProvider = (props) => {
     const updateUserPassword = async (body) => {
         try {
             const response = await callAPI('/password', 'POST', { ...body, id: user.id })
-
             if (!response.user) {
                 console.log("Password reset failed. Please try again. ", response)
             } else {
-                console.log('Successfully reset password ', response.user)
                 setUser(response.user)
             }
-
         } catch (error) {
             console.error(error)
         }  
@@ -273,10 +254,9 @@ export const AuthProvider = (props) => {
     const getCart = async () => {
 
         setCartLoading(true)
-        console.log('fetching cart')
+        console.log('fetching cart...')
         try {
             const data = await callAPI('/carts', 'GET')
-            console.log('cart found: ', data[0])
             setCart(data[0])
             setCartLoading(false)
         } catch (err) {
@@ -291,16 +271,12 @@ export const AuthProvider = (props) => {
         if (cart) {
             // if cart exists, update cart with new order_product
             let order_products = cart.order_products
-            console.log('current order_products in cart: ', order_products)
-
             const op = order_products.find(op => (op.variant.id == order_product.variant.id))
             let total_price = parseFloat(cart.total_price)
 
             if (op) {
                 // if existing order product with same product variant 
                 // exists, update existing order product with new qty, price 
-
-                console.log('found existing order product in cart: ', op)
                 const op_index = order_products.indexOf(op)
                 op.quantity += order_product.quantity
                 op.total_price = parseFloat(op.total_price) + parseFloat(order_product.total_price)
@@ -311,25 +287,19 @@ export const AuthProvider = (props) => {
             } else {
                 // else, create new order product 
                 const created_order_product = await createOrderProduct(order_product)
-                console.log('new order product does not exist, created: ', created_order_product)
                 order_products.push(created_order_product)
                 total_price += parseFloat(order_product.total_price)
             }
-            
-            console.log('updated order_products in cart: ', order_products)
+    
             const body = {
                 order_products: order_products,
                 total_price: total_price,
             }
 
-            console.log('cart total price: ', total_price)
-            console.log('updating cart with: ', body)
-
             try {
                 const data = await callAPI(`/carts/${cart.id}`, 'PUT', body)
                 setCart(data)
                 setCartLoading(false)
-                console.log('cart after calling update api: ', data)
             } catch (err) {
                 console.error(err)
             }
@@ -338,24 +308,17 @@ export const AuthProvider = (props) => {
 
             // if cart doesn't exist, create new cart + order_product
             const new_order_product = await createOrderProduct(order_product)
-            console.log('1) created new order product: ', new_order_product)
-
             try {
-                console.log('1.5) current user value: ', user)
                 const cart = {
                     order_products: [new_order_product],
                     total_price: new_order_product.total_price,
                     user: user.id,
                 }
                 const data = await callAPI('/carts', 'POST', cart)
-                console.log('2) created new cart: ', data, ' with user: ', user)
                 setCart(data)
                 setCartLoading(false)
-
-                if (data.order_product.includes(new_order_product)) {
-                    console.log('created new cart for user with updated order_product')
-                } else {
-                    console.log('Failed to create new cart for user')
+                if (!data.order_product.includes(new_order_product)) {
+                    console.error('Failed to create new cart for user')
                 }
             } catch (err) {
                 console.error(err)

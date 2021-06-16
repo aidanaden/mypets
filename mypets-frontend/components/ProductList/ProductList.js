@@ -12,7 +12,6 @@ function ProductList({ products, heading, fontSize='2xl', spacing=4 }) {
 
     useEffect(() => {
         setListProducts(products)
-        console.log('PRODUCTS CHANGED DUE TO SORT: ', listProducts)
     }, [products])
 
     return (

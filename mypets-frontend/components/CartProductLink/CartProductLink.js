@@ -9,8 +9,6 @@ import {
 import NextImage from 'next/image'
 
 const CartProductLink = forwardRef(({ onClick, href, product }, ref) => {
-    console.log('cart product link works: ', product)
-
     if (product) {
         return (
             <a href={href} onClick={onClick} ref={ref}>

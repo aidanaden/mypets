@@ -24,9 +24,6 @@ function ProductSectionList({ products, sortMethod, selectedCategory, heading })
     }
 
     const filterProductsByCategory = (products) => {
-
-        console.log('filtering products by: ', selectedCategory)
-
         if (selectedCategory === 'All products') {
             return products
         } else {

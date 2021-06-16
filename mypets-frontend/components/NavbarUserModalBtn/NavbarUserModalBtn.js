@@ -64,12 +64,10 @@ function NavbarUserModalBtn() {
 
     const handleUserProfileChange = (values, actions) => {
         delete values.email
-        console.log('user profile changed to raw: ', values)
         const profileValues = {
             ...values,
             dob: parse(values.dob, 'dd/MM/yyyy', new Date())
         }
-        console.log('user profile changed to parsed: ', profileValues)
 
         try {
             actions.setSubmitting(true)
@@ -77,17 +75,13 @@ function NavbarUserModalBtn() {
         } catch (err) {
             console.error(err)
         }
+
         actions.setSubmitting(false)
-        // display toast showing successfully updated changes
         profileSuccesToast('User profile successfully updated')
     }
 
     const handleUserAddressChange = (values, actions) => {
-        console.log('user address changed!')
-
         values.location = values.location.split(" ").join("_")
-
-        console.log(values)
         try {
             actions.setSubmitting(true)
             updateProfile(values)
@@ -99,9 +93,6 @@ function NavbarUserModalBtn() {
     }
 
     const handleUserPasswordChange = (values, actions) => {
-        console.log('user password changed!')
-        console.log(values)
-
         try {
             actions.setSubmitting(true)
             updateUserPassword(values)
@@ -135,10 +126,7 @@ function NavbarUserModalBtn() {
             setUserInitialValues(values)
         }
 
-        console.log('profile value changed to: ', profile)
-        console.log('useEffect profile initial values: ', userInitialValues)
-        console.log('useEffect user address initial values: ', addressInitialValues)
-
+        // console.log('profile value changed to: ', profile)
     }, [profile])
 
     return (

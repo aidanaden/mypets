@@ -50,7 +50,6 @@ function OrderProductReviewModalBtn({ order_product }) {
             const data = await callAPI(`/order-products/${order_product.id}`, 'PUT', {
                 reviewed: true,
             })
-            console.log('successfully updated order product to: ', data)
             setReviewed(true)
         } catch (err) {
             console.error(err)

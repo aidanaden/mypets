@@ -34,9 +34,7 @@ const userProfileSchema = Yup.object().shape({
         .test('is-greater', 'Birthday should not be greater than current date', function(value) {
             const parsedDate = parse(value, 'dd/mm/yyyy', today)
             if (parsedDate) {
-                console.log('parsed date: ', parsedDate)
                 const check = (parsedDate < today)
-                console.log('parsed date < today: ', check)
                 return check 
             }
             return false

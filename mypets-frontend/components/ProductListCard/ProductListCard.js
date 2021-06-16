@@ -18,7 +18,6 @@ import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import { imageToUrl } from '../../utils/urls'
 
 function ProductListCard({ product }) {
-  console.log('product in product list: ', product)
   return (
     <Tooltip
             label={product.name}

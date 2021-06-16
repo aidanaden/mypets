@@ -13,8 +13,6 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
     const [selectedCategory, setSelectedCategory] = useState('All products')
     const fullCategories = ['All products'].concat(categories)
 
-    console.log('FULL CATEGORIES FOR MERCHANT PAGE: ', fullCategories)
-
     return (
         <Tabs align='center' variant='unstyled' size='md' defaultIndex={0} mt={12}>
             <TabList>

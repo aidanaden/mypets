@@ -49,16 +49,9 @@ function OrderProductCard({ order_products }) {
             setProductsWeighted(weighted_products)
             setWeights(temp_weights)
 
-            console.log('+++++')
-            console.log(order_products[0])
-
             callAPI(`/merchants/${order_products[0].variant.product.merchant}`, 'GET').then((merchant) => {
-                console.log('PRODUCT MERCHANT : ', merchant)
                 setMerchantName(merchant.name)
             })
-            console.log('PRODUCT VALUE IS : ', firstProduct)   
-           
-            // setMerchantName(merchant.name)
         }
         
     }, [order_products])

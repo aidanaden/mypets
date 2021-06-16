@@ -60,7 +60,6 @@ function ProductDetailSection({ product }) {
     })
 
     const handleAddToCart = async () => {
-
         if (user) {
             // create order product
             const order_product = {
@@ -68,9 +67,6 @@ function ProductDetailSection({ product }) {
                 quantity: quantity,
                 total_price: price
             }
-
-            console.log('updating cart with: ', order_product)
-            // update cart with new order product
             updateCart(order_product)
             succesToast('Product added to cart')
         } else {
@@ -80,32 +76,17 @@ function ProductDetailSection({ product }) {
     }
 
     const variantSelectOnChange = (e) => {
-
         const foundVariant = getVariantFromWeight(e.target.value)
         setVariant(foundVariant)
-        console.log('selected variant: ', foundVariant)
         const updatedPrice = (parseFloat(foundVariant.price) * parseFloat(quantity))
         setPrice(updatedPrice)
-        console.log('updated price: ', updatedPrice)
     }
 
     useEffect(() => {
-
         setVariant(product.variants[0])
         setPrice(product.variants[0].price)
-        console.log('useEffect product: ', product)
-        console.log('useEffect variants are: ', product.variants)
-        console.log('useEffect initial variant is: ', variant)
-
+        // console.log('useEffect variants are: ', product.variants)
     }, [])
-
-    useEffect(() => {
-        console.log('variant value has been updated to: ', variant)
-    }, [variant])
-
-    useEffect(() => {
-        console.log('price value has been updated to: ', price)
-    }, [price])
 
     return (
         <>

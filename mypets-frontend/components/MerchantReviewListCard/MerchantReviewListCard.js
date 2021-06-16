@@ -16,7 +16,6 @@ function textEnded(str) {
 function MerchantReviewListCard({ review }) {
 
     const date_fns_review_date = distanceFromToday(review.date_created)
-    console.log('merchant review user: ', review.user)
 
     return (
         <Flex direction='column' rounded='lg' bgColor="gray.100" p={5} textAlign='left' justifyContent='space-between'>
