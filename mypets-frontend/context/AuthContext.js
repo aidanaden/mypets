@@ -341,7 +341,7 @@ export const AuthProvider = (props) => {
                 const cart = {
                     order_products: [new_order_product],
                     total_price: new_order_product.total_price,
-                    user: [user.id],
+                    user: user.id,
                 }
                 const data = await callAPI('/carts', 'POST', cart)
                 console.log('2) created new cart: ', data, ' with user: ', user)
