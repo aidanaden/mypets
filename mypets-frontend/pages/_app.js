@@ -5,7 +5,6 @@ import customTheme from '../styles/theme'
 import { AuthProvider } from '../context/AuthContext'
 import Fonts from '../styles/fonts'
 import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
-import Navbar from '../components/Navbar/Navbar'
 
 
 function MyApp({ Component, pageProps }) {
@@ -18,7 +17,10 @@ function MyApp({ Component, pageProps }) {
             initialColorMode: "light",
             useSystemColorMode: false,
           }}
-        >  
+        >
+          <Head>
+            <link rel="shortcut icon" href="/favicon.ico" />
+          </Head>  
           <AnnouncementBanner />
           <Component {...pageProps} /> 
         </ColorModeProvider>
