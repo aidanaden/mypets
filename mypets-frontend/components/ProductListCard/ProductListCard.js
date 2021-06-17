@@ -1,12 +1,7 @@
 import {
   Flex,
-  Circle,
   Box,
-  Image,
-  Badge,
   useColorModeValue,
-  Icon,
-  chakra,
   Tooltip,
   LinkBox,
   LinkOverlay
