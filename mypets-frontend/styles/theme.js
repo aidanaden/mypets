@@ -5,8 +5,8 @@ const fonts = {
     ...chakraTheme.fonts,
     // futura: "Futura",
     // gothamrnd: "GothamRnd",
-    body: `Futura`,
-    heading: `GothamRnd`
+    heading: `Futura`,
+    body: `GothamRnd`
 }
 
 const colors = {
