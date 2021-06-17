@@ -65,8 +65,10 @@ function NavbarUserModalBtn() {
 
     const handleUserProfileChange = (values, actions) => {
         delete values.email
-        const dobDate = parse(values.dob, 'dd/MM/yyyy', new Date(2021, 6, 18))
+        const dobDate = parse(values.dob, 'dd/MM/yyyy', new Date())
+        const utcDobDate = new Date(Date.UTC(dobDate.getFullYear(), dobDate.getMonth(), dobDate.getDay()))
         console.log('dob value parsed: ', dobDate)
+        console.log('dob value copied to utc: ', utcDobDate)
         const profileValues = {
             ...values,
             dob: dobDate
