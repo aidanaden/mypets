@@ -64,9 +64,11 @@ function NavbarUserModalBtn() {
 
     const handleUserProfileChange = (values, actions) => {
         delete values.email
+        const dobDate = parse(values.dob, 'dd/MM/yyyy', new Date())
+        console.log('dob value parsed: ', dobDate)
         const profileValues = {
             ...values,
-            dob: parse(values.dob, 'dd/MM/yyyy', new Date())
+            dob: dobDate
         }
 
         try {
@@ -105,9 +107,7 @@ function NavbarUserModalBtn() {
 
     useEffect(() => {
         const values = { email: user.email }
-
         if (profile) {
-            
             setUserInitialValues({ 
                 ...values,
                 username: profile.username ? profile.username : '', 
@@ -121,12 +121,9 @@ function NavbarUserModalBtn() {
                 postal: profile.postal ? profile.postal : '', 
                 location: profile.location ? profile.location.split("_").join(" ") : '',
             })
-
         } else {
             setUserInitialValues(values)
         }
-
-        // console.log('profile value changed to: ', profile)
     }, [profile])
 
     return (
