@@ -12,13 +12,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
       <ChakraProvider resetCSS theme={customTheme}>
+        <Fonts />
         <ColorModeProvider
           options={{
             initialColorMode: "light",
             useSystemColorMode: false,
           }}
-        >
-          <Fonts />
+        >  
           <AnnouncementBanner />
           <Component {...pageProps} /> 
         </ColorModeProvider>
