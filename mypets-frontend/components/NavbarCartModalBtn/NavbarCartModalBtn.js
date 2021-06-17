@@ -47,7 +47,6 @@ function NavbarCartModalBtn() {
             console.error('Session does not contain id, failed to create order')
         }
 
-        clearCart()
         const result = await stripe.redirectToCheckout({
             sessionId: session.id
         })

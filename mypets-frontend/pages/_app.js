@@ -1,4 +1,4 @@
-import { ChakraProvider, ColorModeProvider, useColorMode } from "@chakra-ui/react"
+import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react"
 import 'swiper/swiper.scss';
 
 import customTheme from '../styles/theme'

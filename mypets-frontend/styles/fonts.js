@@ -1,6 +1,6 @@
 import { Global } from "@emotion/react"
 
-const Fonts = () => {
+const Fonts = () => (
     <Global
         styles={`
         /* FUTURA */
@@ -23,6 +23,6 @@ const Fonts = () => {
         }
         `}
     />
-}
+)
 
 export default Fonts
