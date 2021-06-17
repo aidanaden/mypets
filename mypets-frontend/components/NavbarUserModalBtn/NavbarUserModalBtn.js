@@ -37,6 +37,7 @@ function NavbarUserModalBtn() {
     ]
 
     const formatDateString = (dateString) => {
+        console.log('date received from database: ', dataString)
         const parsedDate = parse(dateString, 'yyyy-mm-dd', new Date())
         return format(parsedDate, 'dd/mm/yyyy')
     } 
