@@ -10,10 +10,8 @@ function success() {
     const router = useRouter()
     const confirmOrder = async (session_id) => {
         const body = {
-            checkout_session: session_id,
-            cart: cart
+            checkout_session: session_id
         }
-        console.log('confirming order body: ', body)
         const data = await callAPI('/orders/confirm', 'POST', body)
         return data
     }
