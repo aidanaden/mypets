@@ -13,6 +13,7 @@ function success() {
             checkout_session: session_id,
             cart: cart
         }
+        console.log('confirming order body: ', body)
         const data = await callAPI('/orders/confirm', 'POST', body)
         return data
     }
