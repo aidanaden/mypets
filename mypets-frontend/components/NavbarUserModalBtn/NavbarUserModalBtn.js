@@ -38,7 +38,7 @@ function NavbarUserModalBtn() {
 
     const formatDateString = (dateString) => {
         console.log('date received from database: ', dateString)
-        const parsedDate = parse(dateString, 'yyyy-mm-dd', new Date())
+        const parsedDate = parse(dateString, 'yyyy-mm-dd', new Date(2021, 6, 18))
         return format(parsedDate, 'dd/mm/yyyy')
     } 
 
@@ -65,7 +65,7 @@ function NavbarUserModalBtn() {
 
     const handleUserProfileChange = (values, actions) => {
         delete values.email
-        const dobDate = parse(values.dob, 'dd/MM/yyyy', new Date())
+        const dobDate = parse(values.dob, 'dd/MM/yyyy', new Date(2021, 6, 18))
         console.log('dob value parsed: ', dobDate)
         const profileValues = {
             ...values,
