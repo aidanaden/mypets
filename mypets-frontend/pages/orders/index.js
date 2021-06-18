@@ -42,7 +42,7 @@ function Orders() {
                 {orders.length > 0 ? orders.map((order, i) => (
                     <OrderCard key={i} order={order} loading={loading}/>
                 )) : 
-                <Center h='70vh' bg='blue.100'>
+                <Center h='70vh'>
                     No orders available 😢
                 </Center>
                 
