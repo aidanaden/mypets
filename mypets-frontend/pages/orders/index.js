@@ -38,7 +38,7 @@ function Orders() {
         <>
             <Navbar />
             <Container maxW='1200px' mb={6}>
-                {orders ? orders.map((order, i) => (
+                {orders.length > 0 ? orders.map((order, i) => (
                     <OrderCard key={i} order={order} loading={loading}/>
                 ))
                 : <Center>No orders available 😢</Center>
