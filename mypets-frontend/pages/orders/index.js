@@ -37,11 +37,11 @@ function Orders() {
     return (
         <>
             <Navbar />
-            <Container maxW='1200px' minH='70vh' mb={6} bg='red.100'>
+            <Container maxW='1200px' minH='70vh' mb={6}>
                 {orders.length > 0 ? orders.map((order, i) => (
                     <OrderCard key={i} order={order} loading={loading}/>
                 ))
-                : <Center h='100%'>No orders available 😢</Center>
+                : <Center h='100%' bg='red.100'>No orders available 😢</Center>
                 }
             </Container>
         </>
