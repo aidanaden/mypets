@@ -42,11 +42,10 @@ function Orders() {
                 {orders.length > 0 ? orders.map((order, i) => (
                     <OrderCard key={i} order={order} loading={loading}/>
                 )) : 
-                <Box height='100%' bg='red.100'>
-                    <Center height='max' bg='blue.100'>
-                        No orders available 😢
-                    </Center>
-                </Box>
+                <Center h='70vh' bg='blue.100'>
+                    No orders available 😢
+                </Center>
+                
                 }
             </Container>
         </>
