@@ -23,7 +23,7 @@ function ProductReviewListCard({ review }) {
 
         <Flex direction='column' rounded='lg' bgColor="gray.100" p={5} textAlign='left' justifyContent='space-between' w='100%'>
             <Box>
-                <Text fontStyle="italic" fontSize="sm">
+                <Text fontSize="sm">
                     {review.user}
                 </Text>
                 <Text mt={4} fontSize='md'>
