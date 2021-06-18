@@ -5,7 +5,8 @@ import {
 } from 'react'
 import { 
     Container,
-    Center
+    Center,
+    Box
 } from '@chakra-ui/react'
 
 import Navbar from '../../components/Navbar/Navbar'
