@@ -1,8 +1,6 @@
-import { Bell2Icon } from '@chakra-ui/icons'
 import { 
     Box, 
-    HStack, 
-    Icon, 
+    HStack,  
     Stack, 
     Text 
 } from '@chakra-ui/react'
@@ -19,9 +17,8 @@ function AnnouncementBanner() {
                 bgGradient="linear(to-t, mypets.900, mypets.100)"
             >
                 <HStack spacing="3">
-                    {/* <Icon as={Bell2Icon} fontSize="xl" h="10" /> */}
                     <Text fontWeight="sm" marginEnd="2" textColor='gray.800'>
-                        We will only delivering to select areas of SG for now 😢
+                        We are only delivering to the EAST of SG for now 😢
                     </Text>
                 </HStack>
             </Stack>
