@@ -3,12 +3,8 @@ import { Button } from "@chakra-ui/react"
 
 function CategoryBtn({ cat, onClick }) {
     return (
-        <Button
+        <Box
             w="100%"  
-            // pt={6}
-            // pb={6}
-            // pl={6}
-            // pr={6}
             p={6}
             rounded="md" 
             bgColor="gray.100" 
@@ -19,7 +15,7 @@ function CategoryBtn({ cat, onClick }) {
             onClick={() => onClick(cat)}
         >
             {cat}
-        </Button>
+        </Box>
     )
 }
 
