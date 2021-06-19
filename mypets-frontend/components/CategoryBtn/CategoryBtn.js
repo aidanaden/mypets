@@ -1,5 +1,8 @@
 import React from 'react'
-import { Button } from "@chakra-ui/react"
+import { 
+    Button, 
+    Box 
+} from "@chakra-ui/react"
 
 function CategoryBtn({ cat, onClick }) {
     return (
