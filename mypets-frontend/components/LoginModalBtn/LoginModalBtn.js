@@ -1,20 +1,16 @@
 import { useContext, useState, useEffect } from 'react'
 import { 
-    Button, 
     useDisclosure, 
     Modal,
     ModalOverlay,
     ModalContent,
     ModalHeader,
-    ModalFooter,
     ModalBody,
     ModalCloseButton,
-    Flex,
     Box,
     FormControl,
     FormLabel,
     FormErrorMessage,
-    FormHelperText,
     useToast
 } from '@chakra-ui/react'
 import { Formik, Form, Field } from 'formik'
@@ -27,12 +23,11 @@ import EmailInputGroup from '../EmailInputGroup/EmailInputGroup'
 import PasswordInputGroup from '../PasswordInputGroup/PasswordInputGroup'
 import LoginSocialBtnGroup from '../LoginSocialBtnGroup/LoginSocialBtnGroup'
 
-
 function LoginModalBtn() {
     
     const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { user, loginUser } = useContext(AuthContext)
+    const { loginUser } = useContext(AuthContext)
 
     const loginSuccesToast = (text) => toast({
         title: text,

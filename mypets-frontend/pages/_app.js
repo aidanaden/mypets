@@ -13,18 +13,11 @@ function MyApp({ Component, pageProps }) {
     <AuthProvider>
       <ChakraProvider resetCSS theme={customTheme}>
         <Fonts />
-        <ColorModeProvider
-          options={{
-            initialColorMode: "light",
-            useSystemColorMode: false,
-          }}
-        >
-          <Head>
-            <link rel="shortcut icon" href="/favicon.ico" />
-          </Head>  
-          <AnnouncementBanner />
-          <Component {...pageProps} /> 
-        </ColorModeProvider>
+        <Head>
+          <link rel="shortcut icon" href="/favicon.ico" />
+        </Head>  
+        <AnnouncementBanner />
+        <Component {...pageProps} /> 
       </ChakraProvider>
     </AuthProvider>
   ) 

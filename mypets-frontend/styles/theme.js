@@ -24,10 +24,16 @@ const colors = {
     }
 }
 
+const config = {
+    initialColorMode: "light",
+    useSystemColorMode: false,
+  }
+
 const overrides = {
     ...chakraTheme,
     fonts,
-    colors
+    colors,
+    config
 }
 
 const customTheme = extendTheme(overrides)

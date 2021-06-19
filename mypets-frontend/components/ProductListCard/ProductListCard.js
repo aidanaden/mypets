@@ -1,7 +1,6 @@
 import {
   Flex,
   Box,
-  useColorModeValue,
   Tooltip,
   LinkBox,
   LinkOverlay
@@ -23,7 +22,7 @@ function ProductListCard({ product }) {
             fontSize="md"
     >
       <LinkBox 
-        bg={useColorModeValue('white', 'white')}
+        bg='white'
         maxW="sm"
         borderWidth="1px"
         rounded="lg"
@@ -57,7 +56,7 @@ function ProductListCard({ product }) {
 
                   <Flex justifyContent="space-between" alignContent="center">
                     <RatingDisplay rating={product.rating} numReviews={0} />
-                    <Box fontSize="md" color={useColorModeValue('gray.800', 'gray.800')}>
+                    <Box fontSize="md" color='gray.800'>
                       <Box as="span" color={'gray.600'} fontSize="sm">
                         $
                       </Box>

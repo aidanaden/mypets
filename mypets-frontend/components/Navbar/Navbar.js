@@ -2,31 +2,17 @@ import { ReactNode, useContext } from 'react';
 import {
     Box,
     Flex,
-    Avatar,
-    HStack,
     IconButton,
-    Button,
     Link,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuDivider,
     useDisclosure,
-    useColorModeValue,
     Stack,
-    Spacer,
-    Image,
     ButtonGroup
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import NextImage from 'next/image'
-import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import SearchbarGroup from '../SearchbarGroup/SearchbarGroup'
 import NavbarCartModalBtn from '../NavbarCartModalBtn/NavbarCartModalBtn';
 import NavbarUserIcon from '../NavbarUserIcon/NavbarUserIcon';
-import NextChakraLink from '../NextChakraLink/NextChakraLink';
-import { API_ORDERS_URL } from '../../utils/urls'
 import AuthContext from '../../context/AuthContext'
 import LoginModalBtn from '../LoginModalBtn/LoginModalBtn';
 import SignupModalBtn from '../SignupModalBtn/SignupModalBtn';
@@ -56,7 +42,7 @@ export default function Navbar({ products }) {
 
     return (
         <>
-            <Flex bg={useColorModeValue('white.100', 'white.100')} px={4} py={4} justifyContent={'center'} borderBottomWidth="1px">
+            <Flex bg='white.100' px={4} py={4} justifyContent={'center'} borderBottomWidth="1px">
                 <Flex h={20} alignItems={'center'} justifyContent={'space-between'} w="1200px" px={4}>
                     <IconButton
                         size={'md'}
