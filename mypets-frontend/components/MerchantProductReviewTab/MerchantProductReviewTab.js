@@ -14,7 +14,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
     const fullCategories = ['All products'].concat(categories)
 
     return (
-        <Tabs align='center' variant='unstyled' size='md' defaultIndex={0} mt={12} p={0} w='100%'>
+        <Tabs align='center' variant='unstyled' size='md' defaultIndex={0} mt={12} p={0}>
             <TabList>
                 <Tab 
                     rounded='full' 
@@ -50,7 +50,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                         <Box w="100%" mr={12}>
                             <ProductSectionList products={merchantProducts} selectedCategory={selectedCategory} sortMethod={sortMethod}/>
                         </Box>
-                        <Flex direction="column" w='100%'>
+                        <Flex direction="column" maxW='210px'>
                             <SortMenu setSortMethod={setSortMethod}/>
                             <CategoryList categories={fullCategories} setSelectedCategory={setSelectedCategory}/>
                         </Flex>
