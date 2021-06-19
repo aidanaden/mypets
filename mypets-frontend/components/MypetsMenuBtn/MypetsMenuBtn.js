@@ -1,4 +1,8 @@
-import { MenuButton, Button } from '@chakra-ui/react'
+import { 
+    MenuButton, 
+    Button, 
+    Box 
+} from '@chakra-ui/react'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
