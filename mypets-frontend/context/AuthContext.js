@@ -131,6 +131,13 @@ export const AuthProvider = (props) => {
             isClosable: true,
         })
 
+        const loginSuccessToast = () => toast({
+            title: 'Login success.',
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        })
+
         try {
             callAPI('/auth/local', 'POST', {
                 identifier: email,
@@ -144,6 +151,7 @@ export const AuthProvider = (props) => {
                     setUser(response.user)
                     getProfile({ username: response.user.username, user: response.user.id})
                     getCart()
+                    loginSuccessToast()
                     return 'success'
                 }
             })
@@ -161,6 +169,13 @@ export const AuthProvider = (props) => {
         const loginFailToast = () => toast({
             title: 'Login failed. Please try again.',
             status: 'error',
+            duration: 3000,
+            isClosable: true,
+        })
+
+        const loginSuccessToast = () => toast({
+            title: 'Login success.',
+            status: 'success',
             duration: 3000,
             isClosable: true,
         })
@@ -183,6 +198,7 @@ export const AuthProvider = (props) => {
                 setUser(data.user)
                 getCart()
                 getProfile({ username: username, user: id })
+                loginSuccessToast()
             }
         } catch (err) {
             console.error(err)

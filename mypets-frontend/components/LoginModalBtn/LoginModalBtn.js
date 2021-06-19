@@ -29,20 +29,6 @@ function LoginModalBtn() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { loginUser } = useContext(AuthContext)
 
-    const loginSuccesToast = (text) => toast({
-        title: text,
-        status: 'success',
-        duration: 3000,
-        isClosable: true,
-    })
-
-    const loginFailToast = () => toast({
-        title: 'Login failed. Please try again.',
-        status: 'error',
-        duration: 3000,
-        isClosable: true,
-    })
-
     const handleSubmit = async (values, actions) => {
         console.log(values)
         actions.setSubmitting(true)
