@@ -9,7 +9,7 @@ function MypetsMenuBtn({ menuBtnText }) {
             // pt={4}
             // pb={4} 
             // py={6} 
-            p={6}
+            p={4}
             as={Button} 
             rightIcon={<ChevronDownIcon />} 
             variant='outline' 
