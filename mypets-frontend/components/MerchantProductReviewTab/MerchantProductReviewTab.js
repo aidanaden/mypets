@@ -50,7 +50,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                         <Box w="100%" mr={12}>
                             <ProductSectionList products={merchantProducts} selectedCategory={selectedCategory} sortMethod={sortMethod}/>
                         </Box>
-                        <Flex direction="column" w='210px'>
+                        <Flex direction="column" w='100%'>
                             <SortMenu setSortMethod={setSortMethod}/>
                             <CategoryList categories={fullCategories} setSelectedCategory={setSelectedCategory}/>
                         </Flex>
