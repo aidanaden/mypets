@@ -8,7 +8,7 @@ function CategoryBtn({ cat, onClick }) {
     return (
         <Box
             w="100%"  
-            py={4}
+            py={3}
             px={6}
             rounded="md" 
             bgColor="gray.100" 
