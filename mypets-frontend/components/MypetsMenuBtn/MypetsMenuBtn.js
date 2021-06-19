@@ -8,11 +8,10 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 
 function MypetsMenuBtn({ menuBtnText }) {
     return (
-        <>
         <MenuButton 
             // p={4}
             as={Button} 
-            h={16}
+            h={1}
             rightIcon={<ChevronDownIcon />}
             variant='outline' 
             borderColor='mypets.100' 
@@ -21,7 +20,6 @@ function MypetsMenuBtn({ menuBtnText }) {
         >
             {menuBtnText}
         </MenuButton>
-        </>
     )
 }
 
