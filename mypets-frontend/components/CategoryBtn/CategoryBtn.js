@@ -9,6 +9,7 @@ function CategoryBtn({ cat, onClick }) {
             // pb={6}
             // pl={6}
             // pr={6}
+            p={6}
             h='md'
             rounded="md" 
             bgColor="gray.100" 
