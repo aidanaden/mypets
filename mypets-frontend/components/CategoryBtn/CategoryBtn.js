@@ -5,12 +5,14 @@ function CategoryBtn({ cat, onClick }) {
     return (
         <Button
             w="100%"  
-            p={6}
+            // pt={6}
+            // pb={6}
+            // pl={6}
+            // pr={6}
             rounded="md" 
             bgColor="gray.100" 
             textColor="gray.600"
             fontSize="lg"
-            verticalAlign='center'
             _hover={{ bgGradient: "linear(to-t, mypets.900, mypets.100)", textColor: "gray.100" }}
             _active={{ transform: "scale(0.95)"}}
             onClick={() => onClick(cat)}
