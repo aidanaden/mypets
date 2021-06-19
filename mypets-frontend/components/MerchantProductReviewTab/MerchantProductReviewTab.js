@@ -1,5 +1,14 @@
 import { useState } from 'react'
-import { Box, Flex, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
+import { 
+    Box, 
+    Flex, 
+    Tabs, 
+    TabList, 
+    TabPanels, 
+    Tab, 
+    TabPanel,
+    useToast
+} from "@chakra-ui/react"
 
 import MerchantReviewsList from '../MerchantReviewsList/MerchantReviewsList'
 import ProductSectionList from '../ProductSectionList/ProductSectionList'
@@ -12,6 +21,19 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
     const [sortMethod, setSortMethod] = useState('pop')
     const [selectedCategory, setSelectedCategory] = useState('All products')
     const fullCategories = ['All products'].concat(categories)
+    const toast = useToast()
+
+    const setCategorySelected = (cat) => {
+        setCategoryToast(cat)
+        setSelectedCategory(cat)
+    }
+
+    const setCategoryToast = (text) => toast({
+        title: `Loading ${text}...`,
+        status: 'info',
+        duration: 3000,
+        isClosable: true,
+    })
 
     return (
         <Tabs align='center' variant='unstyled' size='md' defaultIndex={0} mt={12} p={0}>
@@ -52,7 +74,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                         </Box>
                         <Flex direction="column" maxW='210px'>
                             <SortMenu setSortMethod={setSortMethod}/>
-                            <CategoryList categories={fullCategories} setSelectedCategory={setSelectedCategory}/>
+                            <CategoryList categories={fullCategories} setSelectedCategory={setCategorySelected}/>
                         </Flex>
                     </Flex>
                 </TabPanel>
