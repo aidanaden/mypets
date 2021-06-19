@@ -11,7 +11,7 @@ function MypetsMenuBtn({ menuBtnText }) {
         <MenuButton 
             // p={4}
             as={Button} 
-            h='45px'
+            h='36px'
             rightIcon={<ChevronDownIcon />}
             variant='outline' 
             borderColor='mypets.100' 

@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Container, Box, Img, Stack, HStack, VStack, Text, Flex, SimpleGrid, Heading, Button, } from "@chakra-ui/react"
+import { 
+  Container, 
+  Flex, 
+  useToast 
+} from "@chakra-ui/react"
 
 import Navbar from '../components/Navbar/Navbar'
 import SortMenu from '../components/SortMenu/SortMenu'
@@ -18,6 +22,19 @@ export default function Home({ products, merchants }) {
   const [categories, setCategories] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('All products')
   const router = useRouter()
+  const toast = useToast()
+
+  const setCategorySelected = (cat) => {
+    setCategoryToast(cat)
+    setSelectedCategory(cat)
+  }
+
+  const setCategoryToast = (text) => toast({
+    title: `Loading ${text}...`,
+    status: 'info',
+    duration: 3000,
+    isClosable: true,
+  })
 
   const getCategories = (products) => {
     const totalProductCategories = products.map(product => product.category.name)
@@ -56,7 +73,7 @@ export default function Home({ products, merchants }) {
               <ProductSectionList products={pageProducts} sortMethod={sortMethod} selectedCategory={selectedCategory} heading='Recommended Products' />
               <Flex direction="column" w='210px' ml={12} mt={12}>
                 <SortMenu setSortMethod={setSortMethod} />
-                <CategoryList categories={categories} setSelectedCategory={setSelectedCategory} />
+                <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
               </Flex>
             </Flex>
           </Flex>
