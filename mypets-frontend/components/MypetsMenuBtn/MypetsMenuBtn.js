@@ -10,11 +10,11 @@ function MypetsMenuBtn({ menuBtnText }) {
             // pb={4} 
             // py={6} 
             p={4}
-            as={Button} 
+            as={Box} 
             rightIcon={<ChevronDownIcon />} 
             variant='outline' 
             borderColor='mypets.100' 
-            _hover={{ textColor: 'mypets.100' }}
+            _hover={{ textColor: 'mypets.100', cursor: "pointer" }}
             _expanded={{ textColor: 'mypets.100' }}
         >
             {menuBtnText}
