@@ -99,7 +99,6 @@ export const AuthProvider = (props) => {
      * @param {string} password 
      */
     const registerUser = async (email, password) => {
-
         try {
             const response = await callAPI('/auth/local/register', 'POST', {
                 email: email,
@@ -158,7 +157,14 @@ export const AuthProvider = (props) => {
      * @param {any} access_token obtained by provider to make authorized requests to get user info from provider (username, email, etc)
      * @param {any} provider name of provider (facebook, google, etc)
      */
-    const loginUserProvider = async (access_token, provider) => {
+    const loginUserProvider = async (access_token, provider, toast) => {
+        const loginFailToast = () => toast({
+            title: 'Login failed. Please try again.',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+        })
+
         try {
             const response = await fetch(`${API_URL}/auth/${provider}/callback?access_token=${access_token}`, {
                 headers: {
@@ -170,6 +176,7 @@ export const AuthProvider = (props) => {
 
             if(!data.user) {
                 console.log("Login failed. Please try again. ", data)
+                loginFailToast()
             } else {
                 const username = data.user.username
                 const id = data.user.id

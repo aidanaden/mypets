@@ -1,14 +1,21 @@
-import { useEffect, useContext } from 'react'
+import { 
+    useEffect, 
+    useContext 
+} from 'react'
+import {
+    useToast
+} from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+
 import AuthContext from '../../../../context/AuthContext'
 
 function index() {
-
     const { loginUserProvider } = useContext(AuthContext)
     const router = useRouter()
+    const toast = useToast()
 
     useEffect(() => {
-        loginUserProvider(router.query.access_token, 'facebook')
+        loginUserProvider(router.query.access_token, 'facebook', toast)
         router.push('/')
     }, [router.query.access_token])
 

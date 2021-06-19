@@ -1,16 +1,21 @@
-import { useEffect, useContext } from 'react'
+import { 
+    useEffect, 
+    useContext 
+} from 'react'
 import { useRouter } from 'next/router'
+import {
+    useToast
+} from '@chakra-ui/react'
+
 import AuthContext from '../../../../context/AuthContext'
 
 function index() {
-
     const { loginUserProvider } = useContext(AuthContext)
     const router = useRouter()
-
-    // console.log('router access token: ', router.query.access_token)
+    const toast = useToast()
 
     useEffect(() => {
-        loginUserProvider(router.query.access_token, 'google')
+        loginUserProvider(router.query.access_token, 'google', toast)
         router.push('/')
     }, [router.query.access_token])
 
