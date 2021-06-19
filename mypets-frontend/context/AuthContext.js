@@ -124,7 +124,13 @@ export const AuthProvider = (props) => {
      * @param {string} email
      * @param {string} password 
      */
-    const loginUser = async ({ email, password }) => {
+    const loginUser = async ({ email, password }, toast) => {
+        const loginFailToast = () => toast({
+            title: 'Login failed. Please try again.',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+        })
 
         try {
             callAPI('/auth/local', 'POST', {
@@ -133,6 +139,7 @@ export const AuthProvider = (props) => {
             }).then(response => {
                 if (!response.user) {
                     console.log("Login failed. Please try again. ", response)
+                    loginFailToast()
                     return 'fail'
                 } else {
                     setUser(response.user)
@@ -141,7 +148,6 @@ export const AuthProvider = (props) => {
                     return 'success'
                 }
             })
-
         } catch (error) {
             return error
         }  

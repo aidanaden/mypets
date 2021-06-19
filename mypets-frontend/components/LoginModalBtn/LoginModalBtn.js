@@ -46,14 +46,7 @@ function LoginModalBtn() {
     const handleSubmit = async (values, actions) => {
         console.log(values)
         actions.setSubmitting(true)
-        const status = await loginUser(values)
-        console.log('status value: ', status)
-        // if (status) {
-        //     console.log('status value: ', status)
-        //     if (status == 'fail') {
-        //         loginFailToast()
-        //     }
-        // }
+        const status = await loginUser(values, toast)
         actions.setSubmitting(false)
     }
 
