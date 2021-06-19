@@ -14,7 +14,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
     const fullCategories = ['All products'].concat(categories)
 
     return (
-        <Tabs align='center' variant='unstyled' size='md' defaultIndex={0} mt={12}>
+        <Tabs align='center' variant='unstyled' size='md' defaultIndex={0} mt={12} p={0} w='100%'>
             <TabList>
                 <Tab 
                     rounded='full' 

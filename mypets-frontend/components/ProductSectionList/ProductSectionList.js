@@ -32,7 +32,7 @@ function ProductSectionList({ products, sortMethod, selectedCategory, heading })
     }
 
     return (
-        <Box w='1000px'>
+        <Box maxW='1000px'>
             <ProductList products={filterProductsByCategory(products)} heading={heading}/>
         </Box>
     )
