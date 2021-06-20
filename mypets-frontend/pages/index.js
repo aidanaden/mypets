@@ -71,6 +71,7 @@ export default function Home({ products, merchants }) {
         mb={4}
         p={{ base: 4, lg: 0 }}
         bg='blue.100'
+        centerContent={true}
       >
         <HomeBannerSwiper my={16} bg='green.100'/>
         <Flex justifyContent='space-between' direction="row" bg='red.100'>
