@@ -63,6 +63,7 @@ export default function Home({ products, merchants }) {
 
   return (
     <>
+      <AnnouncementBanner />
       <Navbar/>
       <Container maxW="1200px" mb={6}>
         <HomeBannerSwiper my={16}/>

@@ -37,6 +37,7 @@ function Orders() {
 
     return (
         <>
+            <AnnouncementBanner />
             <Navbar />
             <Container maxW='1200px' minH='70vh' mb={6}>
                 {orders.length > 0 ? orders.map((order, i) => (

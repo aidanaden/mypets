@@ -13,7 +13,8 @@ function index({ merchant }) {
     const merchantCategories = Object.keys(lodash.groupBy(merchant.products, 'category.name'))
 
     return (
-        <>
+        <>  
+            <AnnouncementBanner />
             <Navbar />
             <Container maxW='1200px' mb={6}>
                 <MerchantBannerSwiper my={16} />

@@ -10,6 +10,7 @@ import { API_PRODUCTS_URL } from '../../../utils/urls'
 function Product({ product }) {
     return (
         <>
+            <AnnouncementBanner />
             <Navbar/>
             <Container maxW="1200px" mb={6}>
                 <Grid 
