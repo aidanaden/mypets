@@ -7,7 +7,7 @@ import {
 
 function AnnouncementBanner() {
     return (
-        <Box as="section">
+        <Box w='100%'>
             <Stack
                 direction='row'
                 justifyContent="center"
