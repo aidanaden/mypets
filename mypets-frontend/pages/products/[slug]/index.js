@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
+import AnnouncementBanner from '../../components/AnnouncementBanner/AnnouncementBanner'
 import Navbar from "../../../components/Navbar/Navbar"
 import { Container, Box, Flex, Grid, GridItem, HStack } from "@chakra-ui/react"
 import ProductDetailSection from "../../../components/ProductDetailSection/ProductDetailSection"

@@ -9,7 +9,7 @@ import {
     Box
 } from '@chakra-ui/react'
 
-import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
+import AnnouncementBanner from '../../components/AnnouncementBanner/AnnouncementBanner'
 import Navbar from '../../components/Navbar/Navbar'
 import OrderCard from '../../components/OrderCard/OrderCard'
 import AuthContext, { callAPI } from '../../context/AuthContext'

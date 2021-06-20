@@ -2,7 +2,7 @@ import React from 'react'
 import lodash from 'lodash'
 import { Container, Box, Img } from "@chakra-ui/react"
 
-import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
+import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
 import { API_MERCHANTS_URL } from '../../../utils/urls'
 import Navbar from "../../../components/Navbar/Navbar"
 import MerchantTitle from '../../../components/MerchantTitle/MerchantTitle'
