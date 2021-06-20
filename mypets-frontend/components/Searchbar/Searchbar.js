@@ -43,7 +43,7 @@ function Searchbar({ mr, price }) {
 
     return (
         <>
-            <InputGroup w='xl' mr={mr} pr={0}>
+            <InputGroup w={{ base: '100%', lg: 'xl' }} mr={mr} pr={0}>
                 <InputLeftElement
                     pointerEvents="none"
                     children={<Search2Icon color="gray.600" />}
