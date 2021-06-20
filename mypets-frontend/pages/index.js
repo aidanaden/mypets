@@ -66,7 +66,11 @@ export default function Home({ products, merchants }) {
     <>
       <AnnouncementBanner />
       <Navbar/>
-      <Container maxW={{ lg: "1200px" }} mb={6}>
+      <Container 
+        maxW={{ lg: "1200px" }} 
+        mb={4}
+        p={{ base: 4, lg: 0 }}
+      >
         <HomeBannerSwiper my={16}/>
         <Flex justifyContent='space-between' direction="row">
           <Flex direction="column" w="100%">
