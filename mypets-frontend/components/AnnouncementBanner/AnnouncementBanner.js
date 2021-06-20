@@ -6,7 +6,7 @@ import {
 
 function AnnouncementBanner() {
     return (
-        <Box w={{ base: '100%' }}>
+        <Box w={{ base: '100%' }} pr={0}>
             <Stack
                 direction='row'
                 justifyContent="center"
