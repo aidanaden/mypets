@@ -7,6 +7,7 @@ import {
   useToast 
 } from "@chakra-ui/react"
 
+import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
 import Navbar from '../components/Navbar/Navbar'
 import SortMenu from '../components/SortMenu/SortMenu'
 import MerchantSectionList from '../components/MerchantSectionList/MerchantSectionList'
