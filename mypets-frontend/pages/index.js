@@ -70,9 +70,10 @@ export default function Home({ products, merchants }) {
         maxW={{ lg: "1200px" }} 
         mb={4}
         p={{ base: 4, lg: 0 }}
+        bg='blue.100'
       >
-        <HomeBannerSwiper my={16}/>
-        <Flex justifyContent='space-between' direction="row">
+        <HomeBannerSwiper my={16} bg='green.100'/>
+        <Flex justifyContent='space-between' direction="row" bg='red.100'>
           <Flex direction="column" w="100%">
             <MerchantSectionList merchants={merchants} />
             <Flex direction='row' w='100%'>
