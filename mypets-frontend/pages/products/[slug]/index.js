@@ -13,7 +13,7 @@ function Product({ product }) {
         <>
             <AnnouncementBanner />
             <Navbar/>
-            <Container maxW="1200px" mb={6}>
+            <Container maxW="1200px" mb={4}>
                 <Grid 
                     templateRows="min-content" 
                     templateColumns="repeat(3, 1fr)" 
