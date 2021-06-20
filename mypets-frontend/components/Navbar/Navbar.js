@@ -42,7 +42,7 @@ export default function Navbar({ products }) {
 
     return (
         <>
-            <Flex bg='white.100' px={4} py={4} justifyContent={'center'} borderBottomWidth="1px">
+            <Flex bg='yellow.100' px={4} py={4} justifyContent={'center'} borderBottomWidth="1px">
                 <Flex h={20} alignItems={'center'} justifyContent={'space-between'} w="1200px" px={4}>
                     <IconButton
                         size={'md'}
