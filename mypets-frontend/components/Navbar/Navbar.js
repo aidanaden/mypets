@@ -105,13 +105,13 @@ export default function Navbar({ products }) {
             </Flex>
 
             <Collapse in={isOpen} animateOpacity>
-                <MobileNav />
+                <MobileNav user={user}/>
             </Collapse>
         </Box>
     );
 }
 
-const MobileNav = () => {
+const MobileNav = ({ user }) => {
     return (
         <Box
             bg='white'
