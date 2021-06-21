@@ -37,7 +37,7 @@ function ProductListCard({ product }) {
             <Flex p={0} w="full" alignItems="center" justifyContent="center">
               <Box>
                 <Box roundedTop="lg">
-                  <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='200' height='200'/>
+                  <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='180' height='180'/>
                 </Box>
                 <Box p="3">
                   <Box d="flex" alignItems="baseline">
