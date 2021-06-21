@@ -20,7 +20,7 @@ export default function Home({ products, categories, merchants }) {
 
   const [pageProducts, setPageProducts] = useState(products)
   const [sortMethod, setSortMethod] = useState('pop')
-  const [categories, setCategories] = useState(categories)
+  const [pageCategories, setPageCategories] = useState(categories)
   const [selectedCategory, setSelectedCategory] = useState('All products')
   const router = useRouter()
   const toast = useToast()
@@ -53,12 +53,12 @@ export default function Home({ products, categories, merchants }) {
         const secondValid = product.variants[0].price <= price
         return firstValid && secondValid
       })
-      setCategories(getCategories(filteredProducts))
+      setPageCategories(getCategories(filteredProducts))
       setPageProducts(filteredProducts)
 
     } else {
       setPageProducts(products)
-      setCategories(getCategories(products)) 
+      setPageCategories(getCategories(products)) 
     }
   }, [router.query])
 
@@ -78,7 +78,7 @@ export default function Home({ products, categories, merchants }) {
             <Flex direction={{ base: 'column', lg: 'row'}} w='100%'>
               <ProductSectionList 
                 products={pageProducts} 
-                categories={categories}
+                categories={pageCategories}
                 sortMethod={sortMethod} 
                 selectedCategory={selectedCategory}
                 setCategorySelected={setCategorySelected} 
@@ -92,7 +92,7 @@ export default function Home({ products, categories, merchants }) {
                 display={{ base: 'none', lg: 'inherit' }} 
               >
                 <SortMenu setSortMethod={setSortMethod} />
-                <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
+                <CategoryList categories={pageCategories} setSelectedCategory={setCategorySelected} />
               </Flex>
             </Flex>
           </Flex>
