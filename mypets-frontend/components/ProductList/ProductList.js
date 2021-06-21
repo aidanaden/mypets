@@ -6,8 +6,7 @@ import {
 
 import ProductListCard from '../ProductListCard/ProductListCard'
 
-function ProductList({ products, heading, fontSize='2xl', spacing=4 }) {
-
+function ProductList({ products, spacing=4 }) {
     const [listProducts, setListProducts] = useState(products)
 
     useEffect(() => {
@@ -15,18 +14,11 @@ function ProductList({ products, heading, fontSize='2xl', spacing=4 }) {
     }, [products])
 
     return (
-        <>  
-            { heading && (
-                <Heading as="h2" textAlign="left" mt={9} mb={6} fontSize={fontSize}>
-                    {heading}
-                </Heading>
-            )}
-            <SimpleGrid columns={5} spacing={spacing}>
-                {listProducts.map((product, index) => (
-                    <ProductListCard product={product} key={index} />
-                ))}
-            </SimpleGrid>
-        </>
+        <SimpleGrid columns={{ base: 2, md: 4, lg: 5 }} spacing={spacing}>
+            {listProducts.map((product, index) => (
+                <ProductListCard product={product} key={index} />
+            ))}
+        </SimpleGrid>
     )
 }
 

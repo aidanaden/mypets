@@ -1,4 +1,5 @@
 import { 
+    Box,
     Menu, 
     MenuItem, 
     MenuList, 
@@ -41,17 +42,20 @@ function SortMenu({ setSortMethod }) {
     }
 
     return (
-        <Menu>
-            <MypetsMenuBtn menuBtnText={sortBtnText} />
-            <MenuList boxShadow="md">
-                {sortTypes.map((sortType, i) => (
-                    <MenuItem key={i} onClick={() => (
-                        updateSort(sortType)
-                    )}>{sortType}
-                    </MenuItem>
-                ))}
-            </MenuList>
-        </Menu>
+        <Box display={{base: 'none', lg: 'inherit'}} w='100%'>
+            <Menu>
+                <MypetsMenuBtn menuBtnText={sortBtnText} />
+                <MenuList boxShadow="md">
+                    {sortTypes.map((sortType, i) => (
+                        <MenuItem key={i} onClick={() => (
+                            updateSort(sortType)
+                        )}>{sortType}
+                        </MenuItem>
+                    ))}
+                </MenuList>
+            </Menu>
+        </Box>
+        
     )
 }
 

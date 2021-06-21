@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Navigation } from 'swiper/core';
 SwiperCore.use([Autoplay, Navigation]);
 
-function BannerSwiper({ bannerImgNames }) {
+function BannerSwiper({ bannerImgNames, rounded }) {
     return (
         <Swiper
             spaceBetween={0}
@@ -17,7 +17,7 @@ function BannerSwiper({ bannerImgNames }) {
         {
             bannerImgNames.map((bannerImgName,i) => (
                 <SwiperSlide key={i}>
-                    <Image loading='lazy' rounded={40} boxSize="100%" objectFit="cover" src={`/${bannerImgName}`} alt="merchant banner"/>
+                    <Image loading='lazy' rounded={rounded} objectFit="cover" src={`/${bannerImgName}`} alt="mypets banner"/>
                 </SwiperSlide>
             ))
         }

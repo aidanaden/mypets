@@ -44,14 +44,32 @@ function LoginSocialBtnGroup() {
                 <Text fontSize='sm'>OR</Text>
                 <Divider orientation='horizontal' w='100%'/>
             </HStack>
-            <ButtonGroup w='100%' mt={6}>
+            <ButtonGroup 
+                w='100%' 
+                mt={6} 
+                flexDirection={{ base: 'column', md: 'row' }} 
+                spacing={{ base: 0, md: 4 }}
+            >
                 <NextLink href={`${API_URL}/connect/facebook`}>
-                    <Button w='100%' colorScheme='facebook' leftIcon={<FaFacebook />} onClick={handleFbSubmit} isLoading={fbLoading}>
+                    <Button 
+                        w='100%' 
+                        colorScheme='facebook' 
+                        leftIcon={<FaFacebook />} 
+                        onClick={handleFbSubmit} 
+                        isLoading={fbLoading}
+                    >
                         Facebook
                     </Button>
                 </NextLink>
                 <NextLink href={`${API_URL}/connect/google`}>
-                    <Button w='100%' colorScheme='blackAlpha' leftIcon={<FaGoogle />} onClick={handleGoogleSubmit} isLoading={googleLoading} >
+                    <Button 
+                        w='100%' 
+                        colorScheme='blackAlpha' 
+                        leftIcon={<FaGoogle />} 
+                        onClick={handleGoogleSubmit} 
+                        isLoading={googleLoading}
+                        mt={{ base: 3, md: 0 }}
+                    >
                         Google
                     </Button>
                 </NextLink>

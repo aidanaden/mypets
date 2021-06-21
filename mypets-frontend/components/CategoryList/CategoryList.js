@@ -1,14 +1,18 @@
 import React from 'react'
-import { VStack } from "@chakra-ui/react"
+import { Stack } from "@chakra-ui/react"
 import CategoryBtn from "../CategoryBtn/CategoryBtn"
 
 function CategoryList({ categories, setSelectedCategory }) {
     return (
-        <VStack mt={16}>
+        <Stack 
+            mt={{ lg: 16 }}
+            direction={{ base: 'row', lg: 'column'}} 
+            overflow={{ base: 'auto', lg: 'none'}}
+        >
             {categories.map((cat, i) => (
                 <CategoryBtn cat={cat} key={i} onClick={setSelectedCategory} />
             ))}
-        </VStack>
+        </Stack>
     )
 }
 

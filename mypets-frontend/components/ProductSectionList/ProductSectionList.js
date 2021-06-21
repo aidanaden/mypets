@@ -1,7 +1,12 @@
-import { Box, Heading } from "@chakra-ui/react"
-import ProductList from '../ProductList/ProductList'
+import { 
+    Box, 
+    Heading 
+} from "@chakra-ui/react"
 
-function ProductSectionList({ products, sortMethod, selectedCategory, heading }) {
+import ProductList from '../ProductList/ProductList'
+import CategoryList from '../CategoryList/CategoryList'
+
+function ProductSectionList({ products, categories, sortMethod, selectedCategory, setCategorySelected, heading }) {
 
     const sortProductsAscending = (products) => {
         products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
@@ -33,6 +38,14 @@ function ProductSectionList({ products, sortMethod, selectedCategory, heading })
 
     return (
         <Box w='100%'>
+            { heading && (
+                <Heading as="h2" textAlign="left" mt={6} mb={{ base: 4, lg: 6}} fontSize={{ base: 'xl', lg: '2xl' }}>
+                    {heading}
+                </Heading>
+            )}
+            <Box display={{ base: 'inherit', lg: 'none'}} mb={8}>
+                <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
+            </Box>
             <ProductList products={filterProductsByCategory(products)} heading={heading}/>
         </Box>
     )

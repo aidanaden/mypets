@@ -7,7 +7,7 @@ import {
 import Searchbar from '../Searchbar/Searchbar'
 import PriceFilterPopover from '../PriceFilterPopover/PriceFilterPopover'
 
-function SearchbarGroup({ products }) {    
+function SearchbarGroup({ products, display }) {    
     const [price, setPrice] = useState(50)
 
     const updatePriceOnChange = (val) => {

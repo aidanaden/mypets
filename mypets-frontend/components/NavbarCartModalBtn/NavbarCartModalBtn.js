@@ -64,9 +64,9 @@ function NavbarCartModalBtn() {
     return (
         <>
             <MypetsBtn btnText='Your cart' onClick={onOpen} leftIcon={<FaShoppingCart />} mx={0} />
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal isOpen={isOpen} onClose={onClose} isCentered>
                 <ModalOverlay/>
-                <ModalContent maxW={1200} w={1100} minH={500}>
+                <ModalContent maxW={{ lg: 1200}} w={{ lg: 1100}} minH={{ lg: 500}} mx={{ base: 4 }}>
                     <ModalHeader>Your Cart</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody w='100%'> 

@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { useRouter } from 'next/router'
 import { 
+    Box,
     Menu, 
     MenuButton, 
     MenuList, 
@@ -24,24 +25,23 @@ function NavbarUserIcon() {
     }
 
     return (
-        <Menu>
-            <MenuButton
-                as={Button}
-                rounded={'full'}
-                variant={'link'}
-                cursor={'pointer'}
-            >
-                <Avatar
-                    size={'md'}
+        <Box display={{base: 'none', lg: 'block'}}>
+            <Menu>
+                <MenuButton
+                    as={Avatar}
+                    rounded={'full'}
+                    variant={'link'}
+                    cursor={'pointer'}
+                    boxSize={{ base: '2.25em' }}
                 />
-            </MenuButton>
-            <MenuList zIndex='popover'>
-                <NavbarUserModalBtn />
-                <MenuItem onClick={handlePastOrders}>Past orders</MenuItem>
-                <MenuDivider />
-                <MenuItem onClick={logoutUser}>Log out</MenuItem>
-            </MenuList>
-        </Menu>
+                <MenuList zIndex='popover'>
+                    <NavbarUserModalBtn />
+                    <MenuItem onClick={handlePastOrders}>Past orders</MenuItem>
+                    <MenuDivider />
+                    <MenuItem onClick={logoutUser}>Log out</MenuItem>
+                </MenuList>
+            </Menu>
+        </Box>        
     )
 }
 

@@ -57,15 +57,16 @@ function Searchbar({ mr, price }) {
                     onChange={onSearchTextChange}
                     onKeyPress={onEnterKeyPress}
                 />
-                <InputRightAddon p={0} children={
-                                        <MypetsBtn 
-                                            btnText='Search' 
-                                            w='100%' 
-                                            roundedLeft={0} 
-                                            noAnimate={true} 
-                                            onClick={onSearchClick}
-                                        />
-                                    } 
+                <InputRightAddon 
+                    p={0} 
+                    children={
+                        <MypetsBtn 
+                            btnText='Search' 
+                            w='100%' 
+                            roundedLeft={0} 
+                            noAnimate={true} 
+                            onClick={onSearchClick}
+                        />} 
                 />
             </InputGroup>
         </>

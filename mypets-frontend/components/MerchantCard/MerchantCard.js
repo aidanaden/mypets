@@ -12,11 +12,11 @@ function MerchantCard({ merchant }) {
                 <Tooltip
                     label={merchant.name}
                     bg="white"
-                    placement={'bottom-end'}
-                    color={'gray.800'}
+                    placement='bottom-end'
+                    color='gray.800'
                     fontSize="md"
                 >
-                    <Box w="120px" h="120px" rounded="full">
+                    <Box rounded="full" boxSize='120px'>
                         <NextImage src={`${imageToUrl(merchant.display_image)}`} width='120' height='120' />
                     </Box>
                 </Tooltip>

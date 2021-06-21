@@ -15,11 +15,11 @@ import { imageToUrl } from '../../utils/urls'
 function ProductListCard({ product }) {
   return (
     <Tooltip
-            label={product.name}
-            bg="white"
-            placement={'bottom-end'}
-            color={'gray.800'}
-            fontSize="md"
+      label={product.name}
+      bg="white"
+      placement='bottom-end'
+      color='gray.800'
+      fontSize="md"
     >
       <LinkBox 
         bg='white'
@@ -60,11 +60,7 @@ function ProductListCard({ product }) {
                       <Box as="span" color={'gray.600'} fontSize="sm">
                         $
                       </Box>
-                      {
-                        product.variants ?
-                        product.variants[0].price.toFixed(2) :
-                        0.00
-                      }
+                      {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
                     </Box>
                   </Flex>
                 </Box>

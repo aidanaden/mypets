@@ -23,7 +23,7 @@ import UserAddressForm from '../UserAddressForm/UserAddressForm'
 import UserPasswordForm from '../UserPasswordForm/UserPasswordForm'
 import AuthContext from '../../context/AuthContext'
 
-function NavbarUserModalBtn() {
+function NavbarUserModalBtn({ mode='desktop' }) {
 
     const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -130,10 +130,21 @@ function NavbarUserModalBtn() {
 
     return (
         <>
-            <MenuItem onClick={onOpen}>User Profile</MenuItem>
-            <Modal isOpen={isOpen} onClose={onClose} size='xl'>
+            {mode == 'mobile' ? (
+                <Box px={2} onClick={onOpen}>
+                    User Profile
+                </Box>
+            ) : (
+                <MenuItem 
+                    display={{ base: 'none', lg: 'inherit'}} 
+                    onClick={onOpen}
+                >
+                    User Profile
+                </MenuItem>
+            )}
+            <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-                <ModalContent>
+                <ModalContent mx={{ base: 4 }}>
                     <ModalHeader>
                         Your profile 
                     </ModalHeader>

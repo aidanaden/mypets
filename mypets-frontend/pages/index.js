@@ -69,17 +69,28 @@ export default function Home({ products, merchants }) {
       <Container 
         maxW={{ lg: "1200px" }} 
         mb={4}
-        p={{ base: 4, lg: 0 }}
-        bg='blue.100'
-        centerContent={true}
+        p={{ base: 4 }}
       >
-        <HomeBannerSwiper my={16} bg='green.100'/>
-        <Flex justifyContent='space-between' direction="row" bg='red.100'>
+        <HomeBannerSwiper my={{ base: 8, md: 16 }} rounded={{ base: 20, md: 40 }}/>
+        <Flex justifyContent='space-between' direction="row">
           <Flex direction="column" w="100%">
             <MerchantSectionList merchants={merchants} />
-            <Flex direction='row' w='100%'>
-              <ProductSectionList products={pageProducts} sortMethod={sortMethod} selectedCategory={selectedCategory} heading='Recommended Products' />
-              <Flex direction="column" w='210px' ml={12} mt={12}>
+            <Flex direction={{ base: 'column', lg: 'row'}} w='100%'>
+              <ProductSectionList 
+                products={pageProducts} 
+                categories={categories}
+                sortMethod={sortMethod} 
+                selectedCategory={selectedCategory}
+                setCategorySelected={setCategorySelected} 
+                heading='Recommended Products' 
+              />
+              <Flex 
+                direction="column" 
+                w='210px' 
+                ml={12} 
+                mt={12} 
+                display={{ base: 'none', lg: 'inherit' }} 
+              >
                 <SortMenu setSortMethod={setSortMethod} />
                 <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
               </Flex>
