@@ -20,7 +20,7 @@ export default function Home({ products, merchants }) {
 
   const [pageProducts, setPageProducts] = useState(products)
   const [sortMethod, setSortMethod] = useState('pop')
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState(getCategories(products))
   const [selectedCategory, setSelectedCategory] = useState('All products')
   const router = useRouter()
   const toast = useToast()

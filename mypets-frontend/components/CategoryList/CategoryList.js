@@ -1,5 +1,6 @@
 import React from 'react'
 import { Stack } from "@chakra-ui/react"
+
 import CategoryBtn from "../CategoryBtn/CategoryBtn"
 
 function CategoryList({ categories, setSelectedCategory }) {
