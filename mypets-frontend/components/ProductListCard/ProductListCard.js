@@ -37,7 +37,7 @@ function ProductListCard({ product }) {
           <LinkOverlay>
             <Flex p={0} w="full" alignItems="center" justifyContent="center">
               <Box>
-                <Center roundedTop="lg">
+                <Center roundedTop="lg" p={1}>
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='180' height='180'/>
                 </Center>
                 <Box p="3">
