@@ -11,6 +11,7 @@ import {
     ButtonGroup
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import useRouter from 'next/router'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 import SearchbarGroup from '../SearchbarGroup/SearchbarGroup'
@@ -42,8 +43,9 @@ const NavLink = ({ children }) => (
 export default function Navbar({ products }) {
 
     const { isOpen, onToggle } = useDisclosure();
-    const { user } = useContext(AuthContext)
-
+    const { user, logoutUser } = useContext(AuthContext)
+    const router = useRouter()
+    
     return (
         <Box>
             <Flex
@@ -105,13 +107,22 @@ export default function Navbar({ products }) {
             </Flex>
 
             <Collapse in={isOpen} animateOpacity>
-                <MobileNav user={user}/>
+                <MobileNav 
+                    user={user} 
+                    router={router}
+                    logoutUser={logoutUser}
+                />
             </Collapse>
         </Box>
     );
 }
 
-const MobileNav = ({ user }) => {
+const MobileNav = ({ user, router, logoutUser }) => {
+
+    const handlePastOrders = () => {
+        router.push('/orders')
+    }
+
     return (
         <Box
             bg='white'
@@ -124,11 +135,11 @@ const MobileNav = ({ user }) => {
                     <>
                         <Divider/>
                         <NavbarUserModalBtn mode='mobile' />
-                        <Box px={2}>
+                        <Box px={2} onClick={handlePastOrders}>
                             Past orders
                         </Box>
                         <Divider/>
-                        <Box px={2}>
+                        <Box px={2} onClick={logoutUser}>
                             Log out 
                         </Box>
                     </>
