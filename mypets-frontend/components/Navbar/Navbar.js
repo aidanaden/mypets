@@ -120,15 +120,19 @@ const MobileNav = () => {
         >
             <Stack spacing={4}>
                 <SearchbarGroup display={{ base: 'inherit', lg: 'none' }}/>
-                <Divider/>
-                <NavbarUserModalBtn mode='mobile' />
-                <Box px={2}>
-                    Past orders
-                </Box>
-                <Divider/>
-                <Box px={2}>
-                    Log out 
-                </Box>
+                { user && (
+                    <>
+                        <Divider/>
+                        <NavbarUserModalBtn mode='mobile' />
+                        <Box px={2}>
+                            Past orders
+                        </Box>
+                        <Divider/>
+                        <Box px={2}>
+                            Log out 
+                        </Box>
+                    </>
+                )}
             </Stack>
         </Box>
     );
