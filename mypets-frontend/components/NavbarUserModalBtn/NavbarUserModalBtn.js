@@ -109,23 +109,25 @@ function NavbarUserModalBtn({ mode='desktop' }) {
     }
 
     useEffect(() => {
-        const values = { email: user.email }
-        if (profile) {
-            setUserInitialValues({ 
-                ...values,
-                username: profile.username ? profile.username : '', 
-                phone_num: profile.phone_num ? profile.phone_num : '', 
-                dob: profile.dob ? formatDateString(profile.dob) : '', 
-                sex: profile.sex ? profile.sex : '',
-            })
-            setAddressInitialValues({ 
-                address: profile.address ? profile.address : '', 
-                unit: profile.unit ? profile.unit : '', 
-                postal: profile.postal ? profile.postal : '', 
-                location: profile.location ? profile.location.split("_").join(" ") : '',
-            })
-        } else {
-            setUserInitialValues(values)
+        if (user) {
+            const values = { email: user.email }
+            if (profile) {
+                setUserInitialValues({ 
+                    ...values,
+                    username: profile.username ? profile.username : '', 
+                    phone_num: profile.phone_num ? profile.phone_num : '', 
+                    dob: profile.dob ? formatDateString(profile.dob) : '', 
+                    sex: profile.sex ? profile.sex : '',
+                })
+                setAddressInitialValues({ 
+                    address: profile.address ? profile.address : '', 
+                    unit: profile.unit ? profile.unit : '', 
+                    postal: profile.postal ? profile.postal : '', 
+                    location: profile.location ? profile.location.split("_").join(" ") : '',
+                })
+            } else {
+                setUserInitialValues(values)
+            }
         }
     }, [profile])
 
