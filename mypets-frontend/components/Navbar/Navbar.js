@@ -11,7 +11,7 @@ import {
     ButtonGroup
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import useRouter from 'next/router'
+import { useRouter } from 'next/router'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 import SearchbarGroup from '../SearchbarGroup/SearchbarGroup'
