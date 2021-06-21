@@ -70,9 +70,15 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                 <TabPanel>
                     <Flex justifyContent='space-between' direction="row">
                         <Box w="100%" mr={12}>
-                            <ProductSectionList products={merchantProducts} selectedCategory={selectedCategory} sortMethod={sortMethod}/>
+                            <ProductSectionList 
+                                products={merchantProducts} 
+                                categories={fullCategories}
+                                sortMethod={sortMethod}
+                                selectedCategory={selectedCategory}
+                                setCategorySelected={setCategorySelected}
+                            />
                         </Box>
-                        <Flex direction="column" maxW='210px'>
+                        <Flex direction="column" maxW='210px' display={{ base: 'none', lg: 'inherit' }}>
                             <SortMenu setSortMethod={setSortMethod}/>
                             <CategoryList categories={fullCategories} setSelectedCategory={setCategorySelected}/>
                         </Flex>
