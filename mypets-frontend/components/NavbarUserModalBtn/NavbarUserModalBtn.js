@@ -145,9 +145,9 @@ function NavbarUserModalBtn({ mode='desktop' }) {
                     User Profile
                 </MenuItem>
             )}
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal isOpen={isOpen} onClose={onClose} isCentered>
                 <ModalOverlay />
-                <ModalContent mx={{ base: 4 }}>
+                <ModalContent mx={4}>
                     <ModalHeader>
                         Your profile 
                     </ModalHeader>

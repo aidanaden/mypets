@@ -54,9 +54,9 @@ function LoginModalBtn() {
                 variant='outline'
                 onClick={onOpen}
             />
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal isOpen={isOpen} onClose={onClose} isCentered>
                 <ModalOverlay/>
-                <ModalContent>
+                <ModalContent mx={{ base: 4 }}>
                     <ModalHeader>Log in</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody mb={2}> 
