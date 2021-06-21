@@ -41,7 +41,7 @@ const NavLink = ({ children }) => (
 
 export default function Navbar({ products }) {
 
-    const { isOpen, onOpen, onClose } = useDisclosure();
+    const { isOpen, onToggle } = useDisclosure();
     const { user } = useContext(AuthContext)
 
     return (
