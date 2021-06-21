@@ -16,11 +16,11 @@ import CategoryList from '../components/CategoryList/CategoryList'
 import HomeBannerSwiper from '../components/HomeBannerSwiper/HomeBannerSwiper'
 import { API_PRODUCTS_URL, API_MERCHANTS_URL } from '../utils/urls'
 
-export default function Home({ products, merchants }) {
+export default function Home({ products, categories, merchants }) {
 
   const [pageProducts, setPageProducts] = useState(products)
   const [sortMethod, setSortMethod] = useState('pop')
-  const [categories, setCategories] = useState(getCategories(products))
+  const [categories, setCategories] = useState(categories)
   const [selectedCategory, setSelectedCategory] = useState('All products')
   const router = useRouter()
   const toast = useToast()
@@ -110,10 +110,19 @@ export async function getStaticProps() {
   const merchant_res = await fetch(`${API_MERCHANTS_URL}`)
   const merchants = await merchant_res.json()
 
+  const getCategories = (products) => {
+    const totalProductCategories = products.map(product => product.category.name)
+    const uniqueProductCategories = [...new Set(totalProductCategories)]
+    return ['All products'].concat(uniqueProductCategories)
+  }
+
+  const categories = getCategories(products)
+
   // Return as props
   return {
     props: {
       products,
+      categories,
       merchants
     }
   }
