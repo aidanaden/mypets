@@ -1,6 +1,8 @@
 import { useState, useContext, useEffect } from 'react'
 import { 
+    Center,
     Heading, 
+    Stack,
     HStack, 
     Flex,
     Text,
@@ -90,9 +92,18 @@ function ProductDetailSection({ product }) {
 
     return (
         <>
-            <HStack justifyContent="space-evenly" p={4}>
-                <NextImage src={`${imageToUrl(product.image)}`} width='500' height='500'/>
-                <Flex direction="column" w="400px" h="400px">
+            <Stack direction={{ base: 'column', md: 'row' }} justifyContent="space-evenly" p={4}>
+                <Center boxSize={{ base: '100%', md: '500px' }}>
+                    <NextImage src={product.image} width='500' height='500'/>
+                </Center>
+                <Flex 
+                    direction="column"
+                    w={{ base: '100%', md: 'auto', lg: '400px' }} 
+                    h={{ base: "100%", md: '500px' }} 
+                    px={2}
+                    pt={{ base: 8, md: 12 }}
+                    pb={{ base: 2, md: 16 }}
+                >
                     <Heading as="h2" fontSize="4xl">
                         {product.name}
                     </Heading>  
@@ -100,9 +111,17 @@ function ProductDetailSection({ product }) {
                         <ProductDetailMerchantBadge merchant={product.merchant.name}/>
                         <RatingDisplay rating={product.rating} numReviews={product.reviews.length}/>
                     </HStack>
-                    <ProductDetailVariantSelect variantWeight={variant.weight} options={product.variants} onChange={variantSelectOnChange}/>
-                    <HStack mt={8} justifyContent="space-between">
-                        <Text fontSize="4xl" mr={4}>
+                    <ProductDetailVariantSelect 
+                        variantWeight={variant.weight} 
+                        options={product.variants} 
+                        onChange={variantSelectOnChange}
+                    />
+                    <HStack 
+                        mt={{ base: 4, md: 8 }} 
+                        mb={{ base: 6, md: 0 }} 
+                        justifyContent="space-between"
+                    >
+                        <Text fontSize={{ base: '3xl', md: "4xl" }} mr={4}>
                             SG${price.toFixed(2)}
                         </Text>
                         <ProductQuantityPicker addQuantity={addQuantity} minusQuantity={minusQuantity} quantity={quantity} />
@@ -116,7 +135,7 @@ function ProductDetailSection({ product }) {
                         mt="auto"
                     />
                 </Flex>
-            </HStack>
+            </Stack>
         </>
     )
 }

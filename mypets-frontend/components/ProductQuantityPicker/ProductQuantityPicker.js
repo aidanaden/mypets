@@ -6,7 +6,6 @@ import { useState } from 'react'
 function ProductQuantityPicker({ addQuantity, minusQuantity, quantity=1 }) {
 
     return (
-        <>
         <Flex>
             <IconButton 
                 icon={<MinusIcon />} 
@@ -20,7 +19,6 @@ function ProductQuantityPicker({ addQuantity, minusQuantity, quantity=1 }) {
                 size="sm"
                 onClick={addQuantity}/>
         </Flex>
-        </>
     )
 }
 

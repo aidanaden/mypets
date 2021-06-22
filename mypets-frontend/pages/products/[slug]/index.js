@@ -1,8 +1,15 @@
 import React from 'react'
+import { 
+    Container, 
+    Box, 
+    Flex, 
+    Grid, 
+    GridItem, 
+    HStack 
+} from "@chakra-ui/react"
 
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
 import Navbar from "../../../components/Navbar/Navbar"
-import { Container, Box, Flex, Grid, GridItem, HStack } from "@chakra-ui/react"
 import ProductDetailSection from "../../../components/ProductDetailSection/ProductDetailSection"
 import ProductDescriptionSection from "../../../components/ProductDescriptionSection/ProductDescriptionSection"
 import ProductReviewSection from "../../../components/ProductReviewSection/ProductReviewSection"
@@ -29,7 +36,7 @@ function Product({ product }) {
                         <ProductDetailSection product={product}/>
                     </GridItem>
                     <GridItem
-                        colSpan={2} 
+                        colSpan={{ base: 3, md: 2}}
                         shadow="sm" 
                         borderWidth="1px" 
                         rounded="lg" 
@@ -37,7 +44,7 @@ function Product({ product }) {
                         <ProductDescriptionSection product={product} />
                     </GridItem>
                     <GridItem
-                        colSpan={1} 
+                        colSpan={{ base: 3, md: 1 }} 
                         shadow="sm" 
                         borderWidth="1px" 
                         rounded="lg"
