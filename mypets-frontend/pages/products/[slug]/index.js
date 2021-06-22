@@ -1,11 +1,8 @@
 import React from 'react'
 import { 
-    Container, 
-    Box, 
-    Flex, 
+    Container,
     Grid, 
-    GridItem, 
-    HStack 
+    GridItem
 } from "@chakra-ui/react"
 
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'

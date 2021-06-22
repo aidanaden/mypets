@@ -17,7 +17,8 @@ function ProductQuantityPicker({ addQuantity, minusQuantity, quantity=1 }) {
             <IconButton 
                 icon={<AddIcon />} 
                 size="sm"
-                onClick={addQuantity}/>
+                onClick={addQuantity}
+            />
         </Flex>
     )
 }
