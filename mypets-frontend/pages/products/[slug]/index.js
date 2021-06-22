@@ -33,7 +33,7 @@ function Product({ product }) {
                         <ProductDetailSection product={product}/>
                     </GridItem>
                     <GridItem
-                        colSpan={{ base: 3, md: 2}}
+                        colSpan={{ base: 3, md: 2 }}
                         shadow="sm" 
                         borderWidth="1px" 
                         rounded="lg" 

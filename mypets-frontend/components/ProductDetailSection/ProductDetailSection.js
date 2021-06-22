@@ -93,7 +93,7 @@ function ProductDetailSection({ product }) {
         <>
             <Stack direction={{ base: 'column', md: 'row' }} justifyContent="space-evenly" p={4}>
                 <Center boxSize={{ base: '100%', md: '500px' }}>
-                    <NextImage src={product.image} width='500' height='500'/>
+                    <NextImage src={imageToUrl(product.image)} width='500' height='500'/>
                 </Center>
                 <Flex 
                     direction="column"

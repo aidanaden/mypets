@@ -16,12 +16,18 @@ function textEnded(str) {
 }
 
 function ProductReviewListCard({ review }) {
-
     const date_fns_review_date = distanceFromToday(review.date_created)
 
     return (
-
-        <Flex direction='column' rounded='lg' bgColor="gray.100" p={5} textAlign='left' justifyContent='space-between' w='100%'>
+        <Flex 
+            direction='column' 
+            rounded='lg' 
+            bgColor="gray.100" 
+            p={5} 
+            textAlign='left' 
+            justifyContent='space-between' 
+            w='100%'
+        >
             <Box>
                 <Text fontSize="sm">
                     {review.user}
