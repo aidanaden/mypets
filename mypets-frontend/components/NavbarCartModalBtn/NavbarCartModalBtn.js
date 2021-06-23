@@ -41,7 +41,7 @@ function NavbarCartModalBtn() {
     const [productNames, setProductNames] = useState(null)
 
     const minimumOrderToast = () => toast({
-        title: "Minimum order value of $15 not reached :(",
+        title: "Minimum order value of $15 not reached",
         status: 'error',
         duration: 3000,
         isClosable: true,
