@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { 
-    Button, 
+    useToast,
     useDisclosure, 
     Modal,
     ModalOverlay,
@@ -32,24 +32,34 @@ const stripePromise = loadStripe(STRIPE_PK)
  * @param  {[product]} Products 
  */
 function NavbarCartModalBtn() {
-
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { user, cart, clearCart } = useContext(AuthContext)
+    const toast = useToast()
 
     const [totalPrice, setTotalPrice] = useState(0)
     const [groupedProducts, setGroupedProducts] = useState(null)
     const [productNames, setProductNames] = useState(null)
 
-    const handleCheckout = async () => {
-        const stripe = await stripePromise
-        const session = await callAPI('/orders', 'POST', cart)
-        if (!session.id) {
-            console.error('Session does not contain id, failed to create order')
-        }
+    const minimumOrderToast = () => toast({
+        title: "Minimum order value of $15 not reached :(",
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+    })
 
-        const result = await stripe.redirectToCheckout({
-            sessionId: session.id
-        })
+    const handleCheckout = async () => {
+        if (totalPrice > 15) {
+            minimumOrderToast()
+        } else {
+            const stripe = await stripePromise
+            const session = await callAPI('/orders', 'POST', cart)
+            if (!session.id) {
+                console.error('Session does not contain id, failed to create order')
+            }
+            const result = await stripe.redirectToCheckout({
+                sessionId: session.id
+            })
+        }
     }   
 
     useEffect(() => {
