@@ -5,14 +5,14 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Navigation } from 'swiper/core';
 SwiperCore.use([Autoplay, Navigation]);
 
-function BannerSwiper({ bannerImgNames, rounded }) {
+function BannerSwiper({ bannerImgNames, rounded, autoplay=true }) {
     return (
         <Swiper
             spaceBetween={0}
             slidesPerView={1}
-            loop={true}
+            loop={autoplay}
             centeredSlides={true}
-            autoplay={true}
+            autoplay={autoplay}
         >   
         {
             bannerImgNames.map((bannerImgName,i) => (

@@ -6,7 +6,7 @@ function MerchantBannerSwiper({...props}) {
     const merchantBannerImgNames = ["macho_pawz_banner.jpg"]
     return (
         <Box maxW='1200px' boxShadow='2xl' rounded={40} {...props}>
-          <BannerSwiper bannerImgNames={merchantBannerImgNames}/>
+          <BannerSwiper bannerImgNames={merchantBannerImgNames} rounded={rounded} autoplay={false}/>
         </Box>
     )
 }
