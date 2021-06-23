@@ -12,7 +12,9 @@ function BannerSwiper({ bannerImgNames, rounded, autoplay=true }) {
             slidesPerView={1}
             loop={autoplay}
             centeredSlides={true}
-            autoplay={autoplay}
+            autoplay={autoplay ? {
+                delay: 5000,
+            } : false}
         >   
         {
             bannerImgNames.map((bannerImgName,i) => (
