@@ -57,7 +57,7 @@ function OrderProductCard({ order_products }) {
     }, [order_products])
 
     return (
-        <Box w='450px' mb={8}>
+        <Box w={{ base: '100%', lg: '450px' }} px={{ base: 0, md: 6, lg: 0 }} mb={8}>
             { product && 
                 <>
                     <NextLink
@@ -68,14 +68,14 @@ function OrderProductCard({ order_products }) {
                             <Tooltip
                                 label={product.name}
                                 bg="white"
-                                placement={'top-start'}
-                                color={'gray.800'}
+                                placement='top-start'
+                                color='gray.800'
                                 fontSize="xs"
                             >
-                                <HStack mb={4}>
+                                <HStack mb={4} w={{ base: '100%', lg: 'auto' }}>
                                     <NextImage src={`${imageToUrl(product.image)}`} height='150' width='150' />
                                     <Box>
-                                        <Text fontWeight='semibold'>{product.name}</Text>
+                                        <Text fontWeight='semibold' fontSize={{ base: 'xl', lg: 'md' }}>{product.name}</Text>
                                         <MerchantBadge merchantName={merchantName} mt={1}/>
                                     </Box>
                                 </HStack>
@@ -87,15 +87,15 @@ function OrderProductCard({ order_products }) {
                             <Tr fontStyle='italic'>
                                 <Th textAlign='left'>Variant</Th>
                                 <Th textAlign='right'>Price</Th>
-                                <Th textAlign='right'>Quantity</Th>
+                                <Th textAlign='right'>Qty</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
                             {weights.map((weight, i) => (
-                                <Tr key={i}>
-                                    <Th textAlign='left' fontSize='sm'>{weight}KG</Th>
-                                    <Th textAlign='right' fontSize='sm'>SG${productsWeighted[weight][0].variant.price.toFixed(2)}</Th>
-                                    <Th textAlign='right' fontSize='sm'>{quantities[weight]}</Th>
+                                <Tr key={i}  fontSize={{ base: 'md', lg: 'sm' }}>
+                                    <Th textAlign='left'>{weight}KG</Th>
+                                    <Th textAlign='right'>SG${productsWeighted[weight][0].variant.price.toFixed(2)}</Th>
+                                    <Th textAlign='right'>{quantities[weight]}</Th>
                                 </Tr>
                             ))}
                         </Tbody>

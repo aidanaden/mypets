@@ -21,7 +21,6 @@ export const REVIEW_TEXT_LEN = 128
  * 
  */
 export function imageToUrl(image) {
-
     if (!image) {
         return '/cropped-logo.svg'
     }
@@ -39,7 +38,6 @@ export function distanceFromToday(str_date) {
 }   
 
 export function stringToDate(str_date) {
-    
     const review_date = new Date(str_date)
     return format(review_date, "eee, dd MMM y")
 }

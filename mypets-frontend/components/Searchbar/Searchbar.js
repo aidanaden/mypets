@@ -12,7 +12,6 @@ import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import { useRouter } from 'next/router'
 
 function Searchbar({ mr, price }) {
-
     const router = useRouter()
     const [search, setSearch] = useState('')
 
@@ -42,34 +41,32 @@ function Searchbar({ mr, price }) {
     }
 
     return (
-        <>
-            <InputGroup w={{ base: '100%', xl: 'xl' }} mr={mr} pr={0}>
-                <InputLeftElement
-                    pointerEvents="none"
-                    children={<Search2Icon color="gray.600" />}
-                />
-                <Input 
-                    size="md"
-                    focusBorderColor="mypets.100"
-                    placeholder="Search for products here"
-                    borderWidth={2}
-                    variant='filled'
-                    onChange={onSearchTextChange}
-                    onKeyPress={onEnterKeyPress}
-                />
-                <InputRightAddon 
-                    p={0} 
-                    children={
-                        <MypetsBtn 
-                            btnText='Search' 
-                            w='100%' 
-                            roundedLeft={0} 
-                            noAnimate={true} 
-                            onClick={onSearchClick}
-                        />} 
-                />
-            </InputGroup>
-        </>
+        <InputGroup w={{ base: '100%', xl: 'xl' }} mr={mr} pr={0}>
+            <InputLeftElement
+                pointerEvents="none"
+                children={<Search2Icon color="gray.600" />}
+            />
+            <Input
+                size="md"
+                focusBorderColor="mypets.100"
+                placeholder="Search for products here"
+                borderWidth={2}
+                variant='filled'
+                onChange={onSearchTextChange}
+                onKeyPress={onEnterKeyPress}
+            />
+            <InputRightAddon
+                p={0}
+                children={
+                    <MypetsBtn
+                        btnText='Search'
+                        w='100%'
+                        roundedLeft={0}
+                        noAnimate={true}
+                        onClick={onSearchClick}
+                    />}
+            />
+        </InputGroup>
     )
 }
 

@@ -30,11 +30,11 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPric
     }
 
     return (
-        <Table variant="unstyled" size='md'>
+        <Table variant="unstyled" size={{ base: 'sm', md: 'md', lg: 'md' }}>
             <Thead textColor='gray.600'>
-                <Tr>
+                <Tr fontSize='xs'>
                     <Th>Product</Th>
-                    <Th textAlign='right'>Quantity</Th>
+                    <Th textAlign='right'>Qty</Th>
                     <Th textAlign='right'>Subtotal</Th>
                 </Tr>
             </Thead>
@@ -46,12 +46,10 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPric
                         <Td textAlign='right' fontWeight='bold'>{productTotalPrice(groupedOrderProducts[productName]).toFixed(2)}</Td>
                     </Tr>
                 ))}
-                <Tr>
-                    <Td fontWeight='bold'></Td>
-                    <Td textAlign='right' fontWeight='bold'></Td>
-                    <Td textAlign='right' fontWeight='bold'>SG${totalPrice.toFixed(2)}</Td>
-                </Tr>
             </Tbody>
+            <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={4}>
+                SG${totalPrice.toFixed(2)}
+            </Box>
         </Table>
     )
 }

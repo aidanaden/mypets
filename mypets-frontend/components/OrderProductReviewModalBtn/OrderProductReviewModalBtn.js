@@ -72,9 +72,9 @@ function OrderProductReviewModalBtn({ order_product }) {
                     <MypetsBtn onClick={onOpen} btnText='Write a review' variant='outline'/>
                 }
             </Box>
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal isOpen={isOpen} onClose={onClose} isCentered>
                 <ModalOverlay />
-                <ModalContent>
+                <ModalContent mx={{ base: 4, md: 0 }}>
                     <ModalHeader mr={0}>{order_product.variant.product.name}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>

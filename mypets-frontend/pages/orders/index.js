@@ -40,7 +40,7 @@ function Orders() {
         <>
             <AnnouncementBanner />
             <Navbar />
-            <Container maxW='1200px' minH='70vh' mb={6}>
+            <Container maxW='1200px' minH='70vh'>
                 {orders.length > 0 ? orders.map((order, i) => (
                     <OrderCard key={i} order={order} loading={loading}/>
                 )) : 

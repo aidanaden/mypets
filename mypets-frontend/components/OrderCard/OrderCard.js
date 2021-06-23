@@ -15,7 +15,7 @@ function OrderCard({ order, loading }) {
 
     return (
         <Flex 
-            direction='row' 
+            direction={{ base: 'column', lg: 'row' }}
             w='100%' 
             h='auto' 
             mx='auto' 
@@ -24,12 +24,16 @@ function OrderCard({ order, loading }) {
             boxShadow='sm' 
             borderWidth='1px' 
         >
-            <Flex direction='column' py={8} px={8}>
+            <Box p={{ base: 4, md: 8, xl: 12 }} display={{ base: 'block', lg: 'none' }} w='100%'>
+                <OrderDeliveryStatusBar orderDate={order.order_date} status={order.status}/>
+                <OrderPriceBreakdownList groupedOrderProducts={groupedOrderProducts} productNames={productNames} totalPrice={totalPrice}/>
+            </Box>
+            <Stack direction='column' py={8} px={{ base: 0, lg: 8 }}>
                 {productNames.map((productName, i) => (
                     <OrderProductCard key={i} order_products={groupedOrderProducts[productName]}/>
                 ))}
-            </Flex>
-            <Box p={12} flex='1'>
+            </Stack>
+            <Box p={{ base: 4, md: 8, xl: 12 }} display={{ base: 'none', lg: 'block' }} w='100%'>
                 <OrderDeliveryStatusBar orderDate={order.order_date} status={order.status}/>
                 <OrderPriceBreakdownList groupedOrderProducts={groupedOrderProducts} productNames={productNames} totalPrice={totalPrice}/>
             </Box>
