@@ -48,7 +48,7 @@ function NavbarCartModalBtn() {
     })
 
     const handleCheckout = async () => {
-        if (totalPrice > 15) {
+        if (totalPrice < 15) {
             minimumOrderToast()
         } else {
             const stripe = await stripePromise
