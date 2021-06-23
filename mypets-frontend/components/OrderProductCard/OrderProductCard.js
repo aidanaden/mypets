@@ -75,7 +75,7 @@ function OrderProductCard({ order_products }) {
                             </Tooltip>
                         </a>
                     </NextLink>
-                    <Table variant='unstyled' size={{ base: 'sm', md: 'md' }}>
+                    <Table variant='unstyled' size='sm'>
                         <Thead textColor='gray.600'>
                             <Tr fontStyle='italic'>
                                 <Th textAlign='left'>Variant</Th>
