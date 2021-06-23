@@ -75,7 +75,7 @@ function OrderProductCard({ order_products }) {
                             </Tooltip>
                         </a>
                     </NextLink>
-                    <Table variant='unstyled' size='sm'>
+                    <Table variant='unstyled' size={{ base: 'sm', md: 'md' }}>
                         <Thead textColor='gray.600'>
                             <Tr fontStyle='italic'>
                                 <Th textAlign='left'>Variant</Th>
@@ -85,7 +85,7 @@ function OrderProductCard({ order_products }) {
                         </Thead>
                         <Tbody>
                             {weights.map((weight, i) => (
-                                <Tr key={i}  fontSize={{ base: 'md', lg: 'sm' }}>
+                                <Tr key={i} fontSize={{ base: 'md', lg: 'sm' }}>
                                     <Th textAlign='left'>{weight}KG</Th>
                                     <Th textAlign='right'>SG${productsWeighted[weight][0].variant.price.toFixed(2)}</Th>
                                     <Th textAlign='right'>{quantities[weight]}</Th>
