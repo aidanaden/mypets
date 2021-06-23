@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react'
 import { 
     Box, 
     HStack, 
-    VStack, 
-    Image, 
     Text, 
-    Badge,
     Table,
     Thead,
     Tr,
@@ -15,16 +12,14 @@ import {
 } from '@chakra-ui/react'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
-import useSWR from 'swr'
 import lodash from 'lodash'
 
 import MerchantBadge from '../MerchantBadge/MerchantBadge'
 import OrderProductReviewModalBtn from '../OrderProductReviewModalBtn/OrderProductReviewModalBtn'
-import { API_MERCHANTS_URL, imageToUrl } from '../../utils/urls'
+import { imageToUrl } from '../../utils/urls'
 import { callAPI } from '../../context/AuthContext'
 
 function OrderProductCard({ order_products }) {
-
     const [merchantName, setMerchantName] = useState('')
     const [product, setProduct] = useState(null)
     const [quantities, setQuantities] = useState(null)
@@ -32,7 +27,6 @@ function OrderProductCard({ order_products }) {
     const [weights, setWeights] = useState([])
 
     useEffect(() => {
-
         if (order_products) {
             const sample_quantities = {}
             const weighted_products = lodash.groupBy(order_products, 'variant.weight')
@@ -53,7 +47,6 @@ function OrderProductCard({ order_products }) {
                 setMerchantName(merchant.name)
             })
         }
-        
     }, [order_products])
 
     return (

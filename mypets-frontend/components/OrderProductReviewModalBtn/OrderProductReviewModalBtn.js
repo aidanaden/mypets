@@ -1,8 +1,6 @@
 import { useState, useContext } from 'react'
 import {
     Box,
-    Text,
-    Textarea,
     Modal,
     ModalOverlay,
     ModalContent,
@@ -16,12 +14,10 @@ import {
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import Rating from '../Rating/Rating'
 import ReviewTextArea from '../ReviewTextArea/ReviewTextArea'
-import { API_URL } from '../../utils/urls'
 import { callAPI }  from '../../context/AuthContext'
 import AuthContext from '../../context/AuthContext'
 
 function OrderProductReviewModalBtn({ order_product }) {
-
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [rating, setRating] = useState(0)
     const [reviewed, setReviewed] = useState(order_product.reviewed)
@@ -57,7 +53,6 @@ function OrderProductReviewModalBtn({ order_product }) {
     }
 
     const onSubmit = async () => {
-        
         postReview()
         updateOrderProduct()
         // update order product to REVIEWED

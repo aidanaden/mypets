@@ -1,6 +1,7 @@
 
 import React from 'react'
 import {
+    Box,
     Table,
     Thead,
     Tbody,
@@ -12,7 +13,6 @@ import {
 } from "@chakra-ui/react"
 
 function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPrice }) {
-
     const productTotalQuantity = (order_products) => {
         let totalQuantity = 0
         order_products.map((order_product) => {

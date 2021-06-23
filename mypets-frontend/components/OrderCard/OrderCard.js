@@ -1,14 +1,15 @@
 import lodash from 'lodash'
-import { useSWR } from 'swr'
-import { Box, Flex, VStack, HStack, Badge, Text } from '@chakra-ui/react'
+import { 
+    Box, 
+    Flex,
+    Stack
+} from '@chakra-ui/react'
 
-import { API_PRODUCTS_URL } from '../../utils/urls'
 import OrderProductCard from '../OrderProductCard/OrderProductCard'
 import OrderDeliveryStatusBar from '../OrderDeliveryStatusBar/OrderDeliveryStatusBar'
 import OrderPriceBreakdownList from '../OrderPriceBreakdownList/OrderPriceBreakdownList'
 
 function OrderCard({ order, loading }) {
-
     const groupedOrderProducts = lodash.groupBy(order.order_products, 'variant.product.name')
     const productNames = Object.keys(groupedOrderProducts)
     const totalPrice = order.total_price
