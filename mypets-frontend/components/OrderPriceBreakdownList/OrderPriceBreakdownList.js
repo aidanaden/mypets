@@ -47,7 +47,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPric
                     </Tr>
                 ))}
             </Tbody>
-            <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={4} w='100%'>
+            <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={4} w='100%' bg='red.100'>
                 SG${totalPrice.toFixed(2)}
             </Box>
         </Table>
