@@ -30,27 +30,29 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPric
     }
 
     return (
-        <Table variant="unstyled" size={{ base: 'sm', md: 'md', lg: 'md' }}>
-            <Thead textColor='gray.600'>
-                <Tr fontSize='xs'>
-                    <Th>Product</Th>
-                    <Th textAlign='right'>Qty</Th>
-                    <Th textAlign='right'>Subtotal</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                {productNames.map((productName, i) => (
-                    <Tr key={i}>
-                        <Td fontWeight='bold'>{productName}</Td>
-                        <Td textAlign='right' fontWeight='bold'>{productTotalQuantity(groupedOrderProducts[productName])}</Td>
-                        <Td textAlign='right' fontWeight='bold'>{productTotalPrice(groupedOrderProducts[productName]).toFixed(2)}</Td>
+        <>
+            <Table variant="unstyled" size={{ base: 'sm', md: 'md', lg: 'md' }}>
+                <Thead textColor='gray.600'>
+                    <Tr fontSize='xs'>
+                        <Th>Product</Th>
+                        <Th textAlign='right'>Qty</Th>
+                        <Th textAlign='right'>Subtotal</Th>
                     </Tr>
-                ))}
-            </Tbody>
-            <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={4} w='100%' bg='red.100'>
+                </Thead>
+                <Tbody>
+                    {productNames.map((productName, i) => (
+                        <Tr key={i}>
+                            <Td fontWeight='bold'>{productName}</Td>
+                            <Td textAlign='right' fontWeight='bold'>{productTotalQuantity(groupedOrderProducts[productName])}</Td>
+                            <Td textAlign='right' fontWeight='bold'>{productTotalPrice(groupedOrderProducts[productName]).toFixed(2)}</Td>
+                        </Tr>
+                    ))}
+                </Tbody>
+            </Table>
+            <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={4}>
                 SG${totalPrice.toFixed(2)}
             </Box>
-        </Table>
+        </>
     )
 }
 
