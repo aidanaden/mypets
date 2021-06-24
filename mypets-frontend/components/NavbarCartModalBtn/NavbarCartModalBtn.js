@@ -73,7 +73,7 @@ function NavbarCartModalBtn() {
     return (
         <>
             <MypetsBtn btnText='Your cart' onClick={onOpen} leftIcon={<FaShoppingCart />} mx={0} />
-            <Modal isOpen={isOpen} onClose={onClose} isCentered>
+            <Modal isOpen={isOpen} onClose={onClose} isCentered scrollBehavior='inside'>
                 <ModalOverlay/>
                 <ModalContent 
                     maxW={{ lg: 1200}} 
@@ -85,7 +85,7 @@ function NavbarCartModalBtn() {
                     <ModalCloseButton />
                     <ModalBody w='100%'> 
                             { groupedProducts && (totalPrice > 0.1) ? 
-                            <Stack direction={{ base: 'column', lg: 'row' }} w='100%' overflow='auto'>
+                            <Stack direction={{ base: 'column', lg: 'row' }} w='100%'>
                                 <Box>
                                     {productNames.map((productName, i) => (
                                         <CartModalProductCard 
