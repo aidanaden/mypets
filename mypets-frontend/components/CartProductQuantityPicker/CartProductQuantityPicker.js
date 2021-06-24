@@ -1,6 +1,10 @@
 import { useState, useContext, useEffect } from 'react'
-import { Flex, IconButton, Text, HStack } from '@chakra-ui/react'
-import { AddIcon, MinusIcon, SpinnerIcon } from '@chakra-ui/icons'
+import { 
+    IconButton, 
+    Text, 
+    HStack 
+} from '@chakra-ui/react'
+import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 
 import AuthContext from '../../context/AuthContext'
 
@@ -34,8 +38,8 @@ function CartProductQuantityPicker({ addQuantity, minusQuantity, quantity }) {
             <IconButton 
                 icon={<MinusIcon />} 
                 size="sm" 
-                // onClick={combinedMinusQuantity}
-                onClick={minusQuantity}
+                onClick={combinedMinusQuantity}
+                // onClick={minusQuantity}
                 isLoading={cartLoading}
             />
             <Text w={{ base: '24px', lg: '32px' }} align="center" alignSelf='center' fontSize="lg">
@@ -44,8 +48,8 @@ function CartProductQuantityPicker({ addQuantity, minusQuantity, quantity }) {
             <IconButton 
                 icon={<AddIcon />} 
                 size="sm"
-                // onClick={combinedAddQuantity}
-                onClick={addQuantity}
+                onClick={combinedAddQuantity}
+                // onClick={addQuantity}
                 isLoading={cartLoading}
             />
         </HStack>
