@@ -78,6 +78,7 @@ function NavbarCartModalBtn() {
                 <ModalContent 
                     maxW={{ lg: 1200}} 
                     w={{ base: '100%', lg: 1100 }} 
+                    h={{ base: '100%', lg: 'auto' }}
                     minH={{ lg: 500 }} 
                     mx={{ base: 4 }}
                 >
