@@ -36,7 +36,7 @@ function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
                 mt={{ base: 8, lg: 0 }}
             >
                 <Thead>
-                    <Tr fontSize='xs'>
+                    <Tr fontSize='xs' fontWeight='light'>
                         <Th>Product</Th>
                         <Th>Qty</Th>
                         <Th textAlign='right'>Subtotal</Th>
