@@ -76,8 +76,8 @@ function NavbarCartModalBtn() {
             <Modal 
                 isOpen={isOpen} 
                 onClose={onClose} 
-                isCentered={{ base: false, lg: true }} 
-                scrollBehavior='outside'
+                isCentered 
+                scrollBehavior='inside'
                 size='full'
                 closeOnOverlayClick={{ base: false, lg: true }}
             >
