@@ -93,10 +93,9 @@ function CartModalProductCard({ order_products, onClose }) {
             setQuantities(sample_quantities)
             setProductsWeighted(weighted_products)
             setWeights(temp_weights)
-            
+
             // console.log('useEffect products split by weight: ', weighted_products)
         }
-        
     }, [order_products])
 
     return (
@@ -121,7 +120,7 @@ function CartModalProductCard({ order_products, onClose }) {
                             >
                                 <HStack mb={6}>
                                     <HStack spacing={4}>
-                                        <NextImage src={imageToUrl(order_products[0].variant.product.image)} width='100' height='100'/>
+                                        {/* <NextImage src={imageToUrl(order_products[0].variant.product.image)} width='100' height='100'/> */}
                                         <Box>
                                             <Text 
                                                 fontWeight='bold' 
