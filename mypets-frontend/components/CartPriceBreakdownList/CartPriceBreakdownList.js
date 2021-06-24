@@ -38,7 +38,7 @@ function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
                 <Thead>
                     <Tr fontSize='xs'>
                         <Th>Product</Th>
-                        <Th textAlign='right'>Quantity</Th>
+                        <Th>Qty</Th>
                         <Th textAlign='right'>Subtotal</Th>
                     </Tr>
                 </Thead>
@@ -46,7 +46,7 @@ function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
                     {productNames.map((productName, i) => (
                         <Tr key={i}>
                             <Td fontWeight='bold'>{productName}</Td>
-                            <Td textAlign='right' fontWeight='bold'>{productTotalQuantity(groupedProducts[productName])}</Td>
+                            <Td fontWeight='bold'>{productTotalQuantity(groupedProducts[productName])}</Td>
                             <Td textAlign='right' fontWeight='bold'>{productTotalPrice(groupedProducts[productName]).toFixed(2)}</Td>
                         </Tr>
                     ))}

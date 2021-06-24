@@ -143,7 +143,7 @@ function CartModalProductCard({ order_products, onClose }) {
                             <Tr fontStyle='italic' fontSize='xs'>
                                 <Th textAlign='center'>Variant</Th>
                                 <Th textAlign='center'>Price</Th>
-                                <Th textAlign='center'>Quantity</Th>
+                                <Th textAlign='center'>Qty</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
