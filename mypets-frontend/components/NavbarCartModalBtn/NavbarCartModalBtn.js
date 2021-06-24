@@ -80,13 +80,12 @@ function NavbarCartModalBtn() {
                     w={{ base: '100%', lg: 1100 }} 
                     minH={{ lg: 500 }} 
                     mx={{ base: 4 }}
-                    overflow='auto'
                 >
                     <ModalHeader>Your Cart</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody w='100%'> 
                             { groupedProducts && (totalPrice > 0.1) ? 
-                            <Stack direction={{ base: 'column', lg: 'row' }} w='100%'>
+                            <Stack direction={{ base: 'column', lg: 'row' }} w='100%' overflow='auto'>
                                 <Box>
                                     {productNames.map((productName, i) => (
                                         <CartModalProductCard 
