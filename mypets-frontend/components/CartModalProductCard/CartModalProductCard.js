@@ -53,7 +53,6 @@ function CartModalProductCard({ order_products, onClose }) {
     }
 
     const minusQuantities = (weight) => {
-
         const existing_order_product = productsWeighted[weight][0]
         let tempQuantities = quantities
 
@@ -82,7 +81,6 @@ function CartModalProductCard({ order_products, onClose }) {
     }
 
     useEffect(() => {
-
         if (order_products) {
             const sample_quantities = {}
             const weighted_products = lodash.groupBy(order_products, 'variant.weight')
@@ -123,7 +121,7 @@ function CartModalProductCard({ order_products, onClose }) {
                             >
                                 <HStack mb={6}>
                                     <HStack spacing={4}>
-                                        <NextImage src={order_products[0].variant.product.image} width='100' height='100'/>
+                                        <NextImage src={imageToUrl(order_products[0].variant.product.image)} width='100' height='100'/>
                                         <Box>
                                             <Text 
                                                 fontWeight='bold' 

@@ -85,8 +85,8 @@ function NavbarCartModalBtn() {
                     <ModalCloseButton />
                     <ModalBody w='100%'> 
                             { groupedProducts && (totalPrice > 0.1) ? 
-                            <Stack direction='row' w='100%'>
-                                <Box mr={12}>
+                            <Stack direction={{ base: 'column', lg: 'row' }} w='100%'>
+                                <Box>
                                     {productNames.map((productName, i) => (
                                         <CartModalProductCard 
                                             order_products={groupedProducts[productName]} 
@@ -95,7 +95,11 @@ function NavbarCartModalBtn() {
                                         />
                                     ))}
                                 </Box>
-                                <Box flex='1' px={4}>
+                                <Box 
+                                    flex='1' 
+                                    pl={{ base: 0, lg: 8 }} 
+                                    pb={{ base: 2, lg: 0 }}
+                                >
                                     <CartPriceBreakdownList 
                                         groupedProducts={groupedProducts} 
                                         productNames={productNames} 
