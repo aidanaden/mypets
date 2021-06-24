@@ -1,12 +1,9 @@
 import { useState, useEffect, useContext } from 'react'
 import { 
-    Box, 
-    Flex, 
-    HStack, 
-    VStack,
-    Text, 
-    Image, 
-    Badge, 
+    Spacer,
+    Box,  
+    HStack,
+    Text,  
     Table, 
     TableCaption, 
     Thead,
@@ -33,14 +30,12 @@ import AuthContext from '../../context/AuthContext'
  * @param  {product} 
  */
 function CartModalProductCard({ order_products, onClose }) {
-
     const [quantities, setQuantities] = useState(null)
     const [productsWeighted, setProductsWeighted] = useState([])
     const [weights, setWeights] = useState([])
     const { updateCart, deleteOrderProductFromCart } = useContext(AuthContext)
 
     const addQuantities = (weight) => {
-
         let tempQuantities = quantities
         tempQuantities[weight] += 1
         setQuantities(tempQuantities)
@@ -107,7 +102,11 @@ function CartModalProductCard({ order_products, onClose }) {
     }, [order_products])
 
     return (
-        <Box mb={8}>
+        <Box 
+            mb={{ base: 6, lg: 8 }} 
+            w='100%'
+            minW={{ lg: '480px' }} 
+        >
             {order_products ? (
                 <>
                     <NextLink 
@@ -123,22 +122,30 @@ function CartModalProductCard({ order_products, onClose }) {
                                 fontSize="xs"
                             >
                                 <HStack mb={6}>
-                                    <NextImage src={imageToUrl(order_products[0].variant.product.image)} width='100' height='100'/>
-                                    <Box>
-                                        <Text fontWeight='semibold'>{order_products[0].variant.product.name}</Text>
-                                        <MerchantBadge merchantName={order_products[0].variant.product.merchant.name} />
-                                    </Box>
+                                    <HStack spacing={4}>
+                                        <NextImage src={order_products[0].variant.product.image} width='100' height='100'/>
+                                        <Box>
+                                            <Text 
+                                                fontWeight='bold' 
+                                                fontSize={{ base: 'xl', lg: 'lg' }}
+                                            >
+                                                {order_products[0].variant.product.name}
+                                            </Text>
+                                            <MerchantBadge merchantName={order_products[0].variant.product.merchant.name} />
+                                        </Box>
+                                    </HStack>
+                                    <Spacer/>
+                                    <IconButton icon={<DeleteIcon />} size='sm' bgColor='white' onClick={deleteProductCard}/>
                                 </HStack>
                             </Tooltip>
                         </a>
                     </NextLink>
-                    <Table variant='unstyled' size='sm'>
+                    <Table variant='unstyled' size={{ base: 'md', lg: 'lg' }}>
                         <Thead>
-                            <Tr fontStyle='italic'>
+                            <Tr fontStyle='italic' fontSize='xs'>
                                 <Th textAlign='center'>Variant</Th>
                                 <Th textAlign='center'>Price</Th>
                                 <Th textAlign='center'>Quantity</Th>
-                                <IconButton icon={<DeleteIcon />} size='sm' bgColor='white' onClick={deleteProductCard}/>
                             </Tr>
                         </Thead>
                         <Tbody>

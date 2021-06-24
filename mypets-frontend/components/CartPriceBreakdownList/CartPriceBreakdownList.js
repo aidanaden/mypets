@@ -1,19 +1,17 @@
 import React from 'react'
 import {
+    Box,
     Table,
     Thead,
     Tbody,
-    Tfoot,
     Tr,
     Th,
     Td,
     TableCaption,
     IconButton
 } from "@chakra-ui/react"
-import { DeleteIcon } from '@chakra-ui/icons'
 
 function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
-
     const productTotalQuantity = (order_products) => {
         let totalQuantity = 0
         order_products.map((order_product) => {
@@ -31,29 +29,33 @@ function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
     }
 
     return (
-        <Table variant="unstyled" size='md'>
-            <Thead>
-                <Tr>
-                    <Th>Product</Th>
-                    <Th textAlign='right'>Quantity</Th>
-                    <Th textAlign='right'>Subtotal</Th>
-                </Tr>
-            </Thead>
-            <Tbody>
-                {productNames.map((productName, i) => (
-                    <Tr key={i}>
-                        <Td fontWeight='bold'>{productName}</Td>
-                        <Td textAlign='right' fontWeight='bold'>{productTotalQuantity(groupedProducts[productName])}</Td>
-                        <Td textAlign='right' fontWeight='bold'>{productTotalPrice(groupedProducts[productName]).toFixed(2)}</Td>
+        <>
+            <Table
+                variant="unstyled" 
+                size={{ base: 'sm', lg: 'md' }} 
+                mt={{ base: 8, lg: 0 }}
+            >
+                <Thead>
+                    <Tr fontSize='xs'>
+                        <Th>Product</Th>
+                        <Th textAlign='right'>Quantity</Th>
+                        <Th textAlign='right'>Subtotal</Th>
                     </Tr>
-                ))}
-                <Tr>
-                    <Td fontWeight='bold'></Td>
-                    <Td textAlign='right' fontWeight='bold'></Td>
-                    <Td textAlign='right' fontWeight='bold'>SG${totalPrice.toFixed(2)}</Td>
-                </Tr>
-            </Tbody>
-        </Table>
+                </Thead>
+                <Tbody>
+                    {productNames.map((productName, i) => (
+                        <Tr key={i}>
+                            <Td fontWeight='bold'>{productName}</Td>
+                            <Td textAlign='right' fontWeight='bold'>{productTotalQuantity(groupedProducts[productName])}</Td>
+                            <Td textAlign='right' fontWeight='bold'>{productTotalPrice(groupedProducts[productName]).toFixed(2)}</Td>
+                        </Tr>
+                    ))}
+                </Tbody>
+            </Table>
+            <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={4}>
+                SG${totalPrice.toFixed(2)}
+            </Box>
+        </>
     )
 }
 

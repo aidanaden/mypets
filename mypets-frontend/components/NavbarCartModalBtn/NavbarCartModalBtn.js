@@ -1,15 +1,14 @@
 import { useContext, useEffect, useState } from 'react'
 import { 
+    Stack,
     useToast,
     useDisclosure, 
     Modal,
     ModalOverlay,
     ModalContent,
     ModalHeader,
-    ModalFooter,
     ModalBody,
     ModalCloseButton,
-    Flex,
     Box
 } from '@chakra-ui/react'
 import lodash from 'lodash'
@@ -76,12 +75,17 @@ function NavbarCartModalBtn() {
             <MypetsBtn btnText='Your cart' onClick={onOpen} leftIcon={<FaShoppingCart />} mx={0} />
             <Modal isOpen={isOpen} onClose={onClose} isCentered>
                 <ModalOverlay/>
-                <ModalContent maxW={{ lg: 1200}} w={{ lg: 1100}} minH={{ lg: 500}} mx={{ base: 4 }}>
+                <ModalContent 
+                    maxW={{ lg: 1200}} 
+                    w={{ base: '100%', lg: 1100 }} 
+                    minH={{ lg: 500 }} 
+                    mx={{ base: 4 }}
+                >
                     <ModalHeader>Your Cart</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody w='100%'> 
                             { groupedProducts && (totalPrice > 0.1) ? 
-                            <Flex direction='row' w='100%'>
+                            <Stack direction='row' w='100%'>
                                 <Box mr={12}>
                                     {productNames.map((productName, i) => (
                                         <CartModalProductCard 
@@ -99,11 +103,11 @@ function NavbarCartModalBtn() {
                                     />
                                     <MypetsBtn btnText='Checkout' onClick={handleCheckout} w="stretch" mt={6}/>
                                 </Box>
-                            </Flex> :
+                            </Stack> :
                             <>
-                                <Flex justifyContent='center' w='100%' h={400} alignItems='center'>
+                                <Stack justifyContent='center' w='100%' h={400} alignItems='center'>
                                         No products in your cart!
-                                </Flex>
+                                </Stack>
                             </>
                             }
                     </ModalBody>

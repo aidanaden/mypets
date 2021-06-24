@@ -34,16 +34,18 @@ function CartProductQuantityPicker({ addQuantity, minusQuantity, quantity }) {
             <IconButton 
                 icon={<MinusIcon />} 
                 size="sm" 
-                onClick={combinedMinusQuantity}
+                // onClick={combinedMinusQuantity}
+                onClick={minusQuantity}
                 isLoading={cartLoading}
             />
-            <Text w="32px" align="center" alignSelf='center' fontSize="lg">
+            <Text w={{ base: '24px', lg: '32px' }} align="center" alignSelf='center' fontSize="lg">
                 {qty}
             </Text>
             <IconButton 
                 icon={<AddIcon />} 
                 size="sm"
-                onClick={combinedAddQuantity}
+                // onClick={combinedAddQuantity}
+                onClick={addQuantity}
                 isLoading={cartLoading}
             />
         </HStack>
