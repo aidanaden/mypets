@@ -73,7 +73,13 @@ function NavbarCartModalBtn() {
     return (
         <>
             <MypetsBtn btnText='Your cart' onClick={onOpen} leftIcon={<FaShoppingCart />} mx={0} />
-            <Modal isOpen={isOpen} onClose={onClose} isCentered={{ base: false, lg: true }} scrollBehavior='inside'>
+            <Modal 
+                isOpen={isOpen} 
+                onClose={onClose} 
+                isCentered={{ base: false, lg: true }} 
+                scrollBehavior='inside'
+                size='full'
+            >
                 <ModalOverlay/>
                 <ModalContent 
                     maxW={{ lg: 1200}} 
