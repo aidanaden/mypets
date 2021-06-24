@@ -107,19 +107,19 @@ function CartModalProductCard({ order_products, onClose }) {
         >
             {order_products ? (
                 <>
-                    <NextLink 
-                        href={`/products/${order_products[0].variant.product.slug}`} 
-                        as={`/products/${order_products[0].variant.product.slug}`}    
-                    > 
-                        <a onClick={onClose}>
-                            <Tooltip
-                                label={order_products[0].variant.product.name}
-                                bg="white"
-                                placement={'top-start'}
-                                color={'gray.800'}
-                                fontSize="xs"
-                            >
-                                <HStack mb={6}>
+                    <HStack mb={6}>
+                        <NextLink 
+                            href={`/products/${order_products[0].variant.product.slug}`} 
+                            as={`/products/${order_products[0].variant.product.slug}`}    
+                        > 
+                            <a onClick={onClose}>
+                                <Tooltip
+                                    label={order_products[0].variant.product.name}
+                                    bg="white"
+                                    placement={'top-start'}
+                                    color={'gray.800'}
+                                    fontSize="xs"
+                                >
                                     <HStack spacing={4}>
                                         <NextImage src={imageToUrl(order_products[0].variant.product.image)} width='100' height='100'/>
                                         <Box>
@@ -132,12 +132,12 @@ function CartModalProductCard({ order_products, onClose }) {
                                             <MerchantBadge merchantName={order_products[0].variant.product.merchant.name} />
                                         </Box>
                                     </HStack>
-                                    <Spacer/>
-                                    <IconButton icon={<DeleteIcon />} size='sm' bgColor='white' onClick={deleteProductCard}/>
-                                </HStack>
-                            </Tooltip>
-                        </a>
-                    </NextLink>
+                                </Tooltip>
+                            </a>
+                        </NextLink>     
+                        <Spacer/>
+                        <IconButton icon={<DeleteIcon />} size='sm' bgColor='white' onClick={deleteProductCard}/>
+                    </HStack>
                     <Table variant='unstyled' size={{ base: 'md', lg: 'lg' }}>
                         <Thead>
                             <Tr fontStyle='italic' fontSize='xs'>
