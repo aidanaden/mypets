@@ -145,7 +145,7 @@ function NavbarUserModalBtn({ mode='desktop' }) {
                     User Profile
                 </MenuItem>
             )}
-            <Modal isOpen={isOpen} onClose={onClose} isCentered scrollBehavior='inside'>
+            <Modal isOpen={isOpen} onClose={onClose} isCentered scrollBehavior='outside'>
                 <ModalOverlay />
                 <ModalContent mx={4}>
                     <ModalHeader>
