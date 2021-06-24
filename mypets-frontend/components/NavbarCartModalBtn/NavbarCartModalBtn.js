@@ -79,6 +79,7 @@ function NavbarCartModalBtn() {
                 isCentered={{ base: false, lg: true }} 
                 scrollBehavior='inside'
                 size='full'
+                closeOnOverlayClick={{ base: false, lg: true }}
             >
                 <ModalOverlay/>
                 <ModalContent 
