@@ -80,6 +80,7 @@ function NavbarCartModalBtn() {
                     w={{ base: '100%', lg: 1100 }} 
                     minH={{ lg: 500 }} 
                     mx={{ base: 4 }}
+                    overflow='auto'
                 >
                     <ModalHeader>Your Cart</ModalHeader>
                     <ModalCloseButton />
