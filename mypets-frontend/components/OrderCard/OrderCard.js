@@ -13,6 +13,9 @@ function OrderCard({ order, loading }) {
     const groupedOrderProducts = lodash.groupBy(order.order_products, 'variant.product.name')
     const productNames = Object.keys(groupedOrderProducts)
     const totalPrice = order.total_price
+    const shippingPrice = order.shipping_fee
+    const discountValue = order.discount_value
+    const finalPrice = order.final_price
 
     return (
         <Flex 
@@ -36,7 +39,14 @@ function OrderCard({ order, loading }) {
             </Stack>
             <Box p={{ base: 4, md: 8, xl: 12 }} display={{ base: 'none', lg: 'block' }} w='100%'>
                 <OrderDeliveryStatusBar orderDate={order.order_date} status={order.status}/>
-                <OrderPriceBreakdownList groupedOrderProducts={groupedOrderProducts} productNames={productNames} totalPrice={totalPrice}/>
+                <OrderPriceBreakdownList 
+                    groupedOrderProducts={groupedOrderProducts} 
+                    productNames={productNames} 
+                    totalPrice={totalPrice}
+                    shippingPrice={shippingPrice}
+                    discountValue={discountValue}
+                    finalPrice={finalPrice}
+                />
             </Box>
         </Flex>
     )

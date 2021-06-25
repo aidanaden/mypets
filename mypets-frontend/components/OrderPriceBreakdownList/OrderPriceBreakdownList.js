@@ -1,6 +1,8 @@
 
 import React from 'react'
 import {
+    Spacer,
+    Stack,
     Box,
     Table,
     Thead,
@@ -12,7 +14,7 @@ import {
     TableCaption
 } from "@chakra-ui/react"
 
-function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPrice }) {
+function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPrice, shippingPrice, discountValue, finalPrice }) {
     const productTotalQuantity = (order_products) => {
         let totalQuantity = 0
         order_products.map((order_product) => {
@@ -36,7 +38,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPric
                     <Tr fontSize='xs'>
                         <Th>Product</Th>
                         <Th textAlign='right'>Qty</Th>
-                        <Th textAlign='right'>Subtotal</Th>
+                        <Th textAlign='right'>Price</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
@@ -49,8 +51,38 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPric
                     ))}
                 </Tbody>
             </Table>
-            <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={4}>
-                SG${totalPrice.toFixed(2)}
+            <Box mt={4}>
+                <Stack direction='row'>
+                    <Box as='h4' fontWeight='medium'>
+                        Subtotal
+                    </Box>
+                    <Spacer />
+                    <Box fontWeight='bold' textAlign='right'>
+                        { totalPrice && totalPrice.toFixed(2)}
+                    </Box>
+                </Stack>
+                { discountValue && 
+                (<Stack direction='row' fontWeight='medium'>
+                    <Box as='h4'>
+                        Discount value
+                    </Box>
+                    <Spacer />
+                    <Box fontWeight='bold' textAlign='right'>
+                        - {discountValue.toFixed(2)}
+                    </Box>
+                </Stack>)}
+                <Stack direction='row' fontWeight='medium'>
+                    <Box as='h4'>
+                        Shipping
+                    </Box>
+                    <Spacer />
+                    <Box fontWeight='bold' textAlign='right'>
+                        {shippingPrice.toFixed(2)}
+                    </Box>
+                </Stack>
+                <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={2}>
+                    SG${finalPrice.toFixed(2)}
+                </Box>
             </Box>
         </>
     )
