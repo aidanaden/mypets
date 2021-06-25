@@ -63,7 +63,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                     </Box>
                     <Spacer />
                     <Box fontWeight='bold' textAlign='right'>
-                        {totalPrice.toFixed(2)}
+                        {order.total_price.toFixed(2)}
                     </Box>
                 </Stack>
                 { discountValue && 
