@@ -69,7 +69,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                 { order.discount_value && 
                 (<Stack direction='row'>
                     <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600'>
-                        Discount value
+                        Discount
                     </Box>
                     <Spacer />
                     <Box fontWeight='bold' textAlign='right'>
