@@ -14,7 +14,12 @@ import {
     TableCaption
 } from "@chakra-ui/react"
 
-function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPrice, shippingPrice, discountValue, finalPrice }) {
+function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) {
+    const totalPrice = order.total_price
+    const shippingPrice = order.shipping_fee
+    const discountValue = order.discount_value
+    const finalPrice = order.final_price
+
     const productTotalQuantity = (order_products) => {
         let totalQuantity = 0
         order_products.map((order_product) => {
@@ -58,7 +63,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, totalPric
                     </Box>
                     <Spacer />
                     <Box fontWeight='bold' textAlign='right'>
-                        { totalPrice && totalPrice.toFixed(2)}
+                        {totalPrice.toFixed(2)}
                     </Box>
                 </Stack>
                 { discountValue && 

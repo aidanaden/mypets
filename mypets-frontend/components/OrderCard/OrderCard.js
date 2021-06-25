@@ -12,10 +12,6 @@ import OrderPriceBreakdownList from '../OrderPriceBreakdownList/OrderPriceBreakd
 function OrderCard({ order, loading }) {
     const groupedOrderProducts = lodash.groupBy(order.order_products, 'variant.product.name')
     const productNames = Object.keys(groupedOrderProducts)
-    const totalPrice = order.total_price
-    const shippingPrice = order.shipping_fee
-    const discountValue = order.discount_value
-    const finalPrice = order.final_price
 
     return (
         <Flex 
@@ -42,10 +38,7 @@ function OrderCard({ order, loading }) {
                 <OrderPriceBreakdownList 
                     groupedOrderProducts={groupedOrderProducts} 
                     productNames={productNames} 
-                    totalPrice={totalPrice}
-                    shippingPrice={shippingPrice}
-                    discountValue={discountValue}
-                    finalPrice={finalPrice}
+                    order={order}
                 />
             </Box>
         </Flex>
