@@ -58,7 +58,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
             </Table>
             <Box mt={4}>
                 <Stack direction='row'>
-                    <Box as='h4' fontWeight='medium'>
+                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600'>
                         Subtotal
                     </Box>
                     <Spacer />
@@ -67,8 +67,8 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                     </Box>
                 </Stack>
                 { order.discount_value && 
-                (<Stack direction='row' fontWeight='medium'>
-                    <Box as='h4'>
+                (<Stack direction='row'>
+                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600'>
                         Discount value
                     </Box>
                     <Spacer />
@@ -76,8 +76,8 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                         - {order.discount_value.toFixed(2)}
                     </Box>
                 </Stack>)}
-                <Stack direction='row' fontWeight='medium'>
-                    <Box as='h4'>
+                <Stack direction='row'>
+                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600'> 
                         Shipping
                     </Box>
                     <Spacer />
