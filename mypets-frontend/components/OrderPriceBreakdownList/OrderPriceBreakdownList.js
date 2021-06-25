@@ -15,10 +15,10 @@ import {
 } from "@chakra-ui/react"
 
 function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) {
-    const totalPrice = order.total_price
-    const shippingPrice = order.shipping_fee
-    const discountValue = order.discount_value
-    const finalPrice = order.final_price
+    // const totalPrice = order.total_price
+    // const shippingPrice = order.shipping_fee
+    // const discountValue = order.discount_value
+    // const finalPrice = order.final_price
 
     const productTotalQuantity = (order_products) => {
         let totalQuantity = 0
@@ -66,14 +66,14 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                         {order.total_price.toFixed(2)}
                     </Box>
                 </Stack>
-                { discountValue && 
+                { order.discount_value && 
                 (<Stack direction='row' fontWeight='medium'>
                     <Box as='h4'>
                         Discount value
                     </Box>
                     <Spacer />
                     <Box fontWeight='bold' textAlign='right'>
-                        - {discountValue.toFixed(2)}
+                        - {order.discount_value.toFixed(2)}
                     </Box>
                 </Stack>)}
                 <Stack direction='row' fontWeight='medium'>
@@ -82,11 +82,11 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                     </Box>
                     <Spacer />
                     <Box fontWeight='bold' textAlign='right'>
-                        {shippingPrice.toFixed(2)}
+                        {order.shipping_fee.toFixed(2)}
                     </Box>
                 </Stack>
                 <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={2}>
-                    SG${finalPrice.toFixed(2)}
+                    SG${order.final_price.toFixed(2)}
                 </Box>
             </Box>
         </>
