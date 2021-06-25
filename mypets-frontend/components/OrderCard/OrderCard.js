@@ -26,7 +26,11 @@ function OrderCard({ order, loading }) {
         >
             <Box p={{ base: 4, md: 8, xl: 12 }} display={{ base: 'block', lg: 'none' }} w='100%'>
                 <OrderDeliveryStatusBar orderDate={order.order_date} status={order.status}/>
-                <OrderPriceBreakdownList groupedOrderProducts={groupedOrderProducts} productNames={productNames} totalPrice={totalPrice}/>
+                <OrderPriceBreakdownList 
+                    groupedOrderProducts={groupedOrderProducts} 
+                    productNames={productNames} 
+                    order={order}
+                />
             </Box>
             <Stack direction='column' py={8} px={{ base: 0, lg: 8 }}>
                 {productNames.map((productName, i) => (
