@@ -77,7 +77,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                     </Box>
                 </Stack>)}
                 <Stack direction='row'>
-                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600'> 
+                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600' fontSize='sm'> 
                         Shipping
                     </Box>
                     <Spacer />
