@@ -58,17 +58,17 @@ function ProductListCard({ product }) {
                       {product.name}
                     </Box>
                   </Flex>
-                  <Spacer bg='purple.100'/>
-                  <Flex justifyContent="space-between" alignContent="center">
-                    <RatingDisplay rating={product.rating} numReviews={0} />
-                    <Box fontSize="md" color='gray.800'>
-                      <Box as="span" color={'gray.600'} fontSize="sm">
-                        $
-                      </Box>
-                      {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
-                    </Box>
-                  </Flex>
                 </Box>
+                <Spacer />
+                <Flex justifyContent="space-between" alignContent="center">
+                  <RatingDisplay rating={product.rating} numReviews={0} />
+                  <Box fontSize="md" color='gray.800'>
+                    <Box as="span" color={'gray.600'} fontSize="sm">
+                      $
+                    </Box>
+                    {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
+                  </Box>
+                </Flex>
               </Box>
             </Flex>
           </LinkOverlay>
