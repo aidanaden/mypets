@@ -37,7 +37,7 @@ function ProductListCard({ product }) {
         <NextLink href={`/products/${product.slug}`} as={`/products/${product.slug}`} passHref>
           <LinkOverlay>
             <Flex p={0} w="full" alignItems="center" justifyContent="center" h='100%' bg='red.100'>
-              <Box bg='blue.100'>
+              {/* <Box bg='blue.100'> */}
                 <Center roundedTop="lg" p={1}>
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
                 </Center>
@@ -69,7 +69,7 @@ function ProductListCard({ product }) {
                     </Box>
                   </Flex>
                 </Box>
-              </Box>
+              {/* </Box> */}
             </Flex>
           </LinkOverlay>
         </NextLink>
