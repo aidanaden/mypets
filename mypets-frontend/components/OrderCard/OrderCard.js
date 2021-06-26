@@ -38,7 +38,12 @@ function OrderCard({ order, loading }) {
                 ))}
             </Stack>
             <Box p={{ base: 4, md: 8, xl: 12 }} display={{ base: 'none', lg: 'block' }} w='100%'>
-                <OrderDeliveryStatusBar orderDate={order.order_date} status={order.status}/>
+                <OrderDeliveryStatusBar 
+                    orderId={order.order_id}
+                    orderDate={order.order_date} 
+                    deliveryDate={order.delivery_date} 
+                    status={order.status}
+                />
                 <OrderPriceBreakdownList 
                     groupedOrderProducts={groupedOrderProducts} 
                     productNames={productNames} 
