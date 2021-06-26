@@ -39,7 +39,7 @@ function ProductListCard({ product }) {
           <LinkOverlay>
             <Stack 
               direction='column' 
-              p='4' 
+              p={{ base: '2', sm: '3' }} 
               w="full" 
               alignItems="center" 
               justifyContent="center" 
@@ -49,6 +49,7 @@ function ProductListCard({ product }) {
                 <Center roundedTop="lg">
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
                 </Center>
+                <Spacer />
                 <Box>
                   <Box display="flex" alignItems="baseline">
                     <MerchantBadge merchantName={product.merchant.name} />
