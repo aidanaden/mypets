@@ -39,7 +39,7 @@ function ProductListCard({ product }) {
           <LinkOverlay>
             <Stack 
               direction='column' 
-              p={1} 
+              p='4' 
               w="full" 
               alignItems="center" 
               justifyContent="center" 
@@ -49,11 +49,11 @@ function ProductListCard({ product }) {
                 <Center roundedTop="lg">
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
                 </Center>
-                <Box px={{ base: 0, xs: '3' }}>
-                  <Box d="flex" alignItems="baseline">
+                <Box>
+                  <Box display="flex" alignItems="baseline">
                     <MerchantBadge merchantName={product.merchant.name} />
                   </Box>
-                  <Stack mt="1" justifyContent="space-between" alignContent="center" bg='orange.100'>
+                  <Stack mt="1" justifyContent="space-between" alignContent="center">
                     <Box
                       fontSize="sm"
                       fontWeight="semibold"
@@ -72,7 +72,6 @@ function ProductListCard({ product }) {
                   direction='row' 
                   justifyContent="space-between" 
                   alignContent="center"
-                  px={{ base: 0, xs: '3' }}
                   justifySelf='flex-end'
                 >
                   <RatingDisplay rating={product.rating} numReviews={0} />
