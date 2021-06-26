@@ -9,10 +9,15 @@ function OrderDeliveryStatusBar({ orderId, orderDate, deliveryDate, status }) {
 
     return (
         <Box>
-            <Text textAlign='center' fontSize='sm' mb={4}>Order id: <b>{orderId}</b></Text> 
-            <Stack direction={{ base: 'column', md: 'row' }} justifyContent='space-between' mb={4}>
-                <Text textAlign='center' fontSize='sm'>Order date: <b>{stringToDate(orderDate)}</b></Text>
-                <Text textAlign='center' fontSize='sm'>Delivery date: <b>{stringToDate(deliveryDate)}</b></Text>
+            <Text fontSize='sm' mb={4}>Order ID: <b>{orderId}</b></Text> 
+            <Stack 
+                direction={{ base: 'column', md: 'row' }} 
+                justifyContent={{ md: 'space-between' }} 
+                mb={4}
+                spacing={{ base: 2, md: 0 }}
+            >
+                <Text textAlign={{ base: 'left', md: 'center' }} fontSize='sm'>Order date: <b>{stringToDate(orderDate)}</b></Text>
+                <Text textAlign={{ base: 'left', md: 'center' }} fontSize='sm'>Delivery date: <b>{stringToDate(deliveryDate)}</b></Text>
             </Stack>
             <Box 
                 p={6} 
