@@ -85,6 +85,15 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                         {order.shipping_fee.toFixed(2)}
                     </Box>
                 </Stack>
+                <Stack direction='row'>
+                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600' fontSize='sm'> 
+                        Tax
+                    </Box>
+                    <Spacer />
+                    <Box fontWeight='bold' textAlign='right'>
+                        {order.tax_fee.toFixed(2)}
+                    </Box>
+                </Stack>
                 <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={2}>
                     SG${order.final_price.toFixed(2)}
                 </Box>
