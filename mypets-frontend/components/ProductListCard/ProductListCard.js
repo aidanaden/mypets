@@ -74,7 +74,7 @@ function ProductListCard({ product }) {
                   justifySelf='flex-end'
                 >
                   <RatingDisplay rating={product.rating} numReviews={0} />
-                  <Box fontSize="sm" fontWeight='bold' color='gray.800'>
+                  <Box fontSize={{ base: 'sm', md: 'md' }}fontWeight='bold' color='gray.800'>
                     <Box as="span" color={'gray.600'}>
                       $
                     </Box>
