@@ -56,7 +56,7 @@ function ProductListCard({ product }) {
                     </Box>
                   </Flex>
 
-                  <Flex justifyContent="space-between" alignContent="center">
+                  <Flex justifyContent="space-between" alignContent="center" justifySelf='flex-end'>
                     <RatingDisplay rating={product.rating} numReviews={0} />
                     <Box fontSize="md" color='gray.800'>
                       <Box as="span" color={'gray.600'} fontSize="sm">
