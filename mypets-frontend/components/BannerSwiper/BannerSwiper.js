@@ -14,6 +14,7 @@ function BannerSwiper({ bannerImgNames, rounded, autoplay=true }) {
             centeredSlides={true}
             autoplay={autoplay ? {
                 delay: 5000,
+                disableOnInteraction: false,
             } : false}
         >   
         {
