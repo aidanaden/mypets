@@ -16,8 +16,8 @@ function OrderDeliveryStatusBar({ orderId, orderDate, deliveryDate, status }) {
                 mb={4}
                 spacing={0}
             >
-                <Text textAlign={{ base: 'left', xl: 'center' }} fontSize='sm'>Order date: <b>{stringToDate(orderDate)}</b></Text>
-                <Text textAlign={{ base: 'left', xl: 'center' }} fontSize='sm'>Delivery date: <b>{stringToDate(deliveryDate)}</b></Text>
+                <Text textAlign={{ base: 'left', xl: 'center' }} fontSize='sm' bg='red.100'>Order date: <b>{stringToDate(orderDate)}</b></Text>
+                <Text textAlign={{ base: 'left', xl: 'center' }} fontSize='sm' bg='blue.100'>Delivery date: <b>{stringToDate(deliveryDate)}</b></Text>
             </Stack>
             <Box 
                 p={6} 
