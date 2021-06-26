@@ -9,10 +9,10 @@ function OrderDeliveryStatusBar({ orderId, orderDate, deliveryDate, status }) {
 
     return (
         <Box>
-            <Text fontSize='sm' mb={4}>Order ID: <b>{orderId}</b></Text> 
+            <Text fontSize='sm' mb={6}>Order ID: <b>{orderId}</b></Text> 
             <Stack 
-                direction={{ base: 'column', md: 'row' }} 
-                justifyContent={{ md: 'space-between' }} 
+                direction={{ base: 'column', xl: 'row' }} 
+                justifyContent={{ xl: 'space-between' }} 
                 mb={4}
                 spacing={{ base: 2, md: 0 }}
             >

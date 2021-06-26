@@ -50,8 +50,9 @@ function ProductListCard({ product }) {
                       fontWeight="semibold"
                       as="h4"
                       lineHeight="tight"
-                      isTruncated>
-                      {product.name.substring(0, 16)}
+                      isTruncated={{ base: false, md: true }}>
+                      {/* {product.name.substring(0, 16)} */}
+                      {product.name}
                     </Box>
                   </Flex>
 
