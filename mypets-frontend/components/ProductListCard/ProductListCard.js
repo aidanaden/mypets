@@ -36,16 +36,16 @@ function ProductListCard({ product }) {
       >
         <NextLink href={`/products/${product.slug}`} as={`/products/${product.slug}`} passHref>
           <LinkOverlay>
-            <Flex p={0} w="full" alignItems="center" justifyContent="center" h='100%' bg='red.100'>
+            <Flex p={1} w="full" alignItems="center" justifyContent="center" h='100%' bg='red.100'>
               <Box h='100%' w='100%'>
-                <Center roundedTop="lg" p={1}>
+                <Center roundedTop="lg">
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
                 </Center>
-                <Box p="3" bg='blue.100'>
+                <Box px="3" bg='blue.100'>
                   <Box d="flex" alignItems="baseline">
                     <MerchantBadge merchantName={product.merchant.name} />
                   </Box>
-                  <Flex mt="1" justifyContent="space-between" alignContent="center" bg='orange.100'>
+                  <Stack mt="1" justifyContent="space-between" alignContent="center" bg='orange.100'>
                     <Box
                       fontSize="sm"
                       fontWeight="semibold"
@@ -57,10 +57,10 @@ function ProductListCard({ product }) {
                       {/* {product.name.substring(0, 16)} */}
                       {product.name}
                     </Box>
-                  </Flex>
+                  </Stack>
                 </Box>
                 <Spacer />
-                <Flex justifyContent="space-between" alignContent="center">
+                <Stack direction='row' justifyContent="space-between" alignContent="center" bg='purple.100' px='3'>
                   <RatingDisplay rating={product.rating} numReviews={0} />
                   <Box fontSize="md" color='gray.800'>
                     <Box as="span" color={'gray.600'} fontSize="sm">
@@ -68,7 +68,7 @@ function ProductListCard({ product }) {
                     </Box>
                     {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
                   </Box>
-                </Flex>
+                </Stack>
               </Box>
             </Flex>
           </LinkOverlay>
