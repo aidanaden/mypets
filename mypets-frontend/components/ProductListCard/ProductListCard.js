@@ -1,4 +1,5 @@
 import {
+  Spacer,
   Center,
   Flex,
   Box,
@@ -55,8 +56,8 @@ function ProductListCard({ product }) {
                       {product.name}
                     </Box>
                   </Flex>
-
-                  <Flex justifyContent="space-between" alignContent="center" justifySelf='flex-end'>
+                  <Spacer/>
+                  <Flex justifyContent="space-between" alignContent="center">
                     <RatingDisplay rating={product.rating} numReviews={0} />
                     <Box fontSize="md" color='gray.800'>
                       <Box as="span" color={'gray.600'} fontSize="sm">
