@@ -79,7 +79,8 @@ export default function Home({ products, categories, merchants }) {
               <ProductSectionList 
                 products={pageProducts} 
                 categories={pageCategories}
-                sortMethod={sortMethod} 
+                sortMethod={sortMethod}
+                setSortMethod={setSortMethod}
                 selectedCategory={selectedCategory}
                 setCategorySelected={setCategorySelected} 
                 heading='Recommended Products' 

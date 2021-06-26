@@ -42,7 +42,10 @@ function SortMenu({ setSortMethod }) {
     }
 
     return (
-        <Box w='100%'>
+        <Box 
+            w='100%'
+            display={{base: 'none', lg: 'inherit'}}
+        >
             <Menu>
                 <MypetsMenuBtn menuBtnText={sortBtnText} />
                 <MenuList boxShadow="md">
