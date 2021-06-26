@@ -46,11 +46,11 @@ function ProductListCard({ product }) {
               h='100%' 
               bg='red.100'
             >
-              <Box h='100%' w='100%'>
+              <Stack direction='column' h='100%' w='100%'>
                 <Center roundedTop="lg">
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
                 </Center>
-                <Box px={{ base: 0, md: '3' }} bg='blue.100'>
+                <Box px={{ base: 0, sm: '3' }} bg='blue.100'>
                   <Box d="flex" alignItems="baseline">
                     <MerchantBadge merchantName={product.merchant.name} />
                   </Box>
@@ -74,7 +74,7 @@ function ProductListCard({ product }) {
                   justifyContent="space-between" 
                   alignContent="center" 
                   bg='purple.100' 
-                  px={{ base: 0, md: '3' }}
+                  px={{ base: 0, sm: '3' }}
                   justifySelf='flex-end'
                 >
                   <RatingDisplay rating={product.rating} numReviews={0} />
@@ -85,7 +85,7 @@ function ProductListCard({ product }) {
                     {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
                   </Box>
                 </Stack>
-              </Box>
+              </Stack>
             </Stack>
           </LinkOverlay>
         </NextLink>
