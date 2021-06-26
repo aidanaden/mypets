@@ -50,7 +50,6 @@ function ProductListCard({ product }) {
                 <Center roundedTop="lg">
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
                 </Center>
-                <Spacer />
                 <Box>
                   <Box display="flex" alignItems="baseline">
                     <MerchantBadge merchantName={product.merchant.name} />
@@ -69,6 +68,7 @@ function ProductListCard({ product }) {
                     </Box>
                   </Stack>
                 </Box>
+                <Spacer />
                 <Stack 
                   direction='row' 
                   justifyContent="space-between" 
