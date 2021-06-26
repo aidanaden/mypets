@@ -36,7 +36,7 @@ function ProductListCard({ product }) {
       >
         <NextLink href={`/products/${product.slug}`} as={`/products/${product.slug}`} passHref>
           <LinkOverlay>
-            <Flex p={0} w="full" alignItems="center" justifyContent="center" bg='red.100'>
+            <Flex p={0} w="full" alignItems="center" justifyContent="center" h='100%' bg='red.100'>
               <Box>
                 <Center roundedTop="lg" p={1}>
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
@@ -51,7 +51,9 @@ function ProductListCard({ product }) {
                       fontWeight="semibold"
                       as="h4"
                       lineHeight="tight"
-                      isTruncated={{ base: false, md: true }}>
+                      isTruncated={{ base: false, md: true }}
+                      maxW='180px'
+                    >
                       {/* {product.name.substring(0, 16)} */}
                       {product.name}
                     </Box>
