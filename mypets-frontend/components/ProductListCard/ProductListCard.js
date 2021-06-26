@@ -36,7 +36,7 @@ function ProductListCard({ product }) {
       >
         <NextLink href={`/products/${product.slug}`} as={`/products/${product.slug}`} passHref>
           <LinkOverlay>
-            <Flex p={0} w="full" alignItems="center" justifyContent="center">
+            <Flex p={0} w="full" alignItems="center" justifyContent="center" bg='red.100'>
               <Box>
                 <Center roundedTop="lg" p={1}>
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
