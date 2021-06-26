@@ -5,8 +5,9 @@ import {
 
 import ProductList from '../ProductList/ProductList'
 import CategoryList from '../CategoryList/CategoryList'
+import SortMenu from "../SortMenu/SortMenu"
 
-function ProductSectionList({ products, categories, sortMethod, selectedCategory, setCategorySelected, heading }) {
+function ProductSectionList({ products, categories, setSortMethod, sortMethod, selectedCategory, setCategorySelected, heading }) {
 
     const sortProductsAscending = (products) => {
         products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
@@ -44,6 +45,7 @@ function ProductSectionList({ products, categories, sortMethod, selectedCategory
                 </Heading>
             )}
             <Box display={{ base: 'inherit', lg: 'none'}} mb={8}>
+                <SortMenu setSortMethod={setSortMethod} />
                 <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
             </Box>
             <ProductList products={filterProductsByCategory(products)} heading={heading}/>
