@@ -1,4 +1,5 @@
 import {
+  Stack,
   Spacer,
   Center,
   Flex,
@@ -60,7 +61,14 @@ function ProductListCard({ product }) {
                   </Stack>
                 </Box>
                 <Spacer />
-                <Stack direction='row' justifyContent="space-between" alignContent="center" bg='purple.100' px='3'>
+                <Stack 
+                  direction='row' 
+                  justifyContent="space-between" 
+                  alignContent="center" 
+                  bg='purple.100' 
+                  px='3'
+                  justifySelf='flex-end'
+                >
                   <RatingDisplay rating={product.rating} numReviews={0} />
                   <Box fontSize="md" color='gray.800'>
                     <Box as="span" color={'gray.600'} fontSize="sm">
