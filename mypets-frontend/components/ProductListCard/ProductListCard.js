@@ -41,11 +41,11 @@ function ProductListCard({ product }) {
                 <Center roundedTop="lg" p={1}>
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
                 </Center>
-                <Box p="3">
+                <Box p="3" bg='blue.100'>
                   <Box d="flex" alignItems="baseline">
                     <MerchantBadge merchantName={product.merchant.name} />
                   </Box>
-                  <Flex mt="1" justifyContent="space-between" alignContent="center">
+                  <Flex mt="1" justifyContent="space-between" alignContent="center" bg='orange.100'>
                     <Box
                       fontSize="sm"
                       fontWeight="semibold"
@@ -58,7 +58,7 @@ function ProductListCard({ product }) {
                       {product.name}
                     </Box>
                   </Flex>
-                  <Spacer/>
+                  <Spacer bg='purple.100'/>
                   <Flex justifyContent="space-between" alignContent="center">
                     <RatingDisplay rating={product.rating} numReviews={0} />
                     <Box fontSize="md" color='gray.800'>
