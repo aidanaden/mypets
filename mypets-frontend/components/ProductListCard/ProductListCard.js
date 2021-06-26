@@ -43,14 +43,13 @@ function ProductListCard({ product }) {
               w="full" 
               alignItems="center" 
               justifyContent="center" 
-              h='100%' 
-              bg='red.100'
+              h='100%'
             >
               <Stack direction='column' h='100%' w='100%'>
                 <Center roundedTop="lg">
                   <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
                 </Center>
-                <Box px={{ base: 0, sm: '3' }} bg='blue.100'>
+                <Box px={{ base: 0, xs: '3' }}>
                   <Box d="flex" alignItems="baseline">
                     <MerchantBadge merchantName={product.merchant.name} />
                   </Box>
@@ -72,9 +71,8 @@ function ProductListCard({ product }) {
                 <Stack 
                   direction='row' 
                   justifyContent="space-between" 
-                  alignContent="center" 
-                  bg='purple.100' 
-                  px={{ base: 0, sm: '3' }}
+                  alignContent="center"
+                  px={{ base: 0, xs: '3' }}
                   justifySelf='flex-end'
                 >
                   <RatingDisplay rating={product.rating} numReviews={0} />
