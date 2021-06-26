@@ -14,7 +14,6 @@ function OrderDeliveryStatusBar({ orderId, orderDate, deliveryDate, status }) {
                 direction={{ base: 'column', xl: 'row' }} 
                 justifyContent={{ xl: 'space-between' }} 
                 mb={4}
-                spacing={{ base: 2, xl: 0 }}
             >
                 <Text textAlign={{ base: 'left', xl: 'center' }} fontSize='sm'>Order date: <b>{stringToDate(orderDate)}</b></Text>
                 <Text textAlign={{ base: 'left', xl: 'center' }} fontSize='sm'>Delivery date: <b>{stringToDate(deliveryDate)}</b></Text>
