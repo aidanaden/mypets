@@ -44,7 +44,6 @@ function ProductListCard({ product }) {
               alignItems="center" 
               justifyContent="center" 
               h='100%'
-              bg='red.100'
             >
               <Stack direction='column' h='100%' w='100%'>
                 <Center roundedTop="lg">
@@ -63,7 +62,6 @@ function ProductListCard({ product }) {
                       isTruncated={{ base: false, md: true }}
                       maxW='180px'
                     >
-                      {/* {product.name.substring(0, 16)} */}
                       {product.name}
                     </Box>
                   </Stack>
