@@ -59,7 +59,7 @@ function ProductListCard({ product }) {
                       fontWeight="semibold"
                       as="h4"
                       lineHeight="tight"
-                      isTruncated={{ base: false, md: true }}
+                      isTruncated={{ base: false, md: false }}
                       maxW='180px'
                     >
                       {product.name}
