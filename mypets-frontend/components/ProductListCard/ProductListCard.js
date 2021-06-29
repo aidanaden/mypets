@@ -53,7 +53,7 @@ function ProductListCard({ product }) {
                   <Box display="flex" alignItems="baseline">
                     <MerchantBadge merchantName={product.merchant.name} />
                   </Box>
-                  <Stack mt="1" justifyContent="space-between" alignContent="center">
+                  <Stack mt="1" justifyContent="space-between">
                     <Box
                       fontSize="sm"
                       fontWeight="semibold"

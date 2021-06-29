@@ -45,15 +45,13 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                     {heading}
                 </Heading>
             )}
-            <Flex 
-                direction='column' 
+            <Box
                 display={{ base: 'inherit', lg: 'none'}} 
                 mb={8}
-                spacing={4}
             >
                 <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
-                <SortMenu setSortMethod={setSortMethod} />
-            </Flex>
+                <SortMenu setSortMethod={setSortMethod} mt={4}/>
+            </Box>
             <ProductList products={filterProductsByCategory(products)} heading={heading}/>
         </Box>
     )

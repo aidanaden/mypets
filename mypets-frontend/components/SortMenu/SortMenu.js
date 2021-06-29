@@ -10,7 +10,7 @@ import { useState } from "react"
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import MypetsMenuBtn from '../MypetsMenuBtn/MypetsMenuBtn'
 
-function SortMenu({ setSortMethod }) {
+function SortMenu({ setSortMethod, ...props }) {
 
     const toast = useToast()
     const [sortBtnText, setSortBtnText] = useState("Sort by Price")
@@ -43,7 +43,9 @@ function SortMenu({ setSortMethod }) {
 
     return (
         <Box 
+            alignSelf='start'
             w='100%'
+            {...props}
         >
             <Menu>
                 <MypetsMenuBtn menuBtnText={sortBtnText} />
@@ -57,7 +59,6 @@ function SortMenu({ setSortMethod }) {
                 </MenuList>
             </Menu>
         </Box>
-        
     )
 }
 
