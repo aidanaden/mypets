@@ -68,7 +68,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
             </TabList>
             <TabPanels mt={4}>
                 <TabPanel>
-                    <Flex justifyContent='space-between' direction="row">
+                    <Flex align='start' justifyContent='space-between' direction="row">
                         <Box w="100%" mr={12}>
                             <ProductSectionList 
                                 products={merchantProducts} 
