@@ -50,7 +50,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                 mb={8}
             >
                 <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
-                <SortMenu setSortMethod={setSortMethod} mt={4}/>
+                <SortMenu setSortMethod={setSortMethod}/>
             </Box>
             <ProductList products={filterProductsByCategory(products)} heading={heading}/>
         </Box>
