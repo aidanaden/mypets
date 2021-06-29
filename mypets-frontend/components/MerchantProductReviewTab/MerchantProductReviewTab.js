@@ -36,8 +36,8 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
     })
 
     return (
-        <Tabs align='center' variant='unstyled' size='md' defaultIndex={0} mt={12} p={0}>
-            <TabList>
+        <Tabs variant='unstyled' size='md' defaultIndex={0} mt={12} p={0}>
+            <TabList align='center' >
                 <Tab 
                     rounded='full' 
                     _active={{ 
