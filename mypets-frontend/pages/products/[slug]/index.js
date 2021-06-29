@@ -7,7 +7,7 @@ import {
 
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
 import Navbar from "../../../components/Navbar/Navbar"
-import HomeBackBtn from '../../../components/HomeBackBtn/HomeBackBtn'
+import BackBtn from '../../../components/BackBtn/BackBtn'
 import ProductDetailSection from "../../../components/ProductDetailSection/ProductDetailSection"
 import ProductDescriptionSection from "../../../components/ProductDescriptionSection/ProductDescriptionSection"
 import ProductReviewSection from "../../../components/ProductReviewSection/ProductReviewSection"
@@ -18,8 +18,9 @@ function Product({ product }) {
         <>
             <AnnouncementBanner />
             <Navbar/>
-            <HomeBackBtn />
+            
             <Container maxW="1200px" mb={4}>
+                <BackBtn />
                 <Grid 
                     templateRows="min-content" 
                     templateColumns="repeat(3, 1fr)" 
