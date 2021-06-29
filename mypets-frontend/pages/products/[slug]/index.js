@@ -18,7 +18,6 @@ function Product({ product }) {
         <>
             <AnnouncementBanner />
             <Navbar/>
-            
             <Container maxW="1200px" mb={4}>
                 <BackBtn mb={4}/>
                 <Grid 
