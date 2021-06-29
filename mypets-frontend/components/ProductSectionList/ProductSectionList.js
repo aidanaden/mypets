@@ -53,6 +53,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                 alignContent='start'
                 align='start'
                 justifyContent='start'
+                bg='red.100'
             >
                 <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
                 <SortMenu setSortMethod={setSortMethod} />
