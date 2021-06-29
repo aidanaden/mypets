@@ -12,7 +12,7 @@ function BackBtn({ ...props }) {
             <Button 
                 size='lg'
                 h='100%'
-                leftIcon={<ArrowBackIcon boxSize={8}/>} 
+                leftIcon={<ArrowBackIcon boxSize={6}/>} 
                 textColor='mypets.100' 
                 variant='link'
                 onClick={() => router.back()}

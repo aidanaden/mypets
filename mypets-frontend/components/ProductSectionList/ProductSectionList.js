@@ -50,6 +50,9 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                 display={{ base: 'inherit', lg: 'none'}} 
                 mb={8}
                 spacing={4}
+                alignContent='start'
+                align='start'
+                justifyContent='start'
             >
                 <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
                 <SortMenu setSortMethod={setSortMethod} />
