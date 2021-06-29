@@ -18,8 +18,8 @@ function index({ merchant }) {
         <>  
             <AnnouncementBanner />
             <Navbar />
-            <Container maxW='1200px' mb={4}>
-                <BackBtn mb={4}/>
+            <Container maxW='1200px'>
+                <BackBtn />
                 <MerchantBannerSwiper my={{ base: 8, md: 16 }} rounded={{ base: 20, md: 40 }}/>
                 <MerchantTitle 
                     merchantName={merchant.name} 
