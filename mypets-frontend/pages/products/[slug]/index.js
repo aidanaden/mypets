@@ -20,12 +20,11 @@ function Product({ product }) {
             <Navbar/>
             
             <Container maxW="1200px" mb={4}>
-                <BackBtn />
+                <BackBtn mb={4}/>
                 <Grid 
                     templateRows="min-content" 
                     templateColumns="repeat(3, 1fr)" 
                     gap={4}
-                    mt={4}
                 >
                     <GridItem
                         colSpan={3} 

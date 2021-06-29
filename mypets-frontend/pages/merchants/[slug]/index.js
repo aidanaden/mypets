@@ -5,6 +5,7 @@ import { Container, Box, Img } from "@chakra-ui/react"
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
 import { API_MERCHANTS_URL } from '../../../utils/urls'
 import Navbar from "../../../components/Navbar/Navbar"
+import BackBtn from '../../../components/BackBtn/BackBtn'
 import MerchantTitle from '../../../components/MerchantTitle/MerchantTitle'
 import MerchantProductReviewTab from '../../../components/MerchantProductReviewTab/MerchantProductReviewTab'
 import MerchantBannerSwiper from '../../../components/MerchantBannerSwiper/MerchantBannerSwiper'
@@ -17,7 +18,8 @@ function index({ merchant }) {
         <>  
             <AnnouncementBanner />
             <Navbar />
-            <Container maxW='1200px' mb={6}>
+            <Container maxW='1200px' mb={4}>
+                <BackBtn mb={4}/>
                 <MerchantBannerSwiper my={{ base: 8, md: 16 }} rounded={{ base: 20, md: 40 }}/>
                 <MerchantTitle 
                     merchantName={merchant.name} 
