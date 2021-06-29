@@ -76,6 +76,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                 products={merchantProducts} 
                                 categories={fullCategories}
                                 sortMethod={sortMethod}
+                                setSortMethod={setSortMethod}
                                 selectedCategory={selectedCategory}
                                 setCategorySelected={setCategorySelected}
                             />
