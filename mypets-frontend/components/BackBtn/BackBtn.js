@@ -8,8 +8,9 @@ import { useRouter } from 'next/router'
 function BackBtn() {
     const router = useRouter()
     return (
-        <Box justifyContent='left' bg='red.100'>
+        <Box mt={6} justifyContent='left' bg='red.100'>
             <Button 
+                size='lg'
                 h='100%'
                 leftIcon={<ArrowBackIcon />} 
                 textColor='mypets.100' 
