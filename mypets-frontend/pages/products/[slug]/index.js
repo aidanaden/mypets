@@ -25,7 +25,7 @@ function Product({ product }) {
                     templateRows="min-content" 
                     templateColumns="repeat(3, 1fr)" 
                     gap={4}
-                    mt={6}
+                    mt={4}
                 >
                     <GridItem
                         colSpan={3} 
