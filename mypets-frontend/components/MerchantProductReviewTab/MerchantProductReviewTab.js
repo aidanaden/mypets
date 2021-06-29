@@ -37,7 +37,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
 
     return (
         <Tabs variant='unstyled' size='md' defaultIndex={0} mt={12} p={0}>
-            <TabList align='center' >
+            <TabList align='center' alignContent='center' alignSelf='center' alignItems='center'>
                 <Tab 
                     rounded='full' 
                     _active={{ 
