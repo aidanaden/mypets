@@ -67,7 +67,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                 </Tab>
             </TabList>
             <TabPanels mt={4} px={0}>
-                <TabPanel bg='blue.100' px={0}>
+                <TabPanel px={0}>
                     <Flex justifyContent='space-between' direction="row">
                         <Box w="100%" mr={12}>
                             <ProductSectionList 

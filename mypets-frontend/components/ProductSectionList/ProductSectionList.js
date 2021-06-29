@@ -1,5 +1,5 @@
 import { 
-    Stack,
+    Flex,
     Box, 
     Heading 
 } from "@chakra-ui/react"
@@ -45,19 +45,15 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                     {heading}
                 </Heading>
             )}
-            <Stack 
+            <Flex 
                 direction='column' 
                 display={{ base: 'inherit', lg: 'none'}} 
                 mb={8}
                 spacing={4}
-                alignContent='start'
-                align='start'
-                justifyContent='start'
-                bg='red.100'
             >
                 <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
                 <SortMenu setSortMethod={setSortMethod} />
-            </Stack>
+            </Flex>
             <ProductList products={filterProductsByCategory(products)} heading={heading}/>
         </Box>
     )
