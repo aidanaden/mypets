@@ -5,7 +5,7 @@ import {
 import { ArrowBackIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router'
 
-function BackBtn({ ...props }) {
+function BackBtn({ variant='back', ...props }) {
     const router = useRouter()
     return (
         <Box mt={4} mb={4} justifyContent='left' {...props}>
@@ -15,7 +15,7 @@ function BackBtn({ ...props }) {
                 leftIcon={<ArrowBackIcon boxSize={6}/>} 
                 textColor='mypets.100' 
                 variant='link'
-                onClick={() => router.back()}
+                onClick={variant == 'back' ? () => router.back() : () => router.push('/')}
             >
                 Back    
             </Button>
