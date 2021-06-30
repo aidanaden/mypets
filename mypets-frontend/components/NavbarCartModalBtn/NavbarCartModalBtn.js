@@ -46,6 +46,14 @@ function NavbarCartModalBtn() {
         isClosable: true,
     })
 
+    const checkoutErrorToast = () => toast({
+        title: "Error checking out",
+        description: "Error occured when trying to check out. Try again or email us at contact@mypets.sg",
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+    })
+
     const handleCheckout = async () => {
         if (totalPrice < 15) {
             minimumOrderToast()
@@ -58,12 +66,16 @@ function NavbarCartModalBtn() {
             const result = await stripe.redirectToCheckout({
                 sessionId: session.id
             })
+
+            if (result.error) {
+                console.error(result.error)
+                checkoutErrorToast()
+            }
         }
     }   
 
     useEffect(() => {
         if (cart) {
-            console.log('useEffect cart: ', cart)
             setTotalPrice(cart.total_price)
             setGroupedProducts(lodash.groupBy(cart.order_products, 'variant.product.name'))
             setProductNames(Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))

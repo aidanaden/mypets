@@ -59,11 +59,10 @@ export const AuthProvider = (props) => {
      * Get profile of current user
      */
     const getProfile = async (body) => {
-        console.log('fetching profile')
         try {
             const data = await callAPI('/profiles', 'GET')
             if (data.length == 0) {
-                console.log('profile doesn not exist: ', data)
+                // console.log('profile doesn not exist: ', data)
                 createProfile(body)
             }
             setProfile(data[0])
@@ -81,7 +80,7 @@ export const AuthProvider = (props) => {
             try {
                 const data = await callAPI(`/profiles/${profile.id}`, 'PUT', body)
                 if (!data.username) {
-                    console.log('tried updating, profile does not exist: ', data)
+                    // console.log('tried updating, profile does not exist: ', data)
                 } else {
                     setProfile(data)
                 }
@@ -144,7 +143,6 @@ export const AuthProvider = (props) => {
                 password: password
             }).then(response => {
                 if (!response.user) {
-                    console.log("Login failed. Please try again. ", response)
                     loginFailToast()
                     return 'fail'
                 } else {
@@ -190,7 +188,6 @@ export const AuthProvider = (props) => {
             const data = await response.json()
 
             if(!data.user) {
-                console.log("Login failed. Please try again. ", data)
                 loginFailToast()
             } else {
                 const username = data.user.username
@@ -211,7 +208,6 @@ export const AuthProvider = (props) => {
     const logoutUser = async () => {
         const response = await callAPI('/logout', 'POST')
         if (response.authorized) {
-            console.log('log out response: ', response)
             setUser(null)
         }
     }
@@ -219,7 +215,6 @@ export const AuthProvider = (props) => {
     const checkUserLoggedIn = async () => {
         const user = await callAPI('/users/me', 'GET')
         if (user.id) {
-            console.log('user logged in: ',)
             setUser(user)
             getCart()
             getProfile({ username: user.username, id: user.id })
@@ -236,7 +231,7 @@ export const AuthProvider = (props) => {
         try {
             const response = await callAPI('/password', 'POST', { ...body, id: user.id })
             if (!response.user) {
-                console.log("Password reset failed. Please try again. ", response)
+                console.error("Password reset failed. Please try again. ", response)
             } else {
                 setUser(response.user)
             }
@@ -281,9 +276,7 @@ export const AuthProvider = (props) => {
     }
 
     const getCart = async () => {
-
         setCartLoading(true)
-        console.log('fetching cart...')
         try {
             const data = await callAPI('/carts', 'GET')
             setCart(data[0])

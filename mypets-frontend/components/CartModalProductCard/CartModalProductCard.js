@@ -70,7 +70,6 @@ function CartModalProductCard({ order_products, onClose }) {
             updateCart(order_product)
         } else {
             const data = deleteOrderProductFromCart(existing_order_product.id)
-            console.log('deleted order product: ', data)
         }
     }
 
@@ -93,9 +92,6 @@ function CartModalProductCard({ order_products, onClose }) {
             setQuantities(sample_quantities)
             setProductsWeighted(weighted_products)
             setWeights(temp_weights)
-
-            // console.log('useEffect products split by weight: ', weighted_products)
-            console.log(order_products[0].variant.product.image)
         }
     }, [order_products])
 

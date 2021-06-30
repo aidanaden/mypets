@@ -30,7 +30,6 @@ function LoginModalBtn() {
     const { loginUser } = useContext(AuthContext)
 
     const handleSubmit = async (values, actions) => {
-        console.log(values)
         actions.setSubmitting(true)
         const status = await loginUser(values, toast)
         actions.setSubmitting(false)

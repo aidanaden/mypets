@@ -15,18 +15,10 @@ function CartProductQuantityPicker({ addQuantity, minusQuantity, quantity }) {
 
     const combinedAddQuantity = () => {
         addQuantity()
-        // let temp_qty = qty
-        // temp_qty += 1
-        // setQty(temp_qty)
-        // console.log('current quantity is: ', temp_qty)
     }
 
     const combinedMinusQuantity = () => {
         minusQuantity()
-        // let temp_qty = qty
-        // qty > 0 ? temp_qty -= 1 : 0
-        // setQty(temp_qty)
-        // console.log('current quantity is: ', temp_qty)
     }
 
     useEffect(() => {

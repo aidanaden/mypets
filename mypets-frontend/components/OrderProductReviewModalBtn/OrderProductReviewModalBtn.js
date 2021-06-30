@@ -38,7 +38,6 @@ function OrderProductReviewModalBtn({ order_product }) {
             product: order_product.variant.product
         }
         const response = await callAPI('/reviews', 'POST', body)
-        console.log('posted review for product: ', response)
     } 
 
     const updateOrderProduct = async () => {
