@@ -47,7 +47,13 @@ function ProductListCard({ product }) {
             >
               <Stack direction='column' h='100%' w='100%'>
                 <Center roundedTop="lg">
-                  <NextImage src={imageToUrl(product.image)} alt={`Picture of ${product.name}`} width='150' height='150'/>
+                  <NextImage 
+                    src={imageToUrl(product.image)} 
+                    alt={`Picture of ${product.name}`} 
+                    width='150' 
+                    height='150'
+                    quality='50'
+                  />
                 </Center>
                 <Box>
                   <Box display="flex" alignItems="baseline">
