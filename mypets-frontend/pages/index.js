@@ -105,6 +105,7 @@ export default function Home({ products, categories, merchants }) {
                 Animal
               </SectionHeader>
               <CategoryList
+                isAnimal={true}
                 categories={['Dogs', 'Cats']}
                 // setSelectedCategory={setCategorySelected}
               />

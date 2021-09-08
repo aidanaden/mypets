@@ -10,7 +10,7 @@ import {
     FaDog
 } from 'react-icons/fa'
 
-function CategoryBtn({ animal, cat, onClick }) {
+function CategoryBtn({ isAnimal, cat, onClick }) {
     if (isAnimal) {
         return (
             <Center

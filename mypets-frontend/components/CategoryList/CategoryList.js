@@ -4,7 +4,7 @@ import {
 
 import CategoryBtn from "../CategoryBtn/CategoryBtn"
 
-function CategoryList({ categories, setSelectedCategory }) {
+export default function CategoryList({ isAnimal, categories, setSelectedCategory }) {
     return (
         <Stack 
             mt={{ lg: 0 }}
@@ -13,6 +13,7 @@ function CategoryList({ categories, setSelectedCategory }) {
         >
             {categories.map((cat, i) => (
                 <CategoryBtn
+                    isAnimal={isAnimal}
                     cat={cat}
                     key={i}
                     onClick={setSelectedCategory}
@@ -21,5 +22,3 @@ function CategoryList({ categories, setSelectedCategory }) {
         </Stack>
     )
 }
-
-export default CategoryList
