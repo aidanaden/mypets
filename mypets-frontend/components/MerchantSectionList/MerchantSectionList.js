@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    Heading,
+    Box,
     HStack
 } from "@chakra-ui/react"
 
@@ -9,7 +9,9 @@ import MerchantCard from "../MerchantCard/MerchantCard"
 
 function MerchantSectionList({ merchants, spacing=6 }) {
     return (
-        <>
+        <Box
+            bg='green.100'
+        >
             <SectionHeader>
                 Available Merchants
             </SectionHeader>
@@ -25,7 +27,7 @@ function MerchantSectionList({ merchants, spacing=6 }) {
                     <MerchantCard key={index} merchant={merchant}/>
                 ))}
             </HStack>
-        </>
+        </Box>
     )
 }
 
