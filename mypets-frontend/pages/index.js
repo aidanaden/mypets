@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import {
   Box,
   Container, 
-  Flex,
+  Spacer,
   Stack,
   useToast 
 } from "@chakra-ui/react"
@@ -89,8 +89,7 @@ export default function Home({ products, categories, merchants }) {
         />
         <Stack
           direction="column"
-          bg='red.100'
-          spacing={4}
+          spacing={8}
         >
           <MerchantSectionList
             merchants={merchants}
@@ -100,12 +99,12 @@ export default function Home({ products, categories, merchants }) {
             align='stretch'
             justify='space-between'
             display={{ base: 'none', lg: 'inherit' }}
-            bg='blue.100'
           >
             <Box>
               <SectionHeader>
                 Animal
               </SectionHeader>
+              <Spacer />
               <CategoryList
                 categories={['Dogs', 'Cats']}
                 // setSelectedCategory={setCategorySelected}
