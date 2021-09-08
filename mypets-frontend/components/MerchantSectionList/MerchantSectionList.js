@@ -15,7 +15,6 @@ function MerchantSectionList({ merchants, spacing=6 }) {
             </SectionHeader>
             <HStack
                 justifyContent="left"
-                mb={{ lg: 4 }}
                 spacing={spacing}
                 overflowX='auto'
                 overflowY='hidden'
