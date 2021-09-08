@@ -7,7 +7,7 @@ import CategoryBtn from "../CategoryBtn/CategoryBtn"
 function CategoryList({ categories, setSelectedCategory }) {
     return (
         <Stack 
-            mt={{ lg: 16 }}
+            mt={{ lg: 0 }}
             direction={{ base: 'row', lg: 'row'}} 
             overflow={{ base: 'auto', lg: 'none'}}
         >

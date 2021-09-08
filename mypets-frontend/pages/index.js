@@ -96,7 +96,7 @@ export default function Home({ products, categories, merchants }) {
               merchants={merchants}
             />
             <Flex
-              direction={{ base: 'column', lg: 'row'}}
+              direction={{ base: 'column', lg: 'column' }}
               w='100%'
             >
               <Flex 
