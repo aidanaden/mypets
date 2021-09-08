@@ -82,7 +82,7 @@ export default function Home({ products, categories, merchants }) {
           setSelectedCategory={setCategorySelected}
         />
         <HomeBannerSwiper
-          mt={{ base: 2 }}
+          mt={{ base: 4, md: 8 }}
           mb={{ base: 8, md: 16 }}
           rounded={{ base: 20, md: 40 }}
         />
@@ -98,39 +98,33 @@ export default function Home({ products, categories, merchants }) {
               merchants={merchants}
             />
             <Flex
-              direction={{ base: 'column', lg: 'column' }}
-              w='100%'
-              bg='red.100'
+              direction="row"
+              justify='space-between'
+              display={{ base: 'none', lg: 'inherit' }}
+              bg='blue.100'
             >
-              <Flex 
-                direction="row"
-                justify='space-between'
-                display={{ base: 'none', lg: 'inherit' }}
-                bg='blue.100'
-              >
-                <Box>
-                  <SectionHeader>
-                    Animal
+              <Box>
+                <SectionHeader>
+                  Animal
                   </SectionHeader>
-                  <CategoryList
-                    categories={['Dogs', 'Cats']}
-                    // setSelectedCategory={setCategorySelected}
-                  />
-                </Box>
-                <SortMenu
-                  setSortMethod={setSortMethod}
+                <CategoryList
+                  categories={['Dogs', 'Cats']}
+                // setSelectedCategory={setCategorySelected}
                 />
-              </Flex>
-              <ProductSectionList
-                products={pageProducts} 
-                categories={pageCategories}
-                sortMethod={sortMethod}
+              </Box>
+              <SortMenu
                 setSortMethod={setSortMethod}
-                selectedCategory={selectedCategory}
-                setCategorySelected={setCategorySelected} 
-                heading='Recommended Products' 
               />
             </Flex>
+            <ProductSectionList
+              products={pageProducts}
+              categories={pageCategories}
+              sortMethod={sortMethod}
+              setSortMethod={setSortMethod}
+              selectedCategory={selectedCategory}
+              setCategorySelected={setCategorySelected}
+              heading='Recommended Products'
+            />
           </Flex>
         </Flex>
       </Container>
