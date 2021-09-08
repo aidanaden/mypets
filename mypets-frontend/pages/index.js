@@ -106,7 +106,7 @@ export default function Home({ products, categories, merchants }) {
               </SectionHeader>
               <CategoryList
                 isAnimal={true}
-                categories={['Dogs', 'Cats']}
+                categories={['Dog', 'Cat']}
                 // setSelectedCategory={setCategorySelected}
               />
             </Box>
