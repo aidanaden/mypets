@@ -7,7 +7,8 @@ import { useRouter } from 'next/router'
 import {
   Box,
   Container, 
-  Flex, 
+  Flex,
+  Stack,
   useToast 
 } from "@chakra-ui/react"
 
@@ -86,47 +87,44 @@ export default function Home({ products, categories, merchants }) {
           mb={{ base: 8, md: 16 }}
           rounded={{ base: 20, md: 40 }}
         />
-        <Flex
-          justifyContent='space-between'
-          direction="row"
+        <Stack
+          direction="column"
+          bg='red.100'
+          spacing={4}
         >
-          <Flex
-            direction="column"
-            w="100%"
+          <MerchantSectionList
+            merchants={merchants}
+          />
+          <Stack
+            direction="row"
+            align='stretch'
+            justify='space-between'
+            display={{ base: 'none', lg: 'inherit' }}
+            bg='blue.100'
           >
-            <MerchantSectionList
-              merchants={merchants}
-            />
-            <Flex
-              direction="row"
-              justify='space-between'
-              display={{ base: 'none', lg: 'inherit' }}
-              bg='blue.100'
-            >
-              <Box>
-                <SectionHeader>
-                  Animal
-                  </SectionHeader>
-                <CategoryList
-                  categories={['Dogs', 'Cats']}
+            <Box>
+              <SectionHeader>
+                Animal
+              </SectionHeader>
+              <CategoryList
+                categories={['Dogs', 'Cats']}
                 // setSelectedCategory={setCategorySelected}
-                />
-              </Box>
-              <SortMenu
-                setSortMethod={setSortMethod}
               />
-            </Flex>
-            <ProductSectionList
-              products={pageProducts}
-              categories={pageCategories}
-              sortMethod={sortMethod}
+            </Box>
+            <SortMenu
               setSortMethod={setSortMethod}
-              selectedCategory={selectedCategory}
-              setCategorySelected={setCategorySelected}
-              heading='Recommended Products'
             />
-          </Flex>
-        </Flex>
+          </Stack>
+          <ProductSectionList
+            products={pageProducts}
+            categories={pageCategories}
+            sortMethod={sortMethod}
+            setSortMethod={setSortMethod}
+            selectedCategory={selectedCategory}
+            setCategorySelected={setCategorySelected}
+            heading='Recommended Products'
+          />
+        </Stack>
       </Container>
     </>
   )
