@@ -14,6 +14,7 @@ function MerchantSectionList({ merchants, spacing=6 }) {
                 Available Merchants
             </SectionHeader>
             <HStack
+                mt={0}
                 justifyContent="left"
                 spacing={spacing}
                 overflowX='auto'
