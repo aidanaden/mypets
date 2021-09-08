@@ -95,6 +95,7 @@ export default function Home({ products, categories, merchants }) {
             merchants={merchants}
           />
           <Stack
+            bg='blue.100'
             direction="row"
             align='stretch'
             justify='space-between'

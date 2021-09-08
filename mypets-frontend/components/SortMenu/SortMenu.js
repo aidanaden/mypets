@@ -44,7 +44,6 @@ function SortMenu({ setSortMethod }) {
     return (
         <Box 
             alignSelf='end'
-            bg='red.100'
         >
             <SectionHeader>
                 Sort by:
