@@ -46,6 +46,7 @@ function SortMenu({ setSortMethod }) {
             alignSelf='start'
             w='100%'
             mt={4}
+            bg='red.100'
         >
             <SectionHeader>
                 Sort by:
