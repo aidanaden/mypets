@@ -45,9 +45,6 @@ function SortMenu({ setSortMethod }) {
         <Box 
             alignSelf='end'
         >
-            <SectionHeader>
-                Sort by:
-            </SectionHeader>
             <Menu>
                 <MypetsMenuBtn menuBtnText={sortBtnText} />
                 <MenuList boxShadow="md">
