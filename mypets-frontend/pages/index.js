@@ -89,13 +89,13 @@ export default function Home({ products, categories, merchants }) {
         />
         <Stack
           direction="column"
-          spacing={8}
+          spacing={{ base: 8, lg: 12 }}
         >
           <MerchantSectionList
             merchants={merchants}
           />
           <Stack
-            direction="row"
+            direction='row'
             align='stretch'
             justify='space-between'
             display={{ base: 'none', lg: 'inherit' }}

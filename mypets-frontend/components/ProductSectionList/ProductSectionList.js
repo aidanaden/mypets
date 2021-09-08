@@ -50,10 +50,6 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                 display={{ base: 'inherit', lg: 'none'}} 
                 mb={8}
             >
-                <CategoryList
-                    categories={categories}
-                    setSelectedCategory={setCategorySelected}
-                />
                 <SortMenu
                     setSortMethod={setSortMethod}
                 />
