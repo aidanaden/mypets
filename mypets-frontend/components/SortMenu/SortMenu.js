@@ -43,9 +43,7 @@ function SortMenu({ setSortMethod }) {
 
     return (
         <Box 
-            alignSelf='start'
-            w='100%'
-            mt={4}
+            alignSelf='end'
             bg='red.100'
         >
             <SectionHeader>

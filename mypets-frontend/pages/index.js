@@ -104,12 +104,12 @@ export default function Home({ products, categories, merchants }) {
               <SectionHeader>
                 Animal
               </SectionHeader>
-              <Spacer />
               <CategoryList
                 categories={['Dogs', 'Cats']}
                 // setSelectedCategory={setCategorySelected}
               />
             </Box>
+            <Spacer />
             <SortMenu
               setSortMethod={setSortMethod}
             />
