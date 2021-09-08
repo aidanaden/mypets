@@ -74,14 +74,16 @@ export default function Home({ products, categories, merchants }) {
       <Container 
         maxW={{ lg: "1200px" }} 
         mb={4}
-        p={{ base: 4 }}
+        px={{ base: 4 }}
+        py={{ base: 8, md: 16 }}
       >
         <CategoryList
           categories={pageCategories}
           setSelectedCategory={setCategorySelected}
         />
         <HomeBannerSwiper
-          my={{ base: 8, md: 16 }}
+          mt={{ base: 2 }}
+          mb={{ base: 8, md: 16 }}
           rounded={{ base: 20, md: 40 }}
         />
         <Flex
@@ -98,11 +100,13 @@ export default function Home({ products, categories, merchants }) {
             <Flex
               direction={{ base: 'column', lg: 'column' }}
               w='100%'
+              bg='red.100'
             >
               <Flex 
                 direction="row"
                 justify='space-between'
-                display={{ base: 'none', lg: 'inherit' }} 
+                display={{ base: 'none', lg: 'inherit' }}
+                bg='blue.100'
               >
                 <Box>
                   <SectionHeader>
