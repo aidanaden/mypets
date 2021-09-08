@@ -10,7 +10,6 @@ import MerchantTitle from '../../../components/MerchantTitle/MerchantTitle'
 import MerchantProductReviewTab from '../../../components/MerchantProductReviewTab/MerchantProductReviewTab'
 import MerchantBannerSwiper from '../../../components/MerchantBannerSwiper/MerchantBannerSwiper'
 
-
 function index({ merchant }) {
     const merchantCategories = Object.keys(lodash.groupBy(merchant.products, 'category.name'))
 

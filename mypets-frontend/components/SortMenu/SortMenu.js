@@ -5,9 +5,9 @@ import {
     MenuList, 
     useToast
 } from "@chakra-ui/react"
-import { ChevronDownIcon } from "@chakra-ui/icons"
 import { useState } from "react"
-import MypetsBtn from '../MypetsBtn/MypetsBtn'
+
+import SectionHeader from '../SectionHeader/SectionHeader'
 import MypetsMenuBtn from '../MypetsMenuBtn/MypetsMenuBtn'
 
 function SortMenu({ setSortMethod }) {
