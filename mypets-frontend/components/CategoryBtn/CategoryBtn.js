@@ -2,10 +2,15 @@ import React from 'react'
 import { 
     Center,
     Button, 
-    Box 
+    Box,
+    Icon
 } from "@chakra-ui/react"
+import {
+    FaCat,
+    FaDog
+} from 'react-icons/fa'
 
-function CategoryBtn({ isAnimal, cat, onClick }) {
+function CategoryBtn({ animal, cat, onClick }) {
     if (isAnimal) {
         return (
             <Center
@@ -22,6 +27,16 @@ function CategoryBtn({ isAnimal, cat, onClick }) {
                 _active={{ transform: "scale(0.95)"}}
                 onClick={() => onClick(cat)}
             >
+                {cat == 'Cat' ? 
+                    <Icon
+                        as={FaCat} 
+                    /> :
+                cat == 'Dog' ?
+                    <Icon
+                        as={FaDog}
+                    /> :
+                    <></>
+                }
                 {cat}
             </Center>
         )
