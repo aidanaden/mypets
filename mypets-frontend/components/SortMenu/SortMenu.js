@@ -47,13 +47,17 @@ function SortMenu({ setSortMethod }) {
             w='100%'
             mt={4}
         >
+            <SectionHeader>
+                Sort by:
+            </SectionHeader>
             <Menu>
                 <MypetsMenuBtn menuBtnText={sortBtnText} />
                 <MenuList boxShadow="md">
                     {sortTypes.map((sortType, i) => (
                         <MenuItem key={i} onClick={() => (
                             updateSort(sortType)
-                        )}>{sortType}
+                        )}>
+                            {sortType}
                         </MenuItem>
                     ))}
                 </MenuList>

@@ -4,6 +4,7 @@ import {
     Heading 
 } from "@chakra-ui/react"
 
+import SectionHeader from '../SectionHeader/SectionHeader'
 import ProductList from '../ProductList/ProductList'
 import CategoryList from '../CategoryList/CategoryList'
 import SortMenu from "../SortMenu/SortMenu"
@@ -41,18 +42,26 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
     return (
         <Box w='100%'>
             { heading && (
-                <Heading as="h2" textAlign="left" mt={6} mb={{ base: 4, lg: 6}} fontSize={{ base: 'xl', lg: '2xl' }}>
+                <SectionHeader>
                     {heading}
-                </Heading>
+                </SectionHeader>
             )}
             <Box
                 display={{ base: 'inherit', lg: 'none'}} 
                 mb={8}
             >
-                <CategoryList categories={categories} setSelectedCategory={setCategorySelected} />
-                <SortMenu setSortMethod={setSortMethod}/>
+                <CategoryList
+                    categories={categories}
+                    setSelectedCategory={setCategorySelected}
+                />
+                <SortMenu
+                    setSortMethod={setSortMethod}
+                />
             </Box>
-            <ProductList products={filterProductsByCategory(products)} heading={heading}/>
+            <ProductList
+                products={filterProductsByCategory(products)}
+                heading={heading}
+            />
         </Box>
     )
 }
