@@ -46,26 +46,26 @@ export default function Navbar({ products }) {
     const router = useRouter()
     
     return (
-        // <Box>
-            <Flex
+        <Box>
+            <Stack
                 bg='white'
                 color='gray.600'
                 py={{ base: 4 }}
                 px={{ base: 2 }}
                 borderBottom={1}
-                borderStyle={'solid'}
+                borderStyle='solid'
                 borderColor='gray.200'
-                align={'center'}
+                align='center'
                 justifyContent='center'
             >
-                <Flex
-                    alignItems={'center'} 
-                    justifyContent={'space-between'} 
+                <Stack
+                    alignItems='center'
+                    justifyContent='space-between' 
                     maxW={{ lg: '1200px' }}
                     w='100%'
                     px={4}
                 >
-                    {/* <Flex
+                    <Stack
                         flex={{ base: 1, lg: 'auto' }}
                         display={{ base: 'flex', lg: 'none' }}
                     >
@@ -77,9 +77,9 @@ export default function Navbar({ products }) {
                             variant={'ghost'}
                             aria-label={'Toggle Navigation'}
                         />
-                    </Flex> */}
+                    </Stack>
                     
-                    <Box display={{ base: 'none', lg: 'block'}}>
+                    <Box display={{ base: 'none', lg: 'block' }}>
                         <NextLink 
                             href='/' 
                             as='/' 
@@ -91,33 +91,37 @@ export default function Navbar({ products }) {
 
                     <SearchbarGroup display={{ base: 'none', lg: 'inherit' }}/>
 
-                    {/* { user ? ( 
-                    <ButtonGroup alignItems='center' spacing={6}>
+                    { user ? ( 
+                    <ButtonGroup
+                        alignItems='center'
+                        spacing={6}
+                    >
                         <NavbarCartModalBtn />
                         <NavbarUserIcon />
                     </ButtonGroup>     
                     ) : (
-                    <ButtonGroup spacing={4}>
+                    <ButtonGroup
+                        spacing={4}
+                    >
                         <LoginModalBtn />
                         <SignupModalBtn />
                     </ButtonGroup>
-                    )} */}
-                </Flex>
-            </Flex>
+                    )}
+                </Stack>
+            </Stack>
 
-            // {/* <Collapse in={isOpen} animateOpacity>
-            //     <MobileNav 
-            //         user={user} 
-            //         router={router}
-            //         logoutUser={logoutUser}
-            //     />
-            // </Collapse> */}
-        // {/* </Box> */}
+            <Collapse in={isOpen} animateOpacity>
+                <MobileNav 
+                    user={user} 
+                    router={router}
+                    logoutUser={logoutUser}
+                />
+            </Collapse>
+        </Box>
     );
 }
 
 const MobileNav = ({ user, router, logoutUser }) => {
-
     const handlePastOrders = () => {
         router.push('/orders')
     }
