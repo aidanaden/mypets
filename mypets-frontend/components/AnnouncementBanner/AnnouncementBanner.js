@@ -16,7 +16,11 @@ function AnnouncementBanner() {
                 bgGradient="linear(to-t, mypets.900, mypets.100)"
                 w={{ base: '100%' }}
             >
-                <Text fontWeight="sm" marginEnd="2" textColor='gray.800'>
+                <Text
+                    fontWeight="sm"
+                    marginEnd="2"
+                    textColor='gray.800'
+                >
                     We are only delivering to the EAST of SG for now 😢
                 </Text>
             </Stack>

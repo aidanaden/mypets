@@ -61,7 +61,7 @@ const SocialButton = ({ children, label, href }) => {
 export default function SmallCentered() {
     return (
         <Box
-            color='gray.700'
+            bgGradient="linear(to-t, mypets.900, mypets.100)"
         >
             <PageContainer
                 as={Stack}
