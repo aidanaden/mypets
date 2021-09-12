@@ -69,12 +69,10 @@ export default function Home({ products, categories, merchants }) {
   }, [router.query])
 
   return (
-    <Box bg='green.100'>
+    <Box>
       <AnnouncementBanner />
       <Navbar />
-      <PageContainer
-        bg='yellow.100'
-      >
+      <PageContainer>
         <CategoryList
           categories={pageCategories}
           setSelectedCategory={setCategorySelected}

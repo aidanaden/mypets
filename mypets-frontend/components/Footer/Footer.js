@@ -61,7 +61,6 @@ const SocialButton = ({ children, label, href }) => {
 export default function SmallCentered() {
     return (
         <Box
-            bg='blue.100'
             color='gray.700'
         >
             <PageContainer
@@ -69,7 +68,6 @@ export default function SmallCentered() {
                 spacing={4}
                 justify={'center'}
                 align={'center'}
-                bg='red.100'
             >
                 <Logo />
                 <Stack
@@ -102,7 +100,6 @@ export default function SmallCentered() {
                 borderTopWidth={1}
                 borderStyle='solid'
                 borderColor='gray.200'
-                bg='green.100'
             >
                 <PageContainer
                     as={Stack}
