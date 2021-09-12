@@ -72,7 +72,7 @@ export default function Home({ products, categories, merchants }) {
   return (
     <Box>
       <AnnouncementBanner />
-      {/* <Navbar /> */}
+      <Navbar />
       <PageContainer>
         <CategoryList
           categories={pageCategories}

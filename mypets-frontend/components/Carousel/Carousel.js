@@ -7,7 +7,7 @@ import {
     Image
 } from '@chakra-ui/react'
 
-export default function Carousels() {
+export default function Carousels({ bannerImgNames=["banner-a.jpg", "banner-b.jpg", "banner-c.jpg"] }) {
     const arrowStyles = {
         cursor: "pointer",
         pos: "absolute",
@@ -27,32 +27,8 @@ export default function Carousels() {
         },
     };
 
-    const slides = [
-        {
-            img:
-                "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        },
-        {
-            img:
-                "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        },
-        {
-            img:
-                "https://images.pexels.com/photos/2878019/pexels-photo-2878019.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-        },
-        {
-            img:
-                "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        },
-        {
-            img:
-                "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        },
-    ];
-
     const [currentSlide, setCurrentSlide] = useState(0);
-
-    const slidesCount = slides.length;
+    const slidesCount = bannerImgNames.length;
 
     const prevSlide = () => {
         setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
@@ -72,9 +48,10 @@ export default function Carousels() {
         <Flex
             mt={{ base: 4, md: 8 }}
             mb={{ base: 8, md: 16 }}
+            rounded={{ base: 20, md: 40 }}
             w="full"
             bg="gray.200"
-            p={10}
+            p={0}
             alignItems="center"
             justifyContent="center"
         >
@@ -88,7 +65,7 @@ export default function Carousels() {
                     w="full"
                     {...carouselStyle}
                 >
-                    {slides.map((slide, sid) => (
+                    {bannerImgNames.map((bannerImgName, sid) => (
                         <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
                             <Text
                                 color="white"
@@ -99,7 +76,7 @@ export default function Carousels() {
                             >
                                 {sid + 1} / {slidesCount}
                             </Text>
-                            <Image src={slide.img} boxSize="full" backgroundSize="cover" />
+                            <Image src={bannerImgName} boxSize="full" backgroundSize="cover" />
                         </Box>
                     ))}
                 </Flex>
