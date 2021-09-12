@@ -42,7 +42,7 @@ function Searchbar({ mr, price }) {
 
     return (
         <InputGroup
-            w={{ base: '100%', xl: 'xl' }}
+            w={{ base: 'auto', xl: 'xl' }}
             mr={mr}
             pr={0}
         >
