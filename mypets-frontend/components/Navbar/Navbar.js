@@ -112,13 +112,13 @@ export default function Navbar({ products }) {
                 </Stack>
             </Stack>
 
-            {/* <Collapse in={isOpen} animateOpacity>
+            <Collapse in={isOpen} animateOpacity>
                 <MobileNav 
                     user={user} 
                     router={router}
                     logoutUser={logoutUser}
                 />
-            </Collapse> */}
+            </Collapse>
         </Box>
     );
 }
