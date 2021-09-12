@@ -20,10 +20,10 @@ function SearchbarGroup({ ...props }) {
                 mr={4}
                 price={price}
             />
-            {/* <PriceFilterPopover
+            <PriceFilterPopover
                 price={price}
                 onChange={updatePriceOnChange}
-            /> */}
+            />
         </Stack>
     )
 }

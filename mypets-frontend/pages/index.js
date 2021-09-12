@@ -79,11 +79,6 @@ export default function Home({ products, categories, merchants }) {
           setSelectedCategory={setCategorySelected}
         />
         <Carousel />
-        {/* <HomeBannerSwiper
-          mt={{ base: 4, md: 8 }}
-          mb={{ base: 8, md: 16 }}
-          rounded={{ base: 20, md: 40 }}
-        /> */}
         <Stack
           direction="column"
           spacing={{ base: 8, lg: 12 }}

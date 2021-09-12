@@ -143,12 +143,20 @@ const MobileNav = ({ user, router, logoutUser }) => {
                 {user && (
                     <Box>
                         <Divider/>
-                        <NavbarUserModalBtn mode='mobile' />
-                        <Box px={2} onClick={handlePastOrders}>
+                        <NavbarUserModalBtn
+                            mode='mobile'
+                        />
+                        <Box
+                            px={2}
+                            onClick={handlePastOrders}
+                        >
                             Past orders
                         </Box>
                         <Divider/>
-                        <Box px={2} onClick={logoutUser}>
+                        <Box
+                            px={2}
+                            onClick={logoutUser}
+                        >
                             Log out 
                         </Box>
                     </Box>

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {
     Popover,
     PopoverTrigger,
@@ -21,16 +20,23 @@ function PriceFilterPopover({ price, onChange }) {
     return (
         <Popover>
             <PopoverTrigger>
-                <IconButton icon={<FaFilter />} variant='outline' />
+                <IconButton
+                    icon={<FaFilter />}
+                    variant='outline'
+                />
             </PopoverTrigger>
             <Portal>
                 <PopoverContent>
                     <PopoverArrow />
-                    <PopoverHeader>Filter by price</PopoverHeader>
+                    <PopoverHeader>
+                        Filter by price
+                    </PopoverHeader>
                     <PopoverCloseButton />
                     <PopoverBody>
                         <Text>Maximum price: {price}</Text>
-                        <PriceSlider onChange={onChange}/>
+                        <PriceSlider
+                            onChange={onChange}
+                        />
                     </PopoverBody>
                 </PopoverContent>
             </Portal>
