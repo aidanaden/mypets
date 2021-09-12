@@ -98,15 +98,14 @@ export default function SmallCentered() {
                     </Link>
                 </Stack>
             </PageContainer>
-            {/* <Box
+            <Box
                 borderTopWidth={1}
-                borderStyle={'solid'}
-                borderColor={useColorModeValue('gray.200', 'gray.700')}
+                borderStyle='solid'
+                borderColor='gray.200'
                 bg='green.100'
             >
-                <Container
+                <PageContainer
                     as={Stack}
-                    maxW={'6xl'}
                     py={4}
                     direction={{ base: 'column', md: 'row' }}
                     spacing={4}
@@ -117,7 +116,7 @@ export default function SmallCentered() {
                         © 2020 Chakra Templates. All rights reserved
                     </Text>
                     <Stack
-                        direction={'row'}
+                        direction='row'
                         spacing={6}
                     >
                         <SocialButton
@@ -139,8 +138,8 @@ export default function SmallCentered() {
                             <FaInstagram />
                         </SocialButton>
                     </Stack>
-                </Container>
-            </Box> */}
+                </PageContainer>
+            </Box>
         </Box>
     );
 }
