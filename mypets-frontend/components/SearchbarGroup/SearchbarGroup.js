@@ -13,14 +13,12 @@ function SearchbarGroup({ ...props }) {
     return (
         <Stack
             direction='row'
-            px={2}
             spacing={4}
             bg='red.100'
             {...props}
         >
             <Searchbar
                 price={price}
-                mr={4}
             />
             <PriceFilterPopover
                 price={price}

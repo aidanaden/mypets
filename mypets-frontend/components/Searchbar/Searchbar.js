@@ -11,7 +11,7 @@ import { useRouter } from 'next/router'
 
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 
-export default function Searchbar({ mr, price }) {
+export default function Searchbar({ price, ...props }) {
     const router = useRouter()
     const [search, setSearch] = useState('')
 
@@ -43,8 +43,8 @@ export default function Searchbar({ mr, price }) {
     return (
         <InputGroup
             w={{ xl: 'xl' }}
-            mr={mr}
             pr={0}
+            {...props}
         >
             <InputLeftElement
                 pointerEvents="none"
