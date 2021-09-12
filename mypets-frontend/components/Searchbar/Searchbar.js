@@ -7,11 +7,11 @@ import {
     InputRightAddon
 } from '@chakra-ui/react'
 import { Search2Icon } from '@chakra-ui/icons'
-
-import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import { useRouter } from 'next/router'
 
-function Searchbar({ mr, price }) {
+import MypetsBtn from '../MypetsBtn/MypetsBtn'
+
+export default function Searchbar({ mr, price }) {
     const router = useRouter()
     const [search, setSearch] = useState('')
 
@@ -42,7 +42,7 @@ function Searchbar({ mr, price }) {
 
     return (
         <InputGroup
-            w={{ base: 'auto', xl: 'xl' }}
+            w={{ xl: 'xl' }}
             mr={mr}
             pr={0}
         >
@@ -73,5 +73,3 @@ function Searchbar({ mr, price }) {
         </InputGroup>
     )
 }
-
-export default Searchbar
