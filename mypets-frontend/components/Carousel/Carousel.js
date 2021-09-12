@@ -69,14 +69,24 @@ export default function Carousels() {
 
     return (
         <Flex
+            mt={{ base: 4, md: 8 }}
+            mb={{ base: 8, md: 16 }}
             w="full"
-            bg={useColorModeValue("gray.200", "gray.600")}
+            bg="gray.200"
             p={10}
             alignItems="center"
             justifyContent="center"
         >
-            <Flex w="full" overflow="hidden" pos="relative">
-                <Flex h="400px" w="full" {...carouselStyle}>
+            <Flex
+                w="full"
+                overflow="hidden"
+                pos="relative"
+            >
+                <Flex
+                    h="400px"
+                    w="full"
+                    {...carouselStyle}
+                >
                     {slides.map((slide, sid) => (
                         <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
                             <Text
@@ -98,7 +108,12 @@ export default function Carousels() {
                 <Text {...arrowStyles} right="0" onClick={nextSlide}>
                     &#10095;
                 </Text>
-                <HStack justify="center" pos="absolute" bottom="8px" w="full">
+                <HStack
+                    justify="center"
+                    pos="absolute"
+                    bottom="8px"
+                    w="full"
+                >
                     {Array.from({ length: slidesCount }).map((_, slide) => (
                         <Box
                             key={`dots-${slide}`}
@@ -111,7 +126,9 @@ export default function Carousels() {
                             transition="background-color 0.6s ease"
                             _hover={{ bg: "blackAlpha.800" }}
                             onClick={() => setSlide(slide)}
-                        ></Box>
+                        >
+
+                        </Box>
                     ))}
                 </HStack>
             </Flex>

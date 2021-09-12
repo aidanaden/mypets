@@ -13,6 +13,7 @@ import {
 import PageContainer from '../components/PageContainer/PageContainer'
 import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
 import Navbar from '../components/Navbar/Navbar'
+import Carousel from '../components/Carousel/Carousel'
 import Footer from '../components/Footer/Footer'
 import SortMenu from '../components/SortMenu/SortMenu'
 import MerchantSectionList from '../components/MerchantSectionList/MerchantSectionList'
@@ -77,11 +78,12 @@ export default function Home({ products, categories, merchants }) {
           categories={pageCategories}
           setSelectedCategory={setCategorySelected}
         />
-        <HomeBannerSwiper
+        <Carousel />
+        {/* <HomeBannerSwiper
           mt={{ base: 4, md: 8 }}
           mb={{ base: 8, md: 16 }}
           rounded={{ base: 20, md: 40 }}
-        />
+        /> */}
         <Stack
           direction="column"
           spacing={{ base: 8, lg: 12 }}
