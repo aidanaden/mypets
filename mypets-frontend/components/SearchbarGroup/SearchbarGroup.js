@@ -14,7 +14,6 @@ function SearchbarGroup({ ...props }) {
         <Stack
             direction='row'
             spacing={4}
-            bg='red.100'
             {...props}
         >
             <Searchbar

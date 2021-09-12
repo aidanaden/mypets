@@ -49,7 +49,7 @@ export default function Navbar({ products }) {
         <Box>
             <Stack
                 direction='row'
-                bg='white'
+                bg='red.100'
                 color='gray.600'
                 py={{ base: 4 }}
                 px={{ base: 2 }}
@@ -111,7 +111,7 @@ export default function Navbar({ products }) {
                     )}
                 </Stack>
                 <SearchbarGroup
-                    display={{ base: 'inherit', lg: 'none' }}
+                    display={{ base: 'block', lg: 'none' }}
                 />
             </Stack>
 
