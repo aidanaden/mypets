@@ -46,7 +46,7 @@ export default function Navbar({ products }) {
     const router = useRouter()
     
     return (
-        <Box>
+        // <Box>
             <Flex
                 bg='white'
                 color='gray.600'
@@ -105,14 +105,14 @@ export default function Navbar({ products }) {
                 </Flex>
             </Flex>
 
-            {/* <Collapse in={isOpen} animateOpacity>
-                <MobileNav 
-                    user={user} 
-                    router={router}
-                    logoutUser={logoutUser}
-                />
-            </Collapse> */}
-        </Box>
+            // {/* <Collapse in={isOpen} animateOpacity>
+            //     <MobileNav 
+            //         user={user} 
+            //         router={router}
+            //         logoutUser={logoutUser}
+            //     />
+            // </Collapse> */}
+        // {/* </Box> */}
     );
 }
 
