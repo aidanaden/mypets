@@ -65,7 +65,7 @@ export default function Navbar({ products }) {
                     w='100%'
                     px={4}
                 >
-                    <Flex
+                    {/* <Flex
                         flex={{ base: 1, lg: 'auto' }}
                         display={{ base: 'flex', lg: 'none' }}
                     >
@@ -77,7 +77,7 @@ export default function Navbar({ products }) {
                             variant={'ghost'}
                             aria-label={'Toggle Navigation'}
                         />
-                    </Flex>
+                    </Flex> */}
                     
                     <Box display={{ base: 'none', lg: 'block'}}>
                         <NextLink 
@@ -91,7 +91,7 @@ export default function Navbar({ products }) {
 
                     <SearchbarGroup display={{ base: 'none', lg: 'inherit' }}/>
 
-                    { user ? ( 
+                    {/* { user ? ( 
                     <ButtonGroup alignItems='center' spacing={6}>
                         <NavbarCartModalBtn />
                         <NavbarUserIcon />
@@ -101,7 +101,7 @@ export default function Navbar({ products }) {
                         <LoginModalBtn />
                         <SignupModalBtn />
                     </ButtonGroup>
-                    )}
+                    )} */}
                 </Flex>
             </Flex>
 
