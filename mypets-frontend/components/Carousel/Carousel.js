@@ -70,7 +70,7 @@ export default function Carousels({
                 >
                     {bannerImgNames.map((bannerImgName, sid) => (
                         <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
-                            {display && <Text
+                            {displayCount && <Text
                                 color="white"
                                 fontSize="xs"
                                 p="8px 12px"
