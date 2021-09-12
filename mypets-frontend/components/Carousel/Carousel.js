@@ -69,7 +69,13 @@ export default function Carousels({
                     {...carouselStyle}
                 >
                     {bannerImgNames.map((bannerImgName, sid) => (
-                        <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
+                        <Box
+                            key={`slide-${sid}`}
+                            boxSize="full"
+                            rounded={{ base: 20, md: 40 }}
+                            shadow="md"
+                            flex="none"
+                        >
                             {displayCount && <Text
                                 color="white"
                                 fontSize="xs"
@@ -80,7 +86,6 @@ export default function Carousels({
                                 {sid + 1} / {slidesCount}
                             </Text>}
                             <Image
-                                rounded={{ base: 20, md: 40 }}
                                 src={bannerImgName}
                                 boxSize="full"
                                 backgroundSize="cover"
