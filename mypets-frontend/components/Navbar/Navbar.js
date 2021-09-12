@@ -48,7 +48,7 @@ export default function Navbar({ products }) {
     return (
         <Box>
             <Stack
-                direction='row'
+                direction='column'
                 bg='red.100'
                 color='gray.600'
                 py={{ base: 4 }}
