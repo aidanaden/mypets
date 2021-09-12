@@ -63,7 +63,6 @@ export default function SmallCentered() {
         <Box
             bg='blue.100'
             color='gray.700'
-            mb={0}
         >
             <PageContainer
                 as={Stack}
@@ -99,7 +98,7 @@ export default function SmallCentered() {
                     </Link>
                 </Stack>
             </PageContainer>
-            <Box
+            {/* <Box
                 borderTopWidth={1}
                 borderStyle={'solid'}
                 borderColor={useColorModeValue('gray.200', 'gray.700')}
@@ -141,7 +140,7 @@ export default function SmallCentered() {
                         </SocialButton>
                     </Stack>
                 </Container>
-            </Box>
+            </Box> */}
         </Box>
     );
 }
