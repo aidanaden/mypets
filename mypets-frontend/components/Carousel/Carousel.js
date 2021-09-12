@@ -15,6 +15,7 @@ export default function Carousels({ bannerImgNames=["banner-a.jpg", "banner-b.jp
         w: "auto",
         mt: "-22px",
         p: "16px",
+        textColor: "black",
         color: "white",
         fontWeight: "bold",
         fontSize: "18px",
@@ -48,7 +49,6 @@ export default function Carousels({ bannerImgNames=["banner-a.jpg", "banner-b.jp
         <Flex
             mt={{ base: 4, md: 8 }}
             mb={{ base: 8, md: 16 }}
-            rounded={{ base: 20, md: 40 }}
             w="full"
             bg="gray.200"
             p={0}
@@ -63,6 +63,7 @@ export default function Carousels({ bannerImgNames=["banner-a.jpg", "banner-b.jp
                 <Flex
                     h="400px"
                     w="full"
+                    rounded={{ base: 20, md: 40 }}
                     {...carouselStyle}
                 >
                     {bannerImgNames.map((bannerImgName, sid) => (
@@ -76,7 +77,12 @@ export default function Carousels({ bannerImgNames=["banner-a.jpg", "banner-b.jp
                             >
                                 {sid + 1} / {slidesCount}
                             </Text>
-                            <Image src={bannerImgName} boxSize="full" backgroundSize="cover" />
+                            <Image
+                                rounded={{ base: 20, md: 40 }}
+                                src={bannerImgName}
+                                boxSize="full"
+                                backgroundSize="cover"
+                            />
                         </Box>
                     ))}
                 </Flex>
