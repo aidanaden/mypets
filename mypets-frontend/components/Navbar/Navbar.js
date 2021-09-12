@@ -48,6 +48,7 @@ export default function Navbar({ products }) {
     return (
         <Box>
             <Stack
+                direction='row'
                 bg='white'
                 color='gray.600'
                 py={{ base: 4 }}
@@ -59,13 +60,14 @@ export default function Navbar({ products }) {
                 justifyContent='center'
             >
                 <Stack
+                    direction='row'
                     alignItems='center'
                     justifyContent='space-between' 
                     maxW={{ lg: '1200px' }}
                     w='100%'
                     px={4}
                 >
-                    <Stack
+                    <Box
                         flex={{ base: 1, lg: 'auto' }}
                         display={{ base: 'flex', lg: 'none' }}
                     >
@@ -77,7 +79,7 @@ export default function Navbar({ products }) {
                             variant={'ghost'}
                             aria-label={'Toggle Navigation'}
                         />
-                    </Stack>
+                    </Box>
                     
                     <Box display={{ base: 'none', lg: 'block' }}>
                         <NextLink 
