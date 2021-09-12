@@ -69,11 +69,11 @@ export default function Home({ products, categories, merchants }) {
   }, [router.query])
 
   return (
-    <Box bg='blue.100'>
+    <Box>
       <AnnouncementBanner />
       <Navbar/>
       <PageContainer
-        bg='red.100'
+        bg='yellow.100'
       >
         <CategoryList
           categories={pageCategories}
