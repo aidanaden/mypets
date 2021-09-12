@@ -123,7 +123,7 @@ export default function Home({ products, categories, merchants }) {
           />
         </Stack>
       </PageContainer>
-      {/* <Footer /> */}
+      <Footer />
     </Box>
   )
 }
