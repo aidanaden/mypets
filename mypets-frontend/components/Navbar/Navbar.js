@@ -59,7 +59,7 @@ export default function Navbar({ products }) {
                 align='center'
                 justifyContent='center'
             >
-                {/* <Stack
+                <Stack
                     direction='row'
                     alignItems='center'
                     justifyContent='space-between' 
@@ -109,7 +109,7 @@ export default function Navbar({ products }) {
                         <SignupModalBtn />
                     </ButtonGroup>
                     )}
-                </Stack> */}
+                </Stack>
             </Stack>
 
             {/* <Collapse in={isOpen} animateOpacity>
@@ -132,11 +132,15 @@ const MobileNav = ({ user, router, logoutUser }) => {
         <Box
             bg='white'
             p={4}
-            display={{ base: 'inherit', lg: 'none' }}
+            display={{ base: 'block', lg: 'none' }}
         >
-            <Stack spacing={4}>
-                <SearchbarGroup display={{ base: 'inherit', lg: 'none' }}/>
-                { user && (
+            <Stack
+                spacing={4}
+            >
+                <SearchbarGroup
+                    display={{ base: 'block', lg: 'none' }}
+                />
+                {user && (
                     <Box>
                         <Divider/>
                         <NavbarUserModalBtn mode='mobile' />
