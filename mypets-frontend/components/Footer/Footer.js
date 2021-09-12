@@ -8,7 +8,7 @@ import {
     useColorModeValue,
     VisuallyHidden,
 } from '@chakra-ui/react';
-import { FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { SiGooglepay, SiApplepay, SiVisa, SiMastercard } from 'react-icons/si';
 
 const Logo = (props) => {
