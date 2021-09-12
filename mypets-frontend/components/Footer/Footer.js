@@ -61,6 +61,7 @@ const SocialButton = ({ children, label, href }) => {
 export default function SmallCentered() {
     return (
         <Box
+            color='white'
             bgGradient="linear(to-t, mypets.900, mypets.100)"
         >
             <PageContainer
@@ -106,7 +107,7 @@ export default function SmallCentered() {
             >
                 <Text>
                     © 2020 Chakra Templates. All rights reserved
-                    </Text>
+                </Text>
                 <Stack
                     direction='row'
                     spacing={6}
