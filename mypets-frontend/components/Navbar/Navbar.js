@@ -67,7 +67,7 @@ export default function Navbar({ products }) {
                     w='100%'
                     px={4}
                 >
-                    {/* <Box
+                    <Box
                         flex={{ base: 1, lg: 'auto' }}
                         display={{ base: 'flex', lg: 'none' }}
                     >
@@ -81,7 +81,7 @@ export default function Navbar({ products }) {
                         />
                     </Box>
                     
-                    <Box display={{ base: 'none', lg: 'block' }}>
+                    {/* <Box display={{ base: 'none', lg: 'block' }}>
                         <NextLink 
                             href='/' 
                             as='/' 
