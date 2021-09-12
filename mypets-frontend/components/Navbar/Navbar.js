@@ -110,6 +110,9 @@ export default function Navbar({ products }) {
                     </ButtonGroup>
                     )}
                 </Stack>
+                <SearchbarGroup
+                    display={{ base: 'inherit', lg: 'none' }}
+                />
             </Stack>
 
             <Collapse in={isOpen} animateOpacity>
@@ -134,7 +137,7 @@ const MobileNav = ({ user, router, logoutUser }) => {
             p={4}
             display={{ base: 'block', lg: 'none' }}
         >
-            <Stack
+            {/* <Stack
                 spacing={4}
             >
                 <SearchbarGroup
@@ -161,7 +164,7 @@ const MobileNav = ({ user, router, logoutUser }) => {
                         </Box>
                     </Box>
                 )}
-            </Stack>
+            </Stack> */}
         </Box>
     );
 };
