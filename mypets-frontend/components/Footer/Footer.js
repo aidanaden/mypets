@@ -8,6 +8,7 @@ import {
     useColorModeValue,
     VisuallyHidden,
 } from '@chakra-ui/react';
+import NextLink from 'next/link'
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { SiGooglepay, SiApplepay, SiVisa, SiMastercard } from 'react-icons/si';
 
@@ -105,9 +106,15 @@ export default function SmallCentered() {
                 justify={{ base: 'center', md: 'space-between' }}
                 align={{ base: 'center', md: 'center' }}
             >
-                <Text>
-                    © 2020 Chakra Templates. All rights reserved
-                </Text>
+                <Box display={{ base: 'none', lg: 'block' }}>
+                    <NextLink
+                        href='/'
+                        as='/'
+                        passHref
+                    >
+                        <a><img src='/cropped-logo.svg' width='125' height='52' /></a>
+                    </NextLink>
+                </Box>
                 <Stack
                     direction='row'
                     spacing={6}
