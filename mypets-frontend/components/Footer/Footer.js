@@ -63,6 +63,7 @@ export default function SmallCentered() {
         <Box
             bg='blue.100'
             color='gray.700'
+            mb={0}
         >
             <PageContainer
                 as={Stack}
