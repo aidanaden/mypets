@@ -74,7 +74,9 @@ export default function Home({ products, categories, merchants }) {
     <>
       <AnnouncementBanner />
       <Navbar/>
-      <PageContainer>
+      <PageContainer
+        bg='red.100'
+      >
         <CategoryList
           categories={pageCategories}
           setSelectedCategory={setCategorySelected}
