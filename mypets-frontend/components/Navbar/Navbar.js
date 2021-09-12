@@ -41,7 +41,6 @@ const NavLink = ({ children }) => (
 );
 
 export default function Navbar({ products }) {
-
     const { isOpen, onToggle } = useDisclosure();
     const { user, logoutUser } = useContext(AuthContext)
     const router = useRouter()
