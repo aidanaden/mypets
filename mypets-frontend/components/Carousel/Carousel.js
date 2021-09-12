@@ -57,6 +57,7 @@ export default function Carousels({
             p={0}
             alignItems="center"
             justifyContent="center"
+            shadow='2xl'
         >
             <Flex
                 rounded={{ base: 20, md: 40 }}
