@@ -59,7 +59,7 @@ export default function Navbar({ products }) {
                 align='center'
                 justifyContent='center'
             >
-                <Stack
+                {/* <Stack
                     direction='row'
                     alignItems='center'
                     justifyContent='space-between' 
@@ -109,7 +109,7 @@ export default function Navbar({ products }) {
                         <SignupModalBtn />
                     </ButtonGroup>
                     )}
-                </Stack>
+                </Stack> */}
             </Stack>
 
             {/* <Collapse in={isOpen} animateOpacity>
