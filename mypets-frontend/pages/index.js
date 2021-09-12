@@ -2,11 +2,9 @@ import {
     useState,
     useEffect
 } from 'react'
-import Head from 'next/head'
 import { useRouter } from 'next/router'
 import {
-  Box,
-  Container, 
+  Box, 
   Spacer,
   Stack,
   useToast 
@@ -71,7 +69,7 @@ export default function Home({ products, categories, merchants }) {
   }, [router.query])
 
   return (
-    <>
+    <Box bg='blue.100'>
       <AnnouncementBanner />
       <Navbar/>
       <PageContainer
@@ -126,7 +124,7 @@ export default function Home({ products, categories, merchants }) {
         </Stack>
       </PageContainer>
       {/* <Footer /> */}
-    </>
+    </Box>
   )
 }
 
