@@ -12,8 +12,10 @@ import {
   useToast 
 } from "@chakra-ui/react"
 
+import PageContainer from '../components/PageContainer/PageContainer'
 import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
 import Navbar from '../components/Navbar/Navbar'
+import Footer from '../components/Footer/Footer'
 import SortMenu from '../components/SortMenu/SortMenu'
 import MerchantSectionList from '../components/MerchantSectionList/MerchantSectionList'
 import ProductSectionList from '../components/ProductSectionList/ProductSectionList'
@@ -72,12 +74,7 @@ export default function Home({ products, categories, merchants }) {
     <>
       <AnnouncementBanner />
       <Navbar/>
-      <Container 
-        maxW={{ lg: "1200px" }} 
-        mb={4}
-        px={{ base: 4 }}
-        py={{ base: 8, md: 16 }}
-      >
+      <PageContainer>
         <CategoryList
           categories={pageCategories}
           setSelectedCategory={setCategorySelected}
@@ -125,7 +122,8 @@ export default function Home({ products, categories, merchants }) {
             heading='Recommended Products'
           />
         </Stack>
-      </Container>
+      </PageContainer>
+      <Footer />
     </>
   )
 }
