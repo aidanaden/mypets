@@ -137,7 +137,7 @@ const MobileNav = ({ user, router, logoutUser }) => {
             <Stack spacing={4}>
                 <SearchbarGroup display={{ base: 'inherit', lg: 'none' }}/>
                 { user && (
-                    <>
+                    <Box>
                         <Divider/>
                         <NavbarUserModalBtn mode='mobile' />
                         <Box px={2} onClick={handlePastOrders}>
@@ -147,7 +147,7 @@ const MobileNav = ({ user, router, logoutUser }) => {
                         <Box px={2} onClick={logoutUser}>
                             Log out 
                         </Box>
-                    </>
+                    </Box>
                 )}
             </Stack>
         </Box>
