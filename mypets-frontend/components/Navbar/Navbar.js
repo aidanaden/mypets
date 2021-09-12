@@ -137,9 +137,9 @@ const MobileNav = ({ user, router, logoutUser }) => {
             <Stack
                 spacing={4}
             >
-                {/* <SearchbarGroup
+                <SearchbarGroup
                     display={{ base: 'block', lg: 'none' }}
-                /> */}
+                />
                 {user && (
                     <Box>
                         <Divider/>
