@@ -25,21 +25,22 @@ function PriceFilterPopover({ price, onChange }) {
                     variant='outline'
                 />
             </PopoverTrigger>
-            <Portal>
-                <PopoverContent>
-                    <PopoverArrow />
-                    <PopoverHeader>
-                        Filter by price
+            <PopoverContent>
+                <PopoverArrow />
+                <PopoverHeader>
+                    Filter by price
                     </PopoverHeader>
-                    <PopoverCloseButton />
-                    <PopoverBody>
-                        <Text>Maximum price: {price}</Text>
-                        <PriceSlider
-                            onChange={onChange}
-                        />
-                    </PopoverBody>
-                </PopoverContent>
-            </Portal>
+                <PopoverCloseButton />
+                <PopoverBody>
+                    <Text>Maximum price: {price}</Text>
+                    <PriceSlider
+                        onChange={onChange}
+                    />
+                </PopoverBody>
+            </PopoverContent>
+            {/* <Portal>
+                
+            </Portal> */}
         </Popover>
     )
 }
