@@ -91,7 +91,7 @@ export default function Navbar({ products }) {
                         </NextLink>
                     </Box>
 
-                    <SearchbarGroup display={{ base: 'none', lg: 'inherit' }}/>
+                    <SearchbarGroup display={{ base: 'none', md: 'inherit' }}/>
 
                     { user ? ( 
                     <ButtonGroup
@@ -111,7 +111,7 @@ export default function Navbar({ products }) {
                     )}
                 </Stack>
                 <SearchbarGroup
-                    display={{ base: 'block', lg: 'none' }}
+                    display={{ base: 'block', md: 'none' }}
                 />
             </Stack>
 
