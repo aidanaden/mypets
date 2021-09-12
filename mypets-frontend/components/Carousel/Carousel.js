@@ -52,12 +52,14 @@ export default function Carousels({
         <Flex
             mt={{ base: 4, md: 8 }}
             mb={{ base: 8, md: 16 }}
+            rounded={{ base: 20, md: 40 }}
             w="full"
             p={0}
             alignItems="center"
             justifyContent="center"
         >
             <Flex
+                rounded={{ base: 20, md: 40 }}
                 w="full"
                 overflow="hidden"
                 pos="relative"
@@ -86,6 +88,7 @@ export default function Carousels({
                                 {sid + 1} / {slidesCount}
                             </Text>}
                             <Image
+                                rounded={{ base: 20, md: 40 }}
                                 src={bannerImgName}
                                 boxSize="full"
                                 backgroundSize="cover"
