@@ -59,31 +59,33 @@ const SocialButton = ({ children, label, href }) => {
 export default function SmallCentered() {
     return (
         <Box
-            bg={useColorModeValue('gray.50', 'gray.900')}
-            color={useColorModeValue('gray.700', 'gray.200')}>
-            <Container
+            bg='blue.100'
+            color='gray.700'
+        >
+            <PageContainer
                 as={Stack}
-                maxW={'6xl'}
-                py={4}
                 spacing={4}
                 justify={'center'}
                 align={'center'}
+                bg='red.100'
             >
                 <Logo />
                 <Stack
-                    direction={'row'}
+                    direction='row'
                     spacing={6}
                 >
-                    <Link href={'#'}>
+                    <Link
+                        href='#'
+                    >
                         About us
                     </Link>
                     <Link
-                        href={'#'}
+                        href='#'
                     >
                         Frequently Asked Questions
                     </Link>
                     <Link
-                        href={'#'}
+                        href='#'
                     >
                         Terms & Conditions
                     </Link>
@@ -93,11 +95,12 @@ export default function SmallCentered() {
                         Privacy Policy
                     </Link>
                 </Stack>
-            </Container>
+            </PageContainer>
             <Box
                 borderTopWidth={1}
                 borderStyle={'solid'}
                 borderColor={useColorModeValue('gray.200', 'gray.700')}
+                bg='green.100'
             >
                 <Container
                     as={Stack}
