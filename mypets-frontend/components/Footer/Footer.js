@@ -96,47 +96,41 @@ export default function SmallCentered() {
                     </Link>
                 </Stack>
             </PageContainer>
-            <Box
-                borderTopWidth={1}
-                borderStyle='solid'
-                borderColor='gray.200'
+            <PageContainer
+                as={Stack}
+                py={4}
+                direction={{ base: 'column', md: 'row' }}
+                spacing={4}
+                justify={{ base: 'center', md: 'space-between' }}
+                align={{ base: 'center', md: 'center' }}
             >
-                <PageContainer
-                    as={Stack}
-                    py={4}
-                    direction={{ base: 'column', md: 'row' }}
-                    spacing={4}
-                    justify={{ base: 'center', md: 'space-between' }}
-                    align={{ base: 'center', md: 'center' }}
-                >
-                    <Text>
-                        © 2020 Chakra Templates. All rights reserved
+                <Text>
+                    © 2020 Chakra Templates. All rights reserved
                     </Text>
-                    <Stack
-                        direction='row'
-                        spacing={6}
+                <Stack
+                    direction='row'
+                    spacing={6}
+                >
+                    <SocialButton
+                        label={'Twitter'}
+                        href={'#'}
                     >
-                        <SocialButton
-                            label={'Twitter'}
-                            href={'#'}
-                        >
-                            <FaTwitter />
-                        </SocialButton>
-                        <SocialButton
-                            label={'YouTube'}
-                            href={'#'}
-                        >
-                            <FaYoutube />
-                        </SocialButton>
-                        <SocialButton
-                            label={'Instagram'}
-                            href={'#'}
-                        >
-                            <FaInstagram />
-                        </SocialButton>
-                    </Stack>
-                </PageContainer>
-            </Box>
+                        <FaTwitter />
+                    </SocialButton>
+                    <SocialButton
+                        label={'YouTube'}
+                        href={'#'}
+                    >
+                        <FaYoutube />
+                    </SocialButton>
+                    <SocialButton
+                        label={'Instagram'}
+                        href={'#'}
+                    >
+                        <FaInstagram />
+                    </SocialButton>
+                </Stack>
+            </PageContainer>
         </Box>
     );
 }
