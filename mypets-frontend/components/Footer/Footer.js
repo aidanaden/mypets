@@ -11,6 +11,8 @@ import {
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { SiGooglepay, SiApplepay, SiVisa, SiMastercard } from 'react-icons/si';
 
+import PageContainer from '../PageContainer/PageContainer'
+
 const Logo = (props) => {
     return (
         <svg
