@@ -7,7 +7,10 @@ import {
     Image
 } from '@chakra-ui/react'
 
-export default function Carousels({ bannerImgNames=["banner-a.jpg", "banner-b.jpg", "banner-c.jpg"] }) {
+export default function Carousels({ 
+    bannerImgNames=["banner-a.jpg", "banner-b.jpg", "banner-c.jpg"],
+    displayCount=false
+}) {
     const arrowStyles = {
         cursor: "pointer",
         pos: "absolute",
@@ -50,7 +53,6 @@ export default function Carousels({ bannerImgNames=["banner-a.jpg", "banner-b.jp
             mt={{ base: 4, md: 8 }}
             mb={{ base: 8, md: 16 }}
             w="full"
-            bg="gray.200"
             p={0}
             alignItems="center"
             justifyContent="center"
@@ -68,7 +70,7 @@ export default function Carousels({ bannerImgNames=["banner-a.jpg", "banner-b.jp
                 >
                     {bannerImgNames.map((bannerImgName, sid) => (
                         <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
-                            <Text
+                            {display && <Text
                                 color="white"
                                 fontSize="xs"
                                 p="8px 12px"
@@ -76,7 +78,7 @@ export default function Carousels({ bannerImgNames=["banner-a.jpg", "banner-b.jp
                                 top="0"
                             >
                                 {sid + 1} / {slidesCount}
-                            </Text>
+                            </Text>}
                             <Image
                                 rounded={{ base: 20, md: 40 }}
                                 src={bannerImgName}
