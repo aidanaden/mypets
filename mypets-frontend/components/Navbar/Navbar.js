@@ -91,9 +91,9 @@ export default function Navbar({ products }) {
                         </NextLink>
                     </Box>
 
-                    <SearchbarGroup display={{ base: 'none', lg: 'inherit' }}/>
+                    {/* <SearchbarGroup display={{ base: 'none', lg: 'inherit' }}/> */}
 
-                    {/* { user ? ( 
+                    { user ? ( 
                     <ButtonGroup
                         alignItems='center'
                         spacing={6}
@@ -108,7 +108,7 @@ export default function Navbar({ products }) {
                         <LoginModalBtn />
                         <SignupModalBtn />
                     </ButtonGroup>
-                    )} */}
+                    )}
                 </Stack>
             </Stack>
 
