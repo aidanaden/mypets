@@ -69,7 +69,7 @@ export default function Home({ products, categories, merchants }) {
   }, [router.query])
 
   return (
-    <Box>
+    <Box bg='green.100'>
       <AnnouncementBanner />
       <Navbar/>
       <PageContainer
@@ -123,7 +123,7 @@ export default function Home({ products, categories, merchants }) {
           />
         </Stack>
       </PageContainer>
-      <Footer />
+      {/* <Footer /> */}
     </Box>
   )
 }
