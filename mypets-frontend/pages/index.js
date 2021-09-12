@@ -71,7 +71,7 @@ export default function Home({ products, categories, merchants }) {
   return (
     <Box bg='green.100'>
       <AnnouncementBanner />
-      {/* <Navbar/> */}
+      <Navbar/>
       <PageContainer
         bg='yellow.100'
       >
