@@ -49,7 +49,7 @@ export default function Navbar({ products }) {
         <Box>
             <Stack
                 direction='column'
-                spacing={2}
+                spacing={{ base: 4 }}
                 bg='green.100'
                 color='gray.600'
                 py={{ base: 4 }}
