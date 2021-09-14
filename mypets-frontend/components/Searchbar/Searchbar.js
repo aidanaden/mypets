@@ -44,7 +44,6 @@ export default function Searchbar({ price, ...props }) {
         <InputGroup
             bg='blue.100'
             w={{ base: '60%', xl: 'xl' }}
-            mr={0}
             {...props}
         >
             <InputLeftElement

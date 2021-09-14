@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { HStack } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
 
 import Searchbar from '../Searchbar/Searchbar'
 import PriceFilterPopover from '../PriceFilterPopover/PriceFilterPopover'
@@ -11,8 +11,11 @@ function SearchbarGroup({ ...props }) {
         setPrice(val)
     }
     return (
-        <HStack
+        <Stack
+            direction='row'
             w='100%'
+            align='center'
+            justifyContent='center'
             // spacing={4}
             bg='red.100'
             {...props}
@@ -24,7 +27,7 @@ function SearchbarGroup({ ...props }) {
                 price={price}
                 onChange={updatePriceOnChange}
             />
-        </HStack>
+        </Stack>
     )
 }
 
