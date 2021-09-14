@@ -53,7 +53,7 @@ export default function Navbar({ products }) {
                 bg='green.100'
                 color='gray.600'
                 py={{ base: 4 }}
-                px={{ base: 2 }}
+                px={{ base: 6 }}
                 borderBottom={1}
                 borderStyle='solid'
                 borderColor='gray.200'
@@ -67,7 +67,6 @@ export default function Navbar({ products }) {
                     justifyContent='space-between' 
                     maxW={{ lg: '1200px' }}
                     w='100%'
-                    px={4}
                 >
                     <Box
                         flex={{ base: 1, lg: 'auto' }}
