@@ -16,7 +16,6 @@ import { FaFilter } from 'react-icons/fa'
 import PriceSlider from '../PriceSlider/PriceSlider.js'
 
 function PriceFilterPopover({ price, onChange }) {
-
     return (
         <Popover>
             <PopoverTrigger>
