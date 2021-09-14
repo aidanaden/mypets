@@ -42,6 +42,7 @@ export default function Searchbar({ price, ...props }) {
 
     return (
         <InputGroup
+            bg='blue.100'
             w={{ base: '60%', xl: 'xl' }}
             pr={0}
             {...props}
