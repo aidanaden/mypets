@@ -42,7 +42,7 @@ export default function Searchbar({ price, ...props }) {
 
     return (
         <InputGroup
-            w={{ base: 'sm', xl: 'xl' }}
+            w={{ base: '60%', xl: 'xl' }}
             pr={0}
             {...props}
         >
