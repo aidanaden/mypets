@@ -12,6 +12,7 @@ function SearchbarGroup({ ...props }) {
     }
     return (
         <HStack
+            w='100%'
             // spacing={4}
             bg='red.100'
             {...props}
