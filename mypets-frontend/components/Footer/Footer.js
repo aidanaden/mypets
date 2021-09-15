@@ -71,7 +71,7 @@ export default function SmallCentered() {
                 <Stack
                     direction={{ base: 'column', md: 'row' }}
                     textAlign='center'
-                    spacing={{ base: 4 }}
+                    spacing={{ base: 4, md: 6 }}
                 >
                     <Link
                         href='#'
