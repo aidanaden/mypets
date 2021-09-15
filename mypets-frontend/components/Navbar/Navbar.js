@@ -50,7 +50,6 @@ export default function Navbar({ products }) {
             <Stack
                 direction='column'
                 spacing={{ base: 4 }}
-                bg='green.100'
                 color='gray.600'
                 py={{ base: 4 }}
                 px={{ base: 6 }}
@@ -61,7 +60,6 @@ export default function Navbar({ products }) {
                 justifyContent='center'
             >
                 <Stack
-                    bg='blue.100'
                     direction='row'
                     alignItems='center'
                     justifyContent='space-between' 

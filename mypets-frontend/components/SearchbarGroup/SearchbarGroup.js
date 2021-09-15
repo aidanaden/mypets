@@ -17,7 +17,6 @@ function SearchbarGroup({ ...props }) {
             align='center'
             justifyContent='center'
             // spacing={4}
-            bg='red.100'
             {...props}
         >
             <Searchbar
