@@ -16,7 +16,7 @@ import PageContainer from '../PageContainer/PageContainer'
 
 const Logo = (props) => {
     return (
-        <Box display={{ base: 'none', lg: 'block' }}>
+        <Box display={{ base: 'block' }}>
             <NextLink
                 href='/'
                 as='/'
@@ -70,6 +70,7 @@ export default function SmallCentered() {
                 <Logo />
                 <Stack
                     direction={{ base: 'column', md: 'row' }}
+                    alignContent='center'
                     spacing={6}
                 >
                     <Link
