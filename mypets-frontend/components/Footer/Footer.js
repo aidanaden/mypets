@@ -69,7 +69,7 @@ export default function SmallCentered() {
             >
                 <Logo />
                 <Stack
-                    {{ base: 'column', md: 'row' }}
+                    direction={{ base: 'column', md: 'row' }}
                     spacing={6}
                 >
                     <Link
