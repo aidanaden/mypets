@@ -62,14 +62,14 @@ export default function SmallCentered() {
         >
             <PageContainer
                 as={Stack}
-                direction={{ base: 'column', md: 'row' }}
+                direction={{ base: 'column' }}
                 spacing={4}
                 justify='center'
                 align='center'
             >
                 <Logo />
                 <Stack
-                    direction='row'
+                    {{ base: 'column', md: 'row' }}
                     spacing={6}
                 >
                     <Link
