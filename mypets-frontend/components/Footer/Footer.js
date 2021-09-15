@@ -22,7 +22,7 @@ const Logo = (props) => {
                 as='/'
                 passHref
             >
-                <a><img src='/cropped-logo.svg' width='125' height='52' /></a>
+                <a><img src='/logo-white.svg' width='125' height='52' /></a>
             </NextLink>
         </Box>
     );
@@ -70,7 +70,7 @@ export default function SmallCentered() {
                 <Logo />
                 <Stack
                     direction={{ base: 'column', md: 'row' }}
-                    alignContent='center'
+                    textAlign='center'
                     spacing={6}
                 >
                     <Link
