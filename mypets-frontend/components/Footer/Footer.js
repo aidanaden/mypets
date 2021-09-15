@@ -63,7 +63,7 @@ export default function SmallCentered() {
             <PageContainer
                 as={Stack}
                 direction={{ base: 'column' }}
-                spacing={4}
+                spacing={{ base: 8 }}
                 justify='center'
                 align='center'
             >
@@ -71,7 +71,7 @@ export default function SmallCentered() {
                 <Stack
                     direction={{ base: 'column', md: 'row' }}
                     textAlign='center'
-                    spacing={6}
+                    spacing={{ base: 4 }}
                 >
                     <Link
                         href='#'
