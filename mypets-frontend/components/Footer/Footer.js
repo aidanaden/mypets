@@ -31,19 +31,19 @@ const Logo = (props) => {
 const SocialButton = ({ children, label, href }) => {
     return (
         <chakra.button
-            bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-            rounded={'full'}
+            bg='blackAlpha.100'
+            rounded='full'
             w={8}
             h={8}
-            cursor={'pointer'}
+            cursor='pointer'
             as={'a'}
             href={href}
-            display={'inline-flex'}
-            alignItems={'center'}
-            justifyContent={'center'}
-            transition={'background 0.3s ease'}
+            display='inline-flex'
+            alignItems='center'
+            justifyContent='center'
+            transition='background 0.3s ease'
             _hover={{
-                bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+                bg: 'blackAlpha.200',
             }}
         >
             <VisuallyHidden>
@@ -63,8 +63,8 @@ export default function SmallCentered() {
             <PageContainer
                 as={Stack}
                 spacing={4}
-                justify={'center'}
-                align={'center'}
+                justify='center'
+                align='center'
             >
                 <Logo />
                 <Stack
@@ -87,7 +87,7 @@ export default function SmallCentered() {
                         Terms & Conditions
                     </Link>
                     <Link
-                        href={'#'}
+                        href='#'
                     >
                         Privacy Policy
                     </Link>
@@ -105,7 +105,7 @@ export default function SmallCentered() {
                     © 2020 Chakra Templates. All rights reserved
                 </Text>
                 <Stack
-                    direction='row'
+                    direction={{ base: 'column', md: 'row' }}
                     spacing={6}
                 >
                     <SocialButton
