@@ -49,9 +49,9 @@ export default function Navbar({ products }) {
         <Box>
             <Stack
                 direction='column'
-                spacing={{ base: 4 }}
+                spacing={{ base: 6 }}
                 color='gray.600'
-                py={{ base: 4 }}
+                py={{ base: 8 }}
                 px={{ base: 6 }}
                 borderBottom={1}
                 borderStyle='solid'
