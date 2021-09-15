@@ -62,6 +62,7 @@ export default function SmallCentered() {
         >
             <PageContainer
                 as={Stack}
+                direction={{ base: 'column', md: 'row' }}
                 spacing={4}
                 justify='center'
                 align='center'
@@ -105,7 +106,7 @@ export default function SmallCentered() {
                     © 2020 Chakra Templates. All rights reserved
                 </Text>
                 <Stack
-                    direction={{ base: 'column', md: 'row' }}
+                    direction='row'
                     spacing={6}
                 >
                     <SocialButton
