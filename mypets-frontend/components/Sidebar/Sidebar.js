@@ -161,11 +161,11 @@ export default function Sidebar() {
     );
     return (
         <Box
-            as="section"
-            bg="gray.50"
-            minH="100vh"
+            // as="section"
+            // bg="gray.50"
+            // minH="100vh"
         >
-            <SidebarContent display={{ base: "none" }} />
+            {/* <SidebarContent display={{ base: "none" }} /> */}
             <Drawer
                 isOpen={sidebar.isOpen}
                 onClose={sidebar.onClose}
@@ -176,114 +176,77 @@ export default function Sidebar() {
                     <SidebarContent w="full" borderRight="none" />
                 </DrawerContent>
             </Drawer>
-            <Box ml={{ base: 0, md: 60 }} transition=".3s ease">
-                {/* <Flex
-                    as="header"
-                    align="center"
-                    justify="space-between"
-                    w="full"
-                    px="4"
-                    bg="white"
-                    borderBottomWidth="1px"
-                    borderColor="inherit"
-                    h="14"
-                >
-                    <IconButton
-                        aria-label="Menu"
-                        display={{ base: "inline-flex", md: "none" }}
-                        onClick={sidebar.onOpen}
-                        icon={<FiMenu />}
-                        size="sm"
-                    />
-                    <InputGroup w="96" display={{ base: "none", md: "flex" }}>
-                        <InputLeftElement
-                            color="gray.500"
-                            children={<FiSearch />}
-                        />
-                        <Input placeholder="Search for articles..." />
-                    </InputGroup>
-                    <Flex align="center">
-                        <Icon
-                            color="gray.500"
-                            as={FaBell}
-                            cursor="pointer"
-                        />
-                        <Avatar
-                            ml="4"
-                            size="sm"
-                            name="anubra266"
-                            src="https://avatars.githubusercontent.com/u/30869823?v=4"
-                            cursor="pointer"
-                        />
-                    </Flex>
-                </Flex> */}
+            <Stack
+                direction='column'
+                spacing={{ base: 6 }}
+                color='gray.600'
+                py={{ base: 4 }}
+                px={{ base: 6 }}
+                borderBottom={1}
+                borderStyle='solid'
+                borderColor='gray.200'
+                align='center'
+                justifyContent='center'
+                transition=".3s ease"
+            >
                 <Stack
-                    direction='column'
-                    spacing={{ base: 6 }}
-                    color='gray.600'
-                    py={{ base: 4 }}
-                    px={{ base: 6 }}
-                    borderBottom={1}
-                    borderStyle='solid'
-                    borderColor='gray.200'
-                    align='center'
-                    justifyContent='center'
+                    direction='row'
+                    alignItems='center'
+                    justifyContent='space-between'
+                    maxW={{ lg: '1200px' }}
+                    w='100%'
                 >
-                    <Stack
-                        direction='row'
-                        alignItems='center'
-                        justifyContent='space-between'
-                        maxW={{ lg: '1200px' }}
-                        w='100%'
+                    <Box
+                        flex={{ base: 1, lg: 'auto' }}
+                        display={{ base: 'flex', lg: 'none' }}
                     >
-                        <Box
-                            flex={{ base: 1, lg: 'auto' }}
-                            display={{ base: 'flex', lg: 'none' }}
+                        <IconButton
+                            onClick={sidebar.onOpen}
+                            icon={
+                                sidebar.isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                            }
+                            variant='ghost'
+                            aria-label='Toggle Navigation'
+                        />
+                    </Box>
+
+                    <Box display={{ base: 'none', lg: 'block' }}>
+                        <NextLink
+                            href='/'
+                            as='/'
+                            passHref
                         >
-                            <IconButton
-                                onClick={sidebar.onOpen}
-                                icon={
-                                    sidebar.isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-                                }
-                                variant='ghost'
-                                aria-label='Toggle Navigation'
-                            />
-                        </Box>
+                            <a><img src='/cropped-logo.svg' width='125' height='52' /></a>
+                        </NextLink>
+                    </Box>
 
-                        <Box display={{ base: 'none', lg: 'block' }}>
-                            <NextLink
-                                href='/'
-                                as='/'
-                                passHref
-                            >
-                                <a><img src='/cropped-logo.svg' width='125' height='52' /></a>
-                            </NextLink>
-                        </Box>
+                    <SearchbarGroup display={{ base: 'none', md: 'inherit' }} />
 
-                        <SearchbarGroup display={{ base: 'none', md: 'inherit' }} />
-
-                        {user ? (
+                    {user ? (
+                        <ButtonGroup
+                            alignItems='center'
+                            spacing={6}
+                        >
+                            <NavbarCartModalBtn />
+                            <NavbarUserIcon />
+                        </ButtonGroup>
+                    ) : (
                             <ButtonGroup
-                                alignItems='center'
-                                spacing={6}
+                                spacing={4}
                             >
-                                <NavbarCartModalBtn />
-                                <NavbarUserIcon />
+                                <LoginModalBtn />
+                                <SignupModalBtn />
                             </ButtonGroup>
-                        ) : (
-                                <ButtonGroup
-                                    spacing={4}
-                                >
-                                    <LoginModalBtn />
-                                    <SignupModalBtn />
-                                </ButtonGroup>
-                            )}
-                    </Stack>
-                    <SearchbarGroup
-                        display={{ base: 'inherit', md: 'none' }}
-                    />
+                        )}
                 </Stack>
-            </Box>
+                <SearchbarGroup
+                    display={{ base: 'inherit', md: 'none' }}
+                />
+            </Stack>
+            {/* <Box ml={{ base: 0, md: 60 }} transition=".3s ease">
+                
+                
+            </Box> */}
         </Box>
     );
 }
