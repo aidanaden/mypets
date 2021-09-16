@@ -77,7 +77,15 @@ export default function Sidebar() {
             {...props}
         >
             <Flex px="4" py="5" align="center">
-                <Logo />
+                <Box display={{ base: 'none', lg: 'block' }}>
+                    <NextLink
+                        href='/'
+                        as='/'
+                        passHref
+                    >
+                        <a><img src='/cropped-logo.svg' width='125' height='52' /></a>
+                    </NextLink>
+                </Box>
                 <Text
                     fontSize="2xl"
                     ml="2"
