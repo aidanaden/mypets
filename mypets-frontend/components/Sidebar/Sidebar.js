@@ -15,6 +15,8 @@ import {
     Avatar
 } from '@chakra-ui/react'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import { FaBell } from 'react-icons/fa'
+import { FiMenu, FiSearch } from 'react-icons/fi'
 
 export default function Sidebar() {
     const sidebar = useDisclosure();
@@ -141,9 +143,9 @@ export default function Sidebar() {
                     justify="space-between"
                     w="full"
                     px="4"
-                    bg={useColorModeValue("white", "gray.800")}
+                    bg="white"
                     borderBottomWidth="1px"
-                    borderColor={useColorModeValue("inherit", "gray.700")}
+                    borderColor="inherit"
                     h="14"
                 >
                     <IconButton
@@ -154,12 +156,18 @@ export default function Sidebar() {
                         size="sm"
                     />
                     <InputGroup w="96" display={{ base: "none", md: "flex" }}>
-                        <InputLeftElement color="gray.500" children={<FiSearch />} />
+                        <InputLeftElement
+                            color="gray.500"
+                            children={<FiSearch />}
+                        />
                         <Input placeholder="Search for articles..." />
                     </InputGroup>
-
                     <Flex align="center">
-                        <Icon color="gray.500" as={FaBell} cursor="pointer" />
+                        <Icon
+                            color="gray.500"
+                            as={FaBell}
+                            cursor="pointer"
+                        />
                         <Avatar
                             ml="4"
                             size="sm"
