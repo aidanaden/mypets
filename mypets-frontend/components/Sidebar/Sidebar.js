@@ -19,7 +19,7 @@ import { FaBell, FaClipboardCheck, FaRss } from 'react-icons/fa'
 import { FiMenu, FiSearch } from 'react-icons/fi'
 import { BsGearFill } from 'react-icons/bs'
 import { AiFillGift } from 'react-icons/ai'
-import { HiCollection } from 'react-icons/hi'
+import { HiCollection, HiCode } from 'react-icons/hi'
 import NextLink from 'next/link'
 
 export default function Sidebar() {
