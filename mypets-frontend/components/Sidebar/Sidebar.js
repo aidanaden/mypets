@@ -35,6 +35,7 @@ import SignupModalBtn from '../SignupModalBtn/SignupModalBtn';
 export default function Sidebar() {
     const sidebar = useDisclosure();
     const integrations = useDisclosure();
+    const { user, logoutUser } = useContext(AuthContext)
 
     const NavItem = (props) => {
         const { icon, children, ...rest } = props;
@@ -238,12 +239,12 @@ export default function Sidebar() {
                             display={{ base: 'flex', lg: 'none' }}
                         >
                             <IconButton
-                                onClick={onToggle}
+                                onClick={sidebar.onOpen}
                                 icon={
-                                    isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                                    sidebar.isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
                                 }
-                                variant={'ghost'}
-                                aria-label={'Toggle Navigation'}
+                                variant='ghost'
+                                aria-label='Toggle Navigation'
                             />
                         </Box>
 
