@@ -14,9 +14,12 @@ import {
     Input,
     Avatar
 } from '@chakra-ui/react'
-import { MdKeyboardArrowRight } from 'react-icons/md'
-import { FaBell } from 'react-icons/fa'
+import { MdKeyboardArrowRight, MdHome } from 'react-icons/md'
+import { FaBell, FaClipboardCheck, FaRss } from 'react-icons/fa'
 import { FiMenu, FiSearch } from 'react-icons/fi'
+import { BsGearFill } from 'react-icons/bs'
+import { AiFillGift } from 'react-icons/ai'
+import { HiCollection } from 'react-icons/hi'
 
 export default function Sidebar() {
     const sidebar = useDisclosure();
@@ -31,10 +34,10 @@ export default function Sidebar() {
                 pl="4"
                 py="3"
                 cursor="pointer"
-                color={useColorModeValue("inherit", "gray.400")}
+                color="inherit"
                 _hover={{
-                    bg: useColorModeValue("gray.100", "gray.900"),
-                    color: useColorModeValue("gray.900", "gray.200"),
+                    bg: "gray.100",
+                    color: "gray.900"
                 }}
                 role="group"
                 fontWeight="semibold"
@@ -46,7 +49,7 @@ export default function Sidebar() {
                         mr="2"
                         boxSize="4"
                         _groupHover={{
-                            color: useColorModeValue("gray.600", "gray.300"),
+                            color: "gray.600"
                         }}
                         as={icon}
                     />
@@ -67,8 +70,8 @@ export default function Sidebar() {
             pb="10"
             overflowX="hidden"
             overflowY="auto"
-            bg={useColorModeValue("white", "gray.800")}
-            borderColor={useColorModeValue("inherit", "gray.700")}
+            bg="white"
+            borderColor="inherit"
             borderRightWidth="1px"
             w="60"
             {...props}
@@ -78,7 +81,7 @@ export default function Sidebar() {
                 <Text
                     fontSize="2xl"
                     ml="2"
-                    color={useColorModeValue("brand.500", "white")}
+                    color="brand.500"
                     fontWeight="semibold"
                 >
                     Choc UI
@@ -91,11 +94,22 @@ export default function Sidebar() {
                 color="gray.600"
                 aria-label="Main Navigation"
             >
-                <NavItem icon={MdHome}>Home</NavItem>
-                <NavItem icon={FaRss}>Articles</NavItem>
-                <NavItem icon={HiCollection}>Collections</NavItem>
-                <NavItem icon={FaClipboardCheck}>Checklists</NavItem>
-                <NavItem icon={HiCode} onClick={integrations.onToggle}>
+                <NavItem icon={MdHome}>
+                    Home
+                </NavItem>
+                <NavItem icon={FaRss}>
+                    Articles
+                </NavItem>
+                <NavItem icon={HiCollection}>
+                    Collections
+                </NavItem>
+                <NavItem icon={FaClipboardCheck}>
+                    Checklists
+                </NavItem>
+                <NavItem
+                    icon={HiCode}
+                    onClick={integrations.onToggle}
+                >
                     Integrations
                     <Icon
                         as={MdKeyboardArrowRight}
@@ -114,15 +128,19 @@ export default function Sidebar() {
                         Zapier
                     </NavItem>
                 </Collapse>
-                <NavItem icon={AiFillGift}>Changelog</NavItem>
-                <NavItem icon={BsGearFill}>Settings</NavItem>
+                <NavItem icon={AiFillGift}>
+                    Changelog
+                </NavItem>
+                <NavItem icon={BsGearFill}>
+                    Settings
+                </NavItem>
             </Flex>
         </Box>
     );
     return (
         <Box
             as="section"
-            bg={useColorModeValue("gray.50", "gray.700")}
+            bg="gray.50"
             minH="100vh"
         >
             <SidebarContent display={{ base: "none", md: "unset" }} />
