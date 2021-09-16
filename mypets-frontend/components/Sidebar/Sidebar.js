@@ -1,4 +1,22 @@
-function Swibc() {
+import {
+    useDisclosure,
+    Box,
+    Flex,
+    Icon,
+    Text,
+    Collapse,
+    Drawer,
+    DrawerOverlay,
+    DrawerContent,
+    IconButton,
+    InputGroup,
+    InputLeftElement,
+    Input,
+    Avatar
+} from '@chakra-ui/react'
+import { MdKeyboardArrowRight } from 'react-icons/md'
+
+export default function Sidebar() {
     const sidebar = useDisclosure();
     const integrations = useDisclosure();
 
@@ -62,7 +80,7 @@ function Swibc() {
                     fontWeight="semibold"
                 >
                     Choc UI
-          </Text>
+                </Text>
             </Flex>
             <Flex
                 direction="column"
@@ -77,7 +95,7 @@ function Swibc() {
                 <NavItem icon={FaClipboardCheck}>Checklists</NavItem>
                 <NavItem icon={HiCode} onClick={integrations.onToggle}>
                     Integrations
-            <Icon
+                    <Icon
                         as={MdKeyboardArrowRight}
                         ml="auto"
                         transform={integrations.isOpen && "rotate(90deg)"}
@@ -86,13 +104,13 @@ function Swibc() {
                 <Collapse in={integrations.isOpen}>
                     <NavItem pl="12" py="2">
                         Shopify
-            </NavItem>
+                    </NavItem>
                     <NavItem pl="12" py="2">
                         Slack
-            </NavItem>
+                    </NavItem>
                     <NavItem pl="12" py="2">
                         Zapier
-            </NavItem>
+                    </NavItem>
                 </Collapse>
                 <NavItem icon={AiFillGift}>Changelog</NavItem>
                 <NavItem icon={BsGearFill}>Settings</NavItem>
