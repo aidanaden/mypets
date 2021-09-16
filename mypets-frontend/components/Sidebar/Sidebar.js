@@ -160,7 +160,7 @@ export default function Sidebar() {
     return (
         <Box
             zIndex='banner'
-            position='absolute'
+            position='static'
         >
             <Drawer
                 isOpen={sidebar.isOpen}
