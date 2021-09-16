@@ -30,6 +30,7 @@ import SearchbarGroup from '../SearchbarGroup/SearchbarGroup'
 import NavbarCartModalBtn from '../NavbarCartModalBtn/NavbarCartModalBtn';
 import NavbarUserModalBtn from '../NavbarUserModalBtn/NavbarUserModalBtn'
 import NavbarUserIcon from '../NavbarUserIcon/NavbarUserIcon';
+import AuthContext from '../../context/AuthContext'
 import LoginModalBtn from '../LoginModalBtn/LoginModalBtn';
 import SignupModalBtn from '../SignupModalBtn/SignupModalBtn';
 
