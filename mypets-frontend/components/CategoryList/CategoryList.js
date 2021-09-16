@@ -9,7 +9,7 @@ export default function CategoryList({ isAnimal, categories, setSelectedCategory
         <Stack 
             mt={{ lg: 0 }}
             direction={{ base: 'row', lg: 'row'}} 
-            overflow={{ base: 'scroll' }}
+            overflow={{ base: 'auto' }}
         >
             {categories.map((cat, i) => (
                 <CategoryBtn
