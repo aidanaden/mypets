@@ -165,7 +165,7 @@ export default function Sidebar() {
             bg="gray.50"
             minH="100vh"
         >
-            <SidebarContent display={{ base: "none", md: "unset" }} />
+            <SidebarContent display={{ base: "none" }} />
             <Drawer
                 isOpen={sidebar.isOpen}
                 onClose={sidebar.onClose}
