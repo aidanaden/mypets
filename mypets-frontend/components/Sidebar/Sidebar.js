@@ -9,6 +9,8 @@ import {
     DrawerOverlay,
     DrawerContent,
     IconButton,
+    Stack,
+    ButtonGroup,
     InputGroup,
     InputLeftElement,
     Input,
@@ -20,7 +22,15 @@ import { FiMenu, FiSearch } from 'react-icons/fi'
 import { BsGearFill } from 'react-icons/bs'
 import { AiFillGift } from 'react-icons/ai'
 import { HiCollection, HiCode } from 'react-icons/hi'
+import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
+
+import SearchbarGroup from '../SearchbarGroup/SearchbarGroup'
+import NavbarCartModalBtn from '../NavbarCartModalBtn/NavbarCartModalBtn';
+import NavbarUserModalBtn from '../NavbarUserModalBtn/NavbarUserModalBtn'
+import NavbarUserIcon from '../NavbarUserIcon/NavbarUserIcon';
+import LoginModalBtn from '../LoginModalBtn/LoginModalBtn';
+import SignupModalBtn from '../SignupModalBtn/SignupModalBtn';
 
 export default function Sidebar() {
     const sidebar = useDisclosure();
