@@ -73,8 +73,8 @@ export default function Home({ products, categories, merchants }) {
   return (
     <Box>
       <AnnouncementBanner />
-      {/* <Navbar /> */}
-      <Sidebar />
+      <Navbar />
+      {/* <Sidebar /> */}
       <PageContainer>
         <CategoryList
           categories={pageCategories}
