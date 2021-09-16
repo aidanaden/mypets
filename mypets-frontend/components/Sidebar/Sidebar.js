@@ -158,7 +158,9 @@ export default function Sidebar() {
         </Box>
     );
     return (
-        <Box>
+        <Box
+            zIndex='banner'
+        >
             <Drawer
                 isOpen={sidebar.isOpen}
                 onClose={sidebar.onClose}
