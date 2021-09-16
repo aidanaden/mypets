@@ -13,6 +13,7 @@ import {
 import PageContainer from '../components/PageContainer/PageContainer'
 import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
 import Navbar from '../components/Navbar/Navbar'
+import Sidebar from '../components/Sidebar/Sidebar'
 import Carousel from '../components/Carousel/Carousel'
 import Footer from '../components/Footer/Footer'
 import SortMenu from '../components/SortMenu/SortMenu'
@@ -72,7 +73,8 @@ export default function Home({ products, categories, merchants }) {
   return (
     <Box>
       <AnnouncementBanner />
-      <Navbar />
+      {/* <Navbar /> */}
+      <Sidebar />
       <PageContainer>
         <CategoryList
           categories={pageCategories}
