@@ -39,6 +39,20 @@ export default function Sidebar() {
     const integrations = useDisclosure();
     const { user, logoutUser } = useContext(AuthContext)
 
+    const Logo = () => {
+        return (
+            <Box display={{ base: 'none', lg: 'block' }}>
+                <NextLink
+                    href='/'
+                    as='/'
+                    passHref
+                >
+                    <a><img src='/cropped-logo.svg' width='125' height='52' /></a>
+                </NextLink>
+            </Box>
+        )
+    }
+
     const NavItem = (props) => {
         const { icon, children, ...rest } = props;
         return (
@@ -91,23 +105,7 @@ export default function Sidebar() {
             {...props}
         >
             <Flex px="4" py="5" align="center">
-                <Box display={{ base: 'none', lg: 'block' }}>
-                    <NextLink
-                        href='/'
-                        as='/'
-                        passHref
-                    >
-                        <a><img src='/cropped-logo.svg' width='125' height='52' /></a>
-                    </NextLink>
-                </Box>
-                <Text
-                    fontSize="2xl"
-                    ml="2"
-                    color="brand.500"
-                    fontWeight="semibold"
-                >
-                    Choc UI
-                </Text>
+                <Logo />
             </Flex>
             <Flex
                 direction="column"
@@ -160,12 +158,7 @@ export default function Sidebar() {
         </Box>
     );
     return (
-        <Box
-            // as="section"
-            // bg="gray.50"
-            // minH="100vh"
-        >
-            {/* <SidebarContent display={{ base: "none" }} /> */}
+        <Box>
             <Drawer
                 isOpen={sidebar.isOpen}
                 onClose={sidebar.onClose}
@@ -209,19 +202,8 @@ export default function Sidebar() {
                             aria-label='Toggle Navigation'
                         />
                     </Box>
-
-                    <Box display={{ base: 'none', lg: 'block' }}>
-                        <NextLink
-                            href='/'
-                            as='/'
-                            passHref
-                        >
-                            <a><img src='/cropped-logo.svg' width='125' height='52' /></a>
-                        </NextLink>
-                    </Box>
-
+                    <Logo />
                     <SearchbarGroup display={{ base: 'none', md: 'inherit' }} />
-
                     {user ? (
                         <ButtonGroup
                             alignItems='center'
@@ -243,10 +225,6 @@ export default function Sidebar() {
                     display={{ base: 'inherit', md: 'none' }}
                 />
             </Stack>
-            {/* <Box ml={{ base: 0, md: 60 }} transition=".3s ease">
-                
-                
-            </Box> */}
         </Box>
     );
 }
