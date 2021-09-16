@@ -164,7 +164,7 @@ export default function Sidebar() {
                 </DrawerContent>
             </Drawer>
             <Box ml={{ base: 0, md: 60 }} transition=".3s ease">
-                <Flex
+                {/* <Flex
                     as="header"
                     align="center"
                     justify="space-between"
@@ -203,12 +203,73 @@ export default function Sidebar() {
                             cursor="pointer"
                         />
                     </Flex>
-                </Flex>
+                </Flex> */}
+                <Stack
+                    direction='column'
+                    spacing={{ base: 6 }}
+                    color='gray.600'
+                    py={{ base: 4 }}
+                    px={{ base: 6 }}
+                    borderBottom={1}
+                    borderStyle='solid'
+                    borderColor='gray.200'
+                    align='center'
+                    justifyContent='center'
+                >
+                    <Stack
+                        direction='row'
+                        alignItems='center'
+                        justifyContent='space-between'
+                        maxW={{ lg: '1200px' }}
+                        w='100%'
+                    >
+                        <Box
+                            flex={{ base: 1, lg: 'auto' }}
+                            display={{ base: 'flex', lg: 'none' }}
+                        >
+                            <IconButton
+                                onClick={onToggle}
+                                icon={
+                                    isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                                }
+                                variant={'ghost'}
+                                aria-label={'Toggle Navigation'}
+                            />
+                        </Box>
 
-                <Box as="main" p="4">
-                    {/* Add content here, remove div below  */}
-                    <Box borderWidth="4px" borderStyle="dashed" rounded="md" h="96" />
-                </Box>
+                        <Box display={{ base: 'none', lg: 'block' }}>
+                            <NextLink
+                                href='/'
+                                as='/'
+                                passHref
+                            >
+                                <a><img src='/cropped-logo.svg' width='125' height='52' /></a>
+                            </NextLink>
+                        </Box>
+
+                        <SearchbarGroup display={{ base: 'none', md: 'inherit' }} />
+
+                        {user ? (
+                            <ButtonGroup
+                                alignItems='center'
+                                spacing={6}
+                            >
+                                <NavbarCartModalBtn />
+                                <NavbarUserIcon />
+                            </ButtonGroup>
+                        ) : (
+                                <ButtonGroup
+                                    spacing={4}
+                                >
+                                    <LoginModalBtn />
+                                    <SignupModalBtn />
+                                </ButtonGroup>
+                            )}
+                    </Stack>
+                    <SearchbarGroup
+                        display={{ base: 'inherit', md: 'none' }}
+                    />
+                </Stack>
             </Box>
         </Box>
     );
