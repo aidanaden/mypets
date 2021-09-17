@@ -6,7 +6,7 @@ import {
 
 import ProductListCard from '../ProductListCard/ProductListCard'
 
-function ProductList({ products, spacing=4 }) {
+function ProductList({ heading, products, spacing=4 }) {
     const [listProducts, setListProducts] = useState(products)
 
     useEffect(() => {
@@ -14,11 +14,16 @@ function ProductList({ products, spacing=4 }) {
     }, [products])
 
     return (
-        <SimpleGrid columns={{ base: 2, md: 4, lg: 4, xl: 5 }} spacing={spacing}>
-            {listProducts.map((product, index) => (
-                <ProductListCard product={product} key={index} />
-            ))}
-        </SimpleGrid>
+        <Box>
+            <SectionHeader>
+                {heading}
+            </SectionHeader>
+            <SimpleGrid columns={{ base: 2, md: 4, lg: 4, xl: 5 }} spacing={spacing}>
+                {listProducts.map((product, index) => (
+                    <ProductListCard product={product} key={index} />
+                ))}
+            </SimpleGrid>
+        </Box>
     )
 }
 

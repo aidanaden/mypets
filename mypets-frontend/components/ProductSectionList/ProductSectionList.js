@@ -35,11 +35,6 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, h
 
     return (
         <Box w='100%'>
-            { heading && (
-                <SectionHeader>
-                    {heading}
-                </SectionHeader>
-            )}
             <Box
                 display={{ base: 'inherit', lg: 'none'}} 
                 mb={8}
@@ -55,6 +50,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, h
                 {categories.map((category, i) => (
                     <ProductList
                         key={i}
+                        heading={category}
                         products={filterProductsByCategory(category)}
                         heading={category}
                     />
