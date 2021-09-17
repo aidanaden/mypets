@@ -58,14 +58,18 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, h
                     setSortMethod={setSortMethod}
                 />
             </Box>
-            {categories.map((category, i) => (
-                <ProductList
-                    key={i}
-                    products={filterProductsByCategory(category)}
-                    heading={category}
-                />
-            ))}
-            
+            <Stack
+                direction='column'
+                spacing={{ lg: 8 }}
+            >
+                {categories.map((category, i) => (
+                    <ProductList
+                        key={i}
+                        products={filterProductsByCategory(category)}
+                        heading={category}
+                    />
+                ))}
+            </Stack>
         </Box>
     )
 }
