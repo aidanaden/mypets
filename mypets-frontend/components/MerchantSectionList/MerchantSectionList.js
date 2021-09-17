@@ -9,11 +9,9 @@ import MerchantCard from "../MerchantCard/MerchantCard"
 
 function MerchantSectionList({ merchants, spacing=6 }) {
     return (
-        <Box
-            // bg='green.100'
-        >
+        <Box>
             <SectionHeader>
-                Available Merchants
+                Available Brands
             </SectionHeader>
             <HStack
                 mt={0}

@@ -16,8 +16,16 @@ function MerchantCard({ merchant }) {
                     color='gray.800'
                     fontSize="md"
                 >
-                    <Box rounded="full" boxSize='120px'>
-                        <NextImage src={`${imageToUrl(merchant.display_image)}`} width='120' height='120' />
+                    <Box
+                        rounded='xl'
+                        height='120px'
+                        width='240px'
+                    >
+                        <NextImage
+                            src={`${imageToUrl(merchant.display_image)}`}
+                            width='240'
+                            height='120'
+                        />
                     </Box>
                 </Tooltip>
             </a>
