@@ -29,7 +29,7 @@ export default function Home({ products, categories, merchants }) {
   const [pageProducts, setPageProducts] = useState(products)
   const [sortMethod, setSortMethod] = useState('pop')
   const [pageCategories, setPageCategories] = useState(categories)
-  const [selectedCategory, setSelectedCategory] = useState('All products')
+  const [selectedCategory, setSelectedCategory] = useState('')
   const router = useRouter()
   const toast = useToast()
 
@@ -48,7 +48,7 @@ export default function Home({ products, categories, merchants }) {
   const getCategories = (products) => {
     const totalProductCategories = products.map(product => product.category.name)
     const uniqueProductCategories = [...new Set(totalProductCategories)]
-    return ['All products'].concat(uniqueProductCategories)
+    return uniqueProductCategories
   }
 
   useEffect(() => {
