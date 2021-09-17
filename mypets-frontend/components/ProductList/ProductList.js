@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import {
     SimpleGrid,
-    Heading
+    Box
 } from '@chakra-ui/react'
 
+import SectionHeader from '../SectionHeader/SectionHeader'
 import ProductListCard from '../ProductListCard/ProductListCard'
 
 function ProductList({ heading, products, spacing=4 }) {
