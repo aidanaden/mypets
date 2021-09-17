@@ -1,12 +1,10 @@
-import { 
-    Flex,
-    Box, 
-    Heading 
+import {
+    Stack,
+    Box
 } from "@chakra-ui/react"
 
 import SectionHeader from '../SectionHeader/SectionHeader'
 import ProductList from '../ProductList/ProductList'
-import CategoryList from '../CategoryList/CategoryList'
 import SortMenu from "../SortMenu/SortMenu"
 
 function ProductSectionList({ products, categories, setSortMethod, sortMethod, heading }) {
@@ -30,14 +28,6 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, h
     } else if (sortMethod == 'pop') {
         sortProductsPopularity(products)
     }
-
-    // const filterProductsByCategory = (products) => {
-    //     if (selectedCategory === 'All products') {
-    //         return products
-    //     } else {
-    //         return products.filter(product => product.category.name == selectedCategory)
-    //     }
-    // }
 
     const filterProductsByCategory = (category) => {
         return products.filter(product => product.category.name == category)
