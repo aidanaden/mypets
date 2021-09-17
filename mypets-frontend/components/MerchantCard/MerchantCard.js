@@ -20,6 +20,11 @@ function MerchantCard({ merchant }) {
                         rounded='xl'
                         height='120px'
                         width='240px'
+                        borderWidth="1px"
+                        shadow='sm'
+                        _hover={{
+                            shadow: "lg"
+                        }}
                     >
                         <NextImage
                             src={`${imageToUrl(merchant.display_image)}`}
