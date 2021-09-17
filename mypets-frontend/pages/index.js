@@ -114,8 +114,6 @@ export default function Home({ products, categories, merchants }) {
             categories={pageCategories}
             sortMethod={sortMethod}
             setSortMethod={setSortMethod}
-            selectedCategory={selectedCategory}
-            setCategorySelected={setCategorySelected}
             heading='Recommended Products'
           />
         </Stack>

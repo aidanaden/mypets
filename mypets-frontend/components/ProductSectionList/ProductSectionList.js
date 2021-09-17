@@ -9,7 +9,7 @@ import ProductList from '../ProductList/ProductList'
 import CategoryList from '../CategoryList/CategoryList'
 import SortMenu from "../SortMenu/SortMenu"
 
-function ProductSectionList({ products, categories, setSortMethod, sortMethod, selectedCategory, setCategorySelected, heading }) {
+function ProductSectionList({ products, categories, setSortMethod, sortMethod, heading }) {
 
     const sortProductsAscending = (products) => {
         products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
@@ -31,12 +31,16 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
         sortProductsPopularity(products)
     }
 
-    const filterProductsByCategory = (products) => {
-        if (selectedCategory === 'All products') {
-            return products
-        } else {
-            return products.filter(product => product.category.name == selectedCategory)
-        }
+    // const filterProductsByCategory = (products) => {
+    //     if (selectedCategory === 'All products') {
+    //         return products
+    //     } else {
+    //         return products.filter(product => product.category.name == selectedCategory)
+    //     }
+    // }
+
+    const filterProductsByCategory = (category) => {
+        return products.filter(product => product.category.name == category)
     }
 
     return (
@@ -54,10 +58,14 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                     setSortMethod={setSortMethod}
                 />
             </Box>
-            <ProductList
-                products={filterProductsByCategory(products)}
-                heading={heading}
-            />
+            {categories.map((category, i) => (
+                <ProductList
+                    key={i}
+                    products={filterProductsByCategory(category)}
+                    heading={category}
+                />
+            ))}
+            
         </Box>
     )
 }
