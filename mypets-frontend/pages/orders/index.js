@@ -55,13 +55,16 @@ const ContributionSection = () => {
                     bg='green.100'
                 >
                     <Box>
-                        <Text>
+                        <SectionHeader
+                            textColor='mypets.400'
+                        >
                             Your total contribution
-                        </Text>
+                        </SectionHeader>
                         <Text>
                             $8.00
                         </Text>
                     </Box>
+                    <Spacer />
                     <Center
                         rounded='lg'
                         p={5}
@@ -71,14 +74,19 @@ const ContributionSection = () => {
                     </Center>
                 </HStack>
                 <Stack
-                    direction='row'
+                    direction='column'
                     spacing={3}
                 >
                     <ContributionRow />
                     <ContributionRow />
                     <ContributionRow />
                 </Stack>
-                <MypetsBtn btnText='View all Contributions' mt={4} />
+                <Box
+                    textAlign='center'
+                    mt={8}
+                >
+                    <MypetsBtn btnText='View all Contributions' />
+                </Box>
             </Box>
         </Box>
     )
