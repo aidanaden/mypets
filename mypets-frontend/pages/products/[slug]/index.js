@@ -13,18 +13,20 @@ import ProductDescriptionSection from "../../../components/ProductDescriptionSec
 import ProductReviewSection from "../../../components/ProductReviewSection/ProductReviewSection"
 import ProductList from '../../../components/ProductList/ProductList'
 import { API_PRODUCTS_URL } from '../../../utils/urls'
+import PageContainer from '../../../components/PageContainer/PageContainer'
 
 export default function Product({ product, otherProducts }) {
     return (
         <>
             <AnnouncementBanner />
             <Navbar/>
-            <Container maxW="1200px">
+            <PageContainer>
                 <BackBtn />
                 <Grid 
                     templateRows="min-content" 
                     templateColumns="repeat(3, 1fr)" 
                     gap={4}
+                    mb={4}
                 >
                     <GridItem
                         colSpan={3} 
@@ -55,7 +57,7 @@ export default function Product({ product, otherProducts }) {
                     heading='Suggested products'
                     products={otherProducts}
                 />
-            </Container>
+            </PageContainer>
         </>
     )
 }
@@ -65,13 +67,12 @@ export async function getStaticProps({ params: { slug } }) {
     const product = await product_res.json()
     const category_res = await fetch(`${API_PRODUCTS_URL}?category=${product[0].category.id}`)
     const categoryProducts = await category_res.json()
-    console.log('other products: ', categoryProducts)
 
     // Return as props
     return {
         props: {
             product: product[0],
-            otherProducts: categoryProducts
+            otherProducts: categoryProducts.filter(otherProduct => otherProduct.id != product[0].id)
         }
     }
 }

@@ -117,9 +117,8 @@ function ProductDetailSection({ product }) {
                 </Heading>
                 <Stack
                     direction='column'
-                    spacing={3}
+                    spacing={1}
                     mt={3}
-                    bg='red.100'
                 >
                     <HStack spacing={3}>
                         <ProductDetailBadge>
