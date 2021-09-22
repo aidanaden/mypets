@@ -14,7 +14,7 @@ import ProductQuantityPicker from "../ProductQuantityPicker/ProductQuantityPicke
 import { FaCartPlus } from 'react-icons/fa'
 import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import ProductDetailVariantSelect from '../ProductDetailVariantSelect/ProductDetailVariantSelect'
-import ProductDetailMerchantBadge from '../ProductDetailBadge/ProductDetailBadge'
+import ProductDetailBadge from '../ProductDetailBadge/ProductDetailBadge'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import { imageToUrl } from '../../utils/urls'
 import AuthContext from '../../context/AuthContext'
