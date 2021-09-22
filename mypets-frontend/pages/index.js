@@ -139,6 +139,8 @@ export async function getStaticProps() {
 
   const categories = getCategories(products)
 
+  console.log(categories)
+
   // Return as props
   return {
     props: {
