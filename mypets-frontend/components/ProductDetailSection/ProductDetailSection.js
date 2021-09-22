@@ -21,6 +21,8 @@ import AuthContext from '../../context/AuthContext'
 
 function ProductDetailSection({ product }) {
 
+    console.log(product)
+
     const toast = useToast()
 
     const [variant, setVariant] = useState({})
