@@ -6,7 +6,8 @@ import {
 import {
     Stack,
     HStack,
-    Container,
+    Text,
+    Spacer,
     Center,
     Box
 } from '@chakra-ui/react'
