@@ -92,80 +92,78 @@ function ProductDetailSection({ product }) {
     }, [])
 
     return (
-        <>
-            <Stack direction={{ base: 'column', md: 'row' }} justifyContent="space-evenly" p={4}>
-                <Center boxSize={{ base: '100%', md: '500px' }}>
-                    <NextImage 
-                        src={imageToUrl(product.image)} 
-                        width='500' 
-                        height='500' 
-                        priority={true}
-                    />
-                </Center>
-                <Flex 
-                    direction="column"
-                    w={{ base: '100%', md: 'auto', lg: '400px' }} 
-                    h={{ base: "100%", md: '500px' }} 
-                    px={2}
-                    pt={{ base: 8, md: 12 }}
-                    pb={{ base: 2, md: 16 }}
+        <Stack direction={{ base: 'column', md: 'row' }} justifyContent="space-evenly" p={4}>
+            <Center boxSize={{ base: '100%', md: '500px' }}>
+                <NextImage
+                    src={imageToUrl(product.image)}
+                    width='500'
+                    height='500'
+                    priority={true}
+                />
+            </Center>
+            <Flex
+                direction="column"
+                w={{ base: '100%', md: 'auto', lg: '400px' }}
+                h={{ base: "100%", md: '500px' }}
+                px={2}
+                pt={{ base: 8, md: 12 }}
+                pb={{ base: 2, md: 16 }}
+            >
+                <Heading
+                    as="h2"
+                    fontSize="4xl"
                 >
-                    <Heading
-                        as="h2"
-                        fontSize="4xl"
-                    >
-                        {product.name}
-                    </Heading>
-                    <Stack
-                        direction='column'
-                        spacing={3}
-                        mt={3}
-                    >
-                        <HStack spacing={3}>
-                            <ProductDetailBadge>
-                                {product.merchant.name}
-                            </ProductDetailBadge>
-                            <RatingDisplay
-                                rating={product.rating}
-                                numReviews={product.reviews.length}
-                            />
-                        </HStack>
-                        <HStack spacing={3}>
-                            <ProductDetailBadge>
-                                {product.category.name}
-                            </ProductDetailBadge>
-                            <ProductDetailBadge>
-                                {product.animal.name}
-                            </ProductDetailBadge>
-                        </HStack>
-                    </Stack>
-                    
-                    <ProductDetailVariantSelect 
-                        variantWeight={variant.weight} 
-                        options={product.variants} 
-                        onChange={variantSelectOnChange}
-                    />
-                    <HStack 
-                        mt={{ base: 4, md: 8 }} 
-                        mb={{ base: 6, md: 0 }} 
-                        justifyContent="space-between"
-                    >
-                        <Text fontSize={{ base: '3xl', md: "4xl" }} mr={4}>
-                            SG${price.toFixed(2)}
-                        </Text>
-                        <ProductQuantityPicker addQuantity={addQuantity} minusQuantity={minusQuantity} quantity={quantity} />
+                    {product.name}
+                </Heading>
+                <Stack
+                    direction='column'
+                    spacing={3}
+                    mt={3}
+                    bg='red.100'
+                >
+                    <HStack spacing={3}>
+                        <ProductDetailBadge>
+                            {product.merchant.name}
+                        </ProductDetailBadge>
+                        <RatingDisplay
+                            rating={product.rating}
+                            numReviews={product.reviews.length}
+                        />
                     </HStack>
-                    <MypetsBtn 
-                        onClick={handleAddToCart}
-                        btnText='Add to cart' 
-                        leftIcon={<FaCartPlus />} 
-                        w='100%' 
-                        mx={0} 
-                        mt="auto"
-                    />
-                </Flex>
-            </Stack>
-        </>
+                    <HStack spacing={3}>
+                        <ProductDetailBadge>
+                            {product.category.name}
+                        </ProductDetailBadge>
+                        <ProductDetailBadge>
+                            {product.animal.name}
+                        </ProductDetailBadge>
+                    </HStack>
+                </Stack>
+                <ProductDetailVariantSelect
+                    variantWeight={variant.weight}
+                    options={product.variants}
+                    onChange={variantSelectOnChange}
+                />
+                <HStack
+                    mt={{ base: 4, md: 8 }}
+                    mb={{ base: 6, md: 0 }}
+                    justifyContent="space-between"
+                >
+                    <Text fontSize={{ base: '3xl', md: "4xl" }} mr={4}>
+                        SG${price.toFixed(2)}
+                    </Text>
+                    <ProductQuantityPicker addQuantity={addQuantity} minusQuantity={minusQuantity} quantity={quantity} />
+                </HStack>
+                <MypetsBtn
+                    onClick={handleAddToCart}
+                    btnText='Add to cart'
+                    leftIcon={<FaCartPlus />}
+                    w='100%'
+                    mx={0}
+                    mt="auto"
+                />
+            </Flex>
+        </Stack>
     )
 }
 

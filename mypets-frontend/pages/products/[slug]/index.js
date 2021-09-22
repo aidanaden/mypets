@@ -11,9 +11,10 @@ import BackBtn from '../../../components/BackBtn/BackBtn'
 import ProductDetailSection from "../../../components/ProductDetailSection/ProductDetailSection"
 import ProductDescriptionSection from "../../../components/ProductDescriptionSection/ProductDescriptionSection"
 import ProductReviewSection from "../../../components/ProductReviewSection/ProductReviewSection"
+import ProductList from '../../../components/ProductList/ProductList'
 import { API_PRODUCTS_URL } from '../../../utils/urls'
 
-function Product({ product }) {
+export default function Product({ product, otherProducts }) {
     return (
         <>
             <AnnouncementBanner />
@@ -50,23 +51,30 @@ function Product({ product }) {
                         <ProductReviewSection reviews={product.reviews}/>
                     </GridItem>
                 </Grid>
+                <ProductList
+                    heading='Suggested products'
+                    products={otherProducts}
+                />
             </Container>
         </>
     )
 }
 
-export default Product
-
-export async function getStaticProps({ params: { slug } }) {
+export async function getStaticProps({ params: { slug, otherProducts } }) {
     const product_res = await fetch(`${API_PRODUCTS_URL}?slug=${slug}`)
     const product = await product_res.json()
 
     // Return as props
     return {
         props: {
-            product: product[0]
+            product: product[0],
+            otherProducts: otherProducts.filter(otherProduct => otherProduct !== product[0])
         }
     }
+}
+
+function getSuggestedProducts(productCategory, otherProducts) {
+    return otherProducts.filter(otherProduct => otherProduct.category.name == productCategory)
 }
 
 export async function getStaticPaths() {
@@ -77,7 +85,10 @@ export async function getStaticPaths() {
     // return to NextJS context
     return {
         paths: products.map(product => ({
-            params: { slug: String(product.slug) }
+            params: { 
+                slug: String(product.slug),
+                otherProducts: getSuggestedProducts(product.category.name, products)
+            }
         })),
 
         // tells nextjs to show 404 if param not matched
