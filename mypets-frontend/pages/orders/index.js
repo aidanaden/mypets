@@ -28,9 +28,19 @@ const ContributionRow = ({ order }) => {
             borderBottomColor='gray.400'
             bg='blue.100'
         >
-            <Box>
-                {order.order_id}
-            </Box>
+            <Stack
+                direction='column'
+                spacing={2}
+            >
+                <Text
+                    textColor='mypets.400'
+                >
+                    {order.order_id}
+                </Text>
+                <Text>
+                    {order.order_date}
+                </Text>
+            </Stack>
             <Spacer />
             <Text>
                 {order.contribution_amount}
@@ -68,13 +78,20 @@ const ContributionSection = ({ orders }) => {
                     <Center
                         rounded='lg'
                         p={5}
-                        bg='gray.400'
+                        bg='gray.200'
+                        noOfLines='2'
                     >
                         With every purchase, Mypets will make a donation of 5% to local pet communities.
                     </Center>
                 </HStack>
-                <Stack
+                <Text
                     mt={4}
+                    fontSize={{ base: 'md', md: 'lg'}}
+                >
+                    Recent Contributions
+                </Text>
+                <Stack
+                    mt={2}
                     direction='column'
                     spacing={1}
                 >

@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react"
 
 function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) {
-
     const productTotalQuantity = (order_products) => {
         let totalQuantity = 0
         order_products.map((order_product) => {
