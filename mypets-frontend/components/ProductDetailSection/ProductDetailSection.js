@@ -14,7 +14,7 @@ import ProductQuantityPicker from "../ProductQuantityPicker/ProductQuantityPicke
 import { FaCartPlus } from 'react-icons/fa'
 import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import ProductDetailVariantSelect from '../ProductDetailVariantSelect/ProductDetailVariantSelect'
-import ProductDetailMerchantBadge from '../ProductDetailMerchantBage/ProductDetailMerchantBadge'
+import ProductDetailMerchantBadge from '../ProductDetailBadge/ProductDetailBadge'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import { imageToUrl } from '../../utils/urls'
 import AuthContext from '../../context/AuthContext'
@@ -108,13 +108,36 @@ function ProductDetailSection({ product }) {
                     pt={{ base: 8, md: 12 }}
                     pb={{ base: 2, md: 16 }}
                 >
-                    <Heading as="h2" fontSize="4xl">
+                    <Heading
+                        as="h2"
+                        fontSize="4xl"
+                    >
                         {product.name}
-                    </Heading>  
-                    <HStack spacing={3} mt={2}>
-                        <ProductDetailMerchantBadge merchant={product.merchant.name}/>
-                        <RatingDisplay rating={product.rating} numReviews={product.reviews.length}/>
-                    </HStack>
+                    </Heading>
+                    <Stack
+                        direction='column'
+                        spacing={3}
+                        mt={3}
+                    >
+                        <HStack spacing={3}>
+                            <ProductDetailBadge>
+                                {product.merchant.name}
+                            </ProductDetailBadge>
+                            <RatingDisplay
+                                rating={product.rating}
+                                numReviews={product.reviews.length}
+                            />
+                        </HStack>
+                        <HStack spacing={3}>
+                            <ProductDetailBadge>
+                                {product.category.name}
+                            </ProductDetailBadge>
+                            <ProductDetailBadge>
+                                {product.animal.name}
+                            </ProductDetailBadge>
+                        </HStack>
+                    </Stack>
+                    
                     <ProductDetailVariantSelect 
                         variantWeight={variant.weight} 
                         options={product.variants} 
