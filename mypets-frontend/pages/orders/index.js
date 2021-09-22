@@ -20,6 +20,7 @@ import OrderCard from '../../components/OrderCard/OrderCard'
 import AuthContext, { callAPI } from '../../context/AuthContext'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import MypetsBtn from '../../components/MypetsBtn/MypetsBtn'
+import { stringToDate } from '../../utils/urls'
 
 const ContributionRow = ({ order }) => {
     return (
@@ -38,7 +39,7 @@ const ContributionRow = ({ order }) => {
                     {order.order_id}
                 </Text>
                 <Text>
-                    {order.order_date}
+                    {stringToDate(order.order_date)}
                 </Text>
             </Stack>
             <Spacer />
@@ -50,6 +51,9 @@ const ContributionRow = ({ order }) => {
 }
 
 const ContributionSection = ({ orders }) => {
+    var totalContribution = 0
+    orders.map((order) => totalContribution += order.contribution_amount)
+
     return (
         <Box>
             <SectionHeader>
@@ -70,8 +74,11 @@ const ContributionSection = ({ orders }) => {
                         >
                             Your total contribution
                         </SectionHeader>
-                        <Text>
-                            $8.00
+                        <Text
+                            fontSize='lg'
+                            textColor='mypets.400'
+                        >
+                            ${totalContribution}
                         </Text>
                     </Box>
                     <Spacer />
@@ -79,19 +86,19 @@ const ContributionSection = ({ orders }) => {
                         rounded='lg'
                         p={5}
                         bg='gray.200'
-                        noOfLines='2'
+                        noOfLines={2}
                     >
                         With every purchase, Mypets will make a donation of 5% to local pet communities.
                     </Center>
                 </HStack>
                 <Text
                     mt={4}
-                    fontSize={{ base: 'md', md: 'lg'}}
+                    fontSize={{ base: 'lg', md: 'xl'}}
                 >
                     Recent Contributions
                 </Text>
                 <Stack
-                    mt={2}
+                    mt={4}
                     direction='column'
                     spacing={1}
                 >

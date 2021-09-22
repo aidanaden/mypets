@@ -6,7 +6,6 @@ import {
 import { stringToDate } from '../../utils/urls'
 
 function OrderDeliveryStatusBar({ orderId, orderDate, deliveryDate, status }) {
-
     return (
         <Box>
             <Text fontSize='sm' mb={6}>Order ID: <b>{orderId}</b></Text> 
