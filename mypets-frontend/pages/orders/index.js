@@ -26,6 +26,7 @@ const ContributionRow = () => {
         <HStack
             borderBottomWidth='1px'
             borderBottomColor='gray.400'
+            bg='blue.100'
         >
             <Box>
                 Order #1q2313312
@@ -50,7 +51,9 @@ const ContributionSection = () => {
                 boxShadow='sm' 
                 borderWidth='1px' 
             >
-                <HStack>
+                <HStack
+                    bg='green.100'
+                >
                     <Box>
                         <Text>
                             Your total contribution
@@ -59,20 +62,23 @@ const ContributionSection = () => {
                             $8.00
                         </Text>
                     </Box>
-                    <Box
+                    <Center
                         rounded='lg'
                         p={5}
+                        bg='gray.400'
                     >
                         With every purchase, Mypets will make a donation of 5% to local pet communities.
-                    </Box>
+                    </Center>
                 </HStack>
                 <Stack
                     direction='row'
                     spacing={3}
                 >
                     <ContributionRow />
+                    <ContributionRow />
+                    <ContributionRow />
                 </Stack>
-                <MypetsBtn btnText='View all Contributions' />
+                <MypetsBtn btnText='View all Contributions' mt={4} />
             </Box>
         </Box>
     )
