@@ -36,6 +36,29 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
         return totalPrice
     }
 
+    const BreakdownRow = ({ text, value }) => {
+        return (
+            <Stack direction='row'>
+                <Box
+                    as='h4'
+                    fontFamily='heading'
+                    fontWeight='medium'
+                    textColor='gray.600'
+                    fontSize='sm'
+                >
+                    {text}
+                </Box>
+                <Spacer />
+                <Box
+                    fontWeight='bold'
+                    textAlign='right'
+                >
+                    {value}
+                </Box>
+            </Stack>
+        )
+    }
+
     return (
         <>
             <Table variant="unstyled" size={{ base: 'sm', md: 'md', lg: 'md' }}>
@@ -57,52 +80,27 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                 </Tbody>
             </Table>
             <Box mt={4}>
-                <Stack direction='row'>
-                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600' fontSize='sm'>
-                        Subtotal
-                    </Box>
-                    <Spacer />
-                    <Box fontWeight='bold' textAlign='right'>
-                        {order.total_price.toFixed(2)}
-                    </Box>
-                </Stack>
-                { order.discount_value > 0 && 
-                (<Stack direction='row'>
-                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600' fontSize='sm'>
-                        Discount
-                    </Box>
-                    <Spacer />
-                    <Box fontWeight='bold' textAlign='right'>
-                        -{order.discount_value.toFixed(2)}
-                    </Box>
-                </Stack>)}
-                <Stack direction='row'>
-                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600' fontSize='sm'> 
-                        Delivery
-                    </Box>
-                    <Spacer />
-                    <Box fontWeight='bold' textAlign='right'>
-                        {order.shipping_fee.toFixed(2)}
-                    </Box>
-                </Stack>
-                <Stack direction='row'>
-                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600' fontSize='sm'> 
-                        Service fee
-                    </Box>
-                    <Spacer />
-                    <Box fontWeight='bold' textAlign='right'>
-                        {order.tax_fee.toFixed(2)}
-                    </Box>
-                </Stack>
-                <Stack direction='row'>
-                    <Box as='h4' fontFamily='heading' fontWeight='medium' textColor='gray.600' fontSize='sm'> 
-                        Your contribution
-                    </Box>
-                    <Spacer />
-                    <Box fontWeight='bold' textAlign='right'>
-                        {order.contribution_amount.toFixed(2)}
-                    </Box>
-                </Stack>
+                <BreakdownRow
+                    text='Subtotal'
+                    value={order.total_price.toFixed(2)}
+                />
+                {order.discount_value > 0 && 
+                (<BreakdownRow
+                    text='Discount'
+                    value={-order.discount_value.toFixed(2)}
+                />)}
+                <BreakdownRow
+                    text='Delivery'
+                    value={order.shipping_fee.toFixed(2)}
+                />
+                <BreakdownRow
+                    text='Service fee'
+                    value={order.tax_fee.toFixed(2)}
+                />
+                <BreakdownRow
+                    text='Your contribution'
+                    value={order.contribution_amount.toFixed(2)}
+                />
                 <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={2}>
                     SG${order.final_price.toFixed(2)}
                 </Box>
