@@ -27,13 +27,13 @@ const ContributionRow = ({ order }) => {
         <HStack
             borderBottomWidth='1px'
             borderBottomColor='gray.400'
-            bg='blue.100'
         >
             <Stack
                 direction='column'
-                spacing={2}
+                spacing={1}
             >
                 <Text
+                    fontSize='lg'
                     textColor='mypets.400'
                 >
                     {order.order_id}
@@ -65,9 +65,7 @@ const ContributionSection = ({ orders }) => {
                 boxShadow='sm' 
                 borderWidth='1px' 
             >
-                <HStack
-                    bg='green.100'
-                >
+                <HStack>
                     <Box>
                         <SectionHeader
                             textColor='mypets.400'
