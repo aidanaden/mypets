@@ -15,10 +15,6 @@ import {
 } from "@chakra-ui/react"
 
 function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) {
-    // const totalPrice = order.total_price
-    // const shippingPrice = order.shipping_fee
-    // const discountValue = order.discount_value
-    // const finalPrice = order.final_price
 
     const productTotalQuantity = (order_products) => {
         let totalQuantity = 0
@@ -61,12 +57,19 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
 
     return (
         <>
-            <Table variant="unstyled" size={{ base: 'sm', md: 'md', lg: 'md' }}>
+            <Table
+                variant="unstyled"
+                size={{ base: 'sm', md: 'md', lg: 'md' }}
+            >
                 <Thead textColor='gray.600'>
                     <Tr fontSize='xs'>
                         <Th>Product</Th>
-                        <Th textAlign='right'>Qty</Th>
-                        <Th textAlign='right'>Price</Th>
+                        <Th textAlign='right'>
+                            Qty
+                        </Th>
+                        <Th textAlign='right'>
+                            Price
+                        </Th>
                     </Tr>
                 </Thead>
                 <Tbody>
