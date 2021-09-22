@@ -11,6 +11,7 @@ import {
 
 import AnnouncementBanner from '../../components/AnnouncementBanner/AnnouncementBanner'
 import Navbar from '../../components/Navbar/Navbar'
+import PageContainer from '../../components/PageContainer/PageContainer'
 import BackBtn from '../../components/BackBtn/BackBtn'
 import OrderCard from '../../components/OrderCard/OrderCard'
 import AuthContext, { callAPI } from '../../context/AuthContext'
@@ -41,17 +42,15 @@ function Orders() {
         <>
             <AnnouncementBanner />
             <Navbar />
-            <Container maxW='1200px' minH='70vh'>
+            <PageContainer>
                 <BackBtn variant='home'/>
                 {orders.length > 0 ? orders.map((order, i) => (
                     <OrderCard key={i} order={order} loading={loading}/>
                 )) : 
                 <Center h='70vh'>
                     No orders available 😢
-                </Center>
-                
-                }
-            </Container>
+                </Center>}
+            </PageContainer>
         </>
     )
 }
