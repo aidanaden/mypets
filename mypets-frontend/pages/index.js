@@ -25,7 +25,6 @@ import { API_PRODUCTS_URL, API_MERCHANTS_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 
 export default function Home({ products, categories, merchants }) {
-
   const [pageProducts, setPageProducts] = useState(products)
   const [sortMethod, setSortMethod] = useState('pop')
   const [pageCategories, setPageCategories] = useState(categories)
@@ -138,8 +137,6 @@ export async function getStaticProps() {
   }
 
   const categories = getCategories(products)
-
-  console.log(categories)
 
   // Return as props
   return {

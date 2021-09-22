@@ -81,13 +81,14 @@ export async function getStaticPaths() {
     // retrieve all possible paths
     const product_res = await fetch(`${API_PRODUCTS_URL}`)
     const products = await product_res.json()
-
+    const suggestedProducts = getSuggestedProducts(product.category.name, products)
+    console.log(suggestedProducts)
     // return to NextJS context
     return {
         paths: products.map(product => ({
             params: { 
                 slug: String(product.slug),
-                otherProducts: getSuggestedProducts(product.category.name, products)
+                otherProducts: suggestedProducts
             }
         })),
 
