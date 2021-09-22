@@ -46,7 +46,7 @@ const ContributionRow = ({ order }) => {
             <Spacer />
             <Text
                 as='h5'
-                fontSize='xl'
+                fontSize='2xl'
             >
                 ${order.contribution_amount}
             </Text>
@@ -86,7 +86,7 @@ const ContributionSection = ({ orders }) => {
                     <Spacer />
                     <Center
                         rounded='lg'
-                        p={5}
+                        p={{ base: 5 }}
                         bg='gray.200'
                         noOfLines={2}
                     >
@@ -94,16 +94,16 @@ const ContributionSection = ({ orders }) => {
                     </Center>
                 </HStack>
                 <Text
-                    mt={8}
+                    mt={{ base: 8 }}
                     as='h5'
-                    fontSize={{ base: 'lg', md: 'xl'}}
+                    fontSize={{ base: 'lg', md: 'xl' }}
                 >
                     Recent Contributions
                 </Text>
                 <Stack
-                    mt={4}
+                    mt={{ base: 2 }}
                     direction='column'
-                    spacing={1}
+                    spacing={{ base: 1 }}
                 >
                     {orders.map((order, i) => (
                         <ContributionRow
@@ -114,7 +114,7 @@ const ContributionSection = ({ orders }) => {
                 </Stack>
                 <Box
                     textAlign='center'
-                    mt={8}
+                    mt={{ base: 8 }}
                 >
                     <MypetsBtn btnText='View all Contributions' />
                 </Box>
