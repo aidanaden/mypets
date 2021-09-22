@@ -21,7 +21,7 @@ import AuthContext, { callAPI } from '../../context/AuthContext'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import MypetsBtn from '../../components/MypetsBtn/MypetsBtn'
 
-const ContributionRow = () => {
+const ContributionRow = ({ order }) => {
     return (
         <HStack
             borderBottomWidth='1px'
@@ -29,24 +29,24 @@ const ContributionRow = () => {
             bg='blue.100'
         >
             <Box>
-                Order #1q2313312
+                {order.order_id}
             </Box>
             <Spacer />
             <Text>
-                $2.70
+                {order.contribution_amount}
             </Text>
         </HStack>
     )
 }
 
-const ContributionSection = () => {
+const ContributionSection = ({ orders }) => {
     return (
         <Box>
             <SectionHeader>
                 Contribution History
             </SectionHeader>
             <Box
-                p={4}
+                p={{ base: 4, md: 8, xl: 12 }}
                 rounded='lg' 
                 boxShadow='sm' 
                 borderWidth='1px' 
@@ -74,12 +74,16 @@ const ContributionSection = () => {
                     </Center>
                 </HStack>
                 <Stack
+                    mt={4}
                     direction='column'
-                    spacing={3}
+                    spacing={1}
                 >
-                    <ContributionRow />
-                    <ContributionRow />
-                    <ContributionRow />
+                    {orders.map((order, i) => (
+                        <ContributionRow
+                            key={i}
+                            order={order}
+                        />
+                    ))}
                 </Stack>
                 <Box
                     textAlign='center'
@@ -121,7 +125,7 @@ export default function Orders() {
             <PageContainer>
                 <BackBtn variant='home'/>
                 {orders.length > 0 && (
-                    <ContributionSection />
+                    <ContributionSection orders={orders}/>
                 )}
                 {orders.length > 0 ? orders.map((order, i) => (
                     <OrderCard key={i} order={order} loading={loading}/>
