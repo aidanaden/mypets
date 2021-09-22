@@ -74,8 +74,10 @@ export async function getStaticProps({ params: { slug, otherProducts } }) {
     }
 }
 
-function getSuggestedProducts(productCategory, otherProducts) {
-    return otherProducts.filter(otherProduct => otherProduct.category.name == productCategory)
+function getSuggestedProducts(product, otherProducts) {
+    console.log('page product: ', product)
+    console.log('other products: ', otherProducts)
+    return otherProducts.filter(otherProduct => otherProduct.category.name == product.category.name)
 }
 
 export async function getStaticPaths() {
@@ -87,7 +89,7 @@ export async function getStaticPaths() {
         paths: products.map(product => ({
             params: { 
                 slug: String(product.slug),
-                otherProducts: getSuggestedProducts(product.category.name, products)
+                otherProducts: getSuggestedProducts(product, products)
             }
         })),
 
