@@ -26,7 +26,8 @@ const ContributionRow = ({ order }) => {
     return (
         <HStack
             borderBottomWidth='1px'
-            borderBottomColor='gray.400'
+            borderBottomColor='gray.200'
+            py={{ base: 2 }}
         >
             <Stack
                 direction='column'
@@ -43,8 +44,11 @@ const ContributionRow = ({ order }) => {
                 </Text>
             </Stack>
             <Spacer />
-            <Text>
-                {order.contribution_amount}
+            <Text
+                as='h5'
+                fontSize='xl'
+            >
+                ${order.contribution_amount}
             </Text>
         </HStack>
     )
@@ -90,7 +94,8 @@ const ContributionSection = ({ orders }) => {
                     </Center>
                 </HStack>
                 <Text
-                    mt={4}
+                    mt={8}
+                    as='h5'
                     fontSize={{ base: 'lg', md: 'xl'}}
                 >
                     Recent Contributions
