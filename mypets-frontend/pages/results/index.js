@@ -105,13 +105,13 @@ export default function index({ products, animals, merchants }) {
             <AnnouncementBanner />
             <Sidebar />
             <PageContainer>
-                {/* <Stack direction='row'>
+                <Stack direction='row'>
                     <MerchantChecklist
                         pageMerchants={pageMerchants}
                         selectedMerchants={selectedMerchants}
                         setPageMerchants={setSelectedMerchants}
                     />
-                    <Box>
+                    {/* <Box>
                         <Stack
                             direction='row'
                         >
@@ -135,8 +135,8 @@ export default function index({ products, animals, merchants }) {
                             products={pageProducts}
                             sortMethod={sortMethod}
                         />
-                    </Box>
-                </Stack> */}
+                    </Box> */}
+                </Stack>
             </PageContainer>
             <Footer />
         </Box>
