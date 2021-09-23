@@ -61,6 +61,7 @@ const ContributionSection = ({ orders }) => {
     return (
         <Box
             mb={{ base: 8 }}
+            bg='green.100'
         >
             <SectionHeader>
                 Contribution History
@@ -125,7 +126,9 @@ const ContributionSection = ({ orders }) => {
 
 const OrderSection = ({ orders }) => {
     return (
-        <Box>
+        <Box
+            bg='blue.100'
+        >
             <SectionHeader>
                 Order History
             </SectionHeader>
