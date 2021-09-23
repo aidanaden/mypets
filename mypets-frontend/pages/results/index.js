@@ -125,7 +125,6 @@ export default function index({ products, animals, merchants }) {
             <PageContainer>
                 <Stack
                     direction='row'
-                    bg='purple.100'
                     spacing={{ base: 4 }}
                 >
                     <MerchantChecklist
@@ -133,7 +132,11 @@ export default function index({ products, animals, merchants }) {
                         selectedMerchants={selectedMerchants}
                         setPageMerchants={setSelectedMerchants}
                     />
-                    <Box w='100%'>
+                    <Stack
+                        direction='column'
+                        w='100%'
+                        spacing={{ base: 8 }}
+                    >
                         <Stack
                             direction='row'
                             w='100%'
