@@ -175,6 +175,7 @@ export default function Orders() {
             <Navbar />
             <PageContainer
                 bg='red.100'
+                px={0}
             >
                 <BackBtn variant='home'/>
                 {orders.length > 0 && (

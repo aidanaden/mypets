@@ -161,6 +161,7 @@ export default function Sidebar() {
         <Box
             zIndex='banner'
             position='sticky'
+            bg='blue.100'
         >
             <Drawer
                 isOpen={sidebar.isOpen}
@@ -184,6 +185,7 @@ export default function Sidebar() {
                 align='center'
                 justifyContent='center'
                 transition=".3s ease"
+                bg='blue.100'
             >
                 <Stack
                     direction='row'
