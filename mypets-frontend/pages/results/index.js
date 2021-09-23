@@ -130,7 +130,7 @@ export default function index({ products, animals, merchants }) {
                         selectedMerchants={selectedMerchants}
                         setPageMerchants={setSelectedMerchants}
                     />
-                    <Box>
+                    <Box w='100%'>
                         <Stack
                             direction='row'
                             w='100%'
