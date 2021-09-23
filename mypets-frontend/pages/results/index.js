@@ -21,13 +21,13 @@ import MerchantSectionList from '../../components/MerchantSectionList/MerchantSe
 import ProductList from '../../components/ProductList/ProductList'
 import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL } from '../../utils/urls'
 
-const MerchantCheck = ({ children, ...props }) => {
+const MerchantCheck = ({ text, ...props }) => {
     return (
         <Checkbox
             colorScheme='mypets'
             {...props}
         >
-            {children}
+            {text}
         </Checkbox>
     )
 }
@@ -59,11 +59,10 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                 {pageMerchants.length > 0 && pageMerchants.map((merchant,i) => (
                     <MerchantCheck
                         key={i}
+                        text={merchant}
                         isChecked={selectedMerchants.includes(merchant)}
                         onChange={(e) => merchantChangeOnCheck(e.target.checked, merchant)}
-                    >
-                        {merchant}
-                    </MerchantCheck>
+                    />
                 ))}
             </Stack>
         </Stack>
