@@ -23,12 +23,15 @@ import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL } from '../../util
 
 const MerchantCheck = ({ children, ...props }) => {
     return (
-        <Checkbox
-            colorScheme='mypets'
-            {...props}
-        >
+        // <Checkbox
+        //     colorScheme='mypets'
+        //     {...props}
+        // >
+        //     {children}
+        // </Checkbox>
+        <Box>
             {children}
-        </Checkbox>
+        </Box>
     )
 }
 
@@ -54,6 +57,11 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                 spacing={{ base: 1 }}
             >
                 {pageMerchants.map((merchant) => (
+                    <Box key={i}>
+                        {merchant}
+                    </Box>
+                ))}
+                {/* {pageMerchants.map((merchant) => (
                     <MerchantCheck
                         key={merchant}
                         isChecked={selectedMerchants.includes(merchant)}
@@ -61,7 +69,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                     >
                         {merchant}
                     </MerchantCheck>
-                ))}
+                ))} */}
             </Stack>
         </Box>
         
