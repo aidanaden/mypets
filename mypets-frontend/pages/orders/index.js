@@ -105,12 +105,21 @@ const ContributionSection = ({ orders }) => {
                     direction='column'
                     spacing={{ base: 1 }}
                 >
-                    {orders.map((order, i) => (
+                    {/* {orders.map((order, i) => (
                         <ContributionRow
                             key={i}
                             order={order}
                         />
-                    ))}
+                    ))} */}
+                    <ContributionRow
+                        order={order}
+                    />
+                    <ContributionRow
+                        order={order}
+                    />
+                    <ContributionRow
+                        order={order}
+                    />
                 </Stack>
                 <Box
                     textAlign='center'
