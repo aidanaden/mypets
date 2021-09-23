@@ -59,7 +59,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                 {pageMerchants.length > 0 && pageMerchants.map((merchant,i) => (
                     <MerchantCheck
                         key={i}
-                        text={merchant.name}
+                        text={merchant}
                         isChecked={selectedMerchants.includes(merchant)}
                         onChange={(e) => merchantChangeOnCheck(e.target.checked, merchant)}
                     />
@@ -163,6 +163,7 @@ export async function getStaticProps() {
 
     const merchant_res = await fetch(`${API_MERCHANTS_URL}`)
     const merchants = await merchant_res.json()
+    const merchantNames = merchants.map(merchant => merchant.name)
 
     const animal_res = await fetch(`${API_ANIMALS_URL}`)
     const animalsJson = await animal_res.json()
@@ -184,7 +185,7 @@ export async function getStaticProps() {
         props: {
             products,
             animals,
-            merchants
+            merchantNames
         }
     }
 }
