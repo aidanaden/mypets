@@ -56,7 +56,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                 direction='column'
                 spacing={{ base: 1 }}
             >
-                {pageMerchants && pageMerchants.map((merchant,i) => (
+                {pageMerchants.length > 0 && pageMerchants.map((merchant,i) => (
                     <MerchantCheck
                         key={i}
                         isChecked={selectedMerchants.includes(merchant)}
