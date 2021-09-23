@@ -36,9 +36,9 @@ const SubtotalRow = ({ text, value }) => {
 
 export default function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
 
-    const gstPrice = (totalPrice * 0.07).toFixed(2)
+    const gstPrice = (totalPrice * 0.07)
     const deliveryFee = 3.00
-    const finalPrice = totalPrice + gstPrice + deliveryFee
+    const finalPrice = 1.00 * (totalPrice + gstPrice + deliveryFee)
 
     const productTotalQuantity = (order_products) => {
         let totalQuantity = 0
