@@ -191,6 +191,7 @@ export default function Sidebar() {
                     justifyContent='space-between'
                     maxW={{ lg: '1200px' }}
                     w='100%'
+                    bg='blue.100'
                 >
                     <Box
                         flex={{ base: 1, lg: 'auto' }}
