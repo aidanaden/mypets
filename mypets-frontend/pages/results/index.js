@@ -21,50 +21,50 @@ import MerchantSectionList from '../../components/MerchantSectionList/MerchantSe
 import ProductList from '../../components/ProductList/ProductList'
 import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL } from '../../utils/urls'
 
-// const MerchantCheck = ({ children, ...props }) => {
-//     return (
-//         <Checkbox
-//             colorScheme='mypets'
-//             {...props}
-//             isChecked
-//         >
-//             {children}
-//         </Checkbox>
-//     )
-// }
+const MerchantCheck = ({ children, ...props }) => {
+    return (
+        <Checkbox
+            colorScheme='mypets'
+            {...props}
+            isChecked
+        >
+            {children}
+        </Checkbox>
+    )
+}
 
-// const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMerchants }) => {
-//     const merchantChangeOnCheck = (checked, merchant) => {
-//         if (checked) {
-//             setSelectedMerchants([...selectedMerchants, merchant])
-//         } else {
-//             setSelectedMerchants(selectedMerchants.filter(selectedMerchant => selectedMerchant != merchant))
-//         }
-//     }
+const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMerchants }) => {
+    const merchantChangeOnCheck = (checked, merchant) => {
+        if (checked) {
+            setSelectedMerchants([...selectedMerchants, merchant])
+        } else {
+            setSelectedMerchants(selectedMerchants.filter(selectedMerchant => selectedMerchant != merchant))
+        }
+    }
 
-//     return (
-//         <Box>
-//             <Text>
-//                 Brand
-//             </Text>
-//             <Stack
-//                 direction='column'
-//                 spacing={{ base: 1 }}
-//             >
-//                 {pageMerchants.map((merchant) => (
-//                     <MerchantCheck
-//                         key={merchant}
-//                         isChecked={selectedMerchants.includes(merchant)}
-//                         onChange={(e) => merchantChangeOnCheck(e.target.checked, merchant)}
-//                     >
-//                         {merchant}
-//                     </MerchantCheck>
-//                 ))}
-//             </Stack>
-//         </Box>
+    return (
+        <Box>
+            <Text>
+                Brand
+            </Text>
+            {/* <Stack
+                direction='column'
+                spacing={{ base: 1 }}
+            >
+                {pageMerchants.map((merchant) => (
+                    <MerchantCheck
+                        key={merchant}
+                        isChecked={selectedMerchants.includes(merchant)}
+                        onChange={(e) => merchantChangeOnCheck(e.target.checked, merchant)}
+                    >
+                        {merchant}
+                    </MerchantCheck>
+                ))}
+            </Stack> */}
+        </Box>
         
-//     )
-// }
+    )
+}
 
 const getMerchants = (products) => {
     const totalProductMerchants = products.map(product => product.merchant.name)
