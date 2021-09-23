@@ -33,6 +33,9 @@ const MerchantCheck = ({ children, ...props }) => {
 }
 
 const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMerchants }) => {
+    console.log('page merchants: ', pageMerchants)
+    console.log('selected merchants: ', selectedMerchants)
+
     const merchantChangeOnCheck = (checked, merchant) => {
         if (checked) {
             setSelectedMerchants([...selectedMerchants, merchant])
