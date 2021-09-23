@@ -14,10 +14,12 @@ import {
     Spacer
 } from "@chakra-ui/react"
 
-const SubtotalRow = ({ text, value }) => {
+const SubtotalRow = ({ text, value, highlight }) => {
     return (
         <Stack direction='row'>
-            <Text>
+            <Text
+                textColor={highlight && 'mypets.400'}
+            >
                 {text}
             </Text>
             <Spacer />
@@ -33,6 +35,7 @@ export default function CartPriceBreakdownList({ groupedProducts, productNames, 
     const gstPrice = (totalPrice * 0.07)
     const deliveryFee = 3.00
     const finalPrice = 1.00 * (totalPrice + gstPrice + deliveryFee)
+    const contributionAmt = 0.05 * (totalPrice + gstPrice)
 
     const productTotalQuantity = (order_products) => {
         let totalQuantity = 0
@@ -95,6 +98,11 @@ export default function CartPriceBreakdownList({ groupedProducts, productNames, 
                 <SubtotalRow
                     text='Delivery fee'
                     value={deliveryFee.toFixed(2)}
+                />
+                <SubtotalRow
+                    highlight
+                    text='Your contributions'
+                    value={contributionAmt.toFixed(2)}
                 />
             </Stack>
             <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={4}>
