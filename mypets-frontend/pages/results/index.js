@@ -126,6 +126,7 @@ export default function index({ products, animals, merchants }) {
                 <Stack
                     direction='row'
                     bg='purple.100'
+                    spacing={{ base: 4 }}
                 >
                     <MerchantChecklist
                         pageMerchants={pageMerchants}
