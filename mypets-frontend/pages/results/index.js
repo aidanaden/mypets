@@ -51,7 +51,6 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
         <Stack
             direction='column'
             spacing={{ base: 2 }}
-            bg='blue.100'
         >
             <Text>
                 Brand
@@ -124,8 +123,6 @@ export default function index({ products, animals, merchants }) {
             <PageContainer>
                 <Stack
                     direction='row'
-                    alignItems='space-between'
-                    justifyContent='space-between'
                     bg='purple.100'
                 >
                     <MerchantChecklist
@@ -133,22 +130,28 @@ export default function index({ products, animals, merchants }) {
                         selectedMerchants={selectedMerchants}
                         setPageMerchants={setSelectedMerchants}
                     />
-                    <Box bg='red.100'>
+                    <Box>
                         <Stack
                             direction='row'
                             w='100%'
+                            justifyContent='space-between'
+                            bg='red.100'
                         >
                             <Text>
                                 Showing results for {searchText}
                             </Text>
-                            <Spacer />
-                            <AnimalList
-                                animals={animals}
-                                setSelectedAnimal={setSelectedAnimal}
-                            />
-                            <SortMenu
-                                setSortMethod={setSortMethod}
-                            />
+                            <Stack
+                                direction='row'
+                                spacing={{ base: 4 }}
+                            >
+                                <AnimalList
+                                    animals={animals}
+                                    setSelectedAnimal={setSelectedAnimal}
+                                />
+                                <SortMenu
+                                    setSortMethod={setSortMethod}
+                                />
+                            </Stack>
                         </Stack>
                         {/* <MerchantSectionList
                             merchants={pageMerchants}
