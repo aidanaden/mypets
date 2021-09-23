@@ -124,7 +124,7 @@ export default function index({ products, animals, merchants }) {
                         selectedMerchants={selectedMerchants}
                         setPageMerchants={setSelectedMerchants}
                     />
-                    {/* <Box>
+                    <Box>
                         <Stack
                             direction='row'
                         >
@@ -140,15 +140,15 @@ export default function index({ products, animals, merchants }) {
                                 setSortMethod={setSortMethod}
                             />
                         </Stack>
-                        <MerchantSectionList
+                        {/* <MerchantSectionList
                             merchants={pageMerchants}
                         />
                         <ProductList
                             heading='Suggested products'
                             products={pageProducts}
                             sortMethod={sortMethod}
-                        />
-                    </Box> */}
+                        /> */}
+                    </Box>
                 </Stack>
             </PageContainer>
             <Footer />
