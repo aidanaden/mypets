@@ -89,6 +89,8 @@ export default function index({ products, animals, merchants }) {
             const price = router.query.price
             setSearchText(search)
 
+            console.log('search term: ', search)
+
             const filteredProducts = products.filter(product => {
                 const firstValid = product.name.toLowerCase().includes(search.toLowerCase())
                 const secondValid = product.variants[0].price <= price
