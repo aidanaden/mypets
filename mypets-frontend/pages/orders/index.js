@@ -112,13 +112,13 @@ const ContributionSection = ({ orders }) => {
                         />
                     ))} */}
                     <ContributionRow
-                        order={order}
+                        order={orders[0]}
                     />
                     <ContributionRow
-                        order={order}
+                        order={orders[0]}
                     />
                     <ContributionRow
-                        order={order}
+                        order={orders[0]}
                     />
                 </Stack>
                 <Box
