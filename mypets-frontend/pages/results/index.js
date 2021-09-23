@@ -26,6 +26,7 @@ const MerchantCheck = ({ children, ...props }) => {
         <Checkbox
             colorScheme='mypets'
             {...props}
+            isChecked
         >
             {children}
         </Checkbox>
@@ -33,6 +34,14 @@ const MerchantCheck = ({ children, ...props }) => {
 }
 
 const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMerchants }) => {
+    const merchantChangeOnCheck = (checked, merchant) => {
+        if (checked) {
+            setSelectedMerchants([...selectedMerchants, merchant])
+        } else {
+            setSelectedMerchants(selectedMerchants.filter(selectedMerchant => selectedMerchant != merchant))
+        }
+    }
+
     return (
         <Box>
             <Text>
@@ -46,7 +55,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                     <MerchantCheck
                         key={merchant}
                         isChecked={selectedMerchants.includes(merchant)}
-                        onClick={setSelectedMerchants([...selectedMerchants, merchant])}
+                        onChange={(e) => merchantChangeOnCheck(e.target.checked, merchant)}
                     >
                         {merchant}
                     </MerchantCheck>
