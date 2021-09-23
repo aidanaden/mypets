@@ -7,7 +7,8 @@ import {
     Stack,
     Box,
     Text,
-    Spacer
+    Spacer,
+    Checkbox
 } from '@chakra-ui/react'
 
 import AnnouncementBanner from '../../components/AnnouncementBanner/AnnouncementBanner'
@@ -19,6 +20,17 @@ import Footer from '../../components/Footer/Footer'
 import MerchantSectionList from '../../components/MerchantSectionList/MerchantSectionList'
 import ProductList from '../../components/ProductList/ProductList'
 import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL } from '../../utils/urls'
+
+const MerchantCheck = ({ children, ...props }) => {
+    return (
+        <CheckBox
+            colorScheme='mypets'
+            {...props}
+        >
+            {children}
+        </CheckBox>
+    )
+}
 
 const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMerchants }) => {
     return (
@@ -33,6 +45,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                 {pageMerchants.map((merchant) => (
                     <MerchantCheck
                         key={merchant}
+                        isChecked={selectedMerchants.contains(merchant)}
                         onClick={setSelectedMerchants([...selectedMerchants, merchant])}
                     >
                         {merchant}
@@ -72,6 +85,9 @@ export default function index({ products, animals, merchants }) {
             })
             setPageMerchants(getMerchants(filteredProducts))
             setPageProducts(filteredProducts)
+        } else {
+            setPageProducts(products)
+            setPageCategories(getCategories(products))
         }
     }, [router.query])
 

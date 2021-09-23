@@ -12,7 +12,6 @@ import {
 
 import PageContainer from '../components/PageContainer/PageContainer'
 import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
-import Navbar from '../components/Navbar/Navbar'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Carousel from '../components/Carousel/Carousel'
 import Footer from '../components/Footer/Footer'
@@ -20,7 +19,6 @@ import SortMenu from '../components/SortMenu/SortMenu'
 import MerchantSectionList from '../components/MerchantSectionList/MerchantSectionList'
 import ProductSectionList from '../components/ProductSectionList/ProductSectionList'
 import CategoryList from '../components/CategoryList/CategoryList'
-import HomeBannerSwiper from '../components/HomeBannerSwiper/HomeBannerSwiper'
 import { API_PRODUCTS_URL, API_MERCHANTS_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 
@@ -65,14 +63,13 @@ export default function Home({ products, categories, merchants }) {
 
     } else {
       setPageProducts(products)
-      setPageCategories(getCategories(products)) 
+      setPageCategories(getCategories(products))
     }
   }, [router.query])
 
   return (
     <Box>
       <AnnouncementBanner />
-      {/* <Navbar /> */}
       <Sidebar />
       <PageContainer>
         <CategoryList
