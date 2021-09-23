@@ -1,5 +1,7 @@
 import {
-    Stack
+    Stack,
+    Center,
+    Icon
 } from "@chakra-ui/react"
 import {
     FaCat,
