@@ -45,6 +45,7 @@ export default function AnimalList({ animals, setSelectedAnimal }) {
             mt={{ lg: 0 }}
             direction={{ base: 'row', lg: 'row'}} 
             overflow={{ base: 'auto' }}
+            bg='blue.100'
         >
             {animals.map((animal, i) => (
                 <AnimalButton
