@@ -78,7 +78,7 @@ const getMerchants = (products) => {
 
 export default function index({ products, animals, merchants }) {
     const [pageProducts, setPageProducts] = useState(products)
-    const [pageMerchants, setPageMerchants] = useState(merchants)
+    const [pageMerchants, setPageMerchants] = useState([])
     const [selectedMerchants, setSelectedMerchants] = useState([])
     const [selectedAnimal, setSelectedAnimal] = useState('')
     const [sortMethod, setSortMethod] = useState('pop')
