@@ -53,18 +53,13 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                 direction='column'
                 spacing={{ base: 1 }}
             >
-                {/* {pageMerchants && pageMerchants.map((merchant, i) => (
-                    <Box key={i}>
-                        {merchant}
-                    </Box>
-                ))} */}
                 {pageMerchants && pageMerchants.map((merchant,i) => (
                     <MerchantCheck
                         key={i}
-                        // isChecked={selectedMerchants.includes(merchant)}
-                        // onChange={(e) => merchantChangeOnCheck(e.target.checked, merchant)}
+                        isChecked={selectedMerchants.includes(merchant)}
+                        onChange={(e) => merchantChangeOnCheck(e.target.checked, merchant)}
                     >
-                        {/* {merchant} */}
+                        {merchant}
                     </MerchantCheck>
                 ))}
             </Stack>
