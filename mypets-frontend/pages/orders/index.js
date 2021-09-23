@@ -170,7 +170,9 @@ export default function Orders() {
         <>
             <AnnouncementBanner />
             <Navbar />
-            <PageContainer>
+            <PageContainer
+                bg='red.100'
+            >
                 <BackBtn variant='home'/>
                 {orders.length > 0 && (
                     <ContributionSection orders={orders} />
