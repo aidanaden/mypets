@@ -16,15 +16,18 @@ function OrderCard({ order, loading }) {
     return (
         <Flex 
             direction={{ base: 'column', lg: 'row' }}
-            w='100%' 
-            h='auto' 
-            mx='auto' 
-            mt={6} 
-            rounded='lg' 
-            boxShadow='sm' 
-            borderWidth='1px' 
+            w='100%'
+            h='auto'
+            mx='auto'
+            rounded='lg'
+            boxShadow='sm'
+            borderWidth='1px'
         >
-            <Box p={{ base: 4, md: 8, xl: 12 }} display={{ base: 'block', lg: 'none' }} w='100%'>
+            <Box
+                p={{ base: 4, md: 8, xl: 12 }}
+                display={{ base: 'block', lg: 'none' }}
+                w='100%'
+            >
                 <OrderDeliveryStatusBar 
                     orderId={order.order_id}
                     orderDate={order.order_date} 
@@ -37,12 +40,23 @@ function OrderCard({ order, loading }) {
                     order={order}
                 />
             </Box>
-            <Stack direction='column' py={8} px={{ base: 0, lg: 8 }}>
+            <Stack
+                direction='column'
+                py={8}
+                px={{ base: 0, lg: 8 }}
+            >
                 {productNames.map((productName, i) => (
-                    <OrderProductCard key={i} order_products={groupedOrderProducts[productName]}/>
+                    <OrderProductCard
+                        key={i}
+                        order_products={groupedOrderProducts[productName]}
+                    />
                 ))}
             </Stack>
-            <Box p={{ base: 4, md: 8, xl: 12 }} display={{ base: 'none', lg: 'block' }} w='100%'>
+            <Box
+                p={{ base: 4, md: 8, xl: 12 }}
+                display={{ base: 'none', lg: 'block' }}
+                w='100%'
+            >
                 <OrderDeliveryStatusBar 
                     orderId={order.order_id}
                     orderDate={order.order_date} 

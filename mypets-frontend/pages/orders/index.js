@@ -71,9 +71,7 @@ const ContributionSection = ({ orders }) => {
             >
                 <HStack>
                     <Box>
-                        <SectionHeader
-                            textColor='mypets.400'
-                        >
+                        <SectionHeader textColor='mypets.400'>
                             Your total contribution
                         </SectionHeader>
                         <Text
@@ -105,21 +103,12 @@ const ContributionSection = ({ orders }) => {
                     direction='column'
                     spacing={{ base: 1 }}
                 >
-                    {/* {orders.map((order, i) => (
+                    {orders.map((order, i) => (
                         <ContributionRow
                             key={i}
                             order={order}
                         />
-                    ))} */}
-                    <ContributionRow
-                        order={orders[0]}
-                    />
-                    <ContributionRow
-                        order={orders[0]}
-                    />
-                    <ContributionRow
-                        order={orders[0]}
-                    />
+                    ))}
                 </Stack>
                 <Box
                     textAlign='center'
@@ -128,6 +117,27 @@ const ContributionSection = ({ orders }) => {
                     <MypetsBtn btnText='View all Contributions' />
                 </Box>
             </Box>
+        </Box>
+    )
+}
+
+const OrderSection = ({ orders }) => {
+    return (
+        <Box>
+            <SectionHeader>
+                Order History
+            </SectionHeader>
+            <Stack
+                direction='column'
+                spacing={{ base: 4 }}
+            >
+                {orders.map((order,i) => {
+                    <OrderCard
+                        key={i}
+                        order={order}
+                    />
+                })}
+            </Stack>
         </Box>
     )
 }
@@ -161,11 +171,11 @@ export default function Orders() {
             <PageContainer>
                 <BackBtn variant='home'/>
                 {orders.length > 0 && (
-                    <ContributionSection orders={orders}/>
+                    <ContributionSection orders={orders} />
                 )}
-                {orders.length > 0 ? orders.map((order, i) => (
-                    <OrderCard key={i} order={order} loading={loading}/>
-                )) : 
+                {orders.length > 0 ? (
+                    <OrderSection orders={orders} />
+                ) : 
                 <Center h='70vh'>
                     No orders available 😢
                 </Center>}
