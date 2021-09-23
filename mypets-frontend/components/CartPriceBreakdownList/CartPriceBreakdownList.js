@@ -16,7 +16,7 @@ import {
 
 const SubtotalRow = ({ text, value }) => {
     return (
-        <Stack direction='row' bg='red.100'>
+        <Stack direction='row' spacing={0}>
             <Text>
                 {text}
             </Text>
