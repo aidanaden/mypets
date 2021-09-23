@@ -167,7 +167,7 @@ export default function index({ products, animals, merchants }) {
                             products={pageProducts}
                             sortMethod={sortMethod}
                         />
-                    </Box>
+                    </Stack>
                 </Stack>
             </PageContainer>
             <Footer />
