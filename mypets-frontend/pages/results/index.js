@@ -66,11 +66,11 @@ import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL } from '../../util
 //     )
 // }
 
-// const getMerchants = (products) => {
-//     const totalProductMerchants = products.map(product => product.merchant.name)
-//     const uniqueProductMerchants = [...new Set(totalProductMerchants)]
-//     return uniqueProductMerchants
-// }
+const getMerchants = (products) => {
+    const totalProductMerchants = products.map(product => product.merchant.name)
+    const uniqueProductMerchants = [...new Set(totalProductMerchants)]
+    return uniqueProductMerchants
+}
 
 export default function index({ products, animals, merchants }) {
     const [pageProducts, setPageProducts] = useState(products)
