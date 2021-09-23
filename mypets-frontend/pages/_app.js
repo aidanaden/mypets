@@ -6,7 +6,6 @@ import customTheme from '../styles/theme'
 import { AuthProvider } from '../context/AuthContext'
 import Fonts from '../styles/fonts'
 
-
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
@@ -16,7 +15,7 @@ function MyApp({ Component, pageProps }) {
           <link rel="shortcut icon" href="/favicon.ico" />
           <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/20498643.js"></script>
         </Head>  
-        <Component {...pageProps}/> 
+        <Component {...pageProps}/>
       </ChakraProvider>
     </AuthProvider>
   ) 

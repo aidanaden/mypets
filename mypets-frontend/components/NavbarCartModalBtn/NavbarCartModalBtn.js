@@ -72,8 +72,8 @@ function NavbarCartModalBtn() {
                 checkoutErrorToast()
             }
         }
-    }   
-
+    }
+    
     useEffect(() => {
         if (cart) {
             setTotalPrice(cart.total_price)
@@ -84,11 +84,16 @@ function NavbarCartModalBtn() {
 
     return (
         <>
-            <MypetsBtn btnText='Your cart' onClick={onOpen} leftIcon={<FaShoppingCart />} mx={0} />
+            <MypetsBtn
+                btnText='Your cart'
+                onClick={onOpen}
+                leftIcon={<FaShoppingCart />}
+                mx={0}
+            />
             <Modal 
-                isOpen={isOpen} 
-                onClose={onClose} 
-                isCentered 
+                isOpen={isOpen}
+                onClose={onClose}
+                isCentered
                 scrollBehavior='inside'
                 size='full'
                 closeOnOverlayClick={{ base: false, lg: true }}
@@ -101,36 +106,59 @@ function NavbarCartModalBtn() {
                     minH={{ lg: 500 }} 
                     mx={{ base: 4 }}
                 >
-                    <ModalHeader>Your Cart</ModalHeader>
+                    <ModalHeader>
+                        Your Cart
+                    </ModalHeader>
                     <ModalCloseButton />
                     <ModalBody w='100%'> 
-                            { groupedProducts && (totalPrice > 0.1) ? 
-                            <Stack direction={{ base: 'column', lg: 'row' }} w='100%'>
+                            {groupedProducts && (totalPrice > 0.1) ? 
+                            <Stack
+                                direction={{ base: 'column', lg: 'row' }}
+                                w='100%'
+                            >
                                 <Box>
                                     {productNames.map((productName, i) => (
-                                        <CartModalProductCard 
-                                            order_products={groupedProducts[productName]} 
+                                        <CartModalProductCard
+                                            order_products={groupedProducts[productName]}
                                             onClose={onClose}
                                             key={i}
                                         />
                                     ))}
                                 </Box>
                                 <Box 
-                                    flex='1' 
-                                    pl={{ base: 0, lg: 8 }} 
+                                    flex='1'
+                                    pl={{ base: 0, lg: 8 }}
                                     pb={{ base: 4, lg: 0 }}
                                 >
+                                    <Center
+                                        rounded='lg'
+                                        p={{ base: 5 }}
+                                        bg='gray.200'
+                                        noOfLines={2}
+                                    >
+                                        With every purchase, Mypets will make a donation of 5% to local pet communities.
+                                    </Center>
                                     <CartPriceBreakdownList 
                                         groupedProducts={groupedProducts} 
                                         productNames={productNames} 
                                         totalPrice={totalPrice}
                                     />
-                                    <MypetsBtn btnText='Checkout' onClick={handleCheckout} w="stretch" mt={6}/>
+                                    <MypetsBtn
+                                        btnText='Checkout'
+                                        onClick={handleCheckout}
+                                        w="stretch"
+                                        mt={6}
+                                    />
                                 </Box>
                             </Stack> :
                             <>
-                                <Stack justifyContent='center' w='100%' h={400} alignItems='center'>
-                                        No products in your cart!
+                                <Stack
+                                    justifyContent='center'
+                                    w='100%'
+                                    h={400}
+                                    alignItems='center'
+                                >
+                                    No products in your cart!
                                 </Stack>
                             </>
                             }
