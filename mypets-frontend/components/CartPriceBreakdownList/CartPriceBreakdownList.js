@@ -16,14 +16,8 @@ import {
 
 const SubtotalRow = ({ text, value }) => {
     return (
-        <Stack
-            direction='row'
-            py={{ base: 2 }}
-        >
-            <Text
-                fontSize='lg'
-                textColor='mypets.400'
-            >
+        <Stack direction='row'>
+            <Text>
                 {text}
             </Text>
             <Spacer />
@@ -61,7 +55,7 @@ export default function CartPriceBreakdownList({ groupedProducts, productNames, 
             <Table
                 variant="unstyled" 
                 size={{ base: 'sm', lg: 'md' }} 
-                mt={{ base: 8, lg: 8 }}
+                my={{ base: 8, lg: 8 }}
             >
                 <Thead>
                     <Tr fontSize='xs' textColor='grey.400'>
