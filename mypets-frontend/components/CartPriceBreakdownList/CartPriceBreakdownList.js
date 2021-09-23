@@ -33,7 +33,7 @@ function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
             <Table
                 variant="unstyled" 
                 size={{ base: 'sm', lg: 'md' }} 
-                mt={{ base: 8, lg: 0 }}
+                mt={{ base: 8, lg: 8 }}
             >
                 <Thead>
                     <Tr fontSize='xs' textColor='grey.400'>
