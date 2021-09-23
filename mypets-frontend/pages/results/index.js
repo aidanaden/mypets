@@ -53,6 +53,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
         <Stack
             direction='column'
             spacing={{ base: 2 }}
+            mr={{ base: 4 }}
         >
             <Text>
                 Brand
@@ -123,10 +124,7 @@ export default function index({ products, animals, merchants }) {
             <AnnouncementBanner />
             <Sidebar />
             <PageContainer>
-                <Stack
-                    direction='row'
-                    spacing={{ base: 4 }}
-                >
+                <Stack direction='row'>
                     <MerchantChecklist
                         pageMerchants={pageMerchants}
                         selectedMerchants={selectedMerchants}
