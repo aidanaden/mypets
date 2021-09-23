@@ -53,7 +53,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
         <Stack
             direction='column'
             spacing={{ base: 2 }}
-            mr={{ base: 4 }}
+            mr={{ base: 8 }}
         >
             <Text>
                 Brand
