@@ -26,7 +26,6 @@ const MerchantCheck = ({ children, ...props }) => {
         <Checkbox
             colorScheme='mypets'
             {...props}
-            isChecked
         >
             {children}
         </Checkbox>
