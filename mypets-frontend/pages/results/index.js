@@ -23,12 +23,12 @@ import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL } from '../../util
 
 const MerchantCheck = ({ children, ...props }) => {
     return (
-        <CheckBox
+        <Checkbox
             colorScheme='mypets'
             {...props}
         >
             {children}
-        </CheckBox>
+        </Checkbox>
     )
 }
 
