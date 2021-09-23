@@ -19,7 +19,7 @@ function MerchantSectionList({ merchants, spacing=6 }) {
                 spacing={spacing}
                 overflowX='auto'
                 overflowY='hidden'
-                py={{ base: 4 }}
+                pb={{ base: 4 }}
             >
                 {merchants.map((merchant, index) => (
                     <MerchantCard key={index} merchant={merchant}/>

@@ -13,7 +13,7 @@ const AnimalButton = ({ animal, ...props }) => {
         <Center
             w="100%"
             py={{ lg: 1 }}
-            px={{ lg: 4 }}
+            px={{ lg: 8 }}
             rounded="md"
             bgColor="gray.100"
             textColor="gray.600"
@@ -45,7 +45,6 @@ export default function AnimalList({ animals, setSelectedAnimal }) {
             mt={{ lg: 0 }}
             direction={{ base: 'row', lg: 'row'}} 
             overflow={{ base: 'auto' }}
-            bg='blue.100'
         >
             {animals.map((animal, i) => (
                 <AnimalButton
