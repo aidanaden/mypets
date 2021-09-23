@@ -27,7 +27,7 @@ const MerchantCheck = ({ children, ...props }) => {
             colorScheme='mypets'
             {...props}
         >
-            Test
+            {children}
         </Checkbox>
     )
 }
@@ -45,7 +45,10 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
     }
 
     return (
-        <Box>
+        <Stack
+            direction='column'
+            spacing={{ base: 2 }}
+        >
             <Text>
                 Brand
             </Text>
@@ -63,7 +66,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                     </MerchantCheck>
                 ))}
             </Stack>
-        </Box>
+        </Stack>
         
     )
 }
