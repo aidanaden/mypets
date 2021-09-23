@@ -89,21 +89,18 @@ export default function CartPriceBreakdownList({ groupedProducts, productNames, 
                     ))}
                 </Tbody>
             </Table>
-            <Stack
-                direction='column'
-                spacing={1}
-            >
+            <Stack direction='column'>
                 <SubtotalRow
                     text='Subtotal'
                     value={totalPrice.toFixed(2)}
                 />
                 <SubtotalRow
                     text='GST charge'
-                    value={gstPrice}
+                    value={gstPrice.toFixed(2)}
                 />
                 <SubtotalRow
                     text='Delivery fee'
-                    value={deliveryFee}
+                    value={deliveryFee.toFixed(2)}
                 />
             </Stack>
             <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={4}>
