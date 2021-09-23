@@ -13,7 +13,7 @@ const AnimalButton = ({ animal, ...props }) => {
         <Center
             w="100%"
             py={{ lg: 1 }}
-            px={{ lg: 3 }}
+            px={{ lg: 4 }}
             rounded="md"
             bgColor="gray.100"
             textColor="gray.600"

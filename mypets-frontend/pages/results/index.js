@@ -152,7 +152,6 @@ export default function index({ products, animals, merchants }) {
                             direction='row'
                             w='100%'
                             justifyContent='space-between'
-                            bg='red.100'
                         >
                             <Text>
                                 Showing results for {searchText}
