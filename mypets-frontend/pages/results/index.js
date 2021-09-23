@@ -95,8 +95,8 @@ export default function index({ products, animals, merchants }) {
             setPageMerchants(getMerchants(filteredProducts))
             setPageProducts(filteredProducts)
         } else {
-            setPageMerchants(getMerchants(filteredProducts))
-            setPageProducts(filteredProducts)
+            setPageMerchants(getMerchants(products))
+            setPageProducts(products)
         }
     }, [router.query])
 
