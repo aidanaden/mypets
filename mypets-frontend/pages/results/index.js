@@ -45,7 +45,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                 {pageMerchants.map((merchant) => (
                     <MerchantCheck
                         key={merchant}
-                        isChecked={selectedMerchants.contains(merchant)}
+                        isChecked={selectedMerchants.includes(merchant)}
                         onClick={setSelectedMerchants([...selectedMerchants, merchant])}
                     >
                         {merchant}
