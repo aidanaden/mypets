@@ -156,14 +156,14 @@ export default function index({ products, animals, merchants }) {
                                 />
                             </Stack>
                         </Stack>
-                        {/* <MerchantSectionList
+                        <MerchantSectionList
                             merchants={pageMerchants}
                         />
                         <ProductList
                             heading='Suggested products'
                             products={pageProducts}
                             sortMethod={sortMethod}
-                        /> */}
+                        />
                     </Box>
                 </Stack>
             </PageContainer>
