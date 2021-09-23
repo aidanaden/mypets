@@ -18,6 +18,7 @@ import SortMenu from '../../components/SortMenu/SortMenu'
 import Footer from '../../components/Footer/Footer'
 import MerchantSectionList from '../../components/MerchantSectionList/MerchantSectionList'
 import ProductList from '../../components/ProductList/ProductList'
+import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL } from '../../utils/urls'
 
 const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMerchants }) => {
     return (
