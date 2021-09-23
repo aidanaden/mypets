@@ -161,7 +161,6 @@ export default function Sidebar() {
         <Box
             zIndex='banner'
             position='sticky'
-            bg='blue.100'
         >
             <Drawer
                 isOpen={sidebar.isOpen}
@@ -185,7 +184,6 @@ export default function Sidebar() {
                 align='center'
                 justifyContent='center'
                 transition=".3s ease"
-                bg='blue.100'
             >
                 <Stack
                     direction='row'
@@ -193,7 +191,6 @@ export default function Sidebar() {
                     justifyContent='space-between'
                     maxW={{ lg: '1200px' }}
                     w='100%'
-                    bg='blue.100'
                 >
                     <Box
                         flex={{ base: 1, lg: 'auto' }}
