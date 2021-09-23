@@ -126,10 +126,10 @@ function NavbarCartModalBtn() {
                                         />
                                     ))}
                                 </Box>
-                                <Box 
+                                <Box
                                     flex='1'
                                     pl={{ base: 0, lg: 8 }}
-                                    pb={{ base: 4, lg: 0 }}
+                                    pb={{ base: 4, lg: 4 }}
                                 >
                                     <Center
                                         rounded='lg'
