@@ -9,7 +9,8 @@ import {
     ModalHeader,
     ModalBody,
     ModalCloseButton,
-    Box
+    Box,
+    Center
 } from '@chakra-ui/react'
 import lodash from 'lodash'
 import { loadStripe } from '@stripe/stripe-js'
