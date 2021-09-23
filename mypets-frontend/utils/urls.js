@@ -6,6 +6,7 @@ export const API_ORDERS_URL = `${API_URL}/orders/`
 export const API_PRODUCTS_URL = `${API_URL}/products/`
 export const API_CATEGORIES_URL = `${API_URL}/categories/`
 export const API_MERCHANTS_URL = `${API_URL}/merchants/`
+export const API_ANIMALS_URL = `${API_URL}/animals/`
 export const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
 export const GOOGLE_CLIENT_SK = process.env.GOOGLE_CLIENT_SK
 

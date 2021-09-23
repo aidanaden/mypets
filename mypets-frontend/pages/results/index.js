@@ -49,7 +49,7 @@ const getMerchants = (products) => {
     return uniqueProductMerchants
 }
 
-function index({ products, categories, animals, merchants }) {
+export default function index({ products, animals, merchants }) {
     const [pageProducts, setPageProducts] = useState(products)
     const [pageMerchants, setPageMerchants] = useState(merchants)
     const [selectedMerchants, setSelectedMerchants] = useState([])
@@ -117,4 +117,35 @@ function index({ products, categories, animals, merchants }) {
     )
 }
 
-export default index
+export async function getStaticProps() {
+    // Fetch merchants, products 
+    const product_res = await fetch(`${API_PRODUCTS_URL}`)
+    const products = await product_res.json()
+
+    const merchant_res = await fetch(`${API_MERCHANTS_URL}`)
+    const merchants = await merchant_res.json()
+
+    const animal_res = await fetch(`${API_ANIMALS_URL}`)
+    const animalsJson = await animal_res.json()
+
+    const animals = animalsJson.map((animalJson) => {
+        return animalJson.name
+    })
+
+    // const getCategories = (products) => {
+    //     const totalProductCategories = products.map(product => product.category.name)
+    //     const uniqueProductCategories = [...new Set(totalProductCategories)]
+    //     return ['All products'].concat(uniqueProductCategories)
+    // }
+
+    // const categories = getCategories(products)
+
+    // Return as props
+    return {
+        props: {
+            products,
+            animals,
+            merchants
+        }
+    }
+}
