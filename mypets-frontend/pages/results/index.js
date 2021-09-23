@@ -59,7 +59,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                 {pageMerchants.length > 0 && pageMerchants.map((merchant,i) => (
                     <MerchantCheck
                         key={i}
-                        text={merchant}
+                        text={merchant.name}
                         isChecked={selectedMerchants.includes(merchant)}
                         onChange={(e) => merchantChangeOnCheck(e.target.checked, merchant)}
                     />
