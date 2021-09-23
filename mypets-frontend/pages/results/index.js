@@ -98,10 +98,17 @@ export default function index({ products, animals, merchants }) {
                 const secondValid = product.variants[0].price <= price
                 return firstValid && secondValid
             })
-            setPageMerchants(getMerchants(filteredProducts))
+
+            const filteredProductMerchants = getMerchants(filteredProducts)
+            console.log('filtered product merchants: ', filteredProductMerchants)
+            setPageMerchants(filteredProductMerchants)
             setPageProducts(filteredProducts)
+
         } else {
-            setPageMerchants(getMerchants(products))
+
+            const productMerchants = getMerchants(products)
+            console.log('product merchants: ', productMerchants)
+            setPageMerchants(productMerchants)
             setPageProducts(products)
         }
     }, [router.query])
