@@ -13,7 +13,8 @@ import {
 } from '@chakra-ui/react'
 
 import AnnouncementBanner from '../../components/AnnouncementBanner/AnnouncementBanner'
-import Navbar from '../../components/Navbar/Navbar'
+import Sidebar from '../../components/Sidebar/Sidebar'
+import Footer from '../../components/Footer/Footer'
 import PageContainer from '../../components/PageContainer/PageContainer'
 import BackBtn from '../../components/BackBtn/BackBtn'
 import OrderCard from '../../components/OrderCard/OrderCard'
@@ -167,7 +168,7 @@ export default function Orders() {
     return (
         <>
             <AnnouncementBanner />
-            <Navbar />
+            <Sidebar />
             <PageContainer>
                 <BackBtn variant='home'/>
                 {orders.length > 0 && (
@@ -180,6 +181,7 @@ export default function Orders() {
                     No orders available 😢
                 </Center>}
             </PageContainer>
+            <Footer />
         </>
     )
 }

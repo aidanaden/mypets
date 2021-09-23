@@ -4,20 +4,21 @@ import { Container, Box, Img } from "@chakra-ui/react"
 
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
 import { API_MERCHANTS_URL } from '../../../utils/urls'
-import Navbar from "../../../components/Navbar/Navbar"
+import Sidebar from "../../../components/Sidebar/Sidebar"
 import BackBtn from '../../../components/BackBtn/BackBtn'
 import MerchantTitle from '../../../components/MerchantTitle/MerchantTitle'
 import MerchantProductReviewTab from '../../../components/MerchantProductReviewTab/MerchantProductReviewTab'
 import MerchantBannerSwiper from '../../../components/MerchantBannerSwiper/MerchantBannerSwiper'
+import PageContainer from '../../../components/PageContainer/PageContainer'
 
-function index({ merchant }) {
+export default function index({ merchant }) {
     const merchantCategories = Object.keys(lodash.groupBy(merchant.products, 'category.name'))
 
     return (
         <>  
             <AnnouncementBanner />
-            <Navbar />
-            <Container maxW='1200px'>
+            <Sidebar />
+            <PageContainer>
                 <BackBtn />
                 <MerchantBannerSwiper my={{ base: 8, md: 16 }} rounded={{ base: 20, md: 40 }}/>
                 <MerchantTitle 
@@ -32,16 +33,13 @@ function index({ merchant }) {
                     categories={merchantCategories} 
                     merchantReviews={merchant.merchant_reviews}
                 />
-            </Container>
+            </PageContainer>
+            <Footer />
         </>
     )
 }
 
-export default index
-
-
 export async function getStaticProps({ params: { slug } }) {
-
     // Fetch merchants, products 
     const merchant_res = await fetch(`${API_MERCHANTS_URL}?slug=${slug}`)
     const merchant = await merchant_res.json()

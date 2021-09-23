@@ -6,7 +6,8 @@ import {
 } from "@chakra-ui/react"
 
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
-import Navbar from "../../../components/Navbar/Navbar"
+import Sidebar from "../../../components/Sidebar/Sidebar"
+import Footer from '../../../components/Footer/Footer'
 import BackBtn from '../../../components/BackBtn/BackBtn'
 import ProductDetailSection from "../../../components/ProductDetailSection/ProductDetailSection"
 import ProductDescriptionSection from "../../../components/ProductDescriptionSection/ProductDescriptionSection"
@@ -19,7 +20,7 @@ export default function Product({ product, otherProducts }) {
     return (
         <>
             <AnnouncementBanner />
-            <Navbar/>
+            <Sidebar />
             <PageContainer>
                 <BackBtn />
                 <Grid 
@@ -58,6 +59,7 @@ export default function Product({ product, otherProducts }) {
                     products={otherProducts}
                 />
             </PageContainer>
+            <Footer />
         </>
     )
 }
