@@ -82,6 +82,18 @@ const getMerchants = (products) => {
     return uniqueProductMerchants
 }
 
+const getMerchantDataFromNames = (names, merchants) => {
+    const foundMerchants = []
+    names.map((name) => {
+        merchants.map((merchant) => {
+            if (merchant.name == name) {
+                foundMerchants.push(merchant)
+            }
+        })
+    })
+    return foundMerchants
+}
+
 export default function index({ products, animals, merchants }) {
     const [pageProducts, setPageProducts] = useState(products)
     const [pageMerchants, setPageMerchants] = useState([])
@@ -90,6 +102,7 @@ export default function index({ products, animals, merchants }) {
     const [sortMethod, setSortMethod] = useState('pop')
     const [searchText, setSearchText] = useState('')
     const router = useRouter()
+    const merchantNames = merchants.map(merchant => merchant.name)
 
     useEffect(() => {
         if (router.query.search && router.query.search != "") {
@@ -158,7 +171,7 @@ export default function index({ products, animals, merchants }) {
                             </Stack>
                         </Stack>
                         <MerchantSectionList
-                            merchants={pageMerchants}
+                            merchants={getMerchantDataFromNames(pageMerchants, merchants)}
                         />
                         <ProductList
                             heading='Suggested products'
@@ -181,9 +194,6 @@ export async function getStaticProps() {
     const merchant_res = await fetch(`${API_MERCHANTS_URL}`)
     const merchants = await merchant_res.json()
 
-    console.log(merchants)
-    const merchantNames = merchants.map(merchant => merchant.name)
-
     const animal_res = await fetch(`${API_ANIMALS_URL}`)
     const animalsJson = await animal_res.json()
 
@@ -204,7 +214,7 @@ export async function getStaticProps() {
         props: {
             products,
             animals,
-            merchantNames
+            merchants
         }
     }
 }
