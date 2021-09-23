@@ -8,7 +8,6 @@ import ProductList from '../ProductList/ProductList'
 import SortMenu from "../SortMenu/SortMenu"
 
 function ProductSectionList({ products, categories, setSortMethod, sortMethod, heading }) {
-
     const sortProductsAscending = (products) => {
         products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
     }

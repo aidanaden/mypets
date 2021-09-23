@@ -1,6 +1,6 @@
 import React from 'react'
 import { 
-    Container,
+    Box,
     Grid, 
     GridItem
 } from "@chakra-ui/react"
@@ -18,7 +18,7 @@ import PageContainer from '../../../components/PageContainer/PageContainer'
 
 export default function Product({ product, otherProducts }) {
     return (
-        <>
+        <Box>
             <AnnouncementBanner />
             <Sidebar />
             <PageContainer>
@@ -60,7 +60,7 @@ export default function Product({ product, otherProducts }) {
                 />
             </PageContainer>
             <Footer />
-        </>
+        </Box>
     )
 }
 

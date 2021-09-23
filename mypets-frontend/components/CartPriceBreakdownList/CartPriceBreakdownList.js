@@ -101,7 +101,7 @@ export default function CartPriceBreakdownList({ groupedProducts, productNames, 
                 />
                 <SubtotalRow
                     highlight
-                    text='Your contributions'
+                    text='Your contributions (included)'
                     value={contributionAmt.toFixed(2)}
                 />
             </Stack>

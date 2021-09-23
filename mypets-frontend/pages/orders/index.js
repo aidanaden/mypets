@@ -166,7 +166,7 @@ export default function Orders() {
     const { orders, loading } = getOrders(user)
 
     return (
-        <>
+        <Box>
             <AnnouncementBanner />
             <Sidebar />
             <PageContainer>
@@ -182,6 +182,6 @@ export default function Orders() {
                 </Center>}
             </PageContainer>
             <Footer />
-        </>
+        </Box>
     )
 }

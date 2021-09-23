@@ -11,7 +11,6 @@ import SectionHeader from '../SectionHeader/SectionHeader'
 import MypetsMenuBtn from '../MypetsMenuBtn/MypetsMenuBtn'
 
 function SortMenu({ setSortMethod }) {
-
     const toast = useToast()
     const [sortBtnText, setSortBtnText] = useState("Sort by Price")
 
