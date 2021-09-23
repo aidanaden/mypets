@@ -48,6 +48,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
         <Stack
             direction='column'
             spacing={{ base: 2 }}
+            bg='blue.100'
         >
             <Text>
                 Brand
@@ -118,15 +119,20 @@ export default function index({ products, animals, merchants }) {
             <AnnouncementBanner />
             <Sidebar />
             <PageContainer>
-                <Stack direction='row'>
+                <Stack
+                    direction='row'
+                    spacing={4}
+                    bg='purple.100'
+                >
                     <MerchantChecklist
                         pageMerchants={pageMerchants}
                         selectedMerchants={selectedMerchants}
                         setPageMerchants={setSelectedMerchants}
                     />
-                    <Box>
+                    <Box bg='red.100'>
                         <Stack
                             direction='row'
+                            w='100%'
                         >
                             <Text>
                                 Showing results for {searchText}
