@@ -59,7 +59,9 @@ const ContributionSection = ({ orders }) => {
     orders.map((order) => totalContribution += order.contribution_amount)
 
     return (
-        <Box>
+        <Box
+            mb={{ base: 8 }}
+        >
             <SectionHeader>
                 Contribution History
             </SectionHeader>
@@ -131,12 +133,12 @@ const OrderSection = ({ orders }) => {
                 direction='column'
                 spacing={{ base: 4 }}
             >
-                {orders.map((order,i) => {
+                {orders.map((order,i) => (
                     <OrderCard
                         key={i}
                         order={order}
                     />
-                })}
+                ))}
             </Stack>
         </Box>
     )
