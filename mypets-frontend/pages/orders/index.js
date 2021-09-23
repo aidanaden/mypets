@@ -59,10 +59,7 @@ const ContributionSection = ({ orders }) => {
     orders.map((order) => totalContribution += order.contribution_amount)
 
     return (
-        <Box
-            mb={{ base: 8 }}
-            bg='green.100'
-        >
+        <Box mb={{ base: 8 }}>
             <SectionHeader>
                 Contribution History
             </SectionHeader>
@@ -126,9 +123,7 @@ const ContributionSection = ({ orders }) => {
 
 const OrderSection = ({ orders }) => {
     return (
-        <Box
-            bg='blue.100'
-        >
+        <Box>
             <SectionHeader>
                 Order History
             </SectionHeader>

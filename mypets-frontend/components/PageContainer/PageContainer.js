@@ -4,9 +4,8 @@ function PageContainer({ children, ...props }) {
     return (
         <Container
             maxW={{ lg: "1200px" }}
-            // px={{ base: 4 }}
+            px={{ base: 0 }}
             py={{ base: 8, md: 12 }}
-            // mb={0}
             {...props}
         >
             {children}
