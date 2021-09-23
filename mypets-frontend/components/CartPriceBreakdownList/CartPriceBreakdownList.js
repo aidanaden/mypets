@@ -8,10 +8,38 @@ import {
     Th,
     Td,
     TableCaption,
-    IconButton
+    IconButton,
+    Stack,
+    Text,
+    Spacer
 } from "@chakra-ui/react"
 
-function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
+const SubtotalRow = ({ text, value }) => {
+    return (
+        <Stack
+            direction='row'
+            py={{ base: 2 }}
+        >
+            <Text
+                fontSize='lg'
+                textColor='mypets.400'
+            >
+                {text}
+            </Text>
+            <Spacer />
+            <Text>
+                {value}
+            </Text>
+        </Stack>
+    )
+}
+
+export default function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
+
+    const gstPrice = (totalPrice * 0.07).toFixed(2)
+    const deliveryFee = 3.00
+    const finalPrice = totalPrice + gstPrice + deliveryFee
+
     const productTotalQuantity = (order_products) => {
         let totalQuantity = 0
         order_products.map((order_product) => {
@@ -44,19 +72,43 @@ function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
                 </Thead>
                 <Tbody>
                     {productNames.map((productName, i) => (
-                        <Tr key={i}>
-                            <Td fontWeight='bold'>{productName}</Td>
-                            <Td fontWeight='bold'>{productTotalQuantity(groupedProducts[productName])}</Td>
-                            <Td textAlign='right' fontWeight='bold'>{productTotalPrice(groupedProducts[productName]).toFixed(2)}</Td>
+                        <Tr
+                            key={i}
+                            fontWeight='bold'
+                        >
+                            <Td>
+                                {productName}
+                            </Td>
+                            <Td>
+                                {productTotalQuantity(groupedProducts[productName])}
+                            </Td>
+                            <Td textAlign='right'>
+                                {productTotalPrice(groupedProducts[productName]).toFixed(2)}
+                            </Td>
                         </Tr>
                     ))}
                 </Tbody>
             </Table>
+            <Stack
+                direction='column'
+                spacing={1}
+            >
+                <SubtotalRow
+                    text='Subtotal'
+                    value={totalPrice.toFixed(2)}
+                />
+                <SubtotalRow
+                    text='GST charge'
+                    value={gstPrice}
+                />
+                <SubtotalRow
+                    text='Delivery fee'
+                    value={deliveryFee}
+                />
+            </Stack>
             <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={4}>
-                SG${totalPrice.toFixed(2)}
+                SG${finalPrice.toFixed(2)}
             </Box>
         </>
     )
 }
-
-export default CartPriceBreakdownList
