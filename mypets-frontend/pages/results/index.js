@@ -38,7 +38,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
 
     const merchantChangeOnCheck = (checked, merchant) => {
         console.log('check status: ', checked)
-        if (checked) {
+        if (!checked) {
             const newSelectedMerchants = [...selectedMerchants, merchant]
             console.log('new merchants: ', newSelectedMerchants)
             setSelectedMerchants(newSelectedMerchants)
@@ -135,7 +135,7 @@ export default function index({ products, animals, merchants }) {
                     <Stack
                         direction='column'
                         w='100%'
-                        spacing={{ base: 8 }}
+                        spacing={{ base: 12 }}
                     >
                         <Stack
                             direction='row'
