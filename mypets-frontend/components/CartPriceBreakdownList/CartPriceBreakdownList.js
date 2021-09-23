@@ -16,7 +16,7 @@ import {
 
 const SubtotalRow = ({ text, value }) => {
     return (
-        <Stack direction='row' spacing={0}>
+        <Stack direction='row'>
             <Text>
                 {text}
             </Text>
@@ -83,7 +83,7 @@ export default function CartPriceBreakdownList({ groupedProducts, productNames, 
                     ))}
                 </Tbody>
             </Table>
-            <Stack direction='column'>
+            <Stack direction='column' spacing={0}>
                 <SubtotalRow
                     text='Subtotal'
                     value={totalPrice.toFixed(2)}
