@@ -32,7 +32,7 @@ export default function Searchbar({ price, ...props }) {
     const onSearchClick = () => {
         // redirect to search result page
         router.push({
-            pathname: '/',
+            pathname: '/results',
             query: { 
                 search: search, 
                 price: price
