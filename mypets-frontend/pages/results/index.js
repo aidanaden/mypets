@@ -43,7 +43,9 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
             console.log('new merchants: ', newSelectedMerchants)
             setSelectedMerchants(newSelectedMerchants)
         } else {
-            setSelectedMerchants(selectedMerchants.filter(selectedMerchant => selectedMerchant != merchant))
+            const leftMerchants = selectedMerchants.filter(selectedMerchant => selectedMerchant != merchant)
+            console.log('merchants AFTER removal: ', leftMerchants)
+            setSelectedMerchants(leftMerchants)
         }
     }
 
@@ -142,7 +144,7 @@ export default function index({ products, animals, merchants }) {
                             </Text>
                             <Stack
                                 direction='row'
-                                spacing={{ base: 4 }}
+                                spacing={{ base: 8 }}
                             >
                                 <AnimalList
                                     animals={animals}

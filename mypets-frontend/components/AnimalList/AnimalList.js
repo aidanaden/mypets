@@ -12,8 +12,8 @@ const AnimalButton = ({ animal, ...props }) => {
     return (
         <Center
             w="100%"
-            py={{ lg: 3 }}
-            px={{ lg: 6 }}
+            py={{ lg: 2 }}
+            px={{ lg: 4 }}
             minW={{ base: '160px', lg: 'none' }}
             minH={{ base: '56px', lg: 'none' }}
             rounded="md"
@@ -27,10 +27,12 @@ const AnimalButton = ({ animal, ...props }) => {
             {animal == 'Cat' ?
                 <Icon
                     as={FaCat}
+                    mr={{ base: 1 }}
                 /> :
                 animal == 'Dog' ?
                     <Icon
                         as={FaDog}
+                        mr={{ base: 1 }}
                     /> :
                     <></>
             }
