@@ -9,7 +9,7 @@ import MerchantCard from "../MerchantCard/MerchantCard"
 
 function MerchantSectionList({ merchants, spacing=6 }) {
     return (
-        <Box>
+        <Box bg='green.100'>
             <SectionHeader>
                 Available Brands
             </SectionHeader>
