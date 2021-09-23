@@ -163,6 +163,8 @@ export async function getStaticProps() {
 
     const merchant_res = await fetch(`${API_MERCHANTS_URL}`)
     const merchants = await merchant_res.json()
+
+    console.log(merchants)
     const merchantNames = merchants.map(merchant => merchant.name)
 
     const animal_res = await fetch(`${API_ANIMALS_URL}`)
