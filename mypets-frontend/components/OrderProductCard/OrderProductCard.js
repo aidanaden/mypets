@@ -21,11 +21,11 @@ import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import { imageToUrl } from '../../utils/urls'
 import AuthContext, { callAPI } from '../../context/AuthContext'
 
-const OrderProductReorderBtn = ({ onClick, order_products, ...props }) => {
+const OrderProductReorderBtn = ({ onClick, ...props }) => {
     return (
         <MypetsBtn
             btnText='Re-order product'
-            onClick={onClick(order_products)}
+            onClick={onClick}
         />
     )
 }
@@ -145,7 +145,7 @@ export default function OrderProductCard({ order_products }) {
                         alignContent='center'
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
-                        <OrderProductReorderBtn onClick={handleAddToCart} order_products={order_products} />
+                        <OrderProductReorderBtn onClick={handleAddToCart(order_products)} order_products={order_products} />
                     </HStack>
                     
                 </>
