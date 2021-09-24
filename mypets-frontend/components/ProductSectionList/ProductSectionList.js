@@ -59,11 +59,10 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
     const categoryOnly = getCategories(productByAnimal)
 
     return (
-        <Box w='100%' bg='purple.100'>
+        <Box w='100%'>
             <Box
                 display={{ base: 'inherit', lg: 'none'}} 
                 mb={8}
-                bg='green.100'
             >
                 <SortMenu
                     setSortMethod={setSortMethod}
@@ -72,7 +71,6 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
             <Stack
                 direction='column'
                 spacing={{ lg: 8 }}
-                bg='blue.100'
             >
                 {categoryOnly.map((category, i) => (
                     <ProductList

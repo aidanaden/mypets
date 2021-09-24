@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { 
-    Box, 
-    Flex, 
-    Tabs, 
-    TabList, 
-    TabPanels, 
-    Tab, 
+    Box,
+    Flex,
+    Stack,
+    Tabs,
+    TabList,
+    TabPanels,
+    Tab,
     TabPanel,
     useToast
 } from "@chakra-ui/react"
@@ -80,8 +81,9 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                 selectedAnimal=''
                             />
                         </Box>
-                        <Flex
+                        <Stack
                             direction="column"
+                            spacing={{ base: 4 }}
                             maxW='210px'
                             display={{ base: 'none', lg: 'inherit' }}
                         >
@@ -91,7 +93,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                 categories={fullCategories}
                                 setSelectedCategory={setCategorySelected}
                             />
-                        </Flex>
+                        </Stack>
                     </Flex>
                 </TabPanel>
                 <TabPanel>
