@@ -20,6 +20,7 @@ import {
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
 
+import SectionHeader from '../SectionHeader/SectionHeader'
 import SearchbarGroup from '../SearchbarGroup/SearchbarGroup'
 import NavbarCartModalBtn from '../NavbarCartModalBtn/NavbarCartModalBtn';
 import NavbarUserModalBtn from '../NavbarUserModalBtn/NavbarUserModalBtn'
