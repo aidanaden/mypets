@@ -20,7 +20,7 @@ const AnimalButton = ({ animal, onClick, ...props }) => {
             fontSize="lg"
             _hover={{ bgGradient: "linear(to-t, mypets.900, mypets.100)", textColor: "gray.100", cursor: "pointer" }}
             _active={{ transform: "scale(0.95)" }}
-            onClick={onClick(animal)}
+            onClick={onClick}
             {...props}
         >
             {animal == 'Cat' ?
@@ -51,7 +51,7 @@ export default function AnimalList({ animals, setSelectedAnimal }) {
                 <AnimalButton
                     key={i}
                     animal={animal}
-                    onClick={setSelectedAnimal}
+                    onClick={() => setSelectedAnimal(animal)}
                 />
             ))}
         </Stack>

@@ -46,7 +46,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
     console.log('category only: ', categoryOnly)
 
     return (
-        <Box w='100%'>
+        <Box w='100%' bg='green.100'>
             <Box
                 display={{ base: 'inherit', lg: 'none'}} 
                 mb={8}
@@ -58,6 +58,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
             <Stack
                 direction='column'
                 spacing={{ lg: 8 }}
+                bg='blue.100'
             >
                 {categoryOnly.map((category, i) => (
                     <ProductList
