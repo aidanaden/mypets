@@ -59,7 +59,7 @@ export default function Home({ products, categories, animals, merchants }) {
       <Sidebar />
       <PageContainer>
         <CategoryList
-          display={{ base: 'none', md: 'inherit' }}
+          display={{ base: 'none', md: 'flex' }}
           categories={pageCategories}
           setSelectedCategory={setCategorySelected}
         />
@@ -72,10 +72,9 @@ export default function Home({ products, categories, animals, merchants }) {
             merchants={merchants}
           />
           <Stack
-            direction='row'
+            direction={{ base: 'column', md: 'row' }}
             align='stretch'
             justify='space-between'
-            // display={{ base: 'inherit', lg: 'inherit' }}
             bg='red.100'
           >
             <Box>

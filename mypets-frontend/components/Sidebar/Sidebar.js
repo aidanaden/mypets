@@ -47,8 +47,8 @@ export default function Sidebar({}) {
                     <a>
                         <img
                             src='/cropped-logo.svg'
-                            width={isMobile ? '250' : '125'}
-                            height={isMobile ? '104' : '52'}
+                            width={isMobile ? '187' : '125'}
+                            height={isMobile ? '78' : '52'}
                         />
                     </a>
                 </NextLink>
@@ -111,7 +111,6 @@ export default function Sidebar({}) {
                 display={{ base: 'block', md: 'none' }}
             />
             <Stack
-                px={{ base: 4 }}
                 spacing={{ base: 4 }}
                 direction="column"
                 as="nav"
