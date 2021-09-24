@@ -3,11 +3,10 @@ import {
     Box
 } from "@chakra-ui/react"
 
-import SectionHeader from '../SectionHeader/SectionHeader'
 import ProductList from '../ProductList/ProductList'
 import SortMenu from "../SortMenu/SortMenu"
 
-function ProductSectionList({ products, categories, setSortMethod, sortMethod, heading }) {
+function ProductSectionList({ products, categories, setSortMethod, sortMethod, selectedAnimal }) {
     const sortProductsAscending = (products) => {
         products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
     }
@@ -28,8 +27,15 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, h
         sortProductsPopularity(products)
     }
 
-    const filterProductsByCategory = (category) => {
-        return products.filter(product => product.category.name == category)
+    const filterProductsByCategoryAnimal = (category, animal) => {
+        return products.filter(product => {
+            if (animal != '') {
+                product.category.name == category && product.animal.name == animal
+            } else {
+                product.category.name == category
+            }
+            
+        })
     }
 
     return (
@@ -50,8 +56,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, h
                     <ProductList
                         key={i}
                         heading={category}
-                        products={filterProductsByCategory(category)}
-                        heading={category}
+                        products={filterProductsByCategoryAnimal(category, selectedAnimal)}
                     />
                 ))}
             </Stack>

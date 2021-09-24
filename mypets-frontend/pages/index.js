@@ -21,12 +21,15 @@ import ProductSectionList from '../components/ProductSectionList/ProductSectionL
 import CategoryList from '../components/CategoryList/CategoryList'
 import { API_PRODUCTS_URL, API_MERCHANTS_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
+import AnimalList from '../components/AnimalList/AnimalList'
 
 export default function Home({ products, categories, merchants }) {
   const [pageProducts, setPageProducts] = useState(products)
   const [sortMethod, setSortMethod] = useState('pop')
   const [pageCategories, setPageCategories] = useState(categories)
+  const [pageAnimals, setPageAnimals] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('')
+  const [selectedAnimal, setSelectedAnimal] = useState('')
   const router = useRouter()
   const toast = useToast()
 
@@ -48,23 +51,16 @@ export default function Home({ products, categories, merchants }) {
     return uniqueProductCategories
   }
 
-  useEffect(() => {
-    if (router.query.search && router.query.search != "") {
-      const search = router.query.search
-      const price = router.query.price
-  
-      const filteredProducts = products.filter(product => {
-        const firstValid = product.name.toLowerCase().includes(search.toLowerCase()) 
-        const secondValid = product.variants[0].price <= price
-        return firstValid && secondValid
-      })
-      setPageCategories(getCategories(filteredProducts))
-      setPageProducts(filteredProducts)
+  const getAnimals = (products) => {
+    const totalProductAnimals = product.map(product => product.animal.name)
+    const uniqueProductAnimals = [...new Set(totalProductAnimals)]
+    return uniqueProductAnimals
+  }
 
-    } else {
-      setPageProducts(products)
-      setPageCategories(getCategories(products))
-    }
+  useEffect(() => {
+    setPageProducts(products)
+    setPageCategories(getCategories(products))
+    setPageAnimals(getAnimals(products))
   }, [router.query])
 
   return (
@@ -94,10 +90,9 @@ export default function Home({ products, categories, merchants }) {
               <SectionHeader>
                 Animal
               </SectionHeader>
-              <CategoryList
-                isAnimal={true}
-                categories={['Dog', 'Cat']}
-                // setSelectedCategory={setCategorySelected}
+              <AnimalList
+                animals={pageAnimals}
+                setSelectedAnimal={setSelectedAnimal}
               />
             </Box>
             <Spacer />
@@ -110,7 +105,7 @@ export default function Home({ products, categories, merchants }) {
             categories={pageCategories}
             sortMethod={sortMethod}
             setSortMethod={setSortMethod}
-            heading='Recommended Products'
+            selectedAnimal={selectedAnimal}
           />
         </Stack>
       </PageContainer>
