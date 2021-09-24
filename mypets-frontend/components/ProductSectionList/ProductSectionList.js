@@ -7,25 +7,25 @@ import ProductList from '../ProductList/ProductList'
 import SortMenu from "../SortMenu/SortMenu"
 
 function ProductSectionList({ products, categories, setSortMethod, sortMethod, selectedAnimal }) {
-    const sortProductsAscending = (products) => {
-        products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
-    }
+    // const sortProductsAscending = (products) => {
+    //     products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
+    // }
 
-    const sortProductsDescending = (products) => {
-        products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? 1: -1)
-    }
+    // const sortProductsDescending = (products) => {
+    //     products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? 1: -1)
+    // }
 
-    const sortProductsPopularity = (products) => {
-        products.sort((a, b) => (a.rating < b.rating) ? 1: -1)
-    }
+    // const sortProductsPopularity = (products) => {
+    //     products.sort((a, b) => (a.rating < b.rating) ? 1: -1)
+    // }
 
-    if (sortMethod == 'asc') {
-        sortProductsAscending(products)
-    } else if (sortMethod == 'desc') {
-        sortProductsDescending(products)
-    } else if (sortMethod == 'pop') {
-        sortProductsPopularity(products)
-    }
+    // if (sortMethod == 'asc') {
+    //     sortProductsAscending(products)
+    // } else if (sortMethod == 'desc') {
+    //     sortProductsDescending(products)
+    // } else if (sortMethod == 'pop') {
+    //     sortProductsPopularity(products)
+    // }
 
     const filterProductsByAnimal = (products, animal) => {
         if (animal != '') {
@@ -78,6 +78,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                     <ProductList
                         key={i}
                         heading={category}
+                        sortMethod={sortMethod}
                         products={filterProductsByCategory(productByAnimal, category)}
                     />
                 ))}

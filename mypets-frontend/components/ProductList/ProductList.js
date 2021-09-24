@@ -44,6 +44,7 @@ function ProductList({ heading, products, sortMethod, selectedAnimal }) {
     }
 
     const productByAnimal = filterProductsByAnimal(products, selectedAnimal)
+    console.log('animal filter selected: ', selectedAnimal)
     console.log('products with search term: ', products)
     console.log('products filtered by animal: ', productByAnimal)
 

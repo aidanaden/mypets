@@ -176,6 +176,7 @@ export default function index({ products, animals, merchants }) {
                             heading='Suggested products'
                             products={pageProducts}
                             sortMethod={sortMethod}
+                            selectedAnimal={selectedAnimal}
                         />
                     </Stack>
                 </Stack>
