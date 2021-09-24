@@ -3,6 +3,7 @@ import {
     useDisclosure,
     Box,
     Flex,
+    Stack,
     Icon,
     Text,
     Collapse,
@@ -41,7 +42,7 @@ export default function Sidebar() {
 
     const Logo = () => {
         return (
-            <Box display={{ base: 'none', lg: 'block' }}>
+            <Box display={{ base: 'block', lg: 'block' }}>
                 <NextLink
                     href='/'
                     as='/'
@@ -53,10 +54,11 @@ export default function Sidebar() {
         )
     }
 
-    const NavItem = (props) => {
-        const { icon, children, ...rest } = props;
+    const NavItem = ({ icon, children, ...rest }) => {
         return (
-            <Flex
+            <Box
+                borderWidth='1px'
+                borderColor='gray.200'
                 align="center"
                 px="4"
                 pl="4"
@@ -69,21 +71,12 @@ export default function Sidebar() {
                 }}
                 role="group"
                 fontWeight="semibold"
+                fontSize='lg'
                 transition=".15s ease"
                 {...rest}
             >
-                {icon && (
-                    <Icon
-                        mr="2"
-                        boxSize="4"
-                        _groupHover={{
-                            color: "gray.600"
-                        }}
-                        as={icon}
-                    />
-                )}
                 {children}
-            </Flex>
+            </Box>
         );
     };
 
@@ -104,29 +97,26 @@ export default function Sidebar() {
             w="60"
             {...props}
         >
-            <Flex px="4" py="5" align="center">
+            <Stack px="4" py="5" align="center">
                 <Logo />
-            </Flex>
-            <Flex
+            </Stack>
+            <Stack
                 direction="column"
                 as="nav"
                 fontSize="sm"
                 color="gray.600"
                 aria-label="Main Navigation"
             >
-                <NavItem icon={MdHome}>
-                    Home
+                <NavItem>
+                    Store
                 </NavItem>
-                <NavItem icon={FaRss}>
-                    Articles
+                <NavItem>
+                    Past orders
                 </NavItem>
-                <NavItem icon={HiCollection}>
-                    Collections
+                <NavItem>
+                    User profile
                 </NavItem>
-                <NavItem icon={FaClipboardCheck}>
-                    Checklists
-                </NavItem>
-                <NavItem
+                {/* <NavItem
                     icon={HiCode}
                     onClick={integrations.onToggle}
                 >
@@ -147,14 +137,14 @@ export default function Sidebar() {
                     <NavItem pl="12" py="2">
                         Zapier
                     </NavItem>
-                </Collapse>
-                <NavItem icon={AiFillGift}>
+                </Collapse> */}
+                <NavItem>
                     Changelog
                 </NavItem>
-                <NavItem icon={BsGearFill}>
+                <NavItem>
                     Settings
                 </NavItem>
-            </Flex>
+            </Stack>
         </Box>
     );
     return (

@@ -135,7 +135,6 @@ function NavbarCartModalBtn() {
                                         rounded='lg'
                                         p={{ base: 5 }}
                                         bg='gray.200'
-                                        noOfLines={2}
                                     >
                                         With every purchase, Mypets will make a donation of 5% to local pet communities.
                                     </Center>

@@ -46,7 +46,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
             </Box>
             <Stack
                 direction='column'
-                spacing={{ lg: 8 }}
+                spacing={{ base: 4, lg: 8 }}
             >
                 {categoryOnly.map((category, i) => (
                     <ProductList
