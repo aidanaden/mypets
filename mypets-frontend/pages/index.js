@@ -52,7 +52,7 @@ export default function Home({ products, categories, merchants }) {
   }
 
   const getAnimals = (products) => {
-    const totalProductAnimals = product.map(product => product.animal.name)
+    const totalProductAnimals = products.map(product => product.animal.name)
     const uniqueProductAnimals = [...new Set(totalProductAnimals)]
     return uniqueProductAnimals
   }
@@ -61,7 +61,7 @@ export default function Home({ products, categories, merchants }) {
     setPageProducts(products)
     setPageCategories(getCategories(products))
     setPageAnimals(getAnimals(products))
-  }, [router.query])
+  }, [])
 
   return (
     <Box>
