@@ -45,6 +45,10 @@ export default function Home({ products, categories, animals, merchants }) {
     isClosable: true,
   })
 
+  console.log('products: ', products)
+  console.log('categories: ', categories)
+  console.log('animals: ', animals)
+
   // useEffect(() => {
   //   setPageProducts(products)
   //   setPageCategories(getCategories(products))
