@@ -41,9 +41,7 @@ function SortMenu({ setSortMethod }) {
     }
 
     return (
-        <Box 
-            alignSelf='end'
-        >
+        <Box alignSelf={{ base: 'start', md: 'end' }}>
             <Menu>
                 <MypetsMenuBtn menuBtnText={sortBtnText} />
                 <MenuList boxShadow="md">

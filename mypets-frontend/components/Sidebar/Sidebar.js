@@ -108,6 +108,8 @@ export default function Sidebar({}) {
                 isMobile
                 justifyContent='center'
                 alignContent='center'
+                px='auto'
+                bg='blue.100'
                 display={{ base: 'block', md: 'none' }}
             />
             <Stack
