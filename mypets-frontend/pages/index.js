@@ -24,10 +24,7 @@ import SectionHeader from '../components/SectionHeader/SectionHeader'
 import AnimalList from '../components/AnimalList/AnimalList'
 
 export default function Home({ products, categories, animals, merchants }) {
-  const [pageProducts, setPageProducts] = useState(products)
   const [sortMethod, setSortMethod] = useState('pop')
-  const [pageCategories, setPageCategories] = useState(categories)
-  const [pageAnimals, setPageAnimals] = useState(animals)
   const [selectedCategory, setSelectedCategory] = useState('')
   const [selectedAnimal, setSelectedAnimal] = useState('')
   const router = useRouter()
@@ -49,17 +46,13 @@ export default function Home({ products, categories, animals, merchants }) {
   console.log('categories: ', categories)
   console.log('animals: ', animals)
 
-  console.log('page products: ', pageProducts)
-  console.log('page categories: ', pageCategories)
-  console.log('page animals: ', pageAnimals)
-
   return (
     <Box>
       <AnnouncementBanner />
       <Sidebar />
       <PageContainer>
         <CategoryList
-          categories={pageCategories}
+          categories={categories}
           setSelectedCategory={setCategorySelected}
         />
         <Carousel />
@@ -82,7 +75,7 @@ export default function Home({ products, categories, animals, merchants }) {
                 Animal
               </SectionHeader>
               <AnimalList
-                animals={pageAnimals}
+                animals={animals}
                 setSelectedAnimal={setSelectedAnimal}
               />
             </Box>
@@ -92,8 +85,8 @@ export default function Home({ products, categories, animals, merchants }) {
             />
           </Stack>
           <ProductSectionList
-            products={pageProducts}
-            categories={pageCategories}
+            products={products}
+            categories={categories}
             sortMethod={sortMethod}
             setSortMethod={setSortMethod}
             selectedAnimal={selectedAnimal}

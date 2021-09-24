@@ -57,7 +57,6 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
 
     const productByAnimal = filterProductsByAnimal(products, selectedAnimal)
     const categoryOnly = getCategories(productByAnimal)
-    console.log('category only: ', categoryOnly)
 
     return (
         <Box w='100%' bg='purple.100'>

@@ -7,7 +7,7 @@ import {
 import SectionHeader from '../SectionHeader/SectionHeader'
 import ProductListCard from '../ProductListCard/ProductListCard'
 
-function ProductList({ heading, products, sortMethod }) {
+function ProductList({ heading, products, sortMethod, selectedAnimal }) {
     const [listProducts, setListProducts] = useState(products)
 
     const sortProductsAscending = (products) => {
@@ -30,9 +30,20 @@ function ProductList({ heading, products, sortMethod }) {
         sortProductsPopularity(products)
     }
 
-    useEffect(() => {
-        setListProducts(products)
-    }, [products])
+    const filterProductsByAnimal = (products, animal) => {
+        if (animal != '') {
+            const filteredProducts = products.filter((product) => {
+                if (product.animal.name == animal) {
+                    return product
+                }
+            })
+            return filteredProducts
+        } else {
+            return products
+        }
+    }
+
+    const productByAnimal = filterProductsByAnimal(products, selectedAnimal)
 
     return (
         <Box>
@@ -43,7 +54,7 @@ function ProductList({ heading, products, sortMethod }) {
                 columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
                 spacing={{ base: 4 }}
             >
-                {listProducts.map((product, index) => (
+                {productByAnimal.map((product, index) => (
                     <ProductListCard product={product} key={index} />
                 ))}
             </SimpleGrid>
