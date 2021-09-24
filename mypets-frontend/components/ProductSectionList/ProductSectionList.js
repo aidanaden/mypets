@@ -49,8 +49,14 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
         return filteredProducts
     }
 
+    const getCategories = (products) => {
+        const totalProductCategories = products.map(product => product.category.name)
+        const uniqueProductCategories = [...new Set(totalProductCategories)]
+        return uniqueProductCategories
+    }
+
     const productByAnimal = filterProductsByAnimal(products, selectedAnimal)
-    const categoryOnly = productByAnimal.filter(category => category != 'All products')
+    const categoryOnly = getCategories(productByAnimal)
     console.log('category only: ', categoryOnly)
 
     return (
