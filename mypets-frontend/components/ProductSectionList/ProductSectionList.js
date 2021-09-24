@@ -38,6 +38,8 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
         })
     }
 
+    const categoryOnly = categories.map(category => category != 'All products')
+
     return (
         <Box w='100%'>
             <Box
@@ -52,7 +54,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                 direction='column'
                 spacing={{ lg: 8 }}
             >
-                {categories.map((category, i) => (
+                {categoryOnly.map((category, i) => (
                     <ProductList
                         key={i}
                         heading={category}

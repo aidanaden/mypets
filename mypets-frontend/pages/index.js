@@ -53,6 +53,10 @@ export default function Home({ products, categories, animals, merchants }) {
   console.log('page categories: ', pageCategories)
   console.log('page animals: ', pageAnimals)
 
+  const animalBtnClicked = (animal) => {
+    console.log('animal button clicked: ', animal)
+    setSelectedAnimal(animal)
+  }
   // useEffect(() => {
   //   setPageProducts(products)
   //   setPageCategories(getCategories(products))
@@ -88,7 +92,7 @@ export default function Home({ products, categories, animals, merchants }) {
               </SectionHeader>
               <AnimalList
                 animals={pageAnimals}
-                setSelectedAnimal={setSelectedAnimal}
+                setSelectedAnimal={animalBtnClicked}
               />
             </Box>
             <Spacer />
