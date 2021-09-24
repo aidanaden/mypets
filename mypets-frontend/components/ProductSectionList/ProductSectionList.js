@@ -38,7 +38,11 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
         })
     }
 
-    const categoryOnly = categories.map(category => category != 'All products')
+    const categoryOnly = categories.map(category => {
+        if (category != 'All products') {
+            return category
+        }
+    })
     console.log('category only: ', categoryOnly)
 
     return (
