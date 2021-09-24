@@ -29,12 +29,12 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
 
     const filterProductsByCategoryAnimal = (category, animal) => {
         return products.filter(product => {
-            if (animal != '') {
-                product.category.name == category && product.animal.name == animal
-            } else {
-                product.category.name == category
-            }
-            
+            // if (animal != '') {
+            //     product.category.name == category && product.animal.name == animal
+            // } else {
+            //     product.category.name == category
+            // }
+            return product.category.name == category
         })
     }
 
