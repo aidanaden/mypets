@@ -77,13 +77,20 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                 categories={fullCategories}
                                 sortMethod={sortMethod}
                                 setSortMethod={setSortMethod}
-                                selectedCategory={selectedCategory}
-                                setCategorySelected={setCategorySelected}
+                                selectedAnimal=''
                             />
                         </Box>
-                        <Flex direction="column" maxW='210px' display={{ base: 'none', lg: 'inherit' }}>
+                        <Flex
+                            direction="column"
+                            maxW='210px'
+                            display={{ base: 'none', lg: 'inherit' }}
+                        >
                             <SortMenu setSortMethod={setSortMethod}/>
-                            <CategoryList categories={fullCategories} setSelectedCategory={setCategorySelected}/>
+                            <CategoryList
+                                direction='column'
+                                categories={fullCategories}
+                                setSelectedCategory={setCategorySelected}
+                            />
                         </Flex>
                     </Flex>
                 </TabPanel>
