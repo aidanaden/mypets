@@ -145,7 +145,7 @@ export default function OrderProductCard({ order_products }) {
                         alignContent='center'
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
-                        <OrderProductReorderBtn onClick={handleAddToCart(order_products)} order_products={order_products} />
+                        <OrderProductReorderBtn onClick={() => handleAddToCart(order_products)} order_products={order_products} />
                     </HStack>
                     
                 </>
