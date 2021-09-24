@@ -30,7 +30,10 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
     const filterProductsByCategoryAnimal = (products, category, animal) => {
         if (animal != '') {
             const filteredProducts = products.filter((product) => {
-                product.animal.name == animal && product.category.name == category
+                console.log('comparing product category: ', product.category.name)
+                if (product.animal.name == animal && product.category.name == category) {
+                    return product
+                }
             })
             console.log('filtered products: ', filteredProducts)
             return filteredProducts
