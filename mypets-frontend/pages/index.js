@@ -49,6 +49,10 @@ export default function Home({ products, categories, animals, merchants }) {
   console.log('categories: ', categories)
   console.log('animals: ', animals)
 
+  console.log('page products: ', pageProducts)
+  console.log('page categories: ', pageCategories)
+  console.log('page animals: ', pageAnimals)
+
   // useEffect(() => {
   //   setPageProducts(products)
   //   setPageCategories(getCategories(products))
