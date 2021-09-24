@@ -16,6 +16,7 @@ import ProductSectionList from '../ProductSectionList/ProductSectionList'
 import SortMenu from '../SortMenu/SortMenu'
 import SectionHeader from '../SectionHeader/SectionHeader'
 import AnimalList from '../AnimalList/AnimalList'
+import { getAnimals } from '../../utils/urls'
 
 function MerchantProductReviewTab({ merchantProducts, categories, merchantReviews}) {
 
