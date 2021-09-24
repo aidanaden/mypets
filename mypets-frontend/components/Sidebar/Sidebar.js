@@ -132,7 +132,10 @@ export default function Sidebar({}) {
                 >
                     Past orders
                 </NavItem>
-                <NavbarUserModalBtn NavItem={NavItem}/>
+                <NavbarUserModalBtn
+                    isMobile
+                    NavItem={NavItem}
+                />
                 {/* <NavItem
                     icon={HiCode}
                     onClick={integrations.onToggle}

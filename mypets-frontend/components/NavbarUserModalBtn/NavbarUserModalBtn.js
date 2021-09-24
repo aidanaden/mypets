@@ -24,8 +24,7 @@ import UserAddressForm from '../UserAddressForm/UserAddressForm'
 import UserPasswordForm from '../UserPasswordForm/UserPasswordForm'
 import AuthContext from '../../context/AuthContext'
 
-function NavbarUserModalBtn({ NavItem }) {
-
+function NavbarUserModalBtn({ isMobile, NavItem }) {
     const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { user, profile, updateProfile, updateUserPassword } = useContext(AuthContext)
@@ -132,7 +131,7 @@ function NavbarUserModalBtn({ NavItem }) {
 
     return (
         <>
-            {mode == 'mobile' ? (
+            {isMobile ? (
                 <NavItem>
                     User Profile
                 </NavItem>
