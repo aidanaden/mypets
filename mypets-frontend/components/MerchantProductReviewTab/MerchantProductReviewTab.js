@@ -72,7 +72,32 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
             <TabPanels mt={4} px={0}>
                 <TabPanel px={0}>
                     <Flex justifyContent='space-between' direction="row">
-                        <Box w="100%" mr={12}>
+                        <Stack
+                            w='100%'
+                            direction="column"
+                            spacing={{ base: 8, lg: 12 }}
+                        >
+                            <Stack
+                                direction='row'
+                                align='stretch'
+                                justify='space-between'
+                                display={{ base: 'none', lg: 'inherit' }}
+                                bg='red.100'
+                            >
+                                <Box>
+                                <SectionHeader>
+                                    Animal
+                                </SectionHeader>
+                                <AnimalList
+                                    animals={pageAnimals}
+                                    setSelectedAnimal={setSelectedAnimal}
+                                />
+                                </Box>
+                                <Spacer />
+                                <SortMenu
+                                setSortMethod={setSortMethod}
+                                />
+                            </Stack>
                             <ProductSectionList 
                                 products={merchantProducts} 
                                 categories={fullCategories}
@@ -80,10 +105,10 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                 setSortMethod={setSortMethod}
                                 selectedAnimal=''
                             />
-                        </Box>
-                        <Stack
+                        </Stack>
+                        {/* <Stack
                             direction="column"
-                            spacing={{ base: 4 }}
+                            spacing={{ base: 8 }}
                             maxW='210px'
                             display={{ base: 'none', lg: 'inherit' }}
                         >
@@ -93,7 +118,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                 categories={fullCategories}
                                 setSelectedCategory={setCategorySelected}
                             />
-                        </Stack>
+                        </Stack> */}
                     </Flex>
                 </TabPanel>
                 <TabPanel>
