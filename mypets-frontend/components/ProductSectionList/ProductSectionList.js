@@ -29,13 +29,17 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
 
     const filterProductsByCategoryAnimal = (category, animal) => {
         if (animal != '') {
-            return products.filter((product) => {
+            const filteredProducts = products.filter((product) => {
                 product.animal.name == animal && product.category.name == category
             })
+            console.log('filtered products: ', filteredProducts)
+            return filteredProducts
         } else {
-            return products.filter((product) => {
+            const filteredProducts = products.filter((product) => {
                 product.category.name == category
             })
+            console.log('filtered products: ', filteredProducts)
+            return filteredProducts
         }
     }
 
