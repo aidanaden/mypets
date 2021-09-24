@@ -143,7 +143,7 @@ export default function index({ products, animals, merchants }) {
                     <MerchantChecklist
                         pageMerchants={pageMerchants}
                         selectedMerchants={selectedMerchants}
-                        setPageMerchants={setSelectedMerchants}
+                        setSelectedMerchants={setSelectedMerchants}
                     />
                     <Stack
                         direction='column'
