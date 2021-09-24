@@ -37,7 +37,9 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
         } else {
             const filteredProducts = products.filter((product) => {
                 console.log('comparing product category: ', product.category.name)
-                product.category.name == category
+                if (product.category.name == category) {
+                    return product
+                }
             })
             console.log('filtering for products in category: ', category)
             console.log('animal value empty!')
