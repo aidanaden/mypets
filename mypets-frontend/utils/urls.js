@@ -52,5 +52,5 @@ export const getAnimals = (products) => {
 export const getCategories = (products) => {
     const totalProductCategories = products.map(product => product.category.name)
     const uniqueProductCategories = [...new Set(totalProductCategories)]
-    return ['All products'].concat(uniqueProductCategories)
+    return uniqueProductCategories
 }

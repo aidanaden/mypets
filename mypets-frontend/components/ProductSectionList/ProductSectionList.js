@@ -9,7 +9,6 @@ import SortMenu from "../SortMenu/SortMenu"
 import { getCategories } from '../../utils/urls'
 
 function ProductSectionList({ products, categories, setSortMethod, sortMethod, selectedAnimal }) {
-
     const filterProductsByAnimal = (products, animal) => {
         if (animal != '') {
             const filteredProducts = products.filter((product) => {

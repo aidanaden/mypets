@@ -21,11 +21,11 @@ import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import { imageToUrl } from '../../utils/urls'
 import AuthContext, { callAPI } from '../../context/AuthContext'
 
-const OrderProductReorderBtn = ({ onClick, ...props }) => {
+const OrderProductReorderBtn = ({ onClick, variant, ...props }) => {
     return (
         <MypetsBtn
             btnText='Re-order product'
-            onClick={onClick}
+            onClick={onClick(variant)}
         />
     )
 }
@@ -53,7 +53,7 @@ export default function OrderProductCard({ order_products }) {
         isClosable: true,
     })
 
-    const handleAddToCart = async () => {
+    const handleAddToCart = async (variant) => {
         if (user) {
             // create order product
             const order_product = {
@@ -143,7 +143,7 @@ export default function OrderProductCard({ order_products }) {
                         alignContent='center'
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
-                        <OrderProductReorderBtn onClick={handleAddToCart} />
+                        <OrderProductReorderBtn onClick={handleAddToCart} variant={order_products[0].variant} />
                     </HStack>
                     
                 </>
