@@ -59,6 +59,7 @@ export default function Home({ products, categories, animals, merchants }) {
       <Sidebar />
       <PageContainer>
         <CategoryList
+          display={{ base: 'none', md: 'inherit' }}
           categories={pageCategories}
           setSelectedCategory={setCategorySelected}
         />

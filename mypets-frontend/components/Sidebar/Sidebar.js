@@ -17,12 +17,6 @@ import {
     Input,
     Avatar
 } from '@chakra-ui/react'
-import { MdKeyboardArrowRight, MdHome } from 'react-icons/md'
-import { FaBell, FaClipboardCheck, FaRss } from 'react-icons/fa'
-import { FiMenu, FiSearch } from 'react-icons/fi'
-import { BsGearFill } from 'react-icons/bs'
-import { AiFillGift } from 'react-icons/ai'
-import { HiCollection, HiCode } from 'react-icons/hi'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
 
@@ -39,9 +33,9 @@ export default function Sidebar() {
     const integrations = useDisclosure();
     const { user, logoutUser } = useContext(AuthContext)
 
-    const Logo = () => {
+    const Logo = ({ ...props }) => {
         return (
-            <Box display={{ base: 'block', lg: 'block' }}>
+            <Box {...props}>
                 <NextLink
                     href='/'
                     as='/'
@@ -53,11 +47,11 @@ export default function Sidebar() {
         )
     }
 
-    const NavItem = ({ icon, children, ...rest }) => {
+    const NavItem = ({ children, ...rest }) => {
         return (
             <Box
                 borderWidth='1px'
-                borderColor='gray.200'
+                borderColor='gray.400'
                 align="center"
                 px="4"
                 pl="4"
@@ -65,8 +59,8 @@ export default function Sidebar() {
                 cursor="pointer"
                 color="inherit"
                 _hover={{
-                    bg: "gray.100",
-                    color: "gray.900"
+                    bg: "gray.200",
+                    color: "gray.800"
                 }}
                 role="group"
                 fontWeight="semibold"
@@ -87,19 +81,20 @@ export default function Sidebar() {
             left="0"
             zIndex="sticky"
             h="full"
-            pb="10"
+            py={{ base: 10 }}
             overflowX="hidden"
             overflowY="auto"
             bg="white"
             borderColor="inherit"
             borderRightWidth="1px"
             w="60"
+            bg='gray.100'
             {...props}
         >
-            <Stack px="4" py="5" align="center">
-                <Logo />
-            </Stack>
+            <Logo display={{ base: 'block', md: 'none' }}/>
             <Stack
+                px={{ base: 4 }}
+                spacing={{ base: 2 }}
                 direction="column"
                 as="nav"
                 fontSize="sm"
@@ -137,12 +132,6 @@ export default function Sidebar() {
                         Zapier
                     </NavItem>
                 </Collapse> */}
-                <NavItem>
-                    Changelog
-                </NavItem>
-                <NavItem>
-                    Settings
-                </NavItem>
             </Stack>
         </Box>
     );
@@ -194,7 +183,7 @@ export default function Sidebar() {
                             aria-label='Toggle Navigation'
                         />
                     </Box>
-                    <Logo />
+                    <Logo display={{ base: 'none', lg: 'inherit' }} />
                     <SearchbarGroup display={{ base: 'none', md: 'inherit' }} />
                     {user ? (
                         <ButtonGroup
