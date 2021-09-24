@@ -45,17 +45,13 @@ export default function Home({ products, categories, animals, merchants }) {
     isClosable: true,
   })
 
+  console.log('products: ', products)
+  console.log('categories: ', categories)
+  console.log('animals: ', animals)
+
   console.log('page products: ', pageProducts)
   console.log('page categories: ', pageCategories)
   console.log('page animals: ', pageAnimals)
-
-  const filterProducts = (products, animal) => {
-    if (animal != '') {
-      return products.filter((product) => product.animal.name == animal)
-    } else {
-      return products
-    }
-  }
 
   return (
     <Box>
@@ -87,7 +83,7 @@ export default function Home({ products, categories, animals, merchants }) {
               </SectionHeader>
               <AnimalList
                 animals={pageAnimals}
-                setSelectedAnimal={animalBtnClicked}
+                setSelectedAnimal={setSelectedAnimal}
               />
             </Box>
             <Spacer />
@@ -96,7 +92,7 @@ export default function Home({ products, categories, animals, merchants }) {
             />
           </Stack>
           <ProductSectionList
-            products={filterProducts(pageProducts, selectedAnimal)}
+            products={pageProducts}
             categories={pageCategories}
             sortMethod={sortMethod}
             setSortMethod={setSortMethod}
