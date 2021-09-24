@@ -38,6 +38,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
             const filteredProducts = products.filter((product) => {
                 product.category.name == category
             })
+            console.log('animal value empty!')
             console.log('filtered products: ', filteredProducts)
             return filteredProducts
         }
