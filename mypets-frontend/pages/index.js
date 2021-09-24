@@ -27,7 +27,7 @@ export default function Home({ products, categories, merchants }) {
   const [pageProducts, setPageProducts] = useState(products)
   const [sortMethod, setSortMethod] = useState('pop')
   const [pageCategories, setPageCategories] = useState(categories)
-  const [pageAnimals, setPageAnimals] = useState('')
+  const [pageAnimals, setPageAnimals] = useState(getAnimals(products))
   const [selectedCategory, setSelectedCategory] = useState('')
   const [selectedAnimal, setSelectedAnimal] = useState('')
   const router = useRouter()
