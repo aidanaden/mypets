@@ -12,7 +12,6 @@ import {
     IconButton,
     Stack,
     ButtonGroup,
-    useRouter,
     InputGroup,
     InputLeftElement,
     Input,
@@ -20,6 +19,7 @@ import {
 } from '@chakra-ui/react'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 
 import SectionHeader from '../SectionHeader/SectionHeader'
 import SearchbarGroup from '../SearchbarGroup/SearchbarGroup'
