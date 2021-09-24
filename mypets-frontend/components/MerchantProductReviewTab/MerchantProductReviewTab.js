@@ -107,19 +107,6 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                 selectedAnimal={selectedAnimal}
                             />
                         </Stack>
-                        {/* <Stack
-                            direction="column"
-                            spacing={{ base: 8 }}
-                            maxW='210px'
-                            display={{ base: 'none', lg: 'inherit' }}
-                        >
-                            <SortMenu setSortMethod={setSortMethod}/>
-                            <CategoryList
-                                direction='column'
-                                categories={fullCategories}
-                                setSelectedCategory={setCategorySelected}
-                            />
-                        </Stack> */}
                     </Flex>
                 </TabPanel>
                 <TabPanel>
