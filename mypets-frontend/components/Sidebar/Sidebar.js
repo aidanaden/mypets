@@ -159,6 +159,7 @@ export default function Sidebar({ categories }) {
                     </NavItem>
                 </Collapse> */}
             </Stack>
+            {categories &&
             <Box>
                 <SectionHeader>
                     Categories
@@ -181,8 +182,7 @@ export default function Sidebar({ categories }) {
                         </NavItem>
                     ))}
                 </Stack>
-            </Box>
-            
+            </Box>}
         </Stack>
     );
     return (
