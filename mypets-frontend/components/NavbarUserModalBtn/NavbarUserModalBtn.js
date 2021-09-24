@@ -132,7 +132,7 @@ function NavbarUserModalBtn({ isMobile, NavItem }) {
     return (
         <>
             {isMobile ? (
-                <NavItem>
+                <NavItem onClick={onOpen}>
                     User Profile
                 </NavItem>
             ) : (

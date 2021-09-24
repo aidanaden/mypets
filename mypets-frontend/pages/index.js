@@ -56,7 +56,7 @@ export default function Home({ products, categories, animals, merchants }) {
   return (
     <Box>
       <AnnouncementBanner />
-      <Sidebar />
+      <Sidebar categories={pageCategories} />
       <PageContainer>
         <CategoryList
           display={{ base: 'none', md: 'flex' }}

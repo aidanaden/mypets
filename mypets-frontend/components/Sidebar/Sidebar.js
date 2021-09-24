@@ -30,7 +30,7 @@ import AuthContext from '../../context/AuthContext'
 import LoginModalBtn from '../LoginModalBtn/LoginModalBtn';
 import SignupModalBtn from '../SignupModalBtn/SignupModalBtn';
 
-export default function Sidebar({}) {
+export default function Sidebar({ categories }) {
     const sidebar = useDisclosure();
     const integrations = useDisclosure();
     const { user, logoutUser } = useContext(AuthContext)
@@ -164,31 +164,22 @@ export default function Sidebar({}) {
                     Categories
                 </SectionHeader>
                 <Stack
-                    spacing={{ base: 4 }}
+                    spacing={{ base: 2 }}
                     direction="column"
                     as="nav"
                     fontSize="sm"
                     color="gray.600"
                     aria-label="Sub Navigation"
                 >
-                    <NavItem
-                        fontSize='sm'
-                        fontWeight='normal'
-                    >
-                        Store
-                    </NavItem>
-                    <NavItem
-                        fontSize='sm'
-                        fontWeight='normal'
-                    >
-                        Past orders
-                    </NavItem>
-                    <NavItem
-                        fontSize='sm'
-                        fontWeight='normal'
-                    >
-                        User profile
-                    </NavItem>
+                    {categories.map((category, i) => (
+                        <NavItem
+                            key={i}
+                            fontSize='sm'
+                            fontWeight='normal'
+                        >
+                            {category}
+                        </NavItem>
+                    ))}
                 </Stack>
             </Box>
             
