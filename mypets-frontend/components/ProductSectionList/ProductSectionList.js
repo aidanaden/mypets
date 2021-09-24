@@ -27,31 +27,30 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
         sortProductsPopularity(products)
     }
 
-    const filterProductsByCategoryAnimal = (products, category, animal) => {
+    const filterProductsByAnimal = (products, animal) => {
         if (animal != '') {
             const filteredProducts = products.filter((product) => {
-                console.log('comparing product category: ', product.category.name)
-                if (product.animal.name == animal && product.category.name == category) {
+                if (product.animal.name == animal) {
                     return product
                 }
             })
-            console.log('filtered products: ', filteredProducts)
             return filteredProducts
         } else {
-            const filteredProducts = products.filter((product) => {
-                console.log('comparing product category: ', product.category.name)
-                if (product.category.name == category) {
-                    return product
-                }
-            })
-            console.log('filtering for products in category: ', category)
-            console.log('animal value empty!')
-            console.log('filtered products: ', filteredProducts)
-            return filteredProducts
+            return products
         }
     }
 
-    const categoryOnly = categories.filter(category => category != 'All products')
+    const filterProductsByCategory = (products, category) => {
+        const filteredProducts = products.filter((product) => {
+            if (product.category.name == category) {
+                return product
+            }
+        })
+        return filteredProducts
+    }
+
+    const productByAnimal = filterProductsByAnimal(products, selectedAnimal)
+    const categoryOnly = productByAnimal.filter(category => category != 'All products')
     console.log('category only: ', categoryOnly)
 
     return (
@@ -74,7 +73,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                     <ProductList
                         key={i}
                         heading={category}
-                        products={filterProductsByCategoryAnimal(products, category, selectedAnimal)}
+                        products={filterProductsByCategory(productByAnimal, category)}
                     />
                 ))}
             </Stack>
