@@ -79,6 +79,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                         key={i}
                         heading={category}
                         sortMethod={sortMethod}
+                        selectedAnimal={''}
                         products={filterProductsByCategory(productByAnimal, category)}
                     />
                 ))}
