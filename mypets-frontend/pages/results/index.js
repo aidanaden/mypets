@@ -201,15 +201,6 @@ export async function getStaticProps() {
         return animalJson.name
     })
 
-    // const getCategories = (products) => {
-    //     const totalProductCategories = products.map(product => product.category.name)
-    //     const uniqueProductCategories = [...new Set(totalProductCategories)]
-    //     return ['All products'].concat(uniqueProductCategories)
-    // }
-
-    // const categories = getCategories(products)
-
-    // Return as props
     return {
         props: {
             products,

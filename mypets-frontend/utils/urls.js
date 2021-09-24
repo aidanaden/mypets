@@ -42,4 +42,15 @@ export function stringToDate(str_date) {
     const review_date = new Date(str_date)
     return format(review_date, "eee, dd MMM y")
 }
- 
+
+export const getAnimals = (products) => {
+    const totalProductAnimals = products.map(product => product.animal.name)
+    const uniqueProductAnimals = [...new Set(totalProductAnimals)]
+    return uniqueProductAnimals
+}
+
+export const getCategories = (products) => {
+    const totalProductCategories = products.map(product => product.category.name)
+    const uniqueProductCategories = [...new Set(totalProductCategories)]
+    return ['All products'].concat(uniqueProductCategories)
+}

@@ -19,7 +19,7 @@ import SortMenu from '../components/SortMenu/SortMenu'
 import MerchantSectionList from '../components/MerchantSectionList/MerchantSectionList'
 import ProductSectionList from '../components/ProductSectionList/ProductSectionList'
 import CategoryList from '../components/CategoryList/CategoryList'
-import { API_PRODUCTS_URL, API_MERCHANTS_URL } from '../utils/urls'
+import { API_PRODUCTS_URL, API_MERCHANTS_URL, getAnimals, getCategories } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 import AnimalList from '../components/AnimalList/AnimalList'
 
@@ -112,18 +112,6 @@ export async function getStaticProps() {
 
   const merchant_res = await fetch(`${API_MERCHANTS_URL}`)
   const merchants = await merchant_res.json()
-
-  const getCategories = (products) => {
-    const totalProductCategories = products.map(product => product.category.name)
-    const uniqueProductCategories = [...new Set(totalProductCategories)]
-    return ['All products'].concat(uniqueProductCategories)
-  }
-
-  const getAnimals = (products) => {
-    const totalProductAnimals = products.map(product => product.animal.name)
-    const uniqueProductAnimals = [...new Set(totalProductAnimals)]
-    return uniqueProductAnimals
-  }
 
   const categories = getCategories(products)
   const animals = getAnimals(products)

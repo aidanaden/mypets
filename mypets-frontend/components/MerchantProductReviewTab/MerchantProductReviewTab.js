@@ -89,7 +89,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                         Animal
                                     </SectionHeader>
                                     <AnimalList
-                                        animals={pageAnimals}
+                                        animals={getAnimals(merchantProducts)}
                                         setSelectedAnimal={setSelectedAnimal}
                                     />
                                 </Box>

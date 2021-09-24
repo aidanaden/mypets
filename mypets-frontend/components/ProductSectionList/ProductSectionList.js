@@ -6,26 +6,9 @@ import {
 import ProductList from '../ProductList/ProductList'
 import SortMenu from "../SortMenu/SortMenu"
 
+import { getCategories } from '../../utils/urls'
+
 function ProductSectionList({ products, categories, setSortMethod, sortMethod, selectedAnimal }) {
-    // const sortProductsAscending = (products) => {
-    //     products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
-    // }
-
-    // const sortProductsDescending = (products) => {
-    //     products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? 1: -1)
-    // }
-
-    // const sortProductsPopularity = (products) => {
-    //     products.sort((a, b) => (a.rating < b.rating) ? 1: -1)
-    // }
-
-    // if (sortMethod == 'asc') {
-    //     sortProductsAscending(products)
-    // } else if (sortMethod == 'desc') {
-    //     sortProductsDescending(products)
-    // } else if (sortMethod == 'pop') {
-    //     sortProductsPopularity(products)
-    // }
 
     const filterProductsByAnimal = (products, animal) => {
         if (animal != '') {
@@ -47,12 +30,6 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
             }
         })
         return filteredProducts
-    }
-
-    const getCategories = (products) => {
-        const totalProductCategories = products.map(product => product.category.name)
-        const uniqueProductCategories = [...new Set(totalProductCategories)]
-        return uniqueProductCategories
     }
 
     const productByAnimal = filterProductsByAnimal(products, selectedAnimal)

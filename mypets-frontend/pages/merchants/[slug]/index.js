@@ -2,7 +2,7 @@ import React from 'react'
 import lodash from 'lodash'
 
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
-import { API_MERCHANTS_URL } from '../../../utils/urls'
+import { API_MERCHANTS_URL, getAnimals } from '../../../utils/urls'
 import Sidebar from "../../../components/Sidebar/Sidebar"
 import Footer from '../../../components/Footer/Footer'
 import BackBtn from '../../../components/BackBtn/BackBtn'
