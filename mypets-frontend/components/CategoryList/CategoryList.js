@@ -13,7 +13,6 @@ export default function CategoryList({ direction='row', categories, setSelectedC
         >
             {categories.map((cat, i) => (
                 <CategoryBtn
-                    isAnimal={isAnimal}
                     cat={cat}
                     key={i}
                     onClick={setSelectedCategory}
