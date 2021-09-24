@@ -19,10 +19,10 @@ import AnimalList from '../AnimalList/AnimalList'
 import { getAnimals } from '../../utils/urls'
 
 function MerchantProductReviewTab({ merchantProducts, categories, merchantReviews}) {
-
     const [sortMethod, setSortMethod] = useState('pop')
     const [selectedCategory, setSelectedCategory] = useState('All products')
     const fullCategories = ['All products'].concat(categories)
+    const [selectedAnimal, setSelectedAnimal] = useState('')
     const toast = useToast()
 
     const setCategorySelected = (cat) => {
@@ -104,7 +104,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                 categories={fullCategories}
                                 sortMethod={sortMethod}
                                 setSortMethod={setSortMethod}
-                                selectedAnimal=''
+                                selectedAnimal={selectedAnimal}
                             />
                         </Stack>
                         {/* <Stack
