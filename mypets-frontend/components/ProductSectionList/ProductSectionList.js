@@ -27,7 +27,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
         sortProductsPopularity(products)
     }
 
-    const filterProductsByCategoryAnimal = (category, animal) => {
+    const filterProductsByCategoryAnimal = (products, category, animal) => {
         if (animal != '') {
             const filteredProducts = products.filter((product) => {
                 product.animal.name == animal && product.category.name == category
@@ -69,7 +69,7 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
                     <ProductList
                         key={i}
                         heading={category}
-                        products={filterProductsByCategoryAnimal(category, selectedAnimal)}
+                        products={filterProductsByCategoryAnimal(products, category, selectedAnimal)}
                     />
                 ))}
             </Stack>
