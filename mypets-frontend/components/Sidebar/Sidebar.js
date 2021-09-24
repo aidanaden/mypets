@@ -28,20 +28,28 @@ import AuthContext from '../../context/AuthContext'
 import LoginModalBtn from '../LoginModalBtn/LoginModalBtn';
 import SignupModalBtn from '../SignupModalBtn/SignupModalBtn';
 
-export default function Sidebar() {
+export default function Sidebar({}) {
     const sidebar = useDisclosure();
     const integrations = useDisclosure();
     const { user, logoutUser } = useContext(AuthContext)
 
-    const Logo = ({ ...props }) => {
+    const Logo = ({ isMobile, ...props }) => {
         return (
-            <Box {...props}>
+            <Box 
+                {...props}
+            >
                 <NextLink
                     href='/'
                     as='/'
                     passHref
                 >
-                    <a><img src='/cropped-logo.svg' width='125' height='52' /></a>
+                    <a>
+                        <img
+                            src='/cropped-logo.svg'
+                            width={isMobile ? '250' : '125'}
+                            height={isMobile ? '104' : '52'}
+                        />
+                    </a>
                 </NextLink>
             </Box>
         )
@@ -52,6 +60,7 @@ export default function Sidebar() {
             <Box
                 borderWidth='1px'
                 borderColor='gray.400'
+                rounded='lg'
                 align="center"
                 px="4"
                 pl="4"
@@ -74,13 +83,16 @@ export default function Sidebar() {
     };
 
     const SidebarContent = (props) => (
-        <Box
+        <Stack
+            direction='column'
+            spacing={{ base: 8 }}
             as="nav"
             pos="fixed"
             top="0"
             left="0"
             zIndex="sticky"
             h="full"
+            px={{ base: 4 }}
             py={{ base: 10 }}
             overflowX="hidden"
             overflowY="auto"
@@ -91,19 +103,21 @@ export default function Sidebar() {
             bg='gray.100'
             {...props}
         >
-            <Logo display={{ base: 'block', md: 'none' }}/>
+            <Logo
+                isMobile
+                justifyContent='center'
+                alignContent='center'
+                display={{ base: 'block', md: 'none' }}
+            />
             <Stack
                 px={{ base: 4 }}
-                spacing={{ base: 2 }}
+                spacing={{ base: 4 }}
                 direction="column"
                 as="nav"
                 fontSize="sm"
                 color="gray.600"
                 aria-label="Main Navigation"
             >
-                <NavItem>
-                    Store
-                </NavItem>
                 <NavItem>
                     Past orders
                 </NavItem>
@@ -133,7 +147,40 @@ export default function Sidebar() {
                     </NavItem>
                 </Collapse> */}
             </Stack>
-        </Box>
+            <Box>
+                <SectionHeader>
+                    Categories
+                </SectionHeader>
+                <Stack
+                    spacing={{ base: 4 }}
+                    direction="column"
+                    as="nav"
+                    fontSize="sm"
+                    color="gray.600"
+                    aria-label="Sub Navigation"
+                >
+                    <NavItem
+                        fontSize='sm'
+                        fontWeight='normal'
+                    >
+                        Store
+                    </NavItem>
+                    <NavItem
+                        fontSize='sm'
+                        fontWeight='normal'
+                    >
+                        Past orders
+                    </NavItem>
+                    <NavItem
+                        fontSize='sm'
+                        fontWeight='normal'
+                    >
+                        User profile
+                    </NavItem>
+                </Stack>
+            </Box>
+            
+        </Stack>
     );
     return (
         <Box

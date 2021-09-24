@@ -36,14 +36,14 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
 
     return (
         <Box w='100%'>
-            <Box
+            {/* <Box
                 display={{ base: 'inherit', lg: 'none'}} 
                 mb={8}
             >
                 <SortMenu
                     setSortMethod={setSortMethod}
                 />
-            </Box>
+            </Box> */}
             <Stack
                 direction='column'
                 spacing={{ base: 4, lg: 8 }}

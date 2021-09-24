@@ -75,7 +75,7 @@ export default function Home({ products, categories, animals, merchants }) {
             direction='row'
             align='stretch'
             justify='space-between'
-            display={{ base: 'none', lg: 'inherit' }}
+            // display={{ base: 'inherit', lg: 'inherit' }}
             bg='red.100'
           >
             <Box>

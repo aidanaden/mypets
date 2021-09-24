@@ -5,7 +5,6 @@ import NextImage from 'next/image'
 import NextLink from 'next/link'
 
 function MerchantCard({ merchant }) {
-
     return (
         <NextLink href={`/merchants/${merchant.slug}`}>
             <a>
@@ -28,8 +27,8 @@ function MerchantCard({ merchant }) {
                     >
                         <NextImage
                             src={`${imageToUrl(merchant.display_image)}`}
-                            width='240'
-                            height='120'
+                            width='224'
+                            height='112'
                         />
                     </Box>
                 </Tooltip>
