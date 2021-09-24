@@ -35,8 +35,10 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
             console.log('filtered products: ', filteredProducts)
             return filteredProducts
         } else {
-            const filteredProducts = products.filter((product) => {
-                product.category.name == category
+            const filteredProducts = products.map((product) => {
+                if (product.category.name == category) {
+                    return product
+                }
             })
             console.log('animal value empty!')
             console.log('filtered products: ', filteredProducts)
