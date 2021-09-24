@@ -23,11 +23,11 @@ import { API_PRODUCTS_URL, API_MERCHANTS_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 import AnimalList from '../components/AnimalList/AnimalList'
 
-export default function Home({ products, categories, merchants }) {
+export default function Home({ products, categories, animals, merchants }) {
   const [pageProducts, setPageProducts] = useState(products)
   const [sortMethod, setSortMethod] = useState('pop')
   const [pageCategories, setPageCategories] = useState(categories)
-  const [pageAnimals, setPageAnimals] = useState(getAnimals(products))
+  const [pageAnimals, setPageAnimals] = useState(animals)
   const [selectedCategory, setSelectedCategory] = useState('')
   const [selectedAnimal, setSelectedAnimal] = useState('')
   const router = useRouter()
@@ -45,23 +45,11 @@ export default function Home({ products, categories, merchants }) {
     isClosable: true,
   })
 
-  const getCategories = (products) => {
-    const totalProductCategories = products.map(product => product.category.name)
-    const uniqueProductCategories = [...new Set(totalProductCategories)]
-    return uniqueProductCategories
-  }
-
-  const getAnimals = (products) => {
-    const totalProductAnimals = products.map(product => product.animal.name)
-    const uniqueProductAnimals = [...new Set(totalProductAnimals)]
-    return uniqueProductAnimals
-  }
-
-  useEffect(() => {
-    setPageProducts(products)
-    setPageCategories(getCategories(products))
-    setPageAnimals(getAnimals(products))
-  }, [])
+  // useEffect(() => {
+  //   setPageProducts(products)
+  //   setPageCategories(getCategories(products))
+  //   setPageAnimals(getAnimals(products))
+  // }, [])
 
   return (
     <Box>
@@ -128,13 +116,21 @@ export async function getStaticProps() {
     return ['All products'].concat(uniqueProductCategories)
   }
 
+  const getAnimals = (products) => {
+    const totalProductAnimals = products.map(product => product.animal.name)
+    const uniqueProductAnimals = [...new Set(totalProductAnimals)]
+    return uniqueProductAnimals
+  }
+
   const categories = getCategories(products)
+  const animals = getAnimals(products)
 
   // Return as props
   return {
     props: {
       products,
       categories,
+      animals,
       merchants
     }
   }
