@@ -8,7 +8,7 @@ import {
     FaDog
 } from 'react-icons/fa'
 
-const AnimalButton = ({ animal, ...props }) => {
+const AnimalButton = ({ animal, onClick, ...props }) => {
     return (
         <Center
             w="100%"
@@ -20,6 +20,7 @@ const AnimalButton = ({ animal, ...props }) => {
             fontSize="lg"
             _hover={{ bgGradient: "linear(to-t, mypets.900, mypets.100)", textColor: "gray.100", cursor: "pointer" }}
             _active={{ transform: "scale(0.95)" }}
+            onClick={onClick(animal)}
             {...props}
         >
             {animal == 'Cat' ?
@@ -50,7 +51,7 @@ export default function AnimalList({ animals, setSelectedAnimal }) {
                 <AnimalButton
                     key={i}
                     animal={animal}
-                    onClick={setSelectedAnimal(animal)}
+                    onClick={setSelectedAnimal}
                 />
             ))}
         </Stack>

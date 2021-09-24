@@ -57,11 +57,6 @@ export default function Home({ products, categories, animals, merchants }) {
     console.log('animal button clicked: ', animal)
     setSelectedAnimal(animal)
   }
-  // useEffect(() => {
-  //   setPageProducts(products)
-  //   setPageCategories(getCategories(products))
-  //   setPageAnimals(getAnimals(products))
-  // }, [])
 
   return (
     <Box>
@@ -85,6 +80,7 @@ export default function Home({ products, categories, animals, merchants }) {
             align='stretch'
             justify='space-between'
             display={{ base: 'none', lg: 'inherit' }}
+            bg='red.100'
           >
             <Box>
               <SectionHeader>
