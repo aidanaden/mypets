@@ -14,8 +14,8 @@ import {
 import MerchantReviewsList from '../MerchantReviewsList/MerchantReviewsList'
 import ProductSectionList from '../ProductSectionList/ProductSectionList'
 import SortMenu from '../SortMenu/SortMenu'
-import CategoryList from '../CategoryList/CategoryList'
-import MypetsMerchantTab from '../MypetsMerchantTab/MypetsMerchantTab'
+import SectionHeader from '../SectionHeader/SectionHeader'
+import AnimalList from '../AnimalList/AnimalList'
 
 function MerchantProductReviewTab({ merchantProducts, categories, merchantReviews}) {
 
@@ -85,17 +85,17 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                 bg='red.100'
                             >
                                 <Box>
-                                <SectionHeader>
-                                    Animal
-                                </SectionHeader>
-                                <AnimalList
-                                    animals={pageAnimals}
-                                    setSelectedAnimal={setSelectedAnimal}
-                                />
+                                    <SectionHeader>
+                                        Animal
+                                    </SectionHeader>
+                                    <AnimalList
+                                        animals={pageAnimals}
+                                        setSelectedAnimal={setSelectedAnimal}
+                                    />
                                 </Box>
                                 <Spacer />
                                 <SortMenu
-                                setSortMethod={setSortMethod}
+                                    setSortMethod={setSortMethod}
                                 />
                             </Stack>
                             <ProductSectionList 
