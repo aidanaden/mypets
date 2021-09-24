@@ -21,11 +21,11 @@ import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import { imageToUrl } from '../../utils/urls'
 import AuthContext, { callAPI } from '../../context/AuthContext'
 
-const OrderProductReorderBtn = ({ onClick, variant, ...props }) => {
+const OrderProductReorderBtn = ({ onClick, order_products, ...props }) => {
     return (
         <MypetsBtn
             btnText='Re-order product'
-            onClick={onClick(variant)}
+            onClick={onClick(order_products)}
         />
     )
 }
@@ -53,16 +53,18 @@ export default function OrderProductCard({ order_products }) {
         isClosable: true,
     })
 
-    const handleAddToCart = async (variant) => {
+    const handleAddToCart = async (order_products) => {
         if (user) {
             // create order product
-            const order_product = {
-                variant: variant,
-                quantity: quantity,
-                total_price: price
-            }
-            updateCart(order_product)
-            succesToast('Product added to cart')
+            order_products.map((order_product) => {
+                const newOrderProduct = {
+                    variant: order_product.variant,
+                    quantity: order_product.quantity,
+                    total_price: order_product.total_price
+                }
+                updateCart(newOrderProduct)
+            })
+            succesToast('Product(s) added to cart')
         } else {
             errorToast('Please login/register before purchasing :)')
         }
@@ -143,7 +145,7 @@ export default function OrderProductCard({ order_products }) {
                         alignContent='center'
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
-                        <OrderProductReorderBtn onClick={handleAddToCart} variant={order_products[0].variant} />
+                        <OrderProductReorderBtn onClick={handleAddToCart} order_products={order_products} />
                     </HStack>
                     
                 </>
