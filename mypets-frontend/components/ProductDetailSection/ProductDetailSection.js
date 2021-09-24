@@ -73,7 +73,6 @@ function ProductDetailSection({ product }) {
         } else {
             errorToast('Please login/register before purchasing :)')
         }
-        
     }
 
     const variantSelectOnChange = (e) => {

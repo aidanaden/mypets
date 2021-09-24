@@ -7,6 +7,7 @@ import {
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
 import { API_MERCHANTS_URL } from '../../../utils/urls'
 import Sidebar from "../../../components/Sidebar/Sidebar"
+import Carousel from '../../../components/Carousel/Carousel'
 import Footer from '../../../components/Footer/Footer'
 import BackBtn from '../../../components/BackBtn/BackBtn'
 import MerchantTitle from '../../../components/MerchantTitle/MerchantTitle'
@@ -23,7 +24,8 @@ export default function index({ merchant }) {
             <Sidebar />
             <PageContainer>
                 <BackBtn />
-                <MerchantBannerSwiper my={{ base: 8, md: 16 }} rounded={{ base: 20, md: 40 }}/>
+                <Carousel bannerImgNames={[`${merchant.name}.jpg`]} />
+                {/* <MerchantBannerSwiper my={{ base: 8, md: 16 }} rounded={{ base: 20, md: 40 }}/> */}
                 <MerchantTitle 
                     merchantName={merchant.name} 
                     merchantRating={merchant.rating} 

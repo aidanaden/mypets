@@ -1,7 +1,9 @@
 import React from 'react'
 import {
     Box,
-    HStack
+    HStack,
+    Wrap,
+    WrapItem
 } from "@chakra-ui/react"
 
 import SectionHeader from '../SectionHeader/SectionHeader'
@@ -17,8 +19,6 @@ function MerchantSectionList({ merchants, spacing=6 }) {
                 mt={0}
                 justifyContent="left"
                 spacing={spacing}
-                overflowX='auto'
-                overflowY='hidden'
                 pb={{ base: 4 }}
             >
                 {merchants.map((merchant, index) => (

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { 
     Box, 
     HStack, 
@@ -8,7 +8,8 @@ import {
     Tr,
     Th,
     Tbody,
-    Tooltip 
+    Tooltip, 
+    useToast
 } from '@chakra-ui/react'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
@@ -16,15 +17,56 @@ import lodash from 'lodash'
 
 import MerchantBadge from '../MerchantBadge/MerchantBadge'
 import OrderProductReviewModalBtn from '../OrderProductReviewModalBtn/OrderProductReviewModalBtn'
+import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import { imageToUrl } from '../../utils/urls'
-import { callAPI } from '../../context/AuthContext'
+import AuthContext, { callAPI } from '../../context/AuthContext'
 
-function OrderProductCard({ order_products }) {
+const OrderProductReorderBtn = ({ onClick, ...props }) => {
+    return (
+        <MypetsBtn
+            btnText='Re-order product'
+            onClick={onClick}
+        />
+    )
+}
+
+export default function OrderProductCard({ order_products }) {
     const [merchantName, setMerchantName] = useState('')
     const [product, setProduct] = useState(null)
     const [quantities, setQuantities] = useState(null)
     const [productsWeighted, setProductsWeighted] = useState([])
     const [weights, setWeights] = useState([])
+    const { updateCart } = useContext(AuthContext)
+    const toast = useToast()
+
+    const succesToast = (text) => toast({
+        title: text,
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+    })
+
+    const errorToast = (text) => toast({
+        title: text,
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+    })
+
+    const handleAddToCart = async () => {
+        if (user) {
+            // create order product
+            const order_product = {
+                variant: variant,
+                quantity: quantity,
+                total_price: price
+            }
+            updateCart(order_product)
+            succesToast('Product added to cart')
+        } else {
+            errorToast('Please login/register before purchasing :)')
+        }
+    }
 
     useEffect(() => {
         if (order_products) {
@@ -93,11 +135,18 @@ function OrderProductCard({ order_products }) {
                             ))}
                         </Tbody>
                     </Table>
-                    <OrderProductReviewModalBtn order_product={order_products[0]}/>
+                    <Stack
+                        direction='row'
+                        spacing={{ base: 4 }}
+                        textAlign='center'
+                        mt={{ base: 8 }}
+                    >
+                        <OrderProductReviewModalBtn order_product={order_products[0]}/>
+                        <OrderProductReorderBtn onClick={handleAddToCart} />
+                    </Stack>
+                    
                 </>
             }
         </Box>
     )
 }
-
-export default OrderProductCard

@@ -9,7 +9,8 @@ import {
 
 export default function Carousels({ 
     bannerImgNames=["banner-a.jpg", "banner-b.jpg", "banner-c.jpg"],
-    displayCount=false
+    displayCount=false,
+    ...props
 }) {
     const arrowStyles = {
         cursor: "pointer",
@@ -58,6 +59,7 @@ export default function Carousels({
             alignItems="center"
             justifyContent="center"
             shadow='2xl'
+            {...props}
         >
             <Flex
                 rounded={{ base: 20, md: 40 }}

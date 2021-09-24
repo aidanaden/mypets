@@ -60,7 +60,7 @@ function OrderProductReviewModalBtn({ order_product }) {
 
     return (
         <>
-            <Box textAlign='center' mt={8}>
+            <Box>
                 { reviewed ? 
                     <MypetsBtn btnText='Review submitted' variant='outline' isDisabled={true}/>:   
                     <MypetsBtn onClick={onOpen} btnText='Write a review' variant='outline'/>
