@@ -57,6 +57,7 @@ export default function Product({ product, otherProducts }) {
                 <ProductList
                     heading='Suggested products'
                     products={otherProducts}
+                    selectedAnimal=''
                 />
             </PageContainer>
             <Footer />

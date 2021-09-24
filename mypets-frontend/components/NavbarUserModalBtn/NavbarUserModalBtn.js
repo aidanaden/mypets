@@ -24,7 +24,7 @@ import UserAddressForm from '../UserAddressForm/UserAddressForm'
 import UserPasswordForm from '../UserPasswordForm/UserPasswordForm'
 import AuthContext from '../../context/AuthContext'
 
-function NavbarUserModalBtn({ mode='desktop' }) {
+function NavbarUserModalBtn({ NavItem }) {
 
     const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -133,9 +133,9 @@ function NavbarUserModalBtn({ mode='desktop' }) {
     return (
         <>
             {mode == 'mobile' ? (
-                <Box px={2} onClick={onOpen}>
+                <NavItem>
                     User Profile
-                </Box>
+                </NavItem>
             ) : (
                 <MenuItem 
                     display={{ base: 'none', lg: 'inherit'}} 

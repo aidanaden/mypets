@@ -77,7 +77,9 @@ export default function Home({ products, categories, animals, merchants }) {
             justify='space-between'
             bg='red.100'
           >
-            <Box>
+            <Box
+              mb={{ base: 4, md: 0 }}
+            >
               <SectionHeader>
                 Animal
               </SectionHeader>

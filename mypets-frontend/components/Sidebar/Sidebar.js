@@ -33,6 +33,11 @@ export default function Sidebar({}) {
     const sidebar = useDisclosure();
     const integrations = useDisclosure();
     const { user, logoutUser } = useContext(AuthContext)
+    const router = useRouter()
+
+    const handlePastOrders = () => {
+        router.push('/orders')
+    }
 
     const Logo = ({ isMobile, ...props }) => {
         return (
@@ -106,6 +111,7 @@ export default function Sidebar({}) {
         >
             <Logo
                 isMobile
+                textAlign='center'
                 justifyContent='center'
                 alignContent='center'
                 px='auto'
@@ -120,12 +126,12 @@ export default function Sidebar({}) {
                 color="gray.600"
                 aria-label="Main Navigation"
             >
-                <NavItem>
+                <NavItem
+                    onClick={handlePastOrders}
+                >
                     Past orders
                 </NavItem>
-                <NavItem>
-                    User profile
-                </NavItem>
+                <NavbarUserModalBtn NavItem={NavItem}/>
                 {/* <NavItem
                     icon={HiCode}
                     onClick={integrations.onToggle}
