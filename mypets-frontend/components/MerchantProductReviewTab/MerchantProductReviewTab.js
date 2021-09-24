@@ -26,10 +26,10 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
     const [selectedAnimal, setSelectedAnimal] = useState('')
     const toast = useToast()
 
-    const setCategorySelected = (cat) => {
-        setCategoryToast(cat)
-        setSelectedCategory(cat)
-    }
+    // const setCategorySelected = (cat) => {
+    //     setCategoryToast(cat)
+    //     setSelectedCategory(cat)
+    // }
 
     const setCategoryToast = (text) => toast({
         title: `Loading ${text}...`,
