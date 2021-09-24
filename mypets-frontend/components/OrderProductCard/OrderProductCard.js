@@ -135,15 +135,14 @@ export default function OrderProductCard({ order_products }) {
                             ))}
                         </Tbody>
                     </Table>
-                    <Stack
-                        direction='row'
+                    <HStack
                         spacing={{ base: 4 }}
                         textAlign='center'
                         mt={{ base: 8 }}
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
                         <OrderProductReorderBtn onClick={handleAddToCart} />
-                    </Stack>
+                    </HStack>
                     
                 </>
             }
