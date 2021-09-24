@@ -41,6 +41,12 @@ const AnimalButton = ({ animal, onClick, ...props }) => {
 }
 
 export default function AnimalList({ animals, setSelectedAnimal }) {
+
+    const animalBtnClicked = (animal) => {
+        console.log('animal button clicked: ', animal)
+        setSelectedAnimal(animal)
+    }
+
     return (
         <Stack 
             mt={{ lg: 0 }}
@@ -51,7 +57,7 @@ export default function AnimalList({ animals, setSelectedAnimal }) {
                 <AnimalButton
                     key={i}
                     animal={animal}
-                    onClick={() => setSelectedAnimal(animal)}
+                    onClick={() => animalBtnClicked(animal)}
                 />
             ))}
         </Stack>
