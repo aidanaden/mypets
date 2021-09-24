@@ -36,7 +36,7 @@ export default function OrderProductCard({ order_products }) {
     const [quantities, setQuantities] = useState(null)
     const [productsWeighted, setProductsWeighted] = useState([])
     const [weights, setWeights] = useState([])
-    const { updateCart } = useContext(AuthContext)
+    const { user, updateCart } = useContext(AuthContext)
     const toast = useToast()
 
     const succesToast = (text) => toast({
@@ -139,6 +139,8 @@ export default function OrderProductCard({ order_products }) {
                         spacing={{ base: 4 }}
                         textAlign='center'
                         mt={{ base: 8 }}
+                        justifyContent='center'
+                        alignContent='center'
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
                         <OrderProductReorderBtn onClick={handleAddToCart} />

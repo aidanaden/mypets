@@ -9,22 +9,25 @@ import {
 import SectionHeader from '../SectionHeader/SectionHeader'
 import MerchantCard from "../MerchantCard/MerchantCard"
 
-function MerchantSectionList({ merchants, spacing=6 }) {
+function MerchantSectionList({ merchants, spacing=4 }) {
     return (
         <Box>
             <SectionHeader>
                 Available Brands
             </SectionHeader>
-            <HStack
+            <Wrap
                 mt={0}
+                w='100%'
                 justifyContent="left"
                 spacing={spacing}
                 pb={{ base: 4 }}
             >
                 {merchants.map((merchant, index) => (
-                    <MerchantCard key={index} merchant={merchant}/>
+                    <WrapItem>
+                        <MerchantCard key={index} merchant={merchant}/>
+                    </WrapItem>
                 ))}
-            </HStack>
+            </Wrap>
         </Box>
     )
 }
