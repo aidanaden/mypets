@@ -21,10 +21,12 @@ import MerchantSectionList from '../../components/MerchantSectionList/MerchantSe
 import ProductList from '../../components/ProductList/ProductList'
 import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL } from '../../utils/urls'
 
-const MerchantCheck = ({ text, ...props }) => {
+const MerchantCheck = ({ text, isChecked, onChange, ...props }) => {
     return (
         <Checkbox
             colorScheme='mypets'
+            isChecked={isChecked}
+            onChange={(e) => onChange(e.target.checked, text)}
             {...props}
         >
             {text}
@@ -38,7 +40,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
 
     const merchantChangeOnCheck = (checked, merchant) => {
         console.log('check status: ', checked)
-        if (!checked) {
+        if (checked) {
             const newSelectedMerchants = [...selectedMerchants, merchant]
             console.log('new merchants: ', newSelectedMerchants)
             setSelectedMerchants(newSelectedMerchants)
@@ -67,7 +69,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                         key={i}
                         text={merchant}
                         isChecked={selectedMerchants.includes(merchant)}
-                        onChange={(e) => merchantChangeOnCheck(e.target.checked, merchant)}
+                        onChange={merchantChangeOnCheck}
                     />
                 ))}
             </Stack>
