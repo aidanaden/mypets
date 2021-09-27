@@ -17,8 +17,9 @@ function MerchantCard({ merchant }) {
                 >
                     <Center
                         rounded='xl'
-                        height={{ base: '86px', md: '123px' }}
-                        width={{ base: '172px', md: '246px' }}
+                        p={{ base: 3 }}
+                        // height={{ base: '86px', md: '123px' }}
+                        // width={{ base: '172px', md: '246px' }}
                         borderWidth="1px"
                         shadow='sm'
                         _hover={{

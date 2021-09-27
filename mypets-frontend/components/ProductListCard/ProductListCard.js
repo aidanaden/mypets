@@ -35,62 +35,65 @@ function ProductListCard({ product }) {
           shadow: "lg"
         }}
       >
-        <NextLink href={`/products/${product.slug}`} as={`/products/${product.slug}`} passHref>
-          <LinkOverlay>
-            <Stack 
-              direction='column' 
-              p={{ base: '2', sm: '3' }} 
-              w="full" 
-              alignItems="center" 
-              justifyContent="center" 
-              h='100%'
-            >
-              <Stack direction='column' h='100%' w='100%'>
-                <Center roundedTop="lg">
-                  <NextImage 
-                    src={imageToUrl(product.image)} 
-                    alt={`Picture of ${product.name}`} 
-                    width='150' 
-                    height='150'
-                    quality='50'
-                  />
-                </Center>
-                <Box>
-                  <Box display="flex" alignItems="baseline">
-                    <MerchantBadge merchantName={product.merchant.name} />
-                  </Box>
-                  <Stack mt="1" justifyContent="space-between">
-                    <Box
-                      fontSize="sm"
-                      fontWeight="semibold"
-                      as="h4"
-                      lineHeight="tight"
-                      isTruncated={{ base: false, md: false }}
-                      maxW='180px'
-                    >
-                      {product.name}
-                    </Box>
-                  </Stack>
+        {/* <NextLink  passHref> */}
+        <LinkOverlay
+          href={`/products/${product.slug}`}
+          as={`/products/${product.slug}`}
+        >
+          <Stack
+            direction='column'
+            p={{ base: '2', sm: '3' }}
+            w="full"
+            alignItems="center"
+            justifyContent="center"
+            h='100%'
+          >
+            <Stack direction='column' h='100%' w='100%'>
+              <Center roundedTop="lg">
+                <NextImage
+                  src={imageToUrl(product.image)}
+                  alt={`Picture of ${product.name}`}
+                  width='150'
+                  height='150'
+                  quality='50'
+                />
+              </Center>
+              <Box>
+                <Box display="flex" alignItems="baseline">
+                  <MerchantBadge merchantName={product.merchant.name} />
                 </Box>
-                <Spacer />
-                <Stack 
-                  direction='row' 
-                  justifyContent="space-between" 
-                  alignContent="center"
-                  justifySelf='flex-end'
-                >
-                  <RatingDisplay rating={product.rating} numReviews={0} />
-                  <Box fontSize={{ base: 'sm', md: 'md' }}fontWeight='bold' color='gray.800'>
-                    <Box as="span" color={'gray.600'}>
-                      $
-                    </Box>
-                    {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
+                <Stack mt="1" justifyContent="space-between">
+                  <Box
+                    fontSize="sm"
+                    fontWeight="semibold"
+                    as="h4"
+                    lineHeight="tight"
+                    isTruncated={{ base: false, md: false }}
+                    maxW='180px'
+                  >
+                    {product.name}
                   </Box>
                 </Stack>
+              </Box>
+              <Spacer />
+              <Stack
+                direction='row'
+                justifyContent="space-between"
+                alignContent="center"
+                justifySelf='flex-end'
+              >
+                <RatingDisplay rating={product.rating} numReviews={0} />
+                <Box fontSize={{ base: 'sm', md: 'md' }} fontWeight='bold' color='gray.800'>
+                  <Box as="span" color={'gray.600'}>
+                    $
+                    </Box>
+                  {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
+                </Box>
               </Stack>
             </Stack>
-          </LinkOverlay>
-        </NextLink>
+          </Stack>
+        </LinkOverlay>
+        {/* </NextLink> */}
       </LinkBox>
     </Tooltip>
       
