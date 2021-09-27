@@ -95,7 +95,7 @@ const getMerchantDataFromNames = (names, merchants) => {
 }
 
 export default function index({ products, animals, merchants }) {
-    const [pageProducts, setPageProducts] = useState(products)
+    const [pageProducts, setPageProducts] = useState([])
     const [pageMerchants, setPageMerchants] = useState([])
     const [selectedMerchants, setSelectedMerchants] = useState([])
     const [selectedAnimal, setSelectedAnimal] = useState('')
@@ -120,6 +120,7 @@ export default function index({ products, animals, merchants }) {
 
             const filteredProductMerchants = getMerchants(filteredProducts)
             console.log('filtered product merchants: ', filteredProductMerchants)
+            console.log('filtered product: ', filteredProducts)
             setPageMerchants(filteredProductMerchants)
             setPageProducts(filteredProducts)
 
