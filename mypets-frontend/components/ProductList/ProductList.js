@@ -82,7 +82,7 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
         sortProductsPopularity(products)
     }
 
-    const filteredProducts = filterProducts(products, animal, selectedMerchants)
+    const filteredProducts = filterProducts(products, selectedAnimal, selectedMerchants)
 
     // useEffect(() => {
     //     const productByAnimal = filterProductsByAnimalMerchants(products, selectedAnimal, selectedMerchants)
