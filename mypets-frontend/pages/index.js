@@ -75,7 +75,6 @@ export default function Home({ products, categories, animals, merchants }) {
             direction={{ base: 'column', md: 'row' }}
             align='stretch'
             justify='space-between'
-            bg='red.100'
           >
             <Box
               mb={{ base: 4, md: 0 }}
