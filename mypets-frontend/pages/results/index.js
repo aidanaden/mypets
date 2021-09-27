@@ -139,7 +139,10 @@ export default function index({ products, animals, merchants }) {
             <AnnouncementBanner />
             <Sidebar />
             <PageContainer>
-                <Stack direction={{ base: 'column', md: 'row' }}>
+                <Stack
+                    direction={{ base: 'column', lg: 'row' }}
+                    spacing={{ base: 8, lg: 12 }}
+                >
                     <MerchantChecklist
                         pageMerchants={pageMerchants}
                         selectedMerchants={selectedMerchants}
@@ -152,6 +155,7 @@ export default function index({ products, animals, merchants }) {
                     >
                         <Stack
                             direction={{ base: 'column', lg: 'row' }}
+                            spacing={{ base: 12 }}
                             w='100%'
                             justifyContent='space-between'
                         >

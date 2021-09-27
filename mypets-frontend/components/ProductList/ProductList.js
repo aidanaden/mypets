@@ -7,7 +7,7 @@ import {
 import SectionHeader from '../SectionHeader/SectionHeader'
 import ProductListCard from '../ProductListCard/ProductListCard'
 
-function ProductList({ heading, products, sortMethod, selectedAnimal }) {
+function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMerchants }) {
     const [listProducts, setListProducts] = useState(products)
 
     const sortProductsAscending = (products) => {
@@ -30,20 +30,32 @@ function ProductList({ heading, products, sortMethod, selectedAnimal }) {
         sortProductsPopularity(products)
     }
 
-    const filterProductsByAnimal = (products, animal) => {
+    const filterProductsByAnimalMerchants = (products, animal, selectedMerchants) => {
         if (animal != '') {
-            const filteredProducts = products.filter((product) => {
-                if (product.animal.name == animal) {
-                    return product
-                }
-            })
-            return filteredProducts
+            if (selectedMerchants) {
+                const filteredProducts = products.filter((product) => {
+                    if (product.animal.name == animal && 
+                        selectedMerchants.includes(product.merchant.name)) {
+                        return product
+                    }
+                })
+                return filteredProducts
+            } else {
+                const filteredProducts = products.filter((product) => {
+                    if (product.animal.name == animal) {
+                        return product
+                    }
+                })
+                return filteredProducts
+            }
+            
         } else {
             return products
         }
     }
 
-    const productByAnimal = filterProductsByAnimal(products, selectedAnimal)
+    const productByAnimal = filterProductsByAnimalMerchants(products, selectedAnimal, selectedMerchants)
+
     console.log('animal filter selected: ', selectedAnimal)
     console.log('products with search term: ', products)
     console.log('products filtered by animal: ', productByAnimal)
