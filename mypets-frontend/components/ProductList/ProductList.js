@@ -22,58 +22,6 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
         products.sort((a, b) => (a.rating < b.rating) ? 1: -1)
     }
 
-    const filterProductByAnimalOnly = (products, animal) => {
-        const filteredProducts = products.filter((product) => {
-            if (product.animal.name == animal) {
-                return product
-            }
-        })
-        return filteredProducts
-    }
-
-    const filterProductByMerchantOnly = (products, selectedMerchants) => {
-        if (selectedMerchants.length == 0) {
-            console.log('no merchant selected, displaying all')
-            return products
-        }
-        const filteredProducts = products.filter((product) => {
-            if (selectedMerchants.includes(product.merchant.name)) {
-                return product
-            }
-        })
-        return filteredProducts
-    }
-
-    const filterProductByAnimalAndMerchant = (products, animal, selectedMerchants) => {
-        if (selectedMerchants.length == 0) {
-            console.log('no merchant selected, displaying all')
-            return products
-        }
-        const filteredProducts = products.filter((product) => {
-            if (product.animal.name == animal && 
-                selectedMerchants.includes(product.merchant.name)) {
-                return product
-            }
-        })
-        return filteredProducts
-    }
-
-    const filterProducts = (products, animal, selectedMerchants) => {
-        if (animal != '') {
-            if (selectedMerchants) {
-                filterProductByAnimalAndMerchant(products, animal, selectedMerchants)
-            } else {
-                filterProductByAnimalOnly(products, animal)
-            }
-        } else {
-            if (selectedMerchants) {
-                filterProductByMerchantOnly(products, selectedMerchants)
-            } else {
-                return products
-            }
-        }
-    }
-
     if (sortMethod == 'asc') {
         sortProductsAscending(products)
     } else if (sortMethod == 'desc') {
@@ -82,9 +30,53 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
         sortProductsPopularity(products)
     }
 
+    const filterProductsByAnimalMerchants = (products, animal, selectedMerchants) => {
+        if (animal != '') {
+            if (selectedMerchants) {
+                console.log('animal + selected merchants checked!')
+                if (selectedMerchants.length == 0) {
+                    console.log('no merchant selected, displaying all')
+                    return products
+                }
+                const filteredProducts = products.filter((product) => {
+                    if (product.animal.name == animal && 
+                        selectedMerchants.includes(product.merchant.name)) {
+                        return product
+                    }
+                })
+                return filteredProducts
+            } else {
+                const filteredProducts = products.filter((product) => {
+                    if (product.animal.name == animal) {
+                        return product
+                    }
+                })
+                return filteredProducts
+            }
+        } else {
+            if (selectedMerchants) {
+                console.log('selected merchants checked!')
+                if (selectedMerchants.length == 0) {
+                    console.log('no merchant selected, displaying all')
+                    return products
+                }
+                const filteredProducts = products.filter((product) => {
+                    if (selectedMerchants.includes(product.merchant.name)) {
+                        return product
+                    }
+                })
+                return filteredProducts
+            } else {
+                return products
+            }
+        }
+    }
+
     useEffect(() => {
-        const filteredProducts = filterProducts(products, selectedAnimal, selectedMerchants)
+        const filteredProducts = filterProductsByAnimalMerchants(products, selectedAnimal, selectedMerchants)
         setListProducts(filteredProducts)
+
+        console.log('animal filter selected: ', selectedAnimal)
         console.log('products filtered by animal: ', filteredProducts)
     }, [selectedMerchants])
 
