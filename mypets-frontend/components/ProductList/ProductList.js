@@ -79,6 +79,10 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
     }
 
     useEffect(() => {
+        setListProducts(products)
+    }, [products])
+
+    useEffect(() => {
         const filteredProducts = filterProductsByAnimalMerchants(products, selectedAnimal, selectedMerchants)
         setListProducts(filteredProducts)
 
