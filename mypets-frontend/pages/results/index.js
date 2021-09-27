@@ -131,7 +131,7 @@ export default function index({ products, animals, merchants }) {
             setPageMerchants(productMerchants)
             setPageProducts(products)
         }
-    }, [])
+    }, [router.query])
 
     return (
         <Box>
