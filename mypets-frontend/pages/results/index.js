@@ -181,7 +181,7 @@ export default function index({ products, animals, merchants }) {
                             products={pageProducts}
                             sortMethod={sortMethod}
                             selectedAnimal={selectedAnimal}
-                            selectedMerchant={selectedMerchants}
+                            selectedMerchants={selectedMerchants}
                         />
                     </Stack>
                 </Stack>
