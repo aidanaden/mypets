@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Tooltip } from "@chakra-ui/react"
+import { Box, Center, Tooltip } from "@chakra-ui/react"
 import { imageToUrl } from '../../utils/urls'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
@@ -15,11 +15,11 @@ function MerchantCard({ merchant }) {
                     color='gray.800'
                     fontSize="md"
                 >
-                    <Box
-                        p={{ base: 1 }}
+                    <Center
+                        // p={{ base: 1 }}
                         rounded='xl'
-                        height={{ base: '56px', md: '112px' }}
-                        width={{ base: '112px', md: '224px' }}
+                        height={{ base: '61px', md: '123px' }}
+                        width={{ base: '123px', md: '246px' }}
                         borderWidth="1px"
                         shadow='sm'
                         _hover={{
@@ -31,7 +31,7 @@ function MerchantCard({ merchant }) {
                             width='224'
                             height='112'
                         />
-                    </Box>
+                    </Center>
                 </Tooltip>
             </a>
         </NextLink>
