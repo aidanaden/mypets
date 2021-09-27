@@ -54,10 +54,15 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
         }
     }
 
-    const productByAnimal = filterProductsByAnimalMerchants(products, selectedAnimal, selectedMerchants)
+    useEffect(() => {
+        const productByAnimal = filterProductsByAnimalMerchants(products, selectedAnimal, selectedMerchants)
+        setListProducts(productByAnimal)
 
-    console.log('animal filter selected: ', selectedAnimal)
-    console.log('products filtered by animal: ', productByAnimal)
+        console.log('animal filter selected: ', selectedAnimal)
+        console.log('products filtered by animal: ', productByAnimal)
+    }, [selectedMerchants])
+
+    
 
     return (
         <Box>
@@ -68,7 +73,7 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
                 columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
                 spacing={{ base: 4 }}
             >
-                {productByAnimal.map((product, index) => (
+                {listProducts.map((product, index) => (
                     <ProductListCard product={product} key={index} />
                 ))}
             </SimpleGrid>
