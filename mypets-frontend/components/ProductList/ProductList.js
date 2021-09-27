@@ -82,7 +82,7 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
         sortProductsPopularity(products)
     }
 
-    const filteredProducts = filterProducts(products, selectedAnimal, selectedMerchants)
+    setListProducts(filterProducts(products, selectedAnimal, selectedMerchants))
 
     // useEffect(() => {
     //     const productByAnimal = filterProductsByAnimalMerchants(products, selectedAnimal, selectedMerchants)
@@ -101,7 +101,7 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
                 columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
                 spacing={{ base: 4 }}
             >
-                {filteredProducts.map((product, index) => (
+                {listProducts.map((product, index) => (
                     <ProductListCard product={product} key={index} />
                 ))}
             </SimpleGrid>
