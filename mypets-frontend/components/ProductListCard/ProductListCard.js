@@ -34,11 +34,11 @@ function ProductListCard({ product }) {
         _hover={{
           shadow: "lg"
         }}
+        as={`/products/${product.slug}`}
       >
         {/* <NextLink  passHref> */}
         <LinkOverlay
           href={`/products/${product.slug}`}
-          as={`/products/${product.slug}`}
         >
           <Stack
             direction='column'
