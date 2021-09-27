@@ -82,15 +82,12 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
         sortProductsPopularity(products)
     }
 
-    setListProducts(filterProducts(products, selectedAnimal, selectedMerchants))
+    useEffect(() => {
+        setListProducts(filterProducts(products, selectedAnimal, selectedMerchants))
 
-    // useEffect(() => {
-    //     const productByAnimal = filterProductsByAnimalMerchants(products, selectedAnimal, selectedMerchants)
-    //     setListProducts(productByAnimal)
-
-    //     console.log('animal filter selected: ', selectedAnimal)
-    //     console.log('products filtered by animal: ', productByAnimal)
-    // }, [selectedMerchants])
+        console.log('animal filter selected: ', selectedAnimal)
+        console.log('products filtered by animal: ', productByAnimal)
+    }, [selectedMerchants])
 
     return (
         <Box>
