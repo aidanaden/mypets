@@ -48,7 +48,11 @@ function ProductListCard({ product }) {
             justifyContent="center"
             h='100%'
           >
-            <Stack direction='column' h='100%' w='100%'>
+            <Stack
+              direction='column'
+              h='100%'
+              w='100%'
+            >
               <Center roundedTop="lg">
                 <NextImage
                   src={imageToUrl(product.image)}
@@ -83,10 +87,14 @@ function ProductListCard({ product }) {
                 justifySelf='flex-end'
               >
                 <RatingDisplay rating={product.rating} numReviews={0} />
-                <Box fontSize={{ base: 'sm', md: 'md' }} fontWeight='bold' color='gray.800'>
+                <Box
+                  fontSize={{ base: 'sm', md: 'md' }}
+                  fontWeight='bold'
+                  color='gray.800'
+                >
                   <Box as="span" color={'gray.600'}>
                     $
-                    </Box>
+                  </Box>
                   {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
                 </Box>
               </Stack>

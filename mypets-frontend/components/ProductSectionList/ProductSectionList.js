@@ -36,17 +36,9 @@ function ProductSectionList({ products, categories, setSortMethod, sortMethod, s
 
     return (
         <Box w='100%'>
-            {/* <Box
-                display={{ base: 'inherit', lg: 'none'}} 
-                mb={8}
-            >
-                <SortMenu
-                    setSortMethod={setSortMethod}
-                />
-            </Box> */}
             <Stack
                 direction='column'
-                spacing={{ base: 4, lg: 8 }}
+                spacing={{ base: 8, lg: 12 }}
             >
                 {categoryOnly.map((category, i) => (
                     <ProductList

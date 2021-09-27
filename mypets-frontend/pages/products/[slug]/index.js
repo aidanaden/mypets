@@ -28,7 +28,7 @@ export default function Product({ product, otherProducts }) {
                     templateRows="min-content" 
                     templateColumns="repeat(3, 1fr)" 
                     gap={4}
-                    mb={{ base: 4, md: 8 }}
+                    mb={{ base: 8, md: 12 }}
                 >
                     <GridItem
                         colSpan={3} 
