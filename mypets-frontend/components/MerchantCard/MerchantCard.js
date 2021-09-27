@@ -16,10 +16,9 @@ function MerchantCard({ merchant }) {
                     fontSize="md"
                 >
                     <Center
-                        // p={{ base: 1 }}
                         rounded='xl'
-                        height={{ base: '61px', md: '123px' }}
-                        width={{ base: '123px', md: '246px' }}
+                        height={{ base: '86px', md: '123px' }}
+                        width={{ base: '172px', md: '246px' }}
                         borderWidth="1px"
                         shadow='sm'
                         _hover={{
