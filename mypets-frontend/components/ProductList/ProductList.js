@@ -33,7 +33,6 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
     const filterProductsByAnimalMerchants = (products, animal, selectedMerchants) => {
         if (animal != '') {
             if (selectedMerchants) {
-                console.log('animal + selected merchants checked!')
                 if (selectedMerchants.length == 0) {
                     console.log('no merchant selected, displaying all')
                     return products
@@ -44,6 +43,7 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
                         return product
                     }
                 })
+                console.log('animal + selected merchants checked: ', filteredProducts)
                 return filteredProducts
             } else {
                 const filteredProducts = products.filter((product) => {
@@ -51,11 +51,11 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
                         return product
                     }
                 })
+                console.log('animal with no merchants checked: ', filteredProducts)
                 return filteredProducts
             }
         } else {
             if (selectedMerchants) {
-                console.log('selected merchants checked!')
                 if (selectedMerchants.length == 0) {
                     console.log('no merchant selected, displaying all')
                     return products
@@ -65,6 +65,7 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
                         return product
                     }
                 })
+                console.log('no animals with selected merchants checked: ', filteredProducts)
                 return filteredProducts
             } else {
                 return products
