@@ -34,7 +34,7 @@ function ProductListCard({ product }) {
         _hover={{
           shadow: "lg"
         }}
-        as={`/products/${product.slug}`}
+        // as={`/products/${product.slug}`}
       >
         {/* <NextLink  passHref> */}
         <LinkOverlay
