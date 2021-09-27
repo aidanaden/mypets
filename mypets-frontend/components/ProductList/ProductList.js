@@ -8,7 +8,7 @@ import SectionHeader from '../SectionHeader/SectionHeader'
 import ProductListCard from '../ProductListCard/ProductListCard'
 
 function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMerchants }) {
-    const [listProducts, setListProducts] = useState([])
+    const [listProducts, setListProducts] = useState(products)
 
     const sortProductsAscending = (products) => {
         products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
