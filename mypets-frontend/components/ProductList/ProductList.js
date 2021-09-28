@@ -92,17 +92,20 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
 
     return (
         <Box>
-            <SectionHeader>
-                {heading}
-            </SectionHeader>
-            <SimpleGrid
-                columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
-                spacing={{ base: 4 }}
-            >
-                {listProducts.map((product, index) => (
-                    <ProductListCard product={product} key={index} />
-                ))}
-            </SimpleGrid>
+            {products &&
+            <>
+                <SectionHeader>
+                    {heading}
+                </SectionHeader>
+                <SimpleGrid
+                    columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
+                    spacing={{ base: 4 }}
+                >
+                    {listProducts.map((product, index) => (
+                        <ProductListCard product={product} key={index} />
+                    ))}
+                </SimpleGrid>
+            </>}
         </Box>
     )
 }
