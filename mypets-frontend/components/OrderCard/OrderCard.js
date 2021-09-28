@@ -19,7 +19,6 @@ function OrderCard({ order, loading }) {
             <Stack
                 direction={{ base: 'column', lg: 'row' }}
                 justifyContent='space-between'
-                // spacing={{ base: 4, lg: 12 }}
             >
                 <Box
                     display={{ base: 'block', lg: 'none' }}
@@ -52,7 +51,7 @@ function OrderCard({ order, loading }) {
                 <Box
                     display={{ base: 'none', lg: 'block' }}
                     w='100%'
-                    bg='green.100'
+                    ml={{ lg: 8 }}
                 >
                     <OrderDeliveryStatusBar 
                         orderId={order.order_id}
