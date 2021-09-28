@@ -41,6 +41,7 @@ function OrderCard({ order, loading }) {
                     direction='column'
                     py={8}
                     px={{ base: 0, lg: 8 }}
+                    bg='blue.100'
                 >
                     {productNames.map((productName, i) => (
                         <OrderProductCard
@@ -51,6 +52,7 @@ function OrderCard({ order, loading }) {
                 </Stack>
                 <Box
                     display={{ base: 'none', lg: 'block' }}
+                    bg='green.100'
                 >
                     <OrderDeliveryStatusBar 
                         orderId={order.order_id}
