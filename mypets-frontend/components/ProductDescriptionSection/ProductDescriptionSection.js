@@ -113,6 +113,7 @@ export default function ProductDescriptionSection({ product }) {
     // ]
     // const descriptions = String(product.content).replace(/[0-9.]/g, "").split(/[\r\n]+/)
     const nutrients = product.nutrional_analysis.split(/[\r\n]+/)
+    console.log("content value: ", product.content)
 
     return (
         <Stack
