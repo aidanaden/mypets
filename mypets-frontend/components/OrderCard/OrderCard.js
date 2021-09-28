@@ -16,11 +16,12 @@ function OrderCard({ order, loading }) {
 
     return (
         <Section>
-            <Flex 
+            <Stack
                 direction={{ base: 'column', lg: 'row' }}
-                w='100%'
-                h='auto'
-                mx='auto'
+                // w='100%'
+                // h='auto'
+                // mx='auto'
+                justifyContent='space-between'
             >
                 <Box
                     display={{ base: 'block', lg: 'none' }}
@@ -39,8 +40,8 @@ function OrderCard({ order, loading }) {
                 </Box>
                 <Stack
                     direction='column'
-                    py={8}
-                    px={{ base: 0, lg: 8 }}
+                    // py={8}
+                    // px={{ base: 0, lg: 8 }}
                     bg='blue.100'
                 >
                     {productNames.map((productName, i) => (
@@ -66,7 +67,7 @@ function OrderCard({ order, loading }) {
                         order={order}
                     />
                 </Box>
-            </Flex>
+            </Stack>
         </Section>
     )
 }

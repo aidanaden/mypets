@@ -78,8 +78,7 @@ const ContributionSection = ({ orders }) => {
                             Your total contribution
                         </SectionHeader>
                         <Text
-                            bg='green.100'
-                            fontSize={{ base: '2xl', md: '4xl' }}
+                            fontSize={{ base: '4xl' }}
                             textColor='mypets.400'
                         >
                             ${totalContribution}
