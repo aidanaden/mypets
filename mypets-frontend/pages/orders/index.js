@@ -72,9 +72,8 @@ const ContributionSection = ({ orders }) => {
                     justifyContent='space-between'
                 >
                     <Stack
-                        direction={{ base: 'row', md: 'column' }}
+                        direction={{ base: 'column', md: 'column' }}
                         spacing={{ base: 4 }}
-                        align={{ base: 'left', md: 'center' }}
                         bg='blue.100'
                     >
                         <SectionHeader textColor='mypets.400'>
