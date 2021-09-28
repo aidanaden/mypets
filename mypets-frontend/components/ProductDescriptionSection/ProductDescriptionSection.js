@@ -36,7 +36,6 @@ const ProductDescription = ({ markdownContent }) => {
                 <ReactMarkdown
                     components={ChakraUIRenderer}
                     children={markdownContent}
-                    skipHtml
                 />
             </Box>
             {/* <List
