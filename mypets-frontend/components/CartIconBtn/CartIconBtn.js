@@ -12,6 +12,7 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
             // isRound
             size="lg"
             bg='white'
+            _hover={{ bg: 'white' }}
             _active={{ bg: 'white' }}
             icon={
                 <>

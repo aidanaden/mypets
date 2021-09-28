@@ -80,9 +80,12 @@ function NavbarCartModalBtn() {
     useEffect(() => {
         if (cart) {
             setTotalPrice(cart.total_price)
+            var tempNumOrderProducts = 0
             cart.order_products.map((order_product) => {
-                setNumOrderProducts(numOrderProducts + order_product.quantity)
+                // setNumOrderProducts(numOrderProducts + order_product.quantity)
+                tempNumOrderProducts += order_product.quantity
             })
+            console.log('number of order products quantities: ', tempNumOrderProducts)
             setGroupedProducts(lodash.groupBy(cart.order_products, 'variant.product.name'))
             setProductNames(Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
         }
@@ -90,12 +93,6 @@ function NavbarCartModalBtn() {
 
     return (
         <>
-            {/* <MypetsBtn
-                btnText='Your cart'
-                onClick={onOpen}
-                leftIcon={<FaShoppingCart />}
-                mx={0}
-            /> */}
             <CartIconBtn
                 cartNumOrderProducts={numOrderProducts}
                 onClick={onOpen}
