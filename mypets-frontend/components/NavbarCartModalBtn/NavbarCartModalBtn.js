@@ -38,6 +38,7 @@ function NavbarCartModalBtn() {
     const toast = useToast()
 
     const [totalPrice, setTotalPrice] = useState(0)
+    const [numOrderProducts, setNumOrderProducts] = useState(0)
     const [groupedProducts, setGroupedProducts] = useState(null)
     const [productNames, setProductNames] = useState(null)
 
@@ -79,6 +80,9 @@ function NavbarCartModalBtn() {
     useEffect(() => {
         if (cart) {
             setTotalPrice(cart.total_price)
+            cart.order_products.map((order_product) => {
+                setNumOrderProducts(numOrderProducts + order_product.quantity)
+            })
             setGroupedProducts(lodash.groupBy(cart.order_products, 'variant.product.name'))
             setProductNames(Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
         }
@@ -93,6 +97,7 @@ function NavbarCartModalBtn() {
                 mx={0}
             /> */}
             <CartIconBtn
+                cartNumOrderProducts={numOrderProducts}
                 onClick={onOpen}
                 mx={0}
             />
