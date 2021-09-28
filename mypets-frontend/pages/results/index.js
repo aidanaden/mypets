@@ -8,8 +8,7 @@ import {
     Box,
     Text,
     Spacer,
-    Checkbox,
-    Spacer
+    Checkbox
 } from '@chakra-ui/react'
 
 import AnnouncementBanner from '../../components/AnnouncementBanner/AnnouncementBanner'
