@@ -34,7 +34,7 @@ const ProductDescription = ({ markdownContent }) => {
             </SectionHeading>
             <Box>
                 <ReactMarkdown
-                    components={ChakraUIRenderer}
+                    components={ChakraUIRenderer()}
                     children={markdownContent}
                 />
             </Box>
