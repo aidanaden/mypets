@@ -114,7 +114,9 @@ export default function Sidebar({ categories }) {
                 isMobile
                 textAlign='center'
                 justify='center'
+                justifyItems='center'
                 align='center'
+                alignItems='center'
                 px='auto'
                 display={{ base: 'block', lg: 'none' }}
             />
