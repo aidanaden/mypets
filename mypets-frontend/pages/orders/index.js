@@ -74,13 +74,13 @@ const ContributionSection = ({ orders }) => {
                     <Stack
                         direction={{ base: 'row', md: 'column' }}
                         spacing={{ base: 4 }}
-                        justify='center'
+                        align='center'
                     >
                         <SectionHeader textColor='mypets.400'>
                             Your total contribution
                         </SectionHeader>
                         <Text
-                            fontSize='2xl'
+                            fontSize={{ base: '2xl', md: '4xl' }}
                             textColor='mypets.400'
                         >
                             ${totalContribution}
