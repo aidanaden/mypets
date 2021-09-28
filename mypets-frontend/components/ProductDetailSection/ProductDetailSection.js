@@ -114,8 +114,8 @@ function ProductDetailSection({ product }) {
                 </Heading>
                 <Stack
                     direction='column'
-                    spacing={1}
-                    mt={3}
+                    spacing={{ base: 2 }}
+                    mt={{ base: 3 }}
                 >
                     <HStack spacing={3}>
                         <ProductDetailBadge>
@@ -129,7 +129,6 @@ function ProductDetailSection({ product }) {
                     <HStack
                         spacing={{ base: 2 }}
                         align='center'
-                        mt={{ base: 2 }}
                     >
                         <ProductDetailBadge mt={0}>
                             {product.category.name}
