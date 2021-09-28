@@ -32,8 +32,6 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
     //     isClosable: true,
     // })
 
-    console.log('merchant categories: ', categories)
-
     return (
         <Tabs variant='unstyled' size='md' defaultIndex={0} mt={12} p={0}>
             <TabList

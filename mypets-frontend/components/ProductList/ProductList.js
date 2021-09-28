@@ -34,7 +34,6 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
         if (animal != '') {
             if (selectedMerchants) {
                 if (selectedMerchants.length == 0) {
-                    console.log('no merchant selected, filtering by animals only')
                     const filteredProducts = products.filter((product) => {
                         if (product.animal.name == animal) {
                             return product
@@ -42,7 +41,6 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
                     })
                     return filteredProducts
                 }
-                console.log('animal + selected merchants selected')
                 const filteredProducts = products.filter((product) => {
                     if (product.animal.name == animal && 
                         selectedMerchants.includes(product.merchant.name)) {
@@ -56,14 +54,11 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
                         return product
                     }
                 })
-                console.log('animal with no merchants selected')
                 return filteredProducts
             }
         } else {
             if (selectedMerchants) {
-                console.log('no animals with selected merchants')
                 if (selectedMerchants.length == 0) {
-                    console.log('no merchant selected, no animals selected, displaying all')
                     return products
                 }
                 const filteredProducts = products.filter((product) => {
@@ -85,9 +80,6 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
     useEffect(() => {
         const filteredProducts = filterProductsByAnimalMerchants(products, selectedAnimal, selectedMerchants)
         setListProducts(filteredProducts)
-
-        console.log('animal filter selected: ', selectedAnimal)
-        console.log('products filtered by animal: ', filteredProducts)
     }, [selectedMerchants, selectedAnimal])
 
     return (

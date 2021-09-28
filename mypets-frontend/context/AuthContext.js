@@ -13,7 +13,6 @@ const AuthContext = createContext()
  * @param {object} body 
  */
 export const callAPI = async (path, method, body) => {
-    console.log('fetching...')
     try {
         const response = await fetch(`${API_URL}${path}`, {
             method,

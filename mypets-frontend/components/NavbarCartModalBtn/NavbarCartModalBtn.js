@@ -84,7 +84,6 @@ function NavbarCartModalBtn() {
             cart.order_products.map((order_product) => {
                 tempNumOrderProducts += order_product.quantity
             })
-            console.log('number of order products quantities: ', tempNumOrderProducts)
             setNumOrderProducts(tempNumOrderProducts)
             setGroupedProducts(lodash.groupBy(cart.order_products, 'variant.product.name'))
             setProductNames(Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))

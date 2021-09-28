@@ -35,16 +35,15 @@ const MerchantCheck = ({ text, isChecked, onChange, ...props }) => {
 }
 
 const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMerchants }) => {
-    console.log('selected merchants: ', selectedMerchants)
 
     const merchantChangeOnCheck = (checked, merchant) => {
         if (checked) {
             const newSelectedMerchants = [...selectedMerchants, merchant]
-            console.log('new merchants: ', newSelectedMerchants)
+            // console.log('new merchants: ', newSelectedMerchants)
             setSelectedMerchants(newSelectedMerchants)
         } else {
             const leftMerchants = selectedMerchants.filter(selectedMerchant => selectedMerchant != merchant)
-            console.log('merchants AFTER removal: ', leftMerchants)
+            // console.log('merchants AFTER removal: ', leftMerchants)
             setSelectedMerchants(leftMerchants)
         }
     }
@@ -110,8 +109,6 @@ export default function index({ products, animals, merchants }) {
             const price = router.query.price
             setSearchText(search)
 
-            console.log('search term: ', search)
-
             const filteredProducts = products.filter(product => {
                 const firstValid = product.name.toLowerCase().includes(search.toLowerCase())
                 const secondValid = product.variants[0].price <= price
@@ -119,15 +116,14 @@ export default function index({ products, animals, merchants }) {
             })
 
             const filteredProductMerchants = getMerchants(filteredProducts)
-            console.log('filtered product merchants: ', filteredProductMerchants)
-            console.log('filtered product: ', filteredProducts)
+            // console.log('filtered product merchants: ', filteredProductMerchants)
+            // console.log('filtered product: ', filteredProducts)
             setPageMerchants(filteredProductMerchants)
             setPageProducts(filteredProducts)
 
         } else {
 
             const productMerchants = getMerchants(products)
-            console.log('product merchants: ', productMerchants)
             setPageMerchants(productMerchants)
             setPageProducts(products)
         }

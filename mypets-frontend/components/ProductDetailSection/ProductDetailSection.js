@@ -83,7 +83,6 @@ function ProductDetailSection({ product }) {
     }
 
     useEffect(() => {
-        console.log('product detail loaded, variant when adding to cart: ', product.variants[0])
         setVariant(product.variants[0])
         setPrice(product.variants[0].price)
     }, [])

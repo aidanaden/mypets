@@ -17,7 +17,6 @@ import { API_PRODUCTS_URL } from '../../../utils/urls'
 import PageContainer from '../../../components/PageContainer/PageContainer'
 
 export default function Product({ product, otherProducts }) {
-    console.log('loading product page: ', product)
     return (
         <Box>
             <AnnouncementBanner />
