@@ -11,8 +11,6 @@ import {
 } from '@chakra-ui/react'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 
-import ProductDescriptionListItem from '../ProductDescriptionListItem/ProductDescriptionListItem'
-
 const SectionHeading = ({ children, ...props }) => {
     return (
         <Heading
@@ -38,17 +36,6 @@ const ProductDescription = ({ markdownContent }) => {
                     children={markdownContent}
                 />
             </Box>
-            {/* <List
-                spacing={3}
-                textAlign='center'
-            >
-                {descriptions.map((description, i) => (
-                    <ProductDescriptionListItem
-                        key={i}
-                        description={description}
-                    />
-                ))}
-            </List> */}
         </Box>
     )
 }
@@ -85,7 +72,6 @@ const ProductNutrients = ({ nutrients }) => {
                         key={i}
                         direction='row'
                         justify='space-between'
-                        bg='red.100'
                         w='100%'
                     >
                         <Text>
@@ -111,9 +97,7 @@ export default function ProductDescriptionSection({ product }) {
     //     'Yucca schidigera extract which reduces odors associated with waste',
     //     'Omega-3 & 6 fatty acids  that promotes healthy skin and shiny coat'
     // ]
-    // const descriptions = String(product.content).replace(/[0-9.]/g, "").split(/[\r\n]+/)
     const nutrients = product.nutrional_analysis.split(/[\r\n]+/)
-    console.log("content value: ", product.content)
 
     return (
         <Stack

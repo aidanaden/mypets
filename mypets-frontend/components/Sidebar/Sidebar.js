@@ -43,7 +43,14 @@ export default function Sidebar({ categories }) {
 
     const Logo = ({ isMobile, ...props }) => {
         return (
-            <Center 
+            <Center
+                justifyContent='center'
+                justifyItems='center'
+                justifySelf='center'
+                // justify='center'
+                // justifyItems='center'
+                // align='center'
+                // alignItems='center'
                 {...props}
             >
                 <NextLink
@@ -113,12 +120,6 @@ export default function Sidebar({ categories }) {
         >
             <Logo
                 isMobile
-                textAlign='center'
-                justify='center'
-                justifyItems='center'
-                align='center'
-                alignItems='center'
-                px='auto'
                 display={{ base: 'block', lg: 'none' }}
                 bg='red.100'
             />
