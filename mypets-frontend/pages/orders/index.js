@@ -70,8 +70,15 @@ const ContributionSection = ({ orders }) => {
                 boxShadow='sm' 
                 borderWidth='1px' 
             >
-                <HStack>
-                    <Box>
+                <Stack
+                    direction={{ base: 'column', md: 'row' }}
+                    // spacing={{ base: 4 }}
+                    justifyContent='space-between'
+                >
+                    <Stack
+                        direction={{ base: 'row', md: 'column' }}
+                        spacing={{ base: 4 }}
+                    >
                         <SectionHeader textColor='mypets.400'>
                             Your total contribution
                         </SectionHeader>
@@ -81,7 +88,7 @@ const ContributionSection = ({ orders }) => {
                         >
                             ${totalContribution}
                         </Text>
-                    </Box>
+                    </Stack>
                     <Spacer />
                     <Center
                         rounded='lg'
@@ -90,7 +97,7 @@ const ContributionSection = ({ orders }) => {
                     >
                         With every purchase, Mypets will make a donation of 5% to local pet communities.
                     </Center>
-                </HStack>
+                </Stack>
                 <Text
                     mt={{ base: 8 }}
                     as='h5'
