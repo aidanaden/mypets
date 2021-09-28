@@ -4,7 +4,8 @@ import {
     Heading,
     List,
     Text,
-    Stack
+    Stack,
+    Center
 } from '@chakra-ui/react'
 import ProductDescriptionListItem from '../ProductDescriptionListItem/ProductDescriptionListItem'
 
