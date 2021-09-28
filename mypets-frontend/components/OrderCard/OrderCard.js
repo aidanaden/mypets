@@ -5,6 +5,7 @@ import {
     Stack
 } from '@chakra-ui/react'
 
+import Section from '../Section/Section'
 import OrderProductCard from '../OrderProductCard/OrderProductCard'
 import OrderDeliveryStatusBar from '../OrderDeliveryStatusBar/OrderDeliveryStatusBar'
 import OrderPriceBreakdownList from '../OrderPriceBreakdownList/OrderPriceBreakdownList'
@@ -14,62 +15,57 @@ function OrderCard({ order, loading }) {
     const productNames = Object.keys(groupedOrderProducts)
 
     return (
-        <Flex 
-            direction={{ base: 'column', lg: 'row' }}
-            w='100%'
-            h='auto'
-            mx='auto'
-            rounded='lg'
-            boxShadow='sm'
-            borderWidth='1px'
-        >
-            <Box
-                p={{ base: 4, md: 8, xl: 12 }}
-                display={{ base: 'block', lg: 'none' }}
+        <Section>
+            <Flex 
+                direction={{ base: 'column', lg: 'row' }}
                 w='100%'
+                h='auto'
+                mx='auto'
             >
-                <OrderDeliveryStatusBar 
-                    orderId={order.order_id}
-                    orderDate={order.order_date} 
-                    deliveryDate={order.delivery_date} 
-                    status={order.status}
-                />
-                <OrderPriceBreakdownList 
-                    groupedOrderProducts={groupedOrderProducts} 
-                    productNames={productNames} 
-                    order={order}
-                />
-            </Box>
-            <Stack
-                direction='column'
-                py={8}
-                px={{ base: 0, lg: 8 }}
-            >
-                {productNames.map((productName, i) => (
-                    <OrderProductCard
-                        key={i}
-                        order_products={groupedOrderProducts[productName]}
+                <Box
+                    display={{ base: 'block', lg: 'none' }}
+                >
+                    <OrderDeliveryStatusBar 
+                        orderId={order.order_id}
+                        orderDate={order.order_date} 
+                        deliveryDate={order.delivery_date} 
+                        status={order.status}
                     />
-                ))}
-            </Stack>
-            <Box
-                p={{ base: 4, md: 8, xl: 12 }}
-                display={{ base: 'none', lg: 'block' }}
-                w='100%'
-            >
-                <OrderDeliveryStatusBar 
-                    orderId={order.order_id}
-                    orderDate={order.order_date} 
-                    deliveryDate={order.delivery_date} 
-                    status={order.status}
-                />
-                <OrderPriceBreakdownList 
-                    groupedOrderProducts={groupedOrderProducts} 
-                    productNames={productNames} 
-                    order={order}
-                />
-            </Box>
-        </Flex>
+                    <OrderPriceBreakdownList 
+                        groupedOrderProducts={groupedOrderProducts} 
+                        productNames={productNames} 
+                        order={order}
+                    />
+                </Box>
+                <Stack
+                    direction='column'
+                    py={8}
+                    px={{ base: 0, lg: 8 }}
+                >
+                    {productNames.map((productName, i) => (
+                        <OrderProductCard
+                            key={i}
+                            order_products={groupedOrderProducts[productName]}
+                        />
+                    ))}
+                </Stack>
+                <Box
+                    display={{ base: 'none', lg: 'block' }}
+                >
+                    <OrderDeliveryStatusBar 
+                        orderId={order.order_id}
+                        orderDate={order.order_date} 
+                        deliveryDate={order.delivery_date} 
+                        status={order.status}
+                    />
+                    <OrderPriceBreakdownList 
+                        groupedOrderProducts={groupedOrderProducts} 
+                        productNames={productNames} 
+                        order={order}
+                    />
+                </Box>
+            </Flex>
+        </Section>
     )
 }
 

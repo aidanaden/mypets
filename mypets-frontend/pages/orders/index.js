@@ -19,6 +19,7 @@ import PageContainer from '../../components/PageContainer/PageContainer'
 import BackBtn from '../../components/BackBtn/BackBtn'
 import OrderCard from '../../components/OrderCard/OrderCard'
 import AuthContext, { callAPI } from '../../context/AuthContext'
+import Section from '../../components/Section/Section'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import MypetsBtn from '../../components/MypetsBtn/MypetsBtn'
 import { stringToDate } from '../../utils/urls'
@@ -64,12 +65,7 @@ const ContributionSection = ({ orders }) => {
             <SectionHeader>
                 Contribution History
             </SectionHeader>
-            <Box
-                p={{ base: 4, md: 8, xl: 12 }}
-                rounded='lg' 
-                boxShadow='sm' 
-                borderWidth='1px' 
-            >
+            <Section>
                 <Stack
                     direction={{ base: 'column', md: 'row' }}
                     // spacing={{ base: 4 }}
@@ -123,7 +119,7 @@ const ContributionSection = ({ orders }) => {
                 >
                     <MypetsBtn btnText='View all Contributions' />
                 </Box>
-            </Box>
+            </Section>
         </Box>
     )
 }
