@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
 import {
     Box,
     Heading,
@@ -8,6 +9,8 @@ import {
     Center,
     Spacer
 } from '@chakra-ui/react'
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
+
 import ProductDescriptionListItem from '../ProductDescriptionListItem/ProductDescriptionListItem'
 
 const SectionHeading = ({ children, ...props }) => {
@@ -15,7 +18,6 @@ const SectionHeading = ({ children, ...props }) => {
         <Heading
             as="h3"
             fontSize="2xl"
-            textAlign="center"
             mb={{ base: 4 }}
             {...props}
         >
@@ -24,13 +26,20 @@ const SectionHeading = ({ children, ...props }) => {
     )
 }
 
-const ProductDescription = ({ descriptions }) => {
+const ProductDescription = ({ markdownContent }) => {
     return (
         <Box>
             <SectionHeading>
                 Description
             </SectionHeading>
-            <List
+            <Box>
+                <ReactMarkdown
+                    components={ChakraUIRenderer}
+                    children={markdownContent}
+                    skipHtml
+                />
+            </Box>
+            {/* <List
                 spacing={3}
                 textAlign='center'
             >
@@ -40,7 +49,7 @@ const ProductDescription = ({ descriptions }) => {
                         description={description}
                     />
                 ))}
-            </List>
+            </List> */}
         </Box>
     )
 }
@@ -103,7 +112,7 @@ export default function ProductDescriptionSection({ product }) {
     //     'Yucca schidigera extract which reduces odors associated with waste',
     //     'Omega-3 & 6 fatty acids  that promotes healthy skin and shiny coat'
     // ]
-    const descriptions = String(product.content).replace(/[0-9.]/g, "").split(/[\r\n]+/)
+    // const descriptions = String(product.content).replace(/[0-9.]/g, "").split(/[\r\n]+/)
     const nutrients = product.nutrional_analysis.split(/[\r\n]+/)
 
     return (
@@ -112,7 +121,7 @@ export default function ProductDescriptionSection({ product }) {
             direction='column'
             spacing={{ base: 12 }}
         >
-            <ProductDescription descriptions={descriptions} />
+            <ProductDescription markdownContent={product.content} />
             <ProductIngredient ingredients={product.ingredients} />
             <ProductNutrients nutrients={nutrients} />
         </Stack>
