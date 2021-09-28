@@ -33,11 +33,11 @@ const ProductDescription = ({ markdownContent }) => {
                 Description
             </SectionHeading>
             <Box>
-                {/* <ReactMarkdown
+                <ReactMarkdown
                     components={ChakraUIRenderer}
                     children={markdownContent}
                     skipHtml
-                /> */}
+                />
             </Box>
             {/* <List
                 spacing={3}
