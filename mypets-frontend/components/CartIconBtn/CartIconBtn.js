@@ -19,9 +19,9 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
                     {cartNumOrderProducts > 0 &&
                     <Circle
                         pos="absolute"
-                        top="-1px"
-                        right="-1px"
-                        // p={{ base: 2 }}
+                        top="-2px"
+                        right="-2px"
+                        p={{ base: 2 }}
                         fontSize="xs"
                         fontWeight="bold"
                         lineHeight="none"

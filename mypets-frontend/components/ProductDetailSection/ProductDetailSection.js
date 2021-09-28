@@ -128,7 +128,7 @@ function ProductDetailSection({ product }) {
                     </HStack>
                     <HStack
                         spacing={3}
-                        justifyContent='center'
+                        alignContent='center'
                     >
                         <ProductDetailBadge>
                             {product.category.name}
