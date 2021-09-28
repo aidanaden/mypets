@@ -1,5 +1,6 @@
 import {
     IconButton,
+    Icon,
     chakra,
 } from '@chakra-ui/react'
 
@@ -12,13 +13,15 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
             size="lg"
             icon={
                 <>
-                    <FaShoppingCart />
+                    <Icon as={FaShoppingCart}
+                        boxSize={{ base: 4 }}
+                    />
                     {cartNumOrderProducts > 0 &&
                     <chakra.span
                         pos="absolute"
                         top="-1px"
                         right="-1px"
-                        p="4px"
+                        p={{ base: 1 }}
                         fontSize="xs"
                         fontWeight="bold"
                         lineHeight="none"
