@@ -40,6 +40,7 @@ function OrderCard({ order, loading }) {
                     // py={8}
                     // px={{ base: 0, lg: 8 }}
                     bg='blue.100'
+                    mr={{ lg: 12 }}
                 >
                     {productNames.map((productName, i) => (
                         <OrderProductCard
@@ -51,7 +52,6 @@ function OrderCard({ order, loading }) {
                 <Box
                     display={{ base: 'none', lg: 'block' }}
                     w='100%'
-                    ml={{ lg: 8 }}
                 >
                     <OrderDeliveryStatusBar 
                         orderId={order.order_id}
