@@ -16,7 +16,7 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
             icon={
                 <>
                     <Icon as={FaShoppingCart}
-                        boxSize={{ base: 8 }}
+                        boxSize={{ base: 6 }}
                     />
                     {cartNumOrderProducts > 0 &&
                     <Circle
