@@ -113,11 +113,10 @@ export default function Sidebar({ categories }) {
             <Logo
                 isMobile
                 textAlign='center'
-                justifyContent='center'
-                alignContent='center'
+                justify='center'
+                align='center'
                 px='auto'
-                bg='blue.100'
-                display={{ base: 'block', md: 'none' }}
+                display={{ base: 'block', lg: 'none' }}
             />
             <Stack
                 spacing={{ base: 4 }}

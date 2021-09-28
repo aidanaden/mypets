@@ -23,6 +23,7 @@ import Footer from '../../components/Footer/Footer'
 import MerchantSectionList from '../../components/MerchantSectionList/MerchantSectionList'
 import ProductList from '../../components/ProductList/ProductList'
 import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL } from '../../utils/urls'
+import SectionHeader from '../../components/SectionHeader/SectionHeader'
 
 const MerchantCheck = ({ text, isChecked, onChange, ...props }) => {
     return (
@@ -54,7 +55,7 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
         <Stack
             direction='column'
             spacing={{ base: 2 }}
-            mr={{ base: 8, md: 0 }}
+            // mr={{ base: 8, md: 0 }}
         >
             <Text>
                 Brand
@@ -140,7 +141,7 @@ export default function index({ products, animals, merchants }) {
             <PageContainer>
                 <Stack
                     direction={{ base: 'column', xl: 'row' }}
-                    spacing={{ base: 4, xl: 8 }}
+                    spacing={{ base: 4, xl: 12 }}
                 >
                     <MerchantChecklist
                         pageMerchants={pageMerchants}
@@ -157,12 +158,12 @@ export default function index({ products, animals, merchants }) {
                             spacing={{ base: 8 }}
                             w='100%'
                         >
-                            <Text>
+                            <SectionHeader>
                                 Showing results for 
                                 <chakra.span textColor='mypets.400'>
                                     {` "${searchText}"`}
                                 </chakra.span>
-                            </Text>
+                            </SectionHeader>
                             <Stack
                                 direction={{ base: 'column', md: 'row' }}
                                 spacing={{ base: 2, md: 0 }}
