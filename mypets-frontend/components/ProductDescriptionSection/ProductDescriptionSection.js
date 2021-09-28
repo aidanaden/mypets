@@ -56,23 +56,29 @@ const ProductNutrients = ({ nutrients }) => {
     // nutrients = ["chicken - 30%"]
     return (
         <Center
+            bg='gray.400'
             p={{ base: 4 }}
         >
-            {nutrients.map((nutrient, i) => (
-                <Stack
-                    direction='row'
-                    // spacing={{ base: 1 }}
-                    justify='space-between'
-                >
-                    <Text>
-                        {nutrient.split('-')[0]}
-                    </Text>
-                    <Spacer />
-                    <Text>
-                        {nutrient.split('-')[1]}
-                    </Text>
-                </Stack>
-            ))}
+            <Stack
+                direction='column'
+                spacing={{ base: 1 }}
+            >
+                {nutrients.map((nutrient, i) => (
+                    <Stack
+                        key={i}
+                        direction='row'
+                        justify='space-between'
+                    >
+                        <Text>
+                            {nutrient.split('-')[0]}
+                        </Text>
+                        <Spacer />
+                        <Text>
+                            {nutrient.split('-')[1]}
+                        </Text>
+                    </Stack>
+                ))}
+            </Stack>
         </Center>
     )
 }
