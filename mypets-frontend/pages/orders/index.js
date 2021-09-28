@@ -74,6 +74,7 @@ const ContributionSection = ({ orders }) => {
                     <Stack
                         direction={{ base: 'row', md: 'column' }}
                         spacing={{ base: 4 }}
+                        justify='center'
                     >
                         <SectionHeader textColor='mypets.400'>
                             Your total contribution
