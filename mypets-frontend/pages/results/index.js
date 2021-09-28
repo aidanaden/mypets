@@ -156,9 +156,9 @@ export default function index({ products, animals, merchants }) {
                         >
                             <Text>
                                 Showing results for
-                                <Text textColor='mypets.400'>
+                                <chakra.span textColor='mypets.400'>
                                     {searchText}
-                                </Text>
+                                </chakra.span>
                             </Text>
                             <Stack
                                 direction={{ base: 'column', lg: 'row' }}
