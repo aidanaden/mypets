@@ -9,7 +9,9 @@ import {
     Text,
     Spacer,
     Checkbox,
-    chakra
+    chakra,
+    Wrap,
+    WrapItem
 } from '@chakra-ui/react'
 
 import AnnouncementBanner from '../../components/AnnouncementBanner/AnnouncementBanner'
@@ -57,19 +59,21 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
             <Text>
                 Brand
             </Text>
-            <Stack
+            <Wrap
                 direction={{ base: 'row', xl: 'column' }}
                 spacing={{ base: 4, xl: 1 }}
             >
                 {pageMerchants.length > 0 && pageMerchants.map((merchant,i) => (
-                    <MerchantCheck
-                        key={i}
-                        text={merchant}
-                        isChecked={selectedMerchants.includes(merchant)}
-                        onChange={merchantChangeOnCheck}
-                    />
+                    <WrapItem key={i}>
+                        <MerchantCheck
+                            text={merchant}
+                            isChecked={selectedMerchants.includes(merchant)}
+                            onChange={merchantChangeOnCheck}
+                        />
+                    </WrapItem>
+                    
                 ))}
-            </Stack>
+            </Wrap>
         </Stack>
         
     )
