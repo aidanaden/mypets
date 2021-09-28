@@ -149,10 +149,10 @@ export default function index({ products, animals, merchants }) {
                         spacing={{ base: 12 }}
                     >
                         <Stack
-                            direction={{ base: 'column', lg: 'row' }}
+                            direction={{ base: 'column', lg: 'column' }}
                             spacing={{ base: 4 }}
                             w='100%'
-                            justifyContent='space-between'
+                            bg='red.100'
                         >
                             <Text>
                                 Showing results for {searchText}
@@ -160,6 +160,7 @@ export default function index({ products, animals, merchants }) {
                             <Stack
                                 direction={{ base: 'column', lg: 'row' }}
                                 spacing={{ base: 8 }}
+                                bg='blue.100'
                             >
                                 <AnimalList
                                     animals={animals}
