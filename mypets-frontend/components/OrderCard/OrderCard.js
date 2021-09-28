@@ -20,9 +20,7 @@ function OrderCard({ order, loading }) {
                 direction={{ base: 'column', lg: 'row' }}
                 justifyContent='space-between'
             >
-                <Box
-                    display={{ base: 'block', lg: 'none' }}
-                >
+                <Box display={{ base: 'block', lg: 'none' }}>
                     <OrderDeliveryStatusBar 
                         orderId={order.order_id}
                         orderDate={order.order_date} 
@@ -37,10 +35,7 @@ function OrderCard({ order, loading }) {
                 </Box>
                 <Stack
                     direction='column'
-                    // py={8}
-                    // px={{ base: 0, lg: 8 }}
-                    bg='blue.100'
-                    mr={{ lg: 12 }}
+                    mr={{ lg: 12, xl: 16 }}
                 >
                     {productNames.map((productName, i) => (
                         <OrderProductCard

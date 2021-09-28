@@ -94,8 +94,11 @@ export default function OrderProductCard({ order_products }) {
     }, [order_products])
 
     return (
-        <Box w={{ base: '100%', lg: '450px' }} px={{ base: 0, md: 6, lg: 0 }} mb={8}>
-            { product && 
+        <Box
+            w={{ base: '100%', lg: '450px' }}
+            mb={{ base: 8 }}
+        >
+            {product && 
                 <>
                     <NextLink
                         href={`/products/${product.slug}`}
