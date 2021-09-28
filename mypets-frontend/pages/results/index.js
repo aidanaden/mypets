@@ -137,7 +137,7 @@ export default function index({ products, animals, merchants }) {
             <PageContainer>
                 <Stack
                     direction={{ base: 'column', xl: 'row' }}
-                    spacing={{ base: 8, lg: 12 }}
+                    spacing={{ base: 4, xl: 8 }}
                 >
                     <MerchantChecklist
                         pageMerchants={pageMerchants}
