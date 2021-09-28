@@ -9,7 +9,7 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
     return (
         <IconButton
             // isRound
-            size="md"
+            size="lg"
             icon={
                 <>
                     <FaShoppingCart />
@@ -18,7 +18,7 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
                         pos="absolute"
                         top="-1px"
                         right="-1px"
-                        p="8px"
+                        p="4px"
                         fontSize="xs"
                         fontWeight="bold"
                         lineHeight="none"
