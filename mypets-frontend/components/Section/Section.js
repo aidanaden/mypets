@@ -8,7 +8,6 @@ export default function Section({ children, ...props }) {
             rounded='lg'
             boxShadow='sm'
             borderWidth='1px'
-            bg='red.100'
             {...props}
         >
             {children}
