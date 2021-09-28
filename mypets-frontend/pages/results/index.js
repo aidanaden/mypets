@@ -139,46 +139,40 @@ export default function index({ products, animals, merchants }) {
             <AnnouncementBanner />
             <Sidebar />
             <PageContainer>
+                <SectionHeader>
+                    Showing results for
+                    <chakra.span textColor='mypets.400'>
+                        {` "${searchText}"`}
+                    </chakra.span>
+                </SectionHeader>
                 <Stack
                     direction={{ base: 'column', xl: 'row' }}
                     spacing={{ base: 4, xl: 12 }}
                 >
-                    <MerchantChecklist
-                        pageMerchants={pageMerchants}
-                        selectedMerchants={selectedMerchants}
-                        setSelectedMerchants={setSelectedMerchants}
-                    />
+                    <Stack
+                        direction={{ base: 'column', md: 'row' }}
+                        spacing={{ base: 2, md: 0 }}
+                        justify='space-between'
+                    >
+                        <AnimalList
+                            animals={animals}
+                            setSelectedAnimal={setSelectedAnimal}
+                        />
+                        <Spacer />
+                        <SortMenu
+                            setSortMethod={setSortMethod}
+                        />
+                    </Stack>
                     <Stack
                         direction='column'
                         w='100%'
                         spacing={{ base: 12 }}
                     >
-                        <Stack
-                            direction={{ base: 'column', lg: 'column' }}
-                            spacing={{ base: 8 }}
-                            w='100%'
-                        >
-                            <SectionHeader>
-                                Showing results for 
-                                <chakra.span textColor='mypets.400'>
-                                    {` "${searchText}"`}
-                                </chakra.span>
-                            </SectionHeader>
-                            <Stack
-                                direction={{ base: 'column', md: 'row' }}
-                                spacing={{ base: 2, md: 0 }}
-                                justify='space-between'
-                            >
-                                <AnimalList
-                                    animals={animals}
-                                    setSelectedAnimal={setSelectedAnimal}
-                                />
-                                <Spacer />
-                                <SortMenu
-                                    setSortMethod={setSortMethod}
-                                />
-                            </Stack>
-                        </Stack>
+                        <MerchantChecklist
+                            pageMerchants={pageMerchants}
+                            selectedMerchants={selectedMerchants}
+                            setSelectedMerchants={setSelectedMerchants}
+                        />
                         <MerchantSectionList
                             merchants={getMerchantDataFromNames(pageMerchants, merchants)}
                         />
