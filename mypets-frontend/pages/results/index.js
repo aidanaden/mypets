@@ -157,7 +157,7 @@ export default function index({ products, animals, merchants }) {
                             <Text>
                                 Showing results for 
                                 <chakra.span textColor='mypets.400'>
-                                    {searchText}
+                                    {` ${searchText}`}
                                 </chakra.span>
                             </Text>
                             <Stack
