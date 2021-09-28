@@ -16,7 +16,7 @@ function OrderCard({ order, loading }) {
 
     return (
         <Section>
-            <Stack
+            <Flex
                 direction={{ base: 'column', lg: 'row' }}
                 justifyContent='space-between'
             >
@@ -65,7 +65,7 @@ function OrderCard({ order, loading }) {
                         order={order}
                     />
                 </Box>
-            </Stack>
+            </Flex>
         </Section>
     )
 }
