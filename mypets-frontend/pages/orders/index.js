@@ -71,13 +71,8 @@ const ContributionSection = ({ orders }) => {
                     // spacing={{ base: 4 }}
                     justifyContent='space-between'
                 >
-                    <Stack
-                        direction={{ base: 'column', md: 'column' }}
-                        spacing={{ base: 4 }}
-                        bg='blue.100'
-                    >
+                    <Box>
                         <SectionHeader
-                            mb={{ base: 0 }}
                             textColor='mypets.400'
                         >
                             Your total contribution
@@ -89,7 +84,7 @@ const ContributionSection = ({ orders }) => {
                         >
                             ${totalContribution}
                         </Text>
-                    </Stack>
+                    </Box>
                     <Spacer />
                     <Center
                         rounded='lg'
