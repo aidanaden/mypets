@@ -147,7 +147,7 @@ export default function index({ products, animals, merchants }) {
                 </SectionHeader>
                 <Stack
                     direction={{ base: 'column', xl: 'column' }}
-                    spacing={{ base: 4, xl: 4 }}
+                    spacing={{ base: 8, xl: 8 }}
                 >
                     <Stack
                         direction={{ base: 'column', md: 'row' }}
