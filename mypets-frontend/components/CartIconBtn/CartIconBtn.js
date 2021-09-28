@@ -1,7 +1,7 @@
 import {
     IconButton,
     Icon,
-    chakra,
+    Circle
 } from '@chakra-ui/react'
 
 import { FaShoppingCart } from 'react-icons/fa'
@@ -14,10 +14,10 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
             icon={
                 <>
                     <Icon as={FaShoppingCart}
-                        boxSize={{ base: 4 }}
+                        boxSize={{ base: 8 }}
                     />
                     {cartNumOrderProducts > 0 &&
-                    <chakra.span
+                    <Circle
                         pos="absolute"
                         top="-1px"
                         right="-1px"
@@ -31,7 +31,7 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
                         rounded="full"
                     >
                         {cartNumOrderProducts}
-                    </chakra.span>}
+                    </Circle>}
                 </>
             }
             {...props}
