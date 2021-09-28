@@ -18,10 +18,8 @@ function OrderCard({ order, loading }) {
         <Section>
             <Stack
                 direction={{ base: 'column', lg: 'row' }}
-                // w='100%'
-                // h='auto'
-                // mx='auto'
-                justifyContent='space-between'
+                // justifyContent='space-between'
+                spacing={{ base: 4, lg: 12 }}
             >
                 <Box
                     display={{ base: 'block', lg: 'none' }}
@@ -53,6 +51,7 @@ function OrderCard({ order, loading }) {
                 </Stack>
                 <Box
                     display={{ base: 'none', lg: 'block' }}
+                    w='100%'
                     bg='green.100'
                 >
                     <OrderDeliveryStatusBar 
