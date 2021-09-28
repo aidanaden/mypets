@@ -5,7 +5,8 @@ import {
     List,
     Text,
     Stack,
-    Center
+    Center,
+    Spacer
 } from '@chakra-ui/react'
 import ProductDescriptionListItem from '../ProductDescriptionListItem/ProductDescriptionListItem'
 
