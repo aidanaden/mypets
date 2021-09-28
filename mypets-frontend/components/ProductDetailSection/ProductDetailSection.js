@@ -128,16 +128,18 @@ function ProductDetailSection({ product }) {
                     </HStack>
                     <HStack
                         spacing={3}
-                        alignContent='center'
+                        align='center'
                         bg='red.100'
                     >
                         <ProductDetailBadge
                             bg='green.100'
+                            mt={0}
                         >
                             {product.category.name}
                         </ProductDetailBadge>
                         <ProductDetailBadge
                             bg='blue.100'
+                            mt={0}
                         >
                             {product.animal.name}
                         </ProductDetailBadge>
