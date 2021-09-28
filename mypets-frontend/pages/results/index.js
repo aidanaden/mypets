@@ -8,7 +8,8 @@ import {
     Box,
     Text,
     Spacer,
-    Checkbox
+    Checkbox,
+    Spacer
 } from '@chakra-ui/react'
 
 import AnnouncementBanner from '../../components/AnnouncementBanner/AnnouncementBanner'
@@ -155,17 +156,21 @@ export default function index({ products, animals, merchants }) {
                             bg='red.100'
                         >
                             <Text>
-                                Showing results for {searchText}
+                                Showing results for
+                                <Text textColor='mypets.400'>
+                                    {searchText}
+                                </Text>
                             </Text>
                             <Stack
                                 direction={{ base: 'column', lg: 'row' }}
-                                spacing={{ base: 8 }}
+                                justify='space-between'
                                 bg='blue.100'
                             >
                                 <AnimalList
                                     animals={animals}
                                     setSelectedAnimal={setSelectedAnimal}
                                 />
+                                <Spacer />
                                 <SortMenu
                                     setSortMethod={setSortMethod}
                                 />
