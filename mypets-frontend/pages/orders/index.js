@@ -76,7 +76,10 @@ const ContributionSection = ({ orders }) => {
                         spacing={{ base: 4 }}
                         bg='blue.100'
                     >
-                        <SectionHeader textColor='mypets.400'>
+                        <SectionHeader
+                            mb={{ base: 0 }}
+                            textColor='mypets.400'
+                        >
                             Your total contribution
                         </SectionHeader>
                         <Text
