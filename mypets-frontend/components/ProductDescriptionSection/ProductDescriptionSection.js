@@ -10,16 +10,26 @@ import {
 } from '@chakra-ui/react'
 import ProductDescriptionListItem from '../ProductDescriptionListItem/ProductDescriptionListItem'
 
+const SectionHeading = ({ children, ...props }) => {
+    return (
+        <Heading
+            as="h3"
+            fontSize="2xl"
+            textAlign="center"
+            mb={{ base: 4 }}
+            {...props}
+        >
+            {children}
+        </Heading>
+    )
+}
+
 const ProductDescription = ({ descriptions }) => {
     return (
         <Box>
-            <Heading
-                as="h3"
-                fontSize="2xl"
-                textAlign="center"
-            >
+            <SectionHeading>
                 Description
-            </Heading>
+            </SectionHeading>
             <List
                 spacing={3}
                 textAlign='center'
@@ -38,13 +48,9 @@ const ProductDescription = ({ descriptions }) => {
 const ProductIngredient = ({ ingredients }) => {
     return (
         <Box>
-            <Heading
-                as="h3"
-                fontSize="2xl"
-                textAlign="center"
-            >
+            <SectionHeading>
                 Ingredients
-                </Heading>
+            </SectionHeading>
             <Text>
                 {ingredients}
             </Text>
@@ -63,6 +69,8 @@ const ProductNutrients = ({ nutrients }) => {
             <Stack
                 direction='column'
                 spacing={{ base: 1 }}
+                w='100%'
+                h='100%'
             >
                 {nutrients.map((nutrient, i) => (
                     <Stack
