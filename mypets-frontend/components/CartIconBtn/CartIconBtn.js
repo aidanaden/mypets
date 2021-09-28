@@ -5,7 +5,7 @@ import {
 
 import { FaShoppingCart } from 'react-icons/fa'
 
-function CartIconBtn({ ...props }) {
+export default function CartIconBtn({ ...props }) {
     return (
         <IconButton
             // isRound
