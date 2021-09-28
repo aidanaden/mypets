@@ -12,6 +12,7 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
             // isRound
             size="lg"
             bg='white'
+            _active={{ bg: 'white' }}
             icon={
                 <>
                     <Icon as={FaShoppingCart}
@@ -22,7 +23,7 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
                         pos="absolute"
                         top="-2px"
                         right="-2px"
-                        size='16px'
+                        size={{ base: 5 }}
                         fontSize="xs"
                         fontWeight="semibold"
                         lineHeight="none"
