@@ -22,9 +22,9 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
                         pos="absolute"
                         top="-2px"
                         right="-2px"
-                        p={{ base: 1 }}
+                        size='sm'
                         fontSize="xs"
-                        fontWeight="bold"
+                        fontWeight="semibold"
                         lineHeight="none"
                         color="white"
                         // transform="translate(50%,-50%)"
