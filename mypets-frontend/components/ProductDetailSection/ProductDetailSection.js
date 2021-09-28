@@ -126,7 +126,10 @@ function ProductDetailSection({ product }) {
                             numReviews={product.reviews.length}
                         />
                     </HStack>
-                    <HStack spacing={3}>
+                    <HStack
+                        spacing={3}
+                        justifyContent='center'
+                    >
                         <ProductDetailBadge>
                             {product.category.name}
                         </ProductDetailBadge>

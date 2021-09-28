@@ -19,6 +19,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import AuthContext from '../../context/AuthContext'
 import { callAPI } from '../../context/AuthContext'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
+import CartIconBtn from '../CartIconBtn/CartIconBtn'
 import CartModalProductCard from '../CartModalProductCard/CartModalProductCard'
 import CartPriceBreakdownList from '../CartPriceBreakdownList/CartPriceBreakdownList'
 import { STRIPE_PK } from '../../utils/urls'
@@ -85,10 +86,14 @@ function NavbarCartModalBtn() {
 
     return (
         <>
-            <MypetsBtn
+            {/* <MypetsBtn
                 btnText='Your cart'
                 onClick={onOpen}
                 leftIcon={<FaShoppingCart />}
+                mx={0}
+            /> */}
+            <CartIconBtn
+                onClick={onOpen}
                 mx={0}
             />
             <Modal 
