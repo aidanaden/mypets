@@ -61,8 +61,8 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                 Brand
             </Text>
             <Wrap
-                direction={{ base: 'row', xl: 'column' }}
-                spacing={{ base: 4, xl: 1 }}
+                direction={{ base: 'row' }}
+                spacing={{ base: 4 }}
             >
                 {pageMerchants.length > 0 && pageMerchants.map((merchant,i) => (
                     <WrapItem key={i}>
@@ -147,7 +147,7 @@ export default function index({ products, animals, merchants }) {
                 </SectionHeader>
                 <Stack
                     direction={{ base: 'column', xl: 'column' }}
-                    spacing={{ base: 4, xl: 12 }}
+                    spacing={{ base: 4, xl: 4 }}
                 >
                     <Stack
                         direction={{ base: 'column', md: 'row' }}
