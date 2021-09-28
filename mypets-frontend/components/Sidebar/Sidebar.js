@@ -15,7 +15,8 @@ import {
     InputGroup,
     InputLeftElement,
     Input,
-    Avatar
+    Avatar,
+    Center
 } from '@chakra-ui/react'
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
@@ -42,7 +43,7 @@ export default function Sidebar({ categories }) {
 
     const Logo = ({ isMobile, ...props }) => {
         return (
-            <Box 
+            <Center 
                 {...props}
             >
                 <NextLink
@@ -58,7 +59,7 @@ export default function Sidebar({ categories }) {
                         />
                     </a>
                 </NextLink>
-            </Box>
+            </Center>
         )
     }
 
