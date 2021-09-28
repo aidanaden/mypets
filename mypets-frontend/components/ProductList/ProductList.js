@@ -92,7 +92,7 @@ function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMe
 
     return (
         <Box>
-            {products &&
+            {listProducts &&
             <>
                 <SectionHeader>
                     {heading}
