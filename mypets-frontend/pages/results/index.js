@@ -162,6 +162,7 @@ export default function index({ products, animals, merchants }) {
                             </Text>
                             <Stack
                                 direction={{ base: 'column', md: 'row' }}
+                                spacing={{ base: 4, md: 0 }}
                                 justify='space-between'
                             >
                                 <AnimalList
