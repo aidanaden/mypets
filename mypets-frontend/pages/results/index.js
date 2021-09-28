@@ -146,7 +146,7 @@ export default function index({ products, animals, merchants }) {
                     </chakra.span>
                 </SectionHeader>
                 <Stack
-                    direction={{ base: 'column', xl: 'row' }}
+                    direction={{ base: 'column', xl: 'column' }}
                     spacing={{ base: 4, xl: 12 }}
                 >
                     <Stack
