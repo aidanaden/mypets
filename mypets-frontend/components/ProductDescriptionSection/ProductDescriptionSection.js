@@ -56,7 +56,8 @@ const ProductNutrients = ({ nutrients }) => {
     // nutrients = ["chicken - 30%"]
     return (
         <Center
-            bg='gray.400'
+            rounded='lg'
+            bg='gray.200'
             p={{ base: 4 }}
         >
             <Stack
@@ -68,6 +69,8 @@ const ProductNutrients = ({ nutrients }) => {
                         key={i}
                         direction='row'
                         justify='space-between'
+                        bg='red.100'
+                        w='100%'
                     >
                         <Text>
                             {nutrient.split('-')[0]}
@@ -99,7 +102,7 @@ export default function ProductDescriptionSection({ product }) {
         <Stack
             p={8}
             direction='column'
-            spacing={{ base: 6 }}
+            spacing={{ base: 12 }}
         >
             <ProductDescription descriptions={descriptions} />
             <ProductIngredient ingredients={product.ingredients} />
