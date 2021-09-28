@@ -1,5 +1,5 @@
 import React from 'react'
-// import ReactMarkdown from 'react-markdown/react-markdown.min'
+import ReactMarkdown from 'react-markdown/react-markdown.min'
 import {
     Box,
     Heading,
@@ -9,7 +9,7 @@ import {
     Center,
     Spacer
 } from '@chakra-ui/react'
-// import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 
 import ProductDescriptionListItem from '../ProductDescriptionListItem/ProductDescriptionListItem'
 
