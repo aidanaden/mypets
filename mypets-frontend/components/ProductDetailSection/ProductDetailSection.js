@@ -129,7 +129,7 @@ function ProductDetailSection({ product }) {
                     <HStack
                         spacing={{ base: 2 }}
                         align='center'
-                        mt={{ base: 1 }}
+                        mt={{ base: 2 }}
                     >
                         <ProductDetailBadge mt={0}>
                             {product.category.name}

@@ -16,13 +16,13 @@ export default function CartIconBtn({ cartNumOrderProducts, ...props }) {
             icon={
                 <>
                     <Icon as={FaShoppingCart}
-                        boxSize={{ base: 6 }}
+                        boxSize={{ base: 8 }}
                     />
                     {cartNumOrderProducts > 0 &&
                     <Circle
                         pos="absolute"
-                        top="-2px"
-                        right="-2px"
+                        top="-3px"
+                        right="-3px"
                         size={{ base: 5 }}
                         fontSize="xs"
                         fontWeight="semibold"
