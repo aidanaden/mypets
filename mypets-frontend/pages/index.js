@@ -69,7 +69,7 @@ export default function Home({ products, categories, animals, merchants }) {
             justify='space-between'
           >
             <Box
-              mb={{ base: 4, md: 0 }}
+              mb={{ base: 2, md: 0 }}
             >
               <SectionHeader>
                 Animal

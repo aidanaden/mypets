@@ -36,7 +36,6 @@ const MerchantCheck = ({ text, isChecked, onChange, ...props }) => {
 }
 
 const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMerchants }) => {
-
     const merchantChangeOnCheck = (checked, merchant) => {
         if (checked) {
             const newSelectedMerchants = [...selectedMerchants, merchant]
@@ -59,8 +58,8 @@ const MerchantChecklist = ({ pageMerchants, selectedMerchants, setSelectedMercha
                 Brand
             </Text>
             <Stack
-                direction='column'
-                spacing={{ base: 1 }}
+                direction={{ base: 'row', xl: 'column' }}
+                spacing={{ base: 4, xl: 1 }}
             >
                 {pageMerchants.length > 0 && pageMerchants.map((merchant,i) => (
                     <MerchantCheck
@@ -151,18 +150,18 @@ export default function index({ products, animals, merchants }) {
                     >
                         <Stack
                             direction={{ base: 'column', lg: 'column' }}
-                            spacing={{ base: 4 }}
+                            spacing={{ base: 8 }}
                             w='100%'
                         >
                             <Text>
                                 Showing results for 
                                 <chakra.span textColor='mypets.400'>
-                                    {` ${searchText}`}
+                                    {` "${searchText}"`}
                                 </chakra.span>
                             </Text>
                             <Stack
                                 direction={{ base: 'column', md: 'row' }}
-                                spacing={{ base: 4, md: 0 }}
+                                spacing={{ base: 2, md: 0 }}
                                 justify='space-between'
                             >
                                 <AnimalList
