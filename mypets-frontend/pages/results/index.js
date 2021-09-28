@@ -136,7 +136,7 @@ export default function index({ products, animals, merchants }) {
             <Sidebar />
             <PageContainer>
                 <Stack
-                    direction={{ base: 'column', lg: 'row' }}
+                    direction={{ base: 'column', xl: 'row' }}
                     spacing={{ base: 8, lg: 12 }}
                 >
                     <MerchantChecklist
@@ -153,18 +153,16 @@ export default function index({ products, animals, merchants }) {
                             direction={{ base: 'column', lg: 'column' }}
                             spacing={{ base: 4 }}
                             w='100%'
-                            bg='red.100'
                         >
                             <Text>
-                                Showing results for
+                                Showing results for 
                                 <chakra.span textColor='mypets.400'>
                                     {searchText}
                                 </chakra.span>
                             </Text>
                             <Stack
-                                direction={{ base: 'column', lg: 'row' }}
+                                direction={{ base: 'column', md: 'row' }}
                                 justify='space-between'
-                                bg='blue.100'
                             >
                                 <AnimalList
                                     animals={animals}

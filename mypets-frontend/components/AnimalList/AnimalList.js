@@ -49,7 +49,7 @@ export default function AnimalList({ animals, setSelectedAnimal }) {
     return (
         <Stack 
             mt={{ lg: 0 }}
-            direction={{ base: 'row', lg: 'row'}} 
+            direction={{ base: 'row', lg: 'row' }} 
             overflow={{ base: 'auto' }}
             spacing={{ base: 4 }}
         >
