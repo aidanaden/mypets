@@ -119,6 +119,7 @@ export default function Sidebar({ categories }) {
                 alignItems='center'
                 px='auto'
                 display={{ base: 'block', lg: 'none' }}
+                bg='red.100'
             />
             <Stack
                 spacing={{ base: 4 }}
