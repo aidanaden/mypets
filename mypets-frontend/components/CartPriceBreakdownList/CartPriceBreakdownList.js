@@ -31,9 +31,8 @@ const SubtotalRow = ({ text, value, highlight }) => {
 }
 
 export default function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
-
     const gstPrice = (totalPrice * 0.07)
-    const deliveryFee = 3.00
+    const deliveryFee = totalPrice > 30 ? 0.00 : 3.00 
     const finalPrice = 1.00 * (totalPrice + gstPrice + deliveryFee)
     const contributionAmt = 0.05 * (totalPrice + gstPrice)
 
