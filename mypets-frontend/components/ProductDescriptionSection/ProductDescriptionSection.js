@@ -61,7 +61,7 @@ const ProductNutrients = ({ nutrients }) => {
             bg='gray.200'
             p={{ base: 4 }}
         >
-            <Box>
+            <Box w='100%'>
                 <SectionHeading>
                     Nutrional Analysis
                 </SectionHeading>

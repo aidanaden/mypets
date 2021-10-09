@@ -25,6 +25,7 @@ function OrderCard({ order, loading }) {
                     display={{ base: 'block', lg: 'none' }}
                     borderBottomWidth='1px'
                     borderBottomColor='gray.200'
+                    pb={4}
                 >
                     <OrderDeliveryStatusBar 
                         orderId={order.order_id}
@@ -41,6 +42,7 @@ function OrderCard({ order, loading }) {
                 <Stack
                     direction='column'
                     mr={{ lg: 12, xl: 16 }}
+                    spacing={8}
                 >
                     {productNames.map((productName, i) => (
                         <OrderProductCard
