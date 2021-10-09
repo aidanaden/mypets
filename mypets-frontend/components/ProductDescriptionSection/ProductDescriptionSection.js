@@ -61,32 +61,34 @@ const ProductNutrients = ({ nutrients }) => {
             bg='gray.200'
             p={{ base: 4 }}
         >
-            <SectionHeading>
-                Nutrional Analysis
-            </SectionHeading>
-            <Stack
-                direction='column'
-                spacing={{ base: 1 }}
-                w='100%'
-                h='100%'
-            >
-                {nutrients.map((nutrient, i) => (
-                    <Stack
-                        key={i}
-                        direction='row'
-                        justify='space-between'
-                        w='100%'
-                    >
-                        <Text>
-                            {nutrient.split('-')[0]}
-                        </Text>
-                        <Spacer />
-                        <Text>
-                            {nutrient.split('-')[1]}
-                        </Text>
-                    </Stack>
-                ))}
-            </Stack>
+            <Box>
+                <SectionHeading>
+                    Nutrional Analysis
+                </SectionHeading>
+                <Stack
+                    direction='column'
+                    spacing={{ base: 1 }}
+                    w='100%'
+                    h='100%'
+                >
+                    {nutrients.map((nutrient, i) => (
+                        <Stack
+                            key={i}
+                            direction='row'
+                            justify='space-between'
+                            w='100%'
+                        >
+                            <Text>
+                                {nutrient.split('-')[0]}
+                            </Text>
+                            <Spacer />
+                            <Text>
+                                {nutrient.split('-')[1]}
+                            </Text>
+                        </Stack>
+                    ))}
+                </Stack>
+            </Box>
         </Center>
     )
 }

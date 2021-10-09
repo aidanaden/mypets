@@ -33,7 +33,13 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
     // })
 
     return (
-        <Tabs variant='unstyled' size='md' defaultIndex={0} mt={12} p={0}>
+        <Tabs
+            variant='unstyled'
+            size='md'
+            defaultIndex={0}
+            mt={8}
+            p={0}
+        >
             <TabList
                 justifyContent='center'
             >

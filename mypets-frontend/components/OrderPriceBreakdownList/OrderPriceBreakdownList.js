@@ -95,8 +95,6 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
             </Table>
             <Box
                 mt={4}
-                borderBottomWidth='1px'
-                borderBottomColor='gray.400'
             >
                 <BreakdownRow
                     text='Subtotal'

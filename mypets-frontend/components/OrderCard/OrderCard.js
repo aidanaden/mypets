@@ -21,7 +21,11 @@ function OrderCard({ order, loading }) {
                 spacing={{ base: 8, md: 16 }}
                 justifyContent='space-between'
             >
-                <Box display={{ base: 'block', lg: 'none' }}>
+                <Box
+                    display={{ base: 'block', lg: 'none' }}
+                    borderBottomWidth='1px'
+                    borderBottomColor='gray.200'
+                >
                     <OrderDeliveryStatusBar 
                         orderId={order.order_id}
                         orderDate={order.order_date} 
