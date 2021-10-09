@@ -52,7 +52,7 @@ export default function Searchbar({ price, ...props }) {
             <Input
                 size="md"
                 focusBorderColor="mypets.100"
-                placeholder="Search for products here"
+                placeholder="Find a product"
                 borderWidth={2}
                 variant='filled'
                 onChange={onSearchTextChange}

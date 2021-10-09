@@ -29,8 +29,6 @@ export default function index({ merchant }) {
                     merchantName={merchant.name} 
                     merchantRating={merchant.rating} 
                     merchantNumReviews={merchant.reviews}
-                    merchantEmail={merchant.contact_email}
-                    merchantContact={merchant.contact_number}
                 />
                 <MerchantProductReviewTab 
                     merchantProducts={merchant.products} 

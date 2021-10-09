@@ -17,7 +17,7 @@ import PostalInputGroup from '../PostalInputGroup/PostalInputGroup'
 
 const locations = ['Bedok', 'Tampines', 'Pasir ris', 'Kembangan', 'Chai chee', 'Marine parade', 'Eunos']
 const inLocations = loc => locations.includes(loc)
-const locationHelperText = "We're only delivering to select areas of SG for now 😢"
+const locationHelperText = "We're delivering to these selected areas in SG for now"
 
 const postalRegex = /^[0-9]{6}$/
 

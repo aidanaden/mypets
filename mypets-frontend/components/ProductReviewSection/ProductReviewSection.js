@@ -17,7 +17,7 @@ function ProductReviewSection({ reviews }) {
                     reviews.map((review, i) => (
                         <ProductReviewListCard review={review} key={i}/>    
                     ))
-                : (<Text>No reviews available for this product :(</Text>)}
+                : (<Text>No reviews available for this product yet</Text>)}
             </VStack>
         </Box>
     )

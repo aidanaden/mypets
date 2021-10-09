@@ -1,7 +1,8 @@
 import { useEffect, useState, useContext } from 'react'
 import { 
     Box, 
-    HStack, 
+    Stack,
+    HStack,
     Text, 
     Table,
     Thead,
@@ -140,7 +141,8 @@ export default function OrderProductCard({ order_products }) {
                             ))}
                         </Tbody>
                     </Table>
-                    <HStack
+                    <Stack
+                        direction={{ base: 'column', md: 'row' }}
                         spacing={{ base: 4 }}
                         textAlign='center'
                         mt={{ base: 8 }}
@@ -149,7 +151,7 @@ export default function OrderProductCard({ order_products }) {
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
                         <OrderProductReorderBtn onClick={() => handleAddToCart(order_products)} order_products={order_products} />
-                    </HStack>
+                    </Stack>
                 </>
             }
         </Box>

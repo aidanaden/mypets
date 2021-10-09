@@ -81,7 +81,7 @@ const ContributionSection = ({ orders }) => {
                             fontSize={{ base: '4xl' }}
                             textColor='mypets.400'
                         >
-                            ${totalContribution}
+                            ${totalContribution.toFixed(2)}
                         </Text>
                     </Box>
                     <Spacer />

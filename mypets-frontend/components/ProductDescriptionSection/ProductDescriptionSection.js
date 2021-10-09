@@ -61,6 +61,9 @@ const ProductNutrients = ({ nutrients }) => {
             bg='gray.200'
             p={{ base: 4 }}
         >
+            <SectionHeading>
+                Nutrional Analysis
+            </SectionHeading>
             <Stack
                 direction='column'
                 spacing={{ base: 1 }}

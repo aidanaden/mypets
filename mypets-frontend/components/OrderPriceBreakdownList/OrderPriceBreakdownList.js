@@ -74,14 +74,30 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                 <Tbody>
                     {productNames.map((productName, i) => (
                         <Tr key={i}>
-                            <Td fontWeight='bold'>{productName}</Td>
-                            <Td textAlign='right' fontWeight='bold'>{productTotalQuantity(groupedOrderProducts[productName])}</Td>
-                            <Td textAlign='right' fontWeight='bold'>{productTotalPrice(groupedOrderProducts[productName]).toFixed(2)}</Td>
+                            <Td fontWeight='bold'>
+                                {productName}
+                            </Td>
+                            <Td
+                                textAlign='center'
+                                fontWeight='bold'
+                            >
+                                {productTotalQuantity(groupedOrderProducts[productName])}
+                            </Td>
+                            <Td
+                                textAlign='right'
+                                fontWeight='bold'
+                            >
+                                {productTotalPrice(groupedOrderProducts[productName]).toFixed(2)}
+                            </Td>
                         </Tr>
                     ))}
                 </Tbody>
             </Table>
-            <Box mt={4}>
+            <Box
+                mt={4}
+                borderBottomWidth='1px'
+                borderBottomColor='gray.400'
+            >
                 <BreakdownRow
                     text='Subtotal'
                     value={order.total_price.toFixed(2)}
@@ -104,7 +120,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                     value={order.contribution_amount.toFixed(2)}
                 />
                 <Box fontWeight='bold' fontSize='xl' textAlign='right' mt={2}>
-                    SG${order.final_price.toFixed(2)}
+                    ${order.final_price.toFixed(2)}
                 </Box>
             </Box>
         </>

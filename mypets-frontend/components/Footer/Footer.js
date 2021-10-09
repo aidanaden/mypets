@@ -103,8 +103,10 @@ export default function SmallCentered() {
                 justify={{ base: 'center', md: 'space-between' }}
                 align={{ base: 'center', md: 'center' }}
             >
-                <Text>
-                    © 2020 Chakra Templates. All rights reserved
+                <Text
+                    textAlign={{ base: 'center', md: 'left' }}
+                >
+                    © 2021 Mypets Pte Ltd. All rights reserved
                 </Text>
                 <Stack
                     direction='row'

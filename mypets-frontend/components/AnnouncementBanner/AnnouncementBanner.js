@@ -21,7 +21,7 @@ function AnnouncementBanner() {
                     marginEnd="2"
                     textColor='gray.800'
                 >
-                    We are only delivering to the EAST of SG for now 😢
+                    Delivery within 3 days! Free delivery for orders above $30
                 </Text>
             </Stack>
         </Box>

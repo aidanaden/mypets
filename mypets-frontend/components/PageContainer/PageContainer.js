@@ -5,7 +5,7 @@ function PageContainer({ children, ...props }) {
         <Container
             maxW={{ lg: "1200px" }}
             px={{ base: 4, xl: 0 }}
-            py={{ base: 8, lg: 12 }}
+            py={{ base: 4, lg: 12 }}
             {...props}
         >
             {children}
