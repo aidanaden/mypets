@@ -56,15 +56,15 @@ const ProductIngredient = ({ ingredients }) => {
 const ProductNutrients = ({ nutrients }) => {
     // nutrients = ["chicken - 30%"]
     return (
-        <Center
-            rounded='lg'
-            bg='gray.200'
-            p={{ base: 4 }}
-        >
-            <Box w='100%'>
-                <SectionHeading>
-                    Nutrional Analysis
-                </SectionHeading>
+        <Box>
+            <SectionHeading>
+                Nutrional Analysis
+            </SectionHeading>
+            <Center
+                rounded='lg'
+                bg='gray.200'
+                p={{ base: 4 }}
+            >
                 <Stack
                     direction='column'
                     spacing={{ base: 1 }}
@@ -88,8 +88,8 @@ const ProductNutrients = ({ nutrients }) => {
                         </Stack>
                     ))}
                 </Stack>
-            </Box>
-        </Center>
+            </Center>
+        </Box>
     )
 }
 
