@@ -170,11 +170,11 @@ function NavbarUserModalBtn({ isMobile, NavItem }) {
                                         initialValues={addressInitialValues}
                                     />
                                 </TabPanel>
-                                <TabPanel>
+                                {user.provider == 'local' && <TabPanel>
                                     <UserPasswordForm 
                                         handleSubmit={handleUserPasswordChange} 
                                     />
-                                </TabPanel>
+                                </TabPanel>}
                             </TabPanels>
                         </Tabs>
                     </ModalBody>
