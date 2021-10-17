@@ -84,12 +84,12 @@ export default function SmallCentered() {
                         Frequently Asked Questions
                     </Link>
                     <Link
-                        href='#'
+                        href='/terms-conditions'
                     >
                         Terms & Conditions
                     </Link>
                     <Link
-                        href='#'
+                        href='/privacy-policy'
                     >
                         Privacy Policy
                     </Link>
@@ -113,20 +113,14 @@ export default function SmallCentered() {
                     spacing={6}
                 >
                     <SocialButton
-                        label={'Twitter'}
-                        href={'#'}
+                        label='Facebook'
+                        href='https://www.facebook.com/mypets.sg'
                     >
-                        <FaTwitter />
+                        <FaFacebook />
                     </SocialButton>
                     <SocialButton
-                        label={'YouTube'}
-                        href={'#'}
-                    >
-                        <FaYoutube />
-                    </SocialButton>
-                    <SocialButton
-                        label={'Instagram'}
-                        href={'#'}
+                        label='Instagram'
+                        href='https://www.instagram.com/mypets.sg'
                     >
                         <FaInstagram />
                     </SocialButton>
