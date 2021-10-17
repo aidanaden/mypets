@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react'
 
 export default function Carousels({ 
-    bannerImgNames=["banner-a.jpg", "banner-b.jpg", "banner-c.jpg"],
+    bannerImgNames=["desktop.jpeg", "banner-b.jpg", "banner-c.jpg"],
     displayCount=false,
     ...props
 }) {
@@ -48,6 +48,12 @@ export default function Carousels({
         transition: "all .5s",
         ml: `-${currentSlide * 100}%`,
     };
+
+    const slideInterval = setInterval(() => {
+        nextSlide()
+    }, 5000);
+
+    clearInterval(slideInterval)
 
     return (
         <Flex
