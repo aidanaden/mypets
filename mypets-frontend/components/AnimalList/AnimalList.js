@@ -11,8 +11,8 @@ import {
 const AnimalButton = ({ animal, onClick, ...props }) => {
     return (
         <Center
-            w="100%"
-            py={{ base: 4, lg: 4 }}
+            // w="100%"
+            py={{ base: 2, lg: 4 }}
             px={{ base: 2, lg: 8 }}
             rounded="md"
             bgColor="gray.100"
@@ -41,7 +41,6 @@ const AnimalButton = ({ animal, onClick, ...props }) => {
 }
 
 export default function AnimalList({ animals, setSelectedAnimal }) {
-
     const animalBtnClicked = (animal) => {
         setSelectedAnimal(animal)
     }
@@ -49,7 +48,7 @@ export default function AnimalList({ animals, setSelectedAnimal }) {
     return (
         <Stack 
             mt={{ lg: 0 }}
-            direction={{ base: 'row', lg: 'row' }} 
+            direction={{ base: 'row' }} 
             overflow={{ base: 'auto' }}
             spacing={{ base: 4 }}
         >
