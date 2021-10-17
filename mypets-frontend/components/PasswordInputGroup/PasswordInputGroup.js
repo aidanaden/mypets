@@ -1,12 +1,18 @@
+import { useState } from 'react'
 import {   
+    IconButton,
     Input,
     InputGroup,
     InputLeftElement,
     InputRightElement
 } from '@chakra-ui/react'
 import { LockIcon, CheckIcon } from '@chakra-ui/icons'
+import { IoMdEyeOff, IoMdEye } from 'react-icons/io'
 
 function PasswordInputGroup({ field, valid, id }) {
+    const [show, setShow] = useState(false)
+    const handleShow = () => setShow(!show)
+
     return (
         <>
             <InputGroup>
@@ -15,7 +21,13 @@ function PasswordInputGroup({ field, valid, id }) {
                     children={<LockIcon />}
                 />
                 <Input {...field} id={id} type='password' placeholder='Password' focusBorderColor='mypets.100' />
-                <InputRightElement children={<CheckIcon color={valid ? 'green.400' : 'white' }/>} />
+                <InputRightElement
+                    children={<IconButton
+                                icon={show == false ? <IoMdEye /> : <IoMdEyeOff />}
+                                onClick={handleShow}
+                                size='sm'
+                            />}
+                />
             </InputGroup>
         </>
     )
