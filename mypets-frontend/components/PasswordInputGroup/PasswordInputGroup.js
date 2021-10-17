@@ -29,7 +29,7 @@ function PasswordInputGroup({ field, valid, id }) {
                 />
                 <InputRightElement
                     children={<IconButton
-                                icon={show == false ? <IoMdEye size='sm' /> : <IoMdEyeOff size='sm' />}
+                                icon={show == false ? <IoMdEye /> : <IoMdEyeOff />}
                                 onClick={handleShow}
                                 size='md'
                             />}

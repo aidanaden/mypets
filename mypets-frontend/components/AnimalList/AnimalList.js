@@ -12,8 +12,8 @@ const AnimalButton = ({ animal, onClick, ...props }) => {
     return (
         <Center
             w="100%"
-            py={{ base: 4, lg: 4 }}
-            px={{ base: 6, lg: 8 }}
+            py={{ base: 2, lg: 4 }}
+            px={{ base: 4, lg: 8 }}
             rounded="md"
             bgColor="gray.100"
             textColor="gray.600"

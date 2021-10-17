@@ -110,7 +110,12 @@ function ProductListCard({ product }) {
           </LinkOverlay>
           <Spacer />
           <Box>
-            <MypetsBtn btnText='Add to cart' onClick={handleAddToCart} />
+            <MypetsBtn
+              mb={{ base: 4 }}
+              btnText='Add to cart'
+              onClick={handleAddToCart}
+              w={{ base: '100%', md: 'auto' }}
+            />
             <Stack
               direction='row'
               justifyContent="space-between"

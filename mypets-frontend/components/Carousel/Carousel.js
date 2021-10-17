@@ -9,6 +9,7 @@ import {
 
 export default function Carousels({ 
     bannerImgNames=["desktop.jpeg", "banner-c.jpg"],
+    mobileBannerImgNames=["mobile.jpeg", "banner-c.jpg"],
     displayCount=false,
     ...props
 }) {
@@ -99,6 +100,14 @@ export default function Carousels({
                                 src={bannerImgName}
                                 boxSize="full"
                                 backgroundSize="cover"
+                                display={{ base: 'none', md: 'block' }}
+                            />
+                            <Image
+                                rounded={{ base: 20, md: 40 }}
+                                src={mobileBannerImgNames[sid]}
+                                boxSize="full"
+                                backgroundSize="cover"
+                                display={{ base: 'block', md: 'none' }}
                             />
                         </Box>
                     ))}
