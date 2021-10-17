@@ -64,23 +64,22 @@ function ProductListCard({ product }) {
         shadow: "lg"
       }}
     // as={`/products/${product.slug}`}
-    >
-      {/* <NextLink  passHref> */}
-      <LinkOverlay
-        href={`/products/${product.slug}`}
+    >      
+      <Stack
+        direction='column'
+        p={{ base: '2', sm: '3' }}
+        w="full"
+        alignItems="center"
+        justifyContent="center"
+        h='100%'
       >
         <Stack
           direction='column'
-          p={{ base: '2', sm: '3' }}
-          w="full"
-          alignItems="center"
-          justifyContent="center"
           h='100%'
+          w='100%'
         >
-          <Stack
-            direction='column'
-            h='100%'
-            w='100%'
+          <LinkOverlay
+            href={`/products/${product.slug}`}
           >
             <Center roundedTop="lg">
               <NextImage
@@ -107,31 +106,30 @@ function ProductListCard({ product }) {
                   {product.name}
                 </Box>
               </Stack>
-              <MypetsBtn btnText='Add to cart' onClick={handleAddToCart} />
             </Box>
-            <Spacer />
-            <Stack
-              direction='row'
-              justifyContent="space-between"
-              alignContent="center"
-              justifySelf='flex-end'
+          </LinkOverlay>
+          <Spacer />
+          <Stack
+            direction='row'
+            justifyContent="space-between"
+            alignContent="center"
+            justifySelf='flex-end'
+          >
+            <MypetsBtn btnText='Add to cart' onClick={handleAddToCart} />
+            <RatingDisplay rating={product.rating} numReviews={0} />
+            <Box
+              fontSize={{ base: 'sm', md: 'md' }}
+              fontWeight='bold'
+              color='gray.800'
             >
-              <RatingDisplay rating={product.rating} numReviews={0} />
-              <Box
-                fontSize={{ base: 'sm', md: 'md' }}
-                fontWeight='bold'
-                color='gray.800'
-              >
-                <Box as="span" color={'gray.600'}>
-                  $
+              <Box as="span" color={'gray.600'}>
+                $
                   </Box>
-                {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
-              </Box>
-            </Stack>
+              {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
+            </Box>
           </Stack>
         </Stack>
-      </LinkOverlay>
-      {/* </NextLink> */}
+      </Stack>
     </LinkBox>
   );
 }
