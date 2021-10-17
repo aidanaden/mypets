@@ -20,7 +20,13 @@ function PasswordInputGroup({ field, valid, id }) {
                     pointerEvents='none'
                     children={<LockIcon />}
                 />
-                <Input {...field} id={id} type='password' placeholder='Password' focusBorderColor='mypets.100' />
+                <Input
+                    {...field}
+                    id={id}
+                    type={show ? 'text' : 'password'}
+                    placeholder='Password'
+                    focusBorderColor='mypets.100'
+                />
                 <InputRightElement
                     children={<IconButton
                                 icon={show == false ? <IoMdEye /> : <IoMdEyeOff />}
