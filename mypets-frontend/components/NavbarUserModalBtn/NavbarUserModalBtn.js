@@ -30,10 +30,13 @@ function NavbarUserModalBtn({ isMobile, NavItem }) {
     const { user, profile, updateProfile, updateUserPassword } = useContext(AuthContext)
     const [userInitialValues, setUserInitialValues] = useState({})
     const [addressInitialValues, setAddressInitialValues] = useState({})
-    const tabs = [
+    const tabs = user.provider == 'local' ? [
         'User profile',
         'Address',
         'Change password'
+    ] : [
+        'User profile',
+        'Address'
     ]
 
     const formatDateString = (dateString) => {
