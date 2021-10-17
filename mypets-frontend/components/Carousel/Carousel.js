@@ -49,9 +49,9 @@ export default function Carousels({
         ml: `-${currentSlide * 100}%`,
     };
 
-    const slideInterval = setInterval(() => {
-        nextSlide()
-    }, 5000);
+    // const slideInterval = setInterval(() => {
+    //     nextSlide()
+    // }, 5000);
 
     return (
         <Flex
