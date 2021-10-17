@@ -109,25 +109,27 @@ function ProductListCard({ product }) {
             </Box>
           </LinkOverlay>
           <Spacer />
-          <Stack
-            direction='row'
-            justifyContent="space-between"
-            alignContent="center"
-            justifySelf='flex-end'
-          >
+          <Box>
             <MypetsBtn btnText='Add to cart' onClick={handleAddToCart} />
-            <RatingDisplay rating={product.rating} numReviews={0} />
-            <Box
-              fontSize={{ base: 'sm', md: 'md' }}
-              fontWeight='bold'
-              color='gray.800'
+            <Stack
+              direction='row'
+              justifyContent="space-between"
+              alignContent="center"
+              justifySelf='flex-end'
             >
-              <Box as="span" color={'gray.600'}>
-                $
-                  </Box>
-              {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
-            </Box>
-          </Stack>
+              <RatingDisplay rating={product.rating} numReviews={0} />
+              <Box
+                fontSize={{ base: 'sm', md: 'md' }}
+                fontWeight='bold'
+                color='gray.800'
+              >
+                <Box as="span" color={'gray.600'}>
+                  $
+                </Box>
+                {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
+              </Box>
+            </Stack>
+          </Box>
         </Stack>
       </Stack>
     </LinkBox>
