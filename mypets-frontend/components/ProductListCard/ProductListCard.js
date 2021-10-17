@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import {
   Stack,
   Spacer,
@@ -15,7 +16,7 @@ import NextImage from 'next/image'
 import MerchantBadge from '../MerchantBadge/MerchantBadge'
 import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import { imageToUrl } from '../../utils/urls'
-import MypetsBtn from '../MypetsBtn/MypetsBtn';
+import MypetsBtn from '../MypetsBtn/MypetsBtn'
 
 function ProductListCard({ product }) {
   const toast = useToast()
