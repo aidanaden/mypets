@@ -4,6 +4,7 @@ import {
   Center,
   Flex,
   Box,
+  useToast,
   Tooltip,
   LinkBox,
   LinkOverlay
@@ -14,8 +15,41 @@ import NextImage from 'next/image'
 import MerchantBadge from '../MerchantBadge/MerchantBadge'
 import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import { imageToUrl } from '../../utils/urls'
+import MypetsBtn from '../MypetsBtn/MypetsBtn';
 
 function ProductListCard({ product }) {
+  const toast = useToast()
+  const { user, updateCart } = useContext(AuthContext)
+
+  const succesToast = (text) => toast({
+    title: text,
+    status: 'success',
+    duration: 3000,
+    isClosable: true,
+  })
+
+  const errorToast = (text) => toast({
+    title: text,
+    status: 'error',
+    duration: 3000,
+    isClosable: true,
+  })
+
+  const handleAddToCart = async () => {
+    if (user) {
+      // create order product
+      const order_product = {
+        variant: product.variants[0],
+        quantity: 1,
+        total_price: product.variants[0].price
+      }
+      updateCart(order_product)
+      succesToast('Product added to cart')
+    } else {
+      errorToast('Please login/register before purchasing :)')
+    }
+  }
+
   return (
     <LinkBox
       bg='white'
@@ -71,6 +105,7 @@ function ProductListCard({ product }) {
                   {product.name}
                 </Box>
               </Stack>
+              <MypetsBtn btnText='Add to cart' onClick={handleAddToCart} />
             </Box>
             <Spacer />
             <Stack
