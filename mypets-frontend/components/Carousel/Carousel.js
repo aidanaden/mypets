@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react'
 
 export default function Carousels({ 
-    bannerImgNames=["desktop.jpeg", "banner-b.jpg", "banner-c.jpg"],
+    bannerImgNames=["desktop.jpeg", "banner-c.jpg"],
     displayCount=false,
     ...props
 }) {

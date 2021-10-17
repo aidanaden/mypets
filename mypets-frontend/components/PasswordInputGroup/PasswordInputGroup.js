@@ -31,7 +31,7 @@ function PasswordInputGroup({ field, valid, id }) {
                     children={<IconButton
                                 icon={show == false ? <IoMdEye size='sm' /> : <IoMdEyeOff size='sm' />}
                                 onClick={handleShow}
-                                size='sm'
+                                size='md'
                             />}
                 />
             </InputGroup>

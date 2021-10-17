@@ -154,7 +154,7 @@ export const AuthProvider = (props) => {
             })
         } catch (error) {
             return error
-        }  
+        }
     }
 
     /**
@@ -198,6 +198,33 @@ export const AuthProvider = (props) => {
             }
         } catch (err) {
             console.error(err)
+        }
+    }
+
+    const resetPasswordUser = async (email, toast) => {
+        const resetFailToast = () => toast({
+            title: 'Invalid email, please try again.',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+        })
+
+        const resetSuccessToast = () => toast({
+            title: 'Reset email sent.',
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        })
+
+        try {
+            callAPI('/auth/forget-password', 'POST', {
+                email: email,
+                url: `${API_URL}/admin/plugins/users-permissions/auth/reset-password`
+            }).then(response => {
+                resetSuccessToast()
+            })
+        } catch (error) {
+            console.error(error);
         }
     }
 

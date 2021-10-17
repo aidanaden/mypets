@@ -44,7 +44,6 @@ const userProfileSchema = Yup.object().shape({
 })
 
 function UserProfileForm({ handleSubmit, initialValues }) {
-
     return (
         <Formik
             enableReinitialize  
