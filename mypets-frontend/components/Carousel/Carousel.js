@@ -53,8 +53,6 @@ export default function Carousels({
         nextSlide()
     }, 5000);
 
-    clearInterval(slideInterval)
-
     return (
         <Flex
             mt={{ base: 4, md: 8 }}
