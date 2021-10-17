@@ -95,13 +95,13 @@ export default function Carousels({
                             >
                                 {sid + 1} / {slidesCount}
                             </Text>}
-                            <Image
+                            {/* <Image
                                 rounded={{ base: 20, md: 40 }}
                                 src={bannerImgName}
                                 boxSize="full"
                                 backgroundSize="cover"
                                 display={{ base: 'none', md: 'block' }}
-                            />
+                            /> */}
                             <Image
                                 rounded={{ base: 20, md: 40 }}
                                 src={mobileBannerImgNames[sid]}
