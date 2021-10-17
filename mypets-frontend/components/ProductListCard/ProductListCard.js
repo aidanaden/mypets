@@ -17,6 +17,7 @@ import MerchantBadge from '../MerchantBadge/MerchantBadge'
 import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import { imageToUrl } from '../../utils/urls'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
+import AuthContext from '../../context/AuthContext'
 
 function ProductListCard({ product }) {
   const toast = useToast()
