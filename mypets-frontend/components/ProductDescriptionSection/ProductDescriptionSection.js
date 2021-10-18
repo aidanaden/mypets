@@ -33,7 +33,7 @@ const ProductDescription = ({ markdownContent }) => {
             <Box>
                 <ReactMarkdown
                     components={ChakraUIRenderer()}
-                    children={markdownContent}
+                    children={`${markdownContent}`}
                     escapeHtml={false}
                 />
             </Box>
@@ -104,7 +104,8 @@ export default function ProductDescriptionSection({ product }) {
     //     'Omega-3 & 6 fatty acids  that promotes healthy skin and shiny coat'
     // ]
     const nutrients = product.nutrional_analysis.split(/[\r\n]+/)
-
+    console.log('product content: ', product.content)
+    
     return (
         <Stack
             p={8}
