@@ -56,7 +56,8 @@ export default function Home({ products, categories, animals, merchants }) {
           categories={pageCategories}
           setSelectedCategory={setCategorySelected}
         />
-        <Carousel />
+        {/* <Carousel /> */}
+        <HomeBannerSwiper />
         <Stack
           direction="column"
           spacing={{ base: 8, lg: 12 }}
