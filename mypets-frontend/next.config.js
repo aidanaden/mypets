@@ -1,4 +1,4 @@
-const withTM = require('next-transpile-modules')(['react-markdown']);
+const withTM = require('next-transpile-modules')(['react-markdown', 'remark-gfm', 'rehype-raw']);
 
 module.exports = withTM({
     images: {
