@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown/react-markdown.min'
-import remarkGfm from 'remark-gfm'
+import remark from 'remark'
+import html from 'remark-html'
 import {
     Box,
     Heading,
@@ -34,7 +35,7 @@ const ProductDescription = ({ markdownContent }) => {
             <Box>
                 <ReactMarkdown
                     components={ChakraUIRenderer()}
-                    remarkPlugins={[remarkGfm]}
+                    remarkPlugins={[html]}
                     children={`${markdownContent}`}
                 />
             </Box>
