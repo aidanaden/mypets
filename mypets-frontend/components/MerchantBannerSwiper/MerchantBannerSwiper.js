@@ -7,7 +7,7 @@ export default function MerchantBannerSwiper({ rounded={ base: 20, md: 40 }, ...
 
     return (
         <Box
-          mb={{ base: 8, md: 16 }}
+          mb={{ base: 8, md: 12 }}
           maxW='1200px'
           boxShadow='2xl'
           rounded={rounded}
