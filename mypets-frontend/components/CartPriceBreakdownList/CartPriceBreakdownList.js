@@ -73,7 +73,7 @@ export default function CartPriceBreakdownList({ groupedProducts, productNames, 
                             fontWeight='bold'
                             borderBottomWidth='1px'
                             borderBottomColor='gray.100'
-                            mb={{ base: 1 }}
+                            mb={{ base: 4 }}
                         >
                             <Td>
                                 {productName}
