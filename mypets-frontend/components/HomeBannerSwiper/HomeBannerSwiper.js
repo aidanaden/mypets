@@ -7,7 +7,6 @@ export default function HomeBannerSwiper({ rounded={ base: 20, md: 40 }, ...prop
 
     return (
         <Box
-          mt={{ base: 4, md: 8 }}
           mb={{ base: 8, md: 16 }}
           w='100%'
           boxShadow='2xl'
