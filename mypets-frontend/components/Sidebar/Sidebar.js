@@ -121,7 +121,7 @@ export default function Sidebar({ categories }) {
             <Logo
                 isMobile
                 display={{ base: 'block', lg: 'none' }}
-                bg='red.100'
+                // bg='red.100'
             />
             <Stack
                 spacing={{ base: 4 }}

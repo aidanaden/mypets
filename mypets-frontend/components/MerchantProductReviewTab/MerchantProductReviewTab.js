@@ -84,7 +84,7 @@ function MerchantProductReviewTab({ merchantProducts, categories, merchantReview
                                 align='stretch'
                                 justify='space-between'
                                 display={{ base: 'none', lg: 'inherit' }}
-                                bg='red.100'
+                                // bg='red.100'
                             >
                                 <Box>
                                     <SectionHeader>
