@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown/react-markdown.min'
+import rehypeRaw from 'rehype-raw'
 import {
     Box,
     Heading,
@@ -33,8 +34,8 @@ const ProductDescription = ({ markdownContent }) => {
             <Box>
                 <ReactMarkdown
                     components={ChakraUIRenderer()}
+                    rehypePlugins={[rehypeRaw]}
                     children={`${markdownContent}`}
-                    escapeHtml={false}
                 />
             </Box>
         </Box>
