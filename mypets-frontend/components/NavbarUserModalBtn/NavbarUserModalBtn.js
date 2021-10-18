@@ -173,7 +173,7 @@ function NavbarUserModalBtn({ isMobile, NavItem }) {
                                         initialValues={addressInitialValues}
                                     />
                                 </TabPanel>
-                                {user.provider == 'local' && <TabPanel>
+                                {(user && user.provider == 'local') && <TabPanel>
                                     <UserPasswordForm 
                                         handleSubmit={handleUserPasswordChange} 
                                     />
