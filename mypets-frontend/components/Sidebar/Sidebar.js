@@ -140,6 +140,11 @@ export default function Sidebar({ categories }) {
                     isMobile
                     NavItem={NavItem}
                 />
+                <NabItem
+                    onClick={logoutUser}
+                >
+                    Log out
+                </NabItem>
                 {/* <NavItem
                     icon={HiCode}
                     onClick={integrations.onToggle}
