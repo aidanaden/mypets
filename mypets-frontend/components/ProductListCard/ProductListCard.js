@@ -101,7 +101,7 @@ function ProductListCard({ product }) {
                   as="h4"
                   lineHeight="tight"
                   isTruncated={{ base: false, md: false }}
-                  maxW='180px'
+                  // maxW='180px'
                 >
                   {product.name}
                 </Box>
