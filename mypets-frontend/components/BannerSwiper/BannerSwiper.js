@@ -5,7 +5,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Autoplay, Navigation } from 'swiper/core';
 SwiperCore.use([Autoplay, Navigation]);
 
-function BannerSwiper({ bannerImgNames, rounded, autoplay=true }) {
+export default function BannerSwiper({ 
+    bannerImgNames,
+    mobileBannerImgNames,
+    rounded,
+    autoplay=true
+}) {
     return (
         <Swiper
             spaceBetween={0}
@@ -20,12 +25,23 @@ function BannerSwiper({ bannerImgNames, rounded, autoplay=true }) {
         {
             bannerImgNames.map((bannerImgName,i) => (
                 <SwiperSlide key={i}>
-                    <Image loading='lazy' rounded={rounded} objectFit="cover" src={`/${bannerImgName}`} alt="mypets banner"/>
+                    <Image
+                        rounded={{ base: 20, md: 40 }}
+                        src={bannerImgName}
+                        boxSize="full"
+                        backgroundSize="cover"
+                        display={{ base: 'none', md: 'block' }}
+                    />
+                    <Image
+                        rounded={{ base: 20, md: 40 }}
+                        src={mobileBannerImgNames[sid]}
+                        boxSize="full"
+                        backgroundSize="cover"
+                        display={{ base: 'block', md: 'none' }}
+                    />
                 </SwiperSlide>
             ))
         }
         </Swiper>
     )
 }
-
-export default BannerSwiper
