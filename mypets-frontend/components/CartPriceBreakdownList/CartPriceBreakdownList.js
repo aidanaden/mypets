@@ -55,7 +55,7 @@ export default function CartPriceBreakdownList({ groupedProducts, productNames, 
     return (
         <>
             <Table
-                variant="unstyled" 
+                variant="simple" 
                 size={{ base: 'sm', lg: 'md' }} 
                 my={{ base: 8, lg: 8 }}
             >
@@ -71,9 +71,6 @@ export default function CartPriceBreakdownList({ groupedProducts, productNames, 
                         <Tr
                             key={i}
                             fontWeight='bold'
-                            borderBottomWidth='1px'
-                            borderBottomColor='gray.100'
-                            mb={{ base: 4 }}
                         >
                             <Td>
                                 {productName}
