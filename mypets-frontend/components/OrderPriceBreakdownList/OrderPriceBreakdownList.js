@@ -73,17 +73,19 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                 </Thead>
                 <Tbody>
                     {productNames.map((productName, i) => (
-                        <Tr py={2} key={i}>
-                            <Td fontWeight='bold'>
+                        <Tr key={i}>
+                            <Td  py={2} fontWeight='bold'>
                                 {productName}
                             </Td>
                             <Td
+                                py={2}
                                 textAlign='center'
                                 fontWeight='bold'
                             >
                                 {productTotalQuantity(groupedOrderProducts[productName])}
                             </Td>
                             <Td
+                                py={2}
                                 textAlign='right'
                                 fontWeight='bold'
                             >
