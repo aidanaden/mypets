@@ -34,7 +34,7 @@ export default function BannerSwiper({
                     />
                     <Image
                         rounded={{ base: 20, md: 40 }}
-                        src={mobileBannerImgNames[sid]}
+                        src={mobileBannerImgNames[i]}
                         boxSize="full"
                         backgroundSize="cover"
                         display={{ base: 'block', md: 'none' }}
