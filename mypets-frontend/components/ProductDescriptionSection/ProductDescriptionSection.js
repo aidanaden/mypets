@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown/react-markdown.min'
-import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
 import {
     Box,
     Heading,
@@ -34,7 +34,7 @@ const ProductDescription = ({ markdownContent }) => {
             <Box>
                 <ReactMarkdown
                     components={ChakraUIRenderer()}
-                    rehypePlugins={[rehypeRaw]}
+                    remarkPlugins={[remarkGfm]}
                     children={`${markdownContent}`}
                 />
             </Box>
