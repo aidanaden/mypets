@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import BannerSwiper from '../BannerSwiper/BannerSwiper'
 
-export default function MerchantBannerSwiper({ rounded, ...props }) {
+export default function MerchantBannerSwiper({ rounded={ base: 20, md: 40 }, ...props }) {
     const merchantBannerImgNames = ["macho_pawz_banner.jpg"]
     const mobileBannerImgNames=["macho_pawz_banner.jpg"]
 
