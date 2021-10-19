@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react'
-import { 
-    useDisclosure, 
+import {
+    Button,
+    useDisclosure,
     Modal,
     ModalOverlay,
     ModalContent,
@@ -88,6 +89,14 @@ function LoginModalBtn() {
                                             )}
                                         </Field>
                                     </Box>
+                                    <Button
+                                        variant='link'
+                                        mb={4}
+                                        alignSelf='end'
+                                        justifySelf='end'
+                                    >
+                                        Forget password?
+                                    </Button>
                                     <MypetsBtn btnText='Log in' w='100%' mx={0} mt={4} isLoading={props.isSubmitting} type='submit'/>
                                 </Form>
                             )}
