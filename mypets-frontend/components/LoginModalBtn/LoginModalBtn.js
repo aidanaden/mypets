@@ -89,18 +89,14 @@ function LoginModalBtn() {
                                             )}
                                         </Field>
                                     </Box>
-                                    <Box w='100%' bg='blue.100' alignContent='end' justifyContent='end'>
-                                        <Button
-                                            variant='link'
-                                            mb={4}
-                                            alignSelf='end'
-                                            textAlign='end'
-                                            justifySelf='end'
-                                            fontSize='sm'
-                                        >
-                                            Forget password?
-                                        </Button>
-                                    </Box>
+                                    <Button
+                                        variant='link'
+                                        mb={4}
+                                        fontSize='sm'
+                                        textColor='gray.200'
+                                    >
+                                        Forget password?
+                                    </Button>
                                     <MypetsBtn
                                         btnText='Log in'
                                         w='100%'
