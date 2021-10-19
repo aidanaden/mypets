@@ -74,9 +74,14 @@ export default function SmallCentered() {
                     spacing={{ base: 4, md: 6 }}
                 >
                     <Link
-                        href='#'
+                        href='/about'
                     >
                         About us
+                    </Link>
+                    <Link
+                        href='/contact'
+                    >
+                        Contact us
                     </Link>
                     <Link
                         href='#'
