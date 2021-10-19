@@ -94,6 +94,7 @@ function LoginModalBtn() {
                                             variant='link'
                                             mb={4}
                                             alignSelf='end'
+                                            textAlign='end'
                                             justifySelf='end'
                                             fontSize='sm'
                                         >
