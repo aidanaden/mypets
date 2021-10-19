@@ -78,7 +78,7 @@ function LoginModalBtn() {
                                             )}
                                         </Field>
                                     </Box>
-                                    <Box mb={4}>
+                                    <Box mb={2}>
                                         <Field name='password' >
                                             {({ field, form }) => (
                                                 <FormControl isInvalid={form.errors.password && form.touched.password}>
@@ -89,19 +89,25 @@ function LoginModalBtn() {
                                             )}
                                         </Field>
                                     </Box>
-                                    <Box w='100%' bg='blue.100'>
+                                    <Box w='100%' bg='blue.100' alignContent='end' justifyContent='end'>
                                         <Button
                                             variant='link'
                                             mb={4}
                                             alignSelf='end'
                                             justifySelf='end'
-                                            bg='red.100'
                                             fontSize='sm'
                                         >
                                             Forget password?
                                         </Button>
                                     </Box>
-                                    <MypetsBtn btnText='Log in' w='100%' mx={0} mt={4} isLoading={props.isSubmitting} type='submit'/>
+                                    <MypetsBtn
+                                        btnText='Log in'
+                                        w='100%'
+                                        mx={0}
+                                        mt={4}
+                                        isLoading={props.isSubmitting}
+                                        type='submit'
+                                    />
                                 </Form>
                             )}
                         </Formik>
