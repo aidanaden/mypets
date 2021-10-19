@@ -93,7 +93,7 @@ function LoginModalBtn() {
                                         variant='link'
                                         mb={4}
                                         fontSize='sm'
-                                        textColor='gray.400'
+                                        textColor='gray.600'
                                     >
                                         Forget password?
                                     </Button>
