@@ -89,14 +89,18 @@ function LoginModalBtn() {
                                             )}
                                         </Field>
                                     </Box>
-                                    <Button
-                                        variant='link'
-                                        mb={4}
-                                        alignSelf='end'
-                                        justifySelf='end'
-                                    >
-                                        Forget password?
-                                    </Button>
+                                    <Box w='100%' bg='blue.100'>
+                                        <Button
+                                            variant='link'
+                                            mb={4}
+                                            alignSelf='end'
+                                            justifySelf='end'
+                                            bg='red.100'
+                                            fontSize='sm'
+                                        >
+                                            Forget password?
+                                        </Button>
+                                    </Box>
                                     <MypetsBtn btnText='Log in' w='100%' mx={0} mt={4} isLoading={props.isSubmitting} type='submit'/>
                                 </Form>
                             )}
