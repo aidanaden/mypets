@@ -81,7 +81,10 @@ function ProductListCard({ product }) {
           <LinkOverlay
             href={`/products/${product.slug}`}
           >
-            <Center roundedTop="lg">
+            <Center
+              mb={{ base: 2 }}
+              roundedTop="lg"
+            >
               <NextImage
                 src={imageToUrl(product.image)}
                 alt={`Picture of ${product.name}`}

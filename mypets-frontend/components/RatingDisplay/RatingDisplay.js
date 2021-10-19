@@ -2,7 +2,7 @@ import React from 'react'
 import { Box } from '@chakra-ui/react'
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 
-function RatingDisplay({ rating, numReviews=152 }) {
+function RatingDisplay({ rating, numReviews=0 }) {
     return (
       <Box d="flex" alignItems="center">
         {Array(5)
