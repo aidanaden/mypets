@@ -118,7 +118,7 @@ function CartModalProductCard({ order_products, onClose }) {
                                     fontSize="xs"
                                 >
                                     <Stack
-                                        direction={{ base: 'column', md: 'row' }}
+                                        direction={{ base: 'row' }}
                                         spacing={{ base: 4 }}
                                     >
                                         <NextImage

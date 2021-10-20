@@ -123,7 +123,7 @@ function NavbarCartModalBtn() {
                                 direction={{ base: 'column', lg: 'row' }}
                                 spacing={{ base: 8, lg: 16 }}
                             >
-                                <Box w={{ base: 'auto', md: '50%' }}>
+                                <Box w={{ base: 'auto', lg: '50%' }}>
                                     {productNames.map((productName, i) => (
                                         <CartModalProductCard
                                             order_products={groupedProducts[productName]}
