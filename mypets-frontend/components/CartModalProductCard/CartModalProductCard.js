@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import { 
     Spacer,
     Box,  
+    Stack,
     HStack,
     Text,  
     Table, 
