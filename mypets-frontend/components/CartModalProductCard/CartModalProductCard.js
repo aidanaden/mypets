@@ -120,11 +120,13 @@ function CartModalProductCard({ order_products, onClose }) {
                                 >
                                     <Flex
                                         direction={{ base: 'row' }}
+                                        // align='stretch'
+                                        justify='space-between'
                                     >
                                         <NextImage
                                             src={imageToUrl(order_products[0].variant.product.image)}
-                                            width='200'
-                                            height='200'
+                                            width='100'
+                                            height='100'
                                         />
                                         <Spacer />
                                         <Box>
