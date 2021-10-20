@@ -4,9 +4,9 @@ import {
     Box,  
     Stack,
     HStack,
-    Text,  
-    Table, 
-    TableCaption, 
+    Text,
+    Table,
+    TableCaption,
     Thead,
     Tr,
     Th,
@@ -121,7 +121,11 @@ function CartModalProductCard({ order_products, onClose }) {
                                         direction={{ base: 'column', md: 'row' }}
                                         spacing={{ base: 4 }}
                                     >
-                                        <NextImage src={imageToUrl(order_products[0].variant.product.image)} width='100' height='100'/>
+                                        <NextImage
+                                            src={imageToUrl(order_products[0].variant.product.image)}
+                                            width='200'
+                                            height='200'
+                                        />
                                         <Box>
                                             <Text 
                                                 fontWeight='bold' 
@@ -136,7 +140,12 @@ function CartModalProductCard({ order_products, onClose }) {
                             </a>
                         </NextLink>     
                         <Spacer/>
-                        <IconButton icon={<DeleteIcon />} size='sm' bgColor='white' onClick={deleteProductCard}/>
+                        <IconButton
+                            icon={<DeleteIcon />}
+                            size='sm'
+                            bgColor='white'
+                            onClick={deleteProductCard}
+                        />
                     </HStack>
                     <Table variant='unstyled' size={{ base: 'md', lg: 'lg' }}>
                         <Thead>
@@ -151,7 +160,7 @@ function CartModalProductCard({ order_products, onClose }) {
                                 <Tr key={i}>
                                     <Th textAlign='center' fontSize='sm'>{weight}KG</Th>
                                     <Th textAlign='center' fontSize='sm'>SG${productsWeighted[weight][0].variant.price.toFixed(2)}</Th>
-                                    <Th>
+                                    <Th textAlign='center' fontSize='sm'>
                                         <CartProductQuantityPicker 
                                             addQuantity={() => addQuantities(weight)} 
                                             minusQuantity={() => minusQuantities(weight)}
