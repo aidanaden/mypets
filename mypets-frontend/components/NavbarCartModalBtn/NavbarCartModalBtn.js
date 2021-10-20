@@ -122,9 +122,8 @@ function NavbarCartModalBtn() {
                             <Stack
                                 direction={{ base: 'column', lg: 'row' }}
                                 spacing={{ lg: 16 }}
-                                w='50%'
                             >
-                                <Box>
+                                <Box w='50%'>
                                     {productNames.map((productName, i) => (
                                         <CartModalProductCard
                                             order_products={groupedProducts[productName]}
@@ -135,7 +134,6 @@ function NavbarCartModalBtn() {
                                 </Box>
                                 <Box
                                     flex='1'
-                                    pl={{ base: 0, lg: 0 }}
                                     pb={{ base: 4, lg: 4 }}
                                 >
                                     <Center

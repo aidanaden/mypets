@@ -7,7 +7,7 @@ function MerchantBadge({ merchantName, ...props }) {
             rounded='full'
             px="2"
             maxW='100%'
-            fontSize={{ base: 'sm', md: 'md' }}
+            fontSize={{ base: 'xs', md: 'md' }}
             {...props}
         >
             {merchantName}
