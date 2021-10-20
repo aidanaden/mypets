@@ -94,7 +94,11 @@ function ProductListCard({ product }) {
               />
             </Center>
             <Box>
-              <Box display="flex" alignItems="baseline">
+              <Box
+                display="flex"
+                alignItems="baseline"
+                px={2}
+              >
                 <MerchantBadge merchantName={product.merchant.name} />
               </Box>
               <Stack mt="1" justifyContent="space-between">
