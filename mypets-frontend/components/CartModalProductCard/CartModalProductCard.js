@@ -128,11 +128,10 @@ function CartModalProductCard({ order_products, onClose }) {
                                             width='100'
                                             height='100'
                                         />
-                                        <Spacer />
-                                        <Box>
+                                        <Box ml={4}>
                                             <Text 
                                                 fontWeight='bold' 
-                                                fontSize={{ base: 'lg', lg: 'md' }}
+                                                fontSize={{ base: 'md' }}
                                             >
                                                 {order_products[0].variant.product.name}
                                             </Text>
