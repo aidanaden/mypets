@@ -122,7 +122,7 @@ function NavbarCartModalBtn() {
                             <Stack
                                 direction={{ base: 'column', lg: 'row' }}
                                 spacing={{ lg: 16 }}
-                                w='100%'
+                                w='50%'
                             >
                                 <Box>
                                     {productNames.map((productName, i) => (
