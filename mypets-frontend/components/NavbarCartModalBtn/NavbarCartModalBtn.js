@@ -121,9 +121,9 @@ function NavbarCartModalBtn() {
                             {groupedProducts && (totalPrice > 0.1) ? 
                             <Stack
                                 direction={{ base: 'column', lg: 'row' }}
-                                spacing={{ lg: 16 }}
+                                spacing={{ base: 8, lg: 16 }}
                             >
-                                <Box w='50%'>
+                                <Box w={{ base: 'auto', md: '50%' }}>
                                     {productNames.map((productName, i) => (
                                         <CartModalProductCard
                                             order_products={groupedProducts[productName]}

@@ -82,7 +82,7 @@ function ProductListCard({ product }) {
             href={`/products/${product.slug}`}
           >
             <Center
-              mb={{ base: 2 }}
+              mb={{ base: 4 }}
               roundedTop="lg"
             >
               <NextImage
@@ -107,7 +107,6 @@ function ProductListCard({ product }) {
                   as="h4"
                   lineHeight="tight"
                   isTruncated={{ base: false, md: false }}
-                  // maxW='180px'
                 >
                   {product.name}
                 </Box>
