@@ -1,8 +1,9 @@
 import { useState, useEffect, useContext } from 'react'
 import { 
     Spacer,
-    Box,  
+    Box,
     Stack,
+    Flex,
     HStack,
     Text,
     Table,
