@@ -74,7 +74,7 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                 <Tbody>
                     {productNames.map((productName, i) => (
                         <Tr key={i}>
-                            <Td  py={2} fontWeight='bold'>
+                            <Td py={2} fontWeight='bold'>
                                 {productName}
                             </Td>
                             <Td
@@ -102,11 +102,11 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                     text='Subtotal'
                     value={order.total_price.toFixed(2)}
                 />
-                {order.discount_value > 0 && 
-                (<BreakdownRow
-                    text='Discount'
-                    value={-order.discount_value.toFixed(2)}
-                />)}
+                {order.discount_value > 0 &&
+                    (<BreakdownRow
+                        text='Discount'
+                        value={-order.discount_value.toFixed(2)}
+                    />)}
                 <BreakdownRow
                     text='Delivery'
                     value={order.shipping_fee.toFixed(2)}

@@ -97,7 +97,6 @@ function ProductListCard({ product }) {
               <Box
                 display="flex"
                 alignItems="baseline"
-                px={2}
               >
                 <MerchantBadge merchantName={product.merchant.name} />
               </Box>

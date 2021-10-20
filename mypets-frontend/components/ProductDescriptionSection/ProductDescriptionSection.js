@@ -80,11 +80,17 @@ const ProductNutrients = ({ nutrients }) => {
                             justify='space-between'
                             w='100%'
                         >
-                            <Text fontSize={{ base: 'xs', md: 'md' }}>
+                            <Text
+                                fontSize={{ base: 'xs', md: 'md' }}
+                                textAlign='left'
+                            >
                                 {nutrient.split('-')[0]}
                             </Text>
                             <Spacer />
-                            <Text fontSize={{ base: 'xs', md: 'md' }}>
+                            <Text
+                                fontSize={{ base: 'xs', md: 'md' }}
+                                textAlign='right'
+                            >
                                 {nutrient.split('-')[1]}
                             </Text>
                         </Stack>

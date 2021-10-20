@@ -107,7 +107,7 @@ function NavbarCartModalBtn() {
             >
                 <ModalOverlay/>
                 <ModalContent 
-                    maxW={{ lg: 1200}} 
+                    maxW={{ lg: 1200 }} 
                     w={{ base: '100%', lg: 1100 }} 
                     h={{ base: '100%', lg: 'auto' }}
                     minH={{ lg: 500 }} 
@@ -121,6 +121,7 @@ function NavbarCartModalBtn() {
                             {groupedProducts && (totalPrice > 0.1) ? 
                             <Stack
                                 direction={{ base: 'column', lg: 'row' }}
+                                spacing={{ lg: 16 }}
                                 w='100%'
                             >
                                 <Box>
@@ -134,7 +135,7 @@ function NavbarCartModalBtn() {
                                 </Box>
                                 <Box
                                     flex='1'
-                                    pl={{ base: 0, lg: 8 }}
+                                    pl={{ base: 0, lg: 0 }}
                                     pb={{ base: 4, lg: 4 }}
                                 >
                                     <Center

@@ -6,6 +6,7 @@ function MerchantBadge({ merchantName, ...props }) {
             colorScheme='gray'
             rounded='full'
             px="2"
+            maxW='100%'
             {...props}
         >
             {merchantName}
