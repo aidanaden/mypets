@@ -34,7 +34,7 @@ function CartProductQuantityPicker({ addQuantity, minusQuantity, quantity }) {
                 // onClick={minusQuantity}
                 isLoading={cartLoading}
             />
-            <Text w='42px' align="center" alignSelf='center' fontSize="lg">
+            <Text w='36px' align="center" alignSelf='center' fontSize="md">
                 {qty}
             </Text>
             <IconButton 

@@ -116,18 +116,21 @@ function CartModalProductCard({ order_products, onClose }) {
                                     color={'gray.800'}
                                     fontSize="xs"
                                 >
-                                    <HStack spacing={4}>
+                                    <Stack
+                                        direction={{ base: 'column', md: 'row' }}
+                                        spacing={{ base: 4 }}
+                                    >
                                         <NextImage src={imageToUrl(order_products[0].variant.product.image)} width='100' height='100'/>
                                         <Box>
                                             <Text 
                                                 fontWeight='bold' 
-                                                fontSize={{ base: 'xl', lg: 'lg' }}
+                                                fontSize={{ base: 'lg', lg: 'md' }}
                                             >
                                                 {order_products[0].variant.product.name}
                                             </Text>
                                             <MerchantBadge merchantName={order_products[0].variant.product.merchant.name} />
                                         </Box>
-                                    </HStack>
+                                    </Stack>
                                 </Tooltip>
                             </a>
                         </NextLink>     
