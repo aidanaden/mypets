@@ -186,6 +186,8 @@ export const AuthProvider = (props) => {
             })
             const data = await response.json()
 
+            console.log('data from provider: ', data)
+
             if(!data.user) {
                 loginFailToast()
             } else {
