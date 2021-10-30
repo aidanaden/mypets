@@ -10,229 +10,238 @@ import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 
 export default function terms({ categories }) {
-    const markdownText = `
-    Last Updated: 28/06/2021
-
-    Please read these Terms and Conditions carefully. By accessing, browsing, or using www.mypets.sg (the “Site”), you acknowledge what you have read, understood and agree to be bound by the Terms and Conditions. If you do not agree to be bound by the Terms and Conditions, you should discontinue your use or access to this site.
-     
-    MyPets Singapore is a platform that aims to connect pet owners to pet shops.  
+    const markdownText = `#
+    # **MyPets Terms &amp; Conditions**
     
-    By no means do we carry the product of our merchants directly. 
+    **Last Updated:** 19/10/21
     
-    The Terms MyPets Singapore/MyPets can be used interchangeably. 
+    **General Information:**
     
+    - Live Chat (Support)**: 9am - 12pm &amp; 2pm - 6pm (Mon-Fri)**
+    - Email: [contactmypetssg@gmail.com](mailto:contactmypetssg@gmail.com)
     
-    Definitions
+    **(reply within 2 working days)**
     
-    For the purposes of this Terms & Conditions Policy:
-     
-    You refer to the account owner or representatives on behalf of the account owner that is accessing our service
+    - WhatsApp/Phone-call**: +65 9126 4942 (anytime)**
     
-    Website refers to MyPets Singapore, accessible from www.mypets.sg
+    Please read these Terms and Conditions carefully. By accessing, browsing, or using[www.mypets.sg](http://www.mypets.sg/) (the &quot;Site&quot;), you acknowledge what you have read, understood and agree to be bound by the Terms and Conditions. If you do not agree to be bound by the Terms and Conditions, you should discontinue your use or access to this site.
     
-    Personal Data is any information provided by you upon signing up with MyPets.
+    MyPets Singapore is an online pet shop that aims to improve the lives of pet owners &amp; the pet community
     
-    Service/Platform refers to our website
+    The Terms MyPets Singapore/MyPets can be used interchangeably.
     
-    Account means a unique account created in order to use our site.
-    
-    Service/Platform refers to our website
-    
-    Company (referred to as either “the Company”, “We”, “Us” or “Our” in this Agreement) refers to MyPets Singapore.
+    ##
     
     
-    Eligibility
+    ##
     
-    You must be over eighteen (18) years of age and must not have been suspended or removed by MyPets for any reason. If you are below the stipulated age, you must obtain the consent of your parent or legal guardian to use our website and agree to the terms. Use of our site is void where prohibited by the law.
     
-    Compliance
+    ##
     
-    We reserve the right to revoke your ability to access the products and services offered on the site for any reason at any time, including, but not limited to, as a result of a violation of the Terms or the Privacy Policy, without due notice.
     
-    You must not misuse our site in a manner that may cause us liability under the Computer Misuse Act (Cap 50A) and Cybersecurity Act 2018.
+    ## **Definitions**
     
-    You may not otherwise copy, modify or distribute the contents of our website without the express written permission of MyPets.  Furthermore, you also may not modify, publish, transmit, participate in the transfer of, sell, create derivative works from, or in any way exploit, any of the content and Intellectual Property found on the Site, in whole or in any part.
+    For the purposes of this Terms &amp; Condition Policy:
     
-    You are also not allowed to infringe any copyright materials from our website.
+    - **You** refer to the account owner or representatives on behalf of the account owner that is accessing our service
+    - **Website** refers to MyPets Singapore, accessible from [www.mypets.sg](https://cdpn.io/cp/internal/boomboom/mypets.sg)
+    - **Personal Data** is any information provided by you upon signing up with MyPets.
+    - **Service/Platform** refers to our website
+    - **Account** means a unique account created in order to use our site.
+    - **Company** (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to MyPets Singapore.
     
-    You shall not spread misinformation/slander/use any information on our site that can tarnish our image and brings us liability. Legal actions will be taken accordingly to uphold & protect the image of MyPets.
+    ## **Eligibility**
     
-    To use any specific information on our site will require an email write-in to us at contactmypetssg@gmail.com.
+    - You must be over eighteen (18) years of age and must not have been suspended or removed by MyPets for any reason. If you are below the stipulated age, you must obtain the consent of your parent or legal guardian to use our website and agree to the terms. Use of our site is void where prohibited by the law.
     
-    All data provided by you are accurate & owned by you, the account owner.
+    ##
     
-    You may not use any aliases or other means to mask your true identity
     
-    Any access codes and/or passwords provided should be safeguarded at all times. You are responsible for the security of your access codes and/or passwords, and will henceforth be solely liable for any use or unauthorized use of the Site with your access codes and/or passwords.
+    ## **Contact Information** :
     
-    Refunds & Exchange Policy
+    Please refer to our FAQs to find out ways to reach out to us.
     
-    Refund Policy
+    ## **Compliance**
     
-    MyPets strives to provide quality service for our customers. 
+    - We reserve the right to revoke your ability to access the products and services offered on the site for any reason at any time, including, but not limited to, as a result of a violation of the Terms or the Privacy Policy, without due notice.
+    
+    - You must not misuse our site in a manner that may cause us liability under the Computer Misuse Act (Cap 50A) and Cybersecurity Act 2018.
+    - You may not otherwise copy, modify or distribute the contents of our website without the express written permission of MyPets. Furthermore, you also may not modify, publish, transmit, participate in the transfer of, sell, create derivative works from, or in any way exploit, any of the content and Intellectual Property found on the Site, in whole or in any part.
+    - You are also not allowed to infringe any copyright materials from our website.
+    - You shall not spread misinformation/slander/use any information on our site that can tarnish our image and brings us liability. Legal actions will be taken accordingly to uphold &amp; protect the image of MyPets.
+    - To use any specific information on our site will require an email write-in to us at [contactmypetssg@gmail.com](mailto:contactmypetssg@gmail.com).
+    - All data provided by you are accurate &amp; owned by you, the account owner.
+    - You may not use any aliases or other means to mask your true identity
+    - Any access codes and/or passwords provided should be safeguarded at all times. You are responsible for the security of your access codes and/or passwords, and will henceforth be solely liable for any use or unauthorized use of the Site with your access codes and/or passwords.
+    
+    ## **Refunds &amp; Exchange Policy**
+    
+    MyPets strives to provide quality service for our customers
+    
+    **Refund Policy**.
+    
     Criteria for refund are as follows:
     
-    ● Items received in damaged conditions
+    - Items received in damaged conditions
+    - Expired products
+    - Order discrepancies
+    - Wrong products
     
-    ● Expired products
-    
-    ● Order discrepancies
-    
-    ● Wrong products
-    
-    
-    Exchange Policy
+    **Exchange Policy**
     
     Criteria for exchange are as follows:
     
-    ● Items received in damaged conditions
+    - Items received in damaged conditions
+    - Expired products
+    - Wrong products
     
-    ● Expired products
+    To request an exchange or a refund, please reach out to us:
     
-    ● Wrong products
+    - Live Chat (Support): **9am -12pm &amp; 2pm - 6pm (Mon-Fri)**
+    - Email:[contactmypetssg@gmail.com](mailto:contactmypetssg@gmail.com)
     
-    To request an exchange or a refund, please contact us:
+    **(reply within 2 working days)**
     
-    By email: contactmypetssg@gmail.com
+    - WhatsApp/Phone-call: **anytime**
     
-    WhatsApp/Telegram/Message (For faster reply): 
-    +65 9005 6761 (Ben) / +65 9126 4942 (Raihan)
+    All items that are opting for a refund or exchange, need to be in their original packaging.
     
-    All items that is opting for a refund or exchange, needs to be in its original packaging.
+    MyPets has the right to refuse any refunds/exchange should we be deemed as an act of abuse (on purpose) to our service.
     
-    MyPets has the right to refuse any refunds/exchange should we be deemed as an act of abuse (on purpose) to our service. 
-     
-    All refunds request will only be credited after it’s been approved, collected & vetted by our team. It will be credited back into your payment method within 1-2 weeks.
+    MyPets is not responsible for damages or losses incurred upon delivering to your doorstep.
     
-    For products that has been refunded, we will collect it from you on our next immediate delivery day, which falls on either Monday or Friday. Our team will liaise with you directly for the arrangement. 
+    All refunds request will only be credited after it&#39;s been approved, collected by our team. It will be credited back into your payment method **within**** 1-2 weeks** (with the help of Stripe).
     
-    Similarly, for the exchange of items, we will collect the items that’s required for exchange on Monday or Friday. Our team will liaise with you directly for the arrangement. 
+    For items that require a refund, we will collect them from you on our next immediate delivery day. Our team will liaise with you directly for the arrangement via the channel you used to contact us, upon receiving your request.
     
-    Similarly, for the exchange of items, we will collect the items that’s required for exchange on Monday or Friday. Our team will liaise with you directly for the arrangement. 
+    Similarly, for items that require an exchange, we will collect them &amp; replace them on our next immediate delivery day. Our team will liaise with you directly for the arrangement via the channel you used to contact us, upon receiving your request (Email/Phone-call/Whatsapp).
     
-    Replacement (For Exchange Items) will be carried out on our next immediate delivery day, which falls on either Tuesday or Saturday. 
+    **Payment &amp; Promo Codes (Vouchers/Discounts)**
     
-    Payment & Promo Codes (Vouchers/Discounts)
+    We&#39;re currently only accepting the following payment methods:
     
-    We’re currently only accepting the following payment methods:
+    - Apple Pay/Google Pay
+    - MasterCard (Stripe)
+    - Visa (Stripe)
     
-    ● Apple Pay/Google Pay
-    ● MasterCard
-    ● Visa
+    **For Refunds:**
     
-    For Refunds:
-     
-    All refunded amount will be credited into your original payment method. 
+    All refunded amounts will be credited back to your original payment method.
     
-    In the event whereby  you used our promo code and requested a refund, and it’s approved, the promo code will be resent to your email accordingly. This promo code can then be used for your subsequent purchase.
-     
-    Expiration:
+    In the event whereby you used our promo code and requested a refund, and it&#39;s approved, the promo code will be resent to your email accordingly. This promo code can then be used for your subsequent purchase. The validity of the promo code will be extended accordingly if necessary to our discretion.
     
-    Promo codes for first-time users do not have an expiration, thus you can use it anytime.
+    **Expiration:**
     
-    Festive & Promotion vouchers (“Promo Code”) on the other hand has an expiration date. The expiration date will be extended accordingly, and the new promo code will be sent to your email once your refunds has been approved & vetted by us.
+    Promo codes for first-time beta users will be till 31/12/2021.
     
-    Promo Code (Vouchers/Discounts)
+    However, Promo codes expiry &amp; usage for users that didn&#39;t join for our beta will be subjected to our discretion.
     
-    Beta Launch (Promo Code)
+    Festive &amp; Other Promotion vouchers (&quot;Promo Code&quot;) have an expiration date. The expiration date will be extended accordingly if necessary to our discretion and the new promo code will be sent to your email once your refunds have been approved &amp; vetted by us.
     
-    For users that signed up with us for before/present beta-launch stage, you’re entitled to an 5% off for your order. 
+    ## **Promo Code (Vouchers/Discounts)**
     
-    The promo code is valid for 1 time use per user.
+    **Beta-launch (Promo code)**
     
-    Validity of the code will be up till 31st December 2021. 
+    For users that signed up with us at the beta-launch stage, you&#39;re entitled to 10% off for your first order.
     
-    Launch (Promo Code)
+    The promo code is valid for 1-time use per user.
     
-    Our official launch date will be disclosed upon nearing to our launch. 
+    Beta Promo Code (BETA10OFF) validity will be till 31/12/2021.
     
-    Delivery
+    **Launch (Promo code)**
     
-    As MyPets is a new startup with limited resources, we aim to provide the best service to our users.
+    Our official launch date will be disclosed upon nearing our launch.
     
-    As such, we aim to deliver your order(s) within 4-6 days from the day of purchase.
+    ##
     
-    Our standard delivery days will fall on Tuesday & Saturday. 
+    
+    ## **Delivery**
+    
+    **Delivery Locations**
+    
+    As MyPets is a new startup with limited resources, we aim to provide the best service for our customers.
+    
+    As such, we aim to deliver your order(s) within 3 days, between 12pm to 10pm, from the day of purchase.
     
     Please note that we are currently delivering to the 7 following locations:
     
-    ● Eunos
-    ● Kembangan
-    ● Chai-Chee
-    ● Bedok
-    ● Simei 
-    ● Tampines
-    ● Pasir Ris
+    - Eunos
+    - Kembangan
+    - Chai-Chee
+    - Bedok
+    - Simei
+    - Tampines
+    - Pasir Ris
     
-    In the event where the delivery address of your order doesn’t match any of our delivery locations listed above, we will contact you & subsequently arrange for cancellation of the order or delivery to an alternative delivery address.
+    In the event where the delivery address of your order doesn&#39;t match any of our delivery locations listed above, we will contact you &amp; subsequently arrange for cancellation of the order or delivery to an alternative delivery address.
     
-    Should there be a delay on our end, we will, notify you in advance if we’re expected to not achieve our target delivery date for your orders.
+    Should there be a delay on our end, we will notify you in advance if we&#39;re expected to not achieve our target delivery date for your orders.
     
-    We strive to deliver your orders on time & we will uphold our promises to the very best we can. Rectification will be carried out on our end to uphold our promise to you as our customer.
+    We strive to deliver your orders on time &amp; we will uphold our promises to the very best we can. Rectification will be carried out on our end to uphold our promise to you as our customer.
     
-    However, we shall be, in no position, liable for the loss of your products upon delivering to your doorsteps.
+    However, **we shall be, in no position, liable for the loss of your products upon delivering to your doorsteps.**
     
-    Charges
+    ## **Contribution**
     
-    To uphold the quality standard we provide to our customer & to give back to the community, Mypets will impose will impose delivery and service fees.
+    5% of your total purchase order (&quot;in a single receipt&quot;) will automatically be allocated for the pet community.
     
-    Delivery Fees
+    **Charges**
     
-    Mypets charges a standard delivery rate of $1.50 for all orders below $40.
-    Orders above $40 are automatically entitled for a free delivery. 
+    To uphold the quality standard we provide to our customers &amp; give back to the community, we will impose:
     
-    Service Fee
+    **Delivery Fees**
     
-    Mypets will impose a service fee of 2% on total orders. 
+    Mypets charges a standard delivery rate of $3 for orders less than $30
     
-    Packaging
+    Orders above $30 are automatically entitled to a free delivery.
     
-    By no means do we carry the product of our merchants directly.
+    **Packaging**
     
-    For product repacking request, you will have to contact our merchants directly via email/phone-call or message (“WhatsApp/Text Message”) to see if it is possible.
+    As MyPets is a new startup with limited resources, we will be using HDPE standard bags, which is a sturdy material, for our delivery orders.
     
-    As MyPets is a new startup with limited resources, we will be using HDPE standard T-shirt bags, which is sturdy material, for our delivery orders. 
-    We aim to improve our delivery bags quality over-time.
+    We aim to improve our delivery bags quality over time.
     
-    Personal Data Protection
+    Likewise, MyPets do not provide repackaging services at this current stage.
+    
+    ## **Personal Data Protection**
     
     Information regarding Personal Data can be found on our Privacy Policy.
     
-    Regulations
+    ## **Regulations**
     
     MyPets reserve the right to disclose your Personal Data in the good faith belief that such action is necessary to:
     
-    ● Comply with a legal obligation
-    ● Protect and defend the rights or property of the Company
-    ● Prevent or investigate possible wrongdoing in connection with the Service
-    ● Protect the personal safety of Users of the Service or the public
-    ● Protect against legal liability
-     
-    Customer Feedback/Support
+    - Comply with a legal obligation
+    - Protect and defend the rights or property of the Company
+    - Prevent or investigate possible wrongdoing in connection with the Service
+    - Protect the personal safety of Users of the Service or the public
+    - Protect against legal liability
+    
+    ## **Customer Feedback/Support**
     
     For technical difficulties/Order-related, please contact us:
     
-    By email: contactmypetssg@gmail.com
+    - Live Chat (Support): **9am - 12pm &amp; 2pm - 6pm (Mon-Fri)**
+    - Email:[contactmypetssg@gmail.com](mailto:contactmypetssg@gmail.com)
     
-    WhatsApp/Message (For faster reply): 
-    +65 9005 6761 (Ben) / +65 9126 4942 (Raihan)
-     
-    Changes To This Terms & Condition Policy
+    **(reply within 2 working days)**
     
-    We may update our Terms & Condition Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+    - WhatsApp/Phone-call: **anytime**
     
-    We will let you know via email and/or a prominent notice on Our Service, prior to the change becoming effective, and update the “Last updated” date at the top of this Terms & Condition Policy.
+    **Changes To This Terms &amp; Condition Policy**
     
-    You are advised to review this Terms & Condition Policy periodically for any changes. Changes to this Terms & Condition Policy are effective when they are posted on this page.
+    We may update our Terms &amp; Conditions Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
     
+    We will let you know via email and/or a prominent notice on Our Service, prior to the change becoming effective, and update the &quot;Last Updated&quot; date at the top of this Terms &amp; Condition Policy.
     
-    Contact Us
+    You are advised to review this Terms &amp; Conditions Policy periodically for any changes. Changes to this Terms &amp; Conditions Policy are effective when they are posted on this page.
     
-    If you have any questions about this Terms & Condition Policy, you can contact us:
+    ## **Contact Us**
     
-    By email: contactmypetssg@gmail.com
+    If you have any questions about this Terms &amp; Condition Policy, you can contact us:
     
-    By visiting this page on our website: www.mypets.sg`
+    - By email: [contactmypetssg@gmail.com](mailto:contactmypetssg@gmail.com)
+    - By visiting this page on our website: [www.mypets.sg](https://cdpn.io/cp/internal/boomboom/www.mypets.sg)`
 
     return (
         <Box>

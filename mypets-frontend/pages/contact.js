@@ -11,20 +11,25 @@ import SectionHeader from '../components/SectionHeader/SectionHeader'
 
 export default function about({ categories }) {
     const markdownText = `
-    Last updated: 19/10/21
+## **Contact Us**
 
-    Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)
+Last updated: 19/10/21
 
-    We would love to hear from you!
-    
-    If you have any inquiries/feedback or suggestions, please contact us.
-    •	Email: contactmypetssg@gmail.com (Reply within 2 working days)
-    •	Live Chat Support: 9am - 12pm, 2pm - 6pm (Mon - Fri)
+**Our Business Operating Hours:** 9am - 12pm &amp; 2pm - 6pm (Mon-Fri)
 
-    Alternatively, for account/order-related which requires immediate assistance
-    You can reach out to us via:
-    •	Phone/WhatsApp: 9126 4942 (anytime)
-    `
+We would love to hear from you!
+
+If you have any inquiries/feedback or suggestions, please contact us.
+
+• Email: contactmypetssg@gmail.com (Reply within 2 working days)
+
+• Live Chat Support: 9am - 12pm, 2pm - 6pm (Mon - Fri)
+
+Alternatively, for account/order-related which requires immediate assistance
+
+You can reach out to us via:
+
+• Phone/WhatsApp: 9126 4942 (anytime)`
 
     return (
         <Box>
