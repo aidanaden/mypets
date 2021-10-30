@@ -135,7 +135,7 @@ export default function OrderProductCard({ order_products }) {
                         </Tbody>
                     </Table>
                     <Stack
-                        direction={{ base: 'column', md: 'row' }}
+                        direction={{ base: 'row', md: 'row' }}
                         spacing={{ base: 2, md: 4 }}
                         textAlign='center'
                         mt={{ base: 8 }}
