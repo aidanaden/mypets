@@ -106,21 +106,13 @@ export default function OrderProductCard({ order_products }) {
                         as={`/products/${product.slug}`}
                     >
                         <a>
-                            <Tooltip
-                                label={product.name}
-                                bg="white"
-                                placement='top-start'
-                                color='gray.800'
-                                fontSize="xs"
-                            >
-                                <HStack mb={4} w={{ base: '100%', lg: 'auto' }}>
-                                    <NextImage src={`${imageToUrl(product.image)}`} height='150' width='150' />
-                                    <Box>
-                                        <Text fontWeight='semibold' fontSize={{ base: 'xl', lg: 'md' }}>{product.name}</Text>
-                                        <MerchantBadge merchantName={merchantName} mt={1}/>
-                                    </Box>
-                                </HStack>
-                            </Tooltip>
+                            <HStack mb={4} w={{ base: '100%', lg: 'auto' }}>
+                                <NextImage src={`${imageToUrl(product.image)}`} height='150' width='150' />
+                                <Box>
+                                    <Text fontWeight='semibold' fontSize={{ base: 'xl', lg: 'md' }}>{product.name}</Text>
+                                    <MerchantBadge merchantName={merchantName} mt={1} />
+                                </Box>
+                            </HStack>
                         </a>
                     </NextLink>
                     <Table variant='unstyled' size='sm'>
@@ -146,12 +138,15 @@ export default function OrderProductCard({ order_products }) {
                         spacing={{ base: 2, md: 4 }}
                         textAlign='center'
                         mt={{ base: 8 }}
-                        justifyContent='center'
-                        alignContent='center'
+                        // justifyContent='center'
+                        // alignContent='center'
                         bg='green.100'
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
-                        <OrderProductReorderBtn onClick={() => handleAddToCart(order_products)} order_products={order_products} />
+                        <OrderProductReorderBtn
+                            onClick={() => handleAddToCart(order_products)}
+                            order_products={order_products}
+                        />
                     </Stack>
                 </>
             }
