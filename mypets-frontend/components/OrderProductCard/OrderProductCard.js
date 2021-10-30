@@ -27,6 +27,7 @@ const OrderProductReorderBtn = ({ onClick, ...props }) => {
         <MypetsBtn
             btnText='Re-order product'
             onClick={onClick}
+            {...props}
         />
     )
 }
