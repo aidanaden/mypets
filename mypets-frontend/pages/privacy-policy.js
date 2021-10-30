@@ -10,7 +10,7 @@ import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 
 export default function privacy({ categories }) {
-    const markdownText = `#
+    const markdownText = `
     # **MyPets Privacy Policy**
     
     **Last Updated:** 19/10/21
