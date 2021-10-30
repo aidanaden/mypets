@@ -136,11 +136,11 @@ export default function OrderProductCard({ order_products }) {
                     </Table>
                     <Stack
                         direction={{ base: 'column', md: 'row' }}
-                        // spacing={{ base: 2, md: 4 }}
+                        spacing={{ base: 2, md: 4 }}
                         textAlign='center'
                         mt={{ base: 8 }}
-                        // justifyContent='center'
-                        // alignContent='center'
+                        justifyContent='center'
+                        alignContent='center'
                         bg='green.100'
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
