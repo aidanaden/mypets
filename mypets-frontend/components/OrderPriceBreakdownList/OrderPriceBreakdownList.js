@@ -103,18 +103,19 @@ function OrderPriceBreakdownList({ groupedOrderProducts, productNames, order }) 
                     value={order.total_price.toFixed(2)}
                 />
                 {order.discount_value > 0 &&
-                    (<BreakdownRow
-                        text='Discount'
-                        value={-order.discount_value.toFixed(2)}
-                    />)}
+                (<BreakdownRow
+                    text='Discount'
+                    value={-order.discount_value.toFixed(2)}
+                />)}
                 <BreakdownRow
                     text='Delivery'
                     value={order.shipping_fee.toFixed(2)}
                 />
+                {order.tax_fee > 0 && 
                 <BreakdownRow
                     text='Service fee'
                     value={order.tax_fee.toFixed(2)}
-                />
+                />}
                 <BreakdownRow
                     text='Your contribution'
                     value={order.contribution_amount.toFixed(2)}
