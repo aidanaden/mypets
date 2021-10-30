@@ -1,9 +1,7 @@
 import React from 'react'
 import {
     Box,
-    HStack,
-    Wrap,
-    WrapItem
+    SimpleGrid
 } from "@chakra-ui/react"
 
 import SectionHeader from '../SectionHeader/SectionHeader'
@@ -15,19 +13,19 @@ function MerchantSectionList({ merchants, spacing=4 }) {
             <SectionHeader>
                 Available Brands
             </SectionHeader>
-            <Wrap
+            <SimpleGrid
                 mt={0}
                 w='100%'
                 justifyContent="left"
                 spacing={spacing}
                 pb={{ base: 4 }}
+                columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
+                spacing={{ base: 4 }}
             >
                 {merchants.map((merchant, index) => (
-                    <WrapItem>
-                        <MerchantCard key={index} merchant={merchant}/>
-                    </WrapItem>
+                    <MerchantCard key={index} merchant={merchant}/>
                 ))}
-            </Wrap>
+            </SimpleGrid>
         </Box>
     )
 }
