@@ -9,7 +9,7 @@ import { API_CATEGORIES_URL } from '../utils/urls'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 
-export default function about({ categories }) {
+export default function contact({ categories }) {
     const markdownText = `
 ## **Contact Us**
 
