@@ -145,7 +145,8 @@ export default function OrderProductCard({ order_products }) {
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
                         <OrderProductReorderBtn
-                            px={{ base: 4 }}
+                            // px={{ base: 4 }}
+                            w={{ base: 'auto' }}
                             onClick={() => handleAddToCart(order_products)}
                             order_products={order_products}
                         />
