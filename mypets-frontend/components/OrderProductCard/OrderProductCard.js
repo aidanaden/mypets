@@ -135,8 +135,8 @@ export default function OrderProductCard({ order_products }) {
                         </Tbody>
                     </Table>
                     <Stack
-                        direction={{ base: 'row', md: 'row' }}
-                        spacing={{ base: 2, md: 4 }}
+                        direction={{ base: 'column', md: 'row' }}
+                        spacing={{ base: 4, md: 4 }}
                         textAlign='center'
                         mt={{ base: 8 }}
                         justifyContent='center'
@@ -145,7 +145,6 @@ export default function OrderProductCard({ order_products }) {
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
                         <OrderProductReorderBtn
-                            // px={{ base: 4 }}
                             w={{ base: 'auto' }}
                             onClick={() => handleAddToCart(order_products)}
                             order_products={order_products}
