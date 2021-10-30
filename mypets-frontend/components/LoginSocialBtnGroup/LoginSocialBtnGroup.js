@@ -14,9 +14,7 @@ import { useRouter } from 'next/router'
 import { API_URL } from '../../utils/urls'
 
 function LoginSocialBtnGroup() {
-
     const toast = useToast()
-
     const [fbLoading, setfbLoading] = useState(false)
     const [googleLoading, setGoogleLoading] = useState(false)
 
