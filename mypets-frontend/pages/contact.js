@@ -9,6 +9,7 @@ import Footer from '../components/Footer/Footer'
 import { API_CATEGORIES_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 import ParagraphSection from '../components/ParagraphSection/ParagraphSection'
+import SectionSubHeader from '../components/SectionSubHeader/SectionSubHeader'
 
 export default function contact({ categories }) {
     const intro = `
