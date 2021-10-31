@@ -11,7 +11,6 @@ import SectionHeader from '../components/SectionHeader/SectionHeader'
 
 export default function about({ categories }) {
     const markdownText = `
-    ## **About Us**
 
     Last updated: 19/10/21
     
@@ -19,7 +18,7 @@ export default function about({ categories }) {
     
     Here at MyPets, we strive to help our customers choose the best product for their cats and dogs. We sell products ranging from foods, treats to even toys for your furry friends. We also believe in giving back to the community, as a small sum of earnings will be donated to pet shelters and the community.
     
-    We hope you&#39;ll be a part of our journey in changing the way you shop for pet products
+    We hope you'll be a part of our journey in changing the way you shop for pet products
     
     VISION:
     
@@ -29,9 +28,9 @@ export default function about({ categories }) {
     
     MISSION:
     
-    Our mission is to provide every Cat &amp; Dog Owners the convenience when shopping for their pet products.
+    Our mission is to provide every Cat & Dog Owners the convenience when shopping for their pet products.
     
-    Likewise, we also aim to be a pet shop that listens to our customers &amp; gives back to the community`
+    Likewise, we also aim to be a pet shop that listens to our customers & gives back to the community`
 
     return (
         <Box>
@@ -40,10 +39,13 @@ export default function about({ categories }) {
                 <SectionHeader>
                     Conctact
                 </SectionHeader>
-                <ReactMarkdown
+                {/* <ReactMarkdown
                     components={ChakraUIRenderer()}
                     children={markdownText}
-                />
+                /> */}
+                <Text>
+                    {markdownText}
+                </Text>
             </PageContainer>
             <Footer />
         </Box>

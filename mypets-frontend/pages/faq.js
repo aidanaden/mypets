@@ -9,7 +9,6 @@ import Footer from '../components/Footer/Footer'
 import { API_CATEGORIES_URL } from '../utils/urls'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
-import customTheme from '../styles/theme'
 
 export default function faq({ categories }) {
     const markdownText = `
