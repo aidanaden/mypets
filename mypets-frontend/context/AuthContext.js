@@ -220,8 +220,7 @@ export const AuthProvider = (props) => {
 
         try {
             callAPI('/auth/forgot-password', 'POST', {
-                email: email,
-                url: `${API_URL}/admin/plugins/users-permissions/auth/reset-password`
+                email: email
             }).then(response => {
                 console.log('user email: ', email)
                 console.log('response:', response)
