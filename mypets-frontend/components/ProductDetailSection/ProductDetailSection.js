@@ -171,7 +171,8 @@ function ProductDetailSection({ product }) {
                         options={product.variants}
                         onChange={variantSelectOnChange}
                     />
-                    <ProductSoldBadge w='120px' mt={2} />
+                    {!variant.available &&
+                    <ProductSoldBadge w='120px' mt={2} />}
                 </Stack>
                 <HStack
                     mt={{ base: 4, md: 8 }}
