@@ -1,6 +1,7 @@
 import {
     Box,
-    Text
+    Text,
+    Spacer
 } from '@chakra-ui/react'
 
 import PageContainer from '../components/PageContainer/PageContainer'
@@ -46,6 +47,7 @@ export default function contact({ categories }) {
                 <ParagraphSection
                     text={intro}
                 />
+                <Spacer />
             </PageContainer>
             <Footer />
         </Box>
