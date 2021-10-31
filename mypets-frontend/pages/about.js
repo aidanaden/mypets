@@ -54,9 +54,6 @@ export default function about({ categories }) {
                     text='Our mission is to provide every Cat & Dog Owners the convenience when shopping for their pet products.
                     Likewise, we also aim to be a pet shop that listens to our customers & gives back to the community'
                 />
-                <Text>
-                    {markdownText}
-                </Text>
             </PageContainer>
             <Footer />
         </Box>
