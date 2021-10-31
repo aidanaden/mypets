@@ -2,6 +2,7 @@ import {
     Box,
     Text
 } from '@chakra-ui/react'
+import ReactMarkdown from 'react-markdown/react-markdown.min'
 
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
