@@ -3,7 +3,7 @@ import {
     Text
 } from '@chakra-ui/react'
 
-import ParagraphHeader from '../components/ParagraphHeader/ParagraphHeader'
+import ParagraphHeader from '../ParagraphHeader/ParagraphHeader'
 
 export default function ParagraphSection({ heading, text }) {
     return (
