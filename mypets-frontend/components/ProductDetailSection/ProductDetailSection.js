@@ -27,8 +27,8 @@ function ProductSoldBadge({ ...props }) {
             rounded='full'
             textAlign='center'
             justifyContent='center'
-            p={2}
-            size='sm'
+            p={1}
+            fontSize='md'
             {...props}
         >
             Out of stock
@@ -161,6 +161,7 @@ function ProductDetailSection({ product }) {
                     direction='column'
                     mt={{ base: 6, md: 8 }}
                     spacing={{ base: 4, md: 4 }}
+                    bg='green.100'
                 >
                     <ProductDetailVariantSelect
                         variantWeight={variant.weight}
