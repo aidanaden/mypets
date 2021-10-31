@@ -8,6 +8,7 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
 import { API_CATEGORIES_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
+import ParagraphSection from '../components/ParagraphSection/ParagraphSection'
 
 export default function contact({ categories }) {
     const intro = `
