@@ -14,8 +14,10 @@ function ProductDetailVariantSelect({ variantWeight, options, onChange }) {
                         {option.weight}KG
                     </option>
             )}) :
-            <option>
-                Sold out       
+            <option
+                disabled
+            >
+                Sold out
             </option>}
         </Select>
     )
