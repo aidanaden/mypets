@@ -5,7 +5,6 @@ import { callAPI } from '../context/AuthContext'
 import AuthContext from '../context/AuthContext'
 
 function success() {
-
     const { clearCart } = useContext(AuthContext)
     const router = useRouter()
     const confirmOrder = async (session_id) => {

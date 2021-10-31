@@ -77,7 +77,7 @@ export default function ForgetPasswordModalBtn() {
                                         </Field>
                                     </Box>
                                     <MypetsBtn
-                                        btnText='Log in'
+                                        btnText='Submit'
                                         w='100%'
                                         mx={0}
                                         mt={4}
@@ -87,7 +87,6 @@ export default function ForgetPasswordModalBtn() {
                                 </Form>
                             )}
                         </Formik>
-                        <LoginSocialBtnGroup />
                     </ModalBody>
                 </ModalContent>
             </Modal>
