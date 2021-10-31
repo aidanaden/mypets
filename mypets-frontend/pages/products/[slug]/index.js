@@ -76,7 +76,11 @@ export async function getStaticProps({ params: { slug } }) {
         props: {
             product: product[0],
             otherProducts: categoryProducts.filter(otherProduct => otherProduct.id != product[0].id)
-        }
+        },
+        // Next.js will attempt to re-generate the page:
+        // - When a request comes in
+        // - At most once every 10 seconds
+        revalidate: 3, // In seconds
     }
 }
 
