@@ -33,9 +33,9 @@ export default function contact({ categories }) {
 `
 
     return (
-        <Box minH='100vh'>
+        <Box minH='100vh' bg='red.100'>
             <Sidebar categories={categories} />
-            <PageContainer>
+            <PageContainer bg='blue.100'>
                 <SectionHeader
                     mb={{ base: 2, md: 4 }}
                 >
