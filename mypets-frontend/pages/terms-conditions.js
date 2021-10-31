@@ -251,10 +251,6 @@ export default function terms({ categories }) {
                 <SectionHeader>
                     Terms & Conditions
                 </SectionHeader>
-                <ReactMarkdown
-                    components={ChakraUIRenderer()}
-                    children={markdownText}
-                />
             </PageContainer>
             <Footer />
         </Box>
