@@ -209,7 +209,8 @@ export default function faq({ categories }) {
     
     We will let you know via email and/or a prominent notice on Our Service, prior to the change becoming effective, and update the &quot;Last Updated&quot; date at the top of this FAQ section.
     
-    You are advised to review this FAQ section periodically for any changes. Changes to this FAQ section are effective when they are posted on this page.`
+    You are advised to review this FAQ section periodically for any changes. Changes to this FAQ section are effective when they are posted on this page.
+`
 
     return (
         <Box>

@@ -243,7 +243,8 @@ export default function terms({ categories }) {
     If you have any questions about this Terms &amp; Condition Policy, you can contact us:
     
     - By email: [contactmypetssg@gmail.com](mailto:contactmypetssg@gmail.com)
-    - By visiting this page on our website: [www.mypets.sg](https://cdpn.io/cp/internal/boomboom/www.mypets.sg)`
+    - By visiting this page on our website: [www.mypets.sg](https://cdpn.io/cp/internal/boomboom/www.mypets.sg)
+`
 
     return (
         <Box>

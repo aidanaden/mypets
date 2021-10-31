@@ -31,7 +31,8 @@ export default function about({ categories }) {
     
     Our mission is to provide every Cat & Dog Owners the convenience when shopping for their pet products.
     
-    Likewise, we also aim to be a pet shop that listens to our customers & gives back to the community`
+    Likewise, we also aim to be a pet shop that listens to our customers & gives back to the community
+`
 
     return (
         <Box>

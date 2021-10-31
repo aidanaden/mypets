@@ -29,7 +29,8 @@ export default function contact({ categories }) {
     
     You can reach out to us via:
     
-    • Phone/WhatsApp: 9126 4942 (anytime)`
+    • Phone/WhatsApp: 9126 4942 (anytime)
+`
 
     return (
         <Box>

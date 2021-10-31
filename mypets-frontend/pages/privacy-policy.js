@@ -13,8 +13,6 @@ import customTheme from '../styles/theme'
 
 export default function privacy({ categories }) {
     const markdownText = `
-# MyPets Privacy Policy
-
 Last Updated: 19/10/21
 
 This Privacy Policy describes our policies and procedures on how we collect, use and disclose the information provided when you use our site.
@@ -163,7 +161,8 @@ If you have any questions about this Privacy Policy, you can contact us:
 If you have any questions about this Privacy Policy, you can contact us:
 
 - By email: contactmypetssg@gmail.com
-- By visiting this page on our website: [www.mypets.sg](https://cdpn.io/cp/internal/boomboom/www.mypets.sg)`
+- By visiting this page on our website: [www.mypets.sg](https://cdpn.io/cp/internal/boomboom/www.mypets.sg)
+`
 
     return (
         <Box>
