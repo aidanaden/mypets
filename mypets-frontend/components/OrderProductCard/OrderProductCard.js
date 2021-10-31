@@ -141,7 +141,7 @@ export default function OrderProductCard({ order_products }) {
                         mt={{ base: 8 }}
                         justifyContent='center'
                         alignContent='center'
-                        bg='green.100'
+                        // bg='green.100'
                     >
                         <OrderProductReviewModalBtn order_product={order_products[0]}/>
                         <OrderProductReorderBtn

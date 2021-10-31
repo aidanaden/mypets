@@ -60,7 +60,7 @@ function OrderProductReviewModalBtn({ order_product }) {
 
     return (
         <>
-            <Box w={{ base: '100%', md: 'auto' }} bg='red.100'>
+            <Box w={{ base: '100%', md: 'auto' }}>
                 { reviewed ? 
                     <MypetsBtn btnText='Review submitted' variant='outline' isDisabled={true} w='100%'/>:   
                     <MypetsBtn onClick={onOpen} btnText='Write a review' variant='outline' w='100%'/>
