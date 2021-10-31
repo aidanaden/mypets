@@ -106,9 +106,9 @@ export default function SmallCentered() {
                     </Link>
                 </Stack>
             </PageContainer>
-            <PageContainer
+            <Stack
+                maxW={{ lg: "1200px" }}
                 bg='red.100'
-                as={Stack}
                 py={2}
                 direction={{ base: 'column', md: 'row' }}
                 spacing={4}
@@ -137,7 +137,7 @@ export default function SmallCentered() {
                         <FaInstagram />
                     </SocialButton>
                 </Stack>
-            </PageContainer>
+            </Stack>
         </Box>
     );
 }
