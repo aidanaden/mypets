@@ -6,6 +6,8 @@ import customTheme from '../styles/theme'
 import { AuthProvider } from '../context/AuthContext'
 import Fonts from '../styles/fonts'
 
+import Footer from '../components/Footer/Footer'
+
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
