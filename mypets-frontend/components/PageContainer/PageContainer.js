@@ -1,6 +1,6 @@
 import { Container } from '@chakra-ui/react'
 
-function PageContainer({ isFooter, children, ...props }) {
+export default function PageContainer({ isFooter, children, ...props }) {
     return (
         <Container
             maxW={{ lg: "1200px" }}
@@ -13,5 +13,3 @@ function PageContainer({ isFooter, children, ...props }) {
         </Container>
     )
 }
-
-export default PageContainer
