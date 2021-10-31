@@ -2,12 +2,14 @@ import {
     Box
 } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown/react-markdown.min'
+
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
 import { API_CATEGORIES_URL } from '../utils/urls'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
+import customTheme from '../styles/theme'
 
 export default function terms({ categories }) {
     const markdownText = `#
