@@ -6,7 +6,8 @@ import {
     HStack, 
     Flex,
     Text,
-    useToast
+    useToast,
+    Badge
 } from "@chakra-ui/react"
 import NextImage from 'next/image'
 
@@ -18,6 +19,19 @@ import ProductDetailBadge from '../ProductDetailBadge/ProductDetailBadge'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import { imageToUrl } from '../../utils/urls'
 import AuthContext from '../../context/AuthContext'
+
+function ProductSoldBadge({ ...props }) {
+    if (available) {
+        return (
+            <Badge
+                colorScheme='red'
+                {...props}
+            >
+                Out of stock
+            </Badge>
+        )
+    }
+}
 
 function ProductDetailSection({ product }) {
     const toast = useToast()
@@ -61,14 +75,18 @@ function ProductDetailSection({ product }) {
 
     const handleAddToCart = async () => {
         if (user) {
-            // create order product
-            const order_product = {
-                variant: variant,
-                quantity: quantity,
-                total_price: price
+            if (variant.available) {
+                // create order product
+                const order_product = {
+                    variant: variant,
+                    quantity: quantity,
+                    total_price: price
+                }
+                updateCart(order_product)
+                succesToast('Product added to cart')
+            } else {
+                errorToast('Product not available')
             }
-            updateCart(order_product)
-            succesToast('Product added to cart')
         } else {
             errorToast('Please login/register before purchasing :)')
         }
@@ -136,11 +154,17 @@ function ProductDetailSection({ product }) {
                         </ProductDetailBadge>
                     </HStack>
                 </Stack>
-                <ProductDetailVariantSelect
-                    variantWeight={variant.weight}
-                    options={product.variants}
-                    onChange={variantSelectOnChange}
-                />
+                <Stack
+                    mt={{ base: 6, md: 8 }}
+                    spacing={{ base: 4, md: 4 }}
+                >
+                    <ProductDetailVariantSelect
+                        variantWeight={variant.weight}
+                        options={product.variants}
+                        onChange={variantSelectOnChange}
+                    />
+                    <ProductSoldBadge />
+                </Stack>
                 <HStack
                     mt={{ base: 4, md: 8 }}
                     mb={{ base: 6, md: 0 }}
