@@ -27,6 +27,8 @@ function ProductSoldBadge({ ...props }) {
             rounded='full'
             textAlign='center'
             justifyContent='center'
+            p={2}
+            size='sm'
             {...props}
         >
             Out of stock
