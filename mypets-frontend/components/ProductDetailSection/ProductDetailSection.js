@@ -24,6 +24,7 @@ function ProductSoldBadge({ ...props }) {
     return (
         <Badge
             colorScheme='red'
+            rounded='full'
             {...props}
         >
             Out of stock
