@@ -416,7 +416,8 @@ export const AuthProvider = (props) => {
             registerUser, 
             logoutUser, 
             loginUserProvider,
-            updateUserPassword
+            updateUserPassword,
+            resetPasswordUser
         }}>
             {props.children}
         </AuthContext.Provider>
