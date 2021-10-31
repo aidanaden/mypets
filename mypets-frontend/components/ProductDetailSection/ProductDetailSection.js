@@ -24,7 +24,7 @@ function ProductSoldBadge({ ...props }) {
     return (
         <Badge
             rounded="full"
-            p={2}
+            p={1}
             fontSize="0.8em"
             colorScheme="red"
             w='auto'
