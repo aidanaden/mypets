@@ -37,7 +37,6 @@ export default function index({ merchant }) {
                     merchantReviews={merchant.merchant_reviews}
                 />
             </PageContainer>
-            <Footer />
         </Box>
     )
 }

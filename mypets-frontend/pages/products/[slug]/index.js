@@ -60,7 +60,6 @@ export default function Product({ product, otherProducts }) {
                     selectedAnimal=''
                 />
             </PageContainer>
-            <Footer />
         </Box>
     )
 }

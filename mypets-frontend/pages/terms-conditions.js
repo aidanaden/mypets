@@ -264,7 +264,6 @@ export default function terms({ categories }) {
                     Terms & Conditions
                 </SectionHeader>
             </PageContainer>
-            <Footer />
         </Box>
     )
 }

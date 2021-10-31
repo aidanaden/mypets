@@ -48,8 +48,6 @@ export default function contact({ categories }) {
                     text={intro}
                 />
             </PageContainer>
-            <Spacer />
-            <Footer />
         </Box>
     )
 }

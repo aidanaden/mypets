@@ -44,7 +44,6 @@ export default function reset({ categories }) {
                 </SectionHeader>
                 <UserPasswordForm handleSubmit={handleUserPasswordChange} />
             </PageContainer>
-            <Footer />
         </Box>
     )
 }

@@ -187,7 +187,6 @@ export default function index({ products, animals, merchants }) {
                     </Stack>
                 </Stack>
             </PageContainer>
-            <Footer />
         </Box>
     )
 }

@@ -41,7 +41,6 @@ export default function about({ categories }) {
                     Likewise, we also aim to be a pet shop that listens to our customers & gives back to the community'
                 />
             </PageContainer>
-            <Footer />
         </Box>
     )
 }

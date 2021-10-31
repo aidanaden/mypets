@@ -95,7 +95,6 @@ export default function Home({ products, categories, animals, merchants }) {
           />
         </Stack>
       </PageContainer>
-      <Footer />
     </Box>
   )
 }

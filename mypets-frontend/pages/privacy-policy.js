@@ -178,7 +178,6 @@ If you have any questions about this Privacy Policy, you can contact us:
                     {markdownText}
                 </Text>
             </PageContainer>
-            <Footer />
         </Box>
     )
 }

@@ -224,7 +224,6 @@ export default function faq({ categories }) {
                     In the event, where we expect a delay on our end, we will inform you in advance with due diligence about the change in delivery schedule and liaise with you about the new delivery day based on your convenience.'
                 />
             </PageContainer>
-            <Footer />
         </Box>
     )
 }

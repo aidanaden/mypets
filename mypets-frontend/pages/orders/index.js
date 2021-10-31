@@ -182,7 +182,6 @@ export default function Orders() {
                     No orders available 😢
                 </Center>}
             </PageContainer>
-            <Footer />
         </Box>
     )
 }
