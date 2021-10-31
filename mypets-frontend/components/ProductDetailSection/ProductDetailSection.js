@@ -170,7 +170,7 @@ function ProductDetailSection({ product }) {
                         options={product.variants}
                         onChange={variantSelectOnChange}
                     />
-                    {!variant.available &&
+                    {variant.available == false &&
                     <ProductSoldBadge w='120px' mt={2} />}
                 </Stack>
                 <HStack
