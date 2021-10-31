@@ -84,7 +84,7 @@ export default function SmallCentered() {
                         Contact us
                     </Link>
                     <Link
-                        href='#'
+                        href='/faq'
                     >
                         Frequently Asked Questions
                     </Link>
