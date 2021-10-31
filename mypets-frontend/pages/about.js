@@ -17,7 +17,7 @@ export default function about({ categories }) {
     We hope you'll be a part of our journey in changing the way you shop for pet products`
 
     return (
-        <Box>
+        <Box minH='100vh'>
             <Sidebar categories={categories} />
             <PageContainer>
                 <SectionHeader

@@ -196,7 +196,7 @@ export default function faq({ categories }) {
 `
 
     return (
-        <Box>
+        <Box minH='100vh'>
             <Sidebar categories={categories} />
             <PageContainer>
                 <SectionHeader>

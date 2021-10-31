@@ -158,7 +158,7 @@ If you have any questions about this Privacy Policy, you can contact us:
 `
 
     return (
-        <Box>
+        <Box minH='100vh'>
             <Sidebar categories={categories} />
             <PageContainer>
                 <SectionHeader>

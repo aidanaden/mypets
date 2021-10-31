@@ -257,7 +257,7 @@ export default function terms({ categories }) {
 `
 
     return (
-        <Box>
+        <Box minH='100vh'>
             <Sidebar categories={categories} />
             <PageContainer>
                 <SectionHeader>
