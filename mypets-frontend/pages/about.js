@@ -2,12 +2,11 @@ import {
     Box,
     Text
 } from '@chakra-ui/react'
-import ReactMarkdown from 'react-markdown/react-markdown.min'
+
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
 import { API_CATEGORIES_URL } from '../utils/urls'
-import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 
 export default function about({ categories }) {
@@ -41,10 +40,6 @@ export default function about({ categories }) {
                 <SectionHeader>
                     Conctact
                 </SectionHeader>
-                {/* <ReactMarkdown
-                    components={ChakraUIRenderer()}
-                    children={markdownText}
-                /> */}
                 <Text>
                     {markdownText}
                 </Text>

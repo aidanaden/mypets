@@ -2,7 +2,6 @@ import {
     Box,
     Text
 } from '@chakra-ui/react'
-import ReactMarkdown from 'react-markdown/react-markdown.min'
 
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
@@ -170,12 +169,12 @@ If you have any questions about this Privacy Policy, you can contact us:
                 <SectionHeader>
                     Conctact
                 </SectionHeader>
-                <ReactMarkdown
+                {/* <ReactMarkdown
                     children={markdownText}
-                />
-                {/* <Text>
+                /> */}
+                <Text>
                     {markdownText}
-                </Text> */}
+                </Text>
             </PageContainer>
             <Footer />
         </Box>
