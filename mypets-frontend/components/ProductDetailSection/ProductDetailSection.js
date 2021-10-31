@@ -156,14 +156,20 @@ function ProductDetailSection({ product }) {
                         </ProductDetailBadge>
                     </HStack>
                 </Stack>
-                <ProductDetailVariantSelect
-                    w='160px'
-                    mt={{ base: 6, md: 8 }}
-                    variantWeight={variant.weight}
-                    options={product.variants}
-                    onChange={variantSelectOnChange}
-                />
-                <ProductSoldBadge mt={2} />
+                <Stack
+                    w="160px"
+                    direction='column'
+                    
+                    spacing={{ base: 2, md: 2 }}
+                >
+                    <ProductDetailVariantSelect
+                        mt={{ base: 6, md: 8 }}
+                        variantWeight={variant.weight}
+                        options={product.variants}
+                        onChange={variantSelectOnChange}
+                    />
+                    <ProductSoldBadge w='100px' mt={2} />
+                </Stack>
                 <HStack
                     mt={{ base: 4, md: 8 }}
                     mb={{ base: 6, md: 0 }}
