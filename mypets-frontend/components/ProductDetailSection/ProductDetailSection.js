@@ -28,6 +28,7 @@ function ProductSoldBadge({ ...props }) {
             fontSize="0.8em"
             colorScheme="red"
             w='auto'
+            textAlign='center'
             alignContent='center'
             justifyContent='center'
             {...props}
