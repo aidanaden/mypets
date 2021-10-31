@@ -8,6 +8,8 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
 import { API_CATEGORIES_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
+import SectionSubHeader from '../components/SectionSubHeader/SectionSubHeader'
+import ParagraphSection from '../components/ParagraphSection/ParagraphSection'
 
 export default function faq({ categories }) {
     const markdownText = `
