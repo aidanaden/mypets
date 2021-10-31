@@ -10,12 +10,9 @@ import { API_CATEGORIES_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 
 export default function contact({ categories }) {
-    const markdownText = `
-    ## **Contact Us**
+    const intro = `
 
-    Last updated: 19/10/21
-    
-    **Our Business Operating Hours:** 9am - 12pm &amp; 2pm - 6pm (Mon-Fri)
+    Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)
     
     We would love to hear from you!
     
@@ -36,9 +33,17 @@ export default function contact({ categories }) {
         <Box>
             <Sidebar categories={categories} />
             <PageContainer>
-                <SectionHeader>
-                    Conctact
+                <SectionHeader
+                    mb={{ base: 2, md: 4 }}
+                >
+                    Contact Us
                 </SectionHeader>
+                <SectionSubHeader>
+                    Last updated: 19/10/21
+                </SectionSubHeader>
+                <ParagraphSection
+                    text={intro}
+                />
             </PageContainer>
             <Footer />
         </Box>
