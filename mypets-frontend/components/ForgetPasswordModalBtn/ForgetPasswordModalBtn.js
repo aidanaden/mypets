@@ -21,48 +21,47 @@ require('yup-password')(Yup)
 import AuthContext from '../../context/AuthContext'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import EmailInputGroup from '../EmailInputGroup/EmailInputGroup'
-import PasswordInputGroup from '../PasswordInputGroup/PasswordInputGroup'
 import LoginSocialBtnGroup from '../LoginSocialBtnGroup/LoginSocialBtnGroup'
 
-function LoginModalBtn() {
+export default function ForgetPasswordModalBtn() {
     const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { loginUser } = useContext(AuthContext)
+    const { resetPasswordUser } = useContext(AuthContext)
 
     const handleSubmit = async (values, actions) => {
         actions.setSubmitting(true)
-        const status = await loginUser(values, toast)
+        const status = await resetPasswordUser(values, toast)
+        if (status) {
+            onClose()
+        }
         actions.setSubmitting(false)
     }
 
-    const loginSchema = Yup.object().shape({
+    const forgetPasswordSchema = Yup.object().shape({
         email: Yup.string().email('Invalid email').required('Your email is required'),
-        password: Yup.string()
-                    .password()
-                    .required('Your password is required')
-                    .min(8, 'Password must contain at least 8 characters')
-                    .minNumbers(1, 'Password must contain at least 1 digit')
-                    .minSymbols(1, 'Password must contain at least 1 symbol')
     })
 
     return (
         <>
-            <MypetsBtn 
-                btnText='Log in' 
-                mx={0} 
-                variant='outline'
+            <Button
+                variant='link'
+                mb={4}
+                fontSize='sm'
+                textColor='gray.600'
                 onClick={onOpen}
-            />
+            >
+                Forget password?
+            </Button>
             <Modal isOpen={isOpen} onClose={onClose} isCentered>
                 <ModalOverlay/>
                 <ModalContent mx={{ base: 4 }}>
-                    <ModalHeader>Log in</ModalHeader>
+                    <ModalHeader>Reset password</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody mb={2}> 
                         <Formik
-                            initialValues={{ email: '', password: ''}}
+                            initialValues={{ email: '' }}
                             onSubmit={handleSubmit}
-                            validationSchema={loginSchema}
+                            validationSchema={forgetPasswordSchema}
                         >
                             {(props) => (
                                 <Form>
@@ -77,25 +76,6 @@ function LoginModalBtn() {
                                             )}
                                         </Field>
                                     </Box>
-                                    <Box mb={2}>
-                                        <Field name='password' >
-                                            {({ field, form }) => (
-                                                <FormControl isInvalid={form.errors.password && form.touched.password}>
-                                                    <FormLabel>Password</FormLabel>
-                                                    <PasswordInputGroup field={field} valid={!form.errors.password && form.touched.password}/>
-                                                    <FormErrorMessage>{form.errors.password}</FormErrorMessage>
-                                                </FormControl>
-                                            )}
-                                        </Field>
-                                    </Box>
-                                    <Button
-                                        variant='link'
-                                        mb={4}
-                                        fontSize='sm'
-                                        textColor='gray.600'
-                                    >
-                                        Forget password?
-                                    </Button>
                                     <MypetsBtn
                                         btnText='Log in'
                                         w='100%'
@@ -114,5 +94,3 @@ function LoginModalBtn() {
         </>
     )
 }
-
-export default LoginModalBtn

@@ -37,6 +37,11 @@ export default function Sidebar({ categories }) {
     const { user, logoutUser } = useContext(AuthContext)
     const router = useRouter()
 
+    const handleLogout = () => {
+        logoutUser()
+        sidebar.onClose()
+    }
+
     const handlePastOrders = () => {
         router.push('/orders')
     }
@@ -141,7 +146,7 @@ export default function Sidebar({ categories }) {
                     NavItem={NavItem}
                 />
                 <NavItem
-                    onClick={logoutUser}
+                    onClick={handleLogout}
                 >
                     Log out
                 </NavItem>

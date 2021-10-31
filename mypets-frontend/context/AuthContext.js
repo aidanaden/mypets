@@ -203,7 +203,7 @@ export const AuthProvider = (props) => {
         }
     }
 
-    const resetPasswordUser = async (email, toast) => {
+    const resetPasswordUser = async ({ email }, toast) => {
         const resetFailToast = () => toast({
             title: 'Invalid email, please try again.',
             status: 'error',
@@ -224,6 +224,7 @@ export const AuthProvider = (props) => {
                 url: `${API_URL}/admin/plugins/users-permissions/auth/reset-password`
             }).then(response => {
                 resetSuccessToast()
+                return true
             })
         } catch (error) {
             console.error(error);
