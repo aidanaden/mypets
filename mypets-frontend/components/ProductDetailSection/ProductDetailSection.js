@@ -23,12 +23,10 @@ import AuthContext from '../../context/AuthContext'
 function ProductSoldBadge({ ...props }) {
     return (
         <Badge
-            colorScheme='red'
-            rounded='full'
-            textAlign='center'
-            justifyContent='center'
-            p={1}
-            fontSize='md'
+            rounded="full"
+            px={1}
+            fontSize="0.8em"
+            colorScheme="red"
             {...props}
         >
             Out of stock
@@ -160,7 +158,7 @@ function ProductDetailSection({ product }) {
                 <Stack
                     direction='column'
                     mt={{ base: 6, md: 8 }}
-                    spacing={{ base: 4, md: 4 }}
+                    spacing={{ base: 2, md: 2 }}
                     bg='green.100'
                 >
                     <ProductDetailVariantSelect
