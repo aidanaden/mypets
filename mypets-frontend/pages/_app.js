@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }) {
           <meta name="facebook-domain-verification" content="7eb3uouy35ihgi6xio3u93vnhznvdt" />
         </Head>  
         <Component {...pageProps}/>
+        <Footer />
       </ChakraProvider>
     </AuthProvider>
   ) 
