@@ -1,6 +1,10 @@
+import { useContext } from 'react'
 import {
-    Box
+    Box,
+    useToast
 } from '@chakra-ui/react'
+
+import AuthContext from '../context/AuthContext'
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
