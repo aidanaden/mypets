@@ -25,6 +25,8 @@ function ProductSoldBadge({ ...props }) {
         <Badge
             colorScheme='red'
             rounded='full'
+            textAlign='center'
+            justifyContent='center'
             {...props}
         >
             Out of stock
@@ -154,7 +156,7 @@ function ProductDetailSection({ product }) {
                     </HStack>
                 </Stack>
                 <Stack
-                    direction='row'
+                    direction='column'
                     mt={{ base: 6, md: 8 }}
                     spacing={{ base: 4, md: 4 }}
                 >
