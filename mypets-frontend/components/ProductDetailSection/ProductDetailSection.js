@@ -156,6 +156,7 @@ function ProductDetailSection({ product }) {
                     </HStack>
                 </Stack>
                 <Stack
+                    w="160px"
                     direction='column'
                     mt={{ base: 6, md: 8 }}
                     spacing={{ base: 2, md: 2 }}

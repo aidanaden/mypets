@@ -5,7 +5,6 @@ function ProductDetailVariantSelect({ variantWeight, options, onChange }) {
     return (
         <Select
             value={variantWeight}
-            w="160px"
             focusBorderColor="mypets.100"
             onChange={onChange}
         >
