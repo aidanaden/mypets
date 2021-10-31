@@ -21,16 +21,14 @@ import { imageToUrl } from '../../utils/urls'
 import AuthContext from '../../context/AuthContext'
 
 function ProductSoldBadge({ ...props }) {
-    if (available) {
-        return (
-            <Badge
-                colorScheme='red'
-                {...props}
-            >
-                Out of stock
-            </Badge>
-        )
-    }
+    return (
+        <Badge
+            colorScheme='red'
+            {...props}
+        >
+            Out of stock
+        </Badge>
+    )
 }
 
 function ProductDetailSection({ product }) {
