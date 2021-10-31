@@ -109,7 +109,7 @@ export default function SmallCentered() {
             <PageContainer
                 bg='red.100'
                 as={Stack}
-                py={4}
+                py={2}
                 direction={{ base: 'column', md: 'row' }}
                 spacing={4}
                 justify={{ base: 'center', md: 'space-between' }}
