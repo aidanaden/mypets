@@ -109,6 +109,7 @@ export default function SmallCentered() {
             <Stack
                 maxW={{ lg: "1200px" }}
                 bg='red.100'
+                mx='auto'
                 py={2}
                 direction={{ base: 'column', md: 'row' }}
                 spacing={4}
