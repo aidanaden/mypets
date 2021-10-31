@@ -11,28 +11,10 @@ import SectionHeader from '../components/SectionHeader/SectionHeader'
 
 export default function faq({ categories }) {
     const markdownText = `
-    ## **Customer FAQs**
 
     Last updated: 19/10/21
     
-    **General Information:**
-    
-    - **Live Chat (Support): 9am - 12pm &amp; 2pm - 6pm (Mon-Fri)**
-    - Email: contactmypetssg@gmail.com
-    
-    **(reply within 2 working days)**
-    
-    - **Whatsapp/Phone-call: +65 9126 4942 (anytime)**
-    
     **Delivery**
-    
-    **Delivery days**
-    
-    As MyPets is a new startup with limited resources, we aim to provide the best service to our users within our capabilities.
-    
-    As such, we aim to deliver your order(s) within **3 days** from the date of purchase.
-    
-    In the event, where we expect a delay on our end, we&#39;ll inform you in advance with due diligence about the change in delivery schedule and liaise with you about the new delivery day based on your convenience.
     
     **Delivery timing**
     
@@ -216,8 +198,29 @@ export default function faq({ categories }) {
             <Sidebar categories={categories} />
             <PageContainer>
                 <SectionHeader>
-                    Conctact
+                    Customer FAQ
                 </SectionHeader>
+                <SectionSubHeader>
+                    Last updated: 19/10/21
+                </SectionSubHeader>
+                <ParagraphSection
+                    heading="General Information:"
+                    text='- Live Chat (Support): 9am - 12pm &amp; 2pm - 6pm (Mon-Fri)
+                    - Email: contactmypetssg@gmail.com
+                    
+                    (reply within 2 working days)
+                    
+                    - Whatsapp/Phone-call: +65 9126 4942 (anytime)'
+                    
+                />
+                <ParagraphSection
+                    heading="Delivery days"
+                    text='As MyPets is a new startup with limited resources, we aim to provide the best service to our users within our capabilities.
+    
+                    As such, we aim to deliver your order(s) within 3 days from the date of purchase.
+                    
+                    In the event, where we expect a delay on our end, we will inform you in advance with due diligence about the change in delivery schedule and liaise with you about the new delivery day based on your convenience.'
+                />
             </PageContainer>
             <Footer />
         </Box>

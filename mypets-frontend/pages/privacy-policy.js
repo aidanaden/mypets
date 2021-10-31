@@ -8,16 +8,11 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
 import { API_CATEGORIES_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
+import SectionSubHeader from '../components/SectionSubHeader/SectionSubHeader'
+import ParagraphSection from '../components/ParagraphSection/ParagraphSection'
 
 export default function privacy({ categories }) {
     const markdownText = `
-Last Updated: 19/10/21
-
-This Privacy Policy describes our policies and procedures on how we collect, use and disclose the information provided when you use our site.
-
-MyPets uses your personal data to provide and improve our service &amp; platform. By using our platform, you agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the [Privacy Policy Generator](https://www.freeprivacypolicy.com/free-privacy-policy-generator/).
-
-The term MyPets/MyPets Singapore refers to the same entity.
 
 ## Definitions
 
@@ -169,9 +164,16 @@ If you have any questions about this Privacy Policy, you can contact us:
                 <SectionHeader>
                     Conctact
                 </SectionHeader>
-                {/* <ReactMarkdown
-                    children={markdownText}
-                /> */}
+                <SectionSubHeader>
+                    Last Updated: 19/10/21
+                </SectionSubHeader>
+                <ParagraphSection
+                    text='This Privacy Policy describes our policies and procedures on how we collect, use and disclose the information provided when you use our site.
+
+                        MyPets uses your personal data to provide and improve our service & platform. By using our platform, you agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the [Privacy Policy Generator](https://www.freeprivacypolicy.com/free-privacy-policy-generator/).
+                        
+                        The term MyPets/MyPets Singapore refers to the same entity.'
+                />
                 <Text>
                     {markdownText}
                 </Text>
