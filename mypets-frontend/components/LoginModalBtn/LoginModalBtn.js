@@ -23,6 +23,7 @@ import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import EmailInputGroup from '../EmailInputGroup/EmailInputGroup'
 import PasswordInputGroup from '../PasswordInputGroup/PasswordInputGroup'
 import LoginSocialBtnGroup from '../LoginSocialBtnGroup/LoginSocialBtnGroup'
+import ForgetPasswordModalBtn from '../ForgetPasswordModalBtn/ForgetPasswordModalBtn'
 
 function LoginModalBtn() {
     const toast = useToast()
@@ -88,14 +89,7 @@ function LoginModalBtn() {
                                             )}
                                         </Field>
                                     </Box>
-                                    <Button
-                                        variant='link'
-                                        mb={4}
-                                        fontSize='sm'
-                                        textColor='gray.600'
-                                    >
-                                        Forget password?
-                                    </Button>
+                                    <ForgetPasswordModalBtn />
                                     <MypetsBtn
                                         btnText='Log in'
                                         w='100%'
