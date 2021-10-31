@@ -27,6 +27,7 @@ function ProductSoldBadge({ ...props }) {
             px={1}
             fontSize="0.8em"
             colorScheme="red"
+            w='auto'
             {...props}
         >
             Out of stock
@@ -160,7 +161,6 @@ function ProductDetailSection({ product }) {
                     direction='column'
                     mt={{ base: 6, md: 8 }}
                     spacing={{ base: 2, md: 2 }}
-                    bg='green.100'
                 >
                     <ProductDetailVariantSelect
                         variantWeight={variant.weight}
