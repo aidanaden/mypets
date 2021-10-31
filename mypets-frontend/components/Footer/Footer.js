@@ -65,7 +65,6 @@ export default function SmallCentered() {
             right='0'
         >
             <PageContainer
-                bg='blue.100'
                 as={Stack}
                 isFooter={true}
                 direction={{ base: 'column' }}
@@ -108,7 +107,6 @@ export default function SmallCentered() {
             </PageContainer>
             <Stack
                 maxW={{ lg: "1200px" }}
-                bg='red.100'
                 mx='auto'
                 py={2}
                 direction={{ base: 'column', md: 'row' }}

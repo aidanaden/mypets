@@ -6,7 +6,7 @@ export default function PageContainer({ isFooter, children, ...props }) {
             maxW={{ lg: "1200px" }}
             px={{ base: 4, xl: 0 }}
             pt={{ base: 4, lg: 12 }}
-            pb={isFooter == true ? { base: 4, lg: 12 } : { base: 24, lg: 48 }}
+            pb={isFooter == true ? { base: 4, lg: 12 } : { base: 36, lg: 64 }}
             {...props}
         >
             {children}
