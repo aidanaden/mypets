@@ -15,7 +15,7 @@ function ProductDetailVariantSelect({ variantWeight, options, onChange }) {
                     </option>
             )}) :
             <option
-                disabled
+                disabled={true}
             >
                 Sold out
             </option>}
