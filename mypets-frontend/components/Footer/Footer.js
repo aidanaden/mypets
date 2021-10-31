@@ -59,7 +59,7 @@ export default function SmallCentered() {
         <Box
             color='white'
             bgGradient="linear(to-t, mypets.900, mypets.100)"
-            mb={0}
+            mt='auto'
         >
             <PageContainer
                 as={Stack}
