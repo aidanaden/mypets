@@ -33,7 +33,7 @@ export default function contact({ categories }) {
 `
 
     return (
-        <Box>
+        <Box minH='100vh'>
             <Sidebar categories={categories} />
             <PageContainer>
                 <SectionHeader
@@ -47,8 +47,8 @@ export default function contact({ categories }) {
                 <ParagraphSection
                     text={intro}
                 />
-                <Spacer />
             </PageContainer>
+            <Spacer />
             <Footer />
         </Box>
     )
