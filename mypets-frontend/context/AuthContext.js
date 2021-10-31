@@ -223,6 +223,8 @@ export const AuthProvider = (props) => {
                 email: email,
                 url: `${API_URL}/admin/plugins/users-permissions/auth/reset-password`
             }).then(response => {
+                console.log('user email: ', email)
+                console.log('response:', response)
                 resetSuccessToast()
                 return true
             })
