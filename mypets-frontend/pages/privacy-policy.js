@@ -2,15 +2,12 @@ import {
     Box,
     Text
 } from '@chakra-ui/react'
-import ReactMarkdown from 'react-markdown/react-markdown.min'
 
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
 import { API_CATEGORIES_URL } from '../utils/urls'
-import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
-import customTheme from '../styles/theme'
 
 export default function privacy({ categories }) {
     const markdownText = `
@@ -172,13 +169,12 @@ If you have any questions about this Privacy Policy, you can contact us:
                 <SectionHeader>
                     Conctact
                 </SectionHeader>
-                {/* <ReactMarkdown
-                    components={ChakraUIRenderer(customTheme)}
+                <ReactMarkdown
                     children={markdownText}
-                /> */}
-                <Text>
+                />
+                {/* <Text>
                     {markdownText}
-                </Text>
+                </Text> */}
             </PageContainer>
             <Footer />
         </Box>
