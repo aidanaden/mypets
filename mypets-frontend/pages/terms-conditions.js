@@ -8,10 +8,31 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
 import { API_CATEGORIES_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
+import ParagraphHeader from '../components/ParagraphHeader/ParagraphHeader'
+
+function paragraphSection({ text }) {
+    return (
+        <Box>
+            <ParagraphHeader>
+                Definitions
+            </ParagraphHeader>
+            <Text>
+                For the purposes of this Terms & Condition Policy:
+                
+                - **You** refer to the account owner or representatives on behalf of the account owner that is accessing our service
+                - **Website** refers to MyPets Singapore, accessible from [www.mypets.sg](https://cdpn.io/cp/internal/boomboom/mypets.sg)
+                - **Personal Data** is any information provided by you upon signing up with MyPets.
+                - **Service/Platform** refers to our website
+                - **Account** means a unique account created in order to use our site.
+                - **Company** (referred to as either "the Company", "We", "Us" or "Our in this Agreement) refers to MyPets Singapore.
+            </Text>
+        </Box>
+        
+    )
+}
 
 export default function terms({ categories }) {
-    const markdownText = `#
-    # **MyPets Terms &amp; Conditions**
+    const markdownText = `
     
     **Last Updated:** 19/10/21
     
@@ -29,15 +50,6 @@ export default function terms({ categories }) {
     MyPets Singapore is an online pet shop that aims to improve the lives of pet owners &amp; the pet community
     
     The Terms MyPets Singapore/MyPets can be used interchangeably.
-    
-    ##
-    
-    
-    ##
-    
-    
-    ##
-    
     
     ## **Definitions**
     

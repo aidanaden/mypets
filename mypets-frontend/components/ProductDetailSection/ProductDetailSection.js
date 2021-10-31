@@ -162,7 +162,6 @@ function ProductDetailSection({ product }) {
                 <Stack
                     w="160px"
                     direction='column'
-                    
                     spacing={{ base: 2, md: 2 }}
                 >
                     <ProductDetailVariantSelect
