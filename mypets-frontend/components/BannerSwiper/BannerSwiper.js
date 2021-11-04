@@ -18,7 +18,7 @@ export default function BannerSwiper({
             loop={autoplay}
             centeredSlides={true}
             autoplay={ bannerImgNames.length > 1 && autoplay ? {
-                delay: 5000,
+                delay: 3000,
                 disableOnInteraction: false,
             } : false}
         >   
@@ -26,14 +26,14 @@ export default function BannerSwiper({
             bannerImgNames.map((bannerImgName,i) => (
                 <SwiperSlide key={i}>
                     <Image
-                        rounded={rounded}
+                        // rounded={rounded}
                         src={bannerImgName}
                         boxSize="full"
                         backgroundSize="cover"
                         display={{ base: 'none', md: 'block' }}
                     />
                     <Image
-                        rounded={rounded}
+                        // rounded={rounded}
                         src={mobileBannerImgNames[i]}
                         boxSize="full"
                         backgroundSize="cover"
