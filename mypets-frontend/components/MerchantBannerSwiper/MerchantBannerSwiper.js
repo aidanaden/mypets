@@ -6,9 +6,6 @@ export default function MerchantBannerSwiper({ merchantName, rounded = { base: 2
   const desktopBannerImgNames = [`desktop-${merchantFileName}.jpeg`]
   const mobileBannerImgNames = [`mobile-${merchantFileName}.jpeg`]
 
-  console.log('desktop images: ', desktopBannerImgNames)
-  console.log('mobile images: ', mobileBannerImgNames)
-
   return (
     <Box
       mb={{ base: 8, md: 12 }}
