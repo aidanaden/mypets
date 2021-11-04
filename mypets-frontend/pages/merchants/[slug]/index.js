@@ -25,7 +25,7 @@ export default function index({ merchant }) {
             <PageContainer>
                 <BackBtn />
                 {/* <Carousel bannerImgNames={[`${merchant.name}.jpg`]} /> */}
-                <MerchantBannerSwiper />
+                <MerchantBannerSwiper merchantName={merchant.name}/>
                 <MerchantTitle 
                     merchantName={merchant.name} 
                     merchantRating={merchant.rating} 
