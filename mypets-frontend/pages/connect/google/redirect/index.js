@@ -15,8 +15,10 @@ function index() {
     const toast = useToast()
 
     useEffect(() => {
-        loginUserProvider(router.query.access_token, 'google', toast)
-        router.push('/')
+        if (router.query.access_token) {
+            loginUserProvider(router.query.access_token, 'google', toast)
+            router.push('/')
+        }
     }, [router.query.access_token])
 
     return (
