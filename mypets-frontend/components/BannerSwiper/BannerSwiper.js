@@ -26,15 +26,15 @@ export default function BannerSwiper({
             bannerImgNames.map((bannerImgName,i) => (
                 <SwiperSlide key={i}>
                     <Image
-                        // rounded={rounded}
-                        src={bannerImgName}
+                        rounded={rounded}
+                        src={`https://www.mypets.sg/${bannerImgName}`}
                         boxSize="full"
                         backgroundSize="cover"
                         display={{ base: 'none', md: 'block' }}
                     />
                     <Image
-                        // rounded={rounded}
-                        src={mobileBannerImgNames[i]}
+                        rounded={rounded}
+                        src={`https://www.mypets.sg/${mobileBannerImgNames[i]}`}
                         boxSize="full"
                         backgroundSize="cover"
                         display={{ base: 'block', md: 'none' }}
