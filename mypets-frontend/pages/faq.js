@@ -207,13 +207,13 @@ export default function faq({ categories }) {
                 </SectionSubHeader>
                 <ParagraphSection
                     heading="General Information:"
-                    text='- Live Chat (Support): 9am - 12pm &amp; 2pm - 6pm (Mon-Fri)
-                    - Email: contactmypetssg@gmail.com
-                    
-                    (reply within 2 working days)
-                    
-                    - Whatsapp/Phone-call: +65 9126 4942 (anytime)'
-                    
+                    text='- Live Chat (Support): 9am - 12pm &amp; 2pm - 6pm (Mon-Fri)'
+                />
+                <ParagraphSection
+                    text='- Email: contactmypetssg@gmail.com (reply within 2 working days)'
+                />
+                <ParagraphSection
+                    text='- Whatsapp/Phone-call: +65 9126 4942 (anytime)'
                 />
                 <ParagraphSection
                     heading="Delivery days"
