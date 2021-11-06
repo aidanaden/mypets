@@ -126,6 +126,7 @@ function ProductDetailSection({ product }) {
                 px={2}
                 pt={{ base: 8, md: 12 }}
                 pb={{ base: 2, md: 16 }}
+                bg='red.100'
             >
                 <Heading
                     as="h2"
