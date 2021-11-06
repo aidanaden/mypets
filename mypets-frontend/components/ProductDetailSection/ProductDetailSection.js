@@ -176,7 +176,7 @@ function ProductDetailSection({ product }) {
                 </Stack>
                 <HStack
                     mt={{ base: 4, md: 8 }}
-                    mb={{ base: 6, md: 0 }}
+                    mb={{ base: 6, md: 4 }}
                     justifyContent="space-between"
                 >
                     <Text fontSize={{ base: '3xl', md: "4xl" }} mr={4}>
