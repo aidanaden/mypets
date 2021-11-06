@@ -17,17 +17,13 @@ export default function contact({ categories }) {
 
     Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)
     
-    We would love to hear from you!
-    
     If you have any inquiries/feedback or suggestions, please contact us.
     
     • Email: contactmypetssg@gmail.com (Reply within 2 working days)
     
     • Live Chat Support: 9am - 12pm, 2pm - 6pm (Mon - Fri)
     
-    Alternatively, for account/order-related which requires immediate assistance
-    
-    You can reach out to us via:
+    For account/order-related which requires immediate assistance
     
     • Phone/WhatsApp: 9126 4942 (anytime)
 `
@@ -45,7 +41,19 @@ export default function contact({ categories }) {
                     Last updated: 19/10/21
                 </SectionSubHeader>
                 <ParagraphSection
-                    text={intro}
+                    text='Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)'
+                />
+                <ParagraphSection
+                    heading='If you have any inquiries/feedback or suggestions, please contact us.'
+                    text='• Email: contactmypetssg@gmail.com (Reply within 2 working days)'
+                    mb={{ base: 3 }}
+                />
+                <ParagraphSection
+                    text='• Live Chat Support: 9am - 12pm, 2pm - 6pm (Mon - Fri)'
+                />
+                <ParagraphSection
+                    heading='For account/order-related which requires immediate assistance'
+                    text='• Phone/WhatsApp: 9126 4942 (anytime)'
                 />
             </PageContainer>
         </Box>
