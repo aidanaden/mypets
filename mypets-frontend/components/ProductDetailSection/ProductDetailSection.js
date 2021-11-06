@@ -124,8 +124,8 @@ function ProductDetailSection({ product }) {
                 w={{ base: '100%', md: 'auto', lg: '400px' }}
                 h={{ base: "100%", md: 'auto' }}
                 px={2}
-                pt={{ base: 8, md: 12 }}
-                pb={{ base: 2, md: 12 }}
+                pt={{ base: 8, md: 8 }}
+                pb={{ base: 2, md: 8 }}
             >
                 <Heading
                     as="h2"
@@ -175,7 +175,7 @@ function ProductDetailSection({ product }) {
                 </Stack>
                 <HStack
                     mt={{ base: 4, md: 8 }}
-                    mb={{ base: 6, md: 4 }}
+                    mb={{ base: 6 }}
                     justifyContent="space-between"
                 >
                     <Text fontSize={{ base: '3xl', md: "4xl" }} mr={4}>
