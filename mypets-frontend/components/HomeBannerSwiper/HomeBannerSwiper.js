@@ -2,8 +2,8 @@ import { Box } from '@chakra-ui/react'
 import BannerSwiper from '../BannerSwiper/BannerSwiper'
 
 export default function HomeBannerSwiper({ rounded={ base: 20, md: 40 }, ...props }) {
-    const homeBannerImgNames = ["desktop-delivery.jpeg", "desktop-discount.jpeg", "desktop-locations.jpeg"]
-    const mobileBannerImgNames=["mobile-delivery.jpeg", "mobile-discount.jpeg", "mobile-locations.jpeg"]
+    const homeBannerImgNames = ["desktop-delivery.jpeg", "desktop-discount.jpeg", "desktop-locations.jpeg", "desktop-live.jpeg"]
+    const mobileBannerImgNames=["mobile-delivery.jpeg", "mobile-discount.jpeg", "mobile-locations.jpeg", "mobile-live.jpeg"]
 
     return (
         <Box
