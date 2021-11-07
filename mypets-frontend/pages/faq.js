@@ -61,7 +61,7 @@ export default function faq({ categories }) {
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    heading='If there is a change in delivery address/location , we will require a 1-day notice to accommodate your request.'
+                    text='If there is a change in delivery address/location , we will require a 1-day notice to accommodate your request.'
                 />
                 <ParagraphSection
                     heading='I stay outside of the listed area, can I still opt for delivery?'
@@ -102,7 +102,6 @@ export default function faq({ categories }) {
                 />
                 <ParagraphSection
                     text='- Pasir Ris'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='How do I update my personal particulars?'
@@ -143,14 +142,13 @@ export default function faq({ categories }) {
                 />
                 <ParagraphSection
                     text='- Google Pay'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Does your site have a minimum order for check-out?'
                     text='Minimum order of $15 is required to check out from our website.'
                 />
                 <ParagraphSection
-                    heading='**Can I cancel my orders?**'
+                    heading='Can I cancel my orders?'
                     text='Yes, you may cancel your order only if it is not out for delivery, we will then proceed with your refunds which will be credited to your bank within 1-2 weeks. To request a cancellation, please contact us via the following channels：'
                     mb={{ base: 3 }}
                 />
@@ -166,7 +164,7 @@ export default function faq({ categories }) {
                     text='- Whatsapp/Phone-call: +65 9126 4942 (anytime)'
                 />
                 <ParagraphSection
-                    heading='**How do I request a refund?**'
+                    heading='How do I request a refund?'
                     text='Before requesting a refund, please refer to our Refunds & Exchange Policy segment.'
                     mb={{ base: 3 }}
                 />
