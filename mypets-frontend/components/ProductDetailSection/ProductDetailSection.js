@@ -129,7 +129,7 @@ function ProductDetailSection({ product }) {
             >
                 <Heading
                     as="h2"
-                    fontSize="4xl"
+                    fontSize={{ base: '2xl', lg: '4xl' }}
                 >
                     {product.name}
                 </Heading>

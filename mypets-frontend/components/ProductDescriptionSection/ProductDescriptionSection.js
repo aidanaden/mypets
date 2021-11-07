@@ -60,7 +60,7 @@ const ProductNutrients = ({ nutrients }) => {
     return (
         <Box>
             <SectionHeading>
-                Nutrional Analysis
+                Nutritional Analysis
             </SectionHeading>
             <Center
                 rounded='lg'
