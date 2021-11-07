@@ -7,7 +7,7 @@ import ParagraphHeader from '../ParagraphHeader/ParagraphHeader'
 
 export default function ParagraphSection({ heading, text, ...props }) {
     return (
-        <Box mb={{ base: 6 }} {...props}>
+        <Box mb={{ base: 12 }} {...props}>
             <ParagraphHeader>
                 {heading}
             </ParagraphHeader>
