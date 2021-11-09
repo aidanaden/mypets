@@ -127,6 +127,7 @@ function CartModalProductCard({ order_products, onClose }) {
                                             src={imageToUrl(order_products[0].variant.product.image)}
                                             width='100'
                                             height='100'
+                                            objectFit='cover'
                                         />
                                         <Box ml={4}>
                                             <Text 
