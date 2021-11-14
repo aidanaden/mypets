@@ -117,19 +117,6 @@ export default function privacy({ categories }) {
                 />
                 <ParagraphSection
                     text='- Cookies & Usage Data'
-                    mb={{ base: 3 }}
-                />
-                <ParagraphSection
-                    text='- Address, State, Province, ZIP/Postal code, City'
-                    mb={{ base: 3 }}
-                />
-                <ParagraphSection
-                    text='- Address, State, Province, ZIP/Postal code, City'
-                    mb={{ base: 3 }}
-                />
-                <ParagraphSection
-                    text='- Address, State, Province, ZIP/Postal code, City'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Usage Data'
@@ -138,8 +125,6 @@ export default function privacy({ categories }) {
                 />
                 <ParagraphSection
                     heading='Information From Third-Party Social Media Services'
-                />
-                <ParagraphSection
                     text='MyPets allows you to create an account and log in to use our service through the following third-party social media services:'
                     mb={{ base: 3 }}
                 />
@@ -157,8 +142,6 @@ export default function privacy({ categories }) {
                 />
                 <ParagraphSection
                     heading='Collection of data (Cookies)'
-                />
-                <ParagraphSection
                     text='We use Cookies to track the activity on our service and store certain information.
                     Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Tracking technologies also used are beacons, tags, and scripts to collect and track information and to improve and analyze our Service.'
                     mb={{ base: 3 }}
@@ -192,8 +175,6 @@ export default function privacy({ categories }) {
                 />
                 <ParagraphSection
                     heading='Personal Data Use'
-                />
-                <ParagraphSection
                     text='We may use your Personal Data for the following purposes:'
                     mb={{ base: 3 }}
                 />
@@ -242,6 +223,7 @@ export default function privacy({ categories }) {
                 />
                 <ParagraphSection
                     heading='Retention Of Your Personal Data'
+                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     text='The Company will retain your personal data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your personal data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.
@@ -249,6 +231,7 @@ export default function privacy({ categories }) {
                 />
                 <ParagraphSection
                     heading='Data Transfer'
+                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     text='Your information, including Personal Data, may be transferred to — and maintained on — computers located outside Your state, province, country or other governmental jurisdiction where the data protection laws may differ from those from Your jurisdiction.
