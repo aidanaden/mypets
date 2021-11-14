@@ -66,7 +66,7 @@ export default function faq({ categories }) {
                 <ParagraphSection
                     heading='I stay outside of the listed area, can I still opt for delivery?'
                     text='In the event where the delivery address of your order does not match any of our delivery locations listed above, we will contact you (Email/Whatsapp/Phone Call) & subsequently arrange for cancellation of the order or delivery to an alternative delivery address. 
-                    Alternatively, you can also order with us via Shopee (&quot;insert link&quot;) (delivery fee will vary)'
+                    Alternatively, you can also order with us via Shopee (https://shopee.sg/shop/551662439/) (delivery fee will vary)'
                 />
                 <ParagraphSection
                     heading='Do you offer free delivery?'
