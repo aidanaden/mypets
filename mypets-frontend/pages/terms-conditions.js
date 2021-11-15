@@ -70,7 +70,6 @@ export default function terms({ categories }) {
                 />
                 <ParagraphSection
                     text='- Company (referred to as either the Company, We, Us or Our in this Agreement) refers to MyPets Singapore.'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Eligibility'
@@ -123,6 +122,7 @@ export default function terms({ categories }) {
                 <ParagraphSection
                     heading='Refund Policy.'
                     text='Criteria for refund are as follows:'
+                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     text='- Items received in damaged conditions'
@@ -138,11 +138,11 @@ export default function terms({ categories }) {
                 />
                 <ParagraphSection
                     text='- Wrong products'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Exchange Policy'
                     text='Criteria for exchange are as follows:'
+                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     text='- Items received in damaged conditions'
@@ -154,7 +154,6 @@ export default function terms({ categories }) {
                 />
                 <ParagraphSection
                     text='- Wrong products'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='To request an exchange or a refund, please reach out to us:'
@@ -211,8 +210,6 @@ export default function terms({ categories }) {
                 />
                 <ParagraphSection
                     heading='Promo Code (Vouchers/Discounts)'
-                />
-                <ParagraphSection
                     text='Beta-launch (Promo code)'
                     mb={{ base: 3 }}
                 />
@@ -229,18 +226,14 @@ export default function terms({ categories }) {
                     text='Our official launch date will be disclosed upon nearing our launch.'
                 />
                 <ParagraphSection
-                    heading='Our official launch date will be disclosed upon nearing our launch.'
-                />
-                <ParagraphSection
                     heading='Delivery'
-                />
-                <ParagraphSection
                     text='Delivery Locations'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     text='As MyPets is a new startup with limited resources, we aim to provide the best service for our customers.
                     As such, we aim to deliver your order(s) within 3 days, between 12pm to 10pm, from the day of purchase.'
+                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     text='Please note that we are currently delivering to the 7 following locations:'
@@ -272,41 +265,34 @@ export default function terms({ categories }) {
                 />
                 <ParagraphSection
                     text='- Pasir Ris'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     text='In the event where the delivery address of your order doesnt match any of our delivery locations listed above, we will contact you & subsequently arrange for cancellation of the order or delivery to an alternative delivery address.
                     Should there be a delay on our end, we will notify you in advance if we are expected to not achieve our target delivery date for your orders.
                     We strive to deliver your orders on time & we will uphold our promises to the very best we can. Rectification will be carried out on our end to uphold our promise to you as our customer.
                     However, we shall be, in no position, liable for the loss of your products upon delivering to your doorsteps.'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Contribution'
                     text='5% of your total purchase order (in a single receipt) will automatically be allocated for the pet community.'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Charges'
                     text='To uphold the quality standard we provide to our customers & give back to the community, we will impose:'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Delivery Fees'
                     text='Mypets charges a standard delivery rate of $3 for orders less than $30. Orders above $30 are automatically entitled to a free delivery.'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Packaging'
                     text='As MyPets is a new startup with limited resources, we will be using HDPE standard bags, which is a sturdy material, for our delivery orders.
                     We aim to improve our delivery bags quality over time.
                     Likewise, MyPets do not provide repackaging services at this current stage.'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Personal Data Protection'
                     text='Information regarding Personal Data can be found on our Privacy Policy.'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Regulations'
@@ -331,7 +317,6 @@ export default function terms({ categories }) {
                 />
                 <ParagraphSection
                     text='- Protect against legal liability'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Customer Feedback/Support'
@@ -344,7 +329,6 @@ export default function terms({ categories }) {
                 />
                 <ParagraphSection
                     text='• Phone/WhatsApp: 9126 4942 (anytime)'
-                    mb={{ base: 3 }}
                 />
                 <ParagraphSection
                     heading='Changes To This Terms & Condition Policy'
