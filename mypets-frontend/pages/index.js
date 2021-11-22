@@ -13,9 +13,7 @@ import {
 import PageContainer from '../components/PageContainer/PageContainer'
 import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
 import Sidebar from '../components/Sidebar/Sidebar'
-import Carousel from '../components/Carousel/Carousel'
 import HomeBannerSwiper from '../components/HomeBannerSwiper/HomeBannerSwiper'
-import Footer from '../components/Footer/Footer'
 import SortMenu from '../components/SortMenu/SortMenu'
 import MerchantSectionList from '../components/MerchantSectionList/MerchantSectionList'
 import ProductSectionList from '../components/ProductSectionList/ProductSectionList'
@@ -23,6 +21,7 @@ import CategoryList from '../components/CategoryList/CategoryList'
 import { API_PRODUCTS_URL, API_MERCHANTS_URL, getAnimals, getCategories } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 import AnimalList from '../components/AnimalList/AnimalList'
+import Facebook from '../utils/fb'
 
 export default function Home({ products, categories, animals, merchants }) {
   const [pageProducts, setPageProducts] = useState(products)
@@ -47,55 +46,59 @@ export default function Home({ products, categories, animals, merchants }) {
   })
 
   return (
-    <Box>
-      <AnnouncementBanner />
-      <Sidebar categories={pageCategories} />
-      <PageContainer>
-        <CategoryList
-          display={{ base: 'none', md: 'flex' }}
-          categories={pageCategories}
-          setSelectedCategory={setCategorySelected}
-        />
-        {/* <Carousel /> */}
-        <HomeBannerSwiper />
-        <Stack
-          direction="column"
-          spacing={{ base: 8, lg: 12 }}
-        >
-          <MerchantSectionList
-            merchants={merchants}
+    <>
+
+      <Box>
+        <AnnouncementBanner />
+        <Sidebar categories={pageCategories} />
+        <PageContainer>
+          <CategoryList
+            display={{ base: 'none', md: 'flex' }}
+            categories={pageCategories}
+            setSelectedCategory={setCategorySelected}
           />
+          {/* <Carousel /> */}
+          <HomeBannerSwiper />
           <Stack
-            direction={{ base: 'column', md: 'row' }}
-            align='stretch'
-            justify='space-between'
+            direction="column"
+            spacing={{ base: 8, lg: 12 }}
           >
-            <Box
-              mb={{ base: 2, md: 0 }}
+            <MerchantSectionList
+              merchants={merchants}
+            />
+            <Stack
+              direction={{ base: 'column', md: 'row' }}
+              align='stretch'
+              justify='space-between'
             >
-              <SectionHeader>
-                Animal
-              </SectionHeader>
-              <AnimalList
-                animals={pageAnimals}
-                setSelectedAnimal={setSelectedAnimal}
+              <Box
+                mb={{ base: 2, md: 0 }}
+              >
+                <SectionHeader>
+                  Animal
+                </SectionHeader>
+                <AnimalList
+                  animals={pageAnimals}
+                  setSelectedAnimal={setSelectedAnimal}
+                />
+              </Box>
+              <Spacer />
+              <SortMenu
+                setSortMethod={setSortMethod}
               />
-            </Box>
-            <Spacer />
-            <SortMenu
+            </Stack>
+            <ProductSectionList
+              products={pageProducts}
+              categories={pageCategories}
+              sortMethod={sortMethod}
               setSortMethod={setSortMethod}
+              selectedAnimal={selectedAnimal}
             />
           </Stack>
-          <ProductSectionList
-            products={pageProducts}
-            categories={pageCategories}
-            sortMethod={sortMethod}
-            setSortMethod={setSortMethod}
-            selectedAnimal={selectedAnimal}
-          />
-        </Stack>
-      </PageContainer>
-    </Box>
+        </PageContainer>
+      </Box>
+      <Facebook />
+    </>
   )
 }
 
