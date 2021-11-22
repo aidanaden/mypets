@@ -9,6 +9,7 @@ import {
   Stack,
   useToast 
 } from "@chakra-ui/react"
+import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 import PageContainer from '../components/PageContainer/PageContainer'
 import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
@@ -47,7 +48,6 @@ export default function Home({ products, categories, animals, merchants }) {
 
   return (
     <>
-
       <Box>
         <AnnouncementBanner />
         <Sidebar categories={pageCategories} />
@@ -97,7 +97,11 @@ export default function Home({ products, categories, animals, merchants }) {
           </Stack>
         </PageContainer>
       </Box>
-      <Facebook />
+      <MessengerCustomerChat
+        pageId='105638824710827'
+        appId='615727602931296'
+        htmlRef={window.location.pathname}
+      />
     </>
   )
 }

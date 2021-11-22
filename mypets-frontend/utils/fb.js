@@ -1,12 +1,10 @@
-import Script from 'next/script';
-
 function Facebook() {
     return (
         <div>
             <div id="fb-root"></div>
 
             <div id="fb-customer-chat" className="fb-customerchat"></div>
-            <Script strategy="lazyOnload">
+            <script>
                 {`
                     var chatbox = document.getElementById('fb-customer-chat');
                     chatbox.setAttribute("page_id", "YOUR_PAGE_ID");
@@ -27,7 +25,7 @@ function Facebook() {
                     fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));
                 `}
-            </Script>
+            </script>
         </div>
     );
 }
