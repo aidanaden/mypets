@@ -100,7 +100,6 @@ export default function Home({ products, categories, animals, merchants }) {
       <MessengerCustomerChat
         pageId='105638824710827'
         appId='615727602931296'
-        htmlRef={window.location.pathname}
       />
     </>
   )
