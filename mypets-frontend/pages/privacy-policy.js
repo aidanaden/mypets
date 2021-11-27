@@ -296,7 +296,7 @@ export default function privacy({ categories }) {
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    text='- By email: contactmypetssg@gmail.com'
+                    text='- By email: support@mypets.sg'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
@@ -308,7 +308,7 @@ export default function privacy({ categories }) {
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    text='- By email: contactmypetssg@gmail.com'
+                    text='- By email: support@mypets.sg'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection

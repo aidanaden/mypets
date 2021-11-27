@@ -29,7 +29,7 @@ export default function faq({ categories }) {
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    text='- Email: contactmypetssg@gmail.com (reply within 2 working days)'
+                    text='- Email: support@mypets.sg (reply within 2 working days)'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
@@ -121,7 +121,7 @@ export default function faq({ categories }) {
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    text='- Email: contactmypetssg@gmail.com (reply within 2 working days)'
+                    text='- Email: support@mypets.sg (reply within 2 working days)'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
@@ -157,7 +157,7 @@ export default function faq({ categories }) {
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    text='- Email: contactmypetssg@gmail.com (reply within 2 working days)'
+                    text='- Email: support@mypets.sg (reply within 2 working days)'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
@@ -255,7 +255,7 @@ export default function faq({ categories }) {
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    text='- Email: contactmypetssg@gmail.com (reply within 2 working days)'
+                    text='- Email: support@mypets.sg (reply within 2 working days)'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection

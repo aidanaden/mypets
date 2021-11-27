@@ -27,7 +27,7 @@ export default function terms({ categories }) {
                 />
                 <ParagraphSection
                     heading='General Information:'
-                    text='• Email: contactmypetssg@gmail.com (Reply within 2 working days)'
+                    text='• Email: support@mypets.sg (Reply within 2 working days)'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
@@ -101,7 +101,7 @@ export default function terms({ categories }) {
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    text='- To use any specific information on our site will require an email write-in to us at [contactmypetssg@gmail.com](mailto:contactmypetssg@gmail.com).'
+                    text='- To use any specific information on our site will require an email write-in to us at [support@mypets.sg].'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
@@ -157,7 +157,7 @@ export default function terms({ categories }) {
                 />
                 <ParagraphSection
                     heading='To request an exchange or a refund, please reach out to us:'
-                    text='• Email: contactmypetssg@gmail.com (Reply within 2 working days)'
+                    text='• Email: support@mypets.sg (Reply within 2 working days)'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
@@ -320,7 +320,7 @@ export default function terms({ categories }) {
                 />
                 <ParagraphSection
                     heading='Customer Feedback/Support'
-                    text='• Email: contactmypetssg@gmail.com (Reply within 2 working days)'
+                    text='• Email: support@mypets.sg (Reply within 2 working days)'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
@@ -342,7 +342,7 @@ export default function terms({ categories }) {
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    text='- By email: [contactmypetssg@gmail.com](mailto:contactmypetssg@gmail.com)'
+                    text='- By email: [support@mypets.sg]'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection

@@ -20,6 +20,19 @@ function MyApp({ Component, pageProps }) {
     };
   }, [])
 
+  useEffect(() => {
+    import('react-facebook-pixel')
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init('4726241647431452') // facebookPixelId
+        ReactPixel.pageView()
+
+        Router.events.on('routeChangeComplete', () => {
+          ReactPixel.pageView()
+        })
+      })
+  }, [Router.events])
+
   return (
     <AuthProvider>
       <ChakraProvider resetCSS theme={customTheme}>

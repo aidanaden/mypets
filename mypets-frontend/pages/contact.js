@@ -19,7 +19,7 @@ export default function contact({ categories }) {
     
     If you have any inquiries/feedback or suggestions, please contact us.
     
-    • Email: contactmypetssg@gmail.com (Reply within 2 working days)
+    • Email: support@mypets.sg (Reply within 2 working days)
     
     • Live Chat Support: 9am - 12pm, 2pm - 6pm (Mon - Fri)
     
@@ -45,7 +45,7 @@ export default function contact({ categories }) {
                 />
                 <ParagraphSection
                     heading='If you have any inquiries/feedback or suggestions, please contact us.'
-                    text='• Email: contactmypetssg@gmail.com (Reply within 2 working days)'
+                    text='• Email: support@mypets.sg (Reply within 2 working days)'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
