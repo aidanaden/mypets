@@ -10,6 +10,7 @@ import Fonts from '../styles/fonts'
 import { GTMPageView } from '../utils/gtm'
 
 import Footer from '../components/Footer/Footer'
+import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -43,6 +44,10 @@ function MyApp({ Component, pageProps }) {
         </Head>  
         <Component {...pageProps}/>
         <Footer />
+        <MessengerCustomerChat
+          pageId='105638824710827'
+          appId='615727602931296'
+        />
       </ChakraProvider>
     </AuthProvider>
   ) 

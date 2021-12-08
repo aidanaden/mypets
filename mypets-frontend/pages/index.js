@@ -9,7 +9,6 @@ import {
   Stack,
   useToast 
 } from "@chakra-ui/react"
-import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 import PageContainer from '../components/PageContainer/PageContainer'
 import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
@@ -97,10 +96,10 @@ export default function Home({ products, categories, animals, merchants }) {
           </Stack>
         </PageContainer>
       </Box>
-      <MessengerCustomerChat
+      {/* <MessengerCustomerChat
         pageId='105638824710827'
         appId='615727602931296'
-      />
+      /> */}
     </>
   )
 }
