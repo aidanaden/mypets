@@ -229,7 +229,23 @@ export default function faq({ categories }) {
                 />
                 <ParagraphSection
                     heading='How much percentage of my order will be allocated for the pet community?'
-                    text='Upon purchasing with us. MyPets will automatically allocate 5% of your total purchase order (in a single receipt exclu. delivery charges) to help the pet community. We hope to be able to contribute more later on.'
+                    text='Upon purchasing with us. MyPets will automatically allocate 5% of your total purchase order (“in a single receipt” excluding delivery charges) to help the pet community.'
+                    mb={{ base: 3 }}
+                />
+                <ParagraphSection
+                    text='Currently, we are partnering with Project-Luni as part of out community initiative effort.'
+                    mb={{ base: 3 }}
+                />
+                <ParagraphSection
+                    text='To find out more about Project-Luni & what they do, pls visit: https://www.project-luni.com/about/'
+                    mb={{ base: 3 }}
+                />
+                <ParagraphSection
+                    text='We hope to be able to contribute more later.'
+                />
+                <ParagraphSection
+                    heading='Where will the calendar sales proceed go?'
+                    text='100% of the calendar sales proceed will go directly to Project-Luni.'
                 />
                 <ParagraphSection
                     heading='How can I track my contribution?'
@@ -239,11 +255,17 @@ export default function faq({ categories }) {
                     heading='Is there any special promo code for users in the Beta-launch stage?'
                     text='For customers that signed up with us before our beta-launch or during our current beta-launch. You are entitled to a promo code: 10% off your orders.
                     
-                    There will be no capped amount for this promo code and it is valid only for one-time use. The expiry date for Beta Promo Code will last till 31/12/2021.
+                    There will be no capped amount for this promo code and it is valid for multiple time purchase. The expiry date for Beta Promo Code will last till 31/12/2021.
                     
                     The promo code: "BETA10OFF" will be delivered to your email upon signing up on our website
                     
                     Alternatively, it can be found on our banner, which is displayed on our website.'
+                />
+                <ParagraphSection
+                    heading='Is there any promo code for launch?'
+                    text='Our official launch date: 09/12/21.
+                    Launch Promo Code is valid for 6 months from the date of official launch.
+                    Launch Promo Code Expiry: 09/06/22, 11:59PM'
                 />
                 <ParagraphSection
                     heading='I cannot use my Promo Code'
