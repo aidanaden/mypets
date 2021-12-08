@@ -214,16 +214,31 @@ export default function terms({ categories }) {
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    text='For users that signed up with us at the beta-launch stage, you are entitled to 10% off for your first order.
-                    The promo code is valid for 1-time use per user.
-                    Beta Promo Code (BETA10OFF) validity will be till 31/12/2021.'
+                    text='For users that signed up with us at the beta-launch stage, you’re entitled to 10% off for your
+                    first order.'
+                    mb={{ base: 3 }}
+                />
+                <ParagraphSection
+                    text='The promo code is valid for multiple time purchase.'
+                    mb={{ base: 3 }}
+                />
+                <ParagraphSection
+                    text='Beta Promo Code (BETA10OFF) validity will be till 31/12/2021.'
                 />
                 <ParagraphSection
                     text='Launch (Promo code)'
                     mb={{ base: 3 }}
                 />
                 <ParagraphSection
-                    text='Our official launch date will be disclosed upon nearing our launch.'
+                    text='Our official launch date: 09/12/21.'
+                    mb={{ base: 3 }}
+                />
+                <ParagraphSection
+                    text='Launch Promo Code is valid for 6 months from the date of official launch.'
+                    mb={{ base: 3 }}
+                />
+                <ParagraphSection
+                    text='Launch Promo Code Expiry: 09/06/22, 11:59PM'
                 />
                 <ParagraphSection
                     heading='Delivery'
