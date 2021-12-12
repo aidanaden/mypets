@@ -7,19 +7,26 @@ import 'swiper/swiper.scss';
 import customTheme from '../styles/theme'
 import { AuthProvider } from '../context/AuthContext'
 import Fonts from '../styles/fonts'
-import { GTMPageView } from '../utils/gtm'
+// import { GTMPageView } from '../utils/gtm'
 
 import Footer from '../components/Footer/Footer'
 import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  const handleRouteChange = (url) => {
+    window.gtag('config', 'GTM-KR3LWDX', {
+      page_path: url,
+    });
+  };
+
   useEffect(() => {
-    const handleRouteChange = (url) => GTMPageView(url);
-    Router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
-      Router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [])
+  }, [router.events]);
 
   useEffect(() => {
     import('react-facebook-pixel')

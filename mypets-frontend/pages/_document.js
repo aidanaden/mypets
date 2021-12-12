@@ -8,12 +8,17 @@ class MyDocument extends Document {
                 <Head>
                     <link href="/fonts/style.css" rel="stylesheet"/>
                     <script
+                        async
+                        src="https://www.googletagmanager.com/gtag/js?id=GTM-KR3LWDX"
+                    />
+                    <script
                         dangerouslySetInnerHTML={{
-                            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                                })(window,document,'script','dataLayer','GTM-KR3LWDX');`,
+                            __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'GTM-KR3LWDX', { page_path: window.location.pathname });
+                            `,
                         }}
                     />
                 </Head>
@@ -21,11 +26,11 @@ class MyDocument extends Document {
                     <ColorModeScript />
                     <Main />
                     <NextScript />
-                    <noscript
+                    {/* <noscript
                         dangerouslySetInnerHTML={{
                             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KR3LWDX" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
                         }}
-                    />
+                    /> */}
                 </body>
             </Html>
         )
