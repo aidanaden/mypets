@@ -26,9 +26,9 @@ function MyApp({ Component, pageProps }) {
   }, [router.events])
 
   useEffect(() => {
-    if(process.env.googleAnalyticsID && process.env.NODE_ENV === "production") {
+    if(process.env.GOOGLE_ANALYTICS_ID && process.env.NODE_ENV === "production") {
       // Checks for GA ID and only turns on GA in production
-      ReactGA.initialize(process.env.googleAnalyticsID);
+      ReactGA.initialize(process.env.GOOGLE_ANALYTICS_ID);
       ReactGA.pageview(window.location.pathname + window.location.search);
     }
   });
