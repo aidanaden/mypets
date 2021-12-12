@@ -26,11 +26,11 @@ class MyDocument extends Document {
                     <ColorModeScript />
                     <Main />
                     <NextScript />
-                    {/* <noscript
+                    <noscript
                         dangerouslySetInnerHTML={{
                             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KR3LWDX" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
                         }}
-                    /> */}
+                    />
                 </body>
             </Html>
         )
