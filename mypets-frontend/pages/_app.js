@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react"
 import Head from 'next/head'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 import 'swiper/swiper.scss';
 
 import customTheme from '../styles/theme'
@@ -13,19 +13,16 @@ import Footer from '../components/Footer/Footer'
 import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 function MyApp({ Component, pageProps }) {
-
-  const handleRouteChange = (url) => {
-    window.gtag('config', 'GTM-KR3LWDX', {
-      page_path: url,
-    });
-  };
-
+  const router = useRouter()
   useEffect(() => {
-    Router.events.on('routeChangeComplete', handleRouteChange);
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
-      Router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [Router.events]);
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   useEffect(() => {
     import('react-facebook-pixel')
