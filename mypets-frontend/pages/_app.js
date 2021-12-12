@@ -13,7 +13,6 @@ import Footer from '../components/Footer/Footer'
 import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
 
   const handleRouteChange = (url) => {
     window.gtag('config', 'GTM-KR3LWDX', {
@@ -22,11 +21,11 @@ function MyApp({ Component, pageProps }) {
   };
 
   useEffect(() => {
-    router.events.on('routeChangeComplete', handleRouteChange);
+    Router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
+      Router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [router.events]);
+  }, [Router.events]);
 
   useEffect(() => {
     import('react-facebook-pixel')
