@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react"
 import Head from 'next/head'
 import Router, { useRouter } from 'next/router'
+import ReactGA from 'react-ga'
 import 'swiper/swiper.scss';
 
 import customTheme from '../styles/theme'
@@ -23,6 +24,14 @@ function MyApp({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
+
+  useEffect(() => {
+    if(process.env.googleAnalyticsID && process.env.NODE_ENV === "production") {
+      // Checks for GA ID and only turns on GA in production
+      ReactGA.initialize(process.env.googleAnalyticsID);
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
+  });
 
   useEffect(() => {
     import('react-facebook-pixel')
