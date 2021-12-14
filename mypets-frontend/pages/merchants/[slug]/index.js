@@ -17,7 +17,6 @@ import PageContainer from '../../../components/PageContainer/PageContainer'
 
 export default function index({ merchant }) {
     const merchantCategories = Object.keys(lodash.groupBy(merchant.products, 'category.name'))
-    console.log('merchant name: ', merchant.name)
     return (
         <Box>  
             <AnnouncementBanner />
