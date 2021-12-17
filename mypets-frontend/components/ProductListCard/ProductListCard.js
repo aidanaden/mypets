@@ -39,14 +39,18 @@ function ProductListCard({ product }) {
 
   const handleAddToCart = async () => {
     if (user) {
-      // create order product
-      const order_product = {
-        variant: product.variants[0],
-        quantity: 1,
-        total_price: product.variants[0].price
+      if (product.variants[0].available) {
+        // create order product
+        const order_product = {
+          variant: product.variants[0],
+          quantity: quantity,
+          total_price: product.variants[0].price
+        }
+        updateCart(order_product)
+        succesToast('Product added to cart')
+      } else {
+        errorToast('Product not available')
       }
-      updateCart(order_product)
-      succesToast('Product added to cart')
     } else {
       errorToast('Please login/register before purchasing :)')
     }
