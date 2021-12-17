@@ -43,7 +43,7 @@ function ProductListCard({ product }) {
         // create order product
         const order_product = {
           variant: product.variants[0],
-          quantity: quantity,
+          quantity: 1,
           total_price: product.variants[0].price
         }
         updateCart(order_product)
