@@ -14,11 +14,13 @@ module.exports = {
      */
     async find(ctx) {
 
+        const { user } = ctx.state
+
         let entities
         if (ctx.query._q) {
-            entities = await strapi.services.profile.search({...ctx.query})
+            entities = await strapi.services.profile.search({...ctx.query, user: user.id })
         } else {
-            entities = await strapi.services.profile.find({...ctx.query})
+            entities = await strapi.services.profile.find({...ctx.query, user: user.id })
         }
 
         return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.profile }))

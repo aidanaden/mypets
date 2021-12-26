@@ -1,6 +1,7 @@
 'use strict';
 const { sanitizeEntity } = require('strapi-utils')
-const finder = require('strapi-utils/lib/finder')
+const finder = require('strapi-utils/lib/finder');
+const { FRONTEND_URL } = require('../../../../mypets-frontend/utils/urls');
 const stripe = require('stripe')(process.env.STRIPE_SK)
 
 /**
@@ -67,7 +68,6 @@ module.exports = {
     async create(ctx) {
         const cart = ctx.request.body
         const { user } = ctx.state
-        const BASE_URL = ctx.request.headers.origin || process.env.FRONT_END_URL
 
         if (!cart) {
             return ctx.throw(400, 'Please specify a cart.')
@@ -79,7 +79,7 @@ module.exports = {
                     currency: 'sgd',
                     product_data: {
                         name: orderProduct.variant.product.name,
-                        images: [`${process.env.URL}${orderProduct.variant.product.image.url}`],
+                        images: [orderProduct.variant.product.image.url],
                     },
                     unit_amount: fromDecimalToInt(orderProduct.variant.price)
                 },
@@ -93,48 +93,46 @@ module.exports = {
             payment_method_types: ['card'],
             customer_email: user.email,
             mode: 'payment',
-            success_url: `${BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: BASE_URL,
+            success_url: `${FRONTEND_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: FRONTEND_URL,
             line_items: order_items,
             allow_promotion_codes: true,
         })
-
-        var orderDate = new Date()
-        const deliveryDays = 6
-        orderDate.setDate(orderDate.getDate() + deliveryDays)
-
-        // create order
-        const newOrder = await strapi.services.order.create({
-            user: user.id,
-            order_products: cart.order_products,
-            total_price: cart.total_price,
-            status: 'unpaid',
-            checkout_session: session.id,
-            order_date: new Date(),
-            delivery_date: orderDate
-        })
-
         return { id: session.id }
     },
 
     /**
-     * Given a checkout session, verifies payment and updates the order
+     * Given a checkout session, verifies payment and create the order
      * @param {any} ctx 
      */
     async confirm(ctx) {
         const { user } = ctx.state
         const { checkout_session } = ctx.request.body
         const session = await stripe.checkout.sessions.retrieve(checkout_session)
+        const cart = await strapi.services.cart.findOne({ user: user.id })
 
         if (session.payment_status === 'paid') {
-            const updateOrder = await strapi.services.order.update({ checkout_session }, { status: 'processing' })
-            console.log('UPDATING ORDER with PROCESSING STATUS: ', updateOrder)
+            var orderDate = new Date()
+            const deliveryDays = 6
+            orderDate.setDate(orderDate.getDate() + deliveryDays)
+
+            const sessionTotalPrice = session.amount_total / 100
+            const contributionAmount = sessionTotalPrice * 0.05
+
+            // create order
+            const newOrder = await strapi.services.order.create({
+                user: user.id,
+                order_products: cart.order_products,
+                total_price: sessionTotalPrice,
+                contribution: contributionAmount,
+                status: 'processing',
+                checkout_session: session.id,
+                order_date: new Date(),
+                delivery_date: orderDate
+            })
 
             // delete current cart
-            const cart = await strapi.services.cart.findOne({ user: user.id })
-            console.log('FOUND CART: ', cart)
             const cartId = cart.id
-            console.log('CART ID: ', cartId)
             const entity = await strapi.services.cart.delete({ id: cartId });
             console.log('DELETED CART: ', entity)
 
