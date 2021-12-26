@@ -26,6 +26,7 @@ export default function BannerSwiper({
             bannerImgNames.map((bannerImgName,i) => (
                 <SwiperSlide key={i}>
                     <Image
+                        loading='lazy'
                         rounded={rounded}
                         src={`https://www.mypets.sg/${bannerImgName}`}
                         boxSize="full"
@@ -33,6 +34,7 @@ export default function BannerSwiper({
                         display={{ base: 'none', md: 'block' }}
                     />
                     <Image
+                        loading='lazy'
                         rounded={rounded}
                         src={`https://www.mypets.sg/${mobileBannerImgNames[i]}`}
                         boxSize="full"
