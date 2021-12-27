@@ -91,6 +91,9 @@ function NavbarCartModalBtn() {
 
             console.log('product names: ', Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
             console.log('grouped products: ', lodash.groupBy(cart.order_products, 'variant.product.name'))
+
+            console.log('product names state: ', productNames)
+            console.log('grouped products state: ', groupedProducts)
         }
     }, [cart])
 
