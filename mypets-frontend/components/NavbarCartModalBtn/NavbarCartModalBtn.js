@@ -134,12 +134,14 @@ function NavbarCartModalBtn() {
                     <ModalCloseButton />
                     <ModalBody w='100%'> 
                             {setGroupedProducts((groupedProducts) => (
+                                groupedProducts && 
                                 <Stack
                                     direction={{ base: 'column', lg: 'row' }}
                                     spacing={{ base: 8, lg: 16 }}
                                 >
                                     <Box w={{ base: 'auto', lg: '50%' }}>
                                         {setProductNames((productNames) => (
+                                            productNames &&
                                             productNames.map((productName, i) => (
                                                 <CartModalProductCard
                                                     order_products={groupedProducts[productName]}
