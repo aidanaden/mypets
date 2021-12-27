@@ -51,13 +51,12 @@ function LoginModalBtn() {
             <MypetsBtn 
                 btnText='Log in/Sign up'
                 mx={0}
-                variant='outline'
                 onClick={onOpen}
             />
             <Modal isOpen={isOpen} onClose={onClose} isCentered>
                 <ModalOverlay/>
                 <ModalContent mx={{ base: 4 }}>
-                    <ModalHeader>Log in</ModalHeader>
+                    <ModalHeader>Log in/Sign up</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody mb={2}>
                         {/* <Formik
