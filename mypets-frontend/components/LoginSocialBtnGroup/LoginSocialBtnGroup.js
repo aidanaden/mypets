@@ -43,9 +43,9 @@ function LoginSocialBtnGroup() {
                 <Divider orientation='horizontal' w='100%'/>
             </HStack> */}
             <ButtonGroup 
-                w='100%' 
-                mt={6} 
-                flexDirection={{ base: 'column', md: 'row' }} 
+                w='100%'
+                mt={0}
+                flexDirection={{ base: 'column', md: 'column' }} 
                 spacing={{ base: 0, md: 4 }}
             >
                 <NextLink href={`${API_URL}/connect/facebook`}>
