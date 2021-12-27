@@ -263,7 +263,7 @@ export default function Sidebar({ categories }) {
                                 spacing={4}
                             >
                                 <LoginModalBtn />
-                                <SignupModalBtn />
+                                {/* <SignupModalBtn /> */}
                             </ButtonGroup>
                         )}
                 </Stack>
