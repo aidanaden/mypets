@@ -46,7 +46,7 @@ function LoginSocialBtnGroup() {
                 w='100%'
                 mt={0}
                 flexDirection={{ base: 'column', md: 'column' }} 
-                spacing={{ base: 0, md: 4 }}
+                spacing={{ base: 0, md: 0 }}
             >
                 <NextLink href={`${API_URL}/connect/facebook`}>
                     <Button 
@@ -66,7 +66,7 @@ function LoginSocialBtnGroup() {
                         leftIcon={<FaGoogle />} 
                         onClick={handleGoogleSubmit} 
                         isLoading={googleLoading}
-                        mt={{ base: 3, md: 0 }}
+                        mt={{ base: 3, md: 3 }}
                     >
                         Google
                     </Button>
