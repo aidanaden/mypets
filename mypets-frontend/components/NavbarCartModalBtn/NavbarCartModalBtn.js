@@ -78,8 +78,8 @@ function NavbarCartModalBtn() {
     }
     
     useEffect(() => {
-        console.log('current cart data: ', cart)
         if (cart) {
+            console.log('current cart data: ', cart)
             setTotalPrice(cart.total_price)
             var tempNumOrderProducts = 0
             cart.order_products.map((order_product) => {
@@ -88,6 +88,9 @@ function NavbarCartModalBtn() {
             setNumOrderProducts(tempNumOrderProducts)
             setGroupedProducts(lodash.groupBy(cart.order_products, 'variant.product.name'))
             setProductNames(Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
+
+            console.log('product names: ', Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
+            console.log('grouped products: ', lodash.groupBy(cart.order_products, 'variant.product.name'))
         }
     }, [cart])
 
