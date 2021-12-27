@@ -89,11 +89,19 @@ function NavbarCartModalBtn() {
             setGroupedProducts(lodash.groupBy(cart.order_products, 'variant.product.name'))
             setProductNames(Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
 
+            setGroupedProducts((state) => {
+                console.log('grouped products state 2: ', state)
+            })
+
+            setProductNames((state) => {
+                console.log('product names state 2: ', state)
+            })
+
             console.log('product names: ', Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
             console.log('grouped products: ', lodash.groupBy(cart.order_products, 'variant.product.name'))
 
-            console.log('product names state: ', productNames)
-            console.log('grouped products state: ', groupedProducts)
+            console.log('product names state 1: ', productNames)
+            console.log('grouped products state 1: ', groupedProducts)
         }
     }, [cart])
 
