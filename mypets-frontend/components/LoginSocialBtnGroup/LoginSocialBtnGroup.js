@@ -37,11 +37,11 @@ function LoginSocialBtnGroup() {
 
     return (
         <>  
-            <HStack mt={6}>
+            {/* <HStack mt={6}>
                 <Divider orientation='horizontal' w='100%'/>
                 <Text fontSize='sm'>OR</Text>
                 <Divider orientation='horizontal' w='100%'/>
-            </HStack>
+            </HStack> */}
             <ButtonGroup 
                 w='100%' 
                 mt={6} 
