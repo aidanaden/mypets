@@ -139,12 +139,23 @@ function NavbarCartModalBtn() {
                                 spacing={{ base: 8, lg: 16 }}
                             >
                                 <Box w={{ base: 'auto', lg: '50%' }}>
-                                    {productNames.map((productName, i) => (
+                                    {/* {productNames.map((productName, i) => (
                                         <CartModalProductCard
                                             order_products={groupedProducts[productName]}
                                             onClose={onClose}
                                             key={i}
                                         />
+                                    ))} */}
+                                    {setGroupedProducts((groupedProducts) => (
+                                        setProductNames((productNames) => (
+                                            productNames.map((productName, i) => (
+                                                <CartModalProductCard
+                                                    order_products={groupedProducts[productName]}
+                                                    onClose={onClose}
+                                                    key={i}
+                                                />
+                                            ))
+                                        ))
                                     ))}
                                 </Box>
                                 <Box
