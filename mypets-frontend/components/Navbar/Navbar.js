@@ -105,7 +105,7 @@ export default function Navbar({ products }) {
                         spacing={4}
                     >
                         <LoginModalBtn />
-                        <SignupModalBtn />
+                        {/* <SignupModalBtn /> */}
                     </ButtonGroup>
                     )}
                 </Stack>

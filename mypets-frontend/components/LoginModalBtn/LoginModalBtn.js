@@ -49,8 +49,8 @@ function LoginModalBtn() {
     return (
         <>
             <MypetsBtn 
-                btnText='Log in' 
-                mx={0} 
+                btnText='Log in/Sign up'
+                mx={0}
                 variant='outline'
                 onClick={onOpen}
             />
