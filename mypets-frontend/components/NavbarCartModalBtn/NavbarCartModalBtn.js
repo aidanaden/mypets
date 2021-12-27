@@ -103,7 +103,7 @@ function NavbarCartModalBtn() {
             console.log('product names state 1: ', productNames)
             console.log('grouped products state 1: ', groupedProducts)
         }
-    }, [cart])
+    }, [])
 
     return (
         <>
