@@ -70,7 +70,7 @@ function SignupModalBtn() {
                     <ModalHeader>Sign up</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody mb={2}> 
-                        <Formik
+                        {/* <Formik
                             initialValues={{ email: '', password: '', password2: '' }}
                             onSubmit={handleSubmit}
                             validationSchema={signupSchema}
@@ -115,10 +115,10 @@ function SignupModalBtn() {
                                         </Field>
                                     </Box>
                                     <MypetsBtn w='100%' btnText='Sign up' mx={0} mt={8} isLoading={props.isSubmitting} type='submit'/>
-                                    <LoginSocialBtnGroup />
                                 </Form>
                             )}
-                        </Formik>
+                        </Formik> */}
+                        <LoginSocialBtnGroup />
                     </ModalBody>
                 </ModalContent>
             </Modal>
