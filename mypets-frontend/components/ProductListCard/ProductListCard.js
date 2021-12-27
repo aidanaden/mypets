@@ -163,7 +163,7 @@ function ProductListCard({ product }) {
               <MypetsBtn
                 btnText='Add to cart'
                 onClick={handleAddToCart}
-                w={{ base: '100%', md: 'auto' }}
+                w={{ base: '100%', md: '100%' }}
               />
             </VStack>
             <Stack
