@@ -12,7 +12,8 @@ import {
   Tooltip,
   LinkBox,
   LinkOverlay
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
+import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
 import NextImage from 'next/image'
 
