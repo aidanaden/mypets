@@ -82,7 +82,6 @@ function CartModalProductCard({ order_products, onClose }) {
     }
 
     useEffect(() => {
-        console.log('order products: ', order_products)
         if (order_products) {
             const sample_quantities = {}
             const weighted_products = lodash.groupBy(order_products, 'variant.weight')

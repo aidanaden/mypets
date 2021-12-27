@@ -79,7 +79,6 @@ function NavbarCartModalBtn() {
     
     useEffect(() => {
         if (cart) {
-            console.log('current cart data: ', cart)
             setTotalPrice(cart.total_price)
             var tempNumOrderProducts = 0
             cart.order_products.map((order_product) => {
@@ -88,20 +87,6 @@ function NavbarCartModalBtn() {
             setNumOrderProducts(tempNumOrderProducts)
             setGroupedProducts(lodash.groupBy(cart.order_products, 'variant.product.name'))
             setProductNames(Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
-
-            setGroupedProducts((state) => {
-                console.log('grouped products state 2: ', state)
-            })
-
-            setProductNames((state) => {
-                console.log('product names state 2: ', state)
-            })
-
-            console.log('product names: ', Object.keys(lodash.groupBy(cart.order_products, 'variant.product.name')))
-            console.log('grouped products: ', lodash.groupBy(cart.order_products, 'variant.product.name'))
-
-            console.log('product names state 1: ', productNames)
-            console.log('grouped products state 1: ', groupedProducts)
         }
     }, [cart])
 
@@ -133,7 +118,7 @@ function NavbarCartModalBtn() {
                     </ModalHeader>
                     <ModalCloseButton />
                     <ModalBody w='100%'> 
-                            {productNames && (totalPrice > 0.1) ? 
+                            {groupedProducts && (totalPrice > 0.1) ? 
                             <Stack
                                 direction={{ base: 'column', lg: 'row' }}
                                 spacing={{ base: 8, lg: 16 }}
@@ -146,7 +131,6 @@ function NavbarCartModalBtn() {
                                             key={i}
                                         />
                                     ))}
-                                    
                                 </Box>
                                 <Box
                                     flex='1'

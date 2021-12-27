@@ -1,20 +1,15 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import {
   Stack,
   Spacer,
   Center,
   Flex,
-  HStack,
-  VStack,
-  IconButton,
-  Text,
   Box,
   useToast,
   Tooltip,
   LinkBox,
   LinkOverlay
-} from '@chakra-ui/react'
-import { AddIcon, MinusIcon } from '@chakra-ui/icons'
+} from '@chakra-ui/react';
 import NextLink from 'next/link'
 import NextImage from 'next/image'
 
@@ -24,40 +19,9 @@ import { imageToUrl } from '../../utils/urls'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import AuthContext from '../../context/AuthContext'
 
-function ProductQtyPicker({ qty, setQty }) {
-  const addQty = () => {
-    setQty(qty + 1)
-  }
-
-  const minusQty = () => {
-    if (qty > 1) {
-      setQty(qty - 1)
-    }
-  }
-
-  return (
-    <HStack w='auto' justifyContent='center'>
-      <IconButton
-        icon={<MinusIcon />}
-        size="sm"
-        onClick={minusQty}
-      />
-      <Text w='36px' align="center" alignSelf='center' fontSize="md">
-        {qty}
-      </Text>
-      <IconButton
-        icon={<AddIcon />}
-        size="sm"
-        onClick={addQty}
-      />
-    </HStack>
-  )
-}
-
 function ProductListCard({ product }) {
   const toast = useToast()
   const { user, updateCart } = useContext(AuthContext)
-  const [qty, setQty] = useState(1)
 
   const succesToast = (text) => toast({
     title: text,
@@ -79,7 +43,7 @@ function ProductListCard({ product }) {
         // create order product
         const order_product = {
           variant: product.variants[0],
-          quantity: qty,
+          quantity: 1,
           total_price: product.variants[0].price
         }
         updateCart(order_product)
@@ -155,17 +119,14 @@ function ProductListCard({ product }) {
           </LinkOverlay>
           <Spacer />
           <Box>
-            <VStack spacing={2} mb={{ base: 4 }} w='100%'>
-              <ProductQtyPicker
-                qty={qty}
-                setQty={setQty}
-              />
+            <Center>
               <MypetsBtn
+                mb={{ base: 4 }}
                 btnText='Add to cart'
                 onClick={handleAddToCart}
-                w={{ base: '100%', md: '100%' }}
+                w={{ base: '100%', md: 'auto' }}
               />
-            </VStack>
+            </Center>
             <Stack
               direction='row'
               justifyContent="space-between"
