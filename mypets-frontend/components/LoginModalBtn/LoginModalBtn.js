@@ -59,8 +59,8 @@ function LoginModalBtn() {
                 <ModalContent mx={{ base: 4 }}>
                     <ModalHeader>Log in</ModalHeader>
                     <ModalCloseButton />
-                    <ModalBody mb={2}> 
-                        <Formik
+                    <ModalBody mb={2}>
+                        {/* <Formik
                             initialValues={{ email: '', password: ''}}
                             onSubmit={handleSubmit}
                             validationSchema={loginSchema}
@@ -100,7 +100,7 @@ function LoginModalBtn() {
                                     />
                                 </Form>
                             )}
-                        </Formik>
+                        </Formik> */}
                         <LoginSocialBtnGroup />
                     </ModalBody>
                 </ModalContent>
