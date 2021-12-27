@@ -5,6 +5,7 @@ import {
   Center,
   Flex,
   HStack,
+  VStack,
   IconButton,
   Text,
   Box,
@@ -29,7 +30,7 @@ function ProductQtyPicker({ qty, setQty }) {
   }
 
   const minusQty = () => {
-    if (qty > 0) {
+    if (qty > 1) {
       setQty(qty - 1)
     }
   }
@@ -154,7 +155,7 @@ function ProductListCard({ product }) {
           </LinkOverlay>
           <Spacer />
           <Box>
-            <Box mb={{ base: 4 }} justifyContent='space-between'>
+            <VStack spacing={4} mb={{ base: 4 }}>
               <ProductQtyPicker
                 qty={qty}
                 setQty={setQty}
@@ -164,7 +165,7 @@ function ProductListCard({ product }) {
                 onClick={handleAddToCart}
                 w={{ base: '100%', md: 'auto' }}
               />
-            </Box>
+            </VStack>
             <Stack
               direction='row'
               justifyContent="space-between"
