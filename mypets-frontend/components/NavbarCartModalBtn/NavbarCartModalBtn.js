@@ -133,21 +133,13 @@ function NavbarCartModalBtn() {
                     </ModalHeader>
                     <ModalCloseButton />
                     <ModalBody w='100%'> 
-                            {groupedProducts && (totalPrice > 0.1) ? 
-                            <Stack
-                                direction={{ base: 'column', lg: 'row' }}
-                                spacing={{ base: 8, lg: 16 }}
-                            >
-                                <Box w={{ base: 'auto', lg: '50%' }}>
-                                    {/* {productNames.map((productName, i) => (
-                                        <CartModalProductCard
-                                            order_products={groupedProducts[productName]}
-                                            onClose={onClose}
-                                            key={i}
-                                        />
-                                    ))} */}
-                                    {setGroupedProducts((groupedProducts) => (
-                                        setProductNames((productNames) => (
+                            {setGroupedProducts((groupedProducts) => (
+                                <Stack
+                                    direction={{ base: 'column', lg: 'row' }}
+                                    spacing={{ base: 8, lg: 16 }}
+                                >
+                                    <Box w={{ base: 'auto', lg: '50%' }}>
+                                        {setProductNames((productNames) => (
                                             productNames.map((productName, i) => (
                                                 <CartModalProductCard
                                                     order_products={groupedProducts[productName]}
@@ -155,44 +147,45 @@ function NavbarCartModalBtn() {
                                                     key={i}
                                                 />
                                             ))
-                                        ))
-                                    ))}
-                                </Box>
-                                <Box
-                                    flex='1'
-                                    pb={{ base: 4, lg: 4 }}
-                                >
-                                    <Center
-                                        rounded='lg'
-                                        p={{ base: 5 }}
-                                        bg='gray.200'
+                                        ))}
+                                    </Box>
+                                    <Box
+                                        flex='1'
+                                        pb={{ base: 4, lg: 4 }}
                                     >
-                                        With every purchase, we will donate 5% of the total receipt order (exclu. Delivery fees) to local pet communities
-                                    </Center>
-                                    <CartPriceBreakdownList 
-                                        groupedProducts={groupedProducts} 
-                                        productNames={productNames} 
-                                        totalPrice={totalPrice}
-                                    />
-                                    <MypetsBtn
-                                        btnText='Checkout'
-                                        onClick={handleCheckout}
-                                        w="stretch"
-                                        mt={6}
-                                    />
-                                </Box>
-                            </Stack> :
-                            <>
-                                <Stack
-                                    justifyContent='center'
-                                    w='100%'
-                                    h={400}
-                                    alignItems='center'
-                                >
-                                    No products in your cart!
+                                        <Center
+                                            rounded='lg'
+                                            p={{ base: 5 }}
+                                            bg='gray.200'
+                                        >
+                                            With every purchase, we will donate 5% of the total receipt order (exclu. Delivery fees) to local pet communities
+                                        </Center>
+                                        <CartPriceBreakdownList 
+                                            groupedProducts={groupedProducts} 
+                                            productNames={productNames} 
+                                            totalPrice={totalPrice}
+                                        />
+                                        <MypetsBtn
+                                            btnText='Checkout'
+                                            onClick={handleCheckout}
+                                            w="stretch"
+                                            mt={6}
+                                        />
+                                    </Box>
                                 </Stack>
-                            </>
-                            }
+                            ))}
+
+                            // {/* </Stack> :
+                            // <>
+                            //     <Stack
+                            //         justifyContent='center'
+                            //         w='100%'
+                            //         h={400}
+                            //         alignItems='center'
+                            //     >
+                            //         No products in your cart!
+                            //     </Stack>
+                            // </> */}
                     </ModalBody>
                 </ModalContent>
             </Modal>
