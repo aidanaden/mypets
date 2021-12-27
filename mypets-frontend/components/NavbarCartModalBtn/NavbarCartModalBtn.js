@@ -78,6 +78,7 @@ function NavbarCartModalBtn() {
     }
     
     useEffect(() => {
+        console.log('current cart data: ', cart)
         if (cart) {
             setTotalPrice(cart.total_price)
             var tempNumOrderProducts = 0

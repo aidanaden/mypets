@@ -154,8 +154,8 @@ function ProductListCard({ product }) {
             </Box>
           </LinkOverlay>
           <Spacer />
-          <Box bg='blue.500'>
-            <VStack spacing={2} mb={{ base: 4 }} w='100%' bg='red.500'>
+          <Box>
+            <VStack spacing={2} mb={{ base: 4 }} w='100%'>
               <ProductQtyPicker
                 qty={qty}
                 setQty={setQty}
