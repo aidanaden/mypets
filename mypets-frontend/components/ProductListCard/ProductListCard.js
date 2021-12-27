@@ -19,9 +19,40 @@ import { imageToUrl } from '../../utils/urls'
 import MypetsBtn from '../MypetsBtn/MypetsBtn'
 import AuthContext from '../../context/AuthContext'
 
+function ProductQtyPicker({ qty, setQty }) {
+  const addQty = () => {
+    setQty(qty + 1)
+  }
+
+  const minusQty = () => {
+    if (qty > 0) {
+      setQty(qty - 1)
+    }
+  }
+
+  return (
+    <HStack w='auto' justifyContent='center'>
+      <IconButton
+        icon={<MinusIcon />}
+        size="sm"
+        onClick={minusQty}
+      />
+      <Text w='36px' align="center" alignSelf='center' fontSize="md">
+        {qty}
+      </Text>
+      <IconButton
+        icon={<AddIcon />}
+        size="sm"
+        onClick={addQty}
+      />
+    </HStack>
+  )
+}
+
 function ProductListCard({ product }) {
   const toast = useToast()
   const { user, updateCart } = useContext(AuthContext)
+  const [qty, setQty] = useState(1)
 
   const succesToast = (text) => toast({
     title: text,
@@ -43,7 +74,7 @@ function ProductListCard({ product }) {
         // create order product
         const order_product = {
           variant: product.variants[0],
-          quantity: 1,
+          quantity: qty,
           total_price: product.variants[0].price
         }
         updateCart(order_product)
@@ -119,14 +150,17 @@ function ProductListCard({ product }) {
           </LinkOverlay>
           <Spacer />
           <Box>
-            <Center>
+            <Box mb={{ base: 4 }} justifyContent='space-between'>
+              <ProductQtyPicker
+                qty={qty}
+                setQty={setQty}
+              />
               <MypetsBtn
-                mb={{ base: 4 }}
                 btnText='Add to cart'
                 onClick={handleAddToCart}
                 w={{ base: '100%', md: 'auto' }}
               />
-            </Center>
+            </Box>
             <Stack
               direction='row'
               justifyContent="space-between"
