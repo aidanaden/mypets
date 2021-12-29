@@ -1,8 +1,11 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import {
   Stack,
   Spacer,
   Center,
+  Text,
+  HStack,
+  IconButton,
   Flex,
   Box,
   useToast,
@@ -10,6 +13,7 @@ import {
   LinkBox,
   LinkOverlay
 } from '@chakra-ui/react';
+import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
 import NextImage from 'next/image'
 
@@ -22,6 +26,21 @@ import AuthContext from '../../context/AuthContext'
 function ProductListCard({ product }) {
   const toast = useToast()
   const { user, updateCart } = useContext(AuthContext)
+  const [qty, setQty] = useState(1)
+
+  const addQty = () => {
+    let tempQty = qty
+    tempQty += 1
+    setQty(tempQty)
+  }
+
+  const minusQty = () => {
+    let tempQty = qty
+    if (tempQty > 1) {
+      tempQty -= 1
+      setQty(tempQty)
+    }
+  }
 
   const succesToast = (text) => toast({
     title: text,
@@ -43,7 +62,7 @@ function ProductListCard({ product }) {
         // create order product
         const order_product = {
           variant: product.variants[0],
-          quantity: 1,
+          quantity: qty,
           total_price: product.variants[0].price
         }
         updateCart(order_product)
@@ -119,6 +138,21 @@ function ProductListCard({ product }) {
           </LinkOverlay>
           <Spacer />
           <Box>
+            <HStack w='auto' justifyContent='center'>
+              <IconButton 
+                  icon={<MinusIcon />} 
+                  size="sm" 
+                  onClick={minusQty}
+              />
+              <Text w='36px' align="center" alignSelf='center' fontSize="md">
+                  {qty}
+              </Text>
+              <IconButton 
+                  icon={<AddIcon />} 
+                  size="sm"
+                  onClick={addQty}
+              />
+            </HStack>
             <Center>
               <MypetsBtn
                 mb={{ base: 4 }}
