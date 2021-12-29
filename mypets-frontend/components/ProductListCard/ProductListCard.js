@@ -67,6 +67,7 @@ function ProductListCard({ product }) {
         }
         updateCart(order_product)
         succesToast('Product added to cart')
+        setQty(1)
       } else {
         errorToast('Product not available')
       }
@@ -138,7 +139,7 @@ function ProductListCard({ product }) {
           </LinkOverlay>
           <Spacer />
           <Box>
-            <HStack w='auto' justifyContent='center'>
+            <HStack w='auto' justifyContent='center' mb={2}>
               <IconButton 
                   icon={<MinusIcon />} 
                   size="sm" 
@@ -153,14 +154,12 @@ function ProductListCard({ product }) {
                   onClick={addQty}
               />
             </HStack>
-            <Center>
-              <MypetsBtn
-                mb={{ base: 4 }}
-                btnText='Add to cart'
-                onClick={handleAddToCart}
-                w={{ base: '100%', md: 'auto' }}
-              />
-            </Center>
+            <MypetsBtn
+              mb={{ base: 2 }}
+              btnText='Add to cart'
+              onClick={handleAddToCart}
+              w={{ base: '100%', md: '100%' }}
+            />
             <Stack
               direction='row'
               justifyContent="space-between"
