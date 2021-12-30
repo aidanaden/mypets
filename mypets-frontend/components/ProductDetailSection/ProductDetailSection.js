@@ -165,6 +165,7 @@ function ProductDetailSection({ product }) {
                     direction='column'
                     spacing={{ base: 2, md: 2 }}
                 >
+                    {variant.variant_type_is_float != null && 
                     <ProductDetailVariantSelect
                         mt={{ base: 6, md: 8 }}
                         variantValue={variant.variant_type_is_float ? variant.variant_type_float : variant.variant_type_str}
@@ -172,7 +173,7 @@ function ProductDetailSection({ product }) {
                         variantIsFloat={variant.variant_type_is_float}
                         options={product.variants}
                         onChange={variantSelectOnChange}
-                    />
+                    />}
                     {variant.available == false &&
                     <ProductSoldBadge w='120px' mt={2} />}
                 </Stack>
