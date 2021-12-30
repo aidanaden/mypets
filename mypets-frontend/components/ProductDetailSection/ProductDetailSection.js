@@ -166,7 +166,7 @@ function ProductDetailSection({ product }) {
                 >
                     <ProductDetailVariantSelect
                         mt={{ base: 6, md: 8 }}
-                        variantValue={variant.varient_type_is_float ? variant.variant_type_float : variant.variant_type_str}
+                        variantValue={variant.variant_type_is_float ? variant.variant_type_float : variant.variant_type_str}
                         variantUnit={product.unit}
                         variantIsFloat={variant.variant_type_is_float}
                         options={product.variants}
