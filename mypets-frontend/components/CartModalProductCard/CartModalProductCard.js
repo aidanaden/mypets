@@ -164,8 +164,13 @@ function CartModalProductCard({ order_products, onClose }) {
                         <Tbody>
                             {variants.map((variant, i) => (
                                 <Tr key={i}>
-                                    <Th textAlign='center' fontSize='sm'>{variant}{productsCategorized[variant][0].variant.product.unit.toLowerCase()}</Th>
-                                    <Th textAlign='center' fontSize='sm'>SG${productsCategorized[variant][0].variant.price.toFixed(2)}</Th>
+                                    <Th textAlign='center' fontSize='sm'>
+                                        {variant}{productsCategorized[variant][0].variant.variant_type_is_float &&
+                                        productsCategorized[variant][0].variant.product.unit.toLowerCase()}
+                                    </Th>
+                                    <Th textAlign='center' fontSize='sm'>
+                                        SG${productsCategorized[variant][0].variant.price.toFixed(2)}
+                                    </Th>
                                     <Th textAlign='center' fontSize='sm'>
                                         <CartProductQuantityPicker 
                                             addQuantity={() => addQuantities(variant)} 
