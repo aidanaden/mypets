@@ -18,7 +18,7 @@ export default function BannerSwiper({
             slidesPerView={1}
             loop={autoplay}
             centeredSlides={true}
-            autoplay={ bannerImgNames.length > 1 && autoplay ? {
+            autoplay={ desktopImages.length > 1 && autoplay ? {
                 delay: 3000,
                 disableOnInteraction: false,
             } : false}
