@@ -16,9 +16,9 @@ function ProductDetailVariantSelect({ variantValue, variantUnit, variantIsFloat,
             {options.map((option, i) => (
                 <option
                     key={i}
-                    value={option.variant_type_is_float ? option.variant_type_float : option.variant_type_str}
+                    value={variantIsFloat ? option.variant_type_float : option.variant_type_str}
                 >
-                    {option.variant_type_is_float ? option.variant_type_float : option.variant_type_str}{variantUnit.toLowerCase()}
+                    {variantIsFloat ? option.variant_type_float : option.variant_type_str}{variantUnit.toLowerCase()}
                 </option>
             ))}
         </Select>
