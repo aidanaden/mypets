@@ -186,7 +186,7 @@ export const AuthProvider = (props) => {
             })
             const data = await response.json()
 
-            console.log('data from provider: ', data)
+            // console.log('data from provider: ', data)
 
             if(!data.user) {
                 loginFailToast()
@@ -222,8 +222,8 @@ export const AuthProvider = (props) => {
             callAPI('/auth/forgot-password', 'POST', {
                 email: email
             }).then(response => {
-                console.log('user email: ', email)
-                console.log('response:', response)
+                // console.log('user email: ', email)
+                // console.log('response:', response)
                 resetSuccessToast()
                 return true
             })
