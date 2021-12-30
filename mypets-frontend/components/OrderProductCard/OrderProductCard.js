@@ -130,7 +130,7 @@ export default function OrderProductCard({ order_products }) {
                         <Tbody>
                             {variants.map((variant, i) => (
                                 <Tr key={i} fontSize={{ base: 'md', lg: 'sm' }}>
-                                    <Th textAlign='left'>{variant}{productsCategorized[variant][0].variant.product.unit}</Th>
+                                    <Th textAlign='left'>{variant}{productsCategorized[variant][0].variant.product.unit.toLowerCase()}</Th>
                                     <Th textAlign='right'>SG${productsCategorized[variant][0].variant.price.toFixed(2)}</Th>
                                     <Th textAlign='right'>{quantities[variant]}</Th>
                                 </Tr>
