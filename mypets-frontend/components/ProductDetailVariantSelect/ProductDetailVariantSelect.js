@@ -2,10 +2,6 @@ import React from 'react'
 import { Select } from '@chakra-ui/react'
 
 function ProductDetailVariantSelect({ variantValue, variantUnit, variantIsFloat, options, onChange, ...props }) {
-    console.log('variantValue: ', variantValue)
-    console.log('variant unit: ', variantUnit)
-    console.log('variantIsFloat: ', variantIsFloat)
-    console.log('variants: ', options)
     return (
         <Select
             value={variantValue}
@@ -18,7 +14,7 @@ function ProductDetailVariantSelect({ variantValue, variantUnit, variantIsFloat,
                     key={i}
                     value={variantIsFloat ? option.variant_type_float : option.variant_type_str}
                 >
-                    {variantIsFloat ? option.variant_type_float : option.variant_type_str}{variantUnit.toLowerCase()}
+                    {variantIsFloat ? option.variant_type_float : option.variant_type_str}{variantIsFloat && variantUnit.toLowerCase()}
                 </option>
             ))}
         </Select>
