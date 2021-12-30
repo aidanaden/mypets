@@ -2,6 +2,7 @@ import { formatDistance, format } from 'date-fns'
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'
 export const FRONTEND_URL = process.env.FRONTEND_URL
 export const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PK
+export const API_HOME_URL = `${API_URL}/home-page/`
 export const API_ORDERS_URL = `${API_URL}/orders/`
 export const API_PRODUCTS_URL = `${API_URL}/products/`
 export const API_CATEGORIES_URL = `${API_URL}/categories/`

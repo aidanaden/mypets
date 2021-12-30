@@ -23,7 +23,7 @@ import SectionHeader from '../components/SectionHeader/SectionHeader'
 import AnimalList from '../components/AnimalList/AnimalList'
 import Facebook from '../utils/fb'
 
-export default function Home({ products, categories, animals, merchants }) {
+export default function Home({ home_data, products, categories, animals, merchants }) {
   const [pageProducts, setPageProducts] = useState(products)
   const [sortMethod, setSortMethod] = useState('pop')
   const [pageCategories, setPageCategories] = useState(categories)
@@ -45,10 +45,12 @@ export default function Home({ products, categories, animals, merchants }) {
     isClosable: true,
   })
 
+  console.log('home info data from backend: ', home_data)
+
   return (
     <>
       <Box>
-        <AnnouncementBanner />
+        <AnnouncementBanner text={home_data.banner_text}/>
         <Sidebar categories={pageCategories} />
         <PageContainer>
           <CategoryList
@@ -105,6 +107,11 @@ export default function Home({ products, categories, animals, merchants }) {
 }
 
 export async function getStaticProps() {
+
+  // Fetch home page banner images + top banner text
+  const home_res = await fetch(`${API_HOME_URL}`)
+  const home_data = await home_res.json()
+
   // Fetch merchants, products 
   const product_res = await fetch(`${API_PRODUCTS_URL}`)
   const products = await product_res.json()
@@ -119,6 +126,7 @@ export async function getStaticProps() {
   return {
     revalidate: 1,
     props: {
+      home_data,
       products,
       categories,
       animals,
