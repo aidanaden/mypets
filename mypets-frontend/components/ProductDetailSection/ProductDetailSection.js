@@ -45,8 +45,11 @@ function ProductDetailSection({ product }) {
     const [price, setPrice] = useState(0)
     const { user, updateCart } = useContext(AuthContext)
 
-    const getVariantFromWeight = (weight) => {
-        return product.variants.filter((variant) => parseFloat(variant.weight) == parseFloat(weight))[0]
+    const getVariantFromVariantValue = (variantValue) => {
+        if (typeof variantValue === 'string')
+            return product.variants.filter((variant) => variant.variant_type_str == variantValue)[0]
+        else
+            return product.variants.filter((variant) => parseFloat(variant.variant_type_float) == variantValue)[0]
     }
 
     const addQuantity = () => {
@@ -98,7 +101,7 @@ function ProductDetailSection({ product }) {
     }
 
     const variantSelectOnChange = (e) => {
-        const foundVariant = getVariantFromWeight(e.target.value)
+        const foundVariant = getVariantFromVariantValue(e.target.value)
         setVariant(foundVariant)
         const updatedPrice = (parseFloat(foundVariant.price) * parseFloat(quantity))
         setPrice(updatedPrice)
