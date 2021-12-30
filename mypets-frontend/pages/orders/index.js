@@ -22,7 +22,7 @@ import AuthContext, { callAPI } from '../../context/AuthContext'
 import Section from '../../components/Section/Section'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 import MypetsBtn from '../../components/MypetsBtn/MypetsBtn'
-import { stringToDate } from '../../utils/urls'
+import { API_HOME_URL, stringToDate } from '../../utils/urls'
 
 const ContributionRow = ({ order }) => {
     return (
@@ -166,9 +166,12 @@ export default function Orders() {
     const { user } = useContext(AuthContext)
     const { orders, loading } = getOrders(user)
 
+    const home_res = await fetch(`${API_HOME_URL}`)
+    const home_data = await home_res.json()
+
     return (
         <Box>
-            <AnnouncementBanner />
+            <AnnouncementBanner text={home_data.banner_text} />
             <Sidebar />
             <PageContainer>
                 <BackBtn variant='home'/>
