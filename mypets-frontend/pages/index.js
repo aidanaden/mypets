@@ -59,7 +59,10 @@ export default function Home({ home_data, products, categories, animals, merchan
             setSelectedCategory={setCategorySelected}
           />
           {/* <Carousel /> */}
-          <HomeBannerSwiper />
+          <HomeBannerSwiper
+            desktopImages={home_data.desktop_banners}
+            mobileImages={home_data.mobile_banners}
+          />
           <Stack
             direction="column"
             spacing={{ base: 8, lg: 12 }}

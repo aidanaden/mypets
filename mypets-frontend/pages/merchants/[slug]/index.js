@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react'
 
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
-import { API_MERCHANTS_URL } from '../../../utils/urls'
+import { API_HOME_URL, API_MERCHANTS_URL } from '../../../utils/urls'
 import Sidebar from "../../../components/Sidebar/Sidebar"
 import Carousel from '../../../components/Carousel/Carousel'
 import Footer from '../../../components/Footer/Footer'
@@ -15,16 +15,21 @@ import MerchantProductReviewTab from '../../../components/MerchantProductReviewT
 import MerchantBannerSwiper from '../../../components/MerchantBannerSwiper/MerchantBannerSwiper'
 import PageContainer from '../../../components/PageContainer/PageContainer'
 
-export default function index({ merchant }) {
+export default function index({ merchant, bannerText }) {
     const merchantCategories = Object.keys(lodash.groupBy(merchant.products, 'category.name'))
     return (
         <Box>  
-            <AnnouncementBanner />
+            <AnnouncementBanner
+                text={bannerText}
+            />
             <Sidebar />
             <PageContainer>
                 <BackBtn />
                 {/* <Carousel bannerImgNames={[`${merchant.name}.jpg`]} /> */}
-                <MerchantBannerSwiper merchantName={merchant.name}/>
+                <MerchantBannerSwiper
+                    desktopImages={merchant.desktop_banners}
+                    mobileImages={merchant.mobile_banners}
+                />
                 <MerchantTitle 
                     merchantName={merchant.name} 
                     merchantRating={merchant.rating} 
@@ -44,11 +49,15 @@ export async function getStaticProps({ params: { slug } }) {
     // Fetch merchants, products 
     const merchant_res = await fetch(`${API_MERCHANTS_URL}?slug=${slug}`)
     const merchant = await merchant_res.json()
+    
+    const home_res = await fetch(`${API_HOME_URL}`)
+    const home_data = await home_res.json()
 
     // Return as props
     return {
         props: {
-            merchant: merchant[0]
+            merchant: merchant[0],
+            bannerText: home_data.banner_text
         },
         // Next.js will attempt to re-generate the page:
         // - When a request comes in

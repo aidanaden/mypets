@@ -4,7 +4,7 @@ import {
     Text 
 } from '@chakra-ui/react'
 
-function AnnouncementBanner() {
+function AnnouncementBanner({ text }) {
     return (
         <Box w={{ base: '100%' }} pr={0}>
             <Stack
@@ -21,7 +21,7 @@ function AnnouncementBanner() {
                     marginEnd="2"
                     textColor='gray.800'
                 >
-                    Delivery within 3 days! Free delivery for orders above $30
+                    {text}
                 </Text>
             </Stack>
         </Box>
