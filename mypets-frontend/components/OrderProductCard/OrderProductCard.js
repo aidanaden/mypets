@@ -36,8 +36,8 @@ export default function OrderProductCard({ order_products }) {
     const [merchantName, setMerchantName] = useState('')
     const [product, setProduct] = useState(null)
     const [quantities, setQuantities] = useState(null)
-    const [productsWeighted, setProductsWeighted] = useState([])
-    const [weights, setWeights] = useState([])
+    const [productsCategorized, setProductsCategorized] = useState([])
+    const [variants, setVariants] = useState([])
     const { user, updateCart } = useContext(AuthContext)
     const toast = useToast()
 
@@ -75,19 +75,22 @@ export default function OrderProductCard({ order_products }) {
     useEffect(() => {
         if (order_products) {
             const sample_quantities = {}
-            const weighted_products = lodash.groupBy(order_products, 'variant.weight')
-            const temp_weights = Object.keys(weighted_products)
+            const categorized_products = order_products[0].variant.variant_type_is_float ?
+            lodash.groupBy(order_products, 'variant.variant_type_float') :
+            lodash.groupBy(order_products, 'variant.variant_type_str')
 
-            temp_weights.map(weight => {
-                sample_quantities[weight] = weighted_products[weight][0].quantity
+            const temp_variants = Object.keys(categorized_products)
+
+            temp_variants.map(variant => {
+                sample_quantities[variant] = categorized_products[variant][0].quantity
             })
             
             const firstProduct = order_products[0].variant.product
 
             setProduct(firstProduct)
             setQuantities(sample_quantities)
-            setProductsWeighted(weighted_products)
-            setWeights(temp_weights)
+            setProductsCategorized(categorized_products)
+            setVariants(temp_variants)
 
             callAPI(`/merchants/${order_products[0].variant.product.merchant}`, 'GET').then((merchant) => {
                 setMerchantName(merchant.name)
@@ -125,11 +128,11 @@ export default function OrderProductCard({ order_products }) {
                             </Tr>
                         </Thead>
                         <Tbody>
-                            {weights.map((weight, i) => (
+                            {variants.map((variant, i) => (
                                 <Tr key={i} fontSize={{ base: 'md', lg: 'sm' }}>
-                                    <Th textAlign='left'>{weight}KG</Th>
-                                    <Th textAlign='right'>SG${productsWeighted[weight][0].variant.price.toFixed(2)}</Th>
-                                    <Th textAlign='right'>{quantities[weight]}</Th>
+                                    <Th textAlign='left'>{variant}{productsCategorized[variant][0].variant.product.unit}</Th>
+                                    <Th textAlign='right'>SG${productsCategorized[variant][0].variant.price.toFixed(2)}</Th>
+                                    <Th textAlign='right'>{quantities[variant]}</Th>
                                 </Tr>
                             ))}
                         </Tbody>

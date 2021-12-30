@@ -33,33 +33,33 @@ import AuthContext from '../../context/AuthContext'
  */
 function CartModalProductCard({ order_products, onClose }) {
     const [quantities, setQuantities] = useState(null)
-    const [productsWeighted, setProductsWeighted] = useState([])
-    const [weights, setWeights] = useState([])
+    const [productsCategorized, setProductsCategorized] = useState([])
+    const [variants, setVariants] = useState([])
     const { updateCart, deleteOrderProductFromCart } = useContext(AuthContext)
 
-    const addQuantities = (weight) => {
+    const addQuantities = (variant) => {
         let tempQuantities = quantities
-        tempQuantities[weight] += 1
+        tempQuantities[variant] += 1
         setQuantities(tempQuantities)
 
         // create order product and add to cart
-        const existing_order_product = productsWeighted[weight][0]
+        const existing_order_product = productsCategorized[variant][0]
 
         const order_product = {
             variant: existing_order_product.variant,
             quantity: 1,
             total_price: parseFloat(existing_order_product.variant.price),
         }
-        productsWeighted[weight][0] = order_product
+        productsCategorized[variant][0] = order_product
         updateCart(order_product)
     }
 
-    const minusQuantities = (weight) => {
-        const existing_order_product = productsWeighted[weight][0]
+    const minusQuantities = (variant) => {
+        const existing_order_product = productsCategorized[variant][0]
         let tempQuantities = quantities
 
-        if (tempQuantities[weight] > 1) {
-            tempQuantities[weight] -= 1
+        if (tempQuantities[variant] > 1) {
+            tempQuantities[variant] -= 1
             setQuantities(tempQuantities)
 
             const order_product = {
@@ -68,7 +68,7 @@ function CartModalProductCard({ order_products, onClose }) {
                 total_price: parseFloat(existing_order_product.variant.price) * -1.0,
             }
 
-            productsWeighted[weight][0] = order_product
+            productsCategorized[variant][0] = order_product
             updateCart(order_product)
         } else {
             const data = deleteOrderProductFromCart(existing_order_product.id)
@@ -84,16 +84,19 @@ function CartModalProductCard({ order_products, onClose }) {
     useEffect(() => {
         if (order_products) {
             const sample_quantities = {}
-            const weighted_products = lodash.groupBy(order_products, 'variant.weight')
-            const temp_weights = Object.keys(weighted_products)
+            const categorized_products = order_products[0].variant.variant_type_is_float ?
+            lodash.groupBy(order_products, 'variant.variant_type_float') :
+            lodash.groupBy(order_products, 'variant.variant_type_str')
 
-            temp_weights.map(weight => {
-                sample_quantities[weight] = weighted_products[weight][0].quantity
+            const temp_variants = Object.keys(categorized_products)
+
+            temp_variants.map(variant => {
+                sample_quantities[variant] = categorized_products[variant][0].quantity
             })
-            
+
             setQuantities(sample_quantities)
-            setProductsWeighted(weighted_products)
-            setWeights(temp_weights)
+            setProductsCategorized(categorized_products)
+            setVariants(temp_variants)
         }
     }, [order_products])
 
@@ -159,15 +162,15 @@ function CartModalProductCard({ order_products, onClose }) {
                             </Tr>
                         </Thead>
                         <Tbody>
-                            {weights.map((weight, i) => (
+                            {variants.map((variant, i) => (
                                 <Tr key={i}>
-                                    <Th textAlign='center' fontSize='sm'>{weight}KG</Th>
-                                    <Th textAlign='center' fontSize='sm'>SG${productsWeighted[weight][0].variant.price.toFixed(2)}</Th>
+                                    <Th textAlign='center' fontSize='sm'>{variant}{productsCategorized[variant][0].variant.product.unit}</Th>
+                                    <Th textAlign='center' fontSize='sm'>SG${productsCategorized[variant][0].variant.price.toFixed(2)}</Th>
                                     <Th textAlign='center' fontSize='sm'>
                                         <CartProductQuantityPicker 
-                                            addQuantity={() => addQuantities(weight)} 
-                                            minusQuantity={() => minusQuantities(weight)}
-                                            quantity={quantities[weight]} 
+                                            addQuantity={() => addQuantities(variant)} 
+                                            minusQuantity={() => minusQuantities(variant)}
+                                            quantity={quantities[variant]} 
                                         />
                                     </Th>
                                 </Tr>

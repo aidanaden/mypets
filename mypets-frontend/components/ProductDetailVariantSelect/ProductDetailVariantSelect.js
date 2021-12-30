@@ -1,10 +1,10 @@
 import React from 'react'
 import { Select } from '@chakra-ui/react'
 
-function ProductDetailVariantSelect({ variantWeight, options, onChange, ...props }) {
+function ProductDetailVariantSelect({ variantValue, variantUnit, variantIsFloat, options, onChange, ...props }) {
     return (
         <Select
-            value={variantWeight}
+            value={variantValue}
             focusBorderColor="mypets.100"
             onChange={onChange}
             {...props}
@@ -12,9 +12,9 @@ function ProductDetailVariantSelect({ variantWeight, options, onChange, ...props
             {options.map((option, i) => (
                 <option
                     key={i}
-                    value={option.weight}
+                    value={variantIsFloat ? option.variant_type_float : option.variant_type_str}
                 >
-                    {option.weight}KG
+                    {variantValue}{variantUnit}
                 </option>
             ))}
         </Select>
