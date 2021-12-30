@@ -22,7 +22,7 @@ import SortMenu from '../../components/SortMenu/SortMenu'
 import Footer from '../../components/Footer/Footer'
 import MerchantSectionList from '../../components/MerchantSectionList/MerchantSectionList'
 import ProductList from '../../components/ProductList/ProductList'
-import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL } from '../../utils/urls'
+import { API_PRODUCTS_URL, API_MERCHANTS_URL, API_ANIMALS_URL, API_HOME_URL } from '../../utils/urls'
 import SectionHeader from '../../components/SectionHeader/SectionHeader'
 
 const MerchantCheck = ({ text, isChecked, onChange, ...props }) => {
@@ -98,7 +98,7 @@ const getMerchantDataFromNames = (names, merchants) => {
     return foundMerchants
 }
 
-export default function index({ products, animals, merchants }) {
+export default function index({ bannerText, products, animals, merchants }) {
     const [pageProducts, setPageProducts] = useState([])
     const [pageMerchants, setPageMerchants] = useState([])
     const [selectedMerchants, setSelectedMerchants] = useState([])
@@ -136,7 +136,7 @@ export default function index({ products, animals, merchants }) {
 
     return (
         <Box>
-            <AnnouncementBanner />
+            <AnnouncementBanner text={bannerText} />
             <Sidebar />
             <PageContainer>
                 <SectionHeader>
@@ -192,6 +192,9 @@ export default function index({ products, animals, merchants }) {
 }
 
 export async function getStaticProps() {
+
+    const home_res = await fetch(`${API_HOME_URL}`)
+    const home_data = await home_res.json()
     // Fetch merchants, products 
     const product_res = await fetch(`${API_PRODUCTS_URL}`)
     const products = await product_res.json()
@@ -208,6 +211,7 @@ export async function getStaticProps() {
 
     return {
         props: {
+            bannerText: home_data.banner_text,
             products,
             animals,
             merchants

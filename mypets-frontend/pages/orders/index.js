@@ -162,16 +162,13 @@ const getOrders = (user) => {
     return { orders, loading }
 }
 
-export default function Orders() {
+export default function Orders({ bannerText }) {
     const { user } = useContext(AuthContext)
     const { orders, loading } = getOrders(user)
 
-    const home_res = await fetch(`${API_HOME_URL}`)
-    const home_data = await home_res.json()
-
     return (
         <Box>
-            <AnnouncementBanner text={home_data.banner_text} />
+            <AnnouncementBanner text={bannerText} />
             <Sidebar />
             <PageContainer>
                 <BackBtn variant='home'/>
@@ -187,4 +184,18 @@ export default function Orders() {
             </PageContainer>
         </Box>
     )
+}
+
+export async function getStaticProps() {
+    // Fetch home page banner images + top banner text
+    const home_res = await fetch(`${API_HOME_URL}`)
+    const home_data = await home_res.json()
+
+    // Return as props
+    return {
+        revalidate: 1,
+        props: {
+            bannerText: home_data.banner_text
+        }
+    }
 }
