@@ -141,7 +141,7 @@ function ProductDetailSection({ product }) {
                     spacing={{ base: 2 }}
                     mt={{ base: 3 }}
                 >
-                    <HStack spacing={3}>
+                    <Stack direction={{ base: 'column-reverse', md: 'row' }} spacing={3}>
                         <ProductDetailBadge>
                             {product.merchant.name}
                         </ProductDetailBadge>
@@ -149,7 +149,7 @@ function ProductDetailSection({ product }) {
                             rating={product.rating}
                             numReviews={product.reviews.length}
                         />
-                    </HStack>
+                    </Stack>
                     <HStack
                         spacing={{ base: 2 }}
                         align='center'
