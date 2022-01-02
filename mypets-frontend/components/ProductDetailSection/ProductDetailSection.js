@@ -142,7 +142,7 @@ function ProductDetailSection({ product }) {
                     mt={{ base: 3 }}
                 >
                     <Stack direction={{ base: 'column-reverse', md: 'row' }} spacing={3}>
-                        <ProductDetailBadge>
+                        <ProductDetailBadge w='auto'>
                             {product.merchant.name}
                         </ProductDetailBadge>
                         <RatingDisplay
