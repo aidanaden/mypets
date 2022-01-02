@@ -141,7 +141,7 @@ function ProductDetailSection({ product }) {
                     spacing={{ base: 2 }}
                     mt={{ base: 3 }}
                 >
-                    <Stack w='fit-content' bg='green.500' direction={{ base: 'column-reverse', md: 'row' }} spacing={3}>
+                    <Stack direction={{ base: 'column-reverse', md: 'row' }} spacing={3}>
                         <ProductDetailBadge>
                             {product.merchant.name}
                         </ProductDetailBadge>
