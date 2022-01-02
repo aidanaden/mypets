@@ -9,6 +9,7 @@ function ProductDetailBadge({ children, ...props }) {
             mt={1}
             fontSize="0.8em"
             colorScheme="blackAlpha"
+            w='fit-content'
             {...props}
         >
             {children}
