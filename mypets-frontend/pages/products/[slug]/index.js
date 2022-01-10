@@ -4,6 +4,7 @@ import {
     Grid, 
     GridItem
 } from "@chakra-ui/react"
+import Head from 'next/head'
 
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
 import Sidebar from "../../../components/Sidebar/Sidebar"
@@ -17,50 +18,58 @@ import { API_HOME_URL, API_PRODUCTS_URL } from '../../../utils/urls'
 import PageContainer from '../../../components/PageContainer/PageContainer'
 
 export default function Product({ bannerTitle, product, otherProducts }) {
+    console.log('product: ', product)
+    console.log('product img: ', product.image)
     return (
-        <Box>
-            <AnnouncementBanner text={bannerTitle} />
-            <Sidebar />
-            <PageContainer>
-                <BackBtn />
-                <Grid 
-                    templateRows="min-content" 
-                    templateColumns="repeat(3, 1fr)" 
-                    gap={4}
-                    mb={{ base: 8, md: 12 }}
-                >
-                    <GridItem
-                        colSpan={3} 
-                        shadow="sm" 
-                        borderWidth="1px" 
-                        rounded="lg"
+        <>
+            <Head>
+                <title>Home - TitleMetaNextjs</title>
+                <meta name="description" content="Meta description for the Home page" />
+            </Head>
+            <Box>
+                <AnnouncementBanner text={bannerTitle} />
+                <Sidebar />
+                <PageContainer>
+                    <BackBtn />
+                    <Grid 
+                        templateRows="min-content" 
+                        templateColumns="repeat(3, 1fr)" 
+                        gap={4}
+                        mb={{ base: 8, md: 12 }}
                     >
-                        <ProductDetailSection product={product}/>
-                    </GridItem>
-                    <GridItem
-                        colSpan={{ base: 3, md: 2 }}
-                        shadow="sm" 
-                        borderWidth="1px" 
-                        rounded="lg" 
-                    >
-                        <ProductDescriptionSection product={product} />
-                    </GridItem>
-                    <GridItem
-                        colSpan={{ base: 3, md: 1 }} 
-                        shadow="sm" 
-                        borderWidth="1px" 
-                        rounded="lg"
-                    >
-                        <ProductReviewSection reviews={product.reviews}/>
-                    </GridItem>
-                </Grid>
-                <ProductList
-                    heading='Suggested products'
-                    products={otherProducts}
-                    selectedAnimal=''
-                />
-            </PageContainer>
-        </Box>
+                        <GridItem
+                            colSpan={3} 
+                            shadow="sm" 
+                            borderWidth="1px" 
+                            rounded="lg"
+                        >
+                            <ProductDetailSection product={product}/>
+                        </GridItem>
+                        <GridItem
+                            colSpan={{ base: 3, md: 2 }}
+                            shadow="sm" 
+                            borderWidth="1px" 
+                            rounded="lg" 
+                        >
+                            <ProductDescriptionSection product={product} />
+                        </GridItem>
+                        <GridItem
+                            colSpan={{ base: 3, md: 1 }} 
+                            shadow="sm" 
+                            borderWidth="1px" 
+                            rounded="lg"
+                        >
+                            <ProductReviewSection reviews={product.reviews}/>
+                        </GridItem>
+                    </Grid>
+                    <ProductList
+                        heading='Suggested products'
+                        products={otherProducts}
+                        selectedAnimal=''
+                    />
+                </PageContainer>
+            </Box>
+        </>
     )
 }
 
