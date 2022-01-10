@@ -18,13 +18,11 @@ import { API_HOME_URL, API_PRODUCTS_URL } from '../../../utils/urls'
 import PageContainer from '../../../components/PageContainer/PageContainer'
 
 export default function Product({ bannerTitle, product, otherProducts }) {
-    console.log('product: ', product)
-    console.log('product img: ', product.image)
     return (
         <>
             <Head>
-                <title>Home - TitleMetaNextjs</title>
-                <meta name="description" content="Meta description for the Home page" />
+                <title>{product.meta_title}</title>
+                <meta name="description" content={product.meta_description} />
             </Head>
             <Box>
                 <AnnouncementBanner text={bannerTitle} />

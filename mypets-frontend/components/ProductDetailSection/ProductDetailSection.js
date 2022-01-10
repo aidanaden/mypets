@@ -117,6 +117,7 @@ function ProductDetailSection({ product }) {
             <Center boxSize={{ base: '100%', md: '500px' }}>
                 <NextImage
                     src={imageToUrl(product.image)}
+                    alt={product.alternativeText}
                     width='500'
                     height='500'
                     priority={true}
