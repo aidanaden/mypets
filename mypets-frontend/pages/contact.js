@@ -7,12 +7,13 @@ import {
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
-import { API_CATEGORIES_URL } from '../utils/urls'
+import { API_CATEGORIES_URL, API_CONTACT_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 import ParagraphSection from '../components/ParagraphSection/ParagraphSection'
 import SectionSubHeader from '../components/SectionSubHeader/SectionSubHeader'
 
-export default function contact({ categories }) {
+export default function contact({ categories, contact_data }) {
+    console.log('contact data: ', contact_data)
     const intro = `
 
     Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)
@@ -61,6 +62,11 @@ export default function contact({ categories }) {
 }
 
 export async function getStaticProps() {
+    
+    // Fetch home page banner images + top banner text
+    const contact_res = await fetch(`${API_CONTACT_URL}`)
+    const contact_data = await contact_res.json()
+
     // Fetch categories
     const categories_res = await fetch(`${API_CATEGORIES_URL}`)
     const categories = await categories_res.json()
@@ -70,6 +76,7 @@ export async function getStaticProps() {
         revalidate: 1,
         props: {
             categories,
+            contact_data
         }
     }
 }

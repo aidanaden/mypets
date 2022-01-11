@@ -6,12 +6,12 @@ import {
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
-import { API_CATEGORIES_URL } from '../utils/urls'
+import { API_CATEGORIES_URL, API_FAQ_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 import SectionSubHeader from '../components/SectionSubHeader/SectionSubHeader'
 import ParagraphSection from '../components/ParagraphSection/ParagraphSection'
 
-export default function faq({ categories }) {
+export default function faq({ categories, faq_data }) {
 
     return (
         <Box minH='100vh'>
@@ -305,6 +305,11 @@ export default function faq({ categories }) {
 }
 
 export async function getStaticProps() {
+
+    // Fetch home page banner images + top banner text
+    const faq_res = await fetch(`${API_FAQ_URL}`)
+    const faq_data = await faq_res.json()
+
     // Fetch categories
     const categories_res = await fetch(`${API_CATEGORIES_URL}`)
     const categories = await categories_res.json()
@@ -314,6 +319,7 @@ export async function getStaticProps() {
         revalidate: 1,
         props: {
             categories,
+            faq_data
         }
     }
 }

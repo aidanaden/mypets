@@ -6,7 +6,7 @@ import {
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
-import { API_CATEGORIES_URL } from '../utils/urls'
+import { API_CATEGORIES_URL, API_ABOUT_URL } from '../utils/urls'
 import SectionHeader from '../components/SectionHeader/SectionHeader'
 import ParagraphSection from '../components/ParagraphSection/ParagraphSection'
 import SectionSubHeader from '../components/SectionSubHeader/SectionSubHeader'
@@ -46,6 +46,11 @@ export default function about({ categories }) {
 }
 
 export async function getStaticProps() {
+
+    // Fetch home page banner images + top banner text
+    const about_res = await fetch(`${API_ABOUT_URL}`)
+    const about_data = await about_res.json()
+
     // Fetch categories
     const categories_res = await fetch(`${API_CATEGORIES_URL}`)
     const categories = await categories_res.json()
@@ -55,6 +60,7 @@ export async function getStaticProps() {
         revalidate: 1,
         props: {
             categories,
+            about_data
         }
     }
 }
