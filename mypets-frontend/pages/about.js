@@ -2,6 +2,7 @@ import {
     Box,
     Text
 } from '@chakra-ui/react'
+import Head from 'next/head'
 
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
@@ -11,13 +12,18 @@ import SectionHeader from '../components/SectionHeader/SectionHeader'
 import ParagraphSection from '../components/ParagraphSection/ParagraphSection'
 import SectionSubHeader from '../components/SectionSubHeader/SectionSubHeader'
 
-export default function about({ categories }) {
+export default function about({ categories, about_data }) {
     const intro = `MyPets was started by the animal lovers who were frustrated by the online landscape when shopping for pet products during the start of COVID-19. After purchasing from many different pet shops over the years, the founders have come to realize that customers deserved to have a much easier and quicker way of purchasing pet supplies without the hassle of sourcing the best products online.
     Here at MyPets, we strive to help our customers choose the best product for their cats and dogs. We sell products ranging from foods, treats to even toys for your furry friends. We also believe in giving back to the community, as a small sum of earnings will be donated to pet shelters and the community.
     We hope you'll be a part of our journey in changing the way you shop for pet products`
 
     return (
-        <Box minH='100vh'>
+        <>
+            <Head>
+                <title>{about_data.meta_title}</title>
+                <meta name="description" content={about_data.meta_description} />
+            </Head>
+            <Box minH='100vh'>
             <Sidebar categories={categories} />
             <PageContainer>
                 <SectionHeader
@@ -42,6 +48,7 @@ export default function about({ categories }) {
                 />
             </PageContainer>
         </Box>
+        </>
     )
 }
 

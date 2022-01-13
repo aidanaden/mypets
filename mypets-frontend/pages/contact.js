@@ -3,6 +3,7 @@ import {
     Text,
     Spacer
 } from '@chakra-ui/react'
+import Head from 'next/head'
 
 import PageContainer from '../components/PageContainer/PageContainer'
 import Sidebar from '../components/Sidebar/Sidebar'
@@ -30,34 +31,40 @@ export default function contact({ categories, contact_data }) {
 `
 
     return (
-        <Box minH='100vh'>
-            <Sidebar categories={categories} />
-            <PageContainer>
-                <SectionHeader
-                    mb={{ base: 2, md: 4 }}
-                >
-                    Contact Us
-                </SectionHeader>
-                <SectionSubHeader>
-                    Last updated: 19/10/21
-                </SectionSubHeader>
-                <ParagraphSection
-                    text='Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)'
-                />
-                <ParagraphSection
-                    heading='If you have any inquiries/feedback or suggestions, please contact us.'
-                    text='• Email: support@mypets.sg (Reply within 2 working days)'
-                    mb={{ base: 3 }}
-                />
-                <ParagraphSection
-                    text='• Live Chat Support: 9am - 12pm, 2pm - 6pm (Mon - Fri)'
-                />
-                <ParagraphSection
-                    heading='For account/order-related which requires immediate assistance'
-                    text='• Phone/WhatsApp: 9126 4942 (anytime)'
-                />
-            </PageContainer>
-        </Box>
+        <>
+            <Head>
+                <title>{contact_data.meta_title}</title>
+                <meta name="description" content={contact_data.meta_description} />
+            </Head>
+            <Box minH='100vh'>
+                <Sidebar categories={categories} />
+                <PageContainer>
+                    <SectionHeader
+                        mb={{ base: 2, md: 4 }}
+                    >
+                        Contact Us
+                    </SectionHeader>
+                    <SectionSubHeader>
+                        Last updated: 19/10/21
+                    </SectionSubHeader>
+                    <ParagraphSection
+                        text='Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)'
+                    />
+                    <ParagraphSection
+                        heading='If you have any inquiries/feedback or suggestions, please contact us.'
+                        text='• Email: support@mypets.sg (Reply within 2 working days)'
+                        mb={{ base: 3 }}
+                    />
+                    <ParagraphSection
+                        text='• Live Chat Support: 9am - 12pm, 2pm - 6pm (Mon - Fri)'
+                    />
+                    <ParagraphSection
+                        heading='For account/order-related which requires immediate assistance'
+                        text='• Phone/WhatsApp: 9126 4942 (anytime)'
+                    />
+                </PageContainer>
+            </Box>
+        </>
     )
 }
 
