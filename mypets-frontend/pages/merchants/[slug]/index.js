@@ -3,6 +3,7 @@ import lodash from 'lodash'
 import {
     Box
 } from '@chakra-ui/react'
+import Head from 'next/head'
 
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
 import { API_HOME_URL, API_MERCHANTS_URL } from '../../../utils/urls'
