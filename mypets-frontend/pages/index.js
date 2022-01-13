@@ -9,6 +9,7 @@ import {
   Stack,
   useToast 
 } from "@chakra-ui/react"
+import Head from 'next/head'
 
 import PageContainer from '../components/PageContainer/PageContainer'
 import AnnouncementBanner from '../components/AnnouncementBanner/AnnouncementBanner'
