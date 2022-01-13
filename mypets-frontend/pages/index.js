@@ -45,10 +45,14 @@ export default function Home({ home_data, products, categories, animals, merchan
     isClosable: true,
   })
 
-  console.log('home info data from backend: ', home_data)
+  // console.log('home info data from backend: ', home_data)
 
   return (
     <>
+      <Head>
+        <title>{home_data.meta_title}</title>
+        <meta name="description" content={home_data.meta_description} />
+      </Head>
       <Box>
         <AnnouncementBanner text={home_data.banner_text}/>
         <Sidebar categories={pageCategories} />
