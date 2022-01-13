@@ -13,6 +13,7 @@ import ParagraphSection from '../components/ParagraphSection/ParagraphSection'
 import SectionSubHeader from '../components/SectionSubHeader/SectionSubHeader'
 
 export default function terms({ categories, terms_data }) {
+    console.log('terms data: ', terms_data)
     return (
         <>
             <Head>
