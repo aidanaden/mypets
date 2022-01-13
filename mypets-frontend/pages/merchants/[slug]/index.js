@@ -18,30 +18,36 @@ import PageContainer from '../../../components/PageContainer/PageContainer'
 export default function index({ merchant, bannerText }) {
     const merchantCategories = Object.keys(lodash.groupBy(merchant.products, 'category.name'))
     return (
-        <Box>  
-            <AnnouncementBanner
-                text={bannerText}
-            />
-            <Sidebar />
-            <PageContainer>
-                <BackBtn />
-                {/* <Carousel bannerImgNames={[`${merchant.name}.jpg`]} /> */}
-                <MerchantBannerSwiper
-                    desktopImages={merchant.desktop_banners}
-                    mobileImages={merchant.mobile_banners}
+        <>
+            <Head>
+                <title>{merchant.meta_title}</title>
+                <meta name="description" content={merchant.meta_description} />
+            </Head>
+            <Box>  
+                <AnnouncementBanner
+                    text={bannerText}
                 />
-                <MerchantTitle 
-                    merchantName={merchant.name} 
-                    merchantRating={merchant.rating} 
-                    merchantNumReviews={merchant.reviews}
-                />
-                <MerchantProductReviewTab 
-                    merchantProducts={merchant.products} 
-                    categories={merchantCategories} 
-                    merchantReviews={merchant.merchant_reviews}
-                />
-            </PageContainer>
-        </Box>
+                <Sidebar />
+                <PageContainer>
+                    <BackBtn />
+                    {/* <Carousel bannerImgNames={[`${merchant.name}.jpg`]} /> */}
+                    <MerchantBannerSwiper
+                        desktopImages={merchant.desktop_banners}
+                        mobileImages={merchant.mobile_banners}
+                    />
+                    <MerchantTitle 
+                        merchantName={merchant.name} 
+                        merchantRating={merchant.rating} 
+                        merchantNumReviews={merchant.reviews}
+                    />
+                    <MerchantProductReviewTab 
+                        merchantProducts={merchant.products} 
+                        categories={merchantCategories} 
+                        merchantReviews={merchant.merchant_reviews}
+                    />
+                </PageContainer>
+            </Box>
+        </>
     )
 }
 
