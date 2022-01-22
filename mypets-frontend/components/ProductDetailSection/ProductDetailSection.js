@@ -61,6 +61,22 @@ function AnimalBadge({ type='dog', ...props }) {
     )
 }
 
+function ProductImageRow({ images }) {
+    return (
+        <Stack direction='row' spacing={3} bg='red.100'>
+            {images.map((image) => (
+                <NextImage
+                    src={imageToUrl(image.image)}
+                    alt={image.alternativeText}
+                    width='100'
+                    height='100'
+                    priority={true}
+                />
+            ))}
+        </Stack>
+    )
+}
+
 function ProductDetailSection({ product }) {
     const toast = useToast()
     const [variant, setVariant] = useState({})
@@ -149,17 +165,20 @@ function ProductDetailSection({ product }) {
 
     return (
         <Stack direction={{ base: 'column', md: 'row' }} justifyContent="space-evenly" p={4}>
-            <Center boxSize={{ base: '100%', md: '500px' }}>
-                <SRLWrapper>
-                    <NextImage
-                        src={imageToUrl(product.image)}
-                        alt={product.alternativeText}
-                        width='500'
-                        height='500'
-                        priority={true}
-                    />
-                </SRLWrapper>
-            </Center>
+            <SRLWrapper>
+                <Box>
+                    <Center boxSize={{ base: '100%', md: '500px' }}>
+                        <NextImage
+                            src={imageToUrl(product.image)}
+                            alt={product.alternativeText}
+                            width='400'
+                            height='400'
+                            priority={true}
+                        />
+                    </Center>
+                    <ProductImageRow images={product.images} />
+                </Box>
+            </SRLWrapper>
             <Flex
                 direction="column"
                 w={{ base: '100%', md: 'auto', lg: '400px' }}
