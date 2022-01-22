@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Router, { useRouter } from 'next/router'
 import ReactGA from 'react-ga'
 import 'swiper/swiper.scss';
+import '@fontsource/poppins'
 
 import customTheme from '../styles/theme'
 import { AuthProvider } from '../context/AuthContext'

@@ -6,7 +6,7 @@ const fonts = {
     // futura: "Futura",
     // gothamrnd: "GothamRnd",
     heading: `Futura`,
-    body: `GothamRnd`
+    body: `Poppins`
 }
 
 const colors = {
