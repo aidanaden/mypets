@@ -63,16 +63,17 @@ function AnimalBadge({ type='dog', ...props }) {
 
 function ProductImageRow({ images }) {
     return (
-        <Stack direction='row' spacing={3} bg='red.100'>
+        <Stack direction='row' spacing={3} align='center'>
             {images.map((image) => (
-                <Box css={{
+                <Box
+                    css={{
                     cursor: 'pointer'
                 }}>
                     <NextImage
                         src={imageToUrl(image)}
                         alt={image.alternativeText}
-                        width='100'
-                        height='100'
+                        width='75'
+                        height='75'
                         priority={true}
                     />
                 </Box>
