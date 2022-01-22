@@ -63,6 +63,7 @@ function ProductDetailSection({ product }) {
     const toast = useToast()
     const [variant, setVariant] = useState({})
     const [quantity, setQuantity] = useState(1)
+    const [originalPrice, setOriginalPrice] = useState(0)
     const [price, setPrice] = useState(0)
     const { user, updateCart } = useContext(AuthContext)
 
@@ -130,7 +131,12 @@ function ProductDetailSection({ product }) {
 
     useEffect(() => {
         setVariant(product.variants[0])
-        setPrice(product.variants[0].price)
+        if (product.variants[0].discounted_price) {
+            setOriginalPrice(product.variants[0].price)
+            setPrice(product.variants[0].discounted_price)
+        } else {
+            setPrice(product.variants[0].price)
+        }
     }, [])
 
     return (
@@ -174,6 +180,7 @@ function ProductDetailSection({ product }) {
                         <RatingDisplay
                             rating={product.rating}
                             numReviews={product.reviews.length}
+                            spacing={{ base: 3, md: 4 }}
                         />
                     </Stack>
                     <HStack
@@ -210,10 +217,27 @@ function ProductDetailSection({ product }) {
                     mb={{ base: 6 }}
                     justifyContent="space-between"
                 >
-                    <Text fontSize={{ base: '3xl', md: "4xl" }} fontWeight='bold' mr={4}>
-                        SG${price.toFixed(2)}
-                    </Text>
-                    <ProductQuantityPicker addQuantity={addQuantity} minusQuantity={minusQuantity} quantity={quantity} />
+                    <Stack
+                        direction='column'
+                        spacing={4}
+                        mr={4}
+                    >
+                        {originalPrice != 0 &&
+                        <Text fontSize='sm'>
+                            SG${originalPrice.toFixed(2)}
+                        </Text>}
+                        <Text
+                            fontSize={{ base: '3xl', md: "4xl" }}
+                            fontWeight='bold'
+                        >
+                            SG${price.toFixed(2)}
+                        </Text>
+                    </Stack>
+                    <ProductQuantityPicker
+                        addQuantity={addQuantity}
+                        minusQuantity={minusQuantity}
+                        quantity={quantity}
+                    />
                 </HStack>
                 <MypetsBtn
                     onClick={handleAddToCart}
