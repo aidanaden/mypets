@@ -3,10 +3,10 @@ import { Flex, IconButton, Text } from "@chakra-ui/react"
 import { AddIcon, MinusIcon, SmallAddIcon } from "@chakra-ui/icons"
 import { useState } from 'react'
 
-function ProductQuantityPicker({ addQuantity, minusQuantity, quantity=1 }) {
+function ProductQuantityPicker({ addQuantity, minusQuantity, quantity=1, ...props }) {
 
     return (
-        <Flex>
+        <Flex {...props}>
             <IconButton 
                 icon={<MinusIcon />} 
                 size="sm" 

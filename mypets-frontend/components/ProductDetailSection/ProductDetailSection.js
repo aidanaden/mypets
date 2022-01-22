@@ -231,9 +231,6 @@ function ProductDetailSection({ product }) {
                             fontSize={{ base: '3xl', md: "4xl" }}
                             fontWeight='bold'
                             textColor='mypets-green.100'
-                            bg='red.100'
-                            py={0}
-                            my={0}
                         >
                             SG${price.toFixed(2)}
                         </Box>
@@ -242,6 +239,7 @@ function ProductDetailSection({ product }) {
                         addQuantity={addQuantity}
                         minusQuantity={minusQuantity}
                         quantity={quantity}
+                        mb={2}
                     />
                 </HStack>
                 <MypetsBtn
