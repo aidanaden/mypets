@@ -235,6 +235,8 @@ function ProductDetailSection({ product }) {
                             fontWeight='bold'
                             textColor='mypets-green.100'
                             bg='red.100'
+                            py={0}
+                            my={0}
                         >
                             SG${price.toFixed(2)}
                         </Text>
