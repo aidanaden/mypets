@@ -216,6 +216,7 @@ function ProductDetailSection({ product }) {
                 <Box bg='green.100'>
                     {originalPrice != 0 &&
                         <Text
+                            mt='auto'
                             fontSize='sm'
                             textDecorationLine='line-through'
                             bg='blue.100'
