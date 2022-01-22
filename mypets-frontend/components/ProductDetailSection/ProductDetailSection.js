@@ -1,5 +1,6 @@
 import { useState, useContext, useEffect } from 'react'
-import { 
+import {
+    Box,
     Center,
     Heading, 
     Stack,
