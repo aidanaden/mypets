@@ -222,12 +222,10 @@ function ProductDetailSection({ product }) {
                         direction='column'
                         spacing={0}
                         mr={4}
-                        bg='red.100'
                     >
                         {originalPrice != 0 &&
                         <Text
                             fontSize='sm'
-                            bg='blue.100'
                             textDecorationLine='line-through'
                         >
                             SG${originalPrice.toFixed(2)}
@@ -235,8 +233,6 @@ function ProductDetailSection({ product }) {
                         <Text
                             fontSize={{ base: '3xl', md: "4xl" }}
                             fontWeight='bold'
-                            
-                            bg='green.100'
                         >
                             SG${price.toFixed(2)}
                         </Text>
