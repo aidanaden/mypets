@@ -195,8 +195,8 @@ function ProductDetailSection({ product }) {
                             {product.merchant.name}
                         </ProductDetailBadge>
                         <ProductDetailBadge mt={0}>
-                            {/* {`${(price/originalPrice) * 100}% OFF`} */}
-                            % OFF
+                            {`${(price/originalPrice) * 100}% OFF`}
+                            {/* % OFF */}
                         </ProductDetailBadge>
                         {/* {originalPrice != 0 &&
                         <ProductDetailBadge mt={0} bg='mypets-green' textColor='white'>
