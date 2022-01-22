@@ -65,13 +65,17 @@ function ProductImageRow({ images }) {
     return (
         <Stack direction='row' spacing={3} bg='red.100'>
             {images.map((image) => (
-                <NextImage
-                    src={imageToUrl(image)}
-                    alt={image.alternativeText}
-                    width='100'
-                    height='100'
-                    priority={true}
-                />
+                <Box css={{
+                    cursor: 'pointer'
+                }}>
+                    <NextImage
+                        src={imageToUrl(image)}
+                        alt={image.alternativeText}
+                        width='100'
+                        height='100'
+                        priority={true}
+                    />
+                </Box>
             ))}
         </Stack>
     )
@@ -169,7 +173,12 @@ function ProductDetailSection({ product }) {
         <Stack direction={{ base: 'column', md: 'row' }} justifyContent="space-evenly" p={4}>
             <SRLWrapper>
                 <Box>
-                    <Center boxSize={{ base: '100%', md: '500px' }}>
+                    <Center
+                        boxSize={{ base: '100%', md: '500px' }}
+                        css={{
+                            cursor: 'pointer'
+                        }}
+                    >
                         <NextImage
                             src={imageToUrl(product.image)}
                             alt={product.alternativeText}
