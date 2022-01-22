@@ -133,12 +133,14 @@ function ProductDetailSection({ product }) {
 
     useEffect(() => {
         setVariant(product.variants[0])
+        const variantOriginalPrice = product.variants[0].price
+        const variantPrice = product.variants[0].discounted_price
         if (product.variants[0].discounted_price) {
-            setOriginalPrice(product.variants[0].price)
-            setPrice(product.variants[0].discounted_price)
-            setDiscountPercentage(((1 - price/originalPrice) * 100))
+            setOriginalPrice(variantOriginalPrice)
+            setPrice(variantPrice)
+            setDiscountPercentage(((1 - variantPrice/variantOriginalPrice) * 100))
         } else {
-            setPrice(product.variants[0].price)
+            setPrice(variantOriginalPrice)
         }
     }, [])
 
