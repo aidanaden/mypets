@@ -213,25 +213,29 @@ function ProductDetailSection({ product }) {
                     <ProductSoldBadge w='120px' mt={2} />}
                 </Stack>
                 <HStack
-                    mt={{ base: 4, md: 8 }}
+                    mt={{ base: 6, md: 8 }}
                     mb={{ base: 6 }}
                     justifyContent="space-between"
-                    align='baseline'
+                    align='end'
                 >
                     <Stack
                         direction='column'
-                        spacing={4}
+                        spacing={0}
                         mr={4}
                         bg='red.100'
                     >
                         {originalPrice != 0 &&
-                        <Text fontSize='sm' bg='blue.100'>
+                        <Text
+                            fontSize='sm'
+                            bg='blue.100'
+                            textDecorationLine='line-through'
+                        >
                             SG${originalPrice.toFixed(2)}
                         </Text>}
                         <Text
                             fontSize={{ base: '3xl', md: "4xl" }}
                             fontWeight='bold'
-                            textDecorationLine='line-through'
+                            
                             bg='green.100'
                         >
                             SG${price.toFixed(2)}
