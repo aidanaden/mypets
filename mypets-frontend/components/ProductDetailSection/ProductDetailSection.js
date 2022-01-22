@@ -225,7 +225,8 @@ function ProductDetailSection({ product }) {
                         mt={{ base: 6, md: 12 }}
                         mb={{ base: 6 }}
                         justifyContent="space-between"
-                        align='end'
+                        align='center'
+                        bg='red.100'
                     >
                         <Box
                             fontSize={{ base: '3xl', md: "4xl" }}
