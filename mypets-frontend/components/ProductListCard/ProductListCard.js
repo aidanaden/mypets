@@ -92,7 +92,7 @@ function ProductListCard({ product }) {
     >      
       <Stack
         direction='column'
-        p={{ base: '2', sm: '3' }}
+        p={{ base: 2, sm: 3 }}
         w="full"
         alignItems="center"
         justifyContent="center"
