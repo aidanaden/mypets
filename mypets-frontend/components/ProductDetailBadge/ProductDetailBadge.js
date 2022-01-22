@@ -5,7 +5,7 @@ function ProductDetailBadge({ children, ...props }) {
     return (
         <Badge
             rounded="full"
-            px={2}
+            px={3}
             py={1}
             mt={1}
             fontSize="0.8em"

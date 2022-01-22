@@ -49,8 +49,8 @@ function AnimalBadge({ type='dog', ...props }) {
         >
             <Icon
                 as={type == 'dog' ? FaDog : FaCat}
-                w={5}
-                h={5}
+                w={4}
+                h={4}
             />
             <Text textTransform='uppercase' fontSize='md' fontWeight='bold'>
                 {type}
@@ -165,8 +165,8 @@ function ProductDetailSection({ product }) {
                 >
                     <Stack
                         direction={{ base: 'row', md: 'row' }}
-                        spacing={3}
-                        align='center'
+                        spacing={{ base: 3, md: 4 }}
+                        align='baseline'
                     >
                         <AnimalBadge>
                             {product.animal.name}
