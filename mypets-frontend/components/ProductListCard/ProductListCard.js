@@ -216,7 +216,9 @@ function ProductListCard({ product }) {
                 <Text
                   fontSize={{ base: 'md', md: 'lg' }}
                   fontWeight='bold'
-                  color='mypets-green.100'
+                  color={product.variants[0].discounted_price && product.variants[0].discounted_price > 0 ?
+                    'mypets-green.100' :
+                    'gray.800'}
                   justifySelf='end'
                   alignSelf='end'
                   my={0}
