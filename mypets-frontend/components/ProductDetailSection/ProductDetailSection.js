@@ -52,7 +52,7 @@ function AnimalBadge({ type='dog', ...props }) {
                 w={5}
                 h={5}
             />
-            <Text textTransform='uppercase'>
+            <Text textTransform='uppercase' fontSize='md' fontWeight='bold'>
                 {type}
             </Text>
         </Stack>
@@ -164,7 +164,7 @@ function ProductDetailSection({ product }) {
                     mt={{ base: 3 }}
                 >
                     <Stack
-                        direction={{ base: 'column-reverse', md: 'row' }}
+                        direction={{ base: 'row', md: 'row' }}
                         spacing={3}
                         align='center'
                     >
