@@ -44,7 +44,8 @@ function AnimalBadge({ type='dog', ...props }) {
         <Stack
             direction='row'
             spacing={2}
-            justify='center'
+            align='center'
+            bg='red.100'
             {...props}
         >
             <Icon
