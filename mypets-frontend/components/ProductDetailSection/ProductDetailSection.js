@@ -223,21 +223,18 @@ function ProductDetailSection({ product }) {
                             mt='auto'
                             fontSize='sm'
                             textDecorationLine='line-through'
-                            bg='blue.100'
                         >
                             SG${originalPrice.toFixed(2)}
                         </Text>}
                     <HStack
                         justifyContent="space-between"
                         align='center'
-                        bg='red.100'
                     >
                         <Box
                             fontSize={{ base: '3xl', md: "4xl" }}
                             fontWeight='bold'
                             textColor='mypets-green.100'
                             mr={4}
-                        // bg='red.100'
                         >
                             SG${price.toFixed(2)}
                         </Box>
