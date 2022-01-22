@@ -216,7 +216,6 @@ function ProductDetailSection({ product }) {
                 <Box
                     mt={{ base: 6, md: 12 }}
                     mb={{ base: 6 }}
-                    bg='green.100'
                 >
                     {originalPrice != 0 &&
                         <Text
