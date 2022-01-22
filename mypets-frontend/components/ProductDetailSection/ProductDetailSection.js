@@ -66,6 +66,7 @@ function ProductDetailSection({ product }) {
     const [quantity, setQuantity] = useState(1)
     const [originalPrice, setOriginalPrice] = useState(0)
     const [price, setPrice] = useState(0)
+    const [discountPercentage, setDiscountPercentage] = useState(0)
     const { user, updateCart } = useContext(AuthContext)
 
     const getVariantFromVariantValue = (variantValue) => {
@@ -135,6 +136,7 @@ function ProductDetailSection({ product }) {
         if (product.variants[0].discounted_price) {
             setOriginalPrice(product.variants[0].price)
             setPrice(product.variants[0].discounted_price)
+            setDiscountPercentage(((1 - price/originalPrice) * 100))
         } else {
             setPrice(product.variants[0].price)
         }
@@ -194,16 +196,13 @@ function ProductDetailSection({ product }) {
                         <ProductDetailBadge mt={0}>
                             {product.merchant.name}
                         </ProductDetailBadge>
-                        {/* <ProductDetailBadge mt={0}>
-                            {`${(price/originalPrice) * 100}% OFF`}
-                        </ProductDetailBadge> */}
                         {originalPrice != 0 &&
                         <ProductDetailBadge
                             mt={0}
                             bg='mypets-green.100'
                             textColor='white'
                         >
-                            {`${((1 - price/originalPrice) * 100).toFixed(0)}% OFF`}
+                            {`${discountPercentage.toFixed(0)}% OFF`}
                         </ProductDetailBadge>}
                     </HStack>
                 </Stack>
