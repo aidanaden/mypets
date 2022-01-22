@@ -139,7 +139,7 @@ function ProductListCard({ product }) {
             </Box>
           </LinkOverlay>
           <Spacer />
-          <Box>
+          <Box bg='blue.100'>
             <HStack w='auto' justifyContent='center' mb={2}>
               <IconButton 
                   icon={<MinusIcon />} 
@@ -166,10 +166,11 @@ function ProductListCard({ product }) {
               justifyContent="space-between"
               alignContent="center"
               justifySelf='end'
+              bg='red.100'
             >
               <Box justifyContent='center' alignContent='center' textAlign='center'>
-                <Text fontSize='xs' fontWeight='semibold' mt={1}>
-                  ({product.reviews.length} reviews)
+                <Text fontSize='xs' fontWeight='semibold' my={1}>
+                  {product.reviews.length} reviews
                 </Text>
                 <RatingDisplay rating={product.rating} numReviews={0} />
               </Box>
