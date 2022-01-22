@@ -200,8 +200,8 @@ function ProductDetailSection({ product }) {
                         {originalPrice != 0 &&
                         <ProductDetailBadge
                             mt={0}
-                            bg='mypets-green'
-                            // textColor='white'
+                            bg='mypets-green.100'
+                            textColor='white'
                         >
                             {`${((1 - price/originalPrice) * 100).toFixed(0)}% OFF`}
                         </ProductDetailBadge>}
