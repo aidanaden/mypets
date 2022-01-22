@@ -165,10 +165,12 @@ function ProductListCard({ product }) {
               direction='row'
               justifyContent="space-between"
               alignContent="center"
-              justifySelf='flex-end'
+              justifySelf='end'
             >
               <Box justifyContent='center'>
-                <Text>{product.reviews.length} reviews</Text>
+                <Text fontSize='sm' fontWeight='semibold'>
+                  {product.reviews.length} reviews
+                </Text>
                 <RatingDisplay rating={product.rating} numReviews={0} />
               </Box>
               <Box
