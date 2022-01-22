@@ -99,9 +99,19 @@ function ProductListCard({ product }) {
         h='100%'
         position='relative'
       >
-        <Box position='absolute' top='0' left='0' p={3} zIndex='overlay'>
-          50% off
-        </Box>
+        {product.variants[0].discounted_price > 0 &&
+        <Box
+          position='absolute'
+          top='0'
+          left='0'
+          p={3}
+          zIndex='overlay'
+          bg='mypets-green.100'
+          text='white'
+          roundedTopLeft='lg'
+        >
+          {((1 - product.variants[0].discounted_price/product.variants[0].price) * 100).toFixed(0)}% OFF
+        </Box>}
         <Stack
           direction='column'
           h='100%'
@@ -186,6 +196,8 @@ function ProductListCard({ product }) {
                 <Text
                   fontSize={{ base: 'xs', md: 'sm' }}
                   color='gray.800'
+                  justifySelf='end'
+                  alignSelf='end'
                   my={0}
                   py={0}
                   textDecorationLine='line-through'
