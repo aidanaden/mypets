@@ -107,8 +107,9 @@ function ProductListCard({ product }) {
           p={3}
           zIndex='overlay'
           bg='mypets-green.100'
-          text='white'
+          textColor='white'
           roundedTopLeft='lg'
+          roundedRight='3xl'
         >
           {((1 - product.variants[0].discounted_price/product.variants[0].price) * 100).toFixed(0)}% OFF
         </Box>}
