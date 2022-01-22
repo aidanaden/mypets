@@ -139,7 +139,7 @@ function ProductListCard({ product }) {
             </Box>
           </LinkOverlay>
           <Spacer />
-          <Box bg='blue.100'>
+          <Box>
             <HStack w='auto' justifyContent='center' mb={2}>
               <IconButton 
                   icon={<MinusIcon />} 
@@ -166,7 +166,6 @@ function ProductListCard({ product }) {
               justifyContent="space-between"
               alignContent="center"
               justifySelf='end'
-              bg='red.100'
             >
               <Box justifyContent='center' alignContent='center' textAlign='center'>
                 <Text fontSize='xs' fontWeight='semibold' my={1}>
@@ -175,11 +174,13 @@ function ProductListCard({ product }) {
                 <RatingDisplay rating={product.rating} numReviews={0} />
               </Box>
               <Box
-                fontSize={{ base: 'sm', md: 'md' }}
+                fontSize={{ base: 'md', md: 'md' }}
                 fontWeight='bold'
                 color='gray.800'
                 justifySelf='end'
                 alignSelf='end'
+                my={0}
+                py={0}
               >
                 <Box as="span" color={'gray.600'}>
                   $
