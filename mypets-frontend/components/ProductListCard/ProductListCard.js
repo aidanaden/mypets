@@ -108,6 +108,7 @@ function ProductListCard({ product }) {
           zIndex='overlay'
           bg='mypets-green.100'
           textColor='white'
+          fontWeight='bold'
           roundedTopLeft='lg'
           roundedRight='3xl'
         >
