@@ -213,35 +213,37 @@ function ProductDetailSection({ product }) {
                     {variant.available == false &&
                     <ProductSoldBadge w='120px' mt={2} />}
                 </Stack>
-                <HStack
-                    mt={{ base: 6, md: 12 }}
-                    mb={{ base: 6 }}
-                    justifyContent="space-between"
-                    align='center'
-                >
-                    <Box mr={4}>
-                        {originalPrice != 0 &&
+                <Box>
+                    {originalPrice != 0 &&
                         <Text
                             fontSize='sm'
                             textDecorationLine='line-through'
                         >
                             SG${originalPrice.toFixed(2)}
                         </Text>}
+                    <HStack
+                        mt={{ base: 6, md: 12 }}
+                        mb={{ base: 6 }}
+                        justifyContent="space-between"
+                        align='end'
+                    >
                         <Box
                             fontSize={{ base: '3xl', md: "4xl" }}
                             fontWeight='bold'
                             textColor='mypets-green.100'
-                            // bg='red.100'
+                            mr={4}
+                        // bg='red.100'
                         >
                             SG${price.toFixed(2)}
                         </Box>
-                    </Box>
-                    <ProductQuantityPicker
-                        addQuantity={addQuantity}
-                        minusQuantity={minusQuantity}
-                        quantity={quantity}
-                    />
-                </HStack>
+                        <ProductQuantityPicker
+                            addQuantity={addQuantity}
+                            minusQuantity={minusQuantity}
+                            quantity={quantity}
+                        />
+                    </HStack>
+                </Box>
+                
                 <MypetsBtn
                     onClick={handleAddToCart}
                     btnText='Add to cart'
