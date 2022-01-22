@@ -233,6 +233,7 @@ function ProductDetailSection({ product }) {
                         <Text
                             fontSize={{ base: '3xl', md: "4xl" }}
                             fontWeight='bold'
+                            textColor='mypets-green.100'
                         >
                             SG${price.toFixed(2)}
                         </Text>
