@@ -174,9 +174,10 @@ function ProductDetailSection({ product }) {
         <Stack
             direction={{ base: 'column', md: 'row' }}
             justifyContent="space-evenly"
-            py={8}
-            px={4}
-            bg='red.100'
+            spacing={{ base: 8, md: 'initial' }}
+            py={12}
+            px={8}
+            // bg='red.100'
         >
             <SRLWrapper>
                 <Box>
@@ -201,12 +202,12 @@ function ProductDetailSection({ product }) {
                 direction="column"
                 w={{ base: '100%', md: 'auto', lg: '400px' }}
                 h={{ base: "100%", md: 'auto' }}
-                px={2}
+                // px={2}
                 // pt={{ base: 8, md: 8 }}
                 // pb={{ base: 2, md: 8 }}
-                pt={{ base: 0, md: 0 }}
-                pb={{ base: 0, md: 0 }}
-                bg='blue.100'
+                // pt={{ base: 0, md: 0 }}
+                // pb={{ base: 0, md: 0 }}
+                // bg='blue.100'
             >
                 <Heading
                     as="h2"
@@ -301,7 +302,6 @@ function ProductDetailSection({ product }) {
                         />
                     </HStack>
                 </Box>
-                
                 <MypetsBtn
                     onClick={handleAddToCart}
                     btnText='Add to cart'
