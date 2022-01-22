@@ -168,8 +168,8 @@ function ProductListCard({ product }) {
               justifySelf='end'
             >
               <Box justifyContent='center' alignContent='center' textAlign='center'>
-                <Text fontSize='sm' fontWeight='semibold'>
-                  {product.reviews.length} reviews
+                <Text fontSize='xs' fontWeight='semibold' mt={1}>
+                  ({product.reviews.length} reviews)
                 </Text>
                 <RatingDisplay rating={product.rating} numReviews={0} />
               </Box>
@@ -178,6 +178,7 @@ function ProductListCard({ product }) {
                 fontWeight='bold'
                 color='gray.800'
                 justifySelf='end'
+                alignSelf='end'
               >
                 <Box as="span" color={'gray.600'}>
                   $
