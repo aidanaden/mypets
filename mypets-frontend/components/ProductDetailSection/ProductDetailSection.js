@@ -213,7 +213,7 @@ function ProductDetailSection({ product }) {
                     <ProductSoldBadge w='120px' mt={2} />}
                 </Stack>
                 <HStack
-                    mt={{ base: 6, md: 8 }}
+                    mt={{ base: 6, md: 12 }}
                     mb={{ base: 6 }}
                     justifyContent="space-between"
                     align='end'
