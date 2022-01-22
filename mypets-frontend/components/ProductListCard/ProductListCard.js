@@ -92,7 +92,8 @@ function ProductListCard({ product }) {
     >      
       <Stack
         direction='column'
-        p={{ base: 2, sm: 3 }}
+        p={{ base: 3, sm: 3 }}
+        bg='red.100'
         w="full"
         alignItems="center"
         justifyContent="center"
@@ -173,20 +174,35 @@ function ProductListCard({ product }) {
                 </Text>
                 <RatingDisplay rating={product.rating} numReviews={0} />
               </Box>
-              <Box
-                fontSize={{ base: 'md', md: 'md' }}
-                fontWeight='bold'
-                color='gray.800'
-                justifySelf='end'
-                alignSelf='end'
-                my={0}
-                py={0}
-              >
-                <Box as="span" color={'gray.600'}>
-                  $
-                </Box>
-                {product.variants ? product.variants[0].price.toFixed(2) : 0.00}
-              </Box>
+              {product.variants &&
+              <Box>
+                {product.variants[0].discount_price && product.variants[0].discount_price > 0 &&
+                <Text
+                  fontSize={{ base: 'sm', md: 'sm' }}
+                  fontWeight='bold'
+                  color='gray.800'
+                  justifySelf='end'
+                  alignSelf='end'
+                  my={0}
+                  py={0}
+                  textDecorationLine='line-through'
+                >
+                  ${product.variants[0].price.toFixed(2)}
+                </Text>}
+                <Text
+                  fontSize={{ base: 'md', md: 'md' }}
+                  fontWeight='bold'
+                  color='mypets-green.100'
+                  justifySelf='end'
+                  alignSelf='end'
+                  my={0}
+                  py={0}
+                >
+                  ${product.variants[0].discount_price && product.variants[0].discount_price > 0 ?
+                  product.variants[0].discount_price.toFixed(2) : 
+                  product.variants[0].price.toFixed(2)}
+                </Text>
+              </Box>}
             </Stack>
           </Box>
         </Stack>
