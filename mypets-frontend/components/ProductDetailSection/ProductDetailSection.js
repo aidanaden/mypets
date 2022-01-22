@@ -41,13 +41,18 @@ function ProductSoldBadge({ ...props }) {
 
 function AnimalBadge({ type='dog', ...props }) {
     return (
-        <Stack direction='row' spacing={2} textTransform='capitalize' {...props}>
+        <Stack
+            direction='row'
+            spacing={2}
+            justify='center'
+            {...props}
+        >
             <Icon
                 as={type == 'dog' ? FaDog : FaCat}
-                w={4}
-                h={4}
+                w={6}
+                h={6}
             />
-            <Text>
+            <Text textTransform='capitalize'>
                 {type}
             </Text>
         </Stack>
