@@ -171,7 +171,7 @@ function ProductDetailSection({ product }) {
     }, [])
 
     return (
-        <Stack direction={{ base: 'column', md: 'row' }} justifyContent="space-evenly" p={4}>
+        <Stack direction={{ base: 'column', md: 'row' }} justifyContent="space-evenly" p={4} bg='red.100'>
             <SRLWrapper>
                 <Box>
                     <Center
@@ -198,6 +198,7 @@ function ProductDetailSection({ product }) {
                 px={2}
                 pt={{ base: 8, md: 8 }}
                 pb={{ base: 2, md: 8 }}
+                bg='blue.100'
             >
                 <Heading
                     as="h2"
