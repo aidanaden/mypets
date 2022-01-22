@@ -202,12 +202,6 @@ function ProductDetailSection({ product }) {
                 direction="column"
                 w={{ base: '100%', md: 'auto', lg: '400px' }}
                 h={{ base: "100%", md: 'auto' }}
-                // px={2}
-                // pt={{ base: 8, md: 8 }}
-                // pb={{ base: 2, md: 8 }}
-                // pt={{ base: 0, md: 0 }}
-                // pb={{ base: 0, md: 0 }}
-                // bg='blue.100'
             >
                 <Heading
                     as="h2"

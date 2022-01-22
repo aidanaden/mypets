@@ -167,7 +167,10 @@ function ProductListCard({ product }) {
               alignContent="center"
               justifySelf='flex-end'
             >
-              <RatingDisplay rating={product.rating} numReviews={0} />
+              <Box justifyContent='center'>
+                <Text>{product.reviews.length} reviews</Text>
+                <RatingDisplay rating={product.rating} numReviews={0} />
+              </Box>
               <Box
                 fontSize={{ base: 'sm', md: 'md' }}
                 fontWeight='bold'
