@@ -93,12 +93,15 @@ function ProductListCard({ product }) {
       <Stack
         direction='column'
         p={{ base: 3, sm: 3 }}
-        bg='red.100'
         w="full"
         alignItems="center"
         justifyContent="center"
         h='100%'
+        position='relative'
       >
+        <Box position='absolute' top='0' left='0' p={3} zIndex='overlay'>
+          50% off
+        </Box>
         <Stack
           direction='column'
           h='100%'
@@ -181,11 +184,8 @@ function ProductListCard({ product }) {
               >
                 {product.variants[0].discounted_price && product.variants[0].discounted_price > 0 &&
                 <Text
-                  fontSize={{ base: 'xs', md: 'xs' }}
-                  // fontWeight='bold'
+                  fontSize={{ base: 'xs', md: 'sm' }}
                   color='gray.800'
-                  // justifySelf='end'
-                  // alignSelf='end'
                   my={0}
                   py={0}
                   textDecorationLine='line-through'
@@ -193,11 +193,11 @@ function ProductListCard({ product }) {
                   ${product.variants[0].price.toFixed(2)}
                 </Text>}
                 <Text
-                  fontSize={{ base: 'md', md: 'md' }}
+                  fontSize={{ base: 'md', md: 'lg' }}
                   fontWeight='bold'
                   color='mypets-green.100'
-                  // justifySelf='end'
-                  // alignSelf='end'
+                  justifySelf='end'
+                  alignSelf='end'
                   my={0}
                   py={0}
                 >
