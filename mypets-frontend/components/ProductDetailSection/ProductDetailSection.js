@@ -200,10 +200,10 @@ function ProductDetailSection({ product }) {
                         {originalPrice != 0 &&
                         <ProductDetailBadge
                             mt={0}
-                            // bg='mypets-green'
+                            bg='mypets-green'
                             // textColor='white'
                         >
-                            {`${((price/originalPrice) * 100).toFixed(0)}% OFF`}
+                            {`${((1 - price/originalPrice) * 100).toFixed(0)}% OFF`}
                         </ProductDetailBadge>}
                     </HStack>
                 </Stack>
