@@ -213,11 +213,12 @@ function ProductDetailSection({ product }) {
                     {variant.available == false &&
                     <ProductSoldBadge w='120px' mt={2} />}
                 </Stack>
-                <Box>
+                <Box bg='green.100'>
                     {originalPrice != 0 &&
                         <Text
                             fontSize='sm'
                             textDecorationLine='line-through'
+                            bg='blue.100'
                         >
                             SG${originalPrice.toFixed(2)}
                         </Text>}
