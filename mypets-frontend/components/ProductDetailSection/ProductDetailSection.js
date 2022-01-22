@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react"
 import NextImage from 'next/image'
 import { FaCartPlus, FaDog, FaCat } from 'react-icons/fa'
+import { SRLWrapper } from "simple-react-lightbox";
 
 import ProductQuantityPicker from "../ProductQuantityPicker/ProductQuantityPicker"
 import RatingDisplay from '../RatingDisplay/RatingDisplay'
@@ -149,13 +150,15 @@ function ProductDetailSection({ product }) {
     return (
         <Stack direction={{ base: 'column', md: 'row' }} justifyContent="space-evenly" p={4}>
             <Center boxSize={{ base: '100%', md: '500px' }}>
-                <NextImage
-                    src={imageToUrl(product.image)}
-                    alt={product.alternativeText}
-                    width='500'
-                    height='500'
-                    priority={true}
-                />
+                <SRLWrapper>
+                    <NextImage
+                        src={imageToUrl(product.image)}
+                        alt={product.alternativeText}
+                        width='500'
+                        height='500'
+                        priority={true}
+                    />
+                </SRLWrapper>
             </Center>
             <Flex
                 direction="column"

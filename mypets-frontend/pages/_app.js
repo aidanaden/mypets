@@ -5,6 +5,7 @@ import Router, { useRouter } from 'next/router'
 import ReactGA from 'react-ga'
 import 'swiper/swiper.scss';
 import '@fontsource/poppins'
+import SimpleReactLightbox from 'simple-react-lightbox'
 
 import customTheme from '../styles/theme'
 import { AuthProvider } from '../context/AuthContext'
@@ -48,21 +49,23 @@ function MyApp({ Component, pageProps }) {
   }, [Router.events])
 
   return (
-    <AuthProvider>
-      <ChakraProvider resetCSS theme={customTheme}>
-        <Fonts />
-        <Head>
-          <link rel="shortcut icon" href="/favicon.ico" />
-          <meta name="facebook-domain-verification" content="7eb3uouy35ihgi6xio3u93vnhznvdt" />
-        </Head>  
-        <Component {...pageProps}/>
-        <Footer />
-        <MessengerCustomerChat
-          pageId='105638824710827'
-          appId='615727602931296'
-        />
-      </ChakraProvider>
-    </AuthProvider>
+    <SimpleReactLightbox>
+      <AuthProvider>
+        <ChakraProvider resetCSS theme={customTheme}>
+          <Fonts />
+          <Head>
+            <link rel="shortcut icon" href="/favicon.ico" />
+            <meta name="facebook-domain-verification" content="7eb3uouy35ihgi6xio3u93vnhznvdt" />
+          </Head>  
+          <Component {...pageProps}/>
+          <Footer />
+          <MessengerCustomerChat
+            pageId='105638824710827'
+            appId='615727602931296'
+          />
+        </ChakraProvider>
+      </AuthProvider>
+    </SimpleReactLightbox>
   ) 
 }
 
