@@ -167,7 +167,7 @@ function ProductListCard({ product }) {
               alignContent="center"
               justifySelf='end'
             >
-              <Box justifyContent='center'>
+              <Box justifyContent='center' alignContent='center' textAlign='center'>
                 <Text fontSize='sm' fontWeight='semibold'>
                   {product.reviews.length} reviews
                 </Text>
@@ -177,6 +177,7 @@ function ProductListCard({ product }) {
                 fontSize={{ base: 'sm', md: 'md' }}
                 fontWeight='bold'
                 color='gray.800'
+                justifySelf='end'
               >
                 <Box as="span" color={'gray.600'}>
                   $
