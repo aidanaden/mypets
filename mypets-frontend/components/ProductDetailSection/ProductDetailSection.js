@@ -213,7 +213,11 @@ function ProductDetailSection({ product }) {
                     {variant.available == false &&
                     <ProductSoldBadge w='120px' mt={2} />}
                 </Stack>
-                <Box bg='green.100'>
+                <Box
+                    mt={{ base: 6, md: 12 }}
+                    mb={{ base: 6 }}
+                    bg='green.100'
+                >
                     {originalPrice != 0 &&
                         <Text
                             mt='auto'
@@ -224,8 +228,6 @@ function ProductDetailSection({ product }) {
                             SG${originalPrice.toFixed(2)}
                         </Text>}
                     <HStack
-                        mt={{ base: 6, md: 12 }}
-                        mb={{ base: 6 }}
                         justifyContent="space-between"
                         align='center'
                         bg='red.100'
