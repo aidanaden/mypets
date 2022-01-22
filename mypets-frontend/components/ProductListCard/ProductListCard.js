@@ -175,8 +175,11 @@ function ProductListCard({ product }) {
                 <RatingDisplay rating={product.rating} numReviews={0} />
               </Box>
               {product.variants &&
-              <Box>
-                {product.variants[0].discount_price && product.variants[0].discount_price > 0 &&
+              <Box
+                justifySelf='end'
+                alignSelf='end'
+              >
+                {product.variants[0].discounted_price && product.variants[0].discounted_price > 0 &&
                 <Text
                   fontSize={{ base: 'sm', md: 'sm' }}
                   fontWeight='bold'
@@ -198,8 +201,8 @@ function ProductListCard({ product }) {
                   my={0}
                   py={0}
                 >
-                  ${product.variants[0].discount_price && product.variants[0].discount_price > 0 ?
-                  product.variants[0].discount_price.toFixed(2) : 
+                  ${product.variants[0].discounted_price && product.variants[0].discounted_price > 0 ?
+                  product.variants[0].discounted_price.toFixed(2) : 
                   product.variants[0].price.toFixed(2)}
                 </Text>
               </Box>}
