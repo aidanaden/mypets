@@ -218,12 +218,7 @@ function ProductDetailSection({ product }) {
                     justifyContent="space-between"
                     align='end'
                 >
-                    <Stack
-                        direction='column'
-                        spacing={0}
-                        mr={4}
-                        py={0}
-                    >
+                    <Box mr={4}>
                         {originalPrice != 0 &&
                         <Text
                             fontSize='sm'
@@ -241,7 +236,7 @@ function ProductDetailSection({ product }) {
                         >
                             SG${price.toFixed(2)}
                         </Text>
-                    </Stack>
+                    </Box>
                     <ProductQuantityPicker
                         addQuantity={addQuantity}
                         minusQuantity={minusQuantity}
