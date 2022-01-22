@@ -227,7 +227,7 @@ function ProductDetailSection({ product }) {
                         >
                             SG${originalPrice.toFixed(2)}
                         </Text>}
-                        <Text
+                        <Box
                             fontSize={{ base: '3xl', md: "4xl" }}
                             fontWeight='bold'
                             textColor='mypets-green.100'
@@ -236,7 +236,7 @@ function ProductDetailSection({ product }) {
                             my={0}
                         >
                             SG${price.toFixed(2)}
-                        </Text>
+                        </Box>
                     </Box>
                     <ProductQuantityPicker
                         addQuantity={addQuantity}
