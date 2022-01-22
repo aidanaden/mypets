@@ -7,12 +7,13 @@ import {
     Flex,
     Text,
     useToast,
-    Badge
+    Badge,
+    Icon
 } from "@chakra-ui/react"
 import NextImage from 'next/image'
+import { FaCartPlus, FaDog, FaCat } from 'react-icons/fa'
 
 import ProductQuantityPicker from "../ProductQuantityPicker/ProductQuantityPicker"
-import { FaCartPlus } from 'react-icons/fa'
 import RatingDisplay from '../RatingDisplay/RatingDisplay'
 import ProductDetailVariantSelect from '../ProductDetailVariantSelect/ProductDetailVariantSelect'
 import ProductDetailBadge from '../ProductDetailBadge/ProductDetailBadge'
@@ -35,6 +36,21 @@ function ProductSoldBadge({ ...props }) {
         >
             Out of stock
         </Badge>
+    )
+}
+
+function AnimalBadge({ type='dog', ...props }) {
+    return (
+        <Stack direction='row' spacing={2} textTransform='capitalize' {...props}>
+            <Icon
+                as={type == 'dog' ? FaDog : FaCat}
+                w={4}
+                h={4}
+            />
+            <Text>
+                {type}
+            </Text>
+        </Stack>
     )
 }
 
@@ -143,9 +159,9 @@ function ProductDetailSection({ product }) {
                     mt={{ base: 3 }}
                 >
                     <Stack direction={{ base: 'column-reverse', md: 'row' }} spacing={3}>
-                        <ProductDetailBadge>
-                            {product.merchant.name}
-                        </ProductDetailBadge>
+                        <AnimalBadge>
+                            {product.animal.name}
+                        </AnimalBadge>
                         <RatingDisplay
                             rating={product.rating}
                             numReviews={product.reviews.length}
@@ -159,7 +175,7 @@ function ProductDetailSection({ product }) {
                             {product.category.name}
                         </ProductDetailBadge>
                         <ProductDetailBadge mt={0}>
-                            {product.animal.name}
+                            {product.merchant.name}
                         </ProductDetailBadge>
                     </HStack>
                 </Stack>
@@ -185,7 +201,7 @@ function ProductDetailSection({ product }) {
                     mb={{ base: 6 }}
                     justifyContent="space-between"
                 >
-                    <Text fontSize={{ base: '3xl', md: "4xl" }} mr={4}>
+                    <Text fontSize={{ base: '3xl', md: "4xl" }} fontWeight='bold' mr={4}>
                         SG${price.toFixed(2)}
                     </Text>
                     <ProductQuantityPicker addQuantity={addQuantity} minusQuantity={minusQuantity} quantity={quantity} />
