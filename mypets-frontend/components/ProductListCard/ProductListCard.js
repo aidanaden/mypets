@@ -181,11 +181,11 @@ function ProductListCard({ product }) {
               >
                 {product.variants[0].discounted_price && product.variants[0].discounted_price > 0 &&
                 <Text
-                  fontSize={{ base: 'sm', md: 'sm' }}
-                  fontWeight='bold'
+                  fontSize={{ base: 'xs', md: 'xs' }}
+                  // fontWeight='bold'
                   color='gray.800'
-                  justifySelf='end'
-                  alignSelf='end'
+                  // justifySelf='end'
+                  // alignSelf='end'
                   my={0}
                   py={0}
                   textDecorationLine='line-through'
@@ -196,8 +196,8 @@ function ProductListCard({ product }) {
                   fontSize={{ base: 'md', md: 'md' }}
                   fontWeight='bold'
                   color='mypets-green.100'
-                  justifySelf='end'
-                  alignSelf='end'
+                  // justifySelf='end'
+                  // alignSelf='end'
                   my={0}
                   py={0}
                 >
