@@ -217,7 +217,7 @@ function ProductDetailSection({ product }) {
                     mt={{ base: 6, md: 12 }}
                     mb={{ base: 6 }}
                     justifyContent="space-between"
-                    align='end'
+                    align='center'
                 >
                     <Box mr={4}>
                         {originalPrice != 0 &&
@@ -231,7 +231,7 @@ function ProductDetailSection({ product }) {
                             fontSize={{ base: '3xl', md: "4xl" }}
                             fontWeight='bold'
                             textColor='mypets-green.100'
-                            bg='red.100'
+                            // bg='red.100'
                         >
                             SG${price.toFixed(2)}
                         </Box>
@@ -240,8 +240,6 @@ function ProductDetailSection({ product }) {
                         addQuantity={addQuantity}
                         minusQuantity={minusQuantity}
                         quantity={quantity}
-                        mb={4}
-                        bg='blue.100'
                     />
                 </HStack>
                 <MypetsBtn
