@@ -65,6 +65,7 @@ function ProductDetailSection({ product }) {
     const [variant, setVariant] = useState({})
     const [quantity, setQuantity] = useState(1)
     const [originalPrice, setOriginalPrice] = useState(0)
+    const [discountPrice, setDiscountPrice] = useState(0)
     const [price, setPrice] = useState(0)
     const [discountPercentage, setDiscountPercentage] = useState(0)
     const { user, updateCart } = useContext(AuthContext)
@@ -78,16 +79,16 @@ function ProductDetailSection({ product }) {
 
     const addQuantity = () => {
         setQuantity(quantity + 1)
-        setPrice(price + variant.price)
+        setPrice(discountPrice > 0 ? price + discountPrice : price + originalPrice)
     }
 
     const minusQuantity = () => {
         if (quantity <= 1) {
             setQuantity(1)
-            setPrice(variant.price)
+            setPrice(discountPrice > 0 ? discountPrice : originalPrice)
         } else {
             setQuantity(quantity - 1)
-            setPrice(price - variant.price)
+            setPrice(discountPrice > 0 ? price - discountPrice : price - originalPrice)
         }
     }
 
@@ -134,11 +135,12 @@ function ProductDetailSection({ product }) {
     useEffect(() => {
         setVariant(product.variants[0])
         const variantOriginalPrice = product.variants[0].price
-        const variantPrice = product.variants[0].discounted_price
-        if (product.variants[0].discounted_price) {
+        const variantDiscountPrice = product.variants[0].discounted_price
+        if (variantDiscountPrice) {
             setOriginalPrice(variantOriginalPrice)
-            setPrice(variantPrice)
-            setDiscountPercentage(((1 - variantPrice/variantOriginalPrice) * 100))
+            setDiscountPrice(variantDiscountPrice)
+            setPrice(variantDiscountPrice)
+            setDiscountPercentage(((1 - variantDiscountPrice/variantOriginalPrice) * 100))
         } else {
             setPrice(variantOriginalPrice)
         }
