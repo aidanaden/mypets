@@ -45,7 +45,6 @@ function AnimalBadge({ type='dog', ...props }) {
             direction='row'
             spacing={2}
             align='center'
-            bg='red.100'
             {...props}
         >
             <Icon
@@ -53,7 +52,7 @@ function AnimalBadge({ type='dog', ...props }) {
                 w={5}
                 h={5}
             />
-            <Text textTransform='capitalize'>
+            <Text textTransform='uppercase'>
                 {type}
             </Text>
         </Stack>
@@ -161,10 +160,14 @@ function ProductDetailSection({ product }) {
                 </Heading>
                 <Stack
                     direction='column'
-                    spacing={{ base: 2 }}
+                    spacing={{ base: 3 }}
                     mt={{ base: 3 }}
                 >
-                    <Stack direction={{ base: 'column-reverse', md: 'row' }} spacing={3}>
+                    <Stack
+                        direction={{ base: 'column-reverse', md: 'row' }}
+                        spacing={3}
+                        align='center'
+                    >
                         <AnimalBadge>
                             {product.animal.name}
                         </AnimalBadge>
