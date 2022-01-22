@@ -66,7 +66,7 @@ function ProductImageRow({ images }) {
         <Stack direction='row' spacing={3} bg='red.100'>
             {images.map((image) => (
                 <NextImage
-                    src={imageToUrl(image.image)}
+                    src={imageToUrl(image)}
                     alt={image.alternativeText}
                     width='100'
                     height='100'
