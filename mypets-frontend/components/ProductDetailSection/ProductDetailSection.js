@@ -50,8 +50,8 @@ function AnimalBadge({ type='dog', ...props }) {
         >
             <Icon
                 as={type == 'dog' ? FaDog : FaCat}
-                w={6}
-                h={6}
+                w={5}
+                h={5}
             />
             <Text textTransform='capitalize'>
                 {type}
