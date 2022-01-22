@@ -171,12 +171,19 @@ function ProductListCard({ product }) {
                   onClick={addQty}
               />
             </HStack>
+            {product.variants[0].available ?
             <MypetsBtn
               mb={{ base: 2 }}
               btnText='Add to cart'
               onClick={handleAddToCart}
               w={{ base: '100%', md: '100%' }}
-            />
+            /> :
+            <MypetsBtn
+              mb={{ base: 2 }}
+              btnText='Sold out'
+              isDisabled={true}
+              w={{ base: '100%', md: '100%' }}
+            />}
             <Stack
               direction='row'
               justifyContent="space-between"
