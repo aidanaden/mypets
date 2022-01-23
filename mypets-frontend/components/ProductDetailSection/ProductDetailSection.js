@@ -9,7 +9,9 @@ import {
     Text,
     useToast,
     Badge,
-    Icon
+    Icon,
+    Wrap,
+    WrapItem
 } from "@chakra-ui/react"
 import NextImage from 'next/image'
 import { FaCartPlus, FaDog, FaCat } from 'react-icons/fa'
@@ -228,25 +230,31 @@ function ProductDetailSection({ product }) {
                             spacing={{ base: 3, md: 4 }}
                         />
                     </Stack>
-                    <HStack
+                    <Wrap
                         spacing={{ base: 2 }}
                         align='center'
                     >
-                        <ProductDetailBadge mt={0}>
-                            {product.category.name}
-                        </ProductDetailBadge>
-                        <ProductDetailBadge mt={0}>
-                            {product.merchant.name}
-                        </ProductDetailBadge>
+                        <WrapItem>
+                            <ProductDetailBadge mt={0}>
+                                {product.category.name}
+                            </ProductDetailBadge>
+                        </WrapItem>
+                        <WrapItem>
+                            <ProductDetailBadge mt={0}>
+                                {product.merchant.name}
+                            </ProductDetailBadge>
+                        </WrapItem>
                         {originalPrice != 0 &&
-                        <ProductDetailBadge
-                            mt={0}
-                            bg='mypets-green.100'
-                            textColor='white'
-                        >
-                            {`${discountPercentage.toFixed(0)}% OFF`}
-                        </ProductDetailBadge>}
-                    </HStack>
+                        <WrapItem>
+                            <ProductDetailBadge
+                                mt={0}
+                                bg='mypets-green.100'
+                                textColor='white'
+                            >
+                                {`${discountPercentage.toFixed(0)}% OFF`}
+                            </ProductDetailBadge>
+                        </WrapItem>}
+                    </Wrap>
                 </Stack>
                 <Stack
                     w="160px"
