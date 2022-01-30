@@ -117,7 +117,7 @@ export default function SmallCentered() {
                 <Text
                     textAlign={{ base: 'center', md: 'left' }}
                 >
-                    © 2021 Mypets Pte Ltd. All rights reserved
+                    © 2022 Mypets Pte Ltd. All Rights Reserved.
                 </Text>
                 <Stack
                     direction='row'

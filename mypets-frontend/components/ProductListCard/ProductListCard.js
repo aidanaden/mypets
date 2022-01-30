@@ -60,12 +60,19 @@ function ProductListCard({ product }) {
     if (user) {
       if (product.variants[0].available) {
         // create order product
-        const orderProductTotal = qty * product.variants[0].price
+        var orderProductTotal = 0
+        if (product.variants[0].discounted_price) {
+          orderProductTotal = qty * product.variants[0].discounted_price
+        } else {
+          orderProductTotal = qty * product.variants[0].price
+        }
+      
         const order_product = {
           variant: product.variants[0],
           quantity: qty,
           total_price: orderProductTotal
         }
+        
         updateCart(order_product)
         succesToast('Product added to cart')
         setQty(1)

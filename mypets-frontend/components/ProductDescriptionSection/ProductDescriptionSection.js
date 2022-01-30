@@ -4,7 +4,6 @@ import remarkGfm from 'remark-gfm'
 import {
     Box,
     Heading,
-    List,
     Text,
     Stack,
     Center,
@@ -31,7 +30,7 @@ const ProductDescription = ({ markdownContent }) => {
             <SectionHeading>
                 Description
             </SectionHeading>
-            <Box>
+            <Box fontFamily={'body'}>
                 <ReactMarkdown
                     components={ChakraUIRenderer()}
                     remarkPlugins={[remarkGfm]}
@@ -56,7 +55,6 @@ const ProductIngredient = ({ ingredients }) => {
 }
 
 const ProductNutrients = ({ nutrients }) => {
-    // nutrients = ["chicken - 30%"]
     return (
         <Box>
             <SectionHeading>
@@ -102,17 +100,7 @@ const ProductNutrients = ({ nutrients }) => {
 }
 
 export default function ProductDescriptionSection({ product }) {
-    // const descriptions = [
-    //     'Grain-free/soy-free/wheat-free',
-    //     'Yucca schidigera extract which reduces odors associated with waste',
-    //     'Omega-3 & 6 fatty acids  that promotes healthy skin and shiny coat',
-    //     'Grain-free/soy-free/wheat-free',
-    //     'Yucca schidigera extract which reduces odors associated with waste',
-    //     'Omega-3 & 6 fatty acids  that promotes healthy skin and shiny coat'
-    // ]
     const nutrients = product.nutrional_analysis.split(/[\r\n]+/)
-    // console.log('product content: ', product.content)
-    
     return (
         <Stack
             p={8}

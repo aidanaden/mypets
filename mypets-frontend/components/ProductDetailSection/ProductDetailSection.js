@@ -74,8 +74,8 @@ function ProductImageRow({ images }) {
                     <NextImage
                         src={imageToUrl(image)}
                         alt={image.alternativeText}
-                        width='75'
-                        height='75'
+                        width='150'
+                        height='150'
                         priority={true}
                     />
                 </Box>
@@ -152,7 +152,14 @@ function ProductDetailSection({ product }) {
     const variantSelectOnChange = (e) => {
         const foundVariant = getVariantFromVariantValue(e.target.value)
         setVariant(foundVariant)
-        const updatedPrice = (parseFloat(foundVariant.price) * parseFloat(quantity))
+
+        var updatedPrice = 0
+        if (foundVariant.discounted_price) {
+            updatedPrice = (parseFloat(foundVariant.discounted_price) * parseFloat(quantity))
+        } else {
+            updatedPrice = (parseFloat(foundVariant.price) * parseFloat(quantity))
+        }
+        
         setPrice(updatedPrice)
     }
 
@@ -304,6 +311,7 @@ function ProductDetailSection({ product }) {
                         />
                     </HStack>
                 </Box>
+                {variant.available ? 
                 <MypetsBtn
                     onClick={handleAddToCart}
                     btnText='Add to cart'
@@ -311,7 +319,13 @@ function ProductDetailSection({ product }) {
                     w='100%'
                     mx={0}
                     mt="auto"
-                />
+                /> :
+                <MypetsBtn
+                mb={{ base: 2 }}
+                btnText='Sold out'
+                isDisabled={true}
+                w={{ base: '100%', md: '100%' }}
+                />}
             </Flex>
         </Stack>
     )
