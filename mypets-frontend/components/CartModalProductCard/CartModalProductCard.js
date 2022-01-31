@@ -169,7 +169,9 @@ function CartModalProductCard({ order_products, onClose }) {
                                         productsCategorized[variant][0].variant.product.unit.toLowerCase()}
                                     </Th>
                                     <Th textAlign='center' fontSize='sm'>
-                                        SG${productsCategorized[variant][0].variant.price.toFixed(2)}
+                                        SG${productsCategorized[variant][0].variant.discounted_price ? 
+                                        productsCategorized[variant][0].variant.discounted_price.toFixed(2) :
+                                        productsCategorized[variant][0].variant.price.toFixed(2)}
                                     </Th>
                                     <Th textAlign='center' fontSize='sm'>
                                         <CartProductQuantityPicker 
