@@ -303,7 +303,7 @@ export default function terms({ categories, terms_data }) {
                     />
                     <ParagraphSection
                         heading='Delivery Fees'
-                        text='Mypets charges a standard delivery rate of $3 for orders less than $30. Orders above $30 are automatically entitled to a free delivery.'
+                        text='Mypets charges a standard delivery rate of $3.50 for orders less than $39.90. Orders above $39.90 are automatically entitled to a free delivery.'
                     />
                     <ParagraphSection
                         heading='Packaging'

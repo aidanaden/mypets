@@ -76,7 +76,7 @@ export default function faq({ categories, faq_data }) {
                     />
                     <ParagraphSection
                         heading='Do you offer free delivery?'
-                        text='Yes, MyPets offer free delivery to the above-listed location for orders above or $30. For orders below $30, a standard delivery fee of $3 will be applied.'
+                        text='Yes, MyPets offer free delivery to the above-listed location for orders above or $39.90. For orders below $39.90, a standard delivery fee of $3.50 will be applied.'
                     />
                     <ParagraphSection
                         heading='What areas are we currently serving? MyPets is currently delivering to the 7 locations shown below:'
