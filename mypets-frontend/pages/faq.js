@@ -27,7 +27,7 @@ export default function faq({ categories, faq_data }) {
                         Customer FAQ
                     </SectionHeader>
                     <SectionSubHeader>
-                        Last updated: 08/12/21
+                        Last updated: 14/02/22
                     </SectionSubHeader>
                     <ParagraphSection
                         heading="General Information:"

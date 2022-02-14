@@ -26,7 +26,7 @@ export default function terms({ categories, terms_data }) {
                         Terms & Conditions
                     </SectionHeader>
                     <SectionSubHeader>
-                        Last Updated: 08/12/21
+                        Last Updated: 14/02/22
                     </SectionSubHeader>
                     <ParagraphSection
                         text='Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)'
