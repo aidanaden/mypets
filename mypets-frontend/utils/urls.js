@@ -20,7 +20,8 @@ export const REVIEW_TEXT_LEN = 128
 
 export const CONTRIBUTION_AMT = 0.05
 export const TAX_AMT = 0.00
-export const DELIVERY_FEE = 3.00
+export const DELIVERY_FEE = 3.50
+export const MINIMUM_ORDER_FREE_DELIVERY = 39.90
 
 /**
  * Given an image (from strapi api) return the URL

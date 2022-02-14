@@ -14,7 +14,7 @@ import {
     Spacer
 } from "@chakra-ui/react"
 
-import { TAX_AMT, CONTRIBUTION_AMT, DELIVERY_FEE } from '../../utils/urls'
+import { TAX_AMT, CONTRIBUTION_AMT, DELIVERY_FEE, MINIMUM_ORDER_FREE_DELIVERY } from '../../utils/urls'
 
 const SubtotalRow = ({ text, value, highlight }) => {
     return (
@@ -34,7 +34,7 @@ const SubtotalRow = ({ text, value, highlight }) => {
 
 export default function CartPriceBreakdownList({ groupedProducts, productNames, totalPrice }) {
     const gstPrice = (totalPrice * TAX_AMT)
-    const deliveryFee = totalPrice >= 30 ? 0.00 : DELIVERY_FEE
+    const deliveryFee = totalPrice >= MINIMUM_ORDER_FREE_DELIVERY ? 0.00 : DELIVERY_FEE
     const finalPrice = 1.00 * (totalPrice + gstPrice + deliveryFee)
     const contributionAmt = CONTRIBUTION_AMT * (totalPrice + gstPrice)
 
