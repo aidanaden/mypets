@@ -4,6 +4,7 @@ import {
     Grid, 
     GridItem
 } from "@chakra-ui/react"
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 
 import AnnouncementBanner from '../../../components/AnnouncementBanner/AnnouncementBanner'
@@ -14,15 +15,25 @@ import ProductDetailSection from "../../../components/ProductDetailSection/Produ
 import ProductDescriptionSection from "../../../components/ProductDescriptionSection/ProductDescriptionSection"
 import ProductReviewSection from "../../../components/ProductReviewSection/ProductReviewSection"
 import ProductList from '../../../components/ProductList/ProductList'
-import { API_HOME_URL, API_PRODUCTS_URL } from '../../../utils/urls'
+import { API_HOME_URL, API_PRODUCTS_URL, FRONTEND_URL, imageToUrl } from '../../../utils/urls'
 import PageContainer from '../../../components/PageContainer/PageContainer'
 
 export default function Product({ bannerTitle, product, otherProducts }) {
+    const { asPath } = useRouter()
     return (
         <>
             <Head>
                 <title>{product.meta_title}</title>
                 <meta name="description" content={product.meta_description} />
+                <meta property="og:title" content={product.name} />
+                {/* <meta property="og:description" content=“SHORT_DESCRIPTION”> */}
+                <meta property="og:url" content={`${FRONTEND_URL}${asPath}`} />
+                <meta property="og:image" content={imageToUrl(product.image)} />
+                <meta property="product:brand" content={product.merchant} />
+                <meta property="product:availability" content={product.variants[0].available} />
+                <meta property="product:condition" content="new" />
+                <meta property="product:price:amount" content={product.variants[0].price} />
+                <meta property="product:price:currency" content='SGD' />
             </Head>
             <Box>
                 <AnnouncementBanner text={bannerTitle} />
