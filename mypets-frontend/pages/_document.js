@@ -24,7 +24,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          <ColorModeScript initialColorMode="light" />
           <Main />
           <NextScript />
           <noscript
