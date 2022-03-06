@@ -1,62 +1,58 @@
-import { useContext } from 'react'
-import {
-    Box,
-    useToast
-} from '@chakra-ui/react'
+import { useContext } from "react";
+import { Box, useToast } from "@chakra-ui/react";
 
-import AuthContext from '../context/AuthContext'
-import PageContainer from '../components/PageContainer/PageContainer'
-import Sidebar from '../components/Sidebar/Sidebar'
-import Footer from '../components/Footer/Footer'
-import { API_CATEGORIES_URL } from '../utils/urls'
-import SectionHeader from '../components/SectionHeader/SectionHeader'
-import UserPasswordForm from '../components/UserPasswordForm/UserPasswordForm'
-import router from 'next/router'
+import AuthContext from "../context/AuthContext";
+import PageContainer from "../components/PageContainer/PageContainer";
+import Sidebar from "../components/Sidebar/Sidebar";
+import Footer from "../components/Footer/Footer";
+import { API_CATEGORIES_URL } from "../utils/urls";
+import SectionHeader from "../components/SectionHeader/SectionHeader";
+import UserPasswordForm from "../components/UserPasswordForm/UserPasswordForm";
+import router from "next/router";
 
 export default function reset({ categories }) {
-    const toast = useToast()
-    const { user, updateUserPassword } = useContext(AuthContext)
+  const toast = useToast();
+  const { user, updateUserPassword } = useContext(AuthContext);
 
-    const passwordSuccessToast = (text) => toast({
-        title: text,
-        status: 'success',
-        duration: 3000,
-        isClosable: true,
-    })
+  const passwordSuccessToast = (text) =>
+    toast({
+      title: text,
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
 
-    const handleUserPasswordChange = (values, actions) => {
-        try {
-            actions.setSubmitting(true)
-            updateUserPassword(values)
-        } catch (err) {
-            console.error(err)
-        }
-        actions.setSubmitting(false)
-        passwordSuccessToast('Password successfully updated')
+  const handleUserPasswordChange = (values, actions) => {
+    try {
+      actions.setSubmitting(true);
+      updateUserPassword(values);
+    } catch (err) {
+      console.error(err);
     }
+    actions.setSubmitting(false);
+    passwordSuccessToast("Password successfully updated");
+  };
 
-    return (
-        <Box>
-            <Sidebar categories={categories} />
-            <PageContainer>
-                <SectionHeader>
-                    Reset your password
-                </SectionHeader>
-                <UserPasswordForm handleSubmit={handleUserPasswordChange} />
-            </PageContainer>
-        </Box>
-    )
+  return (
+    <Box>
+      <Sidebar categories={categories} />
+      <PageContainer>
+        <SectionHeader>Reset your password</SectionHeader>
+        <UserPasswordForm handleSubmit={handleUserPasswordChange} />
+      </PageContainer>
+    </Box>
+  );
 }
 
 export async function getStaticProps() {
-    // Fetch categories
-    const categories_res = await fetch(`${API_CATEGORIES_URL}`)
-    const categories = await categories_res.json()
+  // Fetch categories
+  const categories_res = await fetch(`${API_CATEGORIES_URL}`);
+  const categories = await categories_res.json();
 
-    // Return as props
-    return {
-        props: {
-            categories,
-        }
-    }
+  // Return as props
+  return {
+    props: {
+      categories,
+    },
+  };
 }

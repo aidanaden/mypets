@@ -1,11 +1,11 @@
 function Facebook() {
-    return (
-        <div>
-            <div id="fb-root"></div>
+  return (
+    <div>
+      <div id="fb-root"></div>
 
-            <div id="fb-customer-chat" className="fb-customerchat"></div>
-            <script>
-                {`
+      <div id="fb-customer-chat" className="fb-customerchat"></div>
+      <script>
+        {`
                     var chatbox = document.getElementById('fb-customer-chat');
                     chatbox.setAttribute("page_id", "YOUR_PAGE_ID");
                     chatbox.setAttribute("attribution", "biz_inbox");
@@ -25,9 +25,9 @@ function Facebook() {
                     fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));
                 `}
-            </script>
-        </div>
-    );
+      </script>
+    </div>
+  );
 }
 
 export default Facebook;

@@ -1,24 +1,34 @@
-import React from 'react'
-import { Select } from '@chakra-ui/react'
+import React from "react";
+import { Select } from "@chakra-ui/react";
 
-function ProductDetailVariantSelect({ variantValue, variantUnit, variantIsFloat, options, onChange, ...props }) {
-    return (
-        <Select
-            value={variantValue}
-            focusBorderColor="mypets.100"
-            onChange={onChange}
-            {...props}
+function ProductDetailVariantSelect({
+  variantValue,
+  variantUnit,
+  variantIsFloat,
+  options,
+  onChange,
+  ...props
+}) {
+  return (
+    <Select
+      value={variantValue}
+      focusBorderColor="mypets.100"
+      onChange={onChange}
+      {...props}
+    >
+      {options.map((option, i) => (
+        <option
+          key={i}
+          value={
+            variantIsFloat ? option.variant_type_float : option.variant_type_str
+          }
         >
-            {options.map((option, i) => (
-                <option
-                    key={i}
-                    value={variantIsFloat ? option.variant_type_float : option.variant_type_str}
-                >
-                    {variantIsFloat ? option.variant_type_float : option.variant_type_str}{variantIsFloat && variantUnit.toLowerCase()}
-                </option>
-            ))}
-        </Select>
-    )
+          {variantIsFloat ? option.variant_type_float : option.variant_type_str}
+          {variantIsFloat && variantUnit.toLowerCase()}
+        </option>
+      ))}
+    </Select>
+  );
 }
 
-export default ProductDetailVariantSelect
+export default ProductDetailVariantSelect;

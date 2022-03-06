@@ -1,65 +1,63 @@
-import { useContext, useState, useEffect } from 'react'
+import { useContext, useState, useEffect } from "react";
 import {
-    Button,
-    useDisclosure,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalBody,
-    ModalCloseButton,
-    Box,
-    FormControl,
-    FormLabel,
-    FormErrorMessage,
-    useToast
-} from '@chakra-ui/react'
-import { Formik, Form, Field } from 'formik'
-const Yup = require('yup')
-require('yup-password')(Yup)
+  Button,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  Box,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  useToast,
+} from "@chakra-ui/react";
+import { Formik, Form, Field } from "formik";
+const Yup = require("yup");
+require("yup-password")(Yup);
 
-import AuthContext from '../../context/AuthContext'
-import MypetsBtn from '../MypetsBtn/MypetsBtn'
-import EmailInputGroup from '../EmailInputGroup/EmailInputGroup'
-import PasswordInputGroup from '../PasswordInputGroup/PasswordInputGroup'
-import LoginSocialBtnGroup from '../LoginSocialBtnGroup/LoginSocialBtnGroup'
-import ForgetPasswordModalBtn from '../ForgetPasswordModalBtn/ForgetPasswordModalBtn'
+import AuthContext from "../../context/AuthContext";
+import MypetsBtn from "../MypetsBtn/MypetsBtn";
+import EmailInputGroup from "../EmailInputGroup/EmailInputGroup";
+import PasswordInputGroup from "../PasswordInputGroup/PasswordInputGroup";
+import LoginSocialBtnGroup from "../LoginSocialBtnGroup/LoginSocialBtnGroup";
+import ForgetPasswordModalBtn from "../ForgetPasswordModalBtn/ForgetPasswordModalBtn";
 
 function LoginModalBtn() {
-    const toast = useToast()
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const { loginUser } = useContext(AuthContext)
+  const toast = useToast();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { loginUser } = useContext(AuthContext);
 
-    const handleSubmit = async (values, actions) => {
-        actions.setSubmitting(true)
-        const status = await loginUser(values, toast)
-        actions.setSubmitting(false)
-    }
+  const handleSubmit = async (values, actions) => {
+    actions.setSubmitting(true);
+    const status = await loginUser(values, toast);
+    actions.setSubmitting(false);
+  };
 
-    const loginSchema = Yup.object().shape({
-        email: Yup.string().email('Invalid email').required('Your email is required'),
-        password: Yup.string()
-                    .password()
-                    .required('Your password is required')
-                    .min(8, 'Password must contain at least 8 characters')
-                    .minNumbers(1, 'Password must contain at least 1 digit')
-                    .minSymbols(1, 'Password must contain at least 1 symbol')
-    })
+  const loginSchema = Yup.object().shape({
+    email: Yup.string()
+      .email("Invalid email")
+      .required("Your email is required"),
+    password: Yup.string()
+      .password()
+      .required("Your password is required")
+      .min(8, "Password must contain at least 8 characters")
+      .minNumbers(1, "Password must contain at least 1 digit")
+      .minSymbols(1, "Password must contain at least 1 symbol"),
+  });
 
-    return (
-        <>
-            <MypetsBtn 
-                btnText='Log in/Sign up'
-                mx={0}
-                onClick={onOpen}
-            />
-            <Modal isOpen={isOpen} onClose={onClose} isCentered>
-                <ModalOverlay/>
-                <ModalContent mx={{ base: 4 }}>
-                    <ModalHeader>Log in/Sign up</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody mb={2}>
-                        {/* <Formik
+  return (
+    <>
+      <MypetsBtn btnText="Log in/Sign up" mx={0} onClick={onOpen} />
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <ModalContent mx={{ base: 4 }}>
+          <ModalHeader>Log in/Sign up</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody mb={2}>
+            {/* <Formik
                             initialValues={{ email: '', password: ''}}
                             onSubmit={handleSubmit}
                             validationSchema={loginSchema}
@@ -100,12 +98,12 @@ function LoginModalBtn() {
                                 </Form>
                             )}
                         </Formik> */}
-                        <LoginSocialBtnGroup />
-                    </ModalBody>
-                </ModalContent>
-            </Modal>
-        </>
-    )
+            <LoginSocialBtnGroup />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
+  );
 }
 
-export default LoginModalBtn
+export default LoginModalBtn;

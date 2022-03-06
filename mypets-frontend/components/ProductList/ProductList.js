@@ -1,105 +1,122 @@
-import { useEffect, useState } from 'react'
-import {
-    SimpleGrid,
-    Box
-} from '@chakra-ui/react'
+import { useEffect, useState } from "react";
+import { SimpleGrid, Box } from "@chakra-ui/react";
 
-import SectionHeader from '../SectionHeader/SectionHeader'
-import ProductListCard from '../ProductListCard/ProductListCard'
+import SectionHeader from "../SectionHeader/SectionHeader";
+import ProductListCard from "../ProductListCard/ProductListCard";
 
-function ProductList({ heading, products, sortMethod, selectedAnimal, selectedMerchants, maxRows }) {
-    const [listProducts, setListProducts] = useState(products)
+function ProductList({
+  heading,
+  products,
+  sortMethod,
+  selectedAnimal,
+  selectedMerchants,
+  maxRows,
+}) {
+  const [listProducts, setListProducts] = useState(products);
 
-    const sortProductsAscending = (products) => {
-        products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? -1: 1)
-    }
+  const sortProductsAscending = (products) => {
+    products.sort((a, b) =>
+      a.variants[0].price < b.variants[0].price ? -1 : 1
+    );
+  };
 
-    const sortProductsDescending = (products) => {
-        products.sort((a, b) => (a.variants[0].price < b.variants[0].price) ? 1: -1)
-    }
+  const sortProductsDescending = (products) => {
+    products.sort((a, b) =>
+      a.variants[0].price < b.variants[0].price ? 1 : -1
+    );
+  };
 
-    const sortProductsPopularity = (products) => {
-        products.sort((a, b) => (a.rating < b.rating) ? 1: -1)
-    }
+  const sortProductsPopularity = (products) => {
+    products.sort((a, b) => (a.rating < b.rating ? 1 : -1));
+  };
 
-    if (sortMethod == 'asc') {
-        sortProductsAscending(products)
-    } else if (sortMethod == 'desc') {
-        sortProductsDescending(products)
-    } else if (sortMethod == 'pop') {
-        sortProductsPopularity(products)
-    }
+  if (sortMethod == "asc") {
+    sortProductsAscending(products);
+  } else if (sortMethod == "desc") {
+    sortProductsDescending(products);
+  } else if (sortMethod == "pop") {
+    sortProductsPopularity(products);
+  }
 
-    const filterProductsByAnimalMerchants = (products, animal, selectedMerchants) => {
-        if (animal != '') {
-            if (selectedMerchants) {
-                if (selectedMerchants.length == 0) {
-                    const filteredProducts = products.filter((product) => {
-                        if (product.animal.name == animal) {
-                            return product
-                        }
-                    })
-                    return filteredProducts
-                }
-                const filteredProducts = products.filter((product) => {
-                    if (product.animal.name == animal && 
-                        selectedMerchants.includes(product.merchant.name)) {
-                        return product
-                    }
-                })
-                return filteredProducts
-            } else {
-                const filteredProducts = products.filter((product) => {
-                    if (product.animal.name == animal) {
-                        return product
-                    }
-                })
-                return filteredProducts
+  const filterProductsByAnimalMerchants = (
+    products,
+    animal,
+    selectedMerchants
+  ) => {
+    if (animal != "") {
+      if (selectedMerchants) {
+        if (selectedMerchants.length == 0) {
+          const filteredProducts = products.filter((product) => {
+            if (product.animal.name == animal) {
+              return product;
             }
-        } else {
-            if (selectedMerchants) {
-                if (selectedMerchants.length == 0) {
-                    return products
-                }
-                const filteredProducts = products.filter((product) => {
-                    if (selectedMerchants.includes(product.merchant.name)) {
-                        return product
-                    }
-                })
-                return filteredProducts
-            } else {
-                return products
-            }
+          });
+          return filteredProducts;
         }
+        const filteredProducts = products.filter((product) => {
+          if (
+            product.animal.name == animal &&
+            selectedMerchants.includes(product.merchant.name)
+          ) {
+            return product;
+          }
+        });
+        return filteredProducts;
+      } else {
+        const filteredProducts = products.filter((product) => {
+          if (product.animal.name == animal) {
+            return product;
+          }
+        });
+        return filteredProducts;
+      }
+    } else {
+      if (selectedMerchants) {
+        if (selectedMerchants.length == 0) {
+          return products;
+        }
+        const filteredProducts = products.filter((product) => {
+          if (selectedMerchants.includes(product.merchant.name)) {
+            return product;
+          }
+        });
+        return filteredProducts;
+      } else {
+        return products;
+      }
     }
+  };
 
-    useEffect(() => {
-        setListProducts(products)
-    }, [products])
+  useEffect(() => {
+    setListProducts(products);
+  }, [products]);
 
-    useEffect(() => {
-        const filteredProducts = filterProductsByAnimalMerchants(products, selectedAnimal, selectedMerchants)
-        setListProducts(filteredProducts)
-    }, [selectedMerchants, selectedAnimal])
+  useEffect(() => {
+    const filteredProducts = filterProductsByAnimalMerchants(
+      products,
+      selectedAnimal,
+      selectedMerchants
+    );
+    setListProducts(filteredProducts);
+  }, [selectedMerchants, selectedAnimal]);
 
-    return (
-        <Box>
-            {(listProducts && listProducts.length > 0) &&
-            <>
-                <SectionHeader>
-                    {heading}
-                </SectionHeader>
-                <SimpleGrid
-                    columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
-                    spacing={{ base: 4 }}
-                >
-                    {listProducts.slice(0, 10).map((product, index) => (
-                        <ProductListCard product={product} key={index} />
-                    ))}
-                </SimpleGrid>
-            </>}
-        </Box>
-    )
+  return (
+    <Box>
+      {listProducts && listProducts.length > 0 && (
+        <>
+          <SectionHeader>{heading}</SectionHeader>
+          <SimpleGrid
+            columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
+            spacing={{ base: 4 }}
+          >
+            {listProducts.slice(0, 10).map((product, index) => (
+              <ProductListCard product={product} key={index} />
+            ))}
+          </SimpleGrid>
+        </>
+      )}
+    </Box>
+  );
 }
 
-export default ProductList
+export default ProductList;

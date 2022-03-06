@@ -6,15 +6,12 @@ import {
   Text,
   HStack,
   IconButton,
-  Flex,
   Box,
   useToast,
-  Tooltip,
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
-import NextLink from "next/link";
 import NextImage from "next/image";
 
 import MerchantBadge from "../MerchantBadge/MerchantBadge";
