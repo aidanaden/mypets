@@ -17,6 +17,9 @@
       "enum": [
         "unpaid",
         "processing",
+        "pending_refund",
+        "exchange",
+        "refunded",
         "shipping",
         "delivered"
       ]
@@ -41,6 +44,25 @@
     "order_products": {
       "via": "order",
       "collection": "order-product"
+    },
+    "final_price": {
+      "type": "decimal"
+    },
+    "discount_value": {
+      "type": "decimal"
+    },
+    "shipping_fee": {
+      "type": "decimal"
+    },
+    "order_id": {
+      "type": "uid",
+      "required": false
+    },
+    "tax_fee": {
+      "type": "decimal"
+    },
+    "contribution_amount": {
+      "type": "decimal"
     }
   }
 }

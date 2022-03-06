@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "name": "AboutPage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Last_updated": {
+      "type": "string"
+    },
+    "About": {
+      "type": "text"
+    },
+    "Vision": {
+      "type": "text"
+    },
+    "Mission": {
+      "type": "text"
+    },
+    "meta_description": {
+      "type": "string"
+    },
+    "meta_title": {
+      "type": "string"
+    }
+  }
+}

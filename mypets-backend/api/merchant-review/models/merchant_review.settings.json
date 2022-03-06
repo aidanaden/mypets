@@ -13,8 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "merchant": {
-      "model": "merchant",
-      "via": "merchant_reviews"
+      "via": "merchant_reviews",
+      "model": "merchant"
     },
     "rating": {
       "type": "integer"

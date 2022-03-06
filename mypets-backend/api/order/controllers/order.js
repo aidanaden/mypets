@@ -1,12 +1,17 @@
-'use strict';
-const { sanitizeEntity } = require('strapi-utils')
++'use strict';
+const { sanitizeEntity } = require('strapi-utils');
+const { customAlphabet } = require('nanoid');
 const finder = require('strapi-utils/lib/finder');
-const { FRONTEND_URL } = require('../../../../mypets-frontend/utils/urls');
-const stripe = require('stripe')(process.env.STRIPE_SK)
+const stripe = require('stripe')(process.env.STRIPE_SK);
+const nanoid = customAlphabet('0123456789ABCDEF', 10);
+const stripe_free_shipping_id = 'shr_1Js6BxJNGU0rJw40fwzNOwqw'
+const stripe_paid_shipping_id = 'shr_1KRH5iJNGU0rJw40Crb4vtSc'
+const stripe_tax_id = 'txr_1JcuChJNGU0rJw40EKv3YAEt'
+const order_minimum_free_shipping = 39.90
 
 /**
  * Return dollar amount in cents
- * @param {number} number 
+ * @param {number} number
  */
 const fromDecimalToInt = (number) => parseInt(number * 100)
 
@@ -19,7 +24,7 @@ module.exports = {
 
     /**
      * Only returns orders that belongs to the logged in user
-     * @param {any} ctx 
+     * @param {any} ctx
      */
     async find(ctx) {
         const { user } = ctx.state // get user
@@ -45,11 +50,11 @@ module.exports = {
 
     /**
      * Returns one order, as long as it belongs to the logged in user
-     * @param {any} ctx 
+     * @param {any} ctx
      */
     async findOne(ctx) {
         const { id } = ctx.params
-        const { user } = ctx.state 
+        const { user } = ctx.state
 
         const entity = await strapi.services.order.findOne({ id, user: user.id })
 
@@ -62,18 +67,31 @@ module.exports = {
 
     /**
      * Creates an order & sets up the stripe checkout session for frontend
-     * @param {any} ctx 
+     * @param {any} ctx
      */
 
     async create(ctx) {
         const cart = ctx.request.body
         const { user } = ctx.state
+<<<<<<< HEAD
+=======
+        const profile = await strapi.services.profile.findOne({ user: user.id })
+        const BASE_URL = process.env.FRONTEND_URL || 'https://mypets.sg'
+        var userShippingAddress
+
+        console.log('base url: ', BASE_URL)
+>>>>>>> 63e2ffe9d079c0b4a1416b59c5268378f5a6999d
 
         if (!cart) {
             return ctx.throw(400, 'Please specify a cart.')
-        }        
+        }
 
         const order_items = cart.order_products.map((orderProduct,i) => {
+            var orderProductUnitPrice = 0;
+            if orderProduct.variant.discounted_price && orderProduct.variant.discounted_price > 0 {
+                orderProductUnitPrice = fromDecimalToInt(orderProduct.variant.discounted_price)
+            } else {
+                orderProductUnitPrice = fromDecimalToInt(orderProduct.variant.price)
             const data = {
                 price_data: {
                     currency: 'sgd',
@@ -81,23 +99,63 @@ module.exports = {
                         name: orderProduct.variant.product.name,
                         images: [orderProduct.variant.product.image.url],
                     },
-                    unit_amount: fromDecimalToInt(orderProduct.variant.price)
+                    unit_amount: orderProductUnitPrice
                 },
-                quantity: orderProduct.quantity
+                quantity: orderProduct.quantity,
+                //tax_rates: [stripe_tax_id],
             }
 
             return data
         })
 
+        if (profile.address && profile.postal && profile.location) {
+            userShippingAddress = {
+                line1: profile.address,
+                city: 'Singapore',
+                country: 'SG',
+                line2: profile.unit,
+                postal_code: profile.postal,
+                state: 'Singapore',
+            }
+        }
+
+        //const userCustomerShipping = {
+        //    address: userShippingAddress ? userShippingAddress : "",
+        //    name: profile.username ? profile.username : ""
+        //}
+
+        //const userCustomer = await stripe.customers.create({
+        //    description: profile.username ? profile.username : "",
+        //    email: user.email,
+        //    address: userShippingAddress ? userShippingAddress : null,
+        //    shipping: userShippingAddress ? userCustomerShipping : null,
+        //})
+
+        //console.log('created user customer object: ', userCustomer)
+
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             customer_email: user.email,
+            //customer: userCustomer.id,
             mode: 'payment',
+<<<<<<< HEAD
             success_url: `${FRONTEND_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: FRONTEND_URL,
             line_items: order_items,
             allow_promotion_codes: true,
         })
+=======
+            success_url: `${BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: BASE_URL,
+            line_items: order_items,
+            allow_promotion_codes: true,
+            shipping_rates: cart.total_price >= order_minimum_free_shipping ? [stripe_free_shipping_id] : [stripe_paid_shipping_id],
+            shipping_address_collection: {
+                allowed_countries: ['SG'],
+            }
+        })
+
+>>>>>>> 63e2ffe9d079c0b4a1416b59c5268378f5a6999d
         return { id: session.id }
     },
 
@@ -107,8 +165,9 @@ module.exports = {
      */
     async confirm(ctx) {
         const { user } = ctx.state
-        const { checkout_session } = ctx.request.body
+        const { checkout_session, cart } = ctx.request.body
         const session = await stripe.checkout.sessions.retrieve(checkout_session)
+<<<<<<< HEAD
         const cart = await strapi.services.cart.findOne({ user: user.id })
 
         if (session.payment_status === 'paid') {
@@ -134,9 +193,47 @@ module.exports = {
             // delete current cart
             const cartId = cart.id
             const entity = await strapi.services.cart.delete({ id: cartId });
+=======
+        const userCart = await strapi.services.cart.findOne({ user: user.id })
+
+        if (session.payment_status === 'paid') {
+	    var orderDate = new Date()
+            const orderDateDay = orderDate.getDay()
+	    const deliveryDays = 3
+	    orderDate.setDate(orderDate.getDate() + deliveryDays)
+
+            const sessionDiscountValue = session.total_details.amount_discount / 100
+            const sessionShippingValue = session.total_details.amount_shipping / 100
+            //const sessionTaxValue = session.total_details.amount_tax / 100
+            const sessionTotal = session.amount_total / 100
+            const contributionAmount = (sessionTotal - sessionShippingValue) * 0.05
+
+	    // create order
+	    const newOrder = await strapi.services.order.create({
+                order_id: nanoid(),
+	        user: user.id,
+	        order_products: userCart.order_products,
+	        total_price: userCart.total_price,
+                final_price: sessionTotal,
+                contribution_amount: contributionAmount,
+                discount_value: sessionDiscountValue,
+                shipping_fee: sessionShippingValue,
+                //tax_fee: sessionTaxValue,
+                tax_fee: 0,
+	        status: 'processing',
+	        checkout_session: session.id,
+	        order_date: new Date(),
+	        delivery_date: orderDate
+	    })
+
+            console.log('CREATING PAID ORDER: ', newOrder)
+
+            // delete current cart
+            const entity = await strapi.services.cart.delete({ id: userCart.id });
+>>>>>>> 63e2ffe9d079c0b4a1416b59c5268378f5a6999d
             console.log('DELETED CART: ', entity)
 
-            return sanitizeEntity(updateOrder, { model: strapi.models.order })
+            return sanitizeEntity(newOrder, { model: strapi.models.order })
         } else {
             ctx.throw(400, "Payment failed. Please contact support.")
         }
