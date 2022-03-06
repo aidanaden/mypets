@@ -15,18 +15,6 @@
     "name": {
       "type": "string"
     },
-    "image": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
-    },
     "content": {
       "type": "richtext"
     },
@@ -65,6 +53,44 @@
     "variants": {
       "via": "product",
       "collection": "variant"
+    },
+    "nutrional_analysis": {
+      "type": "text"
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "Grams",
+        "Kg",
+        "ml",
+        "Litres",
+        "Size",
+        "Color"
+      ]
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }

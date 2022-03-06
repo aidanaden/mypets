@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "variants",
   "info": {
-    "name": "Variant"
+    "name": "Variant",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,15 +12,27 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "weight": {
-      "type": "decimal"
-    },
     "price": {
       "type": "decimal"
     },
     "product": {
       "via": "variants",
       "model": "product"
+    },
+    "available": {
+      "type": "boolean"
+    },
+    "discounted_price": {
+      "type": "decimal"
+    },
+    "variant_type_is_float": {
+      "type": "boolean"
+    },
+    "variant_type_str": {
+      "type": "string"
+    },
+    "variant_type_float": {
+      "type": "decimal"
     }
   }
 }

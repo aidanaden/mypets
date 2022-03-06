@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_terms_terms",
+  "info": {
+    "name": "Terms",
+    "icon": "info-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "Details": {
+      "type": "text"
+    }
+  }
+}
