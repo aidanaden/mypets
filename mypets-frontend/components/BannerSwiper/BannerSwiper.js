@@ -28,7 +28,7 @@ export default function BannerSwiper({
     >
       {zip(desktopImages, mobileImages).map((bannerData, i) => (
         <SwiperSlide key={i}>
-          <NextLink href={} as="/" passHref>
+          <NextLink href="/" as="/" passHref>
             <a>
               <Image
                 alt={bannerData[0].alternativeText}
