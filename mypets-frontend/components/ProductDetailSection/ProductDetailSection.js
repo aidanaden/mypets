@@ -201,7 +201,7 @@ function ProductDetailSection({ product }) {
           >
             <NextImage
               src={imageToUrl(product.image)}
-              alt={product.alternativeText}
+              alt={product.image.alternativeText}
               width="400"
               height="400"
               priority={true}

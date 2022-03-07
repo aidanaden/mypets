@@ -11,8 +11,6 @@ export default function BannerSwiper({
   rounded = { base: 20, md: 40 },
   autoplay = true,
 }) {
-  console.log("desktop image data: ", desktopImages);
-  console.log("mobile iamge data: ", mobileImages);
   return (
     <Swiper
       spaceBetween={0}
@@ -30,9 +28,10 @@ export default function BannerSwiper({
     >
       {zip(desktopImages, mobileImages).map((bannerData, i) => (
         <SwiperSlide key={i}>
-          <NextLink href="/" as="/" passHref>
+          <NextLink href={} as="/" passHref>
             <a>
               <Image
+                alt={bannerData[0].alternativeText}
                 loading="lazy"
                 rounded={rounded}
                 src={bannerData[0].url}
@@ -41,6 +40,7 @@ export default function BannerSwiper({
                 display={{ base: "none", md: "block" }}
               />
               <Image
+                alt={bannerData[0].alternativeText}
                 loading="lazy"
                 rounded={rounded}
                 src={bannerData[1].url}
