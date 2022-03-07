@@ -137,7 +137,7 @@ function ProductListCard({ product }) {
             <Center mb={{ base: 4 }} roundedTop="lg">
               <NextImage
                 src={imageToUrl(product.image)}
-                alt={`Picture of ${product.name}`}
+                alt={product.image.alternativeText}
                 width="150"
                 height="150"
                 quality="50"
