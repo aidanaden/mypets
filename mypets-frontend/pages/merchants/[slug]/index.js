@@ -39,11 +39,11 @@ export default function index({ merchant, bannerText }) {
             merchantRating={merchant.rating}
             merchantNumReviews={merchant.reviews}
           />
-          <MerchantProductReviewTab
+          {/* <MerchantProductReviewTab
             merchantProducts={merchant.products}
             categories={merchantCategories}
             merchantReviews={merchant.merchant_reviews}
-          />
+          /> */}
         </PageContainer>
       </Box>
     </>
