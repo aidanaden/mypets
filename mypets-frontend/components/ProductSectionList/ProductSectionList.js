@@ -47,6 +47,7 @@ function ProductSectionList({
             sortMethod={sortMethod}
             selectedAnimal={""}
             products={filterProductsByCategory(productByAnimal, category)}
+            maxRows={0}
           />
         ))}
       </Stack>

@@ -13,6 +13,7 @@ function ProductList({
   maxRows,
 }) {
   const [listProducts, setListProducts] = useState(products);
+  const sliceIndex = maxRows == 0 ? listProducts.length : 5 * maxRows;
 
   const sortProductsAscending = (products) => {
     products.sort((a, b) =>
@@ -109,7 +110,7 @@ function ProductList({
             columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
             spacing={{ base: 4 }}
           >
-            {listProducts.slice(0, 10).map((product, index) => (
+            {listProducts.slice(0, sliceIndex).map((product, index) => (
               <ProductListCard product={product} key={index} />
             ))}
           </SimpleGrid>

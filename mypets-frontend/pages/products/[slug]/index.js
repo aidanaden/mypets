@@ -77,6 +77,7 @@ export default function Product({ bannerTitle, product, otherProducts }) {
             heading="Suggested products"
             products={otherProducts}
             selectedAnimal=""
+            maxRows={2}
           />
         </PageContainer>
       </Box>
