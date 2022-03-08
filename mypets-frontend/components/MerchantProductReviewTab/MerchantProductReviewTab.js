@@ -53,7 +53,7 @@ function MerchantProductReviewTab({
         >
           Products
         </Tab>
-        <Tab
+        {/* <Tab
           rounded="full"
           _active={{
             color: "white",
@@ -65,7 +65,7 @@ function MerchantProductReviewTab({
           }}
         >
           Reviews
-        </Tab>
+        </Tab> */}
       </TabList>
       <TabPanels mt={4} px={0}>
         <TabPanel px={0}>
@@ -98,9 +98,9 @@ function MerchantProductReviewTab({
             </Stack>
           </Flex>
         </TabPanel>
-        <TabPanel>
+        {/* <TabPanel>
           <MerchantReviewsList reviews={merchantReviews} />
-        </TabPanel>
+        </TabPanel> */}
       </TabPanels>
     </Tabs>
   );
