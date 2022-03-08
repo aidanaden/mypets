@@ -175,6 +175,7 @@ export default function index({ bannerText, products, animals, merchants }) {
               sortMethod={sortMethod}
               selectedAnimal={selectedAnimal}
               selectedMerchants={selectedMerchants}
+              maxRows={0}
             />
           </Stack>
         </Stack>
