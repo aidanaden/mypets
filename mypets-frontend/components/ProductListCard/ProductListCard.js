@@ -116,7 +116,7 @@ function ProductListCard({ product }) {
             top="0"
             left="0"
             p={3}
-            zIndex="overlay"
+            zIndex="dropdown"
             bg="mypets-green.100"
             textColor="white"
             fontWeight="bold"
