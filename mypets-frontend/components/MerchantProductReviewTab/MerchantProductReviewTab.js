@@ -53,6 +53,19 @@ function MerchantProductReviewTab({
         >
           Products
         </Tab>
+        <Tab
+          rounded="full"
+          _active={{
+            color: "white",
+            bgGradient: "linear(to-t, mypets.900, mypets.100)",
+          }}
+          _selected={{
+            color: "white",
+            bgGradient: "linear(to-t, mypets.900, mypets.100)",
+          }}
+        >
+          Reviews
+        </Tab>
       </TabList>
       <TabPanels mt={4} px={0}>
         <TabPanel px={0}>
@@ -84,6 +97,9 @@ function MerchantProductReviewTab({
               />
             </Stack>
           </Flex>
+        </TabPanel>
+        <TabPanel>
+          <MerchantReviewsList reviews={merchantReviews} />
         </TabPanel>
       </TabPanels>
     </Tabs>
