@@ -116,7 +116,7 @@ function ProductListCard({ product }) {
             top="0"
             left="0"
             p={3}
-            zIndex="tooltip"
+            zIndex="base"
             bg="mypets-green.100"
             textColor="white"
             fontWeight="bold"
