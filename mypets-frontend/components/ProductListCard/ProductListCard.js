@@ -116,7 +116,7 @@ function ProductListCard({ product }) {
             top="0"
             left="0"
             p={3}
-            zIndex="base"
+            zIndex={2}
             bg="mypets-green.100"
             textColor="white"
             fontWeight="bold"
@@ -134,7 +134,7 @@ function ProductListCard({ product }) {
         )}
         <Stack direction="column" h="100%" w="100%">
           <LinkOverlay href={`/products/${product.slug}`}>
-            <Center mb={{ base: 4 }} roundedTop="lg" zIndex={0}>
+            <Center mb={{ base: 4 }} roundedTop="lg" zIndex={1}>
               <NextImage
                 src={imageToUrl(product.image)}
                 alt={product.image.alternativeText}
