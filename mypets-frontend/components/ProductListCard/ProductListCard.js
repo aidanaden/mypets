@@ -134,7 +134,7 @@ function ProductListCard({ product }) {
         )}
         <Stack direction="column" h="100%" w="100%">
           <LinkOverlay href={`/products/${product.slug}`}>
-            <Center mb={{ base: 4 }} roundedTop="lg">
+            <Center mb={{ base: 4 }} roundedTop="lg" zIndex={0}>
               <NextImage
                 src={imageToUrl(product.image)}
                 alt={product.image.alternativeText}
