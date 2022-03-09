@@ -35,7 +35,7 @@ function SortMenu({ setSortMethod }) {
     <Box alignSelf={{ base: "start", md: "end" }}>
       <Menu>
         <MypetsMenuBtn menuBtnText={sortBtnText} />
-        <MenuList boxShadow="md">
+        <MenuList boxShadow="md" zIndex={3}>
           {sortTypes.map((sortType, i) => (
             <MenuItem key={i} onClick={() => updateSort(sortType)}>
               {sortType}
