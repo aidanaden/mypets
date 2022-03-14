@@ -203,7 +203,7 @@ module.exports = {
         //tax_fee: sessionTaxValue,
         tax_fee: 0,
         status: "processing",
-        checkout_session: session.id,
+        checkout_session: session.payment_intent,
         order_date: new Date(),
         delivery_date: orderDate,
       });
