@@ -1,7 +1,7 @@
 import { formatDistance, format } from "date-fns";
 export const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
-export const FRONTEND_URL = process.env.FRONTEND_URL;
+export const FRONTEND_URL = process.env.FRONTEND_URL || "https://mypets.sg";
 export const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PK;
 export const API_HOME_URL = `${API_URL}/home-page/`;
 export const API_ABOUT_URL = `${API_URL}/about-page/`;
