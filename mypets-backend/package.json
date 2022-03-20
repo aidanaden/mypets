@@ -31,6 +31,7 @@
     "strapi-plugin-content-type-builder": "3.6.1",
     "strapi-plugin-email": "3.6.1",
     "strapi-plugin-i18n": "3.6.1",
+    "strapi-plugin-import-export-content": "^0.4.2",
     "strapi-plugin-upload": "3.6.1",
     "strapi-plugin-users-permissions": "3.6.1",
     "strapi-provider-upload-aws-s3": "^3.6.3",
