@@ -38,7 +38,11 @@ export default function Product({ bannerTitle, product, otherProducts }) {
         <meta property="product:condition" content="new" />
         <meta
           property="product:price:amount"
-          content={product.variants[0].price}
+          content={
+            product.variants[0].discounted_price > 0
+              ? product.variants[0].discounted_price
+              : product.variants[0].price
+          }
         />
         <meta property="product:price:currency" content="SGD" />
       </Head>
