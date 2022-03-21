@@ -26,14 +26,16 @@ export default function Product({ bannerTitle, product, otherProducts }) {
       <Head>
         <title>{product.meta_title}</title>
         <meta name="description" content={product.meta_description} />
+        <meta property="og:id" content={product.id} />
         <meta property="og:title" content={product.name} />
-        {/* <meta property="og:description" content=“SHORT_DESCRIPTION”> */}
+        <meta property="og:description" content={product.meta_description} />
+        <meta property="og:rich_text_description" content={product.content} />
         <meta property="og:url" content={`${FRONTEND_URL}${asPath}`} />
         <meta property="og:image" content={imageToUrl(product.image)} />
         <meta property="product:brand" content={product.merchant.name} />
         <meta
           property="product:availability"
-          content={product.variants[0].available}
+          content={product.variants[0].available ? "in stock" : "out of stock"}
         />
         <meta property="product:condition" content="new" />
         <meta
