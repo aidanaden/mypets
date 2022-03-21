@@ -32,7 +32,7 @@ export default function Product({ bannerTitle, product, otherProducts }) {
         <meta property="og:rich_text_description" content={product.content} />
         <meta property="og:url" content={`${FRONTEND_URL}${asPath}`} />
         <meta property="og:image" content={imageToUrl(product.image)} />
-        <meta property="product:id" content={product.id} />
+        <meta property="product:retailer_item_id" content={product.id} />
         <meta property="product:brand" content={product.merchant.name} />
         <meta
           property="product:availability"
