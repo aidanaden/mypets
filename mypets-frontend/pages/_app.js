@@ -44,9 +44,11 @@ function MyApp({ Component, pageProps }) {
       .then((ReactPixel) => {
         ReactPixel.init("445262823815733"); // facebookPixelId
         ReactPixel.pageView();
+        ReactPixel.fbq("track", "viewContent");
 
         Router.events.on("routeChangeComplete", () => {
           ReactPixel.pageView();
+          ReactPixel.fbq("track", "viewContent");
         });
       });
   }, [Router.events]);
