@@ -25,6 +25,7 @@ export default function Product({ bannerTitle, product, otherProducts }) {
     <>
       <Head>
         <title>{product.meta_title}</title>
+        <meta name="id" content={product.id} />
         <meta name="description" content={product.meta_description} />
         <meta property="og:id" content={product.id} />
         <meta property="og:title" content={product.name} />
