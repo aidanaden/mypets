@@ -69,11 +69,7 @@ export default function Home({
             setSelectedCategory={setCategorySelected}
           />
           {/* <Carousel /> */}
-          <HomeBannerSwiper
-            desktopImages={home_data.desktop_banners}
-            mobileImages={home_data.mobile_banners}
-            banners={home_data.Banners}
-          />
+          <HomeBannerSwiper banners={home_data.Banners} />
           <Stack direction="column" spacing={{ base: 8, lg: 12 }}>
             <MerchantSectionList merchants={merchants} />
             <Stack

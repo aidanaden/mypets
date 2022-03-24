@@ -6,13 +6,10 @@ import NextLink from "next/link";
 SwiperCore.use([Autoplay, Navigation]);
 
 export default function BannerSwiper({
-  desktopImages,
-  mobileImages,
   banners,
   rounded = { base: 20, md: 40 },
   autoplay = true,
 }) {
-  console.log("merchant banners: ", banners);
   return (
     <Swiper
       spaceBetween={0}

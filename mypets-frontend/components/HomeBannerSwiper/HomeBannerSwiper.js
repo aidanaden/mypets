@@ -2,8 +2,6 @@ import { Box } from "@chakra-ui/react";
 import BannerSwiper from "../BannerSwiper/BannerSwiper";
 
 export default function HomeBannerSwiper({
-  desktopImages,
-  mobileImages,
   banners,
   rounded = { base: 20, md: 40 },
   ...props
@@ -16,12 +14,7 @@ export default function HomeBannerSwiper({
       rounded={rounded}
       {...props}
     >
-      <BannerSwiper
-        desktopImages={desktopImages}
-        mobileImages={mobileImages}
-        banners={banners}
-        rounded={rounded}
-      />
+      <BannerSwiper banners={banners} rounded={rounded} />
     </Box>
   );
 }
