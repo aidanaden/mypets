@@ -4,6 +4,7 @@ import BannerSwiper from "../BannerSwiper/BannerSwiper";
 export default function HomeBannerSwiper({
   desktopImages,
   mobileImages,
+  banners,
   rounded = { base: 20, md: 40 },
   ...props
 }) {
@@ -18,6 +19,7 @@ export default function HomeBannerSwiper({
       <BannerSwiper
         desktopImages={desktopImages}
         mobileImages={mobileImages}
+        banners={banners}
         rounded={rounded}
       />
     </Box>

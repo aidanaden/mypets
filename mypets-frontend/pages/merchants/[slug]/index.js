@@ -33,6 +33,7 @@ export default function index({ merchant, bannerText }) {
           <MerchantBannerSwiper
             desktopImages={merchant.desktop_banners}
             mobileImages={merchant.mobile_banners}
+            banners={merchant.banners}
           />
           <MerchantTitle
             merchantName={merchant.name}

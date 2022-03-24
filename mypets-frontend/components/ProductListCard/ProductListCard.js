@@ -86,8 +86,6 @@ function ProductListCard({ product }) {
     }
   };
 
-  console.log("product data: ", product);
-
   return (
     <LinkBox
       bg="white"

@@ -4,6 +4,7 @@ import BannerSwiper from "../BannerSwiper/BannerSwiper";
 export default function MerchantBannerSwiper({
   desktopImages,
   mobileImages,
+  banners,
   rounded = { base: 20, md: 40 },
   ...props
 }) {
@@ -18,6 +19,7 @@ export default function MerchantBannerSwiper({
       <BannerSwiper
         desktopImages={desktopImages}
         mobileImages={mobileImages}
+        banners={banners}
         rounded={rounded}
         autoplay={false}
       />

@@ -72,6 +72,7 @@ export default function Home({
           <HomeBannerSwiper
             desktopImages={home_data.desktop_banners}
             mobileImages={home_data.mobile_banners}
+            banners={home_data.banners}
           />
           <Stack direction="column" spacing={{ base: 8, lg: 12 }}>
             <MerchantSectionList merchants={merchants} />
