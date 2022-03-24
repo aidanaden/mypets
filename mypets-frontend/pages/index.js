@@ -20,7 +20,6 @@ import {
 } from "../utils/urls";
 import SectionHeader from "../components/SectionHeader/SectionHeader";
 import AnimalList from "../components/AnimalList/AnimalList";
-import MessengerCustomerChat from "react-messenger-customer-chat";
 
 export default function Home({
   home_data,
