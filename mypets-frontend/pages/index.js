@@ -97,10 +97,7 @@ export default function Home({
           </Stack>
         </PageContainer>
       </Box>
-      {/* <MessengerCustomerChat
-        pageId='105638824710827'
-        appId='615727602931296'
-      /> */}
+      <MessengerCustomerChat pageId="105638824710827" appId="615727602931296" />
     </>
   );
 }
