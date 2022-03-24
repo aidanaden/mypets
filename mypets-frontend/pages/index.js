@@ -20,7 +20,7 @@ import {
 } from "../utils/urls";
 import SectionHeader from "../components/SectionHeader/SectionHeader";
 import AnimalList from "../components/AnimalList/AnimalList";
-import Facebook from "../utils/fb";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 
 export default function Home({
   home_data,
@@ -97,7 +97,6 @@ export default function Home({
           </Stack>
         </PageContainer>
       </Box>
-      <MessengerCustomerChat pageId="105638824710827" appId="615727602931296" />
     </>
   );
 }
