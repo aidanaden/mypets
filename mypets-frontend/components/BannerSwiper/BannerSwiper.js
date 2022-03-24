@@ -20,7 +20,7 @@ export default function BannerSwiper({
       loop={autoplay}
       centeredSlides={true}
       autoplay={
-        desktopImages.length > 1 && autoplay
+        banners.length > 1 && autoplay
           ? {
               delay: 3000,
               disableOnInteraction: false,
@@ -28,24 +28,24 @@ export default function BannerSwiper({
           : false
       }
     >
-      {zip(desktopImages, mobileImages).map((bannerData, i) => (
+      {banners.map((bannerData, i) => (
         <SwiperSlide key={i}>
           <NextLink href="/" as="/" passHref>
             <a>
               <Image
-                alt={bannerData[0].alternativeText}
+                alt={bannerData.desktop_banner_image.alternativeText}
                 loading="lazy"
                 rounded={rounded}
-                src={bannerData[0].url}
+                src={bannerData.desktop_banner_image.url}
                 boxSize="full"
                 backgroundSize="cover"
                 display={{ base: "none", md: "block" }}
               />
               <Image
-                alt={bannerData[0].alternativeText}
+                alt={bannerData.desktop_banner_image.alternativeText}
                 loading="lazy"
                 rounded={rounded}
-                src={bannerData[1].url}
+                src={bannerData.mobile_banner_image.url}
                 boxSize="full"
                 backgroundSize="cover"
                 display={{ base: "block", md: "none" }}
