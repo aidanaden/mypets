@@ -43,10 +43,10 @@ function ProductSoldBadge({ ...props }) {
   );
 }
 
-function AnimalBadge({ type = "dog", ...props }) {
+function AnimalBadge({ type = "Dog", ...props }) {
   return (
     <Stack direction="row" spacing={2} align="center" {...props}>
-      <Icon as={type == "dog" ? FaDog : FaCat} w={4} h={4} />
+      <Icon as={type == "Dog" ? FaDog : FaCat} w={4} h={4} />
       <Text textTransform="uppercase" fontSize="md" fontWeight="bold">
         {type}
       </Text>
@@ -222,7 +222,7 @@ function ProductDetailSection({ product }) {
             spacing={{ base: 3, md: 4 }}
             align="baseline"
           >
-            <AnimalBadge>{product.animal.name}</AnimalBadge>
+            <AnimalBadge type={product.animal.name} />
             <RatingDisplay
               rating={product.rating}
               numReviews={product.reviews.length}
