@@ -27,7 +27,11 @@ export default function BannerSwiper({
     >
       {banners.map((bannerData, i) => (
         <SwiperSlide key={i}>
-          <NextLink href={bannerData.Banner_url} as="/" passHref>
+          <NextLink
+            href={bannerData.banner_url}
+            as={bannerData.banner_url}
+            passHref
+          >
             <a>
               <Image
                 alt={bannerData.desktop_banner_image.alternativeText}
