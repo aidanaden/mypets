@@ -31,7 +31,13 @@ const ProductIngredient = ({ ingredients }) => {
   return (
     <Box>
       <SectionHeading>Ingredients</SectionHeading>
-      <Text>{ingredients}</Text>
+      <Box fontFamily={"body"}>
+        <ReactMarkdown
+          components={ChakraUIRenderer()}
+          remarkPlugins={[remarkGfm]}
+          children={`${ingredients}`}
+        />
+      </Box>
     </Box>
   );
 };
