@@ -3,14 +3,14 @@ import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import AnnouncementBanner from "../../../components/AnnouncementBanner/AnnouncementBanner";
-import Sidebar from "../../../components/Sidebar/Sidebar";
-import Footer from "../../../components/Footer/Footer";
-import BackBtn from "../../../components/BackBtn/BackBtn";
-import ProductDetailSection from "../../../components/ProductDetailSection/ProductDetailSection";
-import ProductDescriptionSection from "../../../components/ProductDescriptionSection/ProductDescriptionSection";
-import ProductReviewSection from "../../../components/ProductReviewSection/ProductReviewSection";
-import ProductList from "../../../components/ProductList/ProductList";
+import AnnouncementBanner from "../../../components/Layouts/AnnouncementBanner/AnnouncementBanner";
+import Sidebar from "../../../components/Layouts/Sidebar/Sidebar";
+import Footer from "../../../components/Layouts/Footer/Footer";
+import BackBtn from "../../../components/Common/BackBtn/BackBtn";
+import ProductDetailSection from "../../../components/Product/ProductDetailSection/ProductDetailSection";
+import ProductDescriptionSection from "../../../components/Product/ProductDescriptionSection/ProductDescriptionSection";
+import ProductReviewSection from "../../../components/Product/ProductReviewSection/ProductReviewSection";
+import ProductList from "../../../components/Product/ProductList/ProductList";
 import {
   API_HOME_URL,
   API_PRODUCTS_URL,

@@ -1,16 +1,16 @@
 import { useContext, useState, useEffect } from "react";
 import { Stack, HStack, Text, Spacer, Center, Box } from "@chakra-ui/react";
 
-import AnnouncementBanner from "../../components/AnnouncementBanner/AnnouncementBanner";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Footer from "../../components/Footer/Footer";
-import PageContainer from "../../components/PageContainer/PageContainer";
-import BackBtn from "../../components/BackBtn/BackBtn";
+import AnnouncementBanner from "../../components/Layouts/AnnouncementBanner/AnnouncementBanner";
+import Sidebar from "../../components/Layouts/Sidebar/Sidebar";
+import Footer from "../../components/Layouts/Footer/Footer";
+import PageContainer from "../../components/Layouts/PageContainer/PageContainer";
+import BackBtn from "../../components/Common/BackBtn/BackBtn";
 import OrderCard from "../../components/OrderCard/OrderCard";
 import AuthContext, { callAPI } from "../../context/AuthContext";
-import Section from "../../components/Section/Section";
-import SectionHeader from "../../components/SectionHeader/SectionHeader";
-import MypetsBtn from "../../components/MypetsBtn/MypetsBtn";
+import Section from "../../components/Layouts/Section/Section";
+import SectionHeader from "../../components/Layouts/SectionHeader/SectionHeader";
+import MypetsBtn from "../../components/Common/MypetsBtn/MypetsBtn";
 import { API_HOME_URL, stringToDate } from "../../utils/urls";
 
 const ContributionRow = ({ order }) => {

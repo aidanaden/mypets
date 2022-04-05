@@ -1,13 +1,13 @@
 import { Box, Text } from "@chakra-ui/react";
 import Head from "next/head";
 
-import PageContainer from "../components/PageContainer/PageContainer";
-import Sidebar from "../components/Sidebar/Sidebar";
-import Footer from "../components/Footer/Footer";
+import PageContainer from "../components/Layouts/PageContainer/PageContainer";
+import Sidebar from "../components/Layouts/Sidebar/Sidebar";
+import Footer from "../components/Layouts/Footer/Footer";
 import { API_CATEGORIES_URL, API_FAQ_URL } from "../utils/urls";
-import SectionHeader from "../components/SectionHeader/SectionHeader";
-import SectionSubHeader from "../components/SectionSubHeader/SectionSubHeader";
-import ParagraphSection from "../components/ParagraphSection/ParagraphSection";
+import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
+import SectionSubHeader from "../components/Layouts/SectionSubHeader/SectionSubHeader";
+import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSection";
 
 export default function faq({ categories, faq_data }) {
   return (

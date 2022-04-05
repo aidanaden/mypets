@@ -12,13 +12,13 @@ import {
 } from "@chakra-ui/react";
 
 import AnnouncementBanner from "../../components/AnnouncementBanner/AnnouncementBanner";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import PageContainer from "../../components/PageContainer/PageContainer";
-import AnimalList from "../../components/AnimalList/AnimalList";
-import SortMenu from "../../components/SortMenu/SortMenu";
-import Footer from "../../components/Footer/Footer";
-import MerchantSectionList from "../../components/MerchantSectionList/MerchantSectionList";
-import ProductList from "../../components/ProductList/ProductList";
+import Sidebar from "../../components/Layouts/Sidebar/Sidebar";
+import PageContainer from "../../components/Layouts/PageContainer/PageContainer";
+import AnimalList from "../../components/Common/AnimalList/AnimalList";
+import SortMenu from "../../components/Common/SortMenu/SortMenu";
+import Footer from "../../components/Layouts/Footer/Footer";
+import MerchantSectionList from "../../components/Merchant/MerchantSectionList/MerchantSectionList";
+import ProductList from "../../components/Product/ProductList/ProductList";
 import {
   API_PRODUCTS_URL,
   API_MERCHANTS_URL,

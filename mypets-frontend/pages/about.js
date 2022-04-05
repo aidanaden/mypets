@@ -1,9 +1,9 @@
 import { Box, Text } from "@chakra-ui/react";
 import Head from "next/head";
 
-import PageContainer from "../components/PageContainer/PageContainer";
-import Sidebar from "../components/Sidebar/Sidebar";
-import Footer from "../components/Footer/Footer";
+import PageContainer from "../components/Layouts/PageContainer/PageContainer";
+import Sidebar from "../components/Layouts/Sidebar/Sidebar";
+import Footer from "../components/Layouts/Footer/Footer";
 import { API_CATEGORIES_URL, API_ABOUT_URL } from "../utils/urls";
 import SectionHeader from "../components/SectionHeader/SectionHeader";
 import ParagraphSection from "../components/ParagraphSection/ParagraphSection";
