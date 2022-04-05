@@ -22,8 +22,8 @@ import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 
-import SectionHeader from "../../SectionHeader/SectionHeader";
-import SearchbarGroup from "../SearchbarGroup/SearchbarGroup";
+import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
+import SearchbarGroup from "../Common/SearchbarGroup/SearchbarGroup";
 import NavbarCartModalBtn from "../../NavbarCartModalBtn/NavbarCartModalBtn";
 import NavbarUserModalBtn from "../../NavbarUserModalBtn/NavbarUserModalBtn";
 import NavbarUserIcon from "../../NavbarUserIcon/NavbarUserIcon";

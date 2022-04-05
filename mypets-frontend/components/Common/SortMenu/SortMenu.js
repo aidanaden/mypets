@@ -1,7 +1,7 @@
 import { Box, Menu, MenuItem, MenuList, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 
-import SectionHeader from "../SectionHeader/SectionHeader";
+import SectionHeader from "../Layouts/SectionHeader/SectionHeader";
 import MypetsMenuBtn from "../MypetsMenuBtn/MypetsMenuBtn";
 
 function SortMenu({ setSortMethod }) {
