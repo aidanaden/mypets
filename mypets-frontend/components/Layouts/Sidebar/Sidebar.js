@@ -20,7 +20,7 @@ import NavbarCartModalBtn from "./NavbarCartModalBtn/NavbarCartModalBtn";
 import NavbarUserModalBtn from "./NavbarUserModalBtn/NavbarUserModalBtn";
 import NavbarUserIcon from "./NavbarUserIcon/NavbarUserIcon";
 import AuthContext from "../../../context/AuthContext";
-import LoginModalBtn from "../../LoginModalBtn/LoginModalBtn";
+import LoginModalBtn from "./LoginModalBtn/LoginModalBtn";
 // import SignupModalBtn from "../../Form/SignupModalBtn/SignupModalBtn";
 
 export default function Sidebar({ categories }) {
