@@ -11,7 +11,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 
-import AnnouncementBanner from "../../components/AnnouncementBanner/AnnouncementBanner";
+import AnnouncementBanner from "../../components/Layouts/AnnouncementBanner/AnnouncementBanner";
 import Sidebar from "../../components/Layouts/Sidebar/Sidebar";
 import PageContainer from "../../components/Layouts/PageContainer/PageContainer";
 import AnimalList from "../../components/Common/AnimalList/AnimalList";
