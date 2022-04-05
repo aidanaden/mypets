@@ -1,7 +1,7 @@
 import lodash from "lodash";
-import { Box, Flex, Stack } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 
-import Section from "../Section/Section";
+import Section from "../Layouts/Section/Section";
 import OrderProductCard from "../OrderProductCard/OrderProductCard";
 import OrderDeliveryStatusBar from "../OrderDeliveryStatusBar/OrderDeliveryStatusBar";
 import OrderPriceBreakdownList from "../OrderPriceBreakdownList/OrderPriceBreakdownList";

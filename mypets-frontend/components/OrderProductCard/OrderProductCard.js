@@ -16,9 +16,9 @@ import NextImage from "next/image";
 import NextLink from "next/link";
 import lodash from "lodash";
 
-import MerchantBadge from "../MerchantBadge/MerchantBadge";
+import MerchantBadge from "../Merchant/MerchantBadge/MerchantBadge";
 import OrderProductReviewModalBtn from "../OrderProductReviewModalBtn/OrderProductReviewModalBtn";
-import MypetsBtn from "../MypetsBtn/MypetsBtn";
+import MypetsBtn from "../Common/MypetsBtn/MypetsBtn";
 import { imageToUrl } from "../../utils/urls";
 import AuthContext, { callAPI } from "../../context/AuthContext";
 

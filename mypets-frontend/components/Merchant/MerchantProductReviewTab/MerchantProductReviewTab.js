@@ -12,12 +12,11 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-import MerchantReviewsList from "../MerchantReviewsList/MerchantReviewsList";
-import ProductSectionList from "../ProductSectionList/ProductSectionList";
-import SortMenu from "../SortMenu/SortMenu";
-import SectionHeader from "../SectionHeader/SectionHeader";
-import AnimalList from "../AnimalList/AnimalList";
-import { getAnimals } from "../../utils/urls";
+import ProductSectionList from "../../Product/ProductSectionList/ProductSectionList";
+import SortMenu from "../../Common/SortMenu/SortMenu";
+import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
+import AnimalList from "../../Common/AnimalList/AnimalList";
+import { getAnimals } from "../../../utils/urls";
 
 function MerchantProductReviewTab({
   merchantProducts,

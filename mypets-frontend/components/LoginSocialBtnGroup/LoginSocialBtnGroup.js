@@ -1,15 +1,7 @@
-import {
-  ButtonGroup,
-  Button,
-  HStack,
-  Divider,
-  Text,
-  useToast,
-} from "@chakra-ui/react";
+import { ButtonGroup, Button, useToast } from "@chakra-ui/react";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import NextLink from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/router";
 
 import { API_URL } from "../../utils/urls";
 

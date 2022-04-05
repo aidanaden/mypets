@@ -1,7 +1,6 @@
 import { Image } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation } from "swiper/core";
-import { zip } from "lodash";
 import NextLink from "next/link";
 SwiperCore.use([Autoplay, Navigation]);
 

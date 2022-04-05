@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { FaFilter } from "react-icons/fa";
 
-import PriceSlider from "../PriceSlider/PriceSlider.js";
+import PriceSlider from "../Common/PriceSlider/PriceSlider";
 
 function PriceFilterPopover({ price, onChange }) {
   return (

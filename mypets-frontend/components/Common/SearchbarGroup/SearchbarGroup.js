@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Stack } from "@chakra-ui/react";
 
 import Searchbar from "../Searchbar/Searchbar";
-import PriceFilterPopover from "../PriceFilterPopover/PriceFilterPopover";
+import PriceFilterPopover from "../../PriceFilterPopover/PriceFilterPopover";
 
 function SearchbarGroup({ ...props }) {
   const [price, setPrice] = useState(50);

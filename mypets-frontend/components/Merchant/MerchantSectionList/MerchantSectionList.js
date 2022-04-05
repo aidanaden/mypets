@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, SimpleGrid } from "@chakra-ui/react";
 
-import SectionHeader from "../SectionHeader/SectionHeader";
+import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 import MerchantCard from "../MerchantCard/MerchantCard";
 
 function MerchantSectionList({ merchants, spacing = 4 }) {
@@ -15,7 +15,6 @@ function MerchantSectionList({ merchants, spacing = 4 }) {
         spacing={spacing}
         pb={{ base: 4 }}
         columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
-        spacing={{ base: 4 }}
       >
         {merchants.map((merchant, index) => (
           <MerchantCard key={index} merchant={merchant} />

@@ -1,5 +1,5 @@
-import { Heading, VStack, HStack, Text, Flex } from "@chakra-ui/react";
-import RatingDisplay from "../RatingDisplay/RatingDisplay";
+import { Heading, VStack } from "@chakra-ui/react";
+import RatingDisplay from "../../Common/RatingDisplay/RatingDisplay";
 
 function MerchantTitle({ merchantName, merchantRating, merchantNumReviews }) {
   return (

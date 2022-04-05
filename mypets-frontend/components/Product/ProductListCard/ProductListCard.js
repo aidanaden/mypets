@@ -14,11 +14,11 @@ import {
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import NextImage from "next/image";
 
-import MerchantBadge from "../MerchantBadge/MerchantBadge";
-import RatingDisplay from "../RatingDisplay/RatingDisplay";
-import { imageToUrl } from "../../utils/urls";
-import MypetsBtn from "../MypetsBtn/MypetsBtn";
-import AuthContext from "../../context/AuthContext";
+import MerchantBadge from "../../Merchant/MerchantBadge/MerchantBadge";
+import RatingDisplay from "../../Common/RatingDisplay/RatingDisplay";
+import { imageToUrl } from "../../../utils/urls";
+import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
+import AuthContext from "../../../context/AuthContext";
 
 function ProductListCard({ product }) {
   const toast = useToast();

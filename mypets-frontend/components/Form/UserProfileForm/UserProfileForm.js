@@ -11,10 +11,10 @@ import { Formik, Form, Field } from "formik";
 import { parse, isDate } from "date-fns";
 const Yup = require("yup");
 
-import MypetsBtn from "../MypetsBtn/MypetsBtn";
+import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
 import EmailInputGroup from "../EmailInputGroup/EmailInputGroup";
 import NameInputGroup from "../NameInputGroup/NameInputGroup";
-import DatePicker from "../DatePicker/DatePicker";
+// import DatePicker from "../DatePicker/DatePicker";
 import SexRadioGroup from "../SexRadioGroup/SexRadioGroup";
 import TelInputGroup from "../TelInputGroup/TelInputGroup";
 import BirthdayInputGroup from "../BirthdayInputGroup/BirthdayInputGroup";

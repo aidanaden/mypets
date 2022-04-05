@@ -1,16 +1,13 @@
 import {
   Box,
   chakra,
-  Container,
   Link,
   Stack,
   Text,
-  useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-import { SiGooglepay, SiApplepay, SiVisa, SiMastercard } from "react-icons/si";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 import PageContainer from "../PageContainer/PageContainer";
 

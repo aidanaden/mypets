@@ -1,8 +1,8 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { formatDistanceToNowStrict } from "date-fns";
 
-import RatingDisplay from "../RatingDisplay/RatingDisplay";
-import { REVIEW_TEXT_LEN } from "../../utils/urls";
+import RatingDisplay from "../../Common/RatingDisplay/RatingDisplay";
+import { REVIEW_TEXT_LEN } from "../../../utils/urls";
 
 function distanceFromToday(str_date) {
   const review_date = new Date(str_date);

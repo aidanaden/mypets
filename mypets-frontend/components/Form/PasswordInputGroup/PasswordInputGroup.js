@@ -6,7 +6,7 @@ import {
   InputLeftElement,
   InputRightElement,
 } from "@chakra-ui/react";
-import { LockIcon, CheckIcon } from "@chakra-ui/icons";
+import { LockIcon } from "@chakra-ui/icons";
 import { IoMdEyeOff, IoMdEye } from "react-icons/io";
 
 function PasswordInputGroup({ field, valid, id }) {

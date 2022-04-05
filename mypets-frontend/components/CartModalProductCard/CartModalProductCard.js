@@ -18,7 +18,7 @@ import NextImage from "next/image";
 import NextLink from "next/link";
 import { DeleteIcon } from "@chakra-ui/icons";
 
-import MerchantBadge from "../MerchantBadge/MerchantBadge";
+import MerchantBadge from "../Merchant/MerchantBadge/MerchantBadge";
 import CartProductQuantityPicker from "../CartProductQuantityPicker/CartProductQuantityPicker";
 import { imageToUrl } from "../../utils/urls";
 import AuthContext from "../../context/AuthContext";

@@ -18,12 +18,12 @@ import { FaCartPlus, FaDog, FaCat } from "react-icons/fa";
 import { SRLWrapper } from "simple-react-lightbox";
 
 import ProductQuantityPicker from "../ProductQuantityPicker/ProductQuantityPicker";
-import RatingDisplay from "../RatingDisplay/RatingDisplay";
+import RatingDisplay from "../../Common/RatingDisplay/RatingDisplay";
 import ProductDetailVariantSelect from "../ProductDetailVariantSelect/ProductDetailVariantSelect";
 import ProductDetailBadge from "../ProductDetailBadge/ProductDetailBadge";
-import MypetsBtn from "../MypetsBtn/MypetsBtn";
-import { imageToUrl } from "../../utils/urls";
-import AuthContext from "../../context/AuthContext";
+import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
+import { imageToUrl } from "../../../utils/urls";
+import AuthContext from "../../../context/AuthContext";
 
 function ProductSoldBadge({ ...props }) {
   return (

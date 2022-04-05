@@ -7,9 +7,7 @@ import {
   MenuList,
   MenuDivider,
   MenuItem,
-  Button,
   Avatar,
-  useDisclosure,
 } from "@chakra-ui/react";
 
 import AuthContext from "../../context/AuthContext";

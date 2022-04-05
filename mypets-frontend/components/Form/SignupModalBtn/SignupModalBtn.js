@@ -19,14 +19,14 @@ import { Formik, Form, Field } from "formik";
 const Yup = require("yup");
 require("yup-password")(Yup);
 
-import AuthContext from "../../context/AuthContext";
-import EmailInputGroup from "../EmailInputGroup/EmailInputGroup";
-import PasswordInputGroup from "../PasswordInputGroup/PasswordInputGroup";
-import MypetsBtn from "../MypetsBtn/MypetsBtn";
-import NameInputGroup from "../NameInputGroup/NameInputGroup";
-import TelInputGroup from "../TelInputGroup/TelInputGroup";
-import LocationSelect from "../LocationSelect/LocationSelect";
-import LoginSocialBtnGroup from "../LoginSocialBtnGroup/LoginSocialBtnGroup";
+import AuthContext from "../../../context/AuthContext";
+// import EmailInputGroup from "../EmailInputGroup/EmailInputGroup";
+// import PasswordInputGroup from "../PasswordInputGroup/PasswordInputGroup";
+import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
+// import NameInputGroup from "../NameInputGroup/NameInputGroup";
+// import TelInputGroup from "../TelInputGroup/TelInputGroup";
+// import LocationSelect from "../LocationSelect/LocationSelect";
+import LoginSocialBtnGroup from "../../LoginSocialBtnGroup/LoginSocialBtnGroup";
 
 function SignupModalBtn() {
   const { isOpen, onOpen, onClose } = useDisclosure();

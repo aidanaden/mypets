@@ -8,7 +8,7 @@ import { Formik, Form, Field } from "formik";
 const Yup = require("yup");
 require("yup-password")(Yup);
 
-import MypetsBtn from "../MypetsBtn/MypetsBtn";
+import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
 import PasswordInputGroup from "../PasswordInputGroup/PasswordInputGroup";
 
 const passwordSchema = Yup.object().shape({

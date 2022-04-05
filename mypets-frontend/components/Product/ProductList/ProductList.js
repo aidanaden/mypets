@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { SimpleGrid, Box } from "@chakra-ui/react";
 
-import SectionHeader from "../SectionHeader/SectionHeader";
+import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 import ProductListCard from "../ProductListCard/ProductListCard";
 
 function ProductList({

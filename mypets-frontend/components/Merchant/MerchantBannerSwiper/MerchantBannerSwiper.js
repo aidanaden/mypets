@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import BannerSwiper from "../BannerSwiper/BannerSwiper";
+import BannerSwiper from "../../Common/BannerSwiper/BannerSwiper";
 
 export default function MerchantBannerSwiper({
   banners,

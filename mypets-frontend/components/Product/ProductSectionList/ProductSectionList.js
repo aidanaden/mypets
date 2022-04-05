@@ -1,17 +1,9 @@
 import { Stack, Box } from "@chakra-ui/react";
 
 import ProductList from "../ProductList/ProductList";
-import SortMenu from "../SortMenu/SortMenu";
+import { getCategories } from "../../../utils/urls";
 
-import { getCategories } from "../../utils/urls";
-
-function ProductSectionList({
-  products,
-  categories,
-  setSortMethod,
-  sortMethod,
-  selectedAnimal,
-}) {
+function ProductSectionList({ products, sortMethod, selectedAnimal }) {
   const filterProductsByAnimal = (products, animal) => {
     if (animal != "") {
       const filteredProducts = products.filter((product) => {

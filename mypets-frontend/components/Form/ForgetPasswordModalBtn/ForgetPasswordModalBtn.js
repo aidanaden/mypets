@@ -19,9 +19,8 @@ const Yup = require("yup");
 require("yup-password")(Yup);
 
 import AuthContext from "../../../context/AuthContext";
-import MypetsBtn from "../MypetsBtn/MypetsBtn";
+import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
 import EmailInputGroup from "../EmailInputGroup/EmailInputGroup";
-import LoginSocialBtnGroup from "../../LoginSocialBtnGroup/LoginSocialBtnGroup";
 
 export default function ForgetPasswordModalBtn() {
   const toast = useToast();

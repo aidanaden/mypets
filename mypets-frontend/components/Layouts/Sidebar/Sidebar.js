@@ -2,34 +2,26 @@ import { useContext } from "react";
 import {
   useDisclosure,
   Box,
-  Flex,
-  Icon,
-  Text,
-  Collapse,
   Drawer,
   DrawerOverlay,
   DrawerContent,
   IconButton,
   Stack,
   ButtonGroup,
-  InputGroup,
-  InputLeftElement,
-  Input,
-  Avatar,
   Center,
 } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 
-import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
-import SearchbarGroup from "../Common/SearchbarGroup/SearchbarGroup";
+// import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
+import SearchbarGroup from "../../Common/SearchbarGroup/SearchbarGroup";
 import NavbarCartModalBtn from "../../NavbarCartModalBtn/NavbarCartModalBtn";
 import NavbarUserModalBtn from "../../NavbarUserModalBtn/NavbarUserModalBtn";
 import NavbarUserIcon from "../../NavbarUserIcon/NavbarUserIcon";
 import AuthContext from "../../../context/AuthContext";
 import LoginModalBtn from "../../LoginModalBtn/LoginModalBtn";
-import SignupModalBtn from "../../Form/SignupModalBtn/SignupModalBtn";
+// import SignupModalBtn from "../../Form/SignupModalBtn/SignupModalBtn";
 
 export default function Sidebar({ categories }) {
   const sidebar = useDisclosure();

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Center, Tooltip } from "@chakra-ui/react";
-import { imageToUrl } from "../../utils/urls";
+import { imageToUrl } from "../../../utils/urls";
 import NextImage from "next/image";
 import NextLink from "next/link";
 

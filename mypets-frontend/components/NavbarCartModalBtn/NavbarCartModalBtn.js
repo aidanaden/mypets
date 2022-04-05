@@ -14,11 +14,10 @@ import {
 } from "@chakra-ui/react";
 import lodash from "lodash";
 import { loadStripe } from "@stripe/stripe-js";
-import { FaShoppingCart } from "react-icons/fa";
 
 import AuthContext from "../../context/AuthContext";
 import { callAPI } from "../../context/AuthContext";
-import MypetsBtn from "../MypetsBtn/MypetsBtn";
+import MypetsBtn from "../Common/MypetsBtn/MypetsBtn";
 import CartIconBtn from "../CartIconBtn/CartIconBtn";
 import CartModalProductCard from "../CartModalProductCard/CartModalProductCard";
 import CartPriceBreakdownList from "../CartPriceBreakdownList/CartPriceBreakdownList";

@@ -11,8 +11,8 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-import MypetsBtn from "../MypetsBtn/MypetsBtn";
-import Rating from "../Rating/Rating";
+import MypetsBtn from "../Common/MypetsBtn/MypetsBtn";
+import Rating from "../Common/Rating/Rating";
 import ReviewTextArea from "../ReviewTextArea/ReviewTextArea";
 import { callAPI } from "../../context/AuthContext";
 import AuthContext from "../../context/AuthContext";

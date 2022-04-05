@@ -1,5 +1,4 @@
 import { IconButton, Icon, Circle } from "@chakra-ui/react";
-
 import { FaShoppingCart } from "react-icons/fa";
 
 export default function CartIconBtn({ cartNumOrderProducts, ...props }) {

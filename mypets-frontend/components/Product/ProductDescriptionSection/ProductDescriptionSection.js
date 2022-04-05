@@ -1,4 +1,3 @@
-import React from "react";
 import ReactMarkdown from "react-markdown/react-markdown.min";
 import remarkGfm from "remark-gfm";
 import { Box, Heading, Text, Stack, Center, Spacer } from "@chakra-ui/react";

@@ -1,5 +1,4 @@
-import { MenuButton, Button, Box } from "@chakra-ui/react";
-import MypetsBtn from "../MypetsBtn/MypetsBtn";
+import { MenuButton, Button } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
 function MypetsMenuBtn({ menuBtnText }) {
