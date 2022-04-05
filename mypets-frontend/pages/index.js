@@ -20,6 +20,10 @@ import {
 } from "../utils/urls";
 import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
 import AnimalList from "../components/Common/AnimalList/AnimalList";
+import AnimalCategorySection from "../components/Home/AnimalCategorySection";
+import BenefitsSection from "../components/Home/BenefitsSection";
+import NewsletterSection from "../components/Home/NewsletterSection";
+import SocialProofSection from "../components/Home/SocialProofSection";
 
 export default function Home({
   home_data,
@@ -70,7 +74,6 @@ export default function Home({
           {/* <Carousel /> */}
           <HomeBannerSwiper banners={home_data.Banners} />
           <Stack direction="column" spacing={{ base: 8, lg: 12 }}>
-            <MerchantSectionList merchants={merchants} />
             <Stack
               direction={{ base: "column", md: "row" }}
               align="stretch"
@@ -86,6 +89,7 @@ export default function Home({
               <Spacer />
               <SortMenu setSortMethod={setSortMethod} />
             </Stack>
+            <MerchantSectionList merchants={merchants} />
             <ProductSectionList
               products={pageProducts}
               categories={pageCategories}
@@ -93,6 +97,10 @@ export default function Home({
               setSortMethod={setSortMethod}
               selectedAnimal={selectedAnimal}
             />
+            <AnimalCategorySection />
+            <BenefitsSection benefits={home_data.Benefits} />
+            <NewsletterSection data={home_data.Newsletter} />
+            <SocialProofSection />
           </Stack>
         </PageContainer>
       </Box>
