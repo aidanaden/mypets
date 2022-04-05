@@ -16,7 +16,6 @@ import Sidebar from "../../components/Layouts/Sidebar/Sidebar";
 import PageContainer from "../../components/Layouts/PageContainer/PageContainer";
 import AnimalList from "../../components/Common/AnimalList/AnimalList";
 import SortMenu from "../../components/Common/SortMenu/SortMenu";
-import Footer from "../../components/Layouts/Footer/Footer";
 import MerchantSectionList from "../../components/Merchant/MerchantSectionList/MerchantSectionList";
 import ProductList from "../../components/Product/ProductList/ProductList";
 import {

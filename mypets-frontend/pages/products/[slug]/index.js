@@ -5,7 +5,6 @@ import Head from "next/head";
 
 import AnnouncementBanner from "../../../components/Layouts/AnnouncementBanner/AnnouncementBanner";
 import Sidebar from "../../../components/Layouts/Sidebar/Sidebar";
-import Footer from "../../../components/Layouts/Footer/Footer";
 import BackBtn from "../../../components/Common/BackBtn/BackBtn";
 import ProductDetailSection from "../../../components/Product/ProductDetailSection/ProductDetailSection";
 import ProductDescriptionSection from "../../../components/Product/ProductDescriptionSection/ProductDescriptionSection";

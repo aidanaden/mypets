@@ -3,7 +3,6 @@ import { Stack, HStack, Text, Spacer, Center, Box } from "@chakra-ui/react";
 
 import AnnouncementBanner from "../../components/Layouts/AnnouncementBanner/AnnouncementBanner";
 import Sidebar from "../../components/Layouts/Sidebar/Sidebar";
-import Footer from "../../components/Layouts/Footer/Footer";
 import PageContainer from "../../components/Layouts/PageContainer/PageContainer";
 import BackBtn from "../../components/Common/BackBtn/BackBtn";
 import OrderCard from "../../components/OrderCard/OrderCard";

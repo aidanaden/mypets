@@ -3,7 +3,6 @@ import Head from "next/head";
 
 import PageContainer from "../components/Layouts/PageContainer/PageContainer";
 import Sidebar from "../components/Layouts/Sidebar/Sidebar";
-import Footer from "../components/Layouts/Footer/Footer";
 import { API_CATEGORIES_URL, API_TERMS_URL } from "../utils/urls";
 import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
 import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSection";

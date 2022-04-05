@@ -6,8 +6,6 @@ import Head from "next/head";
 import AnnouncementBanner from "../../../components/Layouts/AnnouncementBanner/AnnouncementBanner";
 import { API_HOME_URL, API_MERCHANTS_URL } from "../../../utils/urls";
 import Sidebar from "../../../components/Layouts/Sidebar/Sidebar";
-import Carousel from "../../../components/Common/Carousel/Carousel";
-import Footer from "../../../components/Layouts/Footer/Footer";
 import BackBtn from "../../../components/Common/BackBtn/BackBtn";
 import MerchantTitle from "../../../components/Merchant/MerchantTitle/MerchantTitle";
 import MerchantProductReviewTab from "../../../components/Merchant/MerchantProductReviewTab/MerchantProductReviewTab";
