@@ -1,5 +1,5 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
-import SectionHeader from "../../layouts/SectionHeader";
+import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 
 function index({ benefits, space = 4, ...props }) {
   return (

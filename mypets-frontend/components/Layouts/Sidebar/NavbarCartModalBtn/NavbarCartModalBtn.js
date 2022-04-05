@@ -15,13 +15,13 @@ import {
 import lodash from "lodash";
 import { loadStripe } from "@stripe/stripe-js";
 
-import AuthContext from "../../context/AuthContext";
-import { callAPI } from "../../context/AuthContext";
-import MypetsBtn from "../Common/MypetsBtn/MypetsBtn";
-import CartIconBtn from "../CartIconBtn/CartIconBtn";
-import CartModalProductCard from "../CartModalProductCard/CartModalProductCard";
-import CartPriceBreakdownList from "../CartPriceBreakdownList/CartPriceBreakdownList";
-import { STRIPE_PK } from "../../utils/urls";
+import AuthContext from "../../../../context/AuthContext";
+import { callAPI } from "../../../../context/AuthContext";
+import MypetsBtn from "../../../Common/MypetsBtn/MypetsBtn";
+import CartIconBtn from "../../../Cart/CartIconBtn/CartIconBtn";
+import CartModalProductCard from "../../../Cart/CartModalProductCard/CartModalProductCard";
+import CartPriceBreakdownList from "../../../Cart/CartPriceBreakdownList/CartPriceBreakdownList";
+import { STRIPE_PK } from "../../../../utils/urls";
 
 const stripePromise = loadStripe(STRIPE_PK);
 

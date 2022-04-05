@@ -5,7 +5,7 @@ import AnnouncementBanner from "../../components/Layouts/AnnouncementBanner/Anno
 import Sidebar from "../../components/Layouts/Sidebar/Sidebar";
 import PageContainer from "../../components/Layouts/PageContainer/PageContainer";
 import BackBtn from "../../components/Common/BackBtn/BackBtn";
-import OrderCard from "../../components/OrderCard/OrderCard";
+import OrderCard from "../../components/Order/OrderCard/OrderCard";
 import AuthContext, { callAPI } from "../../context/AuthContext";
 import Section from "../../components/Layouts/Section/Section";
 import SectionHeader from "../../components/Layouts/SectionHeader/SectionHeader";

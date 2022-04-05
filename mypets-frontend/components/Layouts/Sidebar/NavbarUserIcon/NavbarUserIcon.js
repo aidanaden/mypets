@@ -10,7 +10,7 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 
-import AuthContext from "../../context/AuthContext";
+import AuthContext from "../../../../context/AuthContext";
 import NavbarUserModalBtn from "../NavbarUserModalBtn/NavbarUserModalBtn";
 
 function NavbarUserIcon() {

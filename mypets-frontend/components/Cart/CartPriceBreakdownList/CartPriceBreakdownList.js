@@ -17,7 +17,7 @@ import {
   CONTRIBUTION_AMT,
   DELIVERY_FEE,
   MINIMUM_ORDER_FREE_DELIVERY,
-} from "../../utils/urls";
+} from "../../../utils/urls";
 
 const SubtotalRow = ({ text, value, highlight }) => {
   return (

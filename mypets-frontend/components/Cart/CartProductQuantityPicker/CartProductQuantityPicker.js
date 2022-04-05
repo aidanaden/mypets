@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { IconButton, Text, HStack } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
-import AuthContext from "../../context/AuthContext";
+import AuthContext from "../../../context/AuthContext";
 
 function CartProductQuantityPicker({ addQuantity, minusQuantity, quantity }) {
   const [qty, setQty] = useState(quantity);

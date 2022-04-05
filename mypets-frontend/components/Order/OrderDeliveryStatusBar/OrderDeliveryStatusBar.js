@@ -1,5 +1,5 @@
 import { Stack, Box, Text } from "@chakra-ui/react";
-import { stringToDate } from "../../utils/urls";
+import { stringToDate } from "../../../utils/urls";
 
 function OrderDeliveryStatusBar({ orderId, orderDate, deliveryDate, status }) {
   return (

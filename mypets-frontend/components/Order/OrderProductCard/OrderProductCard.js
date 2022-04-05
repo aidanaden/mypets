@@ -16,11 +16,11 @@ import NextImage from "next/image";
 import NextLink from "next/link";
 import lodash from "lodash";
 
-import MerchantBadge from "../Merchant/MerchantBadge/MerchantBadge";
+import MerchantBadge from "../../Merchant/MerchantBadge/MerchantBadge";
 import OrderProductReviewModalBtn from "../OrderProductReviewModalBtn/OrderProductReviewModalBtn";
-import MypetsBtn from "../Common/MypetsBtn/MypetsBtn";
-import { imageToUrl } from "../../utils/urls";
-import AuthContext, { callAPI } from "../../context/AuthContext";
+import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
+import { imageToUrl } from "../../../utils/urls";
+import AuthContext, { callAPI } from "../../../context/AuthContext";
 
 const OrderProductReorderBtn = ({ onClick, ...props }) => {
   return <MypetsBtn btnText="Re-order product" onClick={onClick} {...props} />;

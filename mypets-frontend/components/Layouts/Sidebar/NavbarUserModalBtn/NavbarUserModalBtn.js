@@ -19,10 +19,10 @@ import {
 } from "@chakra-ui/react";
 import { parse, format } from "date-fns";
 
-import UserProfileForm from "../Form/UserProfileForm/UserProfileForm";
-import UserAddressForm from "../Form/UserAddressForm/UserAddressForm";
-import UserPasswordForm from "../Form/UserPasswordForm/UserPasswordForm";
-import AuthContext from "../../context/AuthContext";
+import UserProfileForm from "../../../Form/UserProfileForm/UserProfileForm";
+import UserAddressForm from "../../../Form/UserAddressForm/UserAddressForm";
+import UserPasswordForm from "../../../Form/UserPasswordForm/UserPasswordForm";
+import AuthContext from "../../../../context/AuthContext";
 
 function NavbarUserModalBtn({ isMobile, NavItem }) {
   const toast = useToast();
