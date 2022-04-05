@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { Box, useToast } from "@chakra-ui/react";
 
 import AuthContext from "../context/AuthContext";
-import PageContainer from "../components/PageContainer/PageContainer";
-import Sidebar from "../components/Sidebar/Sidebar";
-import Footer from "../components/Footer/Footer";
+import PageContainer from "../components/Layouts/PageContainer/PageContainer";
+import Sidebar from "../components/Layouts/Sidebar/Sidebar";
+import Footer from "../components/Layouts/Footer/Footer";
 import { API_CATEGORIES_URL } from "../utils/urls";
-import SectionHeader from "../components/SectionHeader/SectionHeader";
-import UserPasswordForm from "../components/UserPasswordForm/UserPasswordForm";
+import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
+import UserPasswordForm from "../components/Form/UserPasswordForm/UserPasswordForm";
 import router from "next/router";
 
 export default function reset({ categories }) {
