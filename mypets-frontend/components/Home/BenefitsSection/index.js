@@ -1,9 +1,9 @@
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 
-function index({ benefits, space = 4, ...props }) {
+function index({ benefits, spacing = 4, ...props }) {
   return (
-    <Box>
+    <Box {...props}>
       <SectionHeader>Choose Mypets</SectionHeader>
       <SimpleGrid columns={5} spacing={spacing}>
         {benefits.map((benefit, i) => (
