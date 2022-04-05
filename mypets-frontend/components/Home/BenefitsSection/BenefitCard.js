@@ -1,4 +1,4 @@
-import { Stack } from "@chakra-ui/react";
+import { Box, Text, Stack } from "@chakra-ui/react";
 
 export default function BenefitCard({ benefit, ...props }) {
   return (
