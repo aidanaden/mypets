@@ -4,9 +4,9 @@ import Head from "next/head";
 import PageContainer from "../components/Layouts/PageContainer/PageContainer";
 import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import { API_CATEGORIES_URL, API_CONTACT_URL } from "../utils/urls";
-import SectionHeader from "../components/SectionHeader/SectionHeader";
-import ParagraphSection from "../components/ParagraphSection/ParagraphSection";
-import SectionSubHeader from "../components/SectionSubHeader/SectionSubHeader";
+import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
+import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSection";
+import SectionSubHeader from "../components/Layouts/SectionSubHeader/SectionSubHeader";
 
 export default function contact({ categories, contact_data }) {
   console.log("contact data: ", contact_data);

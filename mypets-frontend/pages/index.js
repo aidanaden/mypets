@@ -4,12 +4,12 @@ import { Box, Spacer, Stack, useToast } from "@chakra-ui/react";
 import Head from "next/head";
 
 import PageContainer from "../components/Layouts/PageContainer/PageContainer";
-import AnnouncementBanner from "../components/Common/AnnouncementBanner/AnnouncementBanner";
+import AnnouncementBanner from "../components/Layouts/AnnouncementBanner/AnnouncementBanner";
 import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import HomeBannerSwiper from "../components/Home/HomeBannerSwiper/HomeBannerSwiper";
 import SortMenu from "../components/Common/SortMenu/SortMenu";
-import MerchantSectionList from "../components/MerchantSectionList/MerchantSectionList";
-import ProductSectionList from "../components/ProductSectionList/ProductSectionList";
+import MerchantSectionList from "../components/Merchant/MerchantSectionList/MerchantSectionList";
+import ProductSectionList from "../components/Product/ProductSectionList/ProductSectionList";
 import CategoryList from "../components/CategoryList/CategoryList";
 import {
   API_HOME_URL,
@@ -18,7 +18,7 @@ import {
   getAnimals,
   getCategories,
 } from "../utils/urls";
-import SectionHeader from "../components/SectionHeader/SectionHeader";
+import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
 import AnimalList from "../components/Common/AnimalList/AnimalList";
 
 export default function Home({

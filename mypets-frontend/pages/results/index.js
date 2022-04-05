@@ -24,7 +24,7 @@ import {
   API_ANIMALS_URL,
   API_HOME_URL,
 } from "../../utils/urls";
-import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import SectionHeader from "../../components/Layouts/SectionHeader/SectionHeader";
 
 const MerchantCheck = ({ text, isChecked, onChange, ...props }) => {
   return (

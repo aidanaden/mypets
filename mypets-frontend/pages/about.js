@@ -4,9 +4,9 @@ import Head from "next/head";
 import PageContainer from "../components/Layouts/PageContainer/PageContainer";
 import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import { API_CATEGORIES_URL, API_ABOUT_URL } from "../utils/urls";
-import SectionHeader from "../components/SectionHeader/SectionHeader";
-import ParagraphSection from "../components/ParagraphSection/ParagraphSection";
-import SectionSubHeader from "../components/SectionSubHeader/SectionSubHeader";
+import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
+import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSection";
+import SectionSubHeader from "../components/Layouts/SectionSubHeader/SectionSubHeader";
 
 export default function about({ categories, about_data }) {
   const intro = `MyPets was started by the animal lovers who were frustrated by the online landscape when shopping for pet products during the start of COVID-19. After purchasing from many different pet shops over the years, the founders have come to realize that customers deserved to have a much easier and quicker way of purchasing pet supplies without the hassle of sourcing the best products online.
