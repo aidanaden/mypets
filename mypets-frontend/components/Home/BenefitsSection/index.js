@@ -7,7 +7,7 @@ function index({ benefits, spacing = 4, ...props }) {
   return (
     <Box {...props}>
       <SectionHeader>{benefits.Header}</SectionHeader>
-      <SimpleGrid columns={5} spacing={spacing}>
+      <SimpleGrid columns={2} spacing={spacing}>
         {benefits.benefit.map((benefit, i) => (
           <BenefitCard key={`benefit_${i}`} benefit={benefit} />
         ))}
