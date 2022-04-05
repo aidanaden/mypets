@@ -16,7 +16,7 @@ import {
   FRONTEND_URL,
   imageToUrl,
 } from "../../../utils/urls";
-import PageContainer from "../../../components/PageContainer/PageContainer";
+import PageContainer from "../../../components/Layouts/PageContainer/PageContainer";
 
 export default function Product({ bannerTitle, product, otherProducts }) {
   const { asPath } = useRouter();
