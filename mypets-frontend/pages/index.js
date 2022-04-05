@@ -3,11 +3,11 @@ import { useRouter } from "next/router";
 import { Box, Spacer, Stack, useToast } from "@chakra-ui/react";
 import Head from "next/head";
 
-import PageContainer from "../components/PageContainer/PageContainer";
-import AnnouncementBanner from "../components/AnnouncementBanner/AnnouncementBanner";
-import Sidebar from "../components/Sidebar/Sidebar";
-import HomeBannerSwiper from "../components/HomeBannerSwiper/HomeBannerSwiper";
-import SortMenu from "../components/SortMenu/SortMenu";
+import PageContainer from "../components/Layouts/PageContainer/PageContainer";
+import AnnouncementBanner from "../components/Common/AnnouncementBanner/AnnouncementBanner";
+import Sidebar from "../components/Layouts/Sidebar/Sidebar";
+import HomeBannerSwiper from "../components/Home/HomeBannerSwiper/HomeBannerSwiper";
+import SortMenu from "../components/Common/SortMenu/SortMenu";
 import MerchantSectionList from "../components/MerchantSectionList/MerchantSectionList";
 import ProductSectionList from "../components/ProductSectionList/ProductSectionList";
 import CategoryList from "../components/CategoryList/CategoryList";
@@ -19,7 +19,7 @@ import {
   getCategories,
 } from "../utils/urls";
 import SectionHeader from "../components/SectionHeader/SectionHeader";
-import AnimalList from "../components/AnimalList/AnimalList";
+import AnimalList from "../components/Common/AnimalList/AnimalList";
 
 export default function Home({
   home_data,
