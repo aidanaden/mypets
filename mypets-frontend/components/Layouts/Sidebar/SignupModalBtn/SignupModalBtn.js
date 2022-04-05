@@ -1,42 +1,45 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import {
-  Button,
   useDisclosure,
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
+  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Box,
   FormControl,
   FormLabel,
   FormErrorMessage,
-  useToast,
+  FormHelperText,
+  VStack,
+  Box,
 } from "@chakra-ui/react";
 import { Formik, Form, Field } from "formik";
 const Yup = require("yup");
 require("yup-password")(Yup);
 
-import AuthContext from "../../context/AuthContext";
-import MypetsBtn from "../Common/MypetsBtn/MypetsBtn";
-// import EmailInputGroup from "../Form/EmailInputGroup/EmailInputGroup";
-// import PasswordInputGroup from "../PasswordInputGroup/PasswordInputGroup";
+import AuthContext from "../../../../context/AuthContext";
+import MypetsBtn from "../../../Common/MypetsBtn/MypetsBtn";
 import LoginSocialBtnGroup from "../LoginSocialBtnGroup/LoginSocialBtnGroup";
-// import ForgetPasswordModalBtn from "../Form/ForgetPasswordModalBtn/ForgetPasswordModalBtn";
 
-function LoginModalBtn() {
-  const toast = useToast();
+function SignupModalBtn() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { loginUser } = useContext(AuthContext);
+  const { registerUser } = useContext(AuthContext);
 
-  const handleSubmit = async (values, actions) => {
-    actions.setSubmitting(true);
-    const status = await loginUser(values, toast);
-    actions.setSubmitting(false);
+  const handleSubmit = (values, actions) => {
+    try {
+      actions.setSubmitting(true);
+      const user = registerUser(values.email, values.password);
+    } catch (err) {
+      console.error(err);
+    }
+    onClose();
   };
 
-  const loginSchema = Yup.object().shape({
+  const nonEmptyRegex = /(.|\s)*\S(.|\s)*/;
+
+  const signupSchema = Yup.object().shape({
     email: Yup.string()
       .email("Invalid email")
       .required("Your email is required"),
@@ -46,21 +49,25 @@ function LoginModalBtn() {
       .min(8, "Password must contain at least 8 characters")
       .minNumbers(1, "Password must contain at least 1 digit")
       .minSymbols(1, "Password must contain at least 1 symbol"),
+    password2: Yup.string().oneOf(
+      [Yup.ref("password"), null],
+      "Passwords must match"
+    ),
   });
 
   return (
     <>
-      <MypetsBtn btnText="Log in/Sign up" mx={0} onClick={onOpen} />
+      <MypetsBtn btnText="Sign up" mx={0} onClick={onOpen} />
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent mx={{ base: 4 }}>
-          <ModalHeader>Log in/Sign up</ModalHeader>
+          <ModalHeader>Sign up</ModalHeader>
           <ModalCloseButton />
           <ModalBody mb={2}>
             {/* <Formik
-                            initialValues={{ email: '', password: ''}}
+                            initialValues={{ email: '', password: '', password2: '' }}
                             onSubmit={handleSubmit}
-                            validationSchema={loginSchema}
+                            validationSchema={signupSchema}
                         >
                             {(props) => (
                                 <Form>
@@ -75,7 +82,7 @@ function LoginModalBtn() {
                                             )}
                                         </Field>
                                     </Box>
-                                    <Box mb={2}>
+                                    <Box mb={4}>
                                         <Field name='password' >
                                             {({ field, form }) => (
                                                 <FormControl isInvalid={form.errors.password && form.touched.password}>
@@ -86,15 +93,22 @@ function LoginModalBtn() {
                                             )}
                                         </Field>
                                     </Box>
-                                    <ForgetPasswordModalBtn />
-                                    <MypetsBtn
-                                        btnText='Log in'
-                                        w='100%'
-                                        mx={0}
-                                        mt={4}
-                                        isLoading={props.isSubmitting}
-                                        type='submit'
-                                    />
+                                    <Box mb={4}>
+                                        <Field name='password2' >
+                                            {({ field, form }) => (
+                                            <FormControl isInvalid={form.errors.password2 && form.touched.password2}>
+                                                <FormLabel>Confirm password</FormLabel>
+                                                <PasswordInputGroup 
+                                                    field={field} 
+                                                    valid={!form.errors.password2 && form.touched.password2} 
+                                                    id='password2' 
+                                                />
+                                                <FormErrorMessage>{form.errors.password2}</FormErrorMessage>
+                                            </FormControl>
+                                            )}
+                                        </Field>
+                                    </Box>
+                                    <MypetsBtn w='100%' btnText='Sign up' mx={0} mt={8} isLoading={props.isSubmitting} type='submit'/>
                                 </Form>
                             )}
                         </Formik> */}
@@ -106,4 +120,4 @@ function LoginModalBtn() {
   );
 }
 
-export default LoginModalBtn;
+export default SignupModalBtn;
