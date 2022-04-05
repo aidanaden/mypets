@@ -1,11 +1,12 @@
-import SectionHeader from '../../Layouts/SectionHeader/SectionHeader'
+import { Box } from "@chakra-ui/react";
+import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 
 function index({ data, ...props }) {
   return (
     <Box>
       <SectionHeader>{data.header}</SectionHeader>
     </Box>
-    )
+  );
 }
 
 export default index;
