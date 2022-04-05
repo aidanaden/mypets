@@ -5,14 +5,14 @@ import BenefitCard from "./BenefitCard";
 function index({ benefits, spacing = 4, ...props }) {
   console.log(benefits);
   return (
-    <Box {...props}>
-      <SectionHeader>{benefits.Header}</SectionHeader>
+    <Section bg="mypets.400" {...props}>
+      <SectionHeader textAlign="center">{benefits.Header}</SectionHeader>
       <SimpleGrid columns={2} spacing={spacing}>
         {benefits.benefit.map((benefit, i) => (
           <BenefitCard key={`benefit_${i}`} benefit={benefit} />
         ))}
       </SimpleGrid>
-    </Box>
+    </Section>
   );
 }
 
