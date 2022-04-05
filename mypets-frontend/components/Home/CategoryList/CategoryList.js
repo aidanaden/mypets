@@ -1,6 +1,6 @@
 import { Stack } from "@chakra-ui/react";
 
-import CategoryBtn from "../Common/CategoryBtn/CategoryBtn";
+// import CategoryBtn from "../Common/CategoryBtn/CategoryBtn";
 
 export default function CategoryList({
   direction = "row",
