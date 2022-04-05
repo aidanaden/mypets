@@ -6,7 +6,7 @@ function index({ benefits, spacing = 4, ...props }) {
   console.log(benefits);
   return (
     <Box {...props}>
-      <SectionHeader>Choose Mypets</SectionHeader>
+      <SectionHeader>{benefits.Header}</SectionHeader>
       <SimpleGrid columns={5} spacing={spacing}>
         {benefits.benefit.map((benefit, i) => (
           <BenefitCard key={`benefit_${i}`} benefit={benefit} />
