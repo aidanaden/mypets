@@ -10,7 +10,7 @@ import HomeBannerSwiper from "../components/Home/HomeBannerSwiper/HomeBannerSwip
 import SortMenu from "../components/Common/SortMenu/SortMenu";
 import MerchantSectionList from "../components/Merchant/MerchantSectionList/MerchantSectionList";
 import ProductSectionList from "../components/Product/ProductSectionList/ProductSectionList";
-import CategoryList from "../components/CategoryList/CategoryList";
+import CategoryList from "../components/Home/CategoryList/CategoryList";
 import {
   API_HOME_URL,
   API_PRODUCTS_URL,
