@@ -3,7 +3,7 @@ import { FaFacebook, FaGoogle } from "react-icons/fa";
 import NextLink from "next/link";
 import { useState } from "react";
 
-import { API_URL } from "../../utils/urls";
+import { API_URL } from "../../../../utils/urls";
 
 function LoginSocialBtnGroup() {
   const toast = useToast();
