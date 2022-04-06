@@ -5,7 +5,7 @@ const fonts = {
   ...chakraTheme.fonts,
   // futura: "Futura",
   // gothamrnd: "GothamRnd",
-  heading: `Futura`,
+  heading: `Poppins`,
   body: `Poppins`,
 };
 

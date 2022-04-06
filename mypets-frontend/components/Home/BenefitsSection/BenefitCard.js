@@ -8,11 +8,11 @@ export default function BenefitCard({ benefit, ...props }) {
       bg="gray.200"
       rounded="lg"
       justify="space-between"
-      p={{ base: 4, md: 16 }}
+      p={{ base: 4, md: 8 }}
       {...props}
     >
-      <Circle boxSize={"48"} shadow="md"></Circle>
-      <Box p={{ base: 4, lg: 8 }}>
+      <Circle boxSize={"48"} shadow="md" bg="blue.200" />
+      <Box p={{ base: 4, lg: 8 }} bg="red.300">
         <Text mb={2} fontSize="2xl" fontWeight="bold">
           {benefit.Header}
         </Text>
