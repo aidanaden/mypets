@@ -4,11 +4,11 @@ import SectionSubHeader from "../../Layouts/SectionSubHeader/SectionSubHeader";
 export default function BenefitCard({ benefit, ...props }) {
   return (
     <Stack
-      dir="row"
-      {...props}
+      direction={"row"}
       bg="gray.200"
       rounded="lg"
       justify="space-between"
+      {...props}
     >
       <Box rounded="lg" boxSize={"48"} shadow="md"></Box>
       <Box p={{ base: 4, lg: 8 }}>
