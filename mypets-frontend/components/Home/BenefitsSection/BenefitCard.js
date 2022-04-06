@@ -1,4 +1,4 @@
-import { Box, Text, Stack } from "@chakra-ui/react";
+import { Box, Text, Stack, Circle } from "@chakra-ui/react";
 import SectionSubHeader from "../../Layouts/SectionSubHeader/SectionSubHeader";
 
 export default function BenefitCard({ benefit, ...props }) {
@@ -8,9 +8,10 @@ export default function BenefitCard({ benefit, ...props }) {
       bg="gray.200"
       rounded="lg"
       justify="space-between"
+      p={{ base: 4, md: 16 }}
       {...props}
     >
-      <Box rounded="lg" boxSize={"48"} shadow="md"></Box>
+      <Circle boxSize={"48"} shadow="md"></Circle>
       <Box p={{ base: 4, lg: 8 }}>
         <Text mb={2} fontSize="2xl" fontWeight="bold">
           {benefit.Header}
