@@ -7,6 +7,7 @@ export default function SectionHeader({ children, ...props }) {
       textAlign="left"
       mb={{ base: 4, md: 6 }}
       fontSize={{ base: "xl", md: "2xl" }}
+      fontWeight="bold"
       {...props}
     >
       {children}

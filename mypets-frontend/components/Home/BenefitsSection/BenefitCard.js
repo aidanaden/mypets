@@ -12,7 +12,7 @@ export default function BenefitCard({ benefit, ...props }) {
       {...props}
     >
       <Circle boxSize={"48"} shadow="md" bg="blue.200" />
-      <Box p={{ base: 4, lg: 8 }} bg="red.300">
+      <Box bg="red.300">
         <Text mb={2} fontSize="2xl" fontWeight="bold">
           {benefit.Header}
         </Text>
