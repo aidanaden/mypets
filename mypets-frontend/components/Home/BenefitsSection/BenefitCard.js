@@ -7,12 +7,12 @@ export default function BenefitCard({ benefit, ...props }) {
       direction={"row"}
       bg="gray.200"
       rounded="lg"
-      justify="space-between"
+      spacing={4}
       p={{ base: 4, md: 8 }}
       {...props}
     >
-      <Circle boxSize={"48"} shadow="md" bg="blue.200" />
-      <Box bg="red.300">
+      <Circle boxSize={"36"} shadow="md" bg="blue.200" />
+      <Box bg="red.300" justifySelf="center">
         <Text mb={2} fontSize="2xl" fontWeight="bold">
           {benefit.Header}
         </Text>
