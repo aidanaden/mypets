@@ -1,4 +1,4 @@
-import { Box, Text, Stack, Circle } from "@chakra-ui/react";
+import { Box, Text, Stack, Circle, Center } from "@chakra-ui/react";
 import SectionSubHeader from "../../Layouts/SectionSubHeader/SectionSubHeader";
 
 export default function BenefitCard({ benefit, ...props }) {
