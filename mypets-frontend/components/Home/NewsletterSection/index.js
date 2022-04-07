@@ -4,7 +4,7 @@ import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 
 function index({ data, ...props }) {
   return (
-    <FooterContainer bg="white" pb={{ base: 4, lg: 12 }} {...props}>
+    <FooterContainer bg="white" {...props}>
       <SectionHeader>{data.Header}</SectionHeader>
     </FooterContainer>
   );
