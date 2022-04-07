@@ -7,7 +7,7 @@ export default function PageContainer({ isFooter, children, ...props }) {
       px={{ base: 4, xl: 0 }}
       pt={{ base: 4, lg: 12 }}
       mx="auto"
-      // pb={isFooter == true ? { base: 4, lg: 12 } : { base: 512, lg: 96 }}
+      pb={{ base: 4, lg: 12 }}
       {...props}
     >
       {children}
