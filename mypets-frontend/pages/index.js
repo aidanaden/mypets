@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { Box, Spacer, Stack, useToast } from "@chakra-ui/react";
+import { Box, Stack, useToast } from "@chakra-ui/react";
 import Head from "next/head";
 
 import PageContainer from "../components/Layouts/PageContainer/PageContainer";
 import AnnouncementBanner from "../components/Layouts/AnnouncementBanner/AnnouncementBanner";
 import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import HomeBannerSwiper from "../components/Home/HomeBannerSwiper/HomeBannerSwiper";
-import SortMenu from "../components/Common/SortMenu/SortMenu";
+
 import MerchantSectionList from "../components/Merchant/MerchantSectionList/MerchantSectionList";
 import ProductSectionList from "../components/Product/ProductSectionList/ProductSectionList";
 import CategoryList from "../components/Home/CategoryList/CategoryList";
@@ -18,8 +18,6 @@ import {
   getAnimals,
   getCategories,
 } from "../utils/urls";
-import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
-import AnimalList from "../components/Common/AnimalList/AnimalList";
 import AnimalCategorySection from "../components/Home/AnimalCategorySection";
 import BenefitsSection from "../components/Home/BenefitsSection";
 import NewsletterSection from "../components/Home/NewsletterSection";
@@ -65,7 +63,7 @@ export default function Home({
       <Box>
         <AnnouncementBanner text={home_data.banner_text} />
         <Sidebar categories={pageCategories} />
-        <PageContainer>
+        <Box>
           <CategoryList
             display={{ base: "none", md: "flex" }}
             categories={pageCategories}
@@ -74,21 +72,11 @@ export default function Home({
           {/* <Carousel /> */}
           <HomeBannerSwiper banners={home_data.Banners} />
           <Stack direction="column" spacing={{ base: 8, lg: 12 }}>
-            <Stack
-              direction={{ base: "column", md: "row" }}
-              align="stretch"
-              justify="space-between"
-            >
-              <Box mb={{ base: 2, md: 0 }}>
-                <SectionHeader>Animal</SectionHeader>
-                <AnimalList
-                  animals={pageAnimals}
-                  setSelectedAnimal={setSelectedAnimal}
-                />
-              </Box>
-              <Spacer />
-              <SortMenu setSortMethod={setSortMethod} />
-            </Stack>
+            <AnimalCategorySection
+              pageAnimals={pageAnimals}
+              setSelectedAnimal={setSelectedAnimal}
+              setSortMethod={setSortMethod}
+            />
             <MerchantSectionList merchants={merchants} />
             <ProductSectionList
               products={pageProducts}
@@ -102,7 +90,7 @@ export default function Home({
             <NewsletterSection data={home_data.Newsletter} />
             <SocialProofSection />
           </Stack>
-        </PageContainer>
+        </Box>
       </Box>
     </>
   );
