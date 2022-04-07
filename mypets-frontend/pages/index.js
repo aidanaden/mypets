@@ -88,8 +88,8 @@ export default function Home({
           </Stack>
         </PageContainer>
         <BenefitsSection benefits={home_data.Benefits} />
-        {/* <NewsletterSection data={home_data.Newsletter} />
-        <SocialProofSection /> */}
+        <NewsletterSection data={home_data.Newsletter} />
+        <SocialProofSection />
       </Box>
     </>
   );

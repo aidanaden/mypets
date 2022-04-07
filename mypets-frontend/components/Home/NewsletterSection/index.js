@@ -3,7 +3,7 @@ import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 
 function index({ data, ...props }) {
   return (
-    <Box>
+    <Box {...props}>
       <SectionHeader>{data.Header}</SectionHeader>
     </Box>
   );
