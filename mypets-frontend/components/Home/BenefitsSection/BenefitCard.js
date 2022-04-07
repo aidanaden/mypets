@@ -12,8 +12,8 @@ export default function BenefitCard({ benefit, ...props }) {
       {...props}
     >
       <Circle boxSize={"36"} shadow="md" bg="blue.200" />
-      <Box bg="red.300">
-        <Box my="auto" justifySelf={"center"}>
+      <Box bg="red.300" py="auto">
+        <Box my="auto" justifySelf={"center"} bg="blue.100">
           <Text mb={2} fontSize="2xl" fontWeight="bold">
             {benefit.Header}
           </Text>
