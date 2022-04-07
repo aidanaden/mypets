@@ -63,7 +63,7 @@ export default function Home({
       <Box>
         <AnnouncementBanner text={home_data.banner_text} />
         <Sidebar categories={pageCategories} />
-        <Box>
+        <PageContainer>
           {/* <CategoryList
             display={{ base: "none", md: "flex" }}
             categories={pageCategories}
@@ -85,11 +85,11 @@ export default function Home({
               setSortMethod={setSortMethod}
               selectedAnimal={selectedAnimal}
             />
-            <BenefitsSection benefits={home_data.Benefits} />
-            <NewsletterSection data={home_data.Newsletter} />
-            <SocialProofSection />
           </Stack>
-        </Box>
+        </PageContainer>
+        <BenefitsSection benefits={home_data.Benefits} />
+        <NewsletterSection data={home_data.Newsletter} />
+        <SocialProofSection />
       </Box>
     </>
   );
