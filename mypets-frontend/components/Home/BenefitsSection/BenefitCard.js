@@ -16,7 +16,7 @@ export default function BenefitCard({ benefit, ...props }) {
         <Text mb={2} fontSize="2xl" fontWeight="bold">
           {benefit.Header}
         </Text>
-        <SectionSubHeader>{benefit.Text}</SectionSubHeader>
+        <SectionSubHeader mb={0}>{benefit.Text}</SectionSubHeader>
       </Box>
     </Stack>
   );
