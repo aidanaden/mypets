@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import PageContainer from "../../Layouts/PageContainer/PageContainer";
+import TopContainer from "../../Layouts/TopContainer/TopContainer";
 import BannerSwiper from "../../Common/BannerSwiper/BannerSwiper";
 
 export default function HomeBannerSwiper({
@@ -8,7 +8,7 @@ export default function HomeBannerSwiper({
   ...props
 }) {
   return (
-    <PageContainer>
+    <TopContainer>
       <Box
         mb={{ base: 8, md: 12 }}
         w="100%"
@@ -18,6 +18,6 @@ export default function HomeBannerSwiper({
       >
         <BannerSwiper banners={banners} rounded={rounded} />
       </Box>
-    </PageContainer>
+    </TopContainer>
   );
 }
