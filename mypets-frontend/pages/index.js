@@ -60,7 +60,7 @@ export default function Home({
         <title>{home_data.meta_title}</title>
         <meta name="description" content={home_data.meta_description} />
       </Head>
-      <Box>
+      <Box pb={{ base: 512, lg: 96 }}>
         <AnnouncementBanner text={home_data.banner_text} />
         <Sidebar categories={pageCategories} />
         <PageContainer pb={{ base: 4, lg: 12 }}>
