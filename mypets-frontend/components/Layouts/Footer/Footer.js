@@ -57,9 +57,8 @@ export default function SmallCentered() {
       left="0"
       right="0"
     >
-      <PageContainer
+      <FooterContainer
         as={Stack}
-        isFooter={true}
         direction={{ base: "column" }}
         spacing={{ base: 8 }}
         justify="center"
@@ -77,7 +76,7 @@ export default function SmallCentered() {
           <Link href="/terms-conditions">Terms & Conditions</Link>
           <Link href="/privacy-policy">Privacy Policy</Link>
         </Stack>
-      </PageContainer>
+      </FooterContainer>
       <Stack
         maxW={{ lg: "1200px" }}
         mx="auto"
