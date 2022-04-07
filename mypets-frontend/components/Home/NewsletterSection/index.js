@@ -1,11 +1,12 @@
 import { Box } from "@chakra-ui/react";
+import PageContainer from "../../Layouts/PageContainer/PageContainer";
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 
 function index({ data, ...props }) {
   return (
-    <Box {...props}>
+    <PageContainer pb={{ base: 4, lg: 12 }} {...props}>
       <SectionHeader>{data.Header}</SectionHeader>
-    </Box>
+    </PageContainer>
   );
 }
 
