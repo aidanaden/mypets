@@ -12,17 +12,19 @@ export default function BenefitCard({ benefit, ...props }) {
       {...props}
     >
       <Circle boxSize={"36"} shadow="md" bg="blue.200" />
-      <Box
-        bg="red.300"
-        justifySelf="center"
-        my="auto"
-        justifyContent={"center"}
-        justifyItems={"center"}
-      >
+      <Box bg="red.300">
         <Text mb={2} fontSize="2xl" fontWeight="bold">
           {benefit.Header}
         </Text>
-        <SectionSubHeader mb={0}>{benefit.Text}</SectionSubHeader>
+        <SectionSubHeader
+          mb={0}
+          justifySelf="center"
+          my="auto"
+          justifyContent={"center"}
+          justifyItems={"center"}
+        >
+          {benefit.Text}
+        </SectionSubHeader>
       </Box>
     </Stack>
   );
