@@ -5,6 +5,7 @@ import AnimalList from "../../Common/AnimalList/AnimalList";
 import SortMenu from "../../Common/SortMenu/SortMenu";
 
 function index({ pageAnimals, setSelectedAnimal, setSortMethod }) {
+  console.log("page animal in animal category selection: ", pageAnimals);
   return (
     <Stack
       direction={{ base: "column", md: "row" }}

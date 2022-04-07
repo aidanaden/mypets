@@ -51,7 +51,8 @@ export default function Home({
       isClosable: true,
     });
 
-  console.log("home info data from backend: ", home_data.Banners);
+  // console.log("home info data from backend: ", home_data.Banners);
+  console.log("page animals: ", pageAnimals);
 
   return (
     <>
