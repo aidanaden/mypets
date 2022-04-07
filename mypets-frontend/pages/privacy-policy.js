@@ -7,6 +7,7 @@ import { API_CATEGORIES_URL, API_PRIVACY_URL } from "../utils/urls";
 import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
 import SectionSubHeader from "../components/Layouts/SectionSubHeader/SectionSubHeader";
 import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSection";
+import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 
 export default function privacy({ categories, privacy_data }) {
   return (
@@ -15,7 +16,7 @@ export default function privacy({ categories, privacy_data }) {
         <title>{privacy_data.meta_title}</title>
         <meta name="description" content={privacy_data.meta_description} />
       </Head>
-      <Box minH="100vh">
+      <BaseLayout minH="100vh">
         <Sidebar categories={categories} />
         <PageContainer>
           <SectionHeader>Privacy Policy</SectionHeader>
@@ -271,7 +272,7 @@ export default function privacy({ categories, privacy_data }) {
           />
           <ParagraphSection text="- By visiting this page on our website: [www.mypets.sg](https://cdpn.io/cp/internal/boomboom/www.mypets.sg)" />
         </PageContainer>
-      </Box>
+      </BaseLayout>
     </>
   );
 }

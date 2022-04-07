@@ -21,6 +21,7 @@ import AnimalCategorySection from "../components/Home/AnimalCategorySection";
 import BenefitsSection from "../components/Home/BenefitsSection";
 import NewsletterSection from "../components/Home/NewsletterSection";
 import SocialProofSection from "../components/Home/SocialProofSection";
+import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 
 export default function Home({
   home_data,
@@ -60,7 +61,7 @@ export default function Home({
         <title>{home_data.meta_title}</title>
         <meta name="description" content={home_data.meta_description} />
       </Head>
-      <Box pb={{ base: 512, lg: 96 }}>
+      <BaseLayout>
         <AnnouncementBanner text={home_data.banner_text} />
         <Sidebar categories={pageCategories} />
         <PageContainer pb={{ base: 4, lg: 12 }}>
@@ -90,7 +91,7 @@ export default function Home({
         <BenefitsSection benefits={home_data.Benefits} />
         <NewsletterSection data={home_data.Newsletter} />
         <SocialProofSection />
-      </Box>
+      </BaseLayout>
     </>
   );
 }

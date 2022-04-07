@@ -7,6 +7,7 @@ import { API_CATEGORIES_URL, API_FAQ_URL } from "../utils/urls";
 import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
 import SectionSubHeader from "../components/Layouts/SectionSubHeader/SectionSubHeader";
 import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSection";
+import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 
 export default function faq({ categories, faq_data }) {
   return (
@@ -15,7 +16,7 @@ export default function faq({ categories, faq_data }) {
         <title>{faq_data.meta_title}</title>
         <meta name="description" content={faq_data.meta_description} />
       </Head>
-      <Box minH="100vh">
+      <BaseLayout minH="100vh">
         <Sidebar categories={categories} />
         <PageContainer>
           <SectionHeader>Customer FAQ</SectionHeader>
@@ -244,7 +245,7 @@ export default function faq({ categories, faq_data }) {
                         You are advised to review this FAQ section periodically for any changes. Changes to this FAQ section are effective when they are posted on this page.'
           />
         </PageContainer>
-      </Box>
+      </BaseLayout>
     </>
   );
 }

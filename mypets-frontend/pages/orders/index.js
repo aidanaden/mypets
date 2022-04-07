@@ -11,6 +11,7 @@ import Section from "../../components/Layouts/Section/Section";
 import SectionHeader from "../../components/Layouts/SectionHeader/SectionHeader";
 import MypetsBtn from "../../components/Common/MypetsBtn/MypetsBtn";
 import { API_HOME_URL, stringToDate } from "../../utils/urls";
+import BaseLayout from "../../components/Layouts/BaseLayout/BaseLayout";
 
 const ContributionRow = ({ order }) => {
   return (
@@ -112,7 +113,7 @@ export default function Orders({ bannerText }) {
   const { orders, loading } = getOrders(user);
 
   return (
-    <Box>
+    <BaseLayout>
       <AnnouncementBanner text={bannerText} />
       <Sidebar />
       <PageContainer>
@@ -124,7 +125,7 @@ export default function Orders({ bannerText }) {
           <Center h="70vh">No orders available 😢</Center>
         )}
       </PageContainer>
-    </Box>
+    </BaseLayout>
   );
 }
 
