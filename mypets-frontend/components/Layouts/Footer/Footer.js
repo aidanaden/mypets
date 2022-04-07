@@ -9,7 +9,7 @@ import {
 import NextLink from "next/link";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
-import FooterContainer from "../FooterContainer/FooterContainer";
+import PageContainer from "../PageContainer/PageContainer";
 
 const Logo = (props) => {
   return (
