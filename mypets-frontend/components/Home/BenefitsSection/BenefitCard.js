@@ -4,7 +4,7 @@ import SectionSubHeader from "../../Layouts/SectionSubHeader/SectionSubHeader";
 export default function BenefitCard({ benefit, ...props }) {
   return (
     <Stack
-      direction={"row"}
+      direction={{ base: "column", lg: "row" }}
       bg="gray.200"
       rounded="lg"
       spacing={4}

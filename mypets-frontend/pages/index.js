@@ -63,7 +63,7 @@ export default function Home({
       <Box>
         <AnnouncementBanner text={home_data.banner_text} />
         <Sidebar categories={pageCategories} />
-        <PageContainer>
+        <PageContainer pb={{ base: 4, lg: 12 }}>
           {/* <CategoryList
             display={{ base: "none", md: "flex" }}
             categories={pageCategories}
