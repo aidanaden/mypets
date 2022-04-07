@@ -6,7 +6,7 @@ import PageContainer from "../../Layouts/PageContainer/PageContainer";
 function index({ benefits, spacing = 4, ...props }) {
   return (
     <Box bg="mypets.400">
-      <PageContainer {...props}>
+      <PageContainer pt={{ base: 4, lg: 12 }} {...props}>
         <SectionHeader textAlign="center">{benefits.Header}</SectionHeader>
         <SimpleGrid columns={2} spacing={spacing}>
           {benefits.benefit.map((benefit, i) => (
