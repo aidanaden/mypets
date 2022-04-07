@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { Box, Stack, useToast } from "@chakra-ui/react";
 import Head from "next/head";
@@ -7,7 +7,6 @@ import PageContainer from "../components/Layouts/PageContainer/PageContainer";
 import AnnouncementBanner from "../components/Layouts/AnnouncementBanner/AnnouncementBanner";
 import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import HomeBannerSwiper from "../components/Home/HomeBannerSwiper/HomeBannerSwiper";
-
 import MerchantSectionList from "../components/Merchant/MerchantSectionList/MerchantSectionList";
 import ProductSectionList from "../components/Product/ProductSectionList/ProductSectionList";
 import CategoryList from "../components/Home/CategoryList/CategoryList";
