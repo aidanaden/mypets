@@ -1,5 +1,5 @@
 import React from "react";
-import { SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid } from "@chakra-ui/react";
 
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 import MerchantCard from "../MerchantCard/MerchantCard";
