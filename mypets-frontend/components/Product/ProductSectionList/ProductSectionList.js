@@ -31,22 +31,20 @@ function ProductSectionList({ products, sortMethod, selectedAnimal }) {
   const categoryOnly = getCategories(productByAnimal);
 
   return (
-    <PageContainer>
-      <Box w="100%">
-        <Stack direction="column" spacing={{ base: 8, lg: 12 }}>
-          {categoryOnly.map((category, i) => (
-            <ProductList
-              key={i}
-              heading={category}
-              sortMethod={sortMethod}
-              selectedAnimal={""}
-              products={filterProductsByCategory(productByAnimal, category)}
-              maxRows={0}
-            />
-          ))}
-        </Stack>
-      </Box>
-    </PageContainer>
+    <Box w="100%">
+      <Stack direction="column" spacing={{ base: 8, lg: 12 }}>
+        {categoryOnly.map((category, i) => (
+          <ProductList
+            key={i}
+            heading={category}
+            sortMethod={sortMethod}
+            selectedAnimal={""}
+            products={filterProductsByCategory(productByAnimal, category)}
+            maxRows={0}
+          />
+        ))}
+      </Stack>
+    </Box>
   );
 }
 
