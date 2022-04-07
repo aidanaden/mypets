@@ -1,6 +1,6 @@
 import PageContainer from "../PageContainer/PageContainer";
 
-export default function TopContainer({ ...props }) {
+export default function TopContainer({ children, ...props }) {
   return (
     <PageContainer
       pt={{ base: 4, lg: 12 }}
