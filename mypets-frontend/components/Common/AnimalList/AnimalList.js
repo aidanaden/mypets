@@ -46,14 +46,13 @@ export default function AnimalList({ animals, setSelectedAnimal }) {
       overflow={{ base: "auto" }}
       spacing={{ base: 4 }}
     >
-      {animals &&
-        animals.map((animal, i) => (
-          <AnimalButton
-            key={i}
-            animal={animal}
-            onClick={() => animalBtnClicked(animal)}
-          />
-        ))}
+      {animals.map((animal, i) => (
+        <AnimalButton
+          key={i}
+          animal={animal}
+          onClick={() => animalBtnClicked(animal)}
+        />
+      ))}
     </Stack>
   );
 }

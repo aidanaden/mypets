@@ -64,11 +64,11 @@ export default function Home({
         <AnnouncementBanner text={home_data.banner_text} />
         <Sidebar categories={pageCategories} />
         <Box>
-          <CategoryList
+          {/* <CategoryList
             display={{ base: "none", md: "flex" }}
             categories={pageCategories}
             setSelectedCategory={setCategorySelected}
-          />
+          /> */}
           {/* <Carousel /> */}
           <HomeBannerSwiper banners={home_data.Banners} />
           <Stack direction="column" spacing={{ base: 8, lg: 12 }}>
@@ -85,7 +85,6 @@ export default function Home({
               setSortMethod={setSortMethod}
               selectedAnimal={selectedAnimal}
             />
-            <AnimalCategorySection />
             <BenefitsSection benefits={home_data.Benefits} />
             <NewsletterSection data={home_data.Newsletter} />
             <SocialProofSection />
