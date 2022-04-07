@@ -1,7 +1,7 @@
 import { Box, Spacer, Stack } from "@chakra-ui/react";
 
-import SectionHeader from "../../components/Layouts/SectionHeader/SectionHeader";
-import AnimalList from "../../components/Common/AnimalList/AnimalList";
+import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
+import AnimalList from "../../Common/AnimalList/AnimalList";
 import SortMenu from "../../Common/SortMenu/SortMenu";
 
 function index({ pageAnimals, setSelectedAnimal, setSortMethod }) {
