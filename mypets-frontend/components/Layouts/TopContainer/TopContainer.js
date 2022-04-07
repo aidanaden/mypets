@@ -4,7 +4,8 @@ export default function TopContainer({ children, ...props }) {
   return (
     <PageContainer
       pt={{ base: 4, lg: 12 }}
-      pb={{ base: 512, lg: 96 }}
+      pb={{ base: 4, lg: 12 }}
+      bg="blue.100"
       {...props}
     >
       {children}
