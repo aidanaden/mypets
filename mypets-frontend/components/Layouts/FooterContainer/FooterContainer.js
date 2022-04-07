@@ -1,6 +1,6 @@
 import PageContainer from "../PageContainer/PageContainer";
 
-export default function FooterContainer() {
+export default function FooterContainer({ ...props }) {
   return (
     <PageContainer pt={{ base: 4, lg: 12 }} pb={{ base: 4, lg: 12 }} {...props}>
       {children}
