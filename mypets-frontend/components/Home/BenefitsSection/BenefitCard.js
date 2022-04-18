@@ -6,7 +6,7 @@ export default function BenefitCard({ benefit, ...props }) {
   return (
     <Stack
       direction={{ base: "row", lg: "row" }}
-      justifyItems="center"
+      alignItems="center"
       bg="gray.200"
       rounded="lg"
       spacing={8}
