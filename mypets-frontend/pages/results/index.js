@@ -180,7 +180,7 @@ export default function index({ bannerText, products, animals, merchants }) {
           </Stack>
         </Stack>
       </PageContainer>
-    </BaseLayo>
+    </BaseLayout>
   );
 }
 
