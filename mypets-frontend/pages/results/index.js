@@ -142,7 +142,7 @@ export default function index({ bannerText, products, animals, merchants }) {
   }, [router.query]);
 
   return (
-    <BaseLayout>
+    <BaseLayout minHeight="100vh">
       <AnnouncementBanner text={bannerText} />
       <Sidebar />
       <PageContainer>
