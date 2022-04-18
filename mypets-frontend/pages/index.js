@@ -72,7 +72,7 @@ export default function Home({
           /> */}
           {/* <Carousel /> */}
           <HomeBannerSwiper banners={home_data.Banners} />
-          <Stack direction="column" spacing={{ base: 8, lg: 12 }}>
+          <Stack direction="column" spacing={{ base: 10, lg: 14 }}>
             <AnimalCategorySection
               pageAnimals={pageAnimals}
               setSelectedAnimal={setSelectedAnimal}
