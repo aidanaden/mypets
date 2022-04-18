@@ -5,7 +5,7 @@ export default function BenefitCard({ benefit, ...props }) {
   console.log("benefit icon src: ", benefit.Icon);
   return (
     <Stack
-      direction={{ base: "column", lg: "column" }}
+      direction={{ base: "row", lg: "row" }}
       bg="gray.200"
       rounded="lg"
       spacing={8}
@@ -14,7 +14,7 @@ export default function BenefitCard({ benefit, ...props }) {
     >
       <Circle
         boxSize={{ base: "24", md: "32" }}
-        p={{ base: 8, md: 4 }}
+        p={{ base: 4, md: 8 }}
         shadow="md"
         bg="mypets.400"
         borderWidth={"6px"}
