@@ -1,12 +1,13 @@
 import React from "react";
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Stack, SimpleGrid } from "@chakra-ui/react";
 
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 import MerchantCard from "../MerchantCard/MerchantCard";
+import PageContainer from "../../Layouts/PageContainer/PageContainer";
 
 function MerchantSectionList({ merchants, spacing = 4 }) {
   return (
-    <Box>
+    <Stack>
       <SectionHeader>Available Brands</SectionHeader>
       <SimpleGrid
         mt={0}
@@ -20,7 +21,7 @@ function MerchantSectionList({ merchants, spacing = 4 }) {
           <MerchantCard key={index} merchant={merchant} />
         ))}
       </SimpleGrid>
-    </Box>
+    </Stack>
   );
 }
 

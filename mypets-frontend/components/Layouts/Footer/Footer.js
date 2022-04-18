@@ -59,7 +59,6 @@ export default function SmallCentered() {
     >
       <PageContainer
         as={Stack}
-        isFooter={true}
         direction={{ base: "column" }}
         spacing={{ base: 8 }}
         justify="center"

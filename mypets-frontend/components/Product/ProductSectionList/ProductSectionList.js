@@ -2,6 +2,7 @@ import { Stack, Box } from "@chakra-ui/react";
 
 import ProductList from "../ProductList/ProductList";
 import { getCategories } from "../../../utils/urls";
+import PageContainer from "../../Layouts/PageContainer/PageContainer";
 
 function ProductSectionList({ products, sortMethod, selectedAnimal }) {
   const filterProductsByAnimal = (products, animal) => {

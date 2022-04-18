@@ -17,6 +17,7 @@ import {
   imageToUrl,
 } from "../../../utils/urls";
 import PageContainer from "../../../components/Layouts/PageContainer/PageContainer";
+import BaseLayout from "../../../components/Layouts/BaseLayout/BaseLayout";
 
 export default function Product({ bannerTitle, product, otherProducts }) {
   const { asPath } = useRouter();
@@ -48,7 +49,7 @@ export default function Product({ bannerTitle, product, otherProducts }) {
         />
         <meta property="product:price:currency" content="SGD" />
       </Head>
-      <Box>
+      <BaseLayout>
         <AnnouncementBanner text={bannerTitle} />
         <Sidebar />
         <PageContainer>
@@ -86,7 +87,7 @@ export default function Product({ bannerTitle, product, otherProducts }) {
             maxRows={2}
           />
         </PageContainer>
-      </Box>
+      </BaseLayout>
     </>
   );
 }
