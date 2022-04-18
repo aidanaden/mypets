@@ -8,16 +8,15 @@ export default function HomeBannerSwiper({
   ...props
 }) {
   return (
-    <TopContainer>
-      <Box
-        mb={{ base: 8, md: 12 }}
-        w="100%"
-        boxShadow="2xl"
-        rounded={rounded}
-        {...props}
-      >
-        <BannerSwiper banners={banners} rounded={rounded} />
-      </Box>
-    </TopContainer>
+    <Box
+      pt={{ base: 4, lg: 12 }}
+      mb={{ base: 8, md: 12 }}
+      w="100%"
+      boxShadow="2xl"
+      rounded={rounded}
+      {...props}
+    >
+      <BannerSwiper banners={banners} rounded={rounded} />
+    </Box>
   );
 }
