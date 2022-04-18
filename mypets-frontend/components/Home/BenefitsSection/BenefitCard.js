@@ -8,7 +8,7 @@ export default function BenefitCard({ benefit, ...props }) {
       direction={{ base: "column", lg: "row" }}
       bg="gray.200"
       rounded="lg"
-      spacing={4}
+      spacing={8}
       p={{ base: 4, md: 8 }}
       {...props}
     >
@@ -19,10 +19,10 @@ export default function BenefitCard({ benefit, ...props }) {
         borderWidth={"6px"}
         borderColor="white"
       >
-        <img width={125} height={125} src={benefit.Icon.url} loading="lazy" />
+        <img width={75} height={75} src={benefit.Icon.url} loading="lazy" />
       </Circle>
       <Center py="auto">
-        <Box my="auto" justifySelf={"center"} bg="blue.100">
+        <Box my="auto" justifySelf={"center"}>
           <Text mb={2} fontSize="2xl" fontWeight="bold">
             {benefit.Header}
           </Text>
