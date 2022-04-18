@@ -25,6 +25,7 @@ import {
   API_HOME_URL,
 } from "../../utils/urls";
 import SectionHeader from "../../components/Layouts/SectionHeader/SectionHeader";
+import BaseLayout from "../../components/Layouts/BaseLayout/BaseLayout";
 
 const MerchantCheck = ({ text, isChecked, onChange, ...props }) => {
   return (
@@ -138,7 +139,7 @@ export default function index({ bannerText, products, animals, merchants }) {
   }, [router.query]);
 
   return (
-    <Box>
+    <BaseLayout>
       <AnnouncementBanner text={bannerText} />
       <Sidebar />
       <PageContainer>
@@ -179,7 +180,7 @@ export default function index({ bannerText, products, animals, merchants }) {
           </Stack>
         </Stack>
       </PageContainer>
-    </Box>
+    </BaseLayo>
   );
 }
 
