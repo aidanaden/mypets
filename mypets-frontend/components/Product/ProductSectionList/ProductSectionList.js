@@ -32,7 +32,7 @@ function ProductSectionList({ products, sortMethod, selectedAnimal }) {
 
   return (
     <Box w="100%">
-      <Stack direction="column" spacing={{ base: 8, lg: 12 }}>
+      <Stack direction="column" spacing={{ base: 10, md: 14 }}>
         {categoryOnly.map((category, i) => (
           <ProductList
             key={i}
