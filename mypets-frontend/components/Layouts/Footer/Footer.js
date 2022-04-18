@@ -52,7 +52,7 @@ export default function SmallCentered() {
     <Box
       color="white"
       bgGradient="linear(to-t, mypets.900, mypets.100)"
-      pos="absolute"
+      pos="sticky"
       bottom="0"
       left="0"
       right="0"
