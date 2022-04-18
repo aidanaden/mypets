@@ -15,10 +15,12 @@ export default function BenefitCard({ benefit, ...props }) {
         boxSize={{ base: "24", md: "32" }}
         shadow="md"
         bg="blue.200"
-        borderWidth={"2px"}
+        borderWidth={"4px"}
         borderColor="white"
-      />
-      <Box bg="red.300" py="auto">
+      >
+        <img src={benefit.Icon} loading="lazy" />
+      </Circle>
+      <Center bg="red.300" py="auto">
         <Box my="auto" justifySelf={"center"} bg="blue.100">
           <Text mb={2} fontSize="2xl" fontWeight="bold">
             {benefit.Header}
@@ -33,7 +35,7 @@ export default function BenefitCard({ benefit, ...props }) {
             {benefit.Text}
           </SectionSubHeader>
         </Box>
-      </Box>
+      </Center>
     </Stack>
   );
 }
