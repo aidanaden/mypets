@@ -2,7 +2,7 @@ import { Box, Text, Stack, Circle, Center } from "@chakra-ui/react";
 import SectionSubHeader from "../../Layouts/SectionSubHeader/SectionSubHeader";
 
 export default function BenefitCard({ benefit, ...props }) {
-  console.log('benefit icon src: ', benefit.Icon)
+  console.log("benefit icon src: ", benefit.Icon);
   return (
     <Stack
       direction={{ base: "column", lg: "row" }}
@@ -15,13 +15,13 @@ export default function BenefitCard({ benefit, ...props }) {
       <Circle
         boxSize={{ base: "24", md: "32" }}
         shadow="md"
-        bg="blue.200"
-        borderWidth={"4px"}
+        bg="mypets.400"
+        borderWidth={"6px"}
         borderColor="white"
       >
-        <img src={benefit.Icon.url} loading="lazy" />
+        <img width={125} height={125} src={benefit.Icon.url} loading="lazy" />
       </Circle>
-      <Center bg="red.300" py="auto">
+      <Center py="auto">
         <Box my="auto" justifySelf={"center"} bg="blue.100">
           <Text mb={2} fontSize="2xl" fontWeight="bold">
             {benefit.Header}
