@@ -122,7 +122,10 @@ export default function index({ bannerText, products, animals, merchants }) {
         const firstValid = product.name
           .toLowerCase()
           .includes(search.toLowerCase());
-        const secondValid = product.variants[0].price <= price;
+        const secondValid =
+          product.variants[0].discounted_price > 0
+            ? product.variants[0].discounted_price <= price
+            : product.variants[0].price <= price;
         return firstValid && secondValid;
       });
 
@@ -147,38 +150,40 @@ export default function index({ bannerText, products, animals, merchants }) {
           Showing results for
           <chakra.span textColor="mypets.400">{` "${searchText}"`}</chakra.span>
         </SectionHeader>
-        <Stack direction={{ base: "column" }} spacing={{ base: 8 }} mt={2}>
-          <Stack
-            direction={{ base: "column", md: "row" }}
-            spacing={{ base: 2, md: 0 }}
-            justify="space-between"
-          >
-            <AnimalList
-              animals={animals}
-              setSelectedAnimal={setSelectedAnimal}
-            />
-            <Spacer />
-            <SortMenu setSortMethod={setSortMethod} />
+        {pageProducts.length > 0 && (
+          <Stack direction={{ base: "column" }} spacing={{ base: 8 }} mt={2}>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              spacing={{ base: 2, md: 0 }}
+              justify="space-between"
+            >
+              <AnimalList
+                animals={animals}
+                setSelectedAnimal={setSelectedAnimal}
+              />
+              <Spacer />
+              <SortMenu setSortMethod={setSortMethod} />
+            </Stack>
+            <Stack direction="column" w="100%" spacing={{ base: 12 }}>
+              <MerchantChecklist
+                pageMerchants={pageMerchants}
+                selectedMerchants={selectedMerchants}
+                setSelectedMerchants={setSelectedMerchants}
+              />
+              <MerchantSectionList
+                merchants={getMerchantDataFromNames(pageMerchants, merchants)}
+              />
+              <ProductList
+                heading="Suggested products"
+                products={pageProducts}
+                sortMethod={sortMethod}
+                selectedAnimal={selectedAnimal}
+                selectedMerchants={selectedMerchants}
+                maxRows={0}
+              />
+            </Stack>
           </Stack>
-          <Stack direction="column" w="100%" spacing={{ base: 12 }}>
-            <MerchantChecklist
-              pageMerchants={pageMerchants}
-              selectedMerchants={selectedMerchants}
-              setSelectedMerchants={setSelectedMerchants}
-            />
-            <MerchantSectionList
-              merchants={getMerchantDataFromNames(pageMerchants, merchants)}
-            />
-            <ProductList
-              heading="Suggested products"
-              products={pageProducts}
-              sortMethod={sortMethod}
-              selectedAnimal={selectedAnimal}
-              selectedMerchants={selectedMerchants}
-              maxRows={0}
-            />
-          </Stack>
-        </Stack>
+        )}
       </PageContainer>
     </BaseLayout>
   );
