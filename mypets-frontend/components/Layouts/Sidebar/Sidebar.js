@@ -115,40 +115,22 @@ export default function Sidebar({ categories }) {
         display={{ base: "block", lg: "none" }}
         // bg='red.100'
       />
-      <Stack
-        spacing={{ base: 4 }}
-        direction="column"
-        as="nav"
-        fontSize="sm"
-        color="gray.600"
-        aria-label="Main Navigation"
-      >
-        <NavItem onClick={handlePastOrders}>Past orders</NavItem>
-        <NavbarUserModalBtn isMobile NavItem={NavItem} />
-        {user && <NavItem onClick={handleLogout}>Log out</NavItem>}
-        {/* <NavItem
-                    icon={HiCode}
-                    onClick={integrations.onToggle}
-                >
-                    Integrations
-                    <Icon
-                        as={MdKeyboardArrowRight}
-                        ml="auto"
-                        transform={integrations.isOpen && "rotate(90deg)"}
-                    />
-                </NavItem>
-                <Collapse in={integrations.isOpen}>
-                    <NavItem pl="12" py="2">
-                        Shopify
-                    </NavItem>
-                    <NavItem pl="12" py="2">
-                        Slack
-                    </NavItem>
-                    <NavItem pl="12" py="2">
-                        Zapier
-                    </NavItem>
-                </Collapse> */}
-      </Stack>
+      {user ? (
+        <Stack
+          spacing={{ base: 4 }}
+          direction="column"
+          as="nav"
+          fontSize="sm"
+          color="gray.600"
+          aria-label="Main Navigation"
+        >
+          <NavItem onClick={handlePastOrders}>Past orders</NavItem>
+          <NavbarUserModalBtn isMobile NavItem={NavItem} />
+          <NavItem onClick={handleLogout}>Log out</NavItem>
+        </Stack>
+      ) : (
+        <LoginModalBtn />
+      )}
       {/* {categories ?
             <Box>
                 <SectionHeader>

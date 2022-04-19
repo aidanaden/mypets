@@ -1,4 +1,5 @@
-import { Box } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 import PageContainer from "../../Layouts/PageContainer/PageContainer";
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
