@@ -45,6 +45,7 @@ function index({ data, ...props }) {
         justifyContent="center"
         w={{ base: "full", md: "2xl" }}
         mx="auto"
+        bg="red.100"
       >
         <MailchimpSubscribe
           url={""}
