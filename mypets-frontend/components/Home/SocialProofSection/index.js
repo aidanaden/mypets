@@ -26,6 +26,7 @@ export default function index({ ...props }) {
           w={{ base: "100%", md: "xs" }}
           leftIcon={<FaInstagram w={16} h={16} />}
           cursor="pointer"
+          href="https://www.facebook.com/mypets.sg/"
         />
         <MypetsBtn
           as={"a"}
@@ -34,6 +35,7 @@ export default function index({ ...props }) {
           w={{ base: "100%", md: "xs" }}
           leftIcon={<FaFacebook w={16} h={16} />}
           cursor="pointer"
+          href="https://www.instagram.com/mypets.sg/"
         />
       </Stack>
     </PageContainer>
