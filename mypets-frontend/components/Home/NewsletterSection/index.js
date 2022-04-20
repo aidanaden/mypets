@@ -42,6 +42,8 @@ function index({ data, ...props }) {
         alignSelf="center"
         justify="center"
         mb={8}
+        mx="auto"
+        bg="green.200"
       >
         {data.Text}
       </SectionSubHeader>
