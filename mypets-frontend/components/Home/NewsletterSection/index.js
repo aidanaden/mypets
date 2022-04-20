@@ -43,7 +43,7 @@ function index({ data, ...props }) {
         alignSelf={"center"}
         textAlign="center"
         justifyContent="center"
-        w={{ base: "full", md: "lg" }}
+        w={{ base: "full", md: "2xl" }}
         mx="auto"
       >
         <MailchimpSubscribe
