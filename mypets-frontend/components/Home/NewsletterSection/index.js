@@ -31,7 +31,7 @@ function index({ data, ...props }) {
     <PageContainer bg="white" {...props}>
       <SectionHeader textAlign="center">{data.Header}</SectionHeader>
       <MailchimpSubscribe
-        url={url}
+        url={""}
         render={({ subscribe, status, message }) => (
           <Formik
             enableReinitialize
