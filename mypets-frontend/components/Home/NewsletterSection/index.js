@@ -43,7 +43,7 @@ function index({ data, ...props }) {
         alignSelf={"center"}
         textAlign="center"
         justifyContent="center"
-        w={{ base: "100%" }}
+        w="100%"
         maxWidth={{ base: "full", md: "xl" }}
         mx="auto"
         bg="red.100"
@@ -87,8 +87,7 @@ function index({ data, ...props }) {
                     isLoading={status === "sending"}
                     type="submit"
                     rounded="full"
-                    w={{ base: "sm", md: "100%" }}
-                    maxWidth={{ md: "lg" }}
+                    w="100%"
                   />
                 </Form>
               )}
