@@ -34,7 +34,6 @@ function index({ data, ...props }) {
     <PageContainer bg="white" {...props}>
       <SectionHeader textAlign="center">{data.Header}</SectionHeader>
       <Flex
-        maxWidth="800px"
         alignSelf={"center"}
         textAlign="center"
         justifyContent="center"
