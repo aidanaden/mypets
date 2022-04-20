@@ -33,8 +33,12 @@ function index({ data, ...props }) {
 
   return (
     <PageContainer bg="white" {...props}>
-      <SectionHeader textAlign="center">{data.Header}</SectionHeader>
-      <SectionSubHeader textAlign="center">{data.Text}</SectionSubHeader>
+      <SectionHeader textAlign="center" mb={4}>
+        {data.Header}
+      </SectionHeader>
+      <SectionSubHeader textAlign="center" maxW="lg" mb={8}>
+        {data.Text}
+      </SectionSubHeader>
       <Flex alignSelf={"center"} textAlign="center" justifyContent="center">
         <MailchimpSubscribe
           url={""}
@@ -73,7 +77,7 @@ function index({ data, ...props }) {
                     isLoading={status === "sending"}
                     type="submit"
                     rounded="full"
-                    w="lg"
+                    w="md"
                   />
                 </Form>
               )}
