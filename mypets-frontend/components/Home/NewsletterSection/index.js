@@ -1,5 +1,6 @@
 import {
   Input,
+  Box,
   Center,
   FormControl,
   FormLabel,
@@ -32,12 +33,13 @@ function index({ data, ...props }) {
   return (
     <PageContainer bg="white" {...props}>
       <SectionHeader textAlign="center">{data.Header}</SectionHeader>
-      <Center
+      <Box
         maxWidth="800px"
         alignSelf={"center"}
         textAlign="center"
         justifyContent="center"
         justify="center"
+        bg="green.200"
       >
         <MailchimpSubscribe
           url={""}
@@ -82,7 +84,7 @@ function index({ data, ...props }) {
             </Formik>
           )}
         />
-      </Center>
+      </Box>
     </PageContainer>
   );
 }
