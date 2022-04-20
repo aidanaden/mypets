@@ -39,12 +39,7 @@ function index({ data, ...props }) {
       <SectionSubHeader textAlign="center" maxW="lg" mb={8} mx="auto">
         {data.Text}
       </SectionSubHeader>
-      <Flex
-        alignSelf={"center"}
-        textAlign="center"
-        justifyContent="center"
-        bg="green.200"
-      >
+      <Flex alignSelf={"center"} textAlign="center" justifyContent="center">
         <MailchimpSubscribe
           url={""}
           render={({ subscribe, status, message }) => (
