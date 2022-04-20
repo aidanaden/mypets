@@ -8,7 +8,7 @@ import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
 export default function index({ ...props }) {
   return (
     <PageContainer bg="white" {...props}>
-      <SectionHeader textAlign="center" mb={4}>
+      <SectionHeader textAlign="center" mb={{ base: 4, md: 8 }}>
         Follow us on our socials
       </SectionHeader>
       <Stack
