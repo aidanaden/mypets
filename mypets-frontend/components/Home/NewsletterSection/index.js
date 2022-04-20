@@ -43,7 +43,7 @@ function index({ data, ...props }) {
         alignSelf={"center"}
         textAlign="center"
         justifyContent="center"
-        w={{ base: "full", md: "2xl" }}
+        w={{ base: "full", md: "xl" }}
         mx="auto"
         bg="red.100"
       >
@@ -74,6 +74,7 @@ function index({ data, ...props }) {
                           field={field}
                           valid={!form.errors.email && form.touched.email}
                           variant="filled"
+                          w="full"
                         />
                         <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                       </FormControl>
@@ -85,7 +86,7 @@ function index({ data, ...props }) {
                     isLoading={status === "sending"}
                     type="submit"
                     rounded="full"
-                    maxW={{ md: "md" }}
+                    maxW={{ md: "lg" }}
                   />
                 </Form>
               )}
