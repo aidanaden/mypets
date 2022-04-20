@@ -43,9 +43,8 @@ function index({ data, ...props }) {
         alignSelf={"center"}
         textAlign="center"
         justifyContent="center"
-        w={{ base: "full", md: "md" }}
+        w={{ base: "full", md: "lg" }}
         mx="auto"
-        bg="red.200"
       >
         <MailchimpSubscribe
           url={""}
@@ -85,7 +84,7 @@ function index({ data, ...props }) {
                     isLoading={status === "sending"}
                     type="submit"
                     rounded="full"
-                    maxW={{ base: "full", md: "sm" }}
+                    maxW={{ md: "md" }}
                   />
                 </Form>
               )}
