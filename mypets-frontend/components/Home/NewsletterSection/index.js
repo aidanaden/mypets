@@ -15,6 +15,7 @@ import PageContainer from "../../Layouts/PageContainer/PageContainer";
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 import EmailInputGroup from "../../Form/EmailInputGroup/EmailInputGroup";
 import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
+import SectionSubHeader from "../../Layouts/SectionSubHeader/SectionSubHeader";
 
 const emailSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Your email is required"),
@@ -33,6 +34,7 @@ function index({ data, ...props }) {
   return (
     <PageContainer bg="white" {...props}>
       <SectionHeader textAlign="center">{data.Header}</SectionHeader>
+      <SectionSubHeader textAlign="center">{data.Text}</SectionSubHeader>
       <Flex alignSelf={"center"} textAlign="center" justifyContent="center">
         <MailchimpSubscribe
           url={""}
@@ -71,7 +73,7 @@ function index({ data, ...props }) {
                     isLoading={status === "sending"}
                     type="submit"
                     rounded="full"
-                    w="xl"
+                    w="lg"
                   />
                 </Form>
               )}
