@@ -75,7 +75,7 @@ function index({ data, ...props }) {
                           field={field}
                           valid={!form.errors.email && form.touched.email}
                           variant="filled"
-                          w="full"
+                          w="100%"
                         />
                         <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                       </FormControl>
