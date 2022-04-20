@@ -36,7 +36,13 @@ function index({ data, ...props }) {
       <SectionHeader textAlign="center" mb={4}>
         {data.Header}
       </SectionHeader>
-      <SectionSubHeader textAlign="center" maxW="lg" mb={8}>
+      <SectionSubHeader
+        textAlign="center"
+        maxW="lg"
+        alignSelf="center"
+        justify="center"
+        mb={8}
+      >
         {data.Text}
       </SectionSubHeader>
       <Flex alignSelf={"center"} textAlign="center" justifyContent="center">
@@ -66,6 +72,7 @@ function index({ data, ...props }) {
                         <EmailInputGroup
                           field={field}
                           valid={!form.errors.email && form.touched.email}
+                          variant="filled"
                         />
                         <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                       </FormControl>
