@@ -39,7 +39,12 @@ function index({ data, ...props }) {
       <SectionSubHeader textAlign="center" maxW="lg" mb={8} mx="auto">
         {data.Text}
       </SectionSubHeader>
-      <Flex alignSelf={"center"} textAlign="center" justifyContent="center">
+      <Flex
+        alignSelf={"center"}
+        textAlign="center"
+        justifyContent="center"
+        bg="green.200"
+      >
         <MailchimpSubscribe
           url={""}
           render={({ subscribe, status, message }) => (
@@ -78,7 +83,7 @@ function index({ data, ...props }) {
                     isLoading={status === "sending"}
                     type="submit"
                     rounded="full"
-                    w={{ base: "sm", md: "md" }}
+                    w={{ base: "full", md: "md" }}
                   />
                 </Form>
               )}
