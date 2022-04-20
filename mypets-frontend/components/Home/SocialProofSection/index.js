@@ -1,3 +1,4 @@
+import { Stack } from "@chakra-ui/react";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 import PageContainer from "../../Layouts/PageContainer/PageContainer";
