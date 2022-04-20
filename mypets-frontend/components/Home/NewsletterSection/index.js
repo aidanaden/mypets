@@ -1,7 +1,7 @@
 import {
   Input,
   Box,
-  Center,
+  Flex,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -33,7 +33,7 @@ function index({ data, ...props }) {
   return (
     <PageContainer bg="white" {...props}>
       <SectionHeader textAlign="center">{data.Header}</SectionHeader>
-      <Box
+      <Flex
         maxWidth="800px"
         alignSelf={"center"}
         textAlign="center"
@@ -84,7 +84,7 @@ function index({ data, ...props }) {
             </Formik>
           )}
         />
-      </Box>
+      </Flex>
     </PageContainer>
   );
 }
