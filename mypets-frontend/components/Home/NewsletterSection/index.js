@@ -45,7 +45,6 @@ function index({ data, ...props }) {
         justifyContent="center"
         w="100%"
         mx="auto"
-        bg="red.100"
       >
         <Box w={{ base: "100%", md: "lg" }}>
           <MailchimpSubscribe
