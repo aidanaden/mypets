@@ -4,7 +4,7 @@ import PageContainer from "../../Layouts/PageContainer/PageContainer";
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
 
-export default function index() {
+export default function index({ ...props }) {
   return (
     <PageContainer bg="white" {...props}>
       <SectionHeader textAlign="center" mb={4}>
