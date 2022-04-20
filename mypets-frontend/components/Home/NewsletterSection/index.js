@@ -44,56 +44,59 @@ function index({ data, ...props }) {
         textAlign="center"
         justifyContent="center"
         w="100%"
-        // maxWidth={{ base: "full", md: "xl" }}
         mx="auto"
         bg="red.100"
       >
-        <MailchimpSubscribe
-          url={""}
-          render={({ subscribe, status, message }) => (
-            <Formik
-              enableReinitialize
-              initialValues={{ email: "" }}
-              onSubmit={(values, actions) => {
-                subscribe(values);
-                if (status === "success") {
-                  subscribeSuccessToast(
-                    "Successfully subscribed to our newsletter!"
-                  );
-                }
-              }}
-              validationSchema={emailSchema}
-            >
-              {(props) => (
-                <Form>
-                  <Field name="email">
-                    {({ field, form }) => (
-                      <FormControl
-                        isInvalid={form.errors.email && form.touched.email}
-                      >
-                        <EmailInputGroup
-                          field={field}
-                          valid={!form.errors.email && form.touched.email}
-                          variant="filled"
-                          w="100%"
-                        />
-                        <FormErrorMessage>{form.errors.email}</FormErrorMessage>
-                      </FormControl>
-                    )}
-                  </Field>
-                  <MypetsBtn
-                    mt={4}
-                    btnText="Subscribe"
-                    isLoading={status === "sending"}
-                    type="submit"
-                    rounded="full"
-                    w="100%"
-                  />
-                </Form>
-              )}
-            </Formik>
-          )}
-        />
+        <Box w={{ base: "100%", md: "lg" }}>
+          <MailchimpSubscribe
+            url={""}
+            render={({ subscribe, status, message }) => (
+              <Formik
+                enableReinitialize
+                initialValues={{ email: "" }}
+                onSubmit={(values, actions) => {
+                  subscribe(values);
+                  if (status === "success") {
+                    subscribeSuccessToast(
+                      "Successfully subscribed to our newsletter!"
+                    );
+                  }
+                }}
+                validationSchema={emailSchema}
+              >
+                {(props) => (
+                  <Form>
+                    <Field name="email">
+                      {({ field, form }) => (
+                        <FormControl
+                          isInvalid={form.errors.email && form.touched.email}
+                        >
+                          <EmailInputGroup
+                            field={field}
+                            valid={!form.errors.email && form.touched.email}
+                            variant="filled"
+                            w="100%"
+                          />
+                          <FormErrorMessage>
+                            {form.errors.email}
+                          </FormErrorMessage>
+                        </FormControl>
+                      )}
+                    </Field>
+                    <MypetsBtn
+                      mt={4}
+                      btnText="Subscribe"
+                      isLoading={status === "sending"}
+                      type="submit"
+                      rounded="full"
+                      w="100%"
+                    />
+                  </Form>
+                )}
+              </Formik>
+            )}
+          />
+        </Box>
       </Flex>
     </PageContainer>
   );
