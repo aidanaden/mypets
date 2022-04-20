@@ -14,7 +14,6 @@ export default function index({ ...props }) {
       <Stack
         direction={{ base: "column", md: "row" }}
         spacing={{ base: 4, md: 8 }}
-        bg="red.100"
         alignSelf={"center"}
         textAlign="center"
         justifyContent="center"
@@ -25,14 +24,14 @@ export default function index({ ...props }) {
           btnText="@mypets.sg"
           rounded="full"
           w={{ base: "100%", md: "xs" }}
-          leftIcon={<FaInstagram w={12} h={12} />}
+          leftIcon={<FaInstagram w={16} h={16} />}
         />
         <MypetsBtn
           as={"a"}
           btnText="Mypets"
           rounded="full"
           w={{ base: "100%", md: "xs" }}
-          leftIcon={<FaFacebook w={12} h={12} />}
+          leftIcon={<FaFacebook w={16} h={16} />}
         />
       </Stack>
     </PageContainer>
