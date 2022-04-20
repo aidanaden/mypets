@@ -32,7 +32,13 @@ function index({ data, ...props }) {
   return (
     <PageContainer bg="white" {...props}>
       <SectionHeader textAlign="center">{data.Header}</SectionHeader>
-      <Center maxWidth="800px" bg="green.200">
+      <Center
+        maxWidth="800px"
+        alignSelf={"center"}
+        textAlign="center"
+        justifyContent="center"
+        justify="center"
+      >
         <MailchimpSubscribe
           url={""}
           render={({ subscribe, status, message }) => (
