@@ -36,15 +36,7 @@ function index({ data, ...props }) {
       <SectionHeader textAlign="center" mb={4}>
         {data.Header}
       </SectionHeader>
-      <SectionSubHeader
-        textAlign="center"
-        maxW="lg"
-        alignSelf="center"
-        justify="center"
-        mb={8}
-        mx="auto"
-        bg="green.200"
-      >
+      <SectionSubHeader textAlign="center" maxW="lg" mb={8} mx="auto">
         {data.Text}
       </SectionSubHeader>
       <Flex alignSelf={"center"} textAlign="center" justifyContent="center">
