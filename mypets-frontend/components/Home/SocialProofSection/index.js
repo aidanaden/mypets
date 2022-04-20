@@ -25,6 +25,7 @@ export default function index({ ...props }) {
           rounded="full"
           w={{ base: "100%", md: "xs" }}
           leftIcon={<FaInstagram w={16} h={16} />}
+          cursor="pointer"
         />
         <MypetsBtn
           as={"a"}
@@ -32,6 +33,7 @@ export default function index({ ...props }) {
           rounded="full"
           w={{ base: "100%", md: "xs" }}
           leftIcon={<FaFacebook w={16} h={16} />}
+          cursor="pointer"
         />
       </Stack>
     </PageContainer>
