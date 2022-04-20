@@ -44,7 +44,7 @@ function index({ data, ...props }) {
         textAlign="center"
         justifyContent="center"
         w="100%"
-        maxWidth={{ base: "full", md: "xl" }}
+        // maxWidth={{ base: "full", md: "xl" }}
         mx="auto"
         bg="red.100"
       >
