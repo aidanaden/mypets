@@ -1,6 +1,6 @@
 import {
   Input,
-  Stack,
+  Box,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -50,7 +50,7 @@ function index({ data, ...props }) {
           >
             {(props) => (
               <Form>
-                <Stack direction="row" spacing={4}>
+                <Box maxWidth="800px" textAlign="center" alignItems="center">
                   <Field name="email">
                     {({ field, form }) => (
                       <FormControl
@@ -64,11 +64,13 @@ function index({ data, ...props }) {
                       </FormControl>
                     )}
                   </Field>
-                </Stack>
+                </Box>
                 <MypetsBtn
+                  mt={8}
                   btnText="Subscribe"
                   isLoading={status === "sending"}
                   type="submit"
+                  rounded="full"
                 />
               </Form>
             )}
