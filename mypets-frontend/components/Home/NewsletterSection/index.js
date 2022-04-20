@@ -1,6 +1,6 @@
 import {
   Input,
-  Box,
+  Center,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -32,25 +32,25 @@ function index({ data, ...props }) {
   return (
     <PageContainer bg="white" {...props}>
       <SectionHeader textAlign="center">{data.Header}</SectionHeader>
-      <MailchimpSubscribe
-        url={""}
-        render={({ subscribe, status, message }) => (
-          <Formik
-            enableReinitialize
-            initialValues={{ email: "" }}
-            onSubmit={(values, actions) => {
-              subscribe(values);
-              if (status === "success") {
-                subscribeSuccessToast(
-                  "Successfully subscribed to our newsletter!"
-                );
-              }
-            }}
-            validationSchema={emailSchema}
-          >
-            {(props) => (
-              <Form>
-                <Box maxWidth="800px" textAlign="center" alignItems="center">
+      <Center maxWidth="800px">
+        <MailchimpSubscribe
+          url={""}
+          render={({ subscribe, status, message }) => (
+            <Formik
+              enableReinitialize
+              initialValues={{ email: "" }}
+              onSubmit={(values, actions) => {
+                subscribe(values);
+                if (status === "success") {
+                  subscribeSuccessToast(
+                    "Successfully subscribed to our newsletter!"
+                  );
+                }
+              }}
+              validationSchema={emailSchema}
+            >
+              {(props) => (
+                <Form>
                   <Field name="email">
                     {({ field, form }) => (
                       <FormControl
@@ -64,19 +64,19 @@ function index({ data, ...props }) {
                       </FormControl>
                     )}
                   </Field>
-                </Box>
-                <MypetsBtn
-                  mt={8}
-                  btnText="Subscribe"
-                  isLoading={status === "sending"}
-                  type="submit"
-                  rounded="full"
-                />
-              </Form>
-            )}
-          </Formik>
-        )}
-      />
+                  <MypetsBtn
+                    mt={8}
+                    btnText="Subscribe"
+                    isLoading={status === "sending"}
+                    type="submit"
+                    rounded="full"
+                  />
+                </Form>
+              )}
+            </Formik>
+          )}
+        />
+      </Center>
     </PageContainer>
   );
 }
