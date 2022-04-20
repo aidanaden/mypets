@@ -90,6 +90,7 @@ function index({ data, ...props }) {
                       type="submit"
                       rounded="full"
                       w="100%"
+                      maxWidth={{ md: "sm" }}
                     />
                   </Form>
                 )}
