@@ -89,8 +89,7 @@ function index({ data, ...props }) {
                       isLoading={status === "sending"}
                       type="submit"
                       rounded="full"
-                      w="100%"
-                      maxWidth={{ md: "sm" }}
+                      w={{ base: "100%", md: "xs" }}
                     />
                   </Form>
                 )}
