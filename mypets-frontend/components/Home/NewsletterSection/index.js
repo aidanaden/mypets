@@ -1,5 +1,6 @@
 import {
   Input,
+  Stack,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -12,6 +13,7 @@ const Yup = require("yup");
 import PageContainer from "../../Layouts/PageContainer/PageContainer";
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 import EmailInputGroup from "../../Form/EmailInputGroup/EmailInputGroup";
+import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
 
 const emailSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Your email is required"),
