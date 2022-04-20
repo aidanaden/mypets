@@ -33,13 +33,7 @@ function index({ data, ...props }) {
   return (
     <PageContainer bg="white" {...props}>
       <SectionHeader textAlign="center">{data.Header}</SectionHeader>
-      <Flex
-        alignSelf={"center"}
-        textAlign="center"
-        justifyContent="center"
-        justify="center"
-        bg="green.200"
-      >
+      <Flex alignSelf={"center"} textAlign="center" justifyContent="center">
         <MailchimpSubscribe
           url={""}
           render={({ subscribe, status, message }) => (
@@ -72,11 +66,12 @@ function index({ data, ...props }) {
                     )}
                   </Field>
                   <MypetsBtn
-                    mt={8}
+                    mt={4}
                     btnText="Subscribe"
                     isLoading={status === "sending"}
                     type="submit"
                     rounded="full"
+                    w="xl"
                   />
                 </Form>
               )}
