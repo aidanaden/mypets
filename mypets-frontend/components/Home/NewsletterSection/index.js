@@ -55,6 +55,8 @@ function index({ data, ...props }) {
                   subscribeSuccessToast(
                     "Successfully subscribed to our newsletter!"
                   );
+                } else {
+                  console.log("message: ", message);
                 }
               }}
               validationSchema={emailSchema}
