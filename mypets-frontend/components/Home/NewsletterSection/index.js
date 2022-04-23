@@ -51,11 +51,8 @@ function index({ data, ...props }) {
               onSubmit={(values, actions) => {
                 console.log("subscribing...");
                 subscribe(values);
-                if (status === "success") {
-                  subscribeSuccessToast(
-                    "Successfully subscribed to our newsletter!"
-                  );
-                } else {
+                while (status !== "success") {
+                  console.log("status: ", status);
                   console.log("message: ", message);
                 }
               }}
