@@ -49,6 +49,7 @@ function index({ data, ...props }) {
               enableReinitialize
               initialValues={{ email: "" }}
               onSubmit={(values, actions) => {
+                console.log("subscribing...");
                 subscribe(values);
                 if (status === "success") {
                   subscribeSuccessToast(
