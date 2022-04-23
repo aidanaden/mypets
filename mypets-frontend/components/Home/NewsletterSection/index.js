@@ -49,12 +49,8 @@ function index({ data, ...props }) {
               enableReinitialize
               initialValues={{ email: "" }}
               onSubmit={(values, actions) => {
-                console.log("subscribing...");
+                console.log("subscribing with values: ", values);
                 subscribe(values);
-                while (status !== "success") {
-                  console.log("status: ", status);
-                  console.log("message: ", message);
-                }
               }}
               validationSchema={emailSchema}
             >
