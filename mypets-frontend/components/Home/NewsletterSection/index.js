@@ -42,7 +42,7 @@ function index({ data, ...props }) {
       <Flex alignSelf={"center"} textAlign="center" justifyContent="center">
         <MailchimpSubscribe
           url={
-            "https://mypets.us7.list-manage.com/subscribe?u=ab086188fca8162fd4a2768ad&id=4105b76640"
+            "https://mypets.us7.list-manage.com/subscribe/post?u=ab086188fca8162fd4a2768ad&id=4105b76640"
           }
           render={({ subscribe, status, message }) => (
             <Formik
