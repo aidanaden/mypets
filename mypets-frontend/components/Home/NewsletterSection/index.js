@@ -51,11 +51,18 @@ function index({ data, ...props }) {
                       <FormControl
                         isInvalid={form.errors.email && form.touched.email}
                       >
-                        <EmailInputGroup
-                          field={field}
-                          valid={!form.errors.email && form.touched.email}
-                          variant="filled"
-                        />
+                        {status !== "success" && (
+                          <>
+                            <EmailInputGroup
+                              field={field}
+                              valid={!form.errors.email && form.touched.email}
+                              variant="filled"
+                            />
+                            <FormErrorMessage>
+                              {form.errors.email}
+                            </FormErrorMessage>
+                          </>
+                        )}
                         {status === "success" ? (
                           <FormHelperText>{message}</FormHelperText>
                         ) : status === "error" ? (
@@ -63,7 +70,6 @@ function index({ data, ...props }) {
                         ) : (
                           <></>
                         )}
-                        <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
