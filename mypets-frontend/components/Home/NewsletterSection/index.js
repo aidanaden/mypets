@@ -5,7 +5,6 @@ import {
   FormControl,
   FormHelperText,
   FormErrorMessage,
-  useToast,
 } from "@chakra-ui/react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { Formik, Form, Field } from "formik";
@@ -22,15 +21,6 @@ const emailSchema = Yup.object().shape({
 });
 
 function index({ data, ...props }) {
-  const toast = useToast();
-  const subscribeSuccessToast = (text) =>
-    toast({
-      title: text,
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
-
   return (
     <PageContainer bg="white" {...props}>
       <SectionHeader textAlign="center" mb={4}>
@@ -49,8 +39,8 @@ function index({ data, ...props }) {
               enableReinitialize
               initialValues={{ email: "" }}
               onSubmit={(values, actions) => {
-                console.log("subscribing with values: ", values);
                 subscribe({ EMAIL: values.email });
+                actions.resetForm();
               }}
               validationSchema={emailSchema}
             >
