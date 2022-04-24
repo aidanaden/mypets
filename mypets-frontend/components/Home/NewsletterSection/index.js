@@ -73,14 +73,16 @@ function index({ data, ...props }) {
                       </FormControl>
                     )}
                   </Field>
-                  <MypetsBtn
-                    mt={4}
-                    btnText="Subscribe"
-                    isLoading={status === "sending"}
-                    type="submit"
-                    rounded="full"
-                    w={{ base: "full", md: "md" }}
-                  />
+                  {status !== "success" && (
+                    <MypetsBtn
+                      mt={4}
+                      btnText="Subscribe"
+                      isLoading={status === "sending"}
+                      type="submit"
+                      rounded="full"
+                      w={{ base: "full", md: "md" }}
+                    />
+                  )}
                 </Form>
               )}
             </Formik>
