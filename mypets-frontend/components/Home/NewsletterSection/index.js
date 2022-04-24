@@ -56,8 +56,12 @@ function index({ data, ...props }) {
                           valid={!form.errors.email && form.touched.email}
                           variant="filled"
                         />
-                        {status === "success" && (
+                        {status === "success" ? (
                           <FormHelperText>{message}</FormHelperText>
+                        ) : status === "error" ? (
+                          <FormErrorMessage>{message}</FormErrorMessage>
+                        ) : (
+                          <></>
                         )}
                         <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                       </FormControl>
