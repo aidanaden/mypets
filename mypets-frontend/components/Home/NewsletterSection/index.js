@@ -3,7 +3,7 @@ import {
   Box,
   Flex,
   FormControl,
-  FormLabel,
+  FormHelperText,
   FormErrorMessage,
   useToast,
 } from "@chakra-ui/react";
