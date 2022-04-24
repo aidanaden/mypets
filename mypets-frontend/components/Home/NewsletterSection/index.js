@@ -50,7 +50,7 @@ function index({ data, ...props }) {
               initialValues={{ email: "" }}
               onSubmit={(values, actions) => {
                 console.log("subscribing with values: ", values);
-                subscribe(values);
+                subscribe({ EMAIL: values.email });
               }}
               validationSchema={emailSchema}
             >
