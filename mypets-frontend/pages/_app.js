@@ -12,7 +12,7 @@ import { AuthProvider } from "../context/AuthContext";
 import Fonts from "../styles/fonts";
 // import { GTMPageView } from '../utils/gtm'
 
-import Footer from "../components/Footer/Footer";
+import Footer from "../components/Layouts/Footer/Footer";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 
 function MyApp({ Component, pageProps }) {

@@ -1,16 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
-import { Box, Spacer, Stack, useToast } from "@chakra-ui/react";
+import { Box, Stack, useToast } from "@chakra-ui/react";
 import Head from "next/head";
 
-import PageContainer from "../components/PageContainer/PageContainer";
-import AnnouncementBanner from "../components/AnnouncementBanner/AnnouncementBanner";
-import Sidebar from "../components/Sidebar/Sidebar";
-import HomeBannerSwiper from "../components/HomeBannerSwiper/HomeBannerSwiper";
-import SortMenu from "../components/SortMenu/SortMenu";
-import MerchantSectionList from "../components/MerchantSectionList/MerchantSectionList";
-import ProductSectionList from "../components/ProductSectionList/ProductSectionList";
-import CategoryList from "../components/CategoryList/CategoryList";
+import PageContainer from "../components/Layouts/PageContainer/PageContainer";
+import AnnouncementBanner from "../components/Layouts/AnnouncementBanner/AnnouncementBanner";
+import Sidebar from "../components/Layouts/Sidebar/Sidebar";
+import HomeBannerSwiper from "../components/Home/HomeBannerSwiper/HomeBannerSwiper";
+import MerchantSectionList from "../components/Merchant/MerchantSectionList/MerchantSectionList";
+import ProductSectionList from "../components/Product/ProductSectionList/ProductSectionList";
+import CategoryList from "../components/Home/CategoryList/CategoryList";
 import {
   API_HOME_URL,
   API_PRODUCTS_URL,
@@ -18,8 +17,11 @@ import {
   getAnimals,
   getCategories,
 } from "../utils/urls";
-import SectionHeader from "../components/SectionHeader/SectionHeader";
-import AnimalList from "../components/AnimalList/AnimalList";
+import AnimalCategorySection from "../components/Home/AnimalCategorySection";
+import BenefitsSection from "../components/Home/BenefitsSection";
+import NewsletterSection from "../components/Home/NewsletterSection";
+import SocialProofSection from "../components/Home/SocialProofSection";
+import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 
 export default function Home({
   home_data,
@@ -50,7 +52,8 @@ export default function Home({
       isClosable: true,
     });
 
-  console.log("home info data from backend: ", home_data.Banners);
+  // console.log("home info data from backend: ", home_data.Banners);
+  console.log("page animals: ", pageAnimals);
 
   return (
     <>
@@ -58,34 +61,24 @@ export default function Home({
         <title>{home_data.meta_title}</title>
         <meta name="description" content={home_data.meta_description} />
       </Head>
-      <Box>
+      <BaseLayout>
         <AnnouncementBanner text={home_data.banner_text} />
         <Sidebar categories={pageCategories} />
-        <PageContainer>
-          <CategoryList
+        <PageContainer pb={{ base: 8, md: 12 }}>
+          {/* <CategoryList
             display={{ base: "none", md: "flex" }}
             categories={pageCategories}
             setSelectedCategory={setCategorySelected}
-          />
+          /> */}
           {/* <Carousel /> */}
           <HomeBannerSwiper banners={home_data.Banners} />
-          <Stack direction="column" spacing={{ base: 8, lg: 12 }}>
+          <Stack direction="column" spacing={{ base: 10, md: 14 }}>
+            <AnimalCategorySection
+              pageAnimals={pageAnimals}
+              setSelectedAnimal={setSelectedAnimal}
+              setSortMethod={setSortMethod}
+            />
             <MerchantSectionList merchants={merchants} />
-            <Stack
-              direction={{ base: "column", md: "row" }}
-              align="stretch"
-              justify="space-between"
-            >
-              <Box mb={{ base: 2, md: 0 }}>
-                <SectionHeader>Animal</SectionHeader>
-                <AnimalList
-                  animals={pageAnimals}
-                  setSelectedAnimal={setSelectedAnimal}
-                />
-              </Box>
-              <Spacer />
-              <SortMenu setSortMethod={setSortMethod} />
-            </Stack>
             <ProductSectionList
               products={pageProducts}
               categories={pageCategories}
@@ -95,7 +88,10 @@ export default function Home({
             />
           </Stack>
         </PageContainer>
-      </Box>
+        <BenefitsSection benefits={home_data.Benefits} />
+        <NewsletterSection data={home_data.Newsletter} />
+        <SocialProofSection />
+      </BaseLayout>
     </>
   );
 }

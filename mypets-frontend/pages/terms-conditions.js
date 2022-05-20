@@ -1,13 +1,13 @@
 import { Box, Text } from "@chakra-ui/react";
 import Head from "next/head";
 
-import PageContainer from "../components/PageContainer/PageContainer";
-import Sidebar from "../components/Sidebar/Sidebar";
-import Footer from "../components/Footer/Footer";
+import PageContainer from "../components/Layouts/PageContainer/PageContainer";
+import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import { API_CATEGORIES_URL, API_TERMS_URL } from "../utils/urls";
-import SectionHeader from "../components/SectionHeader/SectionHeader";
-import ParagraphSection from "../components/ParagraphSection/ParagraphSection";
-import SectionSubHeader from "../components/SectionSubHeader/SectionSubHeader";
+import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
+import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSection";
+import SectionSubHeader from "../components/Layouts/SectionSubHeader/SectionSubHeader";
+import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 
 export default function terms({ categories, terms_data }) {
   return (
@@ -16,7 +16,7 @@ export default function terms({ categories, terms_data }) {
         <title>{terms_data.meta_title}</title>
         <meta name="description" content={terms_data.meta_description} />
       </Head>
-      <Box minH="100vh">
+      <BaseLayout minH="100vh">
         <Sidebar categories={categories} />
         <PageContainer>
           <SectionHeader>Terms & Conditions</SectionHeader>
@@ -306,7 +306,7 @@ export default function terms({ categories, terms_data }) {
             mb={{ base: 3 }}
           />
         </PageContainer>
-      </Box>
+      </BaseLayout>
     </>
   );
 }

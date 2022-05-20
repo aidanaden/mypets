@@ -1,13 +1,13 @@
 import { Box, Text, Spacer } from "@chakra-ui/react";
 import Head from "next/head";
 
-import PageContainer from "../components/PageContainer/PageContainer";
-import Sidebar from "../components/Sidebar/Sidebar";
-import Footer from "../components/Footer/Footer";
+import PageContainer from "../components/Layouts/PageContainer/PageContainer";
+import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import { API_CATEGORIES_URL, API_CONTACT_URL } from "../utils/urls";
-import SectionHeader from "../components/SectionHeader/SectionHeader";
-import ParagraphSection from "../components/ParagraphSection/ParagraphSection";
-import SectionSubHeader from "../components/SectionSubHeader/SectionSubHeader";
+import SectionHeader from "../components/Layouts/SectionHeader/SectionHeader";
+import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSection";
+import SectionSubHeader from "../components/Layouts/SectionSubHeader/SectionSubHeader";
+import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 
 export default function contact({ categories, contact_data }) {
   console.log("contact data: ", contact_data);
@@ -32,7 +32,7 @@ export default function contact({ categories, contact_data }) {
         <title>{contact_data.meta_title}</title>
         <meta name="description" content={contact_data.meta_description} />
       </Head>
-      <Box minH="100vh">
+      <BaseLayout minH="100vh">
         <Sidebar categories={categories} />
         <PageContainer>
           <SectionHeader mb={{ base: 2, md: 4 }}>Contact Us</SectionHeader>
@@ -49,7 +49,7 @@ export default function contact({ categories, contact_data }) {
             text="• Phone/WhatsApp: 9126 4942 (anytime)"
           />
         </PageContainer>
-      </Box>
+      </BaseLayout>
     </>
   );
 }

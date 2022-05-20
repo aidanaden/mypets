@@ -52,7 +52,7 @@ function LoginSocialBtnGroup() {
             Facebook
           </Button>
         </NextLink>
-        {/* <NextLink href={`${API_URL}/connect/google`}>
+        <NextLink href={`${API_URL}/connect/google`}>
           <Button
             w="100%"
             colorScheme="blackAlpha"
@@ -63,7 +63,7 @@ function LoginSocialBtnGroup() {
           >
             Google
           </Button>
-        </NextLink> */}
+        </NextLink>
       </ButtonGroup>
     </>
   );

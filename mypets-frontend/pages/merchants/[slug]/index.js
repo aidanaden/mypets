@@ -3,16 +3,15 @@ import lodash from "lodash";
 import { Box } from "@chakra-ui/react";
 import Head from "next/head";
 
-import AnnouncementBanner from "../../../components/AnnouncementBanner/AnnouncementBanner";
+import AnnouncementBanner from "../../../components/Layouts/AnnouncementBanner/AnnouncementBanner";
 import { API_HOME_URL, API_MERCHANTS_URL } from "../../../utils/urls";
-import Sidebar from "../../../components/Sidebar/Sidebar";
-import Carousel from "../../../components/Carousel/Carousel";
-import Footer from "../../../components/Footer/Footer";
-import BackBtn from "../../../components/BackBtn/BackBtn";
-import MerchantTitle from "../../../components/MerchantTitle/MerchantTitle";
-import MerchantProductReviewTab from "../../../components/MerchantProductReviewTab/MerchantProductReviewTab";
-import MerchantBannerSwiper from "../../../components/MerchantBannerSwiper/MerchantBannerSwiper";
-import PageContainer from "../../../components/PageContainer/PageContainer";
+import Sidebar from "../../../components/Layouts/Sidebar/Sidebar";
+import BackBtn from "../../../components/Common/BackBtn/BackBtn";
+import MerchantTitle from "../../../components/Merchant/MerchantTitle/MerchantTitle";
+import MerchantProductReviewTab from "../../../components/Merchant/MerchantProductReviewTab/MerchantProductReviewTab";
+import MerchantBannerSwiper from "../../../components/Merchant/MerchantBannerSwiper/MerchantBannerSwiper";
+import PageContainer from "../../../components/Layouts/PageContainer/PageContainer";
+import BaseLayout from "../../../components/Layouts/BaseLayout/BaseLayout";
 
 export default function index({ merchant, bannerText }) {
   const merchantCategories = Object.keys(
@@ -24,7 +23,7 @@ export default function index({ merchant, bannerText }) {
         <title>{merchant.meta_title}</title>
         <meta name="description" content={merchant.meta_description} />
       </Head>
-      <Box>
+      <BaseLayout>
         <AnnouncementBanner text={bannerText} />
         <Sidebar />
         <PageContainer>
@@ -42,7 +41,7 @@ export default function index({ merchant, bannerText }) {
             merchantReviews={merchant.merchant_reviews}
           />
         </PageContainer>
-      </Box>
+      </BaseLayout>
     </>
   );
 }
