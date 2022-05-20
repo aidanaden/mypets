@@ -151,10 +151,7 @@ function ProductDetailSection({ product }) {
   };
 
   const variantSelectOnChange = (e) => {
-    console.log("on change target value: ", e.target.value);
-    console.log("type of on change target value: ", typeof e.target.value);
     const foundVariant = getVariantFromVariantValue(e.target.value);
-    console.log("found variant: ", foundVariant);
     setVariant(foundVariant);
 
     var updatedPrice = 0;
@@ -169,7 +166,6 @@ function ProductDetailSection({ product }) {
   };
 
   useEffect(() => {
-    console.log("product value: ", product);
     setVariant(product.variants[0]);
     const variantOriginalPrice = product.variants[0].price;
     const variantDiscountPrice = product.variants[0].discounted_price;
