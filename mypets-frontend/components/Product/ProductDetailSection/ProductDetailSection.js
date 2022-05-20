@@ -166,6 +166,7 @@ function ProductDetailSection({ product }) {
   };
 
   useEffect(() => {
+    console.log("product value: ", product);
     setVariant(product.variants[0]);
     const variantOriginalPrice = product.variants[0].price;
     const variantDiscountPrice = product.variants[0].discounted_price;
