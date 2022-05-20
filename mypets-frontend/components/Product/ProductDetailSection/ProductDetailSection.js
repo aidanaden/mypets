@@ -151,6 +151,7 @@ function ProductDetailSection({ product }) {
 
   const variantSelectOnChange = (e) => {
     const foundVariant = getVariantFromVariantValue(e.target.value);
+    console.log("found variant: ", foundVariant);
     setVariant(foundVariant);
 
     var updatedPrice = 0;

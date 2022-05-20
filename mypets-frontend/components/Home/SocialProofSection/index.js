@@ -24,7 +24,7 @@ export default function index({ ...props }) {
           btnText="@mypets.sg"
           rounded="full"
           w={{ base: "100%", md: "xs" }}
-          leftIcon={<FaInstagram w={16} h={16} />}
+          leftIcon={<FaFacebook w={16} h={16} />}
           cursor="pointer"
           href="https://www.facebook.com/mypets.sg/"
         />
@@ -33,7 +33,7 @@ export default function index({ ...props }) {
           btnText="Mypets"
           rounded="full"
           w={{ base: "100%", md: "xs" }}
-          leftIcon={<FaFacebook w={16} h={16} />}
+          leftIcon={<FaInstagram w={16} h={16} />}
           cursor="pointer"
           href="https://www.instagram.com/mypets.sg/"
         />
