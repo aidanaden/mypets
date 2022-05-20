@@ -193,7 +193,7 @@ function ProductDetailSection({ product }) {
       <SRLWrapper>
         <Box>
           <Center
-            boxSize={{ base: "100%", md: "500px" }}
+            boxSize={{ base: "100%", md: "400px" }}
             css={{
               cursor: "pointer",
             }}
