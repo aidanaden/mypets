@@ -185,7 +185,7 @@ function ProductDetailSection({ product }) {
     <Stack
       direction={{ base: "column", md: "row" }}
       justifyContent="space-evenly"
-      spacing={{ base: 8, md: "initial" }}
+      spacing={{ base: 8, md: 4 }}
       py={12}
       px={8}
       // bg='red.100'
