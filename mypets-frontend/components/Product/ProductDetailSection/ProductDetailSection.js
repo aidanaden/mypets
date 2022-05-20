@@ -87,14 +87,15 @@ function ProductDetailSection({ product }) {
   const { user, updateCart } = useContext(AuthContext);
 
   const getVariantFromVariantValue = (variantValue) => {
-    if (typeof variantValue === "string")
+    if (!variant.variant_type_is_float) {
       return product.variants.filter(
         (variant) => variant.variant_type_str == variantValue
       )[0];
-    else
+    } else {
       return product.variants.filter(
-        (variant) => parseFloat(variant.variant_type_float) == variantValue
+        (variant) => variant.variant_type_float == parseFloat(variantValue)
       )[0];
+    }
   };
 
   const addQuantity = () => {
