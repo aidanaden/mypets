@@ -191,7 +191,7 @@ function ProductDetailSection({ product }) {
       // bg='red.100'
     >
       <SRLWrapper>
-        <Box>
+        <Box w={{ base: "100%", md: "400px" }}>
           <Center
             boxSize={{ base: "100%", md: "400px" }}
             css={{
