@@ -87,6 +87,7 @@ function ProductDetailSection({ product }) {
   const { user, updateCart } = useContext(AuthContext);
 
   const getVariantFromVariantValue = (variantValue) => {
+    console.log("dropdown target value: ", variantValue);
     if (typeof variantValue === "string")
       return product.variants.filter(
         (variant) => variant.variant_type_str == variantValue
