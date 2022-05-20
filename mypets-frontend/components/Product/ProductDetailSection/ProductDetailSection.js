@@ -87,7 +87,6 @@ function ProductDetailSection({ product }) {
   const { user, updateCart } = useContext(AuthContext);
 
   const getVariantFromVariantValue = (variantValue) => {
-    console.log("dropdown target value: ", variantValue);
     if (typeof variantValue === "string")
       return product.variants.filter(
         (variant) => variant.variant_type_str == variantValue
@@ -151,6 +150,8 @@ function ProductDetailSection({ product }) {
   };
 
   const variantSelectOnChange = (e) => {
+    console.log("on change target value: ", e.target.value);
+    console.log("type of on change target value: ", typeof e.target.value);
     const foundVariant = getVariantFromVariantValue(e.target.value);
     console.log("found variant: ", foundVariant);
     setVariant(foundVariant);
