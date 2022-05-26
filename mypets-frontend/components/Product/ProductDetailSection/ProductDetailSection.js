@@ -191,7 +191,7 @@ function ProductDetailSection({ product }) {
       // bg='red.100'
     >
       <SRLWrapper>
-        <Box w={{ base: "100%", md: "400px" }}>
+        <Stack w={{ base: "100%", md: "400px" }} direction="column" spacing={4}>
           <Center
             boxSize={{ base: "100%", md: "400px" }}
             css={{
@@ -207,7 +207,7 @@ function ProductDetailSection({ product }) {
             />
           </Center>
           <ProductImageRow images={product.images} />
-        </Box>
+        </Stack>
       </SRLWrapper>
       <Flex
         direction="column"
