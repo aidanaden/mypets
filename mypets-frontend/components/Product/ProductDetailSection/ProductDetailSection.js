@@ -192,12 +192,12 @@ function ProductDetailSection({ product }) {
     >
       <SRLWrapper>
         <Stack
-          w={{ base: "100%", md: "400px" }}
+          w={{ base: "100%", lg: "400px" }}
           direction="column"
           spacing={{ base: 12 }}
         >
           <Center
-            boxSize={{ base: "100%", md: "400px" }}
+            boxSize={{ base: "100%", lg: "400px" }}
             css={{
               cursor: "pointer",
             }}
