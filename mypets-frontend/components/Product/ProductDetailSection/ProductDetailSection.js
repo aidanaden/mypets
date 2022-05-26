@@ -183,7 +183,7 @@ function ProductDetailSection({ product }) {
 
   return (
     <Stack
-      direction={{ base: "column", md: "row" }}
+      direction={{ base: "column", lg: "row" }}
       justifyContent="space-evenly"
       spacing={{ base: 8 }}
       py={12}
