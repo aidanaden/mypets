@@ -185,7 +185,7 @@ function ProductDetailSection({ product }) {
     <Stack
       direction={{ base: "column", md: "row" }}
       justifyContent="space-evenly"
-      spacing={{ base: 8, md: 4 }}
+      spacing={{ base: 8 }}
       py={12}
       px={8}
       // bg='red.100'
@@ -194,7 +194,7 @@ function ProductDetailSection({ product }) {
         <Stack
           w={{ base: "100%", md: "400px" }}
           direction="column"
-          spacing={{ base: 4, md: 12 }}
+          spacing={{ base: 12 }}
         >
           <Center
             boxSize={{ base: "100%", md: "400px" }}
