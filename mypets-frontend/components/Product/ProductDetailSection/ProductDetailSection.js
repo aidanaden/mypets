@@ -191,7 +191,11 @@ function ProductDetailSection({ product }) {
       // bg='red.100'
     >
       <SRLWrapper>
-        <Stack w={{ base: "100%", md: "400px" }} direction="column" spacing={4}>
+        <Stack
+          w={{ base: "100%", md: "400px" }}
+          direction="column"
+          spacing={{ base: 4, md: 12 }}
+        >
           <Center
             boxSize={{ base: "100%", md: "400px" }}
             css={{
