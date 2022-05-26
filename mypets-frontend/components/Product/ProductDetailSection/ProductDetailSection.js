@@ -183,17 +183,21 @@ function ProductDetailSection({ product }) {
 
   return (
     <Stack
-      direction={{ base: "column", md: "row" }}
+      direction={{ base: "column", lg: "row" }}
       justifyContent="space-evenly"
-      spacing={{ base: 8, md: 4 }}
+      spacing={{ base: 8 }}
       py={12}
       px={8}
       // bg='red.100'
     >
       <SRLWrapper>
-        <Box w={{ base: "100%", md: "400px" }}>
+        <Stack
+          w={{ base: "100%", lg: "400px" }}
+          direction="column"
+          spacing={{ base: 12 }}
+        >
           <Center
-            boxSize={{ base: "100%", md: "400px" }}
+            boxSize={{ base: "100%", lg: "400px" }}
             css={{
               cursor: "pointer",
             }}
@@ -207,7 +211,7 @@ function ProductDetailSection({ product }) {
             />
           </Center>
           <ProductImageRow images={product.images} />
-        </Box>
+        </Stack>
       </SRLWrapper>
       <Flex
         direction="column"
