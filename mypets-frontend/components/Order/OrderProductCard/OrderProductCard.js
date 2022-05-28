@@ -60,7 +60,6 @@ export default function OrderProductCard({ order_products }) {
           quantity: order_product.quantity,
           total_price: order_product.total_price,
         };
-        console.log("adding to cart: ", newOrderProduct);
         updateCart(newOrderProduct);
       });
       succesToast("Product(s) added to cart");
