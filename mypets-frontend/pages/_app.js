@@ -12,6 +12,9 @@ import { AuthProvider } from "../context/AuthContext";
 import Fonts from "../styles/fonts";
 // import { GTMPageView } from '../utils/gtm'
 
+import AnnouncementBanner from "../components/Layouts/AnnouncementBanner/AnnouncementBanner";
+import Sidebar from "../components/Layouts/Sidebar/Sidebar";
+import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 import Footer from "../components/Layouts/Footer/Footer";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 
