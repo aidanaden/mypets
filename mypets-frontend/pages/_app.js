@@ -16,7 +16,7 @@ import Footer from "../components/Layouts/Footer/Footer";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 
 function MyApp({ Component, pageProps }) {
-  const [bannerText, setBannerText] = useState('')
+  const [bannerText, setBannerText] = useState("");
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -54,11 +54,11 @@ function MyApp({ Component, pageProps }) {
       });
   }, [Router.events]);
 
-  useEffect(() => {
-const home_res = await fetch(`${API_HOME_URL}`);
+  useEffect(async () => {
+    const home_res = await fetch(`${API_HOME_URL}`);
     const home_data = await home_res.json();
-    setBannerText(home_data.banner_text)
-  }, [])
+    setBannerText(home_data.banner_text);
+  }, []);
 
   return (
     <SimpleReactLightbox>
