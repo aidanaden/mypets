@@ -40,6 +40,7 @@ function NavbarCartModalBtn() {
   const [numOrderProducts, setNumOrderProducts] = useState(0);
   const [groupedProducts, setGroupedProducts] = useState(null);
   const [productNames, setProductNames] = useState(null);
+  const minimumOrderPrice = 10;
 
   const minimumOrderToast = () =>
     toast({
@@ -60,7 +61,7 @@ function NavbarCartModalBtn() {
     });
 
   const handleCheckout = async () => {
-    if (totalPrice < 15) {
+    if (totalPrice < minimumOrderPrice) {
       minimumOrderToast();
     } else {
       const stripe = await stripePromise;
@@ -138,8 +139,9 @@ function NavbarCartModalBtn() {
                 </Box>
                 <Box flex="1" pb={{ base: 4, lg: 4 }}>
                   <Center rounded="lg" p={{ base: 5 }} bg="gray.200">
-                    With every purchase, we will donate 5% of the total receipt
-                    order (exclu. Delivery fees) to local pet communities
+                    With every purchase, we will donate $1 from the total
+                    receipt order (exclu. Delivery fees) to local pet
+                    communities
                   </Center>
                   <CartPriceBreakdownList
                     groupedProducts={groupedProducts}

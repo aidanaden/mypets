@@ -94,7 +94,7 @@ function OrderPriceBreakdownList({
         )}
         <BreakdownRow
           text="Your contribution"
-          value={order.contribution_amount.toFixed(2)}
+          value={order.contribution_amount}
         />
         <Box fontWeight="bold" fontSize="xl" textAlign="right" mt={2}>
           ${order.final_price.toFixed(2)}
