@@ -5,9 +5,9 @@ const finder = require("strapi-utils/lib/finder");
 const stripe = require("stripe")(process.env.STRIPE_SK);
 const nanoid = customAlphabet("0123456789ABCDEF", 10);
 const stripe_free_shipping_id = "shr_1Js6BxJNGU0rJw40fwzNOwqw";
-const stripe_paid_shipping_id = "shr_1KRH5iJNGU0rJw40Crb4vtSc";
+const stripe_paid_shipping_id = "shr_1L3jeoJNGU0rJw40MbuvTxkD";
 const stripe_tax_id = "txr_1JcuChJNGU0rJw40EKv3YAEt";
-const order_minimum_free_shipping = 39.9;
+const order_minimum_free_shipping = 45;
 
 /**
  * Return dollar amount in cents
@@ -188,7 +188,7 @@ module.exports = {
       const sessionShippingValue = session.total_details.amount_shipping / 100;
       //const sessionTaxValue = session.total_details.amount_tax / 100
       const sessionTotal = session.amount_total / 100;
-      const contributionAmount = (sessionTotal - sessionShippingValue) * 0.05;
+      const contributionAmount = 1;
 
       // create order
       const newOrder = await strapi.services.order.create({

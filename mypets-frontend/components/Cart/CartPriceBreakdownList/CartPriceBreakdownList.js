@@ -38,7 +38,6 @@ export default function CartPriceBreakdownList({
   const deliveryFee =
     totalPrice >= MINIMUM_ORDER_FREE_DELIVERY ? 0.0 : DELIVERY_FEE;
   const finalPrice = 1.0 * (totalPrice + gstPrice + deliveryFee);
-  const contributionAmt = CONTRIBUTION_AMT * (totalPrice + gstPrice);
 
   const productTotalQuantity = (order_products) => {
     let totalQuantity = 0;
@@ -92,7 +91,7 @@ export default function CartPriceBreakdownList({
         <SubtotalRow
           highlight
           text="Your contributions (included)"
-          value={contributionAmt.toFixed(2)}
+          value={CONTRIBUTION_AMT}
         />
       </Stack>
       <Box fontWeight="bold" fontSize="xl" textAlign="right" mt={4}>
