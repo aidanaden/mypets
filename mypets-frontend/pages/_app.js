@@ -16,6 +16,7 @@ import Footer from "../components/Layouts/Footer/Footer";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 
 function MyApp({ Component, pageProps }) {
+  const [bannerText, setBannerText] = useState('')
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -53,6 +54,12 @@ function MyApp({ Component, pageProps }) {
       });
   }, [Router.events]);
 
+  useEffect(() => {
+const home_res = await fetch(`${API_HOME_URL}`);
+    const home_data = await home_res.json();
+    setBannerText(home_data.banner_text)
+  }, [])
+
   return (
     <SimpleReactLightbox>
       <AuthProvider>
@@ -65,7 +72,11 @@ function MyApp({ Component, pageProps }) {
               content="7eb3uouy35ihgi6xio3u93vnhznvdt"
             />
           </Head>
-          <Component {...pageProps} />
+          <BaseLayout minH="100vh">
+            <AnnouncementBanner text={bannerText} />
+            <Sidebar />
+            <Component {...pageProps} />
+          </BaseLayout>
           <Footer />
           <MessengerCustomerChat
             pageId="105638824710827"

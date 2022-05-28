@@ -23,7 +23,7 @@ import AuthContext from "../../../context/AuthContext";
 import LoginModalBtn from "./LoginModalBtn/LoginModalBtn";
 // import SignupModalBtn from "../../Form/SignupModalBtn/SignupModalBtn";
 
-export default function Sidebar({ categories }) {
+export default function Sidebar() {
   const sidebar = useDisclosure();
   const integrations = useDisclosure();
   const { user, logoutUser } = useContext(AuthContext);
