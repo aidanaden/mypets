@@ -17,9 +17,8 @@ import {
   imageToUrl,
 } from "../../../utils/urls";
 import PageContainer from "../../../components/Layouts/PageContainer/PageContainer";
-import BaseLayout from "../../../components/Layouts/BaseLayout/BaseLayout";
 
-export default function Product({ bannerTitle, product, otherProducts }) {
+export default function Product({ product, otherProducts }) {
   const { asPath } = useRouter();
   return (
     <>
@@ -49,45 +48,41 @@ export default function Product({ bannerTitle, product, otherProducts }) {
         />
         <meta property="product:price:currency" content="SGD" />
       </Head>
-      <BaseLayout>
-        <AnnouncementBanner text={bannerTitle} />
-        <Sidebar />
-        <PageContainer>
-          <BackBtn />
-          <Grid
-            templateRows="min-content"
-            templateColumns="repeat(3, 1fr)"
-            gap={4}
-            mb={{ base: 8, md: 12 }}
+      <PageContainer>
+        <BackBtn />
+        <Grid
+          templateRows="min-content"
+          templateColumns="repeat(3, 1fr)"
+          gap={4}
+          mb={{ base: 8, md: 12 }}
+        >
+          <GridItem colSpan={3} shadow="sm" borderWidth="1px" rounded="lg">
+            <ProductDetailSection product={product} />
+          </GridItem>
+          <GridItem
+            colSpan={{ base: 3, md: 2 }}
+            shadow="sm"
+            borderWidth="1px"
+            rounded="lg"
           >
-            <GridItem colSpan={3} shadow="sm" borderWidth="1px" rounded="lg">
-              <ProductDetailSection product={product} />
-            </GridItem>
-            <GridItem
-              colSpan={{ base: 3, md: 2 }}
-              shadow="sm"
-              borderWidth="1px"
-              rounded="lg"
-            >
-              <ProductDescriptionSection product={product} />
-            </GridItem>
-            <GridItem
-              colSpan={{ base: 3, md: 1 }}
-              shadow="sm"
-              borderWidth="1px"
-              rounded="lg"
-            >
-              <ProductReviewSection reviews={product.reviews} />
-            </GridItem>
-          </Grid>
-          <ProductList
-            heading="Suggested products"
-            products={otherProducts}
-            selectedAnimal=""
-            maxRows={2}
-          />
-        </PageContainer>
-      </BaseLayout>
+            <ProductDescriptionSection product={product} />
+          </GridItem>
+          <GridItem
+            colSpan={{ base: 3, md: 1 }}
+            shadow="sm"
+            borderWidth="1px"
+            rounded="lg"
+          >
+            <ProductReviewSection reviews={product.reviews} />
+          </GridItem>
+        </Grid>
+        <ProductList
+          heading="Suggested products"
+          products={otherProducts}
+          selectedAnimal=""
+          maxRows={2}
+        />
+      </PageContainer>
     </>
   );
 }

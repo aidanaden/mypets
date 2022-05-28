@@ -61,37 +61,33 @@ export default function Home({
         <title>{home_data.meta_title}</title>
         <meta name="description" content={home_data.meta_description} />
       </Head>
-      <BaseLayout>
-        <AnnouncementBanner text={home_data.banner_text} />
-        <Sidebar categories={pageCategories} />
-        <PageContainer pb={{ base: 8, md: 12 }}>
-          {/* <CategoryList
+      <PageContainer pb={{ base: 8, md: 12 }}>
+        {/* <CategoryList
             display={{ base: "none", md: "flex" }}
             categories={pageCategories}
             setSelectedCategory={setCategorySelected}
           /> */}
-          {/* <Carousel /> */}
-          <HomeBannerSwiper banners={home_data.Banners} />
-          <Stack direction="column" spacing={{ base: 10, md: 14 }}>
-            <AnimalCategorySection
-              pageAnimals={pageAnimals}
-              setSelectedAnimal={setSelectedAnimal}
-              setSortMethod={setSortMethod}
-            />
-            <MerchantSectionList merchants={merchants} />
-            <ProductSectionList
-              products={pageProducts}
-              categories={pageCategories}
-              sortMethod={sortMethod}
-              setSortMethod={setSortMethod}
-              selectedAnimal={selectedAnimal}
-            />
-          </Stack>
-        </PageContainer>
-        <BenefitsSection benefits={home_data.Benefits} />
-        <NewsletterSection data={home_data.Newsletter} />
-        <SocialProofSection />
-      </BaseLayout>
+        {/* <Carousel /> */}
+        <HomeBannerSwiper banners={home_data.Banners} />
+        <Stack direction="column" spacing={{ base: 10, md: 14 }}>
+          <AnimalCategorySection
+            pageAnimals={pageAnimals}
+            setSelectedAnimal={setSelectedAnimal}
+            setSortMethod={setSortMethod}
+          />
+          <MerchantSectionList merchants={merchants} />
+          <ProductSectionList
+            products={pageProducts}
+            categories={pageCategories}
+            sortMethod={sortMethod}
+            setSortMethod={setSortMethod}
+            selectedAnimal={selectedAnimal}
+          />
+        </Stack>
+      </PageContainer>
+      <BenefitsSection benefits={home_data.Benefits} />
+      <NewsletterSection data={home_data.Newsletter} />
+      <SocialProofSection />
     </>
   );
 }

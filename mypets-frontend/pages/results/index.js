@@ -102,7 +102,7 @@ const getMerchantDataFromNames = (names, merchants) => {
   return foundMerchants;
 };
 
-export default function index({ bannerText, products, animals, merchants }) {
+export default function index({ products, animals, merchants }) {
   const [pageProducts, setPageProducts] = useState([]);
   const [pageMerchants, setPageMerchants] = useState([]);
   const [selectedMerchants, setSelectedMerchants] = useState([]);
@@ -142,56 +142,50 @@ export default function index({ bannerText, products, animals, merchants }) {
   }, [router.query]);
 
   return (
-    <BaseLayout minHeight="100vh">
-      <AnnouncementBanner text={bannerText} />
-      <Sidebar />
-      <PageContainer>
-        <SectionHeader>
-          Showing results for
-          <chakra.span textColor="mypets.400">{` "${searchText}"`}</chakra.span>
-        </SectionHeader>
-        {pageProducts.length > 0 && (
-          <Stack direction={{ base: "column" }} spacing={{ base: 8 }} mt={2}>
-            <Stack
-              direction={{ base: "column", md: "row" }}
-              spacing={{ base: 2, md: 0 }}
-              justify="space-between"
-            >
-              <AnimalList
-                animals={animals}
-                setSelectedAnimal={setSelectedAnimal}
-              />
-              <Spacer />
-              <SortMenu setSortMethod={setSortMethod} />
-            </Stack>
-            <Stack direction="column" w="100%" spacing={{ base: 12 }}>
-              <MerchantChecklist
-                pageMerchants={pageMerchants}
-                selectedMerchants={selectedMerchants}
-                setSelectedMerchants={setSelectedMerchants}
-              />
-              <MerchantSectionList
-                merchants={getMerchantDataFromNames(pageMerchants, merchants)}
-              />
-              <ProductList
-                heading="Suggested products"
-                products={pageProducts}
-                sortMethod={sortMethod}
-                selectedAnimal={selectedAnimal}
-                selectedMerchants={selectedMerchants}
-                maxRows={0}
-              />
-            </Stack>
+    <PageContainer>
+      <SectionHeader>
+        Showing results for
+        <chakra.span textColor="mypets.400">{` "${searchText}"`}</chakra.span>
+      </SectionHeader>
+      {pageProducts.length > 0 && (
+        <Stack direction={{ base: "column" }} spacing={{ base: 8 }} mt={2}>
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 2, md: 0 }}
+            justify="space-between"
+          >
+            <AnimalList
+              animals={animals}
+              setSelectedAnimal={setSelectedAnimal}
+            />
+            <Spacer />
+            <SortMenu setSortMethod={setSortMethod} />
           </Stack>
-        )}
-      </PageContainer>
-    </BaseLayout>
+          <Stack direction="column" w="100%" spacing={{ base: 12 }}>
+            <MerchantChecklist
+              pageMerchants={pageMerchants}
+              selectedMerchants={selectedMerchants}
+              setSelectedMerchants={setSelectedMerchants}
+            />
+            <MerchantSectionList
+              merchants={getMerchantDataFromNames(pageMerchants, merchants)}
+            />
+            <ProductList
+              heading="Suggested products"
+              products={pageProducts}
+              sortMethod={sortMethod}
+              selectedAnimal={selectedAnimal}
+              selectedMerchants={selectedMerchants}
+              maxRows={0}
+            />
+          </Stack>
+        </Stack>
+      )}
+    </PageContainer>
   );
 }
 
 export async function getStaticProps() {
-  const home_res = await fetch(`${API_HOME_URL}`);
-  const home_data = await home_res.json();
   // Fetch merchants, products
   const product_res = await fetch(`${API_PRODUCTS_URL}`);
   const products = await product_res.json();
@@ -208,7 +202,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      bannerText: home_data.banner_text,
       products,
       animals,
       merchants,
