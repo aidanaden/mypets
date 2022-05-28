@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import NextImage from "next/image";
+import NextLink from "next/link";
 
 import MerchantBadge from "../../Merchant/MerchantBadge/MerchantBadge";
 import RatingDisplay from "../../Common/RatingDisplay/RatingDisplay";
@@ -133,33 +134,36 @@ function ProductListCard({ product }) {
           </Box>
         )}
         <Stack direction="column" h="100%" w="100%">
-          <LinkOverlay href={`/products/${product.slug}`}>
-            <Center mb={{ base: 4 }} roundedTop="lg" zIndex={1}>
-              <NextImage
-                src={imageToUrl(product.image)}
-                alt={product.image.alternativeText}
-                width="150"
-                height="150"
-                quality="50"
-              />
-            </Center>
-            <Box>
-              <Box display="flex" alignItems="baseline">
-                <MerchantBadge merchantName={product.merchant.name} />
-              </Box>
-              <Stack mt="1" justifyContent="space-between">
-                <Box
-                  fontSize="sm"
-                  fontWeight="semibold"
-                  as="h4"
-                  lineHeight="tight"
-                  isTruncated={{ base: false, md: false }}
-                >
-                  {product.name}
+          <NextLink href={`/products/${product.slug}`} passHref>
+            <LinkOverlay>
+              <Center mb={{ base: 4 }} roundedTop="lg" zIndex={1}>
+                <NextImage
+                  src={imageToUrl(product.image)}
+                  alt={product.image.alternativeText}
+                  width="150"
+                  height="150"
+                  quality="50"
+                />
+              </Center>
+              <Box>
+                <Box display="flex" alignItems="baseline">
+                  <MerchantBadge merchantName={product.merchant.name} />
                 </Box>
-              </Stack>
-            </Box>
-          </LinkOverlay>
+                <Stack mt="1" justifyContent="space-between">
+                  <Box
+                    fontSize="sm"
+                    fontWeight="semibold"
+                    as="h4"
+                    lineHeight="tight"
+                    isTruncated={{ base: false, md: false }}
+                  >
+                    {product.name}
+                  </Box>
+                </Stack>
+              </Box>
+            </LinkOverlay>
+          </NextLink>
+
           <Spacer />
           <Box>
             <HStack w="auto" justifyContent="center" mb={2}>
