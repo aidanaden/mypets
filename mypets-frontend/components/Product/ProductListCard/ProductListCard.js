@@ -76,8 +76,6 @@ function ProductListCard({ product }) {
           total_price: orderProductTotal,
         };
 
-        console.log("adding to cart: ", order_product);
-
         updateCart(order_product);
         succesToast("Product added to cart");
         setQty(1);

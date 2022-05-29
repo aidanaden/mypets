@@ -60,7 +60,6 @@ export const AuthProvider = (props) => {
     try {
       const data = await callAPI("/profiles", "GET");
       if (data.length == 0) {
-        // console.log('profile doesn not exist: ', data)
         createProfile(body);
       }
       setProfile(data[0]);
@@ -78,7 +77,7 @@ export const AuthProvider = (props) => {
       try {
         const data = await callAPI(`/profiles/${profile.id}`, "PUT", body);
         if (!data.username) {
-          // console.log('tried updating, profile does not exist: ', data)
+          console.error("tried updating, profile does not exist: ", data);
         } else {
           setProfile(data);
         }
@@ -193,8 +192,6 @@ export const AuthProvider = (props) => {
         }
       );
       const data = await response.json();
-
-      // console.log('data from provider: ', data)
 
       if (!data.user) {
         loginFailToast();
