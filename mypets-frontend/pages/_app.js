@@ -60,6 +60,11 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(async () => {
     console.log("fetching from home api url: ", API_HOME_URL);
+
+    fetch(`${API_HOME_URL}`).then((res) => {
+      console.log("home_res: ", res);
+    });
+
     const home_res = await fetch(`${API_HOME_URL}`);
     console.log("home_res: ", home_res);
     const home_data = await home_res.json();
