@@ -54,7 +54,7 @@ const ContributionSection = ({ orders }) => {
           </Box>
           <Spacer />
           <Center rounded="lg" p={{ base: 5 }} bg="gray.200">
-            With every purchase, we will donate 5% of the total receipt order
+            With every purchase, we will donate $1 of the total receipt order
             (exclu. Delivery fees) to local pet communities
           </Center>
         </Stack>
