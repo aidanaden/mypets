@@ -59,6 +59,7 @@ function MyApp({ Component, pageProps }) {
   }, [Router.events]);
 
   useEffect(async () => {
+    console.log("fetching from home api url: ", API_HOME_URL);
     const home_res = await fetch(`${API_HOME_URL}`);
     const home_data = await home_res.json();
     console.log("home data: ", home_data);
