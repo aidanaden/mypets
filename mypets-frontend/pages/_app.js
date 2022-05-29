@@ -61,6 +61,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(async () => {
     console.log("fetching from home api url: ", API_HOME_URL);
     const home_res = await fetch(`${API_HOME_URL}`);
+    console.log("home_res: ", home_res);
     const home_data = await home_res.json();
     console.log("home data: ", home_data);
     setBannerText(home_data.banner_text);
