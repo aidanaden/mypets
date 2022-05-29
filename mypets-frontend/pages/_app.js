@@ -59,20 +59,8 @@ function MyApp({ Component, pageProps }) {
   }, [Router.events]);
 
   useEffect(async () => {
-    console.log("fetching from home api url: ", API_HOME_URL);
-
-    fetch(API_HOME_URL)
-      .then((res) => {
-        console.log("home_res: ", res);
-      })
-      .catch((err) => {
-        console.log("home_res error: ", err);
-      });
-
     const home_res = await fetch(`${API_HOME_URL}`);
-    console.log("home_res: ", home_res);
     const home_data = await home_res.json();
-    console.log("home data: ", home_data);
     setBannerText(home_data.banner_text);
   }, []);
 
