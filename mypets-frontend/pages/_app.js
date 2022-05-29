@@ -12,6 +12,7 @@ import { AuthProvider } from "../context/AuthContext";
 import Fonts from "../styles/fonts";
 // import { GTMPageView } from '../utils/gtm'
 
+import { API_HOME_URL } from "../utils/urls";
 import AnnouncementBanner from "../components/Layouts/AnnouncementBanner/AnnouncementBanner";
 import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
