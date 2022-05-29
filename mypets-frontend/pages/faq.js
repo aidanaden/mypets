@@ -176,7 +176,7 @@ export default function faq({ faq_data }) {
         />
         <ParagraphSection
           heading="How much percentage of my order will be allocated for the pet community?"
-          text="Upon purchasing with us. MyPets will automatically allocate 5% of your total purchase order (“in a single receipt” excluding delivery charges) to help the pet community."
+          text="Upon purchasing with us. MyPets will automatically allocate $1 of your total purchase order (“in a single receipt” excluding delivery charges) to help the pet community."
           mb={{ base: 3 }}
         />
         <ParagraphSection
