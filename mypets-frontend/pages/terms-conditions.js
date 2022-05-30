@@ -9,7 +9,7 @@ import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSe
 import SectionSubHeader from "../components/Layouts/SectionSubHeader/SectionSubHeader";
 import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 
-export default function terms({ categories, terms_data }) {
+export default function terms({ terms_data }) {
   return (
     <>
       <Head>
@@ -18,9 +18,14 @@ export default function terms({ categories, terms_data }) {
       </Head>
       <PageContainer>
         <SectionHeader>Terms & Conditions</SectionHeader>
-        <SectionSubHeader>Last Updated: 14/02/22</SectionSubHeader>
+        <SectionSubHeader>
+          Last Updated: {terms_data.Last_updated}
+        </SectionSubHeader>
         <ParagraphSection text="Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)" />
-        <ParagraphSection
+        {terms_data.Terms.map((data) => (
+          <ParagraphSection heading={data.Header} text={data.Details} />
+        ))}
+        {/* <ParagraphSection
           heading="General Information:"
           text="• Email: support@mypets.sg (Reply within 2 working days)"
           mb={{ base: 3 }}
@@ -302,7 +307,7 @@ export default function terms({ categories, terms_data }) {
         <ParagraphSection
           text="- By visiting this page on our website: [www.mypets.sg](https://cdpn.io/cp/internal/boomboom/www.mypets.sg)"
           mb={{ base: 3 }}
-        />
+        /> */}
       </PageContainer>
     </>
   );
@@ -313,14 +318,9 @@ export async function getStaticProps() {
   const terms_res = await fetch(`${API_TERMS_URL}`);
   const terms_data = await terms_res.json();
 
-  // Fetch categories
-  const categories_res = await fetch(`${API_CATEGORIES_URL}`);
-  const categories = await categories_res.json();
-
   // Return as props
   return {
     props: {
-      categories,
       terms_data,
     },
   };

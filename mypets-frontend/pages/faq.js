@@ -18,7 +18,9 @@ export default function faq({ faq_data }) {
       </Head>
       <PageContainer>
         <SectionHeader>Customer FAQ</SectionHeader>
-        <SectionSubHeader>Last updated: 14/02/22</SectionSubHeader>
+        <SectionSubHeader>
+          Last updated: {faq_data.Last_updated}
+        </SectionSubHeader>
         <ParagraphSection
           heading="General Information:"
           text="- Live Chat (Support): 9am to 12pm & 2pm to 6pm (Mon-Fri)"
@@ -29,7 +31,10 @@ export default function faq({ faq_data }) {
           mb={{ base: 3 }}
         />
         <ParagraphSection text="- Whatsapp/Phone-call: +65 9126 4942 (anytime)" />
-        <ParagraphSection
+        {faq_data.Question.map((data) => (
+          <ParagraphSection heading={data.Title} text={data.Answer} />
+        ))}
+        {/* <ParagraphSection
           heading="Delivery days"
           text="As MyPets is a new startup with limited resources, we aim to provide the best service to our users within our capabilities.
         
@@ -241,7 +246,7 @@ export default function faq({ faq_data }) {
                         We will let you know via email and/or a prominent notice on Our Service, prior to the change becoming effective, and update the "Last Updated" date at the top of this FAQ section.
                         
                         You are advised to review this FAQ section periodically for any changes. Changes to this FAQ section are effective when they are posted on this page.'
-        />
+        /> */}
       </PageContainer>
     </>
   );
