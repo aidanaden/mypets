@@ -19,7 +19,9 @@ export default function privacy({ categories, privacy_data }) {
       </Head>
       <PageContainer>
         <SectionHeader>Privacy Policy</SectionHeader>
-        <SectionSubHeader>Last Updated: 19/10/21</SectionSubHeader>
+        <SectionSubHeader>
+          Last Updated: {privacy_data.Last_updated}
+        </SectionSubHeader>
         <ParagraphSection
           text="This Privacy Policy describes our policies and procedures on how we collect, use and disclose the information provided when you use our site.
 
@@ -28,7 +30,10 @@ export default function privacy({ categories, privacy_data }) {
                             The term MyPets/MyPets Singapore refers to the same entity."
         />
         <ParagraphSection heading="Definitions" />
-        <ParagraphSection
+        {privacy_data.Term.map((data) => (
+          <ParagraphSection heading={data.Header} text={data.Details} />
+        ))}
+        {/* <ParagraphSection
           heading="For the purposes of this Privacy Policy:"
           mb={{ base: 3 }}
         />
@@ -262,7 +267,7 @@ export default function privacy({ categories, privacy_data }) {
         <ParagraphSection
           text="- By email: support@mypets.sg"
           mb={{ base: 3 }}
-        />
+        /> */}
         <ParagraphSection text="- By visiting this page on our website: [www.mypets.sg](https://cdpn.io/cp/internal/boomboom/www.mypets.sg)" />
       </PageContainer>
     </>
