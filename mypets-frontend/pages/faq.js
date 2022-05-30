@@ -31,8 +31,8 @@ export default function faq({ faq_data }) {
           mb={{ base: 3 }}
         />
         <ParagraphSection text="- Whatsapp/Phone-call: +65 9126 4942 (anytime)" />
-        {faq_data.Term.map((data) => (
-          <ParagraphSection heading={data.Header} text={data.Details} />
+        {faq_data.Question.map((data) => (
+          <ParagraphSection heading={data.Title} text={data.Answer} />
         ))}
         {/* <ParagraphSection
           heading="Delivery days"
