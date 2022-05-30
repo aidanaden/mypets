@@ -22,7 +22,7 @@ export default function terms({ terms_data }) {
           Last Updated: {terms_data.Last_updated}
         </SectionSubHeader>
         <ParagraphSection text="Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)" />
-        {terms_data.Term.map((data) => (
+        {terms_data.Terms.map((data) => (
           <ParagraphSection heading={data.Header} text={data.Details} />
         ))}
         {/* <ParagraphSection
