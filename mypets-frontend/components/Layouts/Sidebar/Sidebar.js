@@ -36,7 +36,7 @@ export default function Sidebar() {
 
   const handlePastOrders = () => {
     router.push("/orders");
-    // sidebar.onClose();
+    sidebar.onClose();
   };
 
   const Logo = ({ isMobile, ...props }) => {
