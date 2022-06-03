@@ -36,6 +36,7 @@ export default function Sidebar() {
 
   const handlePastOrders = () => {
     router.push("/orders");
+    sidebar.onClose();
   };
 
   const Logo = ({ isMobile, ...props }) => {
@@ -44,10 +45,6 @@ export default function Sidebar() {
         justifyContent="center"
         justifyItems="center"
         justifySelf="center"
-        // justify='center'
-        // justifyItems='center'
-        // align='center'
-        // alignItems='center'
         {...props}
       >
         <NextLink href="/" as="/" passHref>

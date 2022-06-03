@@ -154,6 +154,7 @@ function ProductListCard({ product }) {
                     as="h4"
                     lineHeight="tight"
                     isTruncated={{ base: false, md: false }}
+                    noOfLines={3}
                   >
                     {product.name}
                   </Box>
@@ -171,7 +172,7 @@ function ProductListCard({ product }) {
               </Text>
               <IconButton icon={<AddIcon />} size="sm" onClick={addQty} />
             </HStack>
-            {product.variants[0].available ? (
+            {product.variants.filter((prod) => prod.available).length > 0 ? (
               <MypetsBtn
                 mb={{ base: 2 }}
                 btnText="Add to cart"
