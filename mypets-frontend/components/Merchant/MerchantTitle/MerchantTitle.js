@@ -5,7 +5,7 @@ function MerchantTitle({ merchantName, merchantRating, merchantNumReviews }) {
   return (
     <VStack alignItems="center">
       <Heading as="h2">{merchantName}</Heading>
-      <RatingDisplay rating={merchantRating} numReviews={merchantNumReviews} />
+      {/* <RatingDisplay rating={merchantRating} numReviews={merchantNumReviews} /> */}
     </VStack>
   );
 }
