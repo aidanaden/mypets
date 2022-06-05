@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Flex, Text, Image, HStack } from "@chakra-ui/react";
+import { Box, Flex, Text, HStack, SimpleGrid } from "@chakra-ui/react";
 import ProductListCard from "../ProductListCard/ProductListCard";
 
 export default function ProductCarousel({ products }) {
