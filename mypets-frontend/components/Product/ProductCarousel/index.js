@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, Flex, Text, Image, HStack } from "@chakra-ui/react";
 
-export default function ProductCarousel() {
+export default function ProductCarousel({ products }) {
   const arrowStyles = {
     cursor: "pointer",
     w: "auto",
@@ -63,20 +63,21 @@ export default function ProductCarousel() {
       alignItems="center"
       justifyContent="space-between"
     >
-      <Text {...arrowStyles} left="0" onClick={prevSlide}>
+      <Text {...arrowStyles} onClick={prevSlide}>
         &#10094;
       </Text>
       <Flex w="full" overflow="hidden" pos="relative">
         <Flex h="400px" w="full" {...carouselStyle}>
-          {slides.map((slide, sid) => (
-            <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
-              <Image
-                src={slide.img}
-                alt="carousel image"
-                boxSize="full"
-                backgroundSize="cover"
-              />
-            </Box>
+          {products.map((product, sid) => (
+            <ProductListCard product={product} key={`slide-${sid}`} />
+            // <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
+            //   <Image
+            //     src={slide.img}
+            //     alt="carousel image"
+            //     boxSize="full"
+            //     backgroundSize="cover"
+            //   />
+            // </Box>
           ))}
         </Flex>
         <HStack justify="center" pos="absolute" bottom="8px" w="full">
@@ -96,7 +97,7 @@ export default function ProductCarousel() {
           ))}
         </HStack>
       </Flex>
-      <Text {...arrowStyles} right="0" onClick={nextSlide}>
+      <Text {...arrowStyles} onClick={nextSlide}>
         &#10095;
       </Text>
     </HStack>
