@@ -22,6 +22,7 @@ import BenefitsSection from "../components/Home/BenefitsSection";
 import NewsletterSection from "../components/Home/NewsletterSection";
 import SocialProofSection from "../components/Home/SocialProofSection";
 import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
+import ProductCarousel from "../components/Product/ProductCarousel";
 
 export default function Home({
   home_data,
@@ -80,6 +81,7 @@ export default function Home({
             setSortMethod={setSortMethod}
             selectedAnimal={selectedAnimal}
           />
+          <ProductCarousel />
         </Stack>
       </PageContainer>
       <BenefitsSection benefits={home_data.Benefits} />
