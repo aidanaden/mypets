@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Flex, Text, HStack, SimpleGrid } from "@chakra-ui/react";
+import { Box, Flex, Text, HStack, SimpleGrid, Stack } from "@chakra-ui/react";
 import ProductListCard from "../ProductListCard/ProductListCard";
 
 export default function ProductCarousel({ products }) {
@@ -49,26 +49,17 @@ export default function ProductCarousel({ products }) {
       <Text {...arrowStyles} onClick={prevSlide}>
         &#10094;
       </Text>
-      <Box w="full" overflow="hidden">
+      <Stack direction="column" spacing={3} w="full" overflow="hidden">
         <HStack
           // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
           spacing={{ base: 4 }}
           // h="400px"
           h="max"
           w="full"
-          mb={4}
           {...carouselStyle}
         >
           {products.map((product, sid) => (
             <ProductListCard product={product} key={`slide-${sid}`} />
-            // <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
-            //   <Image
-            //     src={slide.img}
-            //     alt="carousel image"
-            //     boxSize="full"
-            //     backgroundSize="cover"
-            //   />
-            // </Box>
           ))}
         </HStack>
         <HStack justify="center" w="full">
@@ -87,7 +78,7 @@ export default function ProductCarousel({ products }) {
             ></Box>
           ))}
         </HStack>
-      </Box>
+      </Stack>
       <Text {...arrowStyles} onClick={nextSlide}>
         &#10095;
       </Text>
