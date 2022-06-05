@@ -53,7 +53,7 @@ export default function ProductCarousel({ products, ...props }) {
             &#10094;
           </Text>
           <Stack direction="column" spacing={3} w="full" overflow="hidden">
-            <SectionHeader>Everyday Essentials</SectionHeader>
+            {/* <SectionHeader>Everyday Essentials</SectionHeader> */}
             <HStack
               // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
               spacing={{ base: 4 }}
