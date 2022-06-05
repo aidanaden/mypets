@@ -21,7 +21,7 @@ export default function ProductCarousel({ products, ...props }) {
   };
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesCount = products.length / 5.5;
+  const slidesCount = products.length / 7;
 
   const prevSlide = () => {
     setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
@@ -41,14 +41,11 @@ export default function ProductCarousel({ products, ...props }) {
     <Box>
       <PageContainer
         pb={{ base: 8, lg: 12 }}
-        bgColor="purple.400"
-        maxW={{ lg: "1400px" }}
+        maxW={{ lg: "1300px" }}
         {...props}
       >
         <HStack
           w="full"
-          // bg={"gray.200"}
-          // py={10}
           spacing={5}
           alignItems="center"
           justifyContent="space-between"
@@ -56,13 +53,7 @@ export default function ProductCarousel({ products, ...props }) {
           <Text {...arrowStyles} onClick={prevSlide}>
             &#10094;
           </Text>
-          <Stack
-            direction="column"
-            spacing={3}
-            w="full"
-            overflow="hidden"
-            bgColor="red.400"
-          >
+          <Stack direction="column" spacing={3} w="full" overflow="hidden">
             <HStack
               // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
               spacing={{ base: 4 }}
@@ -76,7 +67,7 @@ export default function ProductCarousel({ products, ...props }) {
                 <ProductListCard product={product} key={`slide-${sid}`} />
               ))}
             </HStack>
-            <HStack justify="center" w="full" bgColor="blue.400">
+            <HStack justify="center" w="full">
               {Array.from({ length: slidesCount }).map((_, slide) => (
                 <Box
                   key={`dots-${slide}`}
