@@ -17,7 +17,7 @@ export default function ProductCarousel({ products, ...props }) {
     userSelect: "none",
     _hover: {
       opacity: 0.8,
-      bg: "grey",
+      color: "grey",
     },
   };
 
