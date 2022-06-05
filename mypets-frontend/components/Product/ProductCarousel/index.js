@@ -41,7 +41,7 @@ export default function ProductCarousel({ products, ...props }) {
     <Box>
       <PageContainer
         pb={{ base: 8, lg: 12 }}
-        px={12}
+        // px={12}
         maxW={{ lg: "1320px" }}
         {...props}
       >
