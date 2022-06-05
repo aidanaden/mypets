@@ -19,7 +19,7 @@ export default function ProductCarousel({ products, ...props }) {
   };
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesCount = products.length / 7;
+  const slidesCount = products.length / 7 + 2;
 
   const prevSlide = () => {
     setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
@@ -39,7 +39,7 @@ export default function ProductCarousel({ products, ...props }) {
     <Box>
       <PageContainer
         pb={{ base: 8, lg: 12 }}
-        maxW={{ lg: "1350px" }}
+        maxW={{ lg: "1320px" }}
         {...props}
       >
         <HStack
