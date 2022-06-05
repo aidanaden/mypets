@@ -37,51 +37,63 @@ export default function ProductCarousel({ products }) {
   };
 
   return (
-    <HStack
-      w="full"
-      bg={"gray.200"}
-      py={10}
-      spacing={10}
-      alignItems="center"
-      justifyContent="space-between"
-      mx={"-40"}
-    >
-      <Text {...arrowStyles} onClick={prevSlide}>
-        &#10094;
-      </Text>
-      <Stack direction="column" spacing={3} w="full" overflow="hidden">
+    <Box>
+      <PageContainer pb={{ base: 8, lg: 12 }} {...props}>
         <HStack
-          // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
-          spacing={{ base: 4 }}
-          // h="400px"
-          h="max"
           w="full"
-          {...carouselStyle}
+          bg={"gray.200"}
+          py={10}
+          spacing={10}
+          alignItems="center"
+          justifyContent="space-between"
+          mx={"-40"}
         >
-          {products.map((product, sid) => (
-            <ProductListCard product={product} key={`slide-${sid}`} />
-          ))}
+          <Text {...arrowStyles} onClick={prevSlide}>
+            &#10094;
+          </Text>
+          <Stack
+            direction="column"
+            spacing={3}
+            w="full"
+            overflow="hidden"
+            bgColor="red.400"
+          >
+            <HStack
+              // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
+              spacing={{ base: 4 }}
+              // h="400px"
+              h="max"
+              w="full"
+              {...carouselStyle}
+            >
+              {products.map((product, sid) => (
+                <ProductListCard product={product} key={`slide-${sid}`} />
+              ))}
+            </HStack>
+            <HStack justify="center" w="full" bgColor="blue.400">
+              {Array.from({ length: slidesCount }).map((_, slide) => (
+                <Box
+                  key={`dots-${slide}`}
+                  cursor="pointer"
+                  boxSize={["7px", , "15px"]}
+                  m="0 2px"
+                  bg={
+                    currentSlide === slide ? "blackAlpha.800" : "blackAlpha.500"
+                  }
+                  rounded="50%"
+                  display="inline-block"
+                  transition="background-color 0.6s ease"
+                  _hover={{ bg: "blackAlpha.800" }}
+                  onClick={() => setSlide(slide)}
+                ></Box>
+              ))}
+            </HStack>
+          </Stack>
+          <Text {...arrowStyles} onClick={nextSlide}>
+            &#10095;
+          </Text>
         </HStack>
-        <HStack justify="center" w="full">
-          {Array.from({ length: slidesCount }).map((_, slide) => (
-            <Box
-              key={`dots-${slide}`}
-              cursor="pointer"
-              boxSize={["7px", , "15px"]}
-              m="0 2px"
-              bg={currentSlide === slide ? "blackAlpha.800" : "blackAlpha.500"}
-              rounded="50%"
-              display="inline-block"
-              transition="background-color 0.6s ease"
-              _hover={{ bg: "blackAlpha.800" }}
-              onClick={() => setSlide(slide)}
-            ></Box>
-          ))}
-        </HStack>
-      </Stack>
-      <Text {...arrowStyles} onClick={nextSlide}>
-        &#10095;
-      </Text>
-    </HStack>
+      </PageContainer>
+    </Box>
   );
 }
