@@ -49,8 +49,8 @@ export default function ProductCarousel({ products }) {
         &#10094;
       </Text>
       <Flex w="full" overflow="hidden" pos="relative">
-        <SimpleGrid
-          columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
+        <HStack
+          // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
           spacing={{ base: 4 }}
           // h="400px"
           w="full"
@@ -67,7 +67,7 @@ export default function ProductCarousel({ products }) {
             //   />
             // </Box>
           ))}
-        </SimpleGrid>
+        </HStack>
         <HStack justify="center" pos="absolute" bottom="8px" w="full">
           {Array.from({ length: slidesCount }).map((_, slide) => (
             <Box
