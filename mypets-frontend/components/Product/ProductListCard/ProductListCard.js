@@ -140,6 +140,7 @@ function ProductListCard({ product }) {
                 zIndex={1}
                 bgColor="red.400"
                 height={"150px"}
+                width="100%"
               >
                 <NextImage
                   src={imageToUrl(product.image)}
@@ -212,22 +213,21 @@ function ProductListCard({ product }) {
               </Box>
               {product.variants && (
                 <Box justifySelf="end" alignSelf="end">
-                  {product.variants[0].discounted_price &&
-                    product.variants[0].discounted_price > 0 && (
-                      <Text
-                        fontSize={{ base: "xs", md: "sm" }}
-                        color="gray.800"
-                        justifySelf="end"
-                        alignSelf="end"
-                        my={0}
-                        py={0}
-                        height="16px"
-                        bgColor="purple.400"
-                        textDecorationLine="line-through"
-                      >
-                        ${product.variants[0].price.toFixed(2)}
-                      </Text>
-                    )}
+                  <Text
+                    fontSize={{ base: "xs", md: "sm" }}
+                    color="gray.800"
+                    justifySelf="end"
+                    alignSelf="end"
+                    my={0}
+                    py={0}
+                    height="16px"
+                    bgColor="purple.400"
+                    textDecorationLine="line-through"
+                  >
+                    {product.variants[0].discounted_price &&
+                      product.variants[0].discounted_price > 0 &&
+                      `${product.variants[0].price.toFixed(2)}`}
+                  </Text>
                   <Text
                     fontSize={{ base: "md", md: "lg" }}
                     fontWeight="bold"
