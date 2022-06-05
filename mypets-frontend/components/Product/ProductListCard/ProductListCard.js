@@ -115,7 +115,11 @@ function ProductListCard({ product }) {
           left="0"
           p={3}
           zIndex={2}
-          bg="mypets-green.100"
+          bg={
+            product.variants[0].discounted_price > 0
+              ? "mypets-green.100"
+              : "transparent"
+          }
           textColor="white"
           fontWeight="bold"
           roundedTopLeft="lg"
