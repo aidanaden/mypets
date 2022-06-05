@@ -139,7 +139,6 @@ function ProductListCard({ product }) {
                 roundedTop="lg"
                 zIndex={1}
                 bgColor="red.400"
-                boxSize={"150px"}
               >
                 <NextImage
                   src={imageToUrl(product.image)}
@@ -161,7 +160,7 @@ function ProductListCard({ product }) {
                     lineHeight="tight"
                     isTruncated={{ base: false, md: false }}
                     noOfLines={3}
-                    height="72px"
+                    height="64px"
                   >
                     {product.name}
                   </Text>
