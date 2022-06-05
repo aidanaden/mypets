@@ -23,7 +23,7 @@ import AuthContext from "../../../context/AuthContext";
 import LoginModalBtn from "./LoginModalBtn/LoginModalBtn";
 // import SignupModalBtn from "../../Form/SignupModalBtn/SignupModalBtn";
 
-export default function Sidebar({ categories }) {
+export default function Sidebar() {
   const sidebar = useDisclosure();
   const integrations = useDisclosure();
   const { user, logoutUser } = useContext(AuthContext);
@@ -36,6 +36,7 @@ export default function Sidebar({ categories }) {
 
   const handlePastOrders = () => {
     router.push("/orders");
+    sidebar.onClose();
   };
 
   const Logo = ({ isMobile, ...props }) => {
@@ -44,10 +45,6 @@ export default function Sidebar({ categories }) {
         justifyContent="center"
         justifyItems="center"
         justifySelf="center"
-        // justify='center'
-        // justifyItems='center'
-        // align='center'
-        // alignItems='center'
         {...props}
       >
         <NextLink href="/" as="/" passHref>

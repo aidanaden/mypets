@@ -91,7 +91,7 @@ export default function CartPriceBreakdownList({
         <SubtotalRow
           highlight
           text="Your contributions (included)"
-          value={CONTRIBUTION_AMT}
+          value={CONTRIBUTION_AMT.toFixed(2)}
         />
       </Stack>
       <Box fontWeight="bold" fontSize="xl" textAlign="right" mt={4}>

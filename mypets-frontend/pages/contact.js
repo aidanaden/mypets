@@ -9,8 +9,7 @@ import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSe
 import SectionSubHeader from "../components/Layouts/SectionSubHeader/SectionSubHeader";
 import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 
-export default function contact({ categories, contact_data }) {
-  console.log("contact data: ", contact_data);
+export default function contact({ contact_data }) {
   const intro = `
 
     Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)
@@ -32,42 +31,34 @@ export default function contact({ categories, contact_data }) {
         <title>{contact_data.meta_title}</title>
         <meta name="description" content={contact_data.meta_description} />
       </Head>
-      <BaseLayout minH="100vh">
-        <Sidebar categories={categories} />
-        <PageContainer>
-          <SectionHeader mb={{ base: 2, md: 4 }}>Contact Us</SectionHeader>
-          <SectionSubHeader>Last updated: 19/10/21</SectionSubHeader>
-          <ParagraphSection text="Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)" />
-          <ParagraphSection
-            heading="If you have any inquiries/feedback or suggestions, please contact us."
-            text="• Email: support@mypets.sg (Reply within 2 working days)"
-            mb={{ base: 3 }}
-          />
-          <ParagraphSection text="• Live Chat Support: 9am - 12pm, 2pm - 6pm (Mon - Fri)" />
-          <ParagraphSection
-            heading="For account/order-related which requires immediate assistance"
-            text="• Phone/WhatsApp: 9126 4942 (anytime)"
-          />
-        </PageContainer>
-      </BaseLayout>
+      <PageContainer>
+        <SectionHeader mb={{ base: 2, md: 4 }}>Contact Us</SectionHeader>
+        <SectionSubHeader>Last updated: 19/10/21</SectionSubHeader>
+        <ParagraphSection text="Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)" />
+        <ParagraphSection
+          heading="If you have any inquiries/feedback or suggestions, please contact us."
+          text="• Email: support@mypets.sg (Reply within 2 working days)"
+          mb={{ base: 3 }}
+        />
+        <ParagraphSection text="• Live Chat Support: 9am - 12pm, 2pm - 6pm (Mon - Fri)" />
+        <ParagraphSection
+          heading="For account/order-related which requires immediate assistance"
+          text="• Phone/WhatsApp: 9126 4942 (anytime)"
+        />
+      </PageContainer>
     </>
   );
 }
 
 export async function getStaticProps() {
-  // Fetch home page banner images + top banner text
   const contact_res = await fetch(`${API_CONTACT_URL}`);
   const contact_data = await contact_res.json();
-
-  // Fetch categories
-  const categories_res = await fetch(`${API_CATEGORIES_URL}`);
-  const categories = await categories_res.json();
 
   // Return as props
   return {
     revalidate: 1,
     props: {
-      categories,
+      // categories,
       contact_data,
     },
   };

@@ -140,8 +140,7 @@ function NavbarCartModalBtn() {
                 <Box flex="1" pb={{ base: 4, lg: 4 }}>
                   <Center rounded="lg" p={{ base: 5 }} bg="gray.200">
                     With every purchase, we will donate $1 from the total
-                    receipt order (exclu. Delivery fees) to local pet
-                    communities
+                    receipt order to local pet communities
                   </Center>
                   <CartPriceBreakdownList
                     groupedProducts={groupedProducts}

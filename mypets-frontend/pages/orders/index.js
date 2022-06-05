@@ -1,8 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { Stack, HStack, Text, Spacer, Center, Box } from "@chakra-ui/react";
 
-import AnnouncementBanner from "../../components/Layouts/AnnouncementBanner/AnnouncementBanner";
-import Sidebar from "../../components/Layouts/Sidebar/Sidebar";
 import PageContainer from "../../components/Layouts/PageContainer/PageContainer";
 import BackBtn from "../../components/Common/BackBtn/BackBtn";
 import OrderCard from "../../components/Order/OrderCard/OrderCard";
@@ -11,7 +9,6 @@ import Section from "../../components/Layouts/Section/Section";
 import SectionHeader from "../../components/Layouts/SectionHeader/SectionHeader";
 import MypetsBtn from "../../components/Common/MypetsBtn/MypetsBtn";
 import { API_HOME_URL, stringToDate } from "../../utils/urls";
-import BaseLayout from "../../components/Layouts/BaseLayout/BaseLayout";
 
 const ContributionRow = ({ order }) => {
   return (
@@ -28,7 +25,7 @@ const ContributionRow = ({ order }) => {
       </Stack>
       <Spacer />
       <Text as="h5" fontSize="2xl">
-        ${order.contribution_amount}
+        ${order.contribution_amount.toFixed(2)}
       </Text>
     </HStack>
   );
@@ -57,8 +54,8 @@ const ContributionSection = ({ orders }) => {
           </Box>
           <Spacer />
           <Center rounded="lg" p={{ base: 5 }} bg="gray.200">
-            With every purchase, we will donate 5% of the total receipt order
-            (exclu. Delivery fees) to local pet communities
+            With every purchase, we will donate $1 of the total receipt order to
+            local pet communities
           </Center>
         </Stack>
         <Text mt={{ base: 8 }} as="h5" fontSize={{ base: "lg", md: "xl" }}>
@@ -108,37 +105,19 @@ const getOrders = (user) => {
   return { orders, loading };
 };
 
-export default function Orders({ bannerText }) {
+export default function Orders() {
   const { user } = useContext(AuthContext);
   const { orders, loading } = getOrders(user);
 
   return (
-    <BaseLayout>
-      <AnnouncementBanner text={bannerText} />
-      <Sidebar />
-      <PageContainer>
-        <BackBtn variant="home" />
-        {orders.length > 0 && <ContributionSection orders={orders} />}
-        {orders.length > 0 ? (
-          <OrderSection orders={orders} />
-        ) : (
-          <Center h="70vh">No orders available 😢</Center>
-        )}
-      </PageContainer>
-    </BaseLayout>
+    <PageContainer>
+      <BackBtn variant="home" />
+      {orders.length > 0 && <ContributionSection orders={orders} />}
+      {orders.length > 0 ? (
+        <OrderSection orders={orders.reverse()} />
+      ) : (
+        <Center h="70vh">No orders available 😢</Center>
+      )}
+    </PageContainer>
   );
-}
-
-export async function getStaticProps() {
-  // Fetch home page banner images + top banner text
-  const home_res = await fetch(`${API_HOME_URL}`);
-  const home_data = await home_res.json();
-
-  // Return as props
-  return {
-    revalidate: 1,
-    props: {
-      bannerText: home_data.banner_text,
-    },
-  };
 }

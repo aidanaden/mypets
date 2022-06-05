@@ -2,7 +2,6 @@ import { Box, Text, Stack, Circle, Center } from "@chakra-ui/react";
 import SectionSubHeader from "../../Layouts/SectionSubHeader/SectionSubHeader";
 
 export default function BenefitCard({ benefit, ...props }) {
-  console.log("benefit icon src: ", benefit.Icon);
   return (
     <Stack
       direction={{ base: "row", lg: "row" }}

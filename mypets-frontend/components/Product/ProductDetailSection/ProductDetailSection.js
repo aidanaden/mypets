@@ -154,10 +154,13 @@ function ProductDetailSection({ product }) {
     const foundVariant = getVariantFromVariantValue(e.target.value);
     setVariant(foundVariant);
 
+    var newOriginalPrice = 0;
     var updatedPrice = 0;
     if (foundVariant.discounted_price) {
       updatedPrice =
         parseFloat(foundVariant.discounted_price) * parseFloat(quantity);
+      newOriginalPrice = parseFloat(foundVariant.price) * parseFloat(quantity);
+      setOriginalPrice(newOriginalPrice);
     } else {
       updatedPrice = parseFloat(foundVariant.price) * parseFloat(quantity);
     }
