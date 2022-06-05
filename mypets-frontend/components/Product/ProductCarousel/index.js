@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Box, Flex, Text, HStack, SimpleGrid, Stack } from "@chakra-ui/react";
 import ProductListCard from "../ProductListCard/ProductListCard";
 import PageContainer from "../../Layouts/PageContainer/PageContainer";
+import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 
 export default function ProductCarousel({ products, ...props }) {
   const arrowStyles = {
@@ -42,6 +43,7 @@ export default function ProductCarousel({ products, ...props }) {
         maxW={{ lg: "1320px" }}
         {...props}
       >
+        <SectionHeader>Everyday Essentials</SectionHeader>
         <HStack
           w="full"
           spacing={5}
