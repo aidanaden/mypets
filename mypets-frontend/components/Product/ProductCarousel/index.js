@@ -8,7 +8,6 @@ export default function ProductCarousel({ products, ...props }) {
   const arrowStyles = {
     cursor: "pointer",
     w: "auto",
-    p: "16px",
     opacity: 0.4,
     color: "grey",
     fontWeight: "bold",
@@ -42,6 +41,7 @@ export default function ProductCarousel({ products, ...props }) {
     <Box>
       <PageContainer
         pb={{ base: 8, lg: 12 }}
+        px={8}
         maxW={{ lg: "1320px" }}
         {...props}
       >
