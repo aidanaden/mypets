@@ -63,8 +63,11 @@ export default function ProductCarousel() {
       bg={"gray.200"}
       p={10}
       alignItems="center"
-      justifyContent="center"
+      justifyContent="space-between"
     >
+      <Text {...arrowStyles} left="0" onClick={prevSlide}>
+        &#10094;
+      </Text>
       <Flex w="full" overflow="hidden" pos="relative">
         <Flex h="400px" w="full" {...carouselStyle}>
           {slides.map((slide, sid) => (
@@ -78,12 +81,6 @@ export default function ProductCarousel() {
             </Box>
           ))}
         </Flex>
-        <Text {...arrowStyles} left="0" onClick={prevSlide}>
-          &#10094;
-        </Text>
-        <Text {...arrowStyles} right="0" onClick={nextSlide}>
-          &#10095;
-        </Text>
         <HStack justify="center" pos="absolute" bottom="8px" w="full">
           {Array.from({ length: slidesCount }).map((_, slide) => (
             <Box
@@ -100,6 +97,9 @@ export default function ProductCarousel() {
             ></Box>
           ))}
         </HStack>
+        <Text {...arrowStyles} right="0" onClick={nextSlide}>
+          &#10095;
+        </Text>
       </Flex>
     </Flex>
   );
