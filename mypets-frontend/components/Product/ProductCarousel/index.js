@@ -19,26 +19,7 @@ export default function ProductCarousel({ products }) {
     },
   };
 
-  const slides = [
-    {
-      img: "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      img: "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      img: "https://images.pexels.com/photos/2878019/pexels-photo-2878019.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-    },
-    {
-      img: "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      img: "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-  ];
-
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const slidesCount = slides.length;
 
   const prevSlide = () => {
@@ -68,7 +49,13 @@ export default function ProductCarousel({ products }) {
         &#10094;
       </Text>
       <Flex w="full" overflow="hidden" pos="relative">
-        <Flex h="400px" w="full" {...carouselStyle}>
+        <SimpleGrid
+          columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
+          spacing={{ base: 4 }}
+          // h="400px"
+          w="full"
+          {...carouselStyle}
+        >
           {products.map((product, sid) => (
             <ProductListCard product={product} key={`slide-${sid}`} />
             // <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
@@ -80,7 +67,7 @@ export default function ProductCarousel({ products }) {
             //   />
             // </Box>
           ))}
-        </Flex>
+        </SimpleGrid>
         <HStack justify="center" pos="absolute" bottom="8px" w="full">
           {Array.from({ length: slidesCount }).map((_, slide) => (
             <Box
