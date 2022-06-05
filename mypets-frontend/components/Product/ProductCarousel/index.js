@@ -45,7 +45,7 @@ export default function ProductCarousel({ products, ...props }) {
         maxW={{ lg: "1260px" }}
         {...props}
       >
-        <SectionHeader ml={4} bgColor="red.400">
+        <SectionHeader ml={6} bgColor="red.400">
           Everyday Essentials
         </SectionHeader>
         <HStack
