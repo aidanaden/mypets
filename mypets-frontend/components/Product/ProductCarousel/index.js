@@ -43,7 +43,6 @@ export default function ProductCarousel({ products, ...props }) {
         maxW={{ lg: "1320px" }}
         {...props}
       >
-        <SectionHeader>Everyday Essentials</SectionHeader>
         <HStack
           w="full"
           spacing={5}
@@ -54,6 +53,7 @@ export default function ProductCarousel({ products, ...props }) {
             &#10094;
           </Text>
           <Stack direction="column" spacing={3} w="full" overflow="hidden">
+            <SectionHeader>Everyday Essentials</SectionHeader>
             <HStack
               // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
               spacing={{ base: 4 }}
