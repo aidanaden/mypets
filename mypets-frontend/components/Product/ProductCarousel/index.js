@@ -9,13 +9,15 @@ export default function ProductCarousel({ products, ...props }) {
     cursor: "pointer",
     w: "auto",
     p: "16px",
-    color: "grey.400",
+    opacity: 0.4,
+    color: "grey",
     fontWeight: "bold",
     fontSize: "18px",
     transition: "0.3s ease",
     userSelect: "none",
     _hover: {
-      bg: "grey.800",
+      opacity: 0.8,
+      bg: "grey",
     },
   };
 
