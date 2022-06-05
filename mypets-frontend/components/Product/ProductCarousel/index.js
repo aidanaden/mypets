@@ -60,7 +60,7 @@ export default function ProductCarousel() {
   return (
     <Flex
       w="full"
-      bg={useColorModeValue("gray.200", "gray.600")}
+      bg={"gray.200"}
       p={10}
       alignItems="center"
       justifyContent="center"
