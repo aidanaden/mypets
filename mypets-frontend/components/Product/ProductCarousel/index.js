@@ -44,11 +44,12 @@ export default function ProductCarousel({ products }) {
       spacing={10}
       alignItems="center"
       justifyContent="space-between"
+      mx={-10}
     >
       <Text {...arrowStyles} onClick={prevSlide}>
         &#10094;
       </Text>
-      <Flex w="full" overflow="hidden" pos="relative">
+      <Flex w="full" overflow="hidden">
         <HStack
           // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
           spacing={{ base: 4 }}
@@ -69,7 +70,7 @@ export default function ProductCarousel({ products }) {
             // </Box>
           ))}
         </HStack>
-        <HStack justify="center" pos="absolute" bottom="8px" w="full">
+        <HStack justify="center" w="full">
           {Array.from({ length: slidesCount }).map((_, slide) => (
             <Box
               key={`dots-${slide}`}

@@ -140,7 +140,6 @@ function ProductListCard({ product }) {
                 mb={{ base: 4 }}
                 roundedTop="lg"
                 zIndex={1}
-                bgColor="red.400"
                 height={"150px"}
                 width="100%"
               >
@@ -152,7 +151,7 @@ function ProductListCard({ product }) {
                   quality="50"
                 />
               </Center>
-              <Box bgColor="blue.400">
+              <Box>
                 <Box display="flex" alignItems="baseline">
                   <MerchantBadge merchantName={product.merchant.name} />
                 </Box>
@@ -223,7 +222,6 @@ function ProductListCard({ product }) {
                     my={0}
                     py={0}
                     height="20px"
-                    bgColor="purple.400"
                     textDecorationLine="line-through"
                   >
                     {product.variants[0].discounted_price &&
