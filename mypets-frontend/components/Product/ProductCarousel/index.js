@@ -21,7 +21,7 @@ export default function ProductCarousel({ products, ...props }) {
   };
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesCount = products.length / 5;
+  const slidesCount = products.length / 5.5;
 
   const prevSlide = () => {
     setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
@@ -42,14 +42,14 @@ export default function ProductCarousel({ products, ...props }) {
       <PageContainer
         pb={{ base: 8, lg: 12 }}
         bgColor="purple.400"
-        maxWidth="1240px"
+        maxW={{ lg: "1400px" }}
         {...props}
       >
         <HStack
           w="full"
-          bg={"gray.200"}
-          py={10}
-          spacing={10}
+          // bg={"gray.200"}
+          // py={10}
+          spacing={5}
           alignItems="center"
           justifyContent="space-between"
         >
