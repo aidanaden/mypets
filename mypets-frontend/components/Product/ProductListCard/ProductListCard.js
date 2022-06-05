@@ -134,7 +134,12 @@ function ProductListCard({ product }) {
         <Stack direction="column" h="100%" w="100%">
           <NextLink href={`/products/${product.slug}`} passHref>
             <LinkOverlay>
-              <Center mb={{ base: 4 }} roundedTop="lg" zIndex={1}>
+              <Center
+                mb={{ base: 4 }}
+                roundedTop="lg"
+                zIndex={1}
+                bgColor="red.400"
+              >
                 <NextImage
                   src={imageToUrl(product.image)}
                   alt={product.image.alternativeText}
@@ -155,6 +160,7 @@ function ProductListCard({ product }) {
                     lineHeight="tight"
                     isTruncated={{ base: false, md: false }}
                     noOfLines={3}
+                    height="max"
                   >
                     {product.name}
                   </Box>
