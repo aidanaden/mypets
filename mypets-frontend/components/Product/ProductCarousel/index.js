@@ -56,6 +56,7 @@ export default function ProductCarousel({ products }) {
           // h="400px"
           h="max"
           w="full"
+          mb={4}
           {...carouselStyle}
         >
           {products.map((product, sid) => (
@@ -70,7 +71,7 @@ export default function ProductCarousel({ products }) {
             // </Box>
           ))}
         </HStack>
-        <HStack justify="center" mt={4} w="full">
+        <HStack justify="center" w="full">
           {Array.from({ length: slidesCount }).map((_, slide) => (
             <Box
               key={`dots-${slide}`}
