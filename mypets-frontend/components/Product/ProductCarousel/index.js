@@ -49,7 +49,7 @@ export default function ProductCarousel({ products }) {
       <Text {...arrowStyles} onClick={prevSlide}>
         &#10094;
       </Text>
-      <Flex w="full" overflow="hidden" pos="relative">
+      <Box w="full" overflow="hidden" bgColor={"red.400"}>
         <HStack
           // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
           spacing={{ base: 4 }}
@@ -70,7 +70,7 @@ export default function ProductCarousel({ products }) {
             // </Box>
           ))}
         </HStack>
-        <HStack justify="center" pos="absolute" bottom="0" w="full">
+        <HStack justify="center" bottom="0" w="full">
           {Array.from({ length: slidesCount }).map((_, slide) => (
             <Box
               key={`dots-${slide}`}
@@ -86,7 +86,7 @@ export default function ProductCarousel({ products }) {
             ></Box>
           ))}
         </HStack>
-      </Flex>
+      </Box>
       <Text {...arrowStyles} onClick={nextSlide}>
         &#10095;
       </Text>
