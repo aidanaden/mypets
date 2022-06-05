@@ -38,8 +38,8 @@ export default function ProductCarousel({ products, ...props }) {
   };
 
   return (
-    <Box>
-      <PageContainer pb={{ base: 8, lg: 12 }} {...props}>
+    <Box bgColor="green.400">
+      <PageContainer pb={{ base: 8, lg: 12 }} bgColor="purple.400" {...props}>
         <HStack
           w="full"
           bg={"gray.200"}
@@ -65,6 +65,7 @@ export default function ProductCarousel({ products, ...props }) {
               // h="400px"
               h="max"
               w="full"
+              mb={4}
               {...carouselStyle}
             >
               {products.map((product, sid) => (
