@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, Flex, Text, HStack, SimpleGrid, Stack } from "@chakra-ui/react";
 import ProductListCard from "../ProductListCard/ProductListCard";
+import PageContainer from "../../Layouts/PageContainer/PageContainer";
 
 export default function ProductCarousel({ products }) {
   const arrowStyles = {
