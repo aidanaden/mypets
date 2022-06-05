@@ -20,7 +20,7 @@ export default function ProductCarousel({ products }) {
   };
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesCount = products.length - 5;
+  const slidesCount = products.length / 5;
 
   const prevSlide = () => {
     setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
@@ -53,6 +53,7 @@ export default function ProductCarousel({ products }) {
           // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
           spacing={{ base: 4 }}
           // h="400px"
+          h="fit-content"
           w="full"
           {...carouselStyle}
         >
