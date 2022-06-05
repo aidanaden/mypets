@@ -4,10 +4,7 @@ import { Box, Flex, Text, Image, HStack } from "@chakra-ui/react";
 export default function ProductCarousel() {
   const arrowStyles = {
     cursor: "pointer",
-    // pos: "absolute",
-    top: "50%",
     w: "auto",
-    mt: "-22px",
     p: "16px",
     color: "white",
     fontWeight: "bold",
@@ -58,10 +55,11 @@ export default function ProductCarousel() {
   };
 
   return (
-    <Flex
+    <HStack
       w="full"
       bg={"gray.200"}
-      p={10}
+      py={10}
+      spacing={10}
       alignItems="center"
       justifyContent="space-between"
     >
@@ -101,6 +99,6 @@ export default function ProductCarousel() {
       <Text {...arrowStyles} right="0" onClick={nextSlide}>
         &#10095;
       </Text>
-    </Flex>
+    </HStack>
   );
 }
