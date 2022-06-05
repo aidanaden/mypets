@@ -8,15 +8,13 @@ export default function ProductCarousel({ products, ...props }) {
     cursor: "pointer",
     w: "auto",
     p: "16px",
-    color: "white",
+    color: "grey.400",
     fontWeight: "bold",
     fontSize: "18px",
-    transition: "0.6s ease",
-    borderRadius: "0 3px 3px 0",
+    transition: "0.3s ease",
     userSelect: "none",
     _hover: {
-      opacity: 0.8,
-      bg: "black",
+      bg: "grey.800",
     },
   };
 
@@ -41,7 +39,7 @@ export default function ProductCarousel({ products, ...props }) {
     <Box>
       <PageContainer
         pb={{ base: 8, lg: 12 }}
-        maxW={{ lg: "1300px" }}
+        maxW={{ lg: "1350px" }}
         {...props}
       >
         <HStack
