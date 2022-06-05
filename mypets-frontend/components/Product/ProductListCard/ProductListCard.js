@@ -221,6 +221,8 @@ function ProductListCard({ product }) {
                         alignSelf="end"
                         my={0}
                         py={0}
+                        height="16px"
+                        bgColor="purple.400"
                         textDecorationLine="line-through"
                       >
                         ${product.variants[0].price.toFixed(2)}
