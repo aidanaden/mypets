@@ -220,7 +220,7 @@ function ProductListCard({ product }) {
                     alignSelf="end"
                     my={0}
                     py={0}
-                    height="16px"
+                    height="20px"
                     bgColor="purple.400"
                     textDecorationLine="line-through"
                   >
