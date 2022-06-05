@@ -148,7 +148,7 @@ function ProductListCard({ product }) {
                   quality="50"
                 />
               </Center>
-              <Box>
+              <Box bgColor="blue.400">
                 <Box display="flex" alignItems="baseline">
                   <MerchantBadge merchantName={product.merchant.name} />
                 </Box>
