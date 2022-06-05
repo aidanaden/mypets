@@ -42,7 +42,7 @@ export default function ProductCarousel({ products, ...props }) {
       <PageContainer
         pb={{ base: 8, lg: 12 }}
         bgColor="purple.400"
-        mx={-10}
+        maxWidth="1240px"
         {...props}
       >
         <HStack
