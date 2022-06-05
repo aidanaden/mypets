@@ -15,13 +15,13 @@ export default function ProductCarousel({ products, ...props }) {
     transition: "0.3s ease",
     userSelect: "none",
     _hover: {
-      opacity: 0.8,
-      color: "grey",
+      opacity: 0.6,
+      color: "black",
     },
   };
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesCount = products.length / 7 + 2;
+  const slidesCount = products.length / 7;
 
   const prevSlide = () => {
     setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
@@ -41,11 +41,12 @@ export default function ProductCarousel({ products, ...props }) {
     <Box>
       <PageContainer
         pb={{ base: 8, lg: 12 }}
-        px={8}
         maxW={{ lg: "1320px" }}
         {...props}
       >
-        <SectionHeader bgColor="red.400">Everyday Essentials</SectionHeader>
+        <SectionHeader ml={12} bgColor="red.400">
+          Everyday Essentials
+        </SectionHeader>
         <HStack
           w="full"
           spacing={5}
