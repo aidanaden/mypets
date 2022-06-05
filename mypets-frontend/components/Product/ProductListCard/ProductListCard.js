@@ -161,7 +161,7 @@ function ProductListCard({ product }) {
                     lineHeight="tight"
                     isTruncated={{ base: false, md: false }}
                     noOfLines={3}
-                    height="24px"
+                    height="72px"
                   >
                     {product.name}
                   </Text>
