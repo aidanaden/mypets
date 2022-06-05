@@ -41,13 +41,10 @@ export default function ProductCarousel({ products, ...props }) {
     <Box>
       <PageContainer
         pb={{ base: 8, lg: 12 }}
-        // px={12}
         maxW={{ lg: "1260px" }}
         {...props}
       >
-        <SectionHeader mx={8} bgColor="red.400">
-          Everyday Essentials
-        </SectionHeader>
+        <SectionHeader mx={7.5}>Everyday Essentials</SectionHeader>
         <HStack
           w="full"
           spacing={5}
