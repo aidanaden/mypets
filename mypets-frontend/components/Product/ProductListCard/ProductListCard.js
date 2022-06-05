@@ -139,6 +139,7 @@ function ProductListCard({ product }) {
                 roundedTop="lg"
                 zIndex={1}
                 bgColor="red.400"
+                height={"150px"}
               >
                 <NextImage
                   src={imageToUrl(product.image)}
