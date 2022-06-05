@@ -154,17 +154,17 @@ function ProductListCard({ product }) {
                   <MerchantBadge merchantName={product.merchant.name} />
                 </Box>
                 <Stack mt="1" justifyContent="space-between">
-                  <Box
+                  <Text
                     fontSize="sm"
                     fontWeight="semibold"
                     as="h4"
                     lineHeight="tight"
                     isTruncated={{ base: false, md: false }}
                     noOfLines={3}
-                    height="max"
+                    height="24px"
                   >
                     {product.name}
-                  </Box>
+                  </Text>
                 </Stack>
               </Box>
             </LinkOverlay>
