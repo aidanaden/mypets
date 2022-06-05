@@ -109,28 +109,26 @@ function ProductListCard({ product }) {
         h="100%"
         position="relative"
       >
-        {product.variants[0].discounted_price > 0 && (
-          <Box
-            position="absolute"
-            top="0"
-            left="0"
-            p={3}
-            zIndex={2}
-            bg="mypets-green.100"
-            textColor="white"
-            fontWeight="bold"
-            roundedTopLeft="lg"
-            roundedRight="3xl"
-          >
-            {(
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          p={3}
+          zIndex={2}
+          bg="mypets-green.100"
+          textColor="white"
+          fontWeight="bold"
+          roundedTopLeft="lg"
+          roundedRight="3xl"
+        >
+          {product.variants[0].discounted_price > 0 &&
+            `${(
               (1 -
                 product.variants[0].discounted_price /
                   product.variants[0].price) *
               100
-            ).toFixed(0)}
-            % OFF
-          </Box>
-        )}
+            ).toFixed(0)} % OFF`}
+        </Box>
         <Stack direction="column" h="100%" w="100%">
           <NextLink href={`/products/${product.slug}`} passHref>
             <LinkOverlay>
