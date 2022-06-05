@@ -38,8 +38,13 @@ export default function ProductCarousel({ products, ...props }) {
   };
 
   return (
-    <Box bgColor="green.400">
-      <PageContainer pb={{ base: 8, lg: 12 }} bgColor="purple.400" {...props}>
+    <Box>
+      <PageContainer
+        pb={{ base: 8, lg: 12 }}
+        bgColor="purple.400"
+        mx={-10}
+        {...props}
+      >
         <HStack
           w="full"
           bg={"gray.200"}
@@ -47,7 +52,6 @@ export default function ProductCarousel({ products, ...props }) {
           spacing={10}
           alignItems="center"
           justifyContent="space-between"
-          mx={"-40"}
         >
           <Text {...arrowStyles} onClick={prevSlide}>
             &#10094;
@@ -65,7 +69,7 @@ export default function ProductCarousel({ products, ...props }) {
               // h="400px"
               h="max"
               w="full"
-              mb={4}
+              mb={6}
               {...carouselStyle}
             >
               {products.map((product, sid) => (

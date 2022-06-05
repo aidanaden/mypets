@@ -81,9 +81,9 @@ export default function Home({
             setSortMethod={setSortMethod}
             selectedAnimal={selectedAnimal}
           />
-          <ProductCarousel products={pageProducts} />
         </Stack>
       </PageContainer>
+      <ProductCarousel products={pageProducts} />
       <BenefitsSection benefits={home_data.Benefits} />
       <NewsletterSection data={home_data.Newsletter} />
       <SocialProofSection />
