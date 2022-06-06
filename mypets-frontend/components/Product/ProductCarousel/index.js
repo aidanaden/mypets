@@ -68,30 +68,11 @@ export default function ProductCarousel({ products, ...props }) {
                 <ProductListCard
                   product={product}
                   key={`slide-${sid}`}
-                  minW={{ lg: "193px" }}
+                  maxW={{ lg: "190px" }}
                 />
               ))}
             </HStack>
-            {/* <HStack justify="center" w="full">
-              {Array.from({ length: slidesCount }).map((_, slide) => (
-                <Box
-                  key={`dots-${slide}`}
-                  cursor="pointer"
-                  boxSize={["7px", , "15px"]}
-                  m="0 2px"
-                  bg={
-                    currentSlide === slide ? "blackAlpha.800" : "blackAlpha.500"
-                  }
-                  rounded="50%"
-                  display="inline-block"
-                  transition="background-color 0.6s ease"
-                  _hover={{ bg: "blackAlpha.800" }}
-                  onClick={() => setSlide(slide)}
-                ></Box>
-              ))}
-            </HStack> */}
           </Stack>
-
           <Text {...arrowStyles} onClick={nextSlide}>
             &#10095;
           </Text>
