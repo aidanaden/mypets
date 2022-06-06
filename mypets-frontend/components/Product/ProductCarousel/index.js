@@ -44,7 +44,7 @@ export default function ProductCarousel({ products, ...props }) {
         maxW={{ lg: "1260px" }}
         {...props}
       >
-        <SectionHeader mx={7.5}>Everyday Essentials</SectionHeader>
+        <SectionHeader mx={"40px"}>Everyday Essentials</SectionHeader>
         <HStack
           w="full"
           spacing={5}
@@ -65,7 +65,11 @@ export default function ProductCarousel({ products, ...props }) {
               {...carouselStyle}
             >
               {products.map((product, sid) => (
-                <ProductListCard product={product} key={`slide-${sid}`} />
+                <ProductListCard
+                  product={product}
+                  key={`slide-${sid}`}
+                  minW={{ lg: "210px" }}
+                />
               ))}
             </HStack>
             <HStack justify="center" w="full">

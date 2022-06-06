@@ -21,7 +21,7 @@ import { imageToUrl } from "../../../utils/urls";
 import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
 import AuthContext from "../../../context/AuthContext";
 
-function ProductListCard({ product }) {
+function ProductListCard({ product, ...props }) {
   const toast = useToast();
   const { user, updateCart } = useContext(AuthContext);
   const [qty, setQty] = useState(1);
@@ -98,6 +98,7 @@ function ProductListCard({ product }) {
       _hover={{
         shadow: "lg",
       }}
+      {...props}
       // as={`/products/${product.slug}`}
     >
       <Stack
