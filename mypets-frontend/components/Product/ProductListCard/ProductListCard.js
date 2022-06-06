@@ -90,7 +90,7 @@ function ProductListCard({ product, ...props }) {
   return (
     <LinkBox
       bg="white"
-      maxW="sm"
+      // maxW="sm"
       borderWidth="1px"
       rounded="lg"
       shadow="sm"
