@@ -68,7 +68,7 @@ export default function ProductCarousel({ products, ...props }) {
                 <ProductListCard
                   product={product}
                   key={`slide-${sid}`}
-                  maxW={{ lg: "190px" }}
+                  w={{ lg: "190px" }}
                 />
               ))}
             </HStack>
