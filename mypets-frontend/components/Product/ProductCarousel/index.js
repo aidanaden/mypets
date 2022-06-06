@@ -21,7 +21,7 @@ export default function ProductCarousel({ products, ...props }) {
   };
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesCount = products.length / 7;
+  const slidesCount = products.length / 6;
 
   const prevSlide = () => {
     setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
@@ -44,7 +44,7 @@ export default function ProductCarousel({ products, ...props }) {
         maxW={{ lg: "1260px" }}
         {...props}
       >
-        <SectionHeader mx={"36px"}>Everyday Essentials</SectionHeader>
+        <SectionHeader mx={"32px"}>Everyday Essentials</SectionHeader>
         <HStack
           w="full"
           spacing={5}
@@ -68,7 +68,7 @@ export default function ProductCarousel({ products, ...props }) {
                 <ProductListCard
                   product={product}
                   key={`slide-${sid}`}
-                  minW={{ lg: "200px" }}
+                  minW={{ lg: "183px" }}
                 />
               ))}
             </HStack>
