@@ -30,7 +30,7 @@ export default function faq({ faq_data }) {
           text="- Email: support@mypets.sg (reply within 2 working days)"
           mb={{ base: 3 }}
         />
-        <ParagraphSection text="- Whatsapp/Phone-call: +65 9126 4942 (anytime)" />
+        <ParagraphSection text="- Whatsapp/Phone-call: +65 8890 5982 (anytime)" />
         {faq_data.Question.map((data) => (
           <ParagraphSection heading={data.Title} text={data.Answer} />
         ))}
