@@ -44,7 +44,7 @@ export default function ProductCarousel({ products, ...props }) {
         maxW={{ lg: "1260px" }}
         {...props}
       >
-        <SectionHeader mx={"32px"}>Everyday Essentials</SectionHeader>
+        <SectionHeader mx={"30px"}>Everyday Essentials</SectionHeader>
         <HStack
           w="full"
           spacing={5}
@@ -72,7 +72,7 @@ export default function ProductCarousel({ products, ...props }) {
                 />
               ))}
             </HStack>
-            <HStack justify="center" w="full">
+            {/* <HStack justify="center" w="full">
               {Array.from({ length: slidesCount }).map((_, slide) => (
                 <Box
                   key={`dots-${slide}`}
@@ -89,7 +89,7 @@ export default function ProductCarousel({ products, ...props }) {
                   onClick={() => setSlide(slide)}
                 ></Box>
               ))}
-            </HStack>
+            </HStack> */}
           </Stack>
 
           <Text {...arrowStyles} onClick={nextSlide}>
