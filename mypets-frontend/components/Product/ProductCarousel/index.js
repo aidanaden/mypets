@@ -55,10 +55,9 @@ export default function ProductCarousel({ products, ...props }) {
             &#10094;
           </Text>
           <Stack direction="column" spacing={3} w="full" overflow="hidden">
-            <SimpleGrid
-              columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
+            <HStack
+              // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
               spacing={{ base: 4 }}
-              wrap="nowrap"
               // h="400px"
               h="max"
               w="full"
@@ -69,10 +68,10 @@ export default function ProductCarousel({ products, ...props }) {
                 <ProductListCard
                   product={product}
                   key={`slide-${sid}`}
-                  // minW={{ lg: "186.5px" }}
+                  minW={{ lg: "186px" }}
                 />
               ))}
-            </SimpleGrid>
+            </HStack>
           </Stack>
           <Text {...arrowStyles} onClick={nextSlide}>
             &#10095;
