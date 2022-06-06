@@ -53,6 +53,16 @@ export default function Home({
       isClosable: true,
     });
 
+  const essentialProducts = pageProducts.filter(
+    (prod) => prod.section.name.toLowerCase() === "everyday essentials"
+  );
+  const bestProducts = pageProducts.filter(
+    (prod) => prod.section.name.toLowerCase() === "best sellers"
+  );
+
+  console.log("essential products: ", essentialProducts);
+  console.log("best products: ", bestProducts);
+
   return (
     <>
       <Head>
@@ -83,7 +93,11 @@ export default function Home({
           />
         </Stack>
       </PageContainer>
-      <ProductCarousel products={pageProducts} />
+      <ProductCarousel
+        products={essentialProducts}
+        header={"Everyday Essentials"}
+      />
+      <ProductCarousel products={bestProducts} header={"Best Sellers"} />
       <BenefitsSection benefits={home_data.Benefits} />
       <NewsletterSection data={home_data.Newsletter} />
       <SocialProofSection />
