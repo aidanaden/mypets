@@ -89,10 +89,10 @@ export default function Home({
           />
         </Stack>
       </PageContainer>
-      <ProductCarousel
+      {/* <ProductCarousel
         products={essentialProducts}
         header={"Everyday Essentials"}
-      />
+      /> */}
       <ProductCarousel products={bestProducts} header={"Best Sellers"} />
       <BenefitsSection benefits={home_data.Benefits} />
       <NewsletterSection data={home_data.Newsletter} />
