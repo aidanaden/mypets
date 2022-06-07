@@ -57,10 +57,10 @@ export default function Home({
 
   const bestProducts = sections.filter(
     (sec) => sec.name.toLowerCase() === "best sellers"
-  );
+  )[0];
   const essentialProducts = sections.filter(
     (sec) => sec.name.toLowerCase() === "everyday essentials"
-  );
+  )[0];
   console.log("essential products: ", essentialProducts);
   console.log("best products: ", bestProducts);
 
