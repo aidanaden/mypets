@@ -93,7 +93,7 @@ export default function Home({
         products={essentialProducts}
         header={"Everyday Essentials"}
       /> */}
-      <ProductCarousel products={bestProducts} header={"Best Sellers"} />
+      {/* <ProductCarousel products={bestProducts} header={"Best Sellers"} /> */}
       <BenefitsSection benefits={home_data.Benefits} />
       <NewsletterSection data={home_data.Newsletter} />
       <SocialProofSection />
