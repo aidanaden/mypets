@@ -58,7 +58,6 @@ export default function ProductCarousel({ products, ...props }) {
             <HStack
               // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
               spacing={{ base: 4 }}
-              // h="400px"
               h="max"
               w="full"
               mb={6}
