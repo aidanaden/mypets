@@ -26,6 +26,7 @@ import ProductCarousel from "../components/Product/ProductCarousel";
 
 export default function Home({
   home_data,
+  sections,
   products,
   categories,
   animals,
@@ -53,15 +54,9 @@ export default function Home({
       isClosable: true,
     });
 
-  const essentialProducts = pageProducts.filter(
-    (prod) => prod.section.Name.toLowerCase() === "everyday essentials"
-  );
-  const bestProducts = pageProducts.filter(
-    (prod) => prod.section.Name.toLowerCase() === "best sellers"
-  );
-
-  console.log("essential products: ", essentialProducts);
-  console.log("best products: ", bestProducts);
+  // console.log("essential products: ", essentialProducts);
+  // console.log("best products: ", bestProducts);
+  console.log("sections: ", sections);
 
   return (
     <>
@@ -114,6 +109,9 @@ export async function getStaticProps() {
   const product_res = await fetch(`${API_PRODUCTS_URL}`);
   const products = await product_res.json();
 
+  const sections_res = await fetch(API_SECTIONS_URL);
+  const sections = await sections_res.json();
+
   const merchant_res = await fetch(`${API_MERCHANTS_URL}`);
   const merchants = await merchant_res.json();
 
@@ -125,6 +123,7 @@ export async function getStaticProps() {
     revalidate: 1,
     props: {
       home_data,
+      sections,
       products,
       categories,
       animals,
