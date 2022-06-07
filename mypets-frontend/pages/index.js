@@ -12,6 +12,7 @@ import ProductSectionList from "../components/Product/ProductSectionList/Product
 import CategoryList from "../components/Home/CategoryList/CategoryList";
 import {
   API_HOME_URL,
+  API_SECTIONS_URL,
   API_PRODUCTS_URL,
   API_MERCHANTS_URL,
   getAnimals,
