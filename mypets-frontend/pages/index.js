@@ -57,10 +57,10 @@ export default function Home({
 
   const bestProducts = sections.filter(
     (sec) => sec.name.toLowerCase() === "best sellers"
-  )[0].products;
+  );
   const essentialProducts = sections.filter(
     (sec) => sec.name.toLowerCase() === "everyday essentials"
-  )[0].products;
+  );
   console.log("essential products: ", essentialProducts);
   console.log("best products: ", bestProducts);
 
@@ -94,11 +94,11 @@ export default function Home({
           />
         </Stack>
       </PageContainer>
-      <ProductCarousel
+      {/* <ProductCarousel
         products={essentialProducts}
         header={"Everyday Essentials"}
       />
-      <ProductCarousel products={bestProducts} header={"Best Sellers"} />
+      <ProductCarousel products={bestProducts} header={"Best Sellers"} /> */}
       <BenefitsSection benefits={home_data.Benefits} />
       <NewsletterSection data={home_data.Newsletter} />
       <SocialProofSection />
