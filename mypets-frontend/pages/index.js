@@ -54,10 +54,10 @@ export default function Home({
     });
 
   const essentialProducts = pageProducts.filter(
-    (prod) => prod.section.name.toLowerCase() === "everyday essentials"
+    (prod) => prod.section.Name.toLowerCase() === "everyday essentials"
   );
   const bestProducts = pageProducts.filter(
-    (prod) => prod.section.name.toLowerCase() === "best sellers"
+    (prod) => prod.section.Name.toLowerCase() === "best sellers"
   );
 
   console.log("essential products: ", essentialProducts);
