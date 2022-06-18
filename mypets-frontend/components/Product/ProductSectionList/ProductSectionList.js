@@ -30,6 +30,9 @@ function ProductSectionList({ products, sortMethod, selectedAnimal }) {
   const productByAnimal = filterProductsByAnimal(products, selectedAnimal);
   const categoryOnly = getCategories(productByAnimal);
 
+  console.log("product by animal: ", productByAnimal);
+  console.log("category only: ", categoryOnly);
+
   return (
     <Box w="100%">
       <Stack direction="column" spacing={{ base: 10, md: 14 }}>

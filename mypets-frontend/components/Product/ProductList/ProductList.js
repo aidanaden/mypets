@@ -101,8 +101,6 @@ function ProductList({
     setListProducts(filteredProducts);
   }, [selectedMerchants, selectedAnimal]);
 
-  console.log("product list values is: ", listProducts);
-
   return (
     <Box>
       {listProducts && listProducts.length > 0 && (
