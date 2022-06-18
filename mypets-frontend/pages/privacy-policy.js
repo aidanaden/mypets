@@ -10,7 +10,6 @@ import ParagraphSection from "../components/Layouts/ParagraphSection/ParagraphSe
 import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 
 export default function privacy({ categories, privacy_data }) {
-  console.log("privacy_data: ", privacy_data);
   return (
     <>
       <Head>

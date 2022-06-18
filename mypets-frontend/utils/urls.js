@@ -10,7 +10,7 @@ export const API_PRIVACY_URL = `${API_URL}/privacy-page/`;
 export const API_TERMS_URL = `${API_URL}/terms-page/`;
 export const API_FAQ_URL = `${API_URL}/faq-page/`;
 export const API_ORDERS_URL = `${API_URL}/orders/`;
-export const API_PRODUCTS_URL = `${API_URL}/products/`;
+export const API_PRODUCTS_URL = `${API_URL}/products?_limit=-1`;
 export const API_CATEGORIES_URL = `${API_URL}/categories/`;
 export const API_MERCHANTS_URL = `${API_URL}/merchants/`;
 export const API_ANIMALS_URL = `${API_URL}/animals/`;
