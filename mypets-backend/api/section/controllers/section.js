@@ -14,9 +14,9 @@ module.exports = {
   async find(ctx) {
     return strapi.query("section").find(ctx.query, [
       {
-        path: "product",
+        path: "products",
         populate: {
-          path: "variants",
+          path: "variant",
         },
       },
     ]);
