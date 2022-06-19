@@ -12,14 +12,7 @@ module.exports = {
    * @param {any} ctx
    */
   async find(ctx) {
-    return strapi.query("section").find(ctx.query, [
-      {
-        path: "products",
-        populate: {
-          path: "variant",
-        },
-      },
-    ]);
+    return strapi.query("person").find(ctx.query, ["product", "variant"]);
   },
 
   /**
