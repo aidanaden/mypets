@@ -37,6 +37,8 @@ export default function ProductCarousel({ products, header, ...props }) {
     ml: `-${currentSlide * 100}%`,
   };
 
+  const groupedProducts = createGroups(products, 5);
+
   return (
     <Box>
       <PageContainer
@@ -59,18 +61,18 @@ export default function ProductCarousel({ products, header, ...props }) {
           <Stack direction="column" spacing={3} w="full" overflow="hidden">
             <HStack
               // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
-              spacing={{ base: 4 }}
+              // spacing={{ base: 4 }}
               h="max"
               w="full"
               mb={6}
               {...carouselStyle}
             >
-              {products.map((product, sid) => (
-                <ProductListCard
-                  product={product}
-                  key={`slide-${sid}`}
-                  minW={{ lg: "186px" }}
-                />
+              {groupedProducts.map((productGroup, gid) => (
+                <SimpleGrid columns={{ base: 2, md: 6 }} key={gid}>
+                  {productGroup.map((product, sid) => (
+                    <ProductListCard product={product} key={`slide-${sid}`} />
+                  ))}
+                </SimpleGrid>
               ))}
             </HStack>
           </Stack>
