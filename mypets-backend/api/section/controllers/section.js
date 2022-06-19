@@ -12,15 +12,14 @@ module.exports = {
    * @param {any} ctx
    */
   async find(ctx) {
-    let entities;
-    if (ctx.query._q) {
-      entities = await strapi.services.section.search({ ...ctx.query });
-    } else {
-      entities = await strapi.services.section.find({ ...ctx.query });
-    }
-    return entities.map((entity) =>
-      sanitizeEntity(entity, { model: strapi.models.section })
-    );
+    return strapi.query("section").find(ctx.query, [
+      {
+        path: "product",
+        populate: {
+          path: "variants",
+        },
+      },
+    ]);
   },
 
   /**
