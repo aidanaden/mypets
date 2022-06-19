@@ -35,8 +35,9 @@ export default function CartPriceBreakdownList({
   totalPrice,
 }) {
   const gstPrice = totalPrice * TAX_AMT;
-  const deliveryFee =
-    totalPrice >= MINIMUM_ORDER_FREE_DELIVERY ? 0.0 : DELIVERY_FEE;
+  // const deliveryFee =
+  //   totalPrice >= MINIMUM_ORDER_FREE_DELIVERY ? 0.0 : DELIVERY_FEE;
+  const deliveryFee = DELIVERY_FEE;
   const finalPrice = 1.0 * (totalPrice + gstPrice + deliveryFee);
 
   const productTotalQuantity = (order_products) => {

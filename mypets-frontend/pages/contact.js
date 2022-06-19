@@ -22,7 +22,7 @@ export default function contact({ contact_data }) {
     
     For account/order-related which requires immediate assistance
     
-    • Phone/WhatsApp: 9126 4942 (anytime)
+    • Phone/WhatsApp: 8890 5982 (anytime)
 `;
 
   return (
