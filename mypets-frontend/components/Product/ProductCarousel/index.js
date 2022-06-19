@@ -37,8 +37,6 @@ export default function ProductCarousel({ products, header, ...props }) {
     ml: `-${currentSlide * 100}%`,
   };
 
-  console.log("first product : ", products[0]);
-
   return (
     <Box>
       <PageContainer

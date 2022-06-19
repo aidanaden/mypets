@@ -55,6 +55,13 @@ export default function Home({
       isClosable: true,
     });
 
+  const bestProducts = sections.filter(
+    (sec) => sec.name.toLowerCase() === "best sellers"
+  )[0].products;
+  const essentialProducts = sections.filter(
+    (sec) => sec.name.toLowerCase() === "everyday essentials"
+  )[0].products;
+
   return (
     <>
       <Head>
@@ -89,9 +96,7 @@ export default function Home({
         products={essentialProducts}
         header={"Everyday Essentials"}
       /> */}
-      {sections.map((sec) => (
-        <ProductCarousel products={sec.products} header={sec.name} />
-      ))}
+      <ProductCarousel products={bestProducts} header={"Best Sellers"} />
       <BenefitsSection benefits={home_data.Benefits} />
       <NewsletterSection data={home_data.Newsletter} />
       <SocialProofSection />
