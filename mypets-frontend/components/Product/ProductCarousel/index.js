@@ -71,6 +71,7 @@ export default function ProductCarousel({ products, header, ...props }) {
               {groupedProducts.map((productGroup, gid) => (
                 <SimpleGrid
                   w="full"
+                  minW={"1200px"}
                   h="max"
                   bg="red.300"
                   columns={{ base: 2, md: 5 }}
