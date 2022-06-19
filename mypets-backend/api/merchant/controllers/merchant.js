@@ -32,7 +32,6 @@ module.exports = {
           await strapi.services.merchant_review.findOne({
             id: entity.merchant_reviews[k].id,
           });
-        // console.log('merchant review value: ', entity.merchant_reviews[k])
       }
     }
 
