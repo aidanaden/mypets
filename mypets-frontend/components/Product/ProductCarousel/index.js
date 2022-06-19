@@ -59,17 +59,29 @@ export default function ProductCarousel({ products, header, ...props }) {
           <Text {...arrowStyles} onClick={prevSlide}>
             &#10094;
           </Text>
-          <Stack direction="column" spacing={3} w="full" overflow="hidden">
+          <Stack
+            direction="column"
+            spacing={3}
+            w="full"
+            overflow="hidden"
+            bg="purple.300"
+          >
             <HStack
               // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
               // spacing={{ base: 4 }}
               h="max"
               w="full"
               mb={6}
+              bg="blue.400"
               {...carouselStyle}
             >
               {groupedProducts.map((productGroup, gid) => (
-                <SimpleGrid columns={{ base: 2, md: 6 }} key={gid}>
+                <SimpleGrid
+                  w="full"
+                  bg="red.300"
+                  columns={{ base: 2, md: 6 }}
+                  key={gid}
+                >
                   {productGroup.map((product, sid) => (
                     <ProductListCard product={product} key={`slide-${sid}`} />
                   ))}
