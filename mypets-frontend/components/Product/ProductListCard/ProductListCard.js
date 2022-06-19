@@ -26,8 +26,6 @@ function ProductListCard({ product, ...props }) {
   const { user, updateCart } = useContext(AuthContext);
   const [qty, setQty] = useState(1);
 
-  console.log("product list card variant: ", product.variants[0]);
-
   const addQty = () => {
     let tempQty = qty;
     tempQty += 1;

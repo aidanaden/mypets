@@ -4,7 +4,7 @@ import ProductListCard from "../ProductListCard/ProductListCard";
 import PageContainer from "../../Layouts/PageContainer/PageContainer";
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 
-export default function ProductCarousel({ products, ...props }) {
+export default function ProductCarousel({ products, header, ...props }) {
   const arrowStyles = {
     cursor: "pointer",
     w: "auto",
@@ -37,6 +37,8 @@ export default function ProductCarousel({ products, ...props }) {
     ml: `-${currentSlide * 100}%`,
   };
 
+  console.log("first product : ", products[0]);
+
   return (
     <Box>
       <PageContainer
@@ -44,7 +46,9 @@ export default function ProductCarousel({ products, ...props }) {
         maxW={{ lg: "1260px" }}
         {...props}
       >
-        <SectionHeader mx={"30px"}>Everyday Essentials</SectionHeader>
+        <SectionHeader mx={"30px"} textTransform="capitalize">
+          {header}
+        </SectionHeader>
         <HStack
           w="full"
           spacing={5}
