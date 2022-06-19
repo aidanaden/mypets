@@ -66,23 +66,7 @@ export default function ProductCarousel({ products, header, ...props }) {
             overflow="hidden"
             bg="purple.300"
           >
-            {groupedProducts.map((productGroup, gid) => (
-              <SimpleGrid
-                w="full"
-                h="max"
-                bg="red.300"
-                columns={{ base: 2, md: 6 }}
-                key={gid}
-                mb={6}
-                overflow="auto"
-                {...carouselStyle}
-              >
-                {productGroup.map((product, sid) => (
-                  <ProductListCard product={product} key={`slide-${sid}`} />
-                ))}
-              </SimpleGrid>
-            ))}
-            {/* <HStack
+            <HStack
               // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
               // spacing={{ base: 4 }}
               h="max"
@@ -91,8 +75,22 @@ export default function ProductCarousel({ products, header, ...props }) {
               bg="blue.400"
               {...carouselStyle}
             >
-              
-            </HStack> */}
+              {groupedProducts.map((productGroup, gid) => (
+                <SimpleGrid
+                  w="full"
+                  h="max"
+                  bg="red.300"
+                  columns={{ base: 2, md: 5 }}
+                  key={gid}
+                  mb={6}
+                  {...carouselStyle}
+                >
+                  {productGroup.map((product, sid) => (
+                    <ProductListCard product={product} key={`slide-${sid}`} />
+                  ))}
+                </SimpleGrid>
+              ))}
+            </HStack>
           </Stack>
           <Text {...arrowStyles} onClick={nextSlide}>
             &#10095;
