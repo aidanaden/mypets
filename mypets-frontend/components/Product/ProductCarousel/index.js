@@ -39,6 +39,7 @@ export default function ProductCarousel({ products, header, ...props }) {
   };
 
   const groupedProducts = createGroups(products, 5);
+  console.log(groupedProducts);
 
   return (
     <Box>
@@ -66,15 +67,7 @@ export default function ProductCarousel({ products, header, ...props }) {
             overflow="hidden"
             bg="purple.300"
           >
-            <HStack
-              // columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
-              // spacing={{ base: 4 }}
-              h="max"
-              w="full"
-              mb={6}
-              bg="blue.400"
-              {...carouselStyle}
-            >
+            <HStack h="max" w="100%" mb={6} bg="blue.400" {...carouselStyle}>
               {groupedProducts.map((productGroup, gid) => (
                 <SimpleGrid
                   w="full"
@@ -82,7 +75,6 @@ export default function ProductCarousel({ products, header, ...props }) {
                   bg="red.300"
                   columns={{ base: 2, md: 5 }}
                   key={gid}
-                  mb={6}
                   {...carouselStyle}
                 >
                   {productGroup.map((product, sid) => (
