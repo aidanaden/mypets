@@ -74,6 +74,7 @@ export default function ProductCarousel({ products, header, ...props }) {
                 columns={{ base: 2, md: 6 }}
                 key={gid}
                 mb={6}
+                overflow="auto"
                 {...carouselStyle}
               >
                 {productGroup.map((product, sid) => (
