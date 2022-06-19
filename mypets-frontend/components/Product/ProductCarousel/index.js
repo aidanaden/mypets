@@ -3,6 +3,7 @@ import { Box, Flex, Text, HStack, SimpleGrid, Stack } from "@chakra-ui/react";
 import ProductListCard from "../ProductListCard/ProductListCard";
 import PageContainer from "../../Layouts/PageContainer/PageContainer";
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
+import { createGroups } from "../../../utils";
 
 export default function ProductCarousel({ products, header, ...props }) {
   const arrowStyles = {
