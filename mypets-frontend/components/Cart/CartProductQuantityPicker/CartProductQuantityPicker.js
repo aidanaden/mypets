@@ -1,7 +1,8 @@
 import { useState, useContext, useEffect } from "react";
 import { IconButton, Text, HStack } from "@chakra-ui/react";
-import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
+import AddIcon from "../../icons/AddIcon";
+import MinusIcon from "../../icons/MinusIcon";
 import AuthContext from "../../../context/AuthContext";
 
 function CartProductQuantityPicker({ addQuantity, minusQuantity, quantity }) {

@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, IconButton, Text } from "@chakra-ui/react";
-import { AddIcon, MinusIcon } from "@chakra-ui/icons";
+import AddIcon from "../../icons/AddIcon";
+import MinusIcon from "../../icons/MinusIcon";
 
 function ProductQuantityPicker({
   addQuantity,

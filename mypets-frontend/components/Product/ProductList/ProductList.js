@@ -44,7 +44,7 @@ function ProductList({
     animal,
     selectedMerchants
   ) => {
-    if (animal != "") {
+    if (animal && animal != "") {
       if (selectedMerchants) {
         if (selectedMerchants.length == 0) {
           const filteredProducts = products.filter((product) => {
@@ -83,6 +83,7 @@ function ProductList({
         });
         return filteredProducts;
       } else {
+        console.log("returning products: ", products);
         return products;
       }
     }

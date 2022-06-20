@@ -10,9 +10,10 @@ import {
   ButtonGroup,
   Center,
 } from "@chakra-ui/react";
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
+import MenuIcon from "../../icons/MenuIcon/";
+import CloseIcon from "../../icons/CloseIcon/";
 
 // import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 import SearchbarGroup from "../../Common/SearchbarGroup/SearchbarGroup";
@@ -196,7 +197,7 @@ export default function Sidebar() {
                 sidebar.isOpen ? (
                   <CloseIcon w={3} h={3} />
                 ) : (
-                  <HamburgerIcon w={5} h={5} />
+                  <MenuIcon w={5} h={5} />
                 )
               }
               variant="ghost"

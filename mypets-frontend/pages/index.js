@@ -68,7 +68,7 @@ export default function Home({
         <title>{home_data.meta_title}</title>
         <meta name="description" content={home_data.meta_description} />
       </Head>
-      <PageContainer pb={{ base: 8, md: 12 }}>
+      <PageContainer>
         {/* <CategoryList
             display={{ base: "none", md: "flex" }}
             categories={pageCategories}
@@ -76,27 +76,18 @@ export default function Home({
           /> */}
         {/* <Carousel /> */}
         <HomeBannerSwiper banners={home_data.Banners} />
-        <Stack direction="column" spacing={{ base: 10, md: 14 }}>
+        <Stack direction="column" pb={{ base: 8, lg: 12 }}>
           <AnimalCategorySection
             pageAnimals={pageAnimals}
             setSelectedAnimal={setSelectedAnimal}
             setSortMethod={setSortMethod}
           />
+          <ProductCarousel products={bestProducts} header={"Best Sellers"} />
           <MerchantSectionList merchants={merchants} />
-          <ProductSectionList
-            products={pageProducts}
-            categories={pageCategories}
-            sortMethod={sortMethod}
-            setSortMethod={setSortMethod}
-            selectedAnimal={selectedAnimal}
-          />
+          <ProductCarousel products={bestProducts} header={"Best Sellers"} />
+          <ProductCarousel products={bestProducts} header={"Best Sellers"} />
         </Stack>
       </PageContainer>
-      {/* <ProductCarousel
-        products={essentialProducts}
-        header={"Everyday Essentials"}
-      /> */}
-      <ProductCarousel products={bestProducts} header={"Best Sellers"} />
       <BenefitsSection benefits={home_data.Benefits} />
       <NewsletterSection data={home_data.Newsletter} />
       <SocialProofSection />

@@ -1,100 +1,169 @@
 import { useState } from "react";
-import { Box, Flex, Text, HStack, SimpleGrid, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  HStack,
+  SimpleGrid,
+  Stack,
+  IconButton,
+  Circle,
+  Button,
+  Center,
+} from "@chakra-ui/react";
+import Carousel, { consts } from "react-elastic-carousel";
 import ProductListCard from "../ProductListCard/ProductListCard";
 import PageContainer from "../../Layouts/PageContainer/PageContainer";
 import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 import { createGroups } from "../../../utils";
+import ChevronRightIcon from "../../icons/ChevronRightIcon";
+import ChevronLeftIcon from "../../icons/ChevronLeftIcon";
+import ProductList from "../ProductList/ProductList";
+
+const CarouselArrow = ({ type, onClick, isEdge }) => {
+  return (
+    <Box display="flex">
+      <IconButton
+        rounded="full"
+        size="md"
+        _hover={{ bg: "white" }}
+        _active={{ bg: "white" }}
+        alignSelf="center"
+        onClick={onClick}
+        disabled={isEdge}
+        bg="white"
+        icon={
+          type === consts.PREV ? (
+            <>
+              <ChevronLeftIcon boxSize={{ base: 8 }} />
+            </>
+          ) : (
+            <>
+              <ChevronRightIcon boxSize={{ base: 8 }} />
+            </>
+          )
+        }
+      />
+    </Box>
+  );
+};
+
+const CarouselPagination = ({ pages, activePage, onClick }) => {
+  return (
+    <Stack direction="row" mt={4} spacing={1}>
+      {pages.map((page) => {
+        const isActivePage = activePage === page;
+        return (
+          <Button
+            // as={Button}
+            size="4"
+            minH="4"
+            minW="4"
+            bg={isActivePage ? "mypets.100" : "transparent"}
+            rounded="full"
+            key={page}
+            onClick={() => onClick(page)}
+            active={isActivePage}
+            _active={{ bg: "mypets.100" }}
+            _selected={{ bg: "mypets.100" }}
+            borderWidth="2px"
+            borderColor="mypets.100"
+          />
+        );
+      })}
+    </Stack>
+  );
+};
 
 export default function ProductCarousel({ products, header, ...props }) {
-  const arrowStyles = {
-    cursor: "pointer",
-    w: "auto",
-    opacity: 0.4,
-    color: "grey",
-    fontWeight: "bold",
-    fontSize: "18px",
-    transition: "0.3s ease",
-    userSelect: "none",
-    _hover: {
-      opacity: 0.6,
-      color: "black",
-    },
-  };
+  const breakpoints = [
+    { width: 300, itemsToShow: 1, pagination: false, showArrows: true }, // sm
+    { width: 360, itemsToShow: 2, pagination: true, showArrows: true }, // md
+    { width: 480, itemsToShow: 2, pagination: true, showArrows: true }, // lg
+    { width: 500, itemsToShow: 3, pagination: true, showArrows: true }, // xl
+    { width: 700, itemsToShow: 5, pagination: true, showArrows: true },
+    { width: 1750, itemsToShow: 6 },
+  ];
 
-  const groupedProducts = createGroups(products, 5);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesCount = groupedProducts.length;
-
-  const prevSlide = () => {
-    setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
+  const [expanded, setExpanded] = useState(false);
+  const handleExpandClick = () => {
+    setExpanded(true);
   };
-  const nextSlide = () => {
-    setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1));
-  };
-  const setSlide = (slide) => {
-    setCurrentSlide(slide);
-  };
-  const carouselStyle = {
-    transition: "all .5s",
-    ml: `-${currentSlide * 100}%`,
-  };
-
-  console.log("grouped products: ", groupedProducts);
-  console.log("slide count: ", slidesCount);
 
   return (
     <Box>
-      <PageContainer
-        pb={{ base: 8, lg: 12 }}
-        maxW={{ lg: "1260px" }}
-        {...props}
-      >
-        <SectionHeader mx={"30px"} textTransform="capitalize">
-          {header}
-        </SectionHeader>
-        <HStack
-          w="full"
-          spacing={5}
-          alignItems="center"
-          justifyContent="space-between"
-        >
-          <Text {...arrowStyles} onClick={prevSlide}>
-            &#10094;
-          </Text>
-          <Stack direction="column" w="full" overflow="hidden" bg="purple.300">
-            <HStack
-              h="max"
-              w="100%"
-              mb={6}
-              mx={2}
-              mt={2}
-              bg="blue.400"
-              spacing={0}
-              {...carouselStyle}
+      {!expanded ? (
+        <>
+          <PageContainer
+            px={0}
+            pb={{ base: 8, lg: 12 }}
+            // pb={0}
+            maxW={{ lg: "1332px" }}
+            {...props}
+          >
+            <Stack
+              direction="row"
+              spacing={6}
+              align="center"
+              mb={{ base: 4, md: 6 }}
             >
-              {groupedProducts.map((productGroup, gid) => (
-                <SimpleGrid
-                  w="full"
-                  minW={"1200px"}
-                  h="max"
-                  bg="red.400"
-                  gap={{ base: 3 }}
-                  columns={{ base: 2, sm: 2, md: 3, lg: 4, xl: 5 }}
-                  key={gid}
-                  {...carouselStyle}
-                >
-                  {productGroup.map((product, sid) => (
-                    <ProductListCard product={product} key={`slide-${sid}`} />
-                  ))}
-                </SimpleGrid>
-              ))}
-            </HStack>
-          </Stack>
-          <Text {...arrowStyles} onClick={nextSlide}>
-            &#10095;
-          </Text>
-        </HStack>
-      </PageContainer>
+              <SectionHeader
+                mx={{ xl: "66px" }}
+                mb={0}
+                textTransform="capitalize"
+              >
+                {header}
+              </SectionHeader>
+              <Button
+                rounded="full"
+                size="xs"
+                bg="gray.300"
+                px={3}
+                display={{ base: "none", md: "block" }}
+                onClick={handleExpandClick}
+              >
+                View more
+              </Button>
+            </Stack>
+            <Box display={{ xs: "none", md: "block" }}>
+              <Carousel
+                enableAutoPlay={false}
+                enableSwipe
+                pagination={false}
+                itemsToShow={4}
+                itemPadding={[0, 10]}
+                breakPoints={breakpoints}
+                renderArrow={CarouselArrow}
+                renderPagination={CarouselPagination}
+              >
+                {products.map((prod, i) => (
+                  <ProductListCard product={prod} key={`product-${i}`} />
+                ))}
+              </Carousel>
+            </Box>
+          </PageContainer>
+          <Center w="100%">
+            <Button
+              alignSelf={"center"}
+              size="md"
+              bg="gray.300"
+              display={{ base: "block", md: "none" }}
+              onClick={handleExpandClick}
+            >
+              View more
+            </Button>
+          </Center>
+        </>
+      ) : (
+        <SimpleGrid
+          columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
+          spacing={{ base: 4 }}
+        >
+          {products.map((product, index) => (
+            <ProductListCard product={product} key={index} />
+          ))}
+        </SimpleGrid>
+      )}
     </Box>
   );
 }

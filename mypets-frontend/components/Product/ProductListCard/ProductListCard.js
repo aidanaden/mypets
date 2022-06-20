@@ -11,7 +11,6 @@ import {
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/react";
-import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import NextImage from "next/image";
 import NextLink from "next/link";
 
@@ -20,6 +19,8 @@ import RatingDisplay from "../../Common/RatingDisplay/RatingDisplay";
 import { imageToUrl } from "../../../utils/urls";
 import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
 import AuthContext from "../../../context/AuthContext";
+import AddIcon from "../../icons/AddIcon";
+import MinusIcon from "../../icons/MinusIcon";
 
 function ProductListCard({ product, ...props }) {
   const toast = useToast();

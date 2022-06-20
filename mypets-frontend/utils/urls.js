@@ -1,7 +1,8 @@
 import { formatDistance, format } from "date-fns";
 export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
-export const FRONTEND_URL = process.env.FRONTEND_URL || "https://mypets.sg";
+  process.env.NEXT_PUBLIC_API_URL || "https://backend.mypets.sg";
+export const FRONTEND_URL =
+  process.env.FRONTEND_URL || "https://localhost:3000";
 export const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PK;
 export const API_HOME_URL = `${API_URL}/home-page/`;
 export const API_ABOUT_URL = `${API_URL}/about-page/`;
@@ -39,11 +40,12 @@ export function imageToUrl(image) {
     return "/cropped-logo.svg";
   }
 
-  if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
-    return `${API_URL}${image.url}`;
-  } else {
-    return image.url;
-  }
+  // if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+  //   return `${API_URL}${image.url}`;
+  // } else {
+  //   return image.url;
+  // }
+  return image.url;
 }
 
 export function distanceFromToday(str_date) {
