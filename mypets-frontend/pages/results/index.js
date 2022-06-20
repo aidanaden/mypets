@@ -48,13 +48,11 @@ const MerchantChecklist = ({
   const merchantChangeOnCheck = (checked, merchant) => {
     if (checked) {
       const newSelectedMerchants = [...selectedMerchants, merchant];
-      // console.log('new merchants: ', newSelectedMerchants)
       setSelectedMerchants(newSelectedMerchants);
     } else {
       const leftMerchants = selectedMerchants.filter(
         (selectedMerchant) => selectedMerchant != merchant
       );
-      // console.log('merchants AFTER removal: ', leftMerchants)
       setSelectedMerchants(leftMerchants);
     }
   };
@@ -130,8 +128,6 @@ export default function index({ products, animals, merchants }) {
       });
 
       const filteredProductMerchants = getMerchants(filteredProducts);
-      // console.log('filtered product merchants: ', filteredProductMerchants)
-      // console.log('filtered product: ', filteredProducts)
       setPageMerchants(filteredProductMerchants);
       setPageProducts(filteredProducts);
     } else {

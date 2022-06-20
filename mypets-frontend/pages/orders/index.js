@@ -25,7 +25,7 @@ const ContributionRow = ({ order }) => {
       </Stack>
       <Spacer />
       <Text as="h5" fontSize="2xl">
-        ${order.contribution_amount}
+        ${order.contribution_amount.toFixed(2)}
       </Text>
     </HStack>
   );
@@ -54,8 +54,8 @@ const ContributionSection = ({ orders }) => {
           </Box>
           <Spacer />
           <Center rounded="lg" p={{ base: 5 }} bg="gray.200">
-            With every purchase, we will donate $1 of the total receipt order
-            (exclu. Delivery fees) to local pet communities
+            With every purchase, we will donate $1 of the total receipt order to
+            local pet communities
           </Center>
         </Stack>
         <Text mt={{ base: 8 }} as="h5" fontSize={{ base: "lg", md: "xl" }}>
@@ -114,7 +114,7 @@ export default function Orders() {
       <BackBtn variant="home" />
       {orders.length > 0 && <ContributionSection orders={orders} />}
       {orders.length > 0 ? (
-        <OrderSection orders={orders} />
+        <OrderSection orders={orders.reverse()} />
       ) : (
         <Center h="70vh">No orders available 😢</Center>
       )}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_benefits_benefits",
+  "info": {
+    "name": "Benefits",
+    "icon": "thumbs-up"
+  },
+  "options": {},
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "benefit": {
+      "type": "component",
+      "repeatable": true,
+      "component": "benefits.benefit"
+    }
+  }
+}

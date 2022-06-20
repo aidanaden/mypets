@@ -1,7 +1,8 @@
 import { formatDistance, format } from "date-fns";
 export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337";
-export const FRONTEND_URL = process.env.FRONTEND_URL || "https://mypets.sg";
+  process.env.NEXT_PUBLIC_API_URL || "https://backend.mypets.sg";
+export const FRONTEND_URL =
+  process.env.FRONTEND_URL || "https://localhost:3000";
 export const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PK;
 export const API_HOME_URL = `${API_URL}/home-page/`;
 export const API_ABOUT_URL = `${API_URL}/about-page/`;
@@ -10,7 +11,8 @@ export const API_PRIVACY_URL = `${API_URL}/privacy-page/`;
 export const API_TERMS_URL = `${API_URL}/terms-page/`;
 export const API_FAQ_URL = `${API_URL}/faq-page/`;
 export const API_ORDERS_URL = `${API_URL}/orders/`;
-export const API_PRODUCTS_URL = `${API_URL}/products/`;
+export const API_PRODUCTS_URL = `${API_URL}/products?_limit=-1`;
+export const API_SECTIONS_URL = `${API_URL}/sections/`;
 export const API_CATEGORIES_URL = `${API_URL}/categories/`;
 export const API_MERCHANTS_URL = `${API_URL}/merchants/`;
 export const API_ANIMALS_URL = `${API_URL}/animals/`;
@@ -21,8 +23,8 @@ export const REVIEW_TEXT_LEN = 128;
 
 export const CONTRIBUTION_AMT = 1;
 export const TAX_AMT = 0.0;
-export const DELIVERY_FEE = 4.5;
-export const MINIMUM_ORDER_FREE_DELIVERY = 45;
+export const DELIVERY_FEE = 1.5;
+export const MINIMUM_ORDER_FREE_DELIVERY = 0.0;
 
 /**
  * Given an image (from strapi api) return the URL
@@ -38,11 +40,12 @@ export function imageToUrl(image) {
     return "/cropped-logo.svg";
   }
 
-  if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
-    return `${API_URL}${image.url}`;
-  } else {
-    return image.url;
-  }
+  // if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+  //   return `${API_URL}${image.url}`;
+  // } else {
+  //   return image.url;
+  // }
+  return image.url;
 }
 
 export function distanceFromToday(str_date) {

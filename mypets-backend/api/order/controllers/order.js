@@ -5,7 +5,7 @@ const finder = require("strapi-utils/lib/finder");
 const stripe = require("stripe")(process.env.STRIPE_SK);
 const nanoid = customAlphabet("0123456789ABCDEF", 10);
 const stripe_free_shipping_id = "shr_1Js6BxJNGU0rJw40fwzNOwqw";
-const stripe_paid_shipping_id = "shr_1L3jeoJNGU0rJw40MbuvTxkD";
+const stripe_paid_shipping_id = "shr_1L5krRJNGU0rJw40qLri6roQ";
 const stripe_tax_id = "txr_1JcuChJNGU0rJw40EKv3YAEt";
 const order_minimum_free_shipping = 45;
 
@@ -158,7 +158,7 @@ module.exports = {
       allow_promotion_codes: true,
       shipping_rates:
         cart.total_price >= order_minimum_free_shipping
-          ? [stripe_free_shipping_id]
+          ? [stripe_paid_shipping_id]
           : [stripe_paid_shipping_id],
       shipping_address_collection: {
         allowed_countries: ["SG"],

@@ -12,38 +12,29 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "mobile_banners": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
-    },
     "banner_text": {
       "type": "richtext"
-    },
-    "desktop_banners": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
     },
     "meta_title": {
       "type": "string"
     },
     "meta_description": {
       "type": "string"
+    },
+    "Banners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "banner.banner"
+    },
+    "Benefits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "benefits.benefits"
+    },
+    "Newsletter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "newsletter.newsletter"
     }
   }
 }

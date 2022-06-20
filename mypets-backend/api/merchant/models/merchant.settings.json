@@ -47,35 +47,16 @@
       "required": false,
       "pluginOptions": {}
     },
-    "mobile_banners": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
-    },
-    "desktop_banners": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
-    },
     "meta_title": {
       "type": "string"
     },
     "meta_description": {
       "type": "string"
+    },
+    "banners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "banner.banner"
     }
   }
 }

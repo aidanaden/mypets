@@ -10,7 +10,6 @@ import SectionSubHeader from "../components/Layouts/SectionSubHeader/SectionSubH
 import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 
 export default function contact({ contact_data }) {
-  console.log("contact data: ", contact_data);
   const intro = `
 
     Our Business Operating Hours: 9am - 12pm & 2pm - 6pm (Mon-Fri)
@@ -23,7 +22,7 @@ export default function contact({ contact_data }) {
     
     For account/order-related which requires immediate assistance
     
-    • Phone/WhatsApp: 9126 4942 (anytime)
+    • Phone/WhatsApp: 8890 5982 (anytime)
 `;
 
   return (

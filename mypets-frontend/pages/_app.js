@@ -17,7 +17,8 @@ import AnnouncementBanner from "../components/Layouts/AnnouncementBanner/Announc
 import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 import Footer from "../components/Layouts/Footer/Footer";
-import MessengerCustomerChat from "react-messenger-customer-chat";
+// import MessengerCustomerChat from "react-messenger-customer-chat";
+// import { MessengerChat } from "react-messenger-chat-plugin";
 
 function MyApp({ Component, pageProps }) {
   const [bannerText, setBannerText] = useState("");
@@ -58,22 +59,18 @@ function MyApp({ Component, pageProps }) {
       });
   }, [Router.events]);
 
-  useEffect(async () => {
-    console.log("fetching from home api url: ", API_HOME_URL);
-
-    fetch(API_HOME_URL)
-      .then((res) => {
-        console.log("home_res: ", res);
-      })
-      .catch((err) => {
-        console.log("home_res error: ", err);
-      });
-
-    const home_res = await fetch(`${API_HOME_URL}`);
-    console.log("home_res: ", home_res);
-    const home_data = await home_res.json();
-    console.log("home data: ", home_data);
-    setBannerText(home_data.banner_text);
+  useEffect(() => {
+    const fetchHome = async () => {
+      console.log("api home url: ", API_HOME_URL);
+      try {
+        const home_res = await fetch(`${API_HOME_URL}`);
+        const home_data = await home_res.json();
+        setBannerText(home_data.banner_text);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchHome();
   }, []);
 
   return (
@@ -94,10 +91,11 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
           </BaseLayout>
           <Footer />
-          <MessengerCustomerChat
+          {/* <MessengerChat pageId="105638824710827" /> */}
+          {/* <MessengerCustomerChat
             pageId="105638824710827"
             appId="615727602931296"
-          />
+          /> */}
         </ChakraProvider>
       </AuthProvider>
     </SimpleReactLightbox>

@@ -11,7 +11,6 @@ import {
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/react";
-import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import NextImage from "next/image";
 import NextLink from "next/link";
 
@@ -20,8 +19,10 @@ import RatingDisplay from "../../Common/RatingDisplay/RatingDisplay";
 import { imageToUrl } from "../../../utils/urls";
 import MypetsBtn from "../../Common/MypetsBtn/MypetsBtn";
 import AuthContext from "../../../context/AuthContext";
+import AddIcon from "../../icons/AddIcon";
+import MinusIcon from "../../icons/MinusIcon";
 
-function ProductListCard({ product }) {
+function ProductListCard({ product, ...props }) {
   const toast = useToast();
   const { user, updateCart } = useContext(AuthContext);
   const [qty, setQty] = useState(1);
@@ -76,8 +77,6 @@ function ProductListCard({ product }) {
           total_price: orderProductTotal,
         };
 
-        console.log("adding to cart: ", order_product);
-
         updateCart(order_product);
         succesToast("Product added to cart");
         setQty(1);
@@ -92,7 +91,7 @@ function ProductListCard({ product }) {
   return (
     <LinkBox
       bg="white"
-      maxW="sm"
+      // maxW="sm"
       borderWidth="1px"
       rounded="lg"
       shadow="sm"
@@ -100,6 +99,7 @@ function ProductListCard({ product }) {
       _hover={{
         shadow: "lg",
       }}
+      {...props}
       // as={`/products/${product.slug}`}
     >
       <Stack
@@ -111,32 +111,40 @@ function ProductListCard({ product }) {
         h="100%"
         position="relative"
       >
-        {product.variants[0].discounted_price > 0 && (
-          <Box
-            position="absolute"
-            top="0"
-            left="0"
-            p={3}
-            zIndex={2}
-            bg="mypets-green.100"
-            textColor="white"
-            fontWeight="bold"
-            roundedTopLeft="lg"
-            roundedRight="3xl"
-          >
-            {(
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          p={3}
+          zIndex={2}
+          bg={
+            product.variants[0].discounted_price > 0
+              ? "mypets-green.100"
+              : "transparent"
+          }
+          textColor="white"
+          fontWeight="bold"
+          roundedTopLeft="lg"
+          roundedRight="3xl"
+        >
+          {product.variants[0].discounted_price > 0 &&
+            `${(
               (1 -
                 product.variants[0].discounted_price /
                   product.variants[0].price) *
               100
-            ).toFixed(0)}
-            % OFF
-          </Box>
-        )}
+            ).toFixed(0)} % OFF`}
+        </Box>
         <Stack direction="column" h="100%" w="100%">
           <NextLink href={`/products/${product.slug}`} passHref>
             <LinkOverlay>
-              <Center mb={{ base: 4 }} roundedTop="lg" zIndex={1}>
+              <Center
+                mb={{ base: 4 }}
+                roundedTop="lg"
+                zIndex={1}
+                height={"150px"}
+                width="100%"
+              >
                 <NextImage
                   src={imageToUrl(product.image)}
                   alt={product.image.alternativeText}
@@ -150,15 +158,17 @@ function ProductListCard({ product }) {
                   <MerchantBadge merchantName={product.merchant.name} />
                 </Box>
                 <Stack mt="1" justifyContent="space-between">
-                  <Box
+                  <Text
                     fontSize="sm"
                     fontWeight="semibold"
                     as="h4"
                     lineHeight="tight"
                     isTruncated={{ base: false, md: false }}
+                    noOfLines={3}
+                    height="64px"
                   >
                     {product.name}
-                  </Box>
+                  </Text>
                 </Stack>
               </Box>
             </LinkOverlay>
@@ -173,7 +183,7 @@ function ProductListCard({ product }) {
               </Text>
               <IconButton icon={<AddIcon />} size="sm" onClick={addQty} />
             </HStack>
-            {product.variants[0].available ? (
+            {product.variants.filter((prod) => prod.available).length > 0 ? (
               <MypetsBtn
                 mb={{ base: 2 }}
                 btnText="Add to cart"
@@ -206,20 +216,20 @@ function ProductListCard({ product }) {
               </Box>
               {product.variants && (
                 <Box justifySelf="end" alignSelf="end">
-                  {product.variants[0].discounted_price &&
-                    product.variants[0].discounted_price > 0 && (
-                      <Text
-                        fontSize={{ base: "xs", md: "sm" }}
-                        color="gray.800"
-                        justifySelf="end"
-                        alignSelf="end"
-                        my={0}
-                        py={0}
-                        textDecorationLine="line-through"
-                      >
-                        ${product.variants[0].price.toFixed(2)}
-                      </Text>
-                    )}
+                  <Text
+                    fontSize={{ base: "xs", md: "sm" }}
+                    color="gray.800"
+                    justifySelf="end"
+                    alignSelf="end"
+                    my={0}
+                    py={0}
+                    height="20px"
+                    textDecorationLine="line-through"
+                  >
+                    {product.variants[0].discounted_price &&
+                      product.variants[0].discounted_price > 0 &&
+                      `${product.variants[0].price.toFixed(2)}`}
+                  </Text>
                   <Text
                     fontSize={{ base: "md", md: "lg" }}
                     fontWeight="bold"

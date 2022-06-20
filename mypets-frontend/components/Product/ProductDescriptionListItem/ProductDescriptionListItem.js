@@ -1,6 +1,6 @@
 import React from "react";
 import { ListItem, ListIcon } from "@chakra-ui/react";
-import { CheckCircleIcon } from "@chakra-ui/icons";
+import CheckCircleIcon from "../../icons/CheckCircleIcon";
 
 function ProductDescriptionListItem({ description }) {
   const capitaliseFirstLetter = (string) => {

@@ -88,10 +88,10 @@ export default function Product({ product, otherProducts }) {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const product_res = await fetch(`${API_PRODUCTS_URL}?slug=${slug}`);
+  const product_res = await fetch(`${API_PRODUCTS_URL}&slug=${slug}`);
   const product = await product_res.json();
   const category_res = await fetch(
-    `${API_PRODUCTS_URL}?category=${product[0].category.id}`
+    `${API_PRODUCTS_URL}&category=${product[0].category.id}`
   );
   const categoryProducts = await category_res.json();
   const home_res = await fetch(`${API_HOME_URL}`);

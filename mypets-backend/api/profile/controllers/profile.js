@@ -51,7 +51,6 @@ module.exports = {
    */
   async create(ctx) {
     const { user } = ctx.state;
-    // console.log('creating profile with user id: ', user.id)
     const entity = await strapi.services.profile.create({
       ...ctx.request.body,
       user: user.id,
@@ -67,7 +66,6 @@ module.exports = {
   async update(ctx) {
     const { id } = ctx.params;
     const { user } = ctx.state;
-    // console.log('updating profile with user id: ', user.id)
     const entity = await strapi.services.profile.update(
       { id },
       { ...ctx.request.body, user: user.id }

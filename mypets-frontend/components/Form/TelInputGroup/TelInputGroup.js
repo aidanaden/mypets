@@ -4,7 +4,7 @@ import {
   InputRightElement,
   InputLeftAddon,
 } from "@chakra-ui/react";
-import { CheckIcon } from "@chakra-ui/icons";
+import CheckIcon from "../../icons/CheckIcon";
 
 function TelInputGroup({ field, valid }) {
   return (

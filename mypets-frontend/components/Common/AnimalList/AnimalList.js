@@ -33,8 +33,6 @@ const AnimalButton = ({ animal, onClick, ...props }) => {
 };
 
 export default function AnimalList({ animals, setSelectedAnimal }) {
-  console.log("animals in animalList: ", animals);
-
   const animalBtnClicked = (animal) => {
     setSelectedAnimal(animal);
   };

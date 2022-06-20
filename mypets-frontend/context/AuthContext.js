@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect, useReducer } from "react";
-import useSWR from "swr";
 
 import { useRouter } from "next/router";
 import { API_URL } from "../utils/urls";
@@ -60,7 +59,6 @@ export const AuthProvider = (props) => {
     try {
       const data = await callAPI("/profiles", "GET");
       if (data.length == 0) {
-        // console.log('profile doesn not exist: ', data)
         createProfile(body);
       }
       setProfile(data[0]);
@@ -78,7 +76,7 @@ export const AuthProvider = (props) => {
       try {
         const data = await callAPI(`/profiles/${profile.id}`, "PUT", body);
         if (!data.username) {
-          // console.log('tried updating, profile does not exist: ', data)
+          console.error("tried updating, profile does not exist: ", data);
         } else {
           setProfile(data);
         }
@@ -194,8 +192,6 @@ export const AuthProvider = (props) => {
       );
       const data = await response.json();
 
-      // console.log('data from provider: ', data)
-
       if (!data.user) {
         loginFailToast();
       } else {
@@ -254,7 +250,7 @@ export const AuthProvider = (props) => {
 
   const checkUserLoggedIn = async () => {
     const user = await callAPI("/users/me", "GET");
-    if (user.id) {
+    if (user && user.id) {
       setUser(user);
       getCart();
       getProfile({ username: user.username, id: user.id });
