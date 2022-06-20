@@ -39,7 +39,8 @@ export default function ProductCarousel({ products, header, ...props }) {
     ml: `-${currentSlide * 100}%`,
   };
 
-  console.log(groupedProducts);
+  console.log("grouped products: ", groupedProducts);
+  console.log("slide count: ", slidesCount);
 
   return (
     <Box>
@@ -61,7 +62,14 @@ export default function ProductCarousel({ products, header, ...props }) {
             &#10094;
           </Text>
           <Stack direction="column" w="full" overflow="hidden" bg="purple.300">
-            <HStack h="max" w="100%" mb={6} bg="blue.400" {...carouselStyle}>
+            <HStack
+              h="max"
+              w="100%"
+              mb={6}
+              bg="blue.400"
+              spacing={0}
+              {...carouselStyle}
+            >
               {groupedProducts.map((productGroup, gid) => (
                 <SimpleGrid
                   w="full"
