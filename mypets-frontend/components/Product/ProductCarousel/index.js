@@ -38,10 +38,7 @@ export default function ProductCarousel({ products, header, ...props }) {
     ml: `-${currentSlide * 100}%`,
   };
 
-  const groupedProducts = createGroups(
-    products,
-    Math.ceil(products.length / 5)
-  );
+  const groupedProducts = createGroups(products, 5);
   console.log(groupedProducts);
 
   return (
