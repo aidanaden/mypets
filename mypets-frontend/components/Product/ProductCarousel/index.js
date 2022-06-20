@@ -61,17 +61,13 @@ export default function ProductCarousel({ products, header, ...props }) {
           <Text {...arrowStyles} onClick={prevSlide}>
             &#10094;
           </Text>
-          <Stack
-            direction="column"
-            w="full"
-            overflow="hidden"
-            bg="purple.300"
-            p={2}
-          >
+          <Stack direction="column" w="full" overflow="hidden" bg="purple.300">
             <HStack
               h="max"
               w="100%"
-              // mb={6}
+              mb={6}
+              mx={2}
+              mt={2}
               bg="blue.400"
               spacing={0}
               {...carouselStyle}
@@ -79,11 +75,11 @@ export default function ProductCarousel({ products, header, ...props }) {
               {groupedProducts.map((productGroup, gid) => (
                 <SimpleGrid
                   w="full"
-                  minW={{ lg: "1200px" }}
+                  minW={"1200px"}
                   h="max"
                   bg="red.400"
                   gap={{ base: 3 }}
-                  columns={{ base: 1, sm: 1, md: 3, lg: 4, xl: 5 }}
+                  columns={{ base: 2, sm: 2, md: 3, lg: 4, xl: 5 }}
                   key={gid}
                   {...carouselStyle}
                 >
