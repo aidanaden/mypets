@@ -22,7 +22,7 @@ export default function ProductCarousel({ products, header, ...props }) {
   };
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesCount = products.length / 6;
+  const slidesCount = Math.ceil(products.length / 5);
 
   const prevSlide = () => {
     setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
@@ -74,6 +74,7 @@ export default function ProductCarousel({ products, header, ...props }) {
                   minW={"1200px"}
                   h="max"
                   bg="red.400"
+                  gap={{ base: 3 }}
                   columns={{ base: 2, md: 5 }}
                   key={gid}
                   {...carouselStyle}
