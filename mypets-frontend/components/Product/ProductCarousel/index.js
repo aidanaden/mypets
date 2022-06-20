@@ -21,8 +21,9 @@ export default function ProductCarousel({ products, header, ...props }) {
     },
   };
 
+  const groupedProducts = createGroups(products, 5);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesCount = Math.ceil(products.length / 5);
+  const slidesCount = groupedProducts.length;
 
   const prevSlide = () => {
     setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
@@ -38,7 +39,6 @@ export default function ProductCarousel({ products, header, ...props }) {
     ml: `-${currentSlide * 100}%`,
   };
 
-  const groupedProducts = createGroups(products, 5);
   console.log(groupedProducts);
 
   return (
@@ -60,13 +60,7 @@ export default function ProductCarousel({ products, header, ...props }) {
           <Text {...arrowStyles} onClick={prevSlide}>
             &#10094;
           </Text>
-          <Stack
-            direction="column"
-            spacing={3}
-            w="full"
-            overflow="hidden"
-            bg="purple.300"
-          >
+          <Stack direction="column" w="full" overflow="hidden" bg="purple.300">
             <HStack h="max" w="100%" mb={6} bg="blue.400" {...carouselStyle}>
               {groupedProducts.map((productGroup, gid) => (
                 <SimpleGrid
