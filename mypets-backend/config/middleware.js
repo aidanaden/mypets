@@ -15,6 +15,7 @@ module.exports = {
       // origin: ["http://localhost:3000", "http://localhost:1337", "https://mypets.com"],
       // headers: ["*"],
       origin: [
+        "https://localhost:3000",
         "http://backend.mypets.sg:1337",
         "https://backend.mypets.sg",
         "https://mypets.sg",
