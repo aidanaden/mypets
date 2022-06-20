@@ -73,7 +73,7 @@ export default function ProductCarousel({ products, header, ...props }) {
                   w="full"
                   minW={"1200px"}
                   h="max"
-                  bg="red.300"
+                  bg="red.400"
                   columns={{ base: 2, md: 5 }}
                   key={gid}
                   {...carouselStyle}
