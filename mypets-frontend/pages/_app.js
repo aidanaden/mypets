@@ -17,7 +17,7 @@ import AnnouncementBanner from "../components/Layouts/AnnouncementBanner/Announc
 import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 import Footer from "../components/Layouts/Footer/Footer";
-// import MessengerCustomerChat from "react-messenger-customer-chat";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 // import { MessengerChat } from "react-messenger-chat-plugin";
 
 function MyApp({ Component, pageProps }) {
@@ -92,10 +92,10 @@ function MyApp({ Component, pageProps }) {
           </BaseLayout>
           <Footer />
           {/* <MessengerChat pageId="105638824710827" /> */}
-          {/* <MessengerCustomerChat
+          <MessengerCustomerChat
             pageId="105638824710827"
             appId="615727602931296"
-          /> */}
+          />
         </ChakraProvider>
       </AuthProvider>
     </SimpleReactLightbox>
