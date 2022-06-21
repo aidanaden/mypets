@@ -6,10 +6,10 @@ import {
   InputRightElement,
   InputRightAddon,
 } from "@chakra-ui/react";
-import { Search2Icon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
 
 import MypetsBtn from "../MypetsBtn/MypetsBtn";
+import SearchIcon from "../../icons/SearchIcon";
 
 export default function Searchbar({ price, ...props }) {
   const router = useRouter();
@@ -48,7 +48,7 @@ export default function Searchbar({ price, ...props }) {
     <InputGroup w={{ base: "100%", md: "sm", lg: "md", xl: "xl" }} {...props}>
       <InputLeftElement
         pointerEvents="none"
-        children={<Search2Icon color="gray.600" />}
+        children={<SearchIcon color="gray.600" />}
       />
       <Input
         size="md"

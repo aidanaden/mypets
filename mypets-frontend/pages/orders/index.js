@@ -110,7 +110,7 @@ export default function Orders() {
   const { orders, loading } = getOrders(user);
 
   return (
-    <PageContainer>
+    <PageContainer pb={{ base: 8, lg: 12 }}>
       <BackBtn variant="home" />
       {orders.length > 0 && <ContributionSection orders={orders} />}
       {orders.length > 0 ? (

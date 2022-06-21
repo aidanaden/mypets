@@ -81,6 +81,7 @@ export default function Product({ product, otherProducts }) {
           products={otherProducts}
           selectedAnimal=""
           maxRows={2}
+          mb={20}
         />
       </PageContainer>
     </>

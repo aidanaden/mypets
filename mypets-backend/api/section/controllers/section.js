@@ -34,7 +34,7 @@ module.exports = {
   },
 
   /**
-   * Returns section with specified section id
+   * Returns section with matching section id
    * @param {any} ctx
    */
   async findOne(ctx) {

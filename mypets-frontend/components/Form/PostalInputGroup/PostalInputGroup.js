@@ -1,5 +1,5 @@
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import { CheckIcon } from "@chakra-ui/icons";
+import CheckIcon from "../../icons/CheckIcon";
 
 function PostalInputGroup({ field, valid }) {
   return (

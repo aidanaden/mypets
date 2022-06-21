@@ -11,6 +11,7 @@ function ProductList({
   selectedAnimal,
   selectedMerchants,
   maxRows,
+  ...props
 }) {
   const [listProducts, setListProducts] = useState(products);
   const sliceIndex = maxRows == 0 ? listProducts.length : 5 * maxRows;
@@ -44,7 +45,7 @@ function ProductList({
     animal,
     selectedMerchants
   ) => {
-    if (animal != "") {
+    if (animal && animal != "") {
       if (selectedMerchants) {
         if (selectedMerchants.length == 0) {
           const filteredProducts = products.filter((product) => {
@@ -83,6 +84,7 @@ function ProductList({
         });
         return filteredProducts;
       } else {
+        console.log("returning products: ", products);
         return products;
       }
     }
@@ -102,7 +104,7 @@ function ProductList({
   }, [selectedMerchants, selectedAnimal]);
 
   return (
-    <Box>
+    <Box {...props}>
       {listProducts && listProducts.length > 0 && (
         <>
           <SectionHeader>{heading}</SectionHeader>
