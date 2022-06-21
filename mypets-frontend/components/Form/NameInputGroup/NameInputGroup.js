@@ -1,5 +1,5 @@
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import CheckIcon from "../../icons/CheckIcon";
+import { CheckIcon } from "@chakra-ui/icons";
 
 function NameInputGroup({ field, valid }) {
   return (

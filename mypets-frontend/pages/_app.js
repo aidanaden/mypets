@@ -18,7 +18,6 @@ import Sidebar from "../components/Layouts/Sidebar/Sidebar";
 import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
 import Footer from "../components/Layouts/Footer/Footer";
 import MessengerCustomerChat from "react-messenger-customer-chat";
-// import { MessengerChat } from "react-messenger-chat-plugin";
 
 function MyApp({ Component, pageProps }) {
   const [bannerText, setBannerText] = useState("");
@@ -59,18 +58,10 @@ function MyApp({ Component, pageProps }) {
       });
   }, [Router.events]);
 
-  useEffect(() => {
-    const fetchHome = async () => {
-      console.log("api home url: ", API_HOME_URL);
-      try {
-        const home_res = await fetch(`${API_HOME_URL}`);
-        const home_data = await home_res.json();
-        setBannerText(home_data.banner_text);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    fetchHome();
+  useEffect(async () => {
+    const home_res = await fetch(`${API_HOME_URL}`);
+    const home_data = await home_res.json();
+    setBannerText(home_data.banner_text);
   }, []);
 
   return (
@@ -91,7 +82,6 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
           </BaseLayout>
           <Footer />
-          {/* <MessengerChat pageId="105638824710827" /> */}
           <MessengerCustomerChat
             pageId="105638824710827"
             appId="615727602931296"

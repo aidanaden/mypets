@@ -4,14 +4,13 @@ import SectionHeader from "../../Layouts/SectionHeader/SectionHeader";
 import AnimalList from "../../Common/AnimalList/AnimalList";
 import SortMenu from "../../Common/SortMenu/SortMenu";
 
-function index({ pageAnimals, setSelectedAnimal, setSortMethod, ...props }) {
+function index({ pageAnimals, setSelectedAnimal, setSortMethod }) {
   "page animal in animal category selection: ", pageAnimals;
   return (
     <Stack
       direction={{ base: "column", md: "row" }}
       align="stretch"
       justify="space-between"
-      {...props}
     >
       <Box mb={{ base: 2, md: 0 }}>
         <SectionHeader>Animal</SectionHeader>

@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useReducer } from "react";
+import useSWR from "swr";
 
 import { useRouter } from "next/router";
 import { API_URL } from "../utils/urls";
@@ -250,7 +251,7 @@ export const AuthProvider = (props) => {
 
   const checkUserLoggedIn = async () => {
     const user = await callAPI("/users/me", "GET");
-    if (user && user.id) {
+    if (user.id) {
       setUser(user);
       getCart();
       getProfile({ username: user.username, id: user.id });
