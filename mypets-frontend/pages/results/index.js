@@ -138,7 +138,7 @@ export default function index({ products, animals, merchants }) {
   }, [router.query]);
 
   return (
-    <PageContainer pb={{ base: 8, lg: 12 }}>
+    <PageContainer>
       <SectionHeader>
         Showing results for
         <chakra.span textColor="mypets.400">{` "${searchText}"`}</chakra.span>

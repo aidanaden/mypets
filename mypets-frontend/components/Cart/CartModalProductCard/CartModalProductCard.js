@@ -16,8 +16,8 @@ import {
 import lodash from "lodash";
 import NextImage from "next/image";
 import NextLink from "next/link";
+import { DeleteIcon } from "@chakra-ui/icons";
 
-import DeleteIcon from "../../icons/DeleteIcon";
 import MerchantBadge from "../../Merchant/MerchantBadge/MerchantBadge";
 import CartProductQuantityPicker from "../CartProductQuantityPicker/CartProductQuantityPicker";
 import { imageToUrl } from "../../../utils/urls";

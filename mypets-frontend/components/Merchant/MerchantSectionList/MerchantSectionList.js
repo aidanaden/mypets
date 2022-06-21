@@ -7,7 +7,7 @@ import PageContainer from "../../Layouts/PageContainer/PageContainer";
 
 function MerchantSectionList({ merchants, spacing = 4 }) {
   return (
-    <Stack pt={{ base: 10, lg: 0 }}>
+    <Stack>
       <SectionHeader>Available Brands</SectionHeader>
       <SimpleGrid
         mt={0}

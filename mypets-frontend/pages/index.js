@@ -12,7 +12,6 @@ import ProductSectionList from "../components/Product/ProductSectionList/Product
 import CategoryList from "../components/Home/CategoryList/CategoryList";
 import {
   API_HOME_URL,
-  API_SECTIONS_URL,
   API_PRODUCTS_URL,
   API_MERCHANTS_URL,
   getAnimals,
@@ -23,11 +22,9 @@ import BenefitsSection from "../components/Home/BenefitsSection";
 import NewsletterSection from "../components/Home/NewsletterSection";
 import SocialProofSection from "../components/Home/SocialProofSection";
 import BaseLayout from "../components/Layouts/BaseLayout/BaseLayout";
-import ProductCarousel from "../components/Product/ProductCarousel";
 
 export default function Home({
   home_data,
-  sections,
   products,
   categories,
   animals,
@@ -55,20 +52,13 @@ export default function Home({
       isClosable: true,
     });
 
-  const bestProducts = sections.filter(
-    (sec) => sec.name.toLowerCase() === "best sellers"
-  )[0].products;
-  const essentialProducts = sections.filter(
-    (sec) => sec.name.toLowerCase() === "everyday essentials"
-  )[0].products;
-
   return (
     <>
       <Head>
         <title>{home_data.meta_title}</title>
         <meta name="description" content={home_data.meta_description} />
       </Head>
-      <PageContainer>
+      <PageContainer pb={{ base: 8, md: 12 }}>
         {/* <CategoryList
             display={{ base: "none", md: "flex" }}
             categories={pageCategories}
@@ -76,16 +66,20 @@ export default function Home({
           /> */}
         {/* <Carousel /> */}
         <HomeBannerSwiper banners={home_data.Banners} />
-        <Stack direction="column" pb={{ base: 8, lg: 12 }}>
+        <Stack direction="column" spacing={{ base: 10, md: 14 }}>
           <AnimalCategorySection
             pageAnimals={pageAnimals}
             setSelectedAnimal={setSelectedAnimal}
             setSortMethod={setSortMethod}
           />
-          <ProductCarousel products={bestProducts} header={"Best Sellers"} />
           <MerchantSectionList merchants={merchants} />
-          <ProductCarousel products={bestProducts} header={"Best Sellers"} />
-          <ProductCarousel products={bestProducts} header={"Best Sellers"} />
+          <ProductSectionList
+            products={pageProducts}
+            categories={pageCategories}
+            sortMethod={sortMethod}
+            setSortMethod={setSortMethod}
+            selectedAnimal={selectedAnimal}
+          />
         </Stack>
       </PageContainer>
       <BenefitsSection benefits={home_data.Benefits} />
@@ -104,9 +98,6 @@ export async function getStaticProps() {
   const product_res = await fetch(`${API_PRODUCTS_URL}`);
   const products = await product_res.json();
 
-  const sections_res = await fetch(API_SECTIONS_URL);
-  const sections = await sections_res.json();
-
   const merchant_res = await fetch(`${API_MERCHANTS_URL}`);
   const merchants = await merchant_res.json();
 
@@ -118,7 +109,6 @@ export async function getStaticProps() {
     revalidate: 1,
     props: {
       home_data,
-      sections,
       products,
       categories,
       animals,

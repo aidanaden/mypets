@@ -4,8 +4,7 @@ import {
   InputLeftElement,
   InputRightElement,
 } from "@chakra-ui/react";
-import CheckIcon from "../../icons/CheckIcon";
-import Calendar from "../../icons/CalendarIcon";
+import { CalendarIcon, CheckIcon } from "@chakra-ui/icons";
 
 function BirthdayInputGroup({ field, valid, error }) {
   return (

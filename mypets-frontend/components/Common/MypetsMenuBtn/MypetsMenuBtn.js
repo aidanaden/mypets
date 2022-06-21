@@ -1,5 +1,5 @@
 import { MenuButton, Button } from "@chakra-ui/react";
-import ChevronDownIcon from "../../icons/ChevronDownIcon";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 function MypetsMenuBtn({ menuBtnText }) {
   return (
