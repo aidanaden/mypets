@@ -22,16 +22,27 @@ import ProductList from "../ProductList/ProductList";
 
 const CarouselArrow = ({ type, onClick, isEdge }) => {
   return (
-    <Box display="flex">
+    <Box
+      display="flex"
+      pos="absolute"
+      right={type !== consts.PREV && 0}
+      left={type === consts.PREV && 0}
+      alignSelf={"center"}
+      justifySelf="center"
+      mt="auto"
+      zIndex="dropdown"
+      // ml={type === consts.PREV ? 8 : 0}
+      // mr={type === consts.PREV ? 0 : 8}
+    >
       <IconButton
         rounded="full"
-        size="md"
-        _hover={{ bg: "white" }}
-        _active={{ bg: "white" }}
-        alignSelf="center"
+        size="lg"
+        bg="gray.200"
+        // _hover={{ bg: "white" }}
+        // _active={{ bg: "white" }}
+        boxShadow="lg"
         onClick={onClick}
         disabled={isEdge}
-        bg="white"
         icon={
           type === consts.PREV ? (
             <>
@@ -108,7 +119,7 @@ export default function ProductCarousel({ products, header, ...props }) {
               mb={{ base: 4, md: 6 }}
             >
               <SectionHeader
-                mx={{ xl: "66px" }}
+                // mx={{ xl: "66px" }}
                 mb={0}
                 textTransform="capitalize"
               >
@@ -117,7 +128,7 @@ export default function ProductCarousel({ products, header, ...props }) {
               <Button
                 rounded="full"
                 size="xs"
-                bg="gray.300"
+                bg="gray.200"
                 px={3}
                 display={{ base: "none", md: "block" }}
                 onClick={handleExpandClick}
@@ -125,7 +136,7 @@ export default function ProductCarousel({ products, header, ...props }) {
                 View more
               </Button>
             </Stack>
-            <Box display={{ xs: "none", md: "block" }}>
+            <Box display={{ xs: "none", md: "block" }} pos="relative">
               <Carousel
                 enableAutoPlay={false}
                 enableSwipe
@@ -135,6 +146,7 @@ export default function ProductCarousel({ products, header, ...props }) {
                 breakPoints={breakpoints}
                 renderArrow={CarouselArrow}
                 renderPagination={CarouselPagination}
+                itemPosition="CENTER"
               >
                 {products.map((prod, i) => (
                   <ProductListCard product={prod} key={`product-${i}`} />
@@ -146,7 +158,7 @@ export default function ProductCarousel({ products, header, ...props }) {
             <Button
               alignSelf={"center"}
               size="md"
-              bg="gray.300"
+              bg="gray.200"
               display={{ base: "block", md: "none" }}
               onClick={handleExpandClick}
             >

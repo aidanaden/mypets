@@ -20,7 +20,7 @@ export default function index({ merchant }) {
         <title>{merchant.meta_title}</title>
         <meta name="description" content={merchant.meta_description} />
       </Head>
-      <PageContainer>
+      <PageContainer pb={{ base: 8, lg: 12 }}>
         <BackBtn />
         {/* <Carousel bannerImgNames={[`${merchant.name}.jpg`]} /> */}
         <MerchantBannerSwiper banners={merchant.banners} />

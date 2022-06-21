@@ -11,6 +11,7 @@ function ProductList({
   selectedAnimal,
   selectedMerchants,
   maxRows,
+  ...props
 }) {
   const [listProducts, setListProducts] = useState(products);
   const sliceIndex = maxRows == 0 ? listProducts.length : 5 * maxRows;
@@ -103,7 +104,7 @@ function ProductList({
   }, [selectedMerchants, selectedAnimal]);
 
   return (
-    <Box>
+    <Box {...props}>
       {listProducts && listProducts.length > 0 && (
         <>
           <SectionHeader>{heading}</SectionHeader>
