@@ -50,8 +50,8 @@ export default function index({ ...props }) {
               <Image
                 src="/enterprise-sg-logo.svg"
                 objectFit={"cover"}
-                width={320}
-                height={160}
+                width={280}
+                height={140}
                 alignSelf="center"
                 mx="auto"
               />

@@ -155,14 +155,19 @@ export default function ProductCarousel({ products, header, ...props }) {
           </Center>
         </>
       ) : (
-        <SimpleGrid
-          columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
-          spacing={{ base: 4 }}
-        >
-          {products.map((product, index) => (
-            <ProductListCard product={product} key={index} />
-          ))}
-        </SimpleGrid>
+        <>
+          <SectionHeader textTransform="capitalize" mt={{ base: 10, md: 14 }}>
+            {header}
+          </SectionHeader>
+          <SimpleGrid
+            columns={{ base: 2, md: 4, lg: 4, xl: 5 }}
+            spacing={{ base: 4 }}
+          >
+            {products.map((product, index) => (
+              <ProductListCard product={product} key={index} />
+            ))}
+          </SimpleGrid>
+        </>
       )}
     </Box>
   );
